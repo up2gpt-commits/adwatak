@@ -1,0 +1,74 @@
+"use client";
+import { useState } from "react";
+import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import FAQSection from "../../../components/FAQSection";
+import RelatedTools from "../../../components/RelatedTools";
+import SEOContent from "../../../components/SEOContent";
+import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
+
+const limits: Record<string, number> = { "Twitter/X": 280, "Instagram": 2200, "TikTok": 300, "Snapchat": 80, "LinkedIn": 3000, "Threads": 500, "Facebook": 63206 };
+
+const faqs = [
+  { question: "What are the character limits for each platform?", answer: "Twitter/X: 280 chars. Instagram: 2,200. TikTok: 300. Snapchat: 80. LinkedIn: 3,000. Threads: 500. Each platform has different limits for different purposes." },
+  { question: "Do hashtags count as characters?", answer: "Yes, every character counts — including #, @, punctuation, and spaces. The entire text is counted toward the limit." },
+  { question: "What happens if I exceed the limit?", answer: "The counter turns red and shows negative remaining. The platform may block posting or truncate your text. Stay within the limit for each platform." },
+  { question: "Why does Instagram allow 2,200 chars while Twitter only 280?", answer: "Each platform has a different philosophy. Twitter is about speed and directness (280 is enough for a news bite). Instagram focuses on visual content with descriptive text." },
+  { question: "What's the ideal tweet length?", answer: "71-100 chars get 46% more engagement than very short tweets. 190-280 char tweets get more shares. Balance between being concise and informative." },
+  { question: "Do spaces count as characters?", answer: "Yes, every space counts as one character. On Twitter, spaces consume the 280-character limit. Use spaces wisely." },
+];
+const relatedTools = [
+  { title: "Word Counter", icon: "📝", href: "/en/tools/word-counter" },
+  { title: "Text Case", icon: "🔤", href: "/en/tools/text-case" },
+  { title: "Text Cleaner", icon: "🧹", href: "/en/tools/text-cleaner" },
+  { title: "WhatsApp Link", icon: "💬", href: "/en/tools/whatsapp-link" },
+  { title: "Text Compare", icon: "⚖️", href: "/en/tools/text-compare" },
+  { title: "Lorem Ipsum", icon: "📄", href: "/en/tools/arabic-lorem" },
+];
+const seoContent = [
+  "Social media character counter — check character counts for Twitter/X, Instagram, TikTok, Snapchat, LinkedIn, and Threads. Select a platform, start typing, and see your count in real-time.",
+  "Supported limits: Twitter/X (280), Instagram (2,200), TikTok (300), Snapchat (80), LinkedIn (3,000), Threads (500), Facebook (63,206). Each platform has unique requirements.",
+  "How to use: select target platform → type or paste text → counter shows characters and remaining in green (safe), yellow (close), or red (over limit). Perfect for social media managers.",
+];
+export default function SocialCharacterCounter() {
+  const [text, setText] = useState("");
+  const [platform, setPlatform] = useState("Twitter/X");
+  const limit = limits[platform] || 280;
+  const remaining = limit - text.length;
+  const schemaName = "Social Character Counter";
+  const schemaDesc = "Online Social Character Counter - free tool";
+  const schemaCategory = "Utility";
+  const schemaUrl = "https://adwatak.cloud/en/tools/social-character-counter";
+  const breadcrumbItems = [
+    { name: "Home", url: "https://adwatak.cloud/en" },
+    { name: "Daily Tools", url: "https://adwatak.cloud/en/tools/daily" },
+    { name: "Social Character Counter", url: "https://adwatak.cloud/en/tools/social-character-counter" },
+  ];
+  return (
+    <div className="max-w-[760px] mx-auto">
+      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
+      <StructuredData data={faqSchema(faqs)} />
+      <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      <Breadcrumb category="Daily Tools" categorySlug="daily" toolName="Social Character Counter" />
+      <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+        <h1 className="text-2xl font-extrabold mb-1">📱 Social Character Counter</h1>
+        <p className="text-sm text-gray-500 mb-6">Count characters for Twitter, Instagram, TikTok and more</p>
+        <select value={platform} onChange={(e) => setPlatform(e.target.value)}
+          className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white mb-4">
+          {Object.keys(limits).map(p => <option key={p} value={p}>{p} ({limits[p]} chars)</option>)}
+        </select>
+        <textarea value={text} onChange={(e) => setText(e.target.value)}
+          className="w-full h-[150px] p-4 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit resize-y"
+          placeholder="Type your text here..." />
+        <div className="flex justify-between mt-3">
+          <span className={`text-xs ${remaining < 0 ? "text-red-600" : "text-gray-500"}`}>Chars: {text.length} / {limit}</span>
+          <span className={`text-xs font-bold ${remaining < 0 ? "text-red-600" : remaining < 50 ? "text-yellow-600" : "text-green-600"}`}>Remaining: {remaining}</span>
+        </div>
+      </div>
+      <SEOContent content={seoContent} lang="en" />
+      <FAQSection faqs={faqs} lang="en" />
+      <RelatedTools tools={relatedTools} lang="en" />
+      <ShareButtons lang="en" />
+    </div>
+  );
+}

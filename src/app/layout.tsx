@@ -61,12 +61,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3SRR9PMGN"></script>
         <script dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX');
+          gtag('config', 'G-X3SRR9PMGN');
         `}} />
       </head>
       <body>

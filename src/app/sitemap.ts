@@ -1,165 +1,103 @@
 import { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/blog";
-import { getAllEnPosts } from "@/lib/blog-en";
-
-const baseUrl = "https://adwatak.cloud";
-
-// Arabic tool routes
-const arTools = [
-  { href: "/tools/mortgage-calculator", priority: 0.9 },
-  { href: "/tools/loan-calculator", priority: 0.9 },
-  { href: "/tools/installment-calculator", priority: 0.8 },
-  { href: "/tools/emi-calculator", priority: 0.8 },
-  { href: "/tools/profit-margin", priority: 0.8 },
-  { href: "/tools/vat-calculator", priority: 0.8 },
-  { href: "/tools/salary-calculator", priority: 0.8 },
-  { href: "/tools/currency-converter", priority: 0.8 },
-  { href: "/tools/compound-interest", priority: 0.8 },
-  { href: "/tools/gold-calculator", priority: 0.8 },
-  { href: "/tools/inheritance-calculator", priority: 0.9 },
-  { href: "/tools/zakat-calculator", priority: 0.9 },
-  { href: "/tools/hijri-converter", priority: 0.8 },
-  { href: "/tools/age-calculator", priority: 0.7 },
-  { href: "/tools/qibla-direction", priority: 0.7 },
-  { href: "/tools/prayer-times", priority: 0.7 },
-  { href: "/tools/word-counter", priority: 0.7 },
-  { href: "/tools/text-case", priority: 0.7 },
-  { href: "/tools/number-to-words", priority: 0.7 },
-  { href: "/tools/arabic-lorem", priority: 0.6 },
-  { href: "/tools/text-cleaner", priority: 0.7 },
-  { href: "/tools/text-compare", priority: 0.7 },
-  { href: "/tools/pdf-merger", priority: 0.7 },
-  { href: "/tools/pdf-splitter", priority: 0.6 },
-  { href: "/tools/pdf-compressor", priority: 0.6 },
-  { href: "/tools/image-to-pdf", priority: 0.7 },
-  { href: "/tools/unit-converter", priority: 0.7 },
-  { href: "/tools/color-converter", priority: 0.6 },
-  { href: "/tools/json-formatter", priority: 0.6 },
-  { href: "/tools/base64-encoder", priority: 0.6 },
-  { href: "/tools/encoder", priority: 0.5 },
-  { href: "/tools/hash-generator", priority: 0.6 },
-  { href: "/tools/bmi-calculator", priority: 0.7 },
-  { href: "/tools/calorie-calculator", priority: 0.6 },
-  { href: "/tools/stopwatch", priority: 0.5 },
-  { href: "/tools/social-character-counter", priority: 0.6 },
-  { href: "/tools/qr-generator", priority: 0.7 },
-  { href: "/tools/whatsapp-link", priority: 0.7 },
-  { href: "/tools/password-generator", priority: 0.7 },
-  { href: "/tools/invoice-generator", priority: 0.8 },
-  { href: "/tools/random-number", priority: 0.5 },
-  { href: "/tools/name-generator", priority: 0.5 },
-  { href: "/tools/car-installment", priority: 0.7 },
-  { href: "/tools/bio-generator", priority: 0.5 },
-];
-
-// English tool routes (those that have English pages)
-const enTools = [
-  "/en/tools/age-calculator",
-  "/en/tools/arabic-lorem",
-  "/en/tools/base64-encoder",
-  "/en/tools/bmi-calculator",
-  "/en/tools/calorie-calculator",
-  "/en/tools/compound-interest",
-  "/en/tools/emi-calculator",
-  "/en/tools/gold-calculator",
-  "/en/tools/hash-generator",
-  "/en/tools/hijri-converter",
-  "/en/tools/inheritance-calculator",
-  "/en/tools/installment-calculator",
-  "/en/tools/json-formatter",
-  "/en/tools/loan-calculator",
-  "/en/tools/mortgage-calculator",
-  "/en/tools/number-to-words",
-  "/en/tools/password-generator",
-  "/en/tools/profit-margin",
-  "/en/tools/qr-generator",
-  "/en/tools/random-number",
-  "/en/tools/salary-calculator",
-  "/en/tools/stopwatch",
-  "/en/tools/text-case",
-  "/en/tools/text-cleaner",
-  "/en/tools/text-compare",
-  "/en/tools/unit-converter",
-  "/en/tools/vat-calculator",
-  "/en/tools/whatsapp-link",
-  "/en/tools/word-counter",
-  "/en/tools/zakat-calculator",
-];
-
-// Arabic categories
-const arCategories = ["calculators", "islamic", "text", "converters", "dev", "daily", "generators"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const baseUrl = "https://adwatak.cloud";
 
-  // Static pages
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: now, changeFrequency: "daily", priority: 1.0 },
-    { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
-    { url: `${baseUrl}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-
-    // English static pages
-    { url: `${baseUrl}/en`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
-    { url: `${baseUrl}/en/blog`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
-    { url: `${baseUrl}/en/about`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}/en/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+  const staticPages = [
+    { path: "", lastModified: "2026-05-31" },
+    { path: "/about", lastModified: "2026-05-31" },
+    { path: "/privacy", lastModified: "2026-05-31" },
+    { path: "/blog", lastModified: "2026-05-31" },
+    { path: "/en", lastModified: "2026-05-31" },
+    { path: "/en/about", lastModified: "2026-05-31" },
+    { path: "/en/privacy", lastModified: "2026-05-31" },
+    { path: "/en/blog", lastModified: "2026-05-31" },
+    { path: "/category/calculators", lastModified: "2026-05-31" },
+    { path: "/category/converters", lastModified: "2026-05-31" },
+    { path: "/category/text", lastModified: "2026-05-31" },
+    { path: "/category/generators", lastModified: "2026-05-31" },
+    { path: "/category/dev", lastModified: "2026-05-31" },
+    { path: "/category/islamic", lastModified: "2026-05-31" },
+    { path: "/category/daily", lastModified: "2026-05-31" },
   ];
 
-  // Arabic tool pages
-  const arToolEntries: MetadataRoute.Sitemap = arTools.map((t) => ({
-    url: `${baseUrl}${t.href}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: t.priority,
-  }));
-
-  // English tool pages
-  const enToolEntries: MetadataRoute.Sitemap = enTools.map((href) => ({
-    url: `${baseUrl}${href}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  // Arabic category pages
-  const arCatEntries: MetadataRoute.Sitemap = arCategories.map((cat) => ({
-    url: `${baseUrl}/category/${cat}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  // English category page (only calculators has a dedicated page)
-  const enCatEntries: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/en/category/calculators`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+  const arTools = [
+    "age-calculator", "ai-content-detector", "arabic-lorem", "background-remover",
+    "barcode-generator", "base64-encoder",
+    "bio-generator", "bmi-calculator", "calorie-calculator", "car-installment",
+    "color-converter", "compound-interest", "currency-converter", "emi-calculator",
+    "encoder", "gold-calculator", "hash-generator", "hijri-converter",
+    "image-to-pdf", "inheritance-calculator", "installment-calculator",
+    "invoice-generator", "json-formatter", "loan-calculator", "mortgage-calculator",
+    "name-generator", "number-to-words", "password-generator", "pdf-compressor",
+    "pdf-merger", "pdf-splitter", "pdf-to-word", "prayer-times", "profit-margin",
+    "qibla-direction", "qr-generator", "qr-reader", "random-number",
+    "salary-calculator", "seo-audit", "social-character-counter", "stopwatch",
+    "typing-test", "text-case", "text-cleaner", "text-compare", "unit-converter",
+    "vat-calculator", "whatsapp-link", "word-counter", "zakat-calculator",
+    "plagiarism-checker", "grammar-checker", "paraphrasing-tool", "image-resizer",
+    "image-compressor", "youtube-thumbnail-downloader", "css-minifier",
+    "markdown-editor", "ip-lookup",
   ];
 
-  // Blog post entries (Arabic)
-  const blogPosts = getAllPosts();
-  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  // English blog post entries
-  const enBlogPosts = getAllEnPosts();
-  const enBlogEntries: MetadataRoute.Sitemap = enBlogPosts.map((post) => ({
-    url: `${baseUrl}/en/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  return [
-    ...staticPages,
-    ...arCatEntries,
-    ...enCatEntries,
-    ...arToolEntries,
-    ...enToolEntries,
-    ...blogEntries,
-    ...enBlogEntries,
+  const enTools = [
+    "age-calculator", "ai-content-detector", "arabic-lorem", "background-remover",
+    "barcode-generator", "base64-encoder",
+    "bmi-calculator", "calorie-calculator", "color-converter", "compound-interest",
+    "currency-converter", "emi-calculator", "gold-calculator", "hash-generator",
+    "hijri-converter", "image-to-pdf", "image-compressor", "image-resizer",
+    "inheritance-calculator", "installment-calculator", "ip-lookup",
+    "json-formatter", "loan-calculator", "markdown-editor", "mortgage-calculator",
+    "number-to-words", "paraphrasing-tool", "password-generator", "pdf-compressor",
+    "pdf-merger", "pdf-to-word", "plagiarism-checker", "profit-margin",
+    "qr-generator", "qr-reader", "random-number", "salary-calculator",
+    "seo-audit", "social-character-counter", "stopwatch", "typing-test",
+    "text-case", "text-cleaner", "text-compare", "unit-converter",
+    "vat-calculator", "whatsapp-link", "word-counter", "zakat-calculator",
+    "css-minifier", "grammar-checker",
   ];
+
+  const arBlogSlugs = [
+    "how-to-calculate-zakat", "how-to-calculate-mortgage",
+    "simple-vs-compound-interest", "best-free-arabic-tools-2026",
+  ];
+  const enBlogSlugs = [
+    "how-to-calculate-zakat", "how-to-calculate-mortgage",
+    "simple-vs-compound-interest", "best-free-arabic-tools-2026",
+  ];
+
+  const entries: MetadataRoute.Sitemap = [
+    ...staticPages.map((page) => ({
+      url: `${baseUrl}${page.path}`,
+      lastModified: page.lastModified,
+      changeFrequency: page.path === "" ? "daily" as const : "weekly" as const,
+      priority: page.path === "" ? 1.0 : page.path === "/en" ? 0.9 : 0.8,
+    })),
+    ...arTools.map((slug) => ({
+      url: `${baseUrl}/tools/${slug}`,
+      lastModified: "2026-05-31",
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    })),
+    ...enTools.map((slug) => ({
+      url: `${baseUrl}/en/tools/${slug}`,
+      lastModified: "2026-05-31",
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
+    ...arBlogSlugs.map((slug) => ({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: "2026-05-31",
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...enBlogSlugs.map((slug) => ({
+      url: `${baseUrl}/en/blog/${slug}`,
+      lastModified: "2026-05-31",
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
+
+  return entries;
 }

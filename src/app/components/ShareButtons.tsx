@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 interface ShareButtonsProps {
   title?: string;
   url?: string;
@@ -7,10 +9,38 @@ interface ShareButtonsProps {
 }
 
 export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsProps) {
-  const fullUrl = url || (typeof window !== "undefined" ? window.location.href : "");
-  const pageTitle = title || (typeof document !== "undefined" ? document.title : "");
+  const [mounted, setMounted] = useState(false);
+  const [clientUrl, setClientUrl] = useState("");
+  const [clientTitle, setClientTitle] = useState("");
+
+  useEffect(() => {
+    setMounted(true);
+    setClientUrl(window.location.href);
+    setClientTitle(document.title);
+  }, []);
+
+  const fullUrl = url || clientUrl;
+  const pageTitle = title || clientTitle;
   const encodedUrl = encodeURIComponent(fullUrl);
   const encodedTitle = encodeURIComponent(pageTitle);
+
+  // Don't render share links during SSR — wait for mount so URLs are correct
+  if (!mounted && !url) {
+    return (
+      <div className="mt-8 mb-6">
+        <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+          <h3 className="font-bold text-gray-900 mb-4 text-lg">
+            {lang === "ar" ? "🔗 شارك الأداة" : "🔗 Share this tool"}
+          </h3>
+          <p className="text-sm text-gray-400">
+            {lang === "ar"
+              ? "شارك الأداة مع أصحابك — كل الأداة مجانية ومتاحة بدون تسجيل"
+              : "Share this free tool with friends — no signup required"}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   const shareLinks = [
     {

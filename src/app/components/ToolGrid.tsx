@@ -3,87 +3,134 @@
 import { useState } from "react";
 import Link from "next/link";
 
+// الأقسام الجديدة المنظمة
+const categories = [
+  { key: "all", label: "كل الأدوات", icon: "🗂️" },
+  { key: "financial", label: "حاسبات مالية", icon: "💰" },
+  { key: "text", label: "أدوات نصية", icon: "📝" },
+  { key: "image", label: "أدوات الصور", icon: "🖼️" },
+  { key: "pdf", label: "أدوات PDF", icon: "📄" },
+  { key: "converters", label: "محولات", icon: "🔄" },
+  { key: "generators", label: "مولدات", icon: "⚡" },
+  { key: "dev", label: "تطوير ويب", icon: "💻" },
+  { key: "islamic", label: "أدوات إسلامية", icon: "🕌" },
+  { key: "daily", label: "أخرى", icon: "🌟" },
+];
+
 const tools = [
-  { title: "حاسبة القرض العقاري", desc: "احسب القسط الشهري مع جدول الاستفلال", icon: "🏠", href: "/tools/mortgage-calculator", cat: "calculators" },
-  { title: "حاسبة القرض الشخصي", desc: "احسب أقساط القرض الشخصي", icon: "💰", href: "/tools/loan-calculator", cat: "calculators" },
-  { title: "حاسبة التقسيط", desc: "احسب قيمة القسط لأي عملية تقسيط", icon: "📊", href: "/tools/installment-calculator", cat: "calculators" },
-  { title: "حاسبة EMI", desc: "القسط الشهري الثابت", icon: "🧮", href: "/tools/emi-calculator", cat: "calculators" },
-  { title: "حاسبة هامش الربح", desc: "احسب هامش الربح والمارك أب", icon: "📈", href: "/tools/profit-margin", cat: "calculators" },
-  { title: "حاسبة الضريبة المضافة", desc: "احسب VAT — السعودية 15٪ أو الإمارات 5٪", icon: "🏛️", href: "/tools/vat-calculator", cat: "calculators" },
-  { title: "حاسبة الراتب الصافي", desc: "راتبك بعد التأمينات والاستقطاعات", icon: "💵", href: "/tools/salary-calculator", cat: "calculators" },
-  { title: "محوّل العملات", desc: "تحويل بين العملات العربية والعالمية", icon: "💱", href: "/tools/currency-converter", cat: "calculators" },
-  { title: "حاسبة الفائدة المركبة", desc: "احسب عائد استثمارك مع الفائدة المركبة", icon: "📈", href: "/tools/compound-interest", cat: "calculators" },
-  { title: "حاسبة الذهب", desc: "احسب قيمة الذهب والزكاة والنصاب", icon: "🥇", href: "/tools/gold-calculator", cat: "calculators" },
-  { title: "حاسبة الميراث الإسلامي", desc: "احسب أنصبة الميراث حسب الشريعة", icon: "📜", href: "/tools/inheritance-calculator", cat: "islamic" },
-  { title: "حاسبة الزكاة", desc: "زكاة المال والذهب والأسهم", icon: "🕌", href: "/tools/zakat-calculator", cat: "islamic" },
-  { title: "تحويل هجري ↔ ميلادي", desc: "حوّل التاريخ بين الهجري والميلادي", icon: "📅", href: "/tools/hijri-converter", cat: "islamic" },
-  { title: "حاسبة العمر", desc: "عمرك بالهجري والميلادي وأبراجك", icon: "🎂", href: "/tools/age-calculator", cat: "islamic" },
-  { title: "اتجاه القبلة", desc: "اعرف اتجاه القبلة من موقعك", icon: "🧭", href: "/tools/qibla-direction", cat: "islamic" },
-  { title: "مواقيت الصلاة", desc: "مواقيت الصلاة حسب موقعك الجغرافي", icon: "🕐", href: "/tools/prayer-times", cat: "islamic" },
+  // ===== حاسبات مالية =====
+  { title: "حاسبة القرض العقاري", desc: "احسب القسط الشهري مع جدول الاستهلاك", icon: "🏠", href: "/tools/mortgage-calculator", cat: "financial" },
+  { title: "حاسبة القرض الشخصي", desc: "احسب أقساط القرض الشخصي", icon: "💰", href: "/tools/loan-calculator", cat: "financial" },
+  { title: "حاسبة التقسيط", desc: "احسب قيمة القسط لأي عملية تقسيط", icon: "📊", href: "/tools/installment-calculator", cat: "financial" },
+  { title: "حاسبة EMI", desc: "القسط الشهري الثابت للقروض", icon: "🧮", href: "/tools/emi-calculator", cat: "financial" },
+  { title: "حاسبة هامش الربح", desc: "احسب هامش الربح والمارك أب", icon: "📈", href: "/tools/profit-margin", cat: "financial" },
+  { title: "حاسبة الضريبة المضافة", desc: "احسب VAT — السعودية 15٪ أو الإمارات 5٪", icon: "🏛️", href: "/tools/vat-calculator", cat: "financial" },
+  { title: "حاسبة الراتب الصافي", desc: "راتبك بعد التأمينات والاستقطاعات", icon: "💵", href: "/tools/salary-calculator", cat: "financial" },
+  { title: "حاسبة الفائدة المركبة", desc: "احسب عائد استثمارك مع الفائدة المركبة", icon: "📈", href: "/tools/compound-interest", cat: "financial" },
+  { title: "حاسبة الذهب", desc: "احسب قيمة الذهب والزكاة والنصاب", icon: "🥇", href: "/tools/gold-calculator", cat: "financial" },
+  { title: "حاسبة تقسيط السيارة", desc: "احسب أقساط تمويل السيارة", icon: "🚗", href: "/tools/car-installment", cat: "financial" },
+
+  // ===== أدوات نصية =====
   { title: "عداد الكلمات والحروف", desc: "عداد الكلمات والحروف والجمل للنص", icon: "📝", href: "/tools/word-counter", cat: "text" },
   { title: "تحويل حالة النص", desc: "أحرف كبيرة أو صغيرة أو عنوان", icon: "🔤", href: "/tools/text-case", cat: "text" },
-  { title: "تحويل الأرقام لحروف", desc: "الأرقام إلى كلمات عربية (1500 → ألف وخمسمائة)", icon: "🔢", href: "/tools/number-to-words", cat: "text" },
+  { title: "تحويل الأرقام لحروف", desc: "الأرقام إلى كلمات عربية", icon: "🔢", href: "/tools/number-to-words", cat: "text" },
   { title: "مولد النص العربي", desc: "نص عربي للتصميم والمشاريع", icon: "📃", href: "/tools/arabic-lorem", cat: "text" },
   { title: "تنظيف النص", desc: "إزالة المسافات والروابط والعلامات", icon: "🧹", href: "/tools/text-cleaner", cat: "text" },
   { title: "مقارنة النصوص", desc: "قارن بين نصين واكتشف الفروقات", icon: "⚖️", href: "/tools/text-compare", cat: "text" },
-  { title: "دمج ملفات PDF", desc: "ادمج عدة PDF في ملف واحد", icon: "📎", href: "/tools/pdf-merger", cat: "converters" },
-  { title: "صورة إلى PDF", desc: "حوّل الصور إلى ملف PDF", icon: "🖼️", href: "/tools/image-to-pdf", cat: "converters" },
-  { title: "تحويل الوحدات", desc: "الطول والوزن والحجم", icon: "📐", href: "/tools/unit-converter", cat: "converters" },
+  { title: "كاشف المحتوى AI", desc: "اكتشف إذا كان النص من كتابة بشرية أو AI", icon: "🤖", href: "/tools/ai-content-detector", cat: "text" },
+  { title: "مدقق الانتحال", desc: "كشف النصوص المنسوخة وتقييم الأصالة", icon: "🚫", href: "/tools/plagiarism-checker", cat: "text" },
+  { title: "المدقق النحوي", desc: "تدقيق الأخطاء النحوية والإملائية", icon: "📝", href: "/tools/grammar-checker", cat: "text" },
+  { title: "إعادة الصياغة", desc: "إعادة كتابة النص بأسلوب جديد", icon: "✏️", href: "/tools/paraphrasing-tool", cat: "text" },
+  { title: "اختبار سرعة الكتابة", desc: "قياس سرعة طباعتك بالعربية والإنجليزية", icon: "⌨️", href: "/tools/typing-test", cat: "text" },
+  { title: "عداد حروف السوشيال", desc: "Twitter, Instagram, TikTok والمزيد", icon: "📱", href: "/tools/social-character-counter", cat: "text" },
+
+  // ===== أدوات الصور =====
+  { title: "إزالة خلفية الصورة", desc: "أزل الخلفية من أي صورة بالذكاء الاصطناعي", icon: "🖼️", href: "/tools/background-remover", cat: "image" },
+  { title: "تغيير حجم الصور", desc: "تغيير أبعاد الصور مجاناً", icon: "📐", href: "/tools/image-resizer", cat: "image" },
+  { title: "ضغط الصور", desc: "تقليل حجم ملفات الصور بجودة عالية", icon: "📦", href: "/tools/image-compressor", cat: "image" },
+  { title: "تحميل ثامبنيل يوتيوب", desc: "صور مصغرة لفيديوهات يوتيوب بجودة عالية", icon: "▶️", href: "/tools/youtube-thumbnail-downloader", cat: "image" },
+  { title: "صورة إلى PDF", desc: "حوّل الصور إلى ملف PDF", icon: "🖼️", href: "/tools/image-to-pdf", cat: "image" },
+
+  // ===== أدوات PDF =====
+  { title: "دمج ملفات PDF", desc: "ادمج عدة PDF في ملف واحد", icon: "📎", href: "/tools/pdf-merger", cat: "pdf" },
+  { title: "تقسيم ملفات PDF", desc: "قسّم PDF إلى صفحات منفصلة", icon: "✂️", href: "/tools/pdf-splitter", cat: "pdf" },
+  { title: "ضغط ملفات PDF", desc: "تقليل حجم ملفات PDF بجودة عالية", icon: "📦", href: "/tools/pdf-compressor", cat: "pdf" },
+  { title: "PDF إلى Word", desc: "تحويل ملفات PDF إلى نصوص Word قابلة للتعديل", icon: "📄", href: "/tools/pdf-to-word", cat: "pdf" },
+
+  // ===== محولات =====
+  { title: "محوّل العملات", desc: "تحويل بين العملات العربية والعالمية", icon: "💱", href: "/tools/currency-converter", cat: "converters" },
+  { title: "تحويل الوحدات", desc: "الطول والوزن والحجم والحرارة", icon: "📐", href: "/tools/unit-converter", cat: "converters" },
   { title: "تحويل الألوان", desc: "HEX ↔ RGB ↔ HSL مع معاينة", icon: "🎨", href: "/tools/color-converter", cat: "converters" },
-  { title: "JSON Formatter", desc: "تنسيق وتجميل ملفات JSON", icon: "📋", href: "/tools/json-formatter", cat: "dev" },
-  { title: "Base64 Encoder", desc: "تشفير وفك تشفير Base64", icon: "🔄", href: "/tools/base64-encoder", cat: "dev" },
-  { title: "Hash Generator", desc: "MD5, SHA-1, SHA-256, SHA-512", icon: "#️⃣", href: "/tools/hash-generator", cat: "dev" },
-  { title: "حاسبة BMI", desc: "مؤشر كتلة الجسم — وزنك المثالي", icon: "⚖️", href: "/tools/bmi-calculator", cat: "daily" },
-  { title: "ساعة إيقاف + مؤقت", desc: "ساعة إيقاف مع لفات ومؤقت", icon: "⏱️", href: "/tools/stopwatch", cat: "daily" },
-  { title: "عداد حروف السوشيال", desc: "Twitter, Instagram, TikTok والمزيد", icon: "📱", href: "/tools/social-character-counter", cat: "daily" },
+  { title: "تحويل هجري ↔ ميلادي", desc: "حوّل التاريخ بين الهجري والميلادي", icon: "📅", href: "/tools/hijri-converter", cat: "converters" },
+
+  // ===== مولدات =====
   { title: "مولد QR Code", desc: "إنشاء QR Code لرابط أو نص", icon: "🔳", href: "/tools/qr-generator", cat: "generators" },
-  { title: "رابط واتساب مباشر", desc: "رابط يفتح واتساب مباشرة", icon: "💬", href: "/tools/whatsapp-link", cat: "generators" },
+  { title: "قارئ QR Code", desc: "اقرأ رموز QR من الصور أو الكاميرا", icon: "📷", href: "/tools/qr-reader", cat: "generators" },
+  { title: "مولد الباركود", desc: "إنشاء باركود احترافي لأي منتج", icon: "📊", href: "/tools/barcode-generator", cat: "generators" },
   { title: "مولد كلمات السر", desc: "كلمات سر قوية وآمنة", icon: "🔐", href: "/tools/password-generator", cat: "generators" },
-  { title: "مولد الفواتير", desc: "فاتورة إعربية احترافية", icon: "🧾", href: "/tools/invoice-generator", cat: "generators" },
+  { title: "مولد الفواتير", desc: "فاتورة احترافية", icon: "🧾", href: "/tools/invoice-generator", cat: "generators" },
+  { title: "رابط واتساب مباشر", desc: "رابط يفتح واتساب مباشرة", icon: "💬", href: "/tools/whatsapp-link", cat: "generators" },
   { title: "مولد أرقام عشوائية", desc: "أرقام عشوائية بين نطاق محدد", icon: "🎲", href: "/tools/random-number", cat: "generators" },
   { title: "مولد أسماء", desc: "أسماء عربية وإنجليزية", icon: "👤", href: "/tools/name-generator", cat: "generators" },
-];
 
-const categories = [
-  { key: "all", label: "كل الأدوات", icon: "🗂️" },
-  { key: "calculators", label: "الحاسبات", icon: "🧮" },
-  { key: "islamic", label: "أدوات إسلامية", icon: "🕌" },
-  { key: "text", label: "أدوات نصية", icon: "📝" },
-  { key: "converters", label: "محولات", icon: "🔄" },
-  { key: "dev", label: "تطوير ويب", icon: "💻" },
-  { key: "daily", label: "يومية", icon: "🌟" },
-  { key: "generators", label: "مولدات", icon: "⚡" },
+  // ===== تطوير ويب =====
+  { title: "JSON Formatter", desc: "تنسيق وتجميل والتحقق من JSON", icon: "📋", href: "/tools/json-formatter", cat: "dev" },
+  { title: "Base64 Encoder", desc: "تشفير وفك تشفير Base64", icon: "🔄", href: "/tools/base64-encoder", cat: "dev" },
+  { title: "Hash Generator", desc: "MD5, SHA-1, SHA-256, SHA-512", icon: "#️⃣", href: "/tools/hash-generator", cat: "dev" },
+  { title: "SEO Audit", desc: "تدقيق وتحليل السيو لأي موقع", icon: "🔍", href: "/tools/seo-audit", cat: "dev" },
+  { title: "تصغير CSS", desc: "Minify و Format أكواد CSS", icon: "🎨", href: "/tools/css-minifier", cat: "dev" },
+  { title: "محرر ماركداون", desc: "كتابة Markdown مع معاينة مباشرة", icon: "📝", href: "/tools/markdown-editor", cat: "dev" },
+  { title: "البحث عن IP", desc: "الكشف عن معلومات أي عنوان IP", icon: "🌐", href: "/tools/ip-lookup", cat: "dev" },
+
+  // ===== أدوات إسلامية =====
+  { title: "حاسبة الميراث الإسلامي", desc: "احسب أنصبة الميراث حسب الشريعة", icon: "📜", href: "/tools/inheritance-calculator", cat: "islamic" },
+  { title: "حاسبة الزكاة", desc: "زكاة المال والذهب والأسهم", icon: "🕌", href: "/tools/zakat-calculator", cat: "islamic" },
+  { title: "اتجاه القبلة", desc: "اعرف اتجاه القبلة من موقعك", icon: "🧭", href: "/tools/qibla-direction", cat: "islamic" },
+  { title: "مواقيت الصلاة", desc: "مواقيت الصلاة حسب موقعك الجغرافي", icon: "🕐", href: "/tools/prayer-times", cat: "islamic" },
+
+  // ===== أخرى =====
+  { title: "حاسبة العمر", desc: "عمرك بالهجري والميلادي وأبراجك", icon: "🎂", href: "/tools/age-calculator", cat: "daily" },
+  { title: "حاسبة BMI", desc: "مؤشر كتلة الجسم — وزنك المثالي", icon: "⚖️", href: "/tools/bmi-calculator", cat: "daily" },
+  { title: "ساعة إيقاف + مؤقت", desc: "ساعة إيقاف مع لفات ومؤقت", icon: "⏱️", href: "/tools/stopwatch", cat: "daily" },
 ];
 
 const categoryDescriptions: Record<string, { title: string; content: string }> = {
-  calculators: {
-    title: "الحاسبات المالية والمصرفية",
-    content: "مجموعة شاملة من الحاسبات المالية تساعدك على اتخاذ قرارات مالية ذكية. احسب أقساط القروض العقارية والشخصية، وقيمة التقسيط، ونسبة الفائدة، وهامش الربح، والضريبة المضافة، والراتب الصافي. كل الحاسبات مجانية وباللغة العربية ومحدثة حسب الأنظمة السعودية والإماراتية والمصرية."
-  },
-  islamic: {
-    title: "الأدوات الإسلامية",
-    content: "أدوات إسلامية فريدة لمساعدتك في عباداتك اليومية. حاسبة الميراث الإسلامي حسب الشريعة، حاسبة الزكاة للمال والذهب والأسهم، تحويل التاريخ الهجري والميلادي، حاسبة العمر، مواقيت الصلاة، وتحديد اتجاه القبلة. كل الأدوات مبنية على أسس شرعية صحيحة."
+  financial: {
+    title: "حاسبات مالية",
+    content: "مجموعة شاملة من الحاسبات المالية: حاسبة القرض العقاري، القرض الشخصي، التقسيط، EMI، هامش الربح، الضريبة المضافة (VAT)، الراتب الصافي، الفائدة المركبة، الذهب، وتقسيط السيارة. كلها محدثة حسب الأنظمة السعودية والإماراتية."
   },
   text: {
     title: "أدوات النصوص والكتابة",
-    content: "أدوات نصية متنوعة للكتّاب والطلاب ومتخصصي SEO. عداد الكلمات والحروف يدعم العربية والإنجليزية، تحويل حالة النص (كبيرة/صغيرة/عنوان)، تحويل الأرقام لكلمات عربية، مولد النص العربي للتصاميم، تنظيف النص من المسافات الزائدة، ومقارنة نصين."
+    content: "أدوات متكاملة للكتّاب والطلاب: عداد الكلمات والحروف، تحويل حالة النص، تحويل الأرقام لحروف، مولد النص العربي، تنظيف النص، مقارنة النصوص، كاشف المحتوى AI، مدقق الانتحال، المدقق النحوي، إعادة الصياغة، اختبار سرعة الكتابة، وعداد حروف السوشيال ميديا."
+  },
+  image: {
+    title: "أدوات الصور",
+    content: "كل ما تحتاجه للصور: إزالة خلفية الصورة بالذكاء الاصطناعي (مجاني)، تغيير حجم الصور، ضغط الصور، تحميل ثامبنيل يوتيوب، وتحويل الصور إلى PDF. كل الأدوات تعمل في المتصفح بدون رفع ملفات."
+  },
+  pdf: {
+    title: "أدوات PDF",
+    content: "أدوات PDF كاملة: دمج عدة ملفات PDF في واحد، تقسيم PDF إلى صفحات، ضغط حجم PDF، وتحويل PDF إلى Word. معالجة محلية بدون رفع ملفات — خصوصية تامة."
   },
   converters: {
-    title: "محولات الملفات والوحدات",
-    content: "حوّل بين الصيغ المختلفة بسهولة. دمج ملفات PDF، تحويل الصور إلى PDF، تحويل وحدات الطول والوزن والحجم والحرارة، وتحويل الألوان بين HEX وRGB وHSL. كل المحولات تعمل في المتصفح بدون رفع ملفات."
+    title: "محولات",
+    content: "حوّل بين كل شيء: العملات (ريال، دولار، يورو، جنيه)، الوحدات (طول، وزن، حجم، حرارة)، الألوان (HEX ↔ RGB ↔ HSL)، والتاريخ الهجري ↔ الميلادي. كل المحولات دقيقة ومجانية."
+  },
+  generators: {
+    title: "مولدات",
+    content: "مولدات سريعة ومفيدة: QR Code (إنشاء وقراءة)، الباركود (8 أنواع)، كلمات سر قوية، فواتير احترافية، رابط واتساب مباشر، أرقام عشوائية، وأسماء."
   },
   dev: {
     title: "أدوات تطوير الويب",
-    content: "أدوات ضرورية لمطوري الويب والمبرمجين. JSON Formatter لتنسيق ملفات JSON مع التحقق من الأخطاء، Base64 Encoder/Decoder لترميز النصوص والملفات، Hash Generator لتوليد MD5 وSHA-256 وغيرها."
+    content: "أدوات أساسية للمطورين: JSON Formatter مع التحقق من الأخطاء، Base64 Encoder/Decoder، Hash Generator (MD5, SHA)، SEO Audit، CSS Minifier، محرر Markdown، والبحث عن IP."
+  },
+  islamic: {
+    title: "الأدوات الإسلامية",
+    content: "أدوات إسلامية: حاسبة الميراث حسب الشريعة، حاسبة الزكاة للمال والذهب والأسهم، اتجاه القبلة، ومواقيت الصلاة حسب موقعك."
   },
   daily: {
-    title: "أدوات يومية مفيدة",
-    content: "أدوات يومية بسيطة ومفيدة. حاسبة مؤشر كتلة الجسم BMI لمعرفة وزنك المثالي، ساعة إيقاف مع لفات ومؤقت تنازلي للرياضة والطبخ، وعداد حروف مخصص لمنصات التواصل الاجتماعي مثل Twitter وInstagram وTikTok."
+    title: "أدوات أخرى مفيدة",
+    content: "أدوات يومية متنوعة: حاسبة العمر بالهجري والميلادي، حاسبة BMI (مؤشر كتلة الجسم)، وساعة إيقاف مع مؤقت."
   },
-  generators: {
-    title: "المولدات",
-    content: "أدوات توليد سريعة ومفيدة. مولد QR Code لإنشاء رموز QR للروابط والنصوص، رابط واتساب مباشر للمحادثة الفورية، مولد كلمات سر قوية وآمنة، مولد فواتير احترافية، مولد أرقام عشوائية، ومولد أسماء عربية وإنجليزية."
-  }
 };
 
 export default function ToolGrid() {
@@ -104,7 +151,7 @@ export default function ToolGrid() {
       <div className="max-w-[520px] mx-auto mt-6 relative">
         <input
           type="text"
-          placeholder="ابحث عن أداة... (مثال: حاسبة، ميراث، QR)"
+          placeholder="ابحث عن أداة... (مثال: حاسبة، QR، PDF)"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="search-input"
