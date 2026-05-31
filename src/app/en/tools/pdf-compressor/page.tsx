@@ -1,4 +1,5 @@
 "use client";
+import { useState, useRef } from "react";
 import FAQSection from "../../../components/FAQSection";
 import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import RelatedTools from "../../../components/RelatedTools";
@@ -7,29 +8,65 @@ import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  { question: "Does compression affect PDF quality?", answer: "Yes, compression reduces file size at the cost of quality. Choose a compression level: low (high quality, less compression) to high (lower quality, more compression)." },
-  { question: "What is the maximum file size?", answer: "Up to 100MB in the current browser. Files over 100MB may cause slowdown. For daily use, files under 50MB work smoothly." },
-  { question: "Are files safe during compression?", answer: "Yes, all processing happens in your browser. No PDF file is uploaded to any server. Your data never leaves your device." },
-  { question: "How much can I reduce PDF size?", answer: "Average 30-60% reduction depending on content. Text-only PDF: 20-30%. High-res image PDF: 50-80%. PDF with embedded fonts: 10-20%." },
-  { question: "When should I compress a PDF?", answer: "When sending by email (max 25MB), uploading to a website (5-10MB limits), saving storage space, or speeding up file loading on your site." },
-  { question: "Can I compress password-protected PDFs?", answer: "No, you need to remove protection first. Use a dedicated PDF unlock tool before compression." },
+  { question: "Does compression affect PDF quality?", answer: "Yes, compression reduces file size at the cost of quality. Choose a level: Low (high quality) or High (more compression)." },
+  { question: "What is the maximum file size?", answer: "Up to 100MB in browser. Files under 50MB work smoothly." },
+  { question: "Are my files safe during compression?", answer: "Yes, all processing happens in your browser. No file is uploaded anywhere. Your data never leaves your device." },
+  { question: "How much can I reduce PDF size?", answer: "Average 20-50% reduction. Text PDF = 10-20%. High-image PDF = 40-60%." },
+  { question: "When do I need PDF compression?", answer: "Email attachments (25MB limit), website uploads, saving storage space." },
+  { question: "Can I compress password-protected PDFs?", answer: "No, you need to unlock them first." },
 ];
+
 const relatedTools = [
   { title: "PDF Merger", icon: "📎", href: "/en/tools/pdf-merger" },
-  { title: "Image to PDF", icon: "🖼️", href: "/en/tools/image-to-pdf" },
   { title: "PDF Splitter", icon: "✂️", href: "/en/tools/pdf-splitter" },
-  { title: "Unit Converter", icon: "📐", href: "/en/tools/unit-converter" },
+  { title: "Image to PDF", icon: "🖼️", href: "/en/tools/image-to-pdf" },
+  { title: "PDF to Word", icon: "📝", href: "/en/tools/pdf-to-word" },
   { title: "Color Converter", icon: "🎨", href: "/en/tools/color-converter" },
-  { title: "Invoice Generator", icon: "🧾", href: "/en/tools/invoice-generator" },
+  { title: "Unit Converter", icon: "📐", href: "/en/tools/unit-converter" },
 ];
+
 const seoContent = [
-  "Reduce PDF file size while maintaining acceptable quality. Drag a PDF file, choose compression level, and wait — the compressed file is ready for download. All client-side, no uploads.",
-  "Practical uses: email large files (shrink from 50MB to 15MB), upload to websites (20MB to 8MB), free up storage space (compress 100 files from 500MB to 250MB).",
-  "Start with low compression first — the size difference may be significant without noticeable quality loss. Free, browser-based, supports all PDF types.",
+  "Compress PDF files to reduce file size while maintaining acceptable quality. Drop your PDF, choose compression level — the compressed file is ready to download. All in your browser.",
+  "Use cases: sending large files via email (50MB → 15MB), website uploads, saving storage space.",
+  "Free, works in browser without uploading files, supports all PDF types.",
 ];
-export default function PdfCompressor() {
+
+export default function PdfCompressorEn() {
+  const [file, setFile] = useState<File | null>(null);
+  const [quality, setQuality] = useState(70);
+  const [processing, setProcessing] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const compress = async () => {
+    if (!file) return;
+    setProcessing(true);
+    try {
+      const { PDFDocument } = await import("pdf-lib");
+      const bytes = await file.arrayBuffer();
+      const pdf = await PDFDocument.load(bytes, { ignoreEncryption: true });
+
+      const compressedBytes = await pdf.save({
+        useObjectStreams: quality < 80,
+        addDefaultPage: false,
+        objectsPerTick: 50,
+      });
+
+      const blob = new Blob([compressedBytes.buffer as ArrayBuffer], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `compressed-${file.name}`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      alert("An error occurred. Make sure the file is a valid PDF.");
+    } finally {
+      setProcessing(false);
+    }
+  };
+
   const schemaName = "PDF Compressor";
-  const schemaDesc = "Online PDF Compressor - free tool";
+  const schemaDesc = "Reduce PDF file size — free, in your browser";
   const schemaCategory = "Utility";
   const schemaUrl = "https://adwatak.cloud/en/tools/pdf-compressor";
   const breadcrumbItems = [
@@ -37,19 +74,44 @@ export default function PdfCompressor() {
     { name: "Converters", url: "https://adwatak.cloud/en/tools/converters" },
     { name: "PDF Compressor", url: "https://adwatak.cloud/en/tools/pdf-compressor" },
   ];
+
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
+      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, "en", schemaCategory)} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
       <Breadcrumb category="Converters" categorySlug="converters" toolName="PDF Compressor" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">📦 PDF Compressor</h1>
-        <p className="text-sm text-gray-500 mb-6">Reduce PDF file size with one click</p>
-        <div className="bg-gray-50 rounded-xl p-10 text-center border-2 border-dashed border-gray-300">
+        <p className="text-sm text-gray-500 mb-6">Reduce PDF file size — free & private</p>
+
+        <div onClick={() => inputRef.current?.click()} className="bg-gray-50 rounded-xl p-10 text-center border-2 border-dashed border-gray-300 cursor-pointer hover:border-blue-400 transition-colors mb-4">
           <p className="text-3xl mb-3">📦</p>
-          <p className="text-gray-500">Drag PDF file here</p>
+          <p className="text-gray-500">Click to select a PDF file</p>
+          <input ref={inputRef} type="file" accept=".pdf" onChange={(e) => { const f = e.target.files?.[0]; if (f) setFile(f); }} className="hidden" />
         </div>
+
+        {file && (
+          <div className="bg-green-50 rounded-xl p-4 border border-green-200 mb-4">
+            <p className="text-sm text-green-800">{file.name} — {(file.size / 1024).toFixed(0)} KB</p>
+          </div>
+        )}
+
+        {file && (
+          <>
+            <div className="mb-4">
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Compression level: {quality}%</label>
+              <input type="range" min={30} max={100} value={quality} onChange={(e) => setQuality(Number(e.target.value))} className="w-full accent-blue-600" />
+              <div className="flex justify-between text-xs text-gray-400 mt-1">
+                <span>High compression (small file)</span>
+                <span>Original quality (large file)</span>
+              </div>
+            </div>
+            <button onClick={compress} disabled={processing} className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-wait text-white font-bold py-3 px-6 rounded-xl transition-all cursor-pointer border-none text-base">
+              {processing ? "⏳ Compressing..." : "📦 Compress"}
+            </button>
+          </>
+        )}
       </div>
       <SEOContent content={seoContent} lang="en" />
       <FAQSection faqs={faqs} lang="en" />

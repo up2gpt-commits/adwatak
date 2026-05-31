@@ -1,50 +1,132 @@
 "use client";
-import { useState } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
-import Breadcrumb from "../../../components/Breadcrumb";
-import ShareButtons from "../../../components/ShareButtons";
+import { useState, useRef } from "react";
 import FAQSection from "../../../components/FAQSection";
+import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
+import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  { question: "What is PDF to Word?", answer: "A free tool to convert pdf files to editable word documents. Works entirely in your browser." },
-  { question: "Is it free?", answer: "Yes, 100% free. No registration, no limits." },
-  { question: "Do I need to upload?", answer: "No! Everything in your browser. Data never leaves your device." },
-  { question: "Is my data safe?", answer: "100% private. All processing locally." },
-  { question: "Does it work on mobile?", answer: "Yes, responsive on all devices." },
-  { question: "Can I use it commercially?", answer: "Yes, results for personal and commercial use." },
-  { question: "Does it support Arabic?", answer: "Yes, supports both Arabic and English." },
-  { question: "How to start?", answer: "Open and follow the instructions." },
-  { question: "Is it updated?", answer: "Yes, continuously updated." },
-  { question: "Key features?", answer: "Free, fast, private, no signup." },
+  { question: "What is PDF to Word?", answer: "A free tool that extracts text from PDF files. Works directly in your browser without uploading files." },
+  { question: "Is it free?", answer: "Yes, 100% free. No registration, no limits, no ads." },
+  { question: "Do I need to upload files to your server?", answer: "No! Everything happens in your browser. Your data never leaves your device." },
+  { question: "Does it support Arabic and English?", answer: "Yes, it extracts both Arabic and English text." },
+  { question: "Does it preserve formatting?", answer: "Text is extracted without formatting (font, size, color). For simple text copying this is sufficient. For full formatting, use a professional PDF editor." },
+  { question: "Can I use it commercially?", answer: "Yes, the extracted text can be used for personal and commercial purposes." },
+  { question: "How many pages can be processed?", answer: "Depends on your device memory. Files up to 100 pages work smoothly." },
+  { question: "Are images extracted too?", answer: "No, only text. Images and tables are not extracted." },
 ];
 
 const relatedTools = [
-  { title: "SEO Audit", icon: "\ud83d\udd0d", href: "/en/tools/seo-audit" },
-  { title: "JSON Formatter", icon: "\ud83d\udccb", href: "/en/tools/json-formatter" },
-  { title: "QR Generator", icon: "\ud83d\udd33", href: "/en/tools/qr-generator" },
+  { title: "PDF Merger", icon: "📎", href: "/en/tools/pdf-merger" },
+  { title: "PDF Splitter", icon: "✂️", href: "/en/tools/pdf-splitter" },
+  { title: "PDF Compressor", icon: "📦", href: "/en/tools/pdf-compressor" },
+  { title: "Image to PDF", icon: "🖼️", href: "/en/tools/image-to-pdf" },
+  { title: "Color Converter", icon: "🎨", href: "/en/tools/color-converter" },
+  { title: "Unit Converter", icon: "📐", href: "/en/tools/unit-converter" },
 ];
 
 const seoContent = [
-  "Free PDF to Word — Convert PDF files to editable Word documents. Works in your browser.",
-  "Simple to use: open and follow instructions.",
-  "Your privacy matters. Everything runs locally.",
+  "Extract text from PDF files for free. Upload a PDF and get the text ready to copy and paste into Word or any other editor. All processing happens in your browser.",
+  "Perfect for students, researchers, and professionals who need to extract text from PDFs for translation, editing, or analysis.",
+  "Free, fast, and privacy-respecting — all processing is done locally in your browser.",
+  "After extraction, copy the text and paste it into Word (Office or Google Docs) for formatting and editing.",
 ];
 
-export default function ToolPage() {
+export default function PdfToWordEn() {
+  const [file, setFile] = useState<File | null>(null);
+  const [text, setText] = useState("");
+  const [processing, setProcessing] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const extractText = async () => {
+    if (!file) return;
+    setProcessing(true);
+    setText("");
+    try {
+      const pdfjs = await import("pdfjs-dist");
+      const pdfjsWorker = await import("pdfjs-dist/build/pdf.worker.min.mjs");
+      pdfjs.GlobalWorkerOptions.workerSrc = URL.createObjectURL(new Blob([`self.addEventListener('message', ${pdfjsWorker.default.toString()})`], { type: 'application/javascript' }));
+      
+      const arrayBuffer = await file.arrayBuffer();
+      const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
+      let fullText = "";
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const content = await page.getTextContent();
+        const pageText = content.items.map((item: any) => item.str).join(" ");
+        fullText += pageText + "\n\n";
+      }
+
+      setText(fullText.trim());
+    } catch (err) {
+      console.error(err);
+      setText("Could not extract text. Make sure the PDF is not password-protected and contains text.");
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  const copyText = () => {
+    navigator.clipboard.writeText(text);
+    alert("Text copied!");
+  };
+
+  const schemaName = "PDF to Word";
+  const schemaDesc = "Extract text from PDF for free";
+  const schemaCategory = "Utility";
+  const schemaUrl = "https://adwatak.cloud/en/tools/pdf-to-word";
+  const breadcrumbItems = [
+    { name: "Home", url: "https://adwatak.cloud/en" },
+    { name: "Converters", url: "https://adwatak.cloud/en/tools/converters" },
+    { name: "PDF to Word", url: "https://adwatak.cloud/en/tools/pdf-to-word" },
+  ];
+
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("PDF to Word", "Convert PDF files to editable Word documents", "https://adwatak.cloud/en/tools/pdf-to-word", "en", "Tools")} />
+      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, "en", schemaCategory)} />
       <StructuredData data={faqSchema(faqs)} />
-      <Breadcrumb lang="en" category="Tools" categorySlug="tools" toolName="PDF to Word" />
+      <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      <Breadcrumb category="Converters" categorySlug="converters" toolName="PDF to Word" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">📄 PDF to Word</h1>
-        <p className="text-sm text-gray-500 mb-6">Convert PDF files to editable Word documents</p>
-        <div className="p-6 bg-blue-50 rounded-xl border border-blue-200 text-center">
-          <span className="text-5xl">📄</span>
-          <p className="mt-4 text-gray-700 text-sm">This tool is ready to use.</p>
+        <p className="text-sm text-gray-500 mb-6">Extract text from PDF — free, private, client-side</p>
+
+        <div onClick={() => inputRef.current?.click()} className="bg-gray-50 rounded-xl p-10 text-center border-2 border-dashed border-gray-300 cursor-pointer hover:border-blue-400 transition-colors mb-4">
+          <p className="text-3xl mb-3">📄</p>
+          <p className="text-gray-500">Click to select a PDF file</p>
+          <input ref={inputRef} type="file" accept=".pdf" onChange={(e) => { const f = e.target.files?.[0]; if (f) setFile(f); }} className="hidden" />
         </div>
+
+        {file && (
+          <div className="bg-green-50 rounded-xl p-4 border border-green-200 mb-4">
+            <p className="text-sm text-green-800">{file.name}</p>
+          </div>
+        )}
+
+        {file && (
+          <button onClick={extractText} disabled={processing}
+            className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-wait text-white font-bold py-3 px-6 rounded-xl transition-all cursor-pointer border-none text-base mb-4">
+            {processing ? "⏳ Extracting text..." : "📄 Extract Text"}
+          </button>
+        )}
+
+        {text && (
+          <div className="mt-4">
+            <div className="flex justify-between items-center mb-2">
+              <p className="text-sm font-semibold text-gray-700">Extracted Text</p>
+              <button onClick={copyText} className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-1.5 px-4 rounded-xl text-sm transition-all cursor-pointer border-none">
+                📋 Copy
+              </button>
+            </div>
+            <textarea readOnly value={text}
+              className="w-full h-64 p-4 border-2 border-gray-200 rounded-xl text-sm font-sans outline-none resize-y"
+              dir="auto" />
+            <p className="text-xs text-gray-400 mt-2">Copy the text and paste it into Word for formatting and editing</p>
+          </div>
+        )}
       </div>
       <SEOContent content={seoContent} lang="en" />
       <FAQSection faqs={faqs} lang="en" />
