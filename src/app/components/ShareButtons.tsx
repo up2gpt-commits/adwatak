@@ -1,0 +1,110 @@
+"use client";
+
+interface ShareButtonsProps {
+  title?: string;
+  url?: string;
+  lang?: "ar" | "en";
+}
+
+export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsProps) {
+  const fullUrl = url || (typeof window !== "undefined" ? window.location.href : "");
+  const pageTitle = title || (typeof document !== "undefined" ? document.title : "");
+  const encodedUrl = encodeURIComponent(fullUrl);
+  const encodedTitle = encodeURIComponent(pageTitle);
+
+  const shareLinks = [
+    {
+      name: lang === "ar" ? "واتساب" : "WhatsApp",
+      icon: "💬",
+      href: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
+      color: "bg-green-500 hover:bg-green-600",
+    },
+    {
+      name: "X",
+      icon: "🐦",
+      href: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
+      color: "bg-black hover:bg-gray-800",
+    },
+    {
+      name: lang === "ar" ? "فيسبوك" : "Facebook",
+      icon: "📘",
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+      color: "bg-blue-600 hover:bg-blue-700",
+    },
+    {
+      name: "Telegram",
+      icon: "✈️",
+      href: `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`,
+      color: "bg-blue-500 hover:bg-blue-600",
+    },
+    {
+      name: lang === "ar" ? "لينكد إن" : "LinkedIn",
+      icon: "💼",
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+      color: "bg-blue-700 hover:bg-blue-800",
+    },
+  ];
+
+  const copyLink = () => {
+    if (typeof navigator !== "undefined") {
+      navigator.clipboard.writeText(fullUrl);
+    }
+  };
+
+  return (
+    <div className="mt-8 mb-6">
+      <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+        <h3 className="font-bold text-gray-900 mb-4 text-lg">
+          {lang === "ar" ? "🔗 شارك الأداة" : "🔗 Share this tool"}
+        </h3>
+        <div className="flex flex-wrap gap-3">
+          {shareLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-2 ${link.color} text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all`}
+            >
+              <span>{link.icon}</span>
+              <span>{link.name}</span>
+            </a>
+          ))}
+          <button
+            onClick={copyLink}
+            className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2.5 rounded-xl text-sm font-medium transition-all"
+          >
+            <span>🔗</span>
+            <span>{lang === "ar" ? "نسخ الرابط" : "Copy link"}</span>
+          </button>
+        </div>
+        {/* Direct link field */}
+        <div className="mt-4">
+          <label className="text-xs text-gray-400 font-medium block mb-1">
+            {lang === "ar" ? "الرابط المباشر:" : "Direct link:"}
+          </label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              readOnly
+              value={fullUrl}
+              className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-600 font-mono"
+              onClick={(e) => e.currentTarget.select()}
+            />
+            <button
+              onClick={copyLink}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all"
+            >
+              {lang === "ar" ? "نسخ" : "Copy"}
+            </button>
+          </div>
+        </div>
+        <p className="text-xs text-gray-400 mt-3">
+          {lang === "ar"
+            ? "شارك الأداة مع أصحابك — كل الأداة مجانية ومتاحة بدون تسجيل"
+            : "Share this free tool with friends — no signup required"}
+        </p>
+      </div>
+    </div>
+  );
+}

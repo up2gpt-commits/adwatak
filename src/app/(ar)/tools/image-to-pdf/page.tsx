@@ -4,6 +4,7 @@ import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../.
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما الصيغ المدعومة للتحويل إلى PDF؟", answer: "JPG (JPEG), PNG, BMP, WebP. كل الصيغ الشائعة للصور. الصيغ الأخرى (GIF, TIFF) سيتم إضافتها قريباً." },
@@ -60,6 +61,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

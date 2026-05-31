@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "متى أحتاج تنظيف النص؟", answer: "عند نسخ نص من PDF أو موقع ويب — غالباً ما يكون مليئاً بمسافات زائدة، أسطر فارغة، وعلامات HTML مخفية. أداة التنظيف تزيل كل هذا بضغطة زر." },
@@ -81,6 +82,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

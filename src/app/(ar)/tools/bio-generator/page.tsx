@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هي البصمة الحيوية وأنواعها؟", answer: "البصمة الحيوية (Biometrics) هي قياسات بيولوجية فريدة لكل شخص: بصمة الإصبع (Fingerprint)، بصمة الوجه (Face ID)، بصمة القزحية (Iris Scan)، بصمة الصوت (Voice Recognition)، وبصمة راحة اليد (Palm Print)." },
@@ -60,6 +61,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

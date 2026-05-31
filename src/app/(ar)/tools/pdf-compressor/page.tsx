@@ -4,6 +4,7 @@ import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../.
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "هل جودة PDF تتأثر بالضغط؟", answer: "نعم، الضغط يقلل حجم الملف على حساب الجودة. يمكنك اختيار مستوى الضغط: منخفض (جودة عالية، ضغط قليل) إلى عالي (جودة منخفضة، ضغط كبير). جرب مستوى مناسب لاستخدامك." },
@@ -59,6 +60,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

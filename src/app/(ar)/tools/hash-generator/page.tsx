@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما الفرق بين MD5 وSHA-256؟", answer: "MD5 ينتج hash بطول 128-bit (32 حرف) وهو غير آمن حالياً — يمكن كسره في ثوانٍ. SHA-256 ينتج 256-bit (64 حرف) وهو آمن تماماً ومستخدم في البلوكتشين والتوقيعات الرقمية. SHA-512 أقوى لكن أبطأ." },
@@ -101,6 +102,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

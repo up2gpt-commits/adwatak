@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هي العملات المدعومة في المحول؟", answer: "ندعم أكثر من 12 عملة: ريال سعودي (SAR)، درهم إماراتي (AED)، جنيه مصري (EGP)، دينار كويتي (KWD)، ريال قطري (QAR)، ريال عماني (OMR)، دينار بحريني (BHD)، دولار أمريكي (USD)، يورو (EUR)، جنيه إسترليني (GBP)، ليرة تركية (TRY)، دينار أردني (JOD)." },
@@ -109,6 +110,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

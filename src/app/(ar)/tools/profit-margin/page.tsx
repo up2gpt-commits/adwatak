@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما الفرق بين هامش الربح والمارك أب؟", answer: "هامش الربح = الربح ÷ سعر البيع × 100. المارك أب = الربح ÷ التكلفة × 100. مثال: تكلفة 80، بيع 100. هامش الربح = 20%، المارك أب = 25%. هامش الربح لا يتجاوز 100% أبداً، بينما المارك أب يمكن أن يتجاوز 100%." },
@@ -110,6 +111,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const arabicMale = ["محمد", "أحمد", "يوسف", "عمر", "خالد", "سعيد", "إبراهيم", "عبدالله", "فهد", "سلطان", "ناصر", "بندر", "تركي", "سعود", "ماجد", "وليد", "طارق", "حمد", "رائد", "بدر"];
 const arabicFemale = ["فاطمة", "مريم", "نورة", "سلمى", "هند", "سارة", "ريم", "لينا", "دانة", "لمى", "وجدان", "هيفاء", "أمل", "منال", "رانيا", "ديما", "غادة", "هيا", "أسماء", "ليلى"];
@@ -106,6 +107,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "كيف أستخدم رابط واتساب المباشر؟", answer: "أدخل رقم الهاتف مع كود الدولة (بدون + أو صفر)، أضف رسالة مسبقة (اختياري)، اضغط 'ولّد الرابط'. انسخ الرابط وضعه في زر 'تواصل معنا' على موقعك أو شاركه على السوشيال ميديا." },
@@ -93,6 +94,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

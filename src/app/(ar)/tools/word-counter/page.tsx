@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "كم كلمة يحتاج المقال للترتيب في Google؟", answer: "الحد الأدنى 300 كلمة للصفحات العادية. للمقالات الشاملة (Pillar Content): 2,000-4,000 كلمة. لكن جودة المحتوى أهم بكثير من العدد. مقال 500 كلمة مفيد قد يتفوق على مقال 2,000 كلمة مليء بحشو." },
@@ -83,6 +84,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

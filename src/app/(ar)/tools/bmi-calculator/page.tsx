@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هو BMI المثالي؟", answer: "بين 18.5 و24.9 = وزن طبيعي. أقل من 18.5 = نقص وزن. 25-29.9 = زيادة وزن. 30+ = سمنة. BMI المثالي يعتمد على العمر والجنس وكتلة العضلات. المدى 18.5-24.9 هو الأكثر صحة للبالغين." },
@@ -88,6 +89,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

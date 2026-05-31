@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هي الفائدة المركبة؟", answer: "الفائدة المركبة هي الفائدة التي تُحسب على المبلغ الأصلي مضافاً إليها الفوائد المتراكمة من الفترات السابقة — يعني 'فائدة على فائدة'. مع الوقت، ينمو المال بشكل أسي (exponential) بدلاً من خطي (linear). ألبرت أينشتاين وصفها بأنها 'الأعجوبة الثامنة في العالم'." },
@@ -112,6 +113,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

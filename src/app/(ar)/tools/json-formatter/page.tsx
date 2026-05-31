@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هو JSON وما استخداماته؟", answer: "JSON (JavaScript Object Notation) هو تنسيق خفيف لتبادل البيانات. يُستخدم في REST APIs، ملفات الإعدادات (config)، قواعد البيانات NoSQL مثل MongoDB، وتخزين البيانات في تطبيقات الويب. سهل القراءة للبشر والآلات." },
@@ -90,6 +91,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

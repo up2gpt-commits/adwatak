@@ -4,6 +4,7 @@ import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../.
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "هل يمكنني تقسيم صفحات محددة من ملف PDF؟", answer: "نعم، اختر نطاق الصفحات التي تريد استخراجها (مثلاً صفحات 3-7 من ملف 10 صفحات). الملف الناتج يحتوي على الصفحات المحددة فقط." },
@@ -59,6 +60,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

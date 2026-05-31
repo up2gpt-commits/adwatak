@@ -17,6 +17,17 @@ export function getEnPostBySlug(slug: string): BlogPost | undefined {
   return enBlogPosts.find((p) => p.slug === slug);
 }
 
+/**
+ * Generate today date in YYYY-MM-DD format
+ */
+function todayEnStr(): string {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
 const enBlogPosts: BlogPost[] = [
   {
     slug: "simple-vs-compound-interest",
@@ -174,6 +185,84 @@ const enBlogPosts: BlogPost[] = [
 
       <h2>Try the Calculator Now</h2>
       <p>Use our <a href="/en/tools/mortgage-calculator" class="text-blue-600 hover:underline">Mortgage Calculator</a> to find your monthly payments. Also try the <a href="/en/tools/loan-calculator" class="text-blue-600 hover:underline">Loan Calculator</a> for personal loans.</p>
+    `,
+  },
+  {
+    slug: "best-free-arabic-tools-2026",
+    title: "40+ Free Online Tools Every Professional Needs in 2026",
+    excerpt: "Your complete guide to 40+ free online tools: financial calculators, Islamic tools, converters, generators, and text tools. All free, no signup required.",
+    date: todayEnStr(),
+    category: "Tech",
+    readTime: "12 min read",
+    keywords: ["free online tools", "free tools", "online calculators", "arabic tools", "web tools"],
+    content: `
+      <h2>Introduction</h2>
+      <p>We all need quick, free online tools to get work done. The problem? Most tool directories are outdated, full of broken links, or require paid subscriptions.</p>
+      <p><strong>Adwatak</strong> is the largest Arabic free tools platform — 40+ tools, completely free, in Arabic and English, no signup required. Here is the complete guide to every tool on the platform.</p>
+
+      <h2>1. Financial Calculators — Precision Financial Planning</h2>
+      <ul>
+        <li><strong><a href="/en/tools/mortgage-calculator">Mortgage Calculator</a></strong> — Calculate monthly payments based on loan amount, interest rate, and term. Ideal for KSA, UAE, and Egypt.</li>
+        <li><strong><a href="/en/tools/loan-calculator">Loan Calculator</a></strong> — Personal loans, car loans, education loans — know your payment before you apply.</li>
+        <li><strong><a href="/en/tools/installment-calculator">Installment Calculator</a></strong> — Calculate store installments with total interest.</li>
+        <li><strong><a href="/en/tools/vat-calculator">VAT Calculator</a></strong> — Add or remove VAT (15% for KSA) from any amount.</li>
+        <li><strong><a href="/en/tools/salary-calculator">Salary Calculator</a></strong> — Calculate net salary after deductions.</li>
+        <li><strong><a href="/en/tools/compound-interest">Compound Interest Calculator</a></strong> — See how your money grows exponentially over time.</li>
+        <li><strong><a href="/en/tools/profit-margin">Profit Margin Calculator</a></strong> — For business owners: cost, selling price, margin, and markup.</li>
+        <li><strong><a href="/en/tools/currency-converter">Currency Converter</a></strong> — Real-time conversions between SAR, USD, EGP, AED, and more.</li>
+        <li><strong><a href="/en/tools/gold-calculator">Gold Calculator</a></strong> — Calculate gold value by carat, weight, and current price.</li>
+      </ul>
+
+      <h2>2. Islamic Tools — Faith-Based Utilities</h2>
+      <ul>
+        <li><strong><a href="/en/tools/inheritance-calculator">Islamic Inheritance Calculator</a></strong> — Shariah-compliant inheritance distribution by Islamic law.</li>
+        <li><strong><a href="/en/tools/zakat-calculator">Zakat Calculator</a></strong> — Calculate your Zakat accurately: Nisab, Hawl, wealth types, 2.5% rate.</li>
+        <li><strong><a href="/en/tools/hijri-converter">Hijri Converter</a></strong> — Convert between Hijri and Gregorian dates.</li>
+        <li><strong><a href="/en/tools/prayer-times">Prayer Times</a></strong> — Accurate prayer times for your city.</li>
+        <li><strong><a href="/en/tools/qibla-direction">Qibla Direction</a></strong> — Compass direction to Mecca from anywhere.</li>
+        <li><strong><a href="/en/tools/age-calculator">Age Calculator</a></strong> — Calculate age in Hijri and Gregorian.</li>
+      </ul>
+
+      <h2>3. Text Tools — For Writers and Designers</h2>
+      <ul>
+        <li><strong><a href="/en/tools/word-counter">Word Counter</a></strong> — Count words, characters, and paragraphs.</li>
+        <li><strong><a href="/en/tools/text-case">Text Case Converter</a></strong> — Title case, uppercase, lowercase, and more.</li>
+        <li><strong><a href="/en/tools/number-to-words">Number to Words</a></strong> — Convert numbers to English words ($1,234 → one thousand two hundred thirty-four).</li>
+        <li><strong><a href="/en/tools/text-cleaner">Text Cleaner</a></strong> — Remove formatting, extra spaces, and special characters.</li>
+        <li><strong><a href="/en/tools/text-compare">Text Compare</a></strong> — Compare two texts and highlight differences.</li>
+      </ul>
+
+      <h2>4. Converters and File Tools</h2>
+      <ul>
+        <li><strong><a href="/en/tools/unit-converter">Unit Converter</a></strong> — Length, weight, temperature, area — convert between any units.</li>
+        <li><strong><a href="/en/tools/color-converter">Color Converter</a></strong> — Convert between HEX, RGB, HSL.</li>
+      </ul>
+
+      <h2>5. Developer Tools</h2>
+      <ul>
+        <li><strong><a href="/en/tools/json-formatter">JSON Formatter</a></strong> — Format, validate, and minify JSON.</li>
+        <li><strong><a href="/en/tools/base64-encoder">Base64 Encoder</a></strong> — Encode and decode Base64.</li>
+        <li><strong><a href="/en/tools/hash-generator">Hash Generator</a></strong> — Generate MD5, SHA-1, SHA-256 hashes.</li>
+      </ul>
+
+      <h2>6. Generators</h2>
+      <ul>
+        <li><strong><a href="/en/tools/qr-generator">QR Code Generator</a></strong> — Generate QR codes for any URL or text.</li>
+        <li><strong><a href="/en/tools/password-generator">Password Generator</a></strong> — Strong, secure passwords.</li>
+        <li><strong><a href="/en/tools/whatsapp-link">WhatsApp Link Generator</a></strong> — Direct WhatsApp links with pre-filled messages.</li>
+        <li><strong><a href="/en/tools/random-number">Random Number Generator</a></strong> — Random numbers for giveaways, testing, or decisions.</li>
+      </ul>
+
+      <h2>Why Choose Adwatak?</h2>
+      <ul>
+        <li>✅ <strong>100% Free</strong> — No hidden fees, no premium tiers.</li>
+        <li>✅ <strong>No Signup</strong> — Open and use instantly. No email, no phone.</li>
+        <li>✅ <strong>Privacy First</strong> — All tools run in your browser. Data never leaves your device.</li>
+        <li>✅ <strong>Bilingual</strong> — Fully supported in Arabic and English.</li>
+      </ul>
+
+      <h2>Summary</h2>
+      <p><a href="https://adwatak.cloud">Adwatak</a> is the most comprehensive free tools platform for the Middle East and North Africa. Whether you need to calculate a mortgage, zakat, generate a QR code, or check your text length — all the tools you need in one place, for free.</p>
     `,
   },
 ];

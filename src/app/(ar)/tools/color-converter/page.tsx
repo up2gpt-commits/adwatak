@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما الفرق بين HEX وRGB وHSL؟", answer: "HEX = نظام سداسي عشري (#FF0000 للأحمر). RGB = Red, Green, Blue (0-255 لكل لون). HSL = Hue (درجة اللون 0-360°), Saturation (0-100%), Lightness (0-100%). كلها تمثل نفس اللون بطرق مختلفة." },
@@ -121,6 +122,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

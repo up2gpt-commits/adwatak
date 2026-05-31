@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هو علم الميراث في الإسلام؟", answer: "علم الميراث (الفرائض) هو علم يُعرف به من يرث ومن لا يرث ومقدار نصيب كل وارث. ثُبتت أحكامه في القرآن الكريم في سورة النساء في آيات مفصلة تحدد أنصبة كل وارث بدقة. قال الله تعالى: 'تلك حدود الله ومن يطع الله ورسوله يدخله جنات تجري تحتها الأنهار'." },
@@ -83,6 +84,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

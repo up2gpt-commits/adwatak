@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هي السعرات الحرارية؟", answer: "السعرات الحرارية هي وحدة قياس الطاقة في الطعام. الجسم يحتاج سعرات حرارية للقيام بجميع وظائفه الحيوية — التنفس، ضخ الدم، الهضم، النشاط البدني، وحتى التفكير. كلما زاد نشاطك البدني، زادت حاجتك للسعرات." },
@@ -125,6 +126,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

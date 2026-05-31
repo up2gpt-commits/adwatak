@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "هل يعمل في الخلفية إذا انتقلت لتبويب آخر؟", answer: "نعم، ساعة الإيقاف تستخدم setInterval وتستمر في العمل حتى لو انتقلت لتبويب آخر. بعض المتصفحات تبطئ المؤقتات في التبويبات الخلفية لتوفير الطاقة." },
@@ -88,6 +89,7 @@ const breadcrumbItems = [
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

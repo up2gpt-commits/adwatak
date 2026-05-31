@@ -4,6 +4,7 @@ import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../.
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هي القبلة؟", answer: "القبلة هي اتجاه الكعبة المشرفة في مكة المكرمة (21.4225° شمالاً، 39.8262° شرقاً). يتوجه إليها المسلمون في صلاتهم من أي مكان في العالم. أول قبلة للمسلمين كانت المسجد الأقصى ثم حُولت للكعبة في السنة الثانية للهجرة." },
@@ -67,6 +68,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "هل يمكنني إضافة شعار شركتي للفاتورة؟", answer: "نعم، يمكن إضافة صورة الشعار في رأس الفاتورة. قريباً سيتم إضافة خيار رفع الصورة. حالياً يمكنك كتابة اسم الشركة وشعارها النصي." },
@@ -74,6 +75,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
@@ -99,6 +100,7 @@ return (
       <SEOContent content={seoContent} />
       <FAQSection faqs={faqs} />
       <RelatedTools tools={relatedTools} />
+    <ShareButtons lang="en" />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما الفرق بين الراتب الإجمالي والصافي؟", answer: "الراتب الإجمالي هو الأساسي + جميع البدلات (سكن، نقل، غلاء معيشة). الراتب الصافي هو المبلغ الفعلي الذي يُودع في حسابك بعد خصم التأمينات الاجتماعية والاستقطاعات الأخرى. في السعودية، يُخصم 9% للتأمينات من راتب المواطن السعودي." },
@@ -105,6 +106,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

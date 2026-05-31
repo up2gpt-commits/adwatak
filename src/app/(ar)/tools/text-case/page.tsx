@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما الفرق بين Title Case و UPPERCASE؟", answer: "Title Case = أول حرف من كل كلمة كبير (مثال: This Is A Title). UPPERCASE = كل الحروف كبيرة (مثال: THIS IS ALL CAPS). Lowercase = كل الحروف صغيرة (مثال: all lowercase). Sentence case = أول حرف من الجملة فقط كبير." },
@@ -73,6 +74,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

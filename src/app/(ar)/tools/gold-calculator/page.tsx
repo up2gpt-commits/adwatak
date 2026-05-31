@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هو نصاب الذهب للزكاة؟", answer: "نصاب الذهب هو 85 جراماً من الذهب الخالص (24 قيراط). إذا امتلكت هذا المقدار أو أكثر وحال عليه الحول (سنة هجرية كاملة)، تلزمك زكاة بنسبة 2.5% من قيمته السوقية. مثال: 85 جرام × 350 ريال = 29,750 ريال (النصاب النقدي للذهب)." },
@@ -111,6 +112,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

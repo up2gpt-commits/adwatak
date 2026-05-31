@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هي استخدامات Base64؟", answer: "ترميز الصور في HTML/CSS (Data URL)، نقل الملفات في JSON/API، تخزين كلمات المرور المشفرة (مع Salt)، إرسال مرفقات البريد الإلكتروني (MIME)، وتخزين البيانات الثنائية في قواعد البيانات." },
@@ -92,6 +93,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

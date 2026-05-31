@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هي الزكاة واجبة على ماذا؟", answer: "الزكاة واجبة على: المال النقدي، الذهب والفضة، الأسهم والاستثمارات، أرباح التجارة، والعقارات المؤجرة (زكاة العائد فقط). الزكاة ركن من أركان الإسلام الخمسة وتجب في الأموال النامية التي بلغت النصاب وحال عليها الحول الهجري." },
@@ -106,6 +107,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

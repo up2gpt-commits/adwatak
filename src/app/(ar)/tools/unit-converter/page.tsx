@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const categories: Record<string, Record<string, number>> = {
   "طول": { "متر": 1, "كيلومتر": 1000, "سنتيمتر": 0.01, "ملليمتر": 0.001, "ميل": 1609.34, "يارد": 0.9144, "قدم": 0.3048, "بوصة": 0.0254 },
@@ -111,6 +112,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

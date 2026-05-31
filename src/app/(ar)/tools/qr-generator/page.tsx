@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هي أنواع QR المدعومة؟", answer: "نص عادي، رابط URL، رقم هاتف (اتصال مباشر)، رسالة SMS، بيانات واي فاي (اسم الشبكة + كلمة السر)، vCard (بطاقة اتصال كاملة رابط واتساب)." },
@@ -74,6 +75,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

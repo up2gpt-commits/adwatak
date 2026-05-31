@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هو التقويم الهجري؟", answer: "التقويم الهجري هو التقويم الإسلامي القمري الذي يبدأ من هجرة النبي محمد ﷺ من مكة إلى المدينة عام 622 ميلادي. يتكون من 12 شهراً قمرياً و354 أو 355 يوماً. يُستخدم رسمياً في السعودية للمعاملات الحكومية والمناسبات الدينية." },
@@ -140,6 +141,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

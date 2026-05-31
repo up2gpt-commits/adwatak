@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما طول كلمة السر المثالي؟", answer: "12 حرف كحد أدنى، 16-20 حرف أفضل. كل حرف إضافي يزيد الصعوبة أضعافاً. كلمة سر 12 حرف = 62^12 تركيب (تقريباً 3 × 10^21). كلمة سر 20 حرف = 62^20 (غير قابل للكسر حالياً)." },
@@ -86,6 +87,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

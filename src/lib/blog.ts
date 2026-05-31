@@ -21,6 +21,17 @@ export function getPostsByCategory(category: string): BlogPost[] {
   return blogPosts.filter((p) => p.category === category);
 }
 
+/**
+ * أداة توليد تاريخ اليوم بصيغة YYYY-MM-DD
+ */
+function todayStr(): string {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
 const blogPosts: BlogPost[] = [
   {
     slug: "how-to-calculate-zakat",
@@ -210,6 +221,97 @@ const blogPosts: BlogPost[] = [
       <h2>جرّب الحاسبات دي</h2>
       <p>استخدم <a href="/tools/investment-calculator" class="text-blue-600 hover:underline">حاسبة الاستثمار</a> وشوف إزاي الفائدة المركبة بتضاعف فلوسك.</p>
       <p>ولو بتفكر تاخد قرض، استخدم <a href="/tools/mortgage-calculator" class="text-blue-600 hover:underline">حاسبة القرض العقاري</a> عشان تعرف كام هتدفع.</p>
+    `,
+  },
+  {
+    slug: "best-free-arabic-tools-2026",
+    title: "أكثر من 40 أداة مجانية على الإنترنت يحتاجها كل عربي في 2026",
+    excerpt: "دليلك الشامل لأفضل 40+ أداة مجانية بالعربي: حاسبات مالية، أدوات إسلامية، محولات، مولدات، وأدوات نصوص. كلها مجانية وبدون تسجيل.",
+    date: todayStr(),
+    category: "تقنية",
+    readTime: "12 دقيقة",
+    keywords: ["أدوات مجانية", "أدوات عربية", "حاسبات مالية", "أدوات إسلامية", "أدوات أونلاين", "free online tools"],
+    content: `
+      <h2>المقدمة</h2>
+      <p>في عصر الرقمنة، كلنا محتاجين أدوات سريعة ومجانية تنجز لنا الشغل. المشكلة إن معظم المواقع العالمية باللغة الإنجليزية، واللي بالعربي قليلة أو مش مجانية.</p>
+      <p><strong>أدواتك (adwatak.cloud)</strong> هي المنصة العربية الأكبر من نوعها — 40+ أداة مجانية بالكامل، بالعربي، وبدون تسجيل. في المقال ده هناخدك في جولة كاملة على كل الأقسام وكل أداة.</p>
+
+      <h2>١. الحاسبات المالية — حساباتك بدقة</h2>
+      <p>القسم الأهم في الموقع. الحاسبات المالية بتساعدك تحسب كل حاجة بدقة دون ما تحتاج تكون خبير مالي:</p>
+      <ul>
+        <li><strong><a href="/tools/mortgage-calculator">حاسبة القرض العقاري</a></strong> — أحسب قسطك الشهري بناءً على مبلغ التمويل والفائدة والمدة. مناسبة للعقار في السعودية ومصر والإمارات.</li>
+        <li><strong><a href="/tools/loan-calculator">حاسبة القرض الشخصي</a></strong> — قروض شخصية، سيارات، تعليم — أحسب القسط قبل ما تقدم.</li>
+        <li><strong><a href="/tools/installment-calculator">حاسبة التقسيط</a></strong> — تقسيط المشتريات من المتاجر — تعرف كم القسط وكم الفائدة الإجمالية.</li>
+        <li><strong><a href="/tools/vat-calculator">حاسبة الضريبة المضافة</a></strong> — أحسب الضريبة (15٪ للسعودية) على أي مبلغ بسرعة.</li>
+        <li><strong><a href="/tools/salary-calculator">حاسبة الراتب</a></strong> — أحسب صافي الراتب بعد الخصومات والتأمينات.</li>
+        <li><strong><a href="/tools/compound-interest">حاسبة الفائدة المركبة</a></strong> — شوف إزاي فلوسك تنمو مع الوقت بقوة الفائدة المركبة.</li>
+        <li><strong><a href="/tools/profit-margin">حاسبة هامش الربح</a></strong> — لأصحاب المشاريع: أحسب التكلفة وسعر البيع وهامش الربح.</li>
+        <li><strong><a href="/tools/currency-converter">محول العملات</a></strong> — حول بين الريال والدولار والجنيه والدرهم وأكثر.</li>
+        <li><strong><a href="/tools/gold-calculator">حاسبة الذهب</a></strong> — أحسب قيمة الذهب حسب العيار والوزن والسعر الحالي.</li>
+        <li><strong><a href="/tools/car-installment">حاسبة تقسيط السيارات</a></strong> — أحسب أقساط السيارة والدفعة الأولى والفائدة.</li>
+      </ul>
+
+      <h2>٢. الأدوات الإسلامية — لأهم أمور دينك</h2>
+      <p>قسم فريد من نوعه مش هتلاقيه في المواقع الثانية:</p>
+      <ul>
+        <li><strong><a href="/tools/inheritance-calculator">حاسبة الميراث</a></strong> — قسمة الميراث الشرعية حسب أنصبة الورثة — دقيقة ومبنية على الفقه الإسلامي.</li>
+        <li><strong><a href="/tools/zakat-calculator">حاسبة الزكاة</a></strong> — أحسب زكاة مالك بدقة: نصاب، حول، أنواع المال، ونسبة 2.5٪.</li>
+        <li><strong><a href="/tools/hijri-converter">تحويل التاريخ</a></strong> — حول بين الهجري والميلادي بسرعة.</li>
+        <li><strong><a href="/tools/prayer-times">مواقيت الصلاة</a></strong> — أوقات الصلاة حسب مدينتك.</li>
+        <li><strong><a href="/tools/qibla-direction">اتجاه القبلة</a></strong> — إتجاه البوصلة للقبلة من مكانك.</li>
+        <li><strong><a href="/tools/age-calculator">حاسبة العمر</a></strong> — أحسب عمرك بالهجري والميلادي.</li>
+      </ul>
+
+      <h2>٣. أدوات النصوص — للكتّاب والمصممين</h2>
+      <ul>
+        <li><strong><a href="/tools/word-counter">عداد الكلمات</a></strong> — عدد كلمات وحروف أي نص — مناسب للكتّاب والمسوقين.</li>
+        <li><strong><a href="/tools/text-case">تحويل حالة النص</a></strong> — حول النص لعناوين، كبير، صغير، والعكس.</li>
+        <li><strong><a href="/tools/number-to-words">تحويل الأرقام لحروف</a></strong> — كتابة الأرقام بالعربي (١٢٣ ← مائة وثلاثة وعشرون).</li>
+        <li><strong><a href="/tools/arabic-lorem">مولد النص العربي</a></strong> — نص تجريبي عربي للتصميم بدلاً من Lorem Ipsum اللاتيني.</li>
+        <li><strong><a href="/tools/text-cleaner">تنظيف النص</a></strong> — شيل التنسيق والمسافات الزائدة من النصوص.</li>
+        <li><strong><a href="/tools/text-compare">مقارنة النصوص</a></strong> — قارن نصين وشوف الفروق بينهم.</li>
+      </ul>
+
+      <h2>٤. المحولات والملفات</h2>
+      <ul>
+        <li><strong><a href="/tools/pdf-merger">دمج PDF</a></strong> — ادمج ملفين PDF أو أكثر في ملف واحد.</li>
+        <li><strong><a href="/tools/image-to-pdf">صورة إلى PDF</a></strong> — حول الصور لملف PDF.</li>
+        <li><strong><a href="/tools/unit-converter">محول الوحدات</a></strong> — طول، وزن، حرارة، مساحة — حول بين أي وحدتين.</li>
+        <li><strong><a href="/tools/color-converter">محول الألوان</a></strong> — حول بين HEX, RGB, HSL والعكس.</li>
+      </ul>
+
+      <h2>٥. أدوات التطوير</h2>
+      <ul>
+        <li><strong><a href="/tools/json-formatter">JSON Formatter</a></strong> — نسق ونظف أكواد JSON.</li>
+        <li><strong><a href="/tools/base64-encoder">Base64 Encoder</a></strong> — تشفير وفك تشفير Base64.</li>
+        <li><strong><a href="/tools/hash-generator">Hash Generator</a></strong> — توليد MD5, SHA-1, SHA-256 لأي نص.</li>
+      </ul>
+
+      <h2>٦. المولدات</h2>
+      <ul>
+        <li><strong><a href="/tools/qr-generator">QR Code</a></strong> — أنشئ QR Code لأي رابط أو نص.</li>
+        <li><strong><a href="/tools/whatsapp-link">رابط واتساب</a></strong> — أنشئ رابط واتساب مباشر مع رسالة جاهزة.</li>
+        <li><strong><a href="/tools/password-generator">مولد كلمات السر</a></strong> — كلمات سر قوية وآمنة.</li>
+        <li><strong><a href="/tools/invoice-generator">مولد الفواتير</a></strong> — أنشئ فاتورة مجانية.</li>
+        <li><strong><a href="/tools/name-generator">مولد الأسماء</a></strong> — أفكار أسماء للمشاريع والشركات.</li>
+        <li><strong><a href="/tools/bio-generator">كاتب السيرة</a></strong> — سيرة ذاتية عربية احترافية.</li>
+      </ul>
+
+      <h2>ليه تختار أدواتك؟</h2>
+      <ul>
+        <li>✅ <strong>مجانية 100٪</strong> — ولا فلس تدفعه. ولا في خطط مدفوعة خفية.</li>
+        <li>✅ <strong>بدون تسجيل</strong> — افتح الأداة واستخدمها فوراً. ما نحتاج لا إيميل ولا رقم جوال.</li>
+        <li>✅ <strong>بالعربي</strong> — كل الأدوات والشرح باللغة العربية. مش ترجمة Google.</li>
+        <li>✅ <strong>خصوصية</strong> — كل الأدوات تشتغل في المتصفح. بياناتك ما تغادر جهازك.</li>
+        <li>✅ <strong>مُحدّثة</strong> — الحاسبات مبنية على أحدث الأنظمة السعودية والمصرية والإماراتية.</li>
+      </ul>
+
+      <h2>النسخة الإنجليزية</h2>
+      <p>الموقع متوفر كمان <a href="/en">باللغة الإنجليزية</a>— 30 أداة إنجليزية للأسواق العالمية. نفس الجودة، نفس المجانية.</p>
+
+      <h2>الخلاصة</h2>
+      <p>أدواتك هي المنصة العربية الأكثر شمولاً للأدوات المجانية. سواء كنت محتاج تحسب قرض عقاري، تطلع زكاتك، تولد QR Code، أو تنظف نص — كل الأدوات اللي تحتاجها في مكان واحد.</p>
+      <p>جرب <a href="https://adwatak.cloud">adwatak.cloud</a> دلوقتي — وشارك المقالة مع أصحابك عشان الكل يستفيد.</p>
     `,
   },
 ];

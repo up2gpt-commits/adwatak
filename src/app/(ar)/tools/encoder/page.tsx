@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هو الترميز (Encoding)؟", answer: "تحويل البيانات من صيغة لأخرى لتتناسب مع متطلبات النقل أو التخزين. أشهر أنواع الترميز: Base64 (للبيانات الثنائية) و URL Encoding (للروابط) و HTML Entities (للنصوص)." },
@@ -92,6 +93,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما هي مواقيت الصلاة الخمس؟", answer: "الفجر (قبل الشروق)، الظهر (بعد الزوال مباشرة — منتصف النهار)، العصر (عندما يصبح ظل الشيء مثله)، المغرب (بعد غروب الشمس مباشرة)، العشاء (بعد غياب الشفق الأحمر — 1.5 ساعة بعد المغرب تقريباً)." },
@@ -89,6 +90,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

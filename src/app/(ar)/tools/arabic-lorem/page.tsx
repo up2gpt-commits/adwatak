@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const words = ["لوريم", "إيبسوم", "نموذج", "نصي", "يستخدم", "في", "صناعة", "الطباعة", "والنشر", "عربي", "محتوى", "افتراضي", "للتجربة", "تصميم", "موقع", "تطبيق", "عرض", "تجريبي", "كلمات", "نصوص", "شاشة", "معاينة", "مشروع", "فكرة", "مبدئي", "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur"];
 
@@ -89,6 +90,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

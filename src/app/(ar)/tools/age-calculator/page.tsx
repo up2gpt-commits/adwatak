@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "كيف أحسب عمري بالهجري والميلادي؟", answer: "أدخل تاريخ ميلادك الميلادي في الحاسبة (اليوم، الشهر، السنة) واضغط احسب. ستحصل على عمرك بالسنوات والأشهر والأيام بالتقويم الميلادي. لتحويله للهجري، استخدم محول التاريخ في أدواتك (تحويل هجري ↔ ميلادي)." },
@@ -122,6 +123,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

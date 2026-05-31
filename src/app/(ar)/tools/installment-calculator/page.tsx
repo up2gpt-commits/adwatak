@@ -5,6 +5,7 @@ import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "ما الفرق بين التقسيط والقرض الشخصي؟", answer: "التقسيط مرتبط بسلعة أو خدمة محددة (سيارة، أثاث، أجهزة). تستلم السلعة فوراً وتدفع أقساطاً شهرية. القرض الشخصي يعطيك مبلغاً حراً تستخدمه كيفما شئت. التقسيط أسهل في الإجراءات لكن الفائدة قد تكون أعلى." },
@@ -107,6 +108,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }

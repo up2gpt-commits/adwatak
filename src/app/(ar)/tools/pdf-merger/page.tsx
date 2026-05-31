@@ -4,6 +4,7 @@ import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../.
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   { question: "هل ملفاتي آمنة عند استخدام الأداة؟", answer: "نعم، كل المعالجة تتم في المتصفح (Client-side) ولا يُرفع أي ملف لأي خادم. بياناتك لا تغادر جهازك مطلقاً — أمان تام." },
@@ -60,6 +61,7 @@ return (
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
+    <ShareButtons lang="ar" />
     </div>
   );
 }
