@@ -55,6 +55,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ar">
       <head>
+        {/* Google Search Console */}
+        <meta name="google-site-verification" content="C-FZDgjuzgQ5tk9t5-xzMFWsYz9eAMW4rKRLvVvjkOk" />
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
