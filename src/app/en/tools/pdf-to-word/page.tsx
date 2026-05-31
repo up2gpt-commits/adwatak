@@ -46,11 +46,9 @@ export default function PdfToWordEn() {
     setText("");
     try {
       const pdfjs = await import("pdfjs-dist");
-      const pdfjsWorker = await import("pdfjs-dist/build/pdf.worker.min.mjs");
-      pdfjs.GlobalWorkerOptions.workerSrc = URL.createObjectURL(new Blob([`self.addEventListener('message', ${pdfjsWorker.default.toString()})`], { type: 'application/javascript' }));
       
       const arrayBuffer = await file.arrayBuffer();
-      const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
+      const pdf = await pdfjs.getDocument({ data: arrayBuffer, disableWorker: true, useWorkerFetch: false }).promise;
       let fullText = "";
 
       for (let i = 1; i <= pdf.numPages; i++) {
