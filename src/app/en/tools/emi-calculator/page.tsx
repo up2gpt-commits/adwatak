@@ -1,0 +1,112 @@
+"use client";
+import { useState } from "react";
+import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import Breadcrumb from "../../../components/Breadcrumb";
+import FAQSection from "../../../components/FAQSection";
+import RelatedTools from "../../../components/RelatedTools";
+import SEOContent from "../../../components/SEOContent";
+
+function fmt(n: number) { return n.toLocaleString("en-US", { maximumFractionDigits: 2 }); }
+
+const faqs = [
+  { question: "What does EMI mean?", answer: "Equated Monthly Installment — a fixed amount paid every month covering both principal and interest. The amount stays constant, but the ratio shifts: early payments go mostly to interest, later payments go mostly to principal." },
+  { question: "Is EMI the same every month?", answer: "Yes, the dollar amount is fixed. Month 1 of a $200K loan at 6%: $1,199 total — $1,000 interest + $199 principal. By month 360: $6 interest + $1,193 principal. Total payment never changes." },
+  { question: "How do I reduce total interest?", answer: "Three levers: (1) Extra payments — even $50/month on a 30-year mortgage saves thousands. (2) Refinance to lower rate — dropping 1% usually worth closing costs. (3) Shorter term — 15-year saves ~60% of total interest vs 30-year." },
+  { question: "What factors affect my EMI?", answer: "Three variables: loan amount (higher = higher EMI), interest rate (higher = higher EMI), loan term (longer = lower EMI but more total interest). Use our calculator to test different combinations before committing." },
+  { question: "EMI for home loan vs car loan?", answer: "Same formula, different numbers. A $300K home loan at 7% over 30 years: EMI = $1,996. A $40K car loan at 6% over 5 years: EMI = $773. Home loans spread over more years for lower monthly cost." },
+  { question: "What's the EMI formula?", answer: "EMI = P × r × (1+r)^n / ((1+r)^n - 1). P = loan principal, r = monthly interest rate (annual/12), n = months. Our calculator does this instantly — just enter your numbers." },
+  { question: "Can I prepay my EMI loan?", answer: "Most lenders allow partial prepayment. Even $100 extra per month on a $50K loan at 8% saves $7,400 in interest and cuts 2.5 years off the term. Check for prepayment penalties before signing." },
+  { question: "Fixed vs floating EMI?", answer: "Fixed EMI: payment amount stays the same. Floating EMI: payment changes when interest rates change. Fixed is safer for planning. Floating starts lower but risks going up." },
+  { question: "What is EMI in arrears?", answer: "EMI in arrears means interest is calculated on the opening balance of each period. This is the standard method — fairer than flat rate. All major banks use this method." },
+  { question: "Does EMI include insurance?", answer: "Sometimes. Home loans often bundle property insurance. Car loans may include comprehensive insurance. Ask for a full breakdown of what's included in your EMI." },
+  { question: "What happens if I miss an EMI?", answer: "Late fee charged. After 30 days, credit score drops. After 90 days, loan classified as NPA (non-performing asset). Set up auto-debit to avoid missing payments." },
+  { question: "EMI vs simple interest — what's the difference?", answer: "Simple interest: interest on original principal only, divided equally. EMI: interest calculated on reducing balance — fairer and more common. For a $10K loan at 10% over 1 year, simple interest = $10,918 total, EMI = $10,550 total." },
+];
+
+const relatedTools = [
+  { title: "Mortgage Calculator", icon: "🏠", href: "/en/tools/mortgage-calculator" },
+  { title: "Loan Calculator", icon: "💰", href: "/en/tools/loan-calculator" },
+  { title: "Installment Calculator", icon: "📊", href: "/en/tools/installment-calculator" },
+  { title: "Compound Interest", icon: "📈", href: "/en/tools/compound-interest" },
+  { title: "Profit Margin", icon: "📐", href: "/en/tools/profit-margin" },
+  { title: "VAT Calculator", icon: "🏛️", href: "/en/tools/vat-calculator" },
+];
+
+const seoContent = [
+  "An EMI calculator tells you the exact monthly payment for any fixed-rate loan — home loan, car loan, or personal installment. The math is the same: your payment is calculated so principal and interest are fully paid by the end of the term.",
+  "Borrowing $50,000 at 8% over 4 years: monthly EMI = $1,220. Total paid = $58,560. Total interest = $8,560. With a 3-year term: EMI = $1,566, total = $56,376, interest = $6,376. The 3-year term saves $2,184 in interest.",
+  "The amortization table shows how each payment splits. Year one on a 30-year $300K mortgage at 7%: you pay $23,952 total, of which $20,841 goes to interest and only $3,111 to principal. By year 25, this flips — most of your payment reduces principal.",
+  "Pro tip: Round up your EMI. If your EMI is $1,220, pay $1,300. The extra $80/month goes entirely to principal. On a $50K loan at 8%, this saves $4,100 in interest and cuts 11 months off the term. Small overpayments create massive savings.",
+  "Related: Use our Loan Calculator to see how different terms affect your monthly payment. The Compound Interest tool shows the flip side — how your money grows when you're the lender (investor) instead of the borrower.",
+  "Businesses use EMI calculations for equipment financing. Students use it for education loans comparison. Home buyers use it to compare 15-year vs 30-year mortgages. Every fixed-payment loan uses the same EMI formula."
+];
+
+export default function EMICalculator() {
+  const [amount, setAmount] = useState("");
+  const [rate, setRate] = useState("");
+  const [years, setYears] = useState("");
+  const [result, setResult] = useState<{ monthly: number; total: number; interest: number } | null>(null);
+
+  const calculate = () => {
+    const p = parseFloat(amount);
+    const r = parseFloat(rate) / 100 / 12;
+    const n = parseFloat(years) * 12;
+    if (p <= 0 || r <= 0 || n <= 0) return;
+    const monthly = p * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    setResult({ monthly, total: monthly * n, interest: monthly * n - p });
+  };
+
+  const schemaName = "EMI Calculator";
+const schemaDesc = `Online EMI Calculator - free tool`;
+const schemaCategory = "Utility";
+const schemaUrl = "https://adwatak.cloud/en/tools/emi-calculator";
+const breadcrumbItems = [
+  { name: "Home", url: "https://adwatak.cloud/en" },
+  { name: "Utility", url: "https://adwatak.cloud/en/tools/utility" },
+  { name: "EMI Calculator", url: "https://adwatak.cloud/en/tools/emi-calculator" },
+];
+return (
+    <div className="max-w-[760px] mx-auto">
+        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
+        <StructuredData data={faqSchema(faqs)} />
+        <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      <Breadcrumb category="Financial Calculators" categorySlug="calculators" toolName="EMI Calculator" />
+      <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+        <h1 className="text-2xl font-extrabold mb-1">🧮 EMI Calculator</h1>
+        <p className="text-sm text-gray-500 mb-6">Calculate equated monthly installment for any loan</p>
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-700 mb-1.5">Loan Amount ($)</label>
+          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="50,000" />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-700 mb-1.5">Annual Rate (%)</label>
+          <input type="number" value={rate} onChange={(e) => setRate(e.target.value)} step="0.1" className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="8" />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-700 mb-1.5">Loan Term (Years)</label>
+          <input type="number" value={years} onChange={(e) => setYears(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="4" />
+        </div>
+        <button onClick={calculate} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Calculate EMI</button>
+      </div>
+      {result && (
+        <div className="grid grid-cols-3 gap-3 mb-6">
+          <div className="bg-blue-50 rounded-xl p-5 text-center border border-blue-200">
+            <p className="text-xs text-blue-600 mb-1">Monthly EMI</p>
+            <p className="text-xl font-extrabold text-blue-900">${fmt(result.monthly)}</p>
+          </div>
+          <div className="bg-green-50 rounded-xl p-5 text-center border border-green-200">
+            <p className="text-xs text-green-600 mb-1">Total Paid</p>
+            <p className="text-xl font-extrabold text-green-900">${fmt(result.total)}</p>
+          </div>
+          <div className="bg-red-50 rounded-xl p-5 text-center border border-red-200">
+            <p className="text-xs text-red-600 mb-1">Total Interest</p>
+            <p className="text-xl font-extrabold text-red-900">${fmt(result.interest)}</p>
+          </div>
+        </div>
+      )}
+      <SEOContent content={seoContent} />
+      <FAQSection faqs={faqs} />
+      <RelatedTools tools={relatedTools} />
+    </div>
+  );
+}

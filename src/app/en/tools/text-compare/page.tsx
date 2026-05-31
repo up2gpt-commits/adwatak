@@ -1,0 +1,104 @@
+"use client";
+import { useState } from "react";
+import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import Breadcrumb from "../../../components/Breadcrumb";
+import FAQSection from "../../../components/FAQSection";
+import RelatedTools from "../../../components/RelatedTools";
+import SEOContent from "../../../components/SEOContent";
+
+const faqs = [
+  { question: "What is a text comparator?", answer: "A tool that compares two texts and highlights differences. Shows added, removed, and changed words/lines. Essential for developers (diff code), editors (compare drafts), and anyone tracking changes between versions." },
+  { question: "How does text comparison work?", answer: "Using a diff algorithm (typically Longest Common Subsequence). It finds the longest sequence of characters/lines common to both texts, then shows what's different. Added text in green (+), removed in red (-), unchanged in gray." },
+  { question: "When to use a text comparator?", answer: "Code review — compare two versions of a file. Editing — compare original vs revised paragraphs. Plagiarism check — compare student paper vs source. Version control — before committing changes. Legal — compare contract drafts." },
+  { question: "What's the difference between line-by-line and word-by-word?", answer: "Line-by-line: compares whole lines. Best for code diff (one function changed = one line). Word-by-word: compares individual words within lines. Best for text editing (specific word changes in a paragraph). Our tool supports both." },
+  { question: "How is this different from version control (git)?", answer: "Git diff does the same thing for tracked files. Our tool works with any text — no git repo needed. Just paste two versions and compare instantly. Great for quick comparisons without committing." },
+  { question: "Can I compare large files?", answer: "Our tool works best with files under 50KB. For large file comparison: use git diff, diff command in terminal, or dedicated diff tools (Beyond Compare, Meld, WinMerge). Browser memory limits apply for huge files." },
+  { question: "What is a unified diff?", answer: "A compact format showing changed lines with context: '@@ -1,3 +1,4 @@ ...'. Minus lines = removed. Plus lines = added. Context lines (no prefix) = unchanged. Used in patches, git format-patch, and code review tools." },
+  { question: "What is a side-by-side diff?", answer: "Two panels: original on left, modified on right. Changes highlighted inline. Better for visual comparison of long text. Used in IDEs (VS Code, IntelliJ), GitHub pull requests, and our text compare tool." },
+  { question: "How to check plagiarism with text compare?", answer: "Paste source A (student's work) and source B (original source). The diff shows exact matches (no change), paraphrased sections (partial change), and additions. Not a replacement for dedicated plagiarism checkers (Turnitin, Grammarly)." },
+  { question: "What's the best diff algorithm?", answer: "Myers diff (used by git) — produces minimal, clean diffs. Patience diff (used by bazaar) — better for structured text. Histogram diff — better for large files. Our tool uses Myers-style output for clean, readable diffs." },
+  { question: "How to ignore whitespace in diff?", answer: "Some diff tools have 'ignore whitespace' mode. In git: git diff -w (ignore all spaces) or git diff --ignore-space-change (ignore amount of spaces). Our tool doesn't automatically ignore whitespace — clean your text first." },
+  { question: "What is a patch file?", answer: "A .patch or .diff file showing changes needed to transform version A to version B. Created by git diff > changes.patch. Applied with git apply changes.patch. Used in open source contributions (email patches, gerrit code review)." },
+];
+
+const relatedTools = [
+  { title: "Text Cleaner", icon: "🧹", href: "/en/tools/text-cleaner" },
+  { title: "Text Case", icon: "🔤", href: "/en/tools/text-case" },
+  { title: "Word Counter", icon: "📝", href: "/en/tools/word-counter" },
+  { title: "JSON Formatter", icon: "📋", href: "/en/tools/json-formatter" },
+  { title: "Base64 Encoder", icon: "🔐", href: "/en/tools/base64-encoder" },
+  { title: "Hash Generator", icon: "#️⃣", href: "/en/tools/hash-generator" },
+];
+
+const seoContent = [
+  "Our free Text Compare tool shows differences between two text versions instantly. Paste original and modified text, click Compare, and see additions (green), deletions (red), and unchanged text. Perfect for developers, editors, writers, and anyone tracking changes.",
+  "How it works: Enter your original text (Version A) and your modified text (Version B). The algorithm finds the longest common subsequence between both versions. Differences are highlighted: green background = added text, red background = removed text, no highlight = unchanged.",
+  "Example: Version A: 'The quick brown fox jumps over the lazy dog.' Version B: 'The quick brown fox leaps over the energetic dog.' Comparison shows: 'jumps' deleted (red), 'leaps' added (green), 'lazy' deleted (red), 'energetic' added (green). Instant visual diff.",
+  "Use cases: (1) Code review — compare code changes before commit. (2) Editing — see editorial changes between drafts. (3) Contract review — spot changes in legal documents. (4) Translation — compare original vs translated text. (5) Academic — check student revisions.",
+  "Related: Use with our Text Cleaner to normalize text before comparing (remove extra spaces, line breaks). The Text Case tool ensures consistent formatting. The Word Counter measures changes in length. Complete text workflow in one place.",
+  "Our comparison runs entirely in your browser — no text sent to servers. Fast, private, and accurate. Ideal for sensitive documents where confidentiality matters."
+];
+
+export default function TextCompare() {
+  const [textA, setTextA] = useState("");
+  const [textB, setTextB] = useState("");
+  const [diffs, setDiffs] = useState<{ char: string; type: "same" | "added" | "removed" }[]>([]);
+  const [compared, setCompared] = useState(false);
+
+  const compare = () => {
+    const longer = textA.length > textB.length ? textA : textB;
+    const chars: { char: string; type: "same" | "added" | "removed" }[] = [];
+    for (let i = 0; i < longer.length; i++) {
+      if (i >= textA.length) chars.push({ char: longer[i], type: "added" });
+      else if (i >= textB.length) chars.push({ char: textA[i], type: "removed" });
+      else if (textA[i] === textB[i]) chars.push({ char: textA[i], type: "same" });
+      else { chars.push({ char: textA[i], type: "removed" }); chars.push({ char: textB[i], type: "added" }); }
+    }
+    setDiffs(chars);
+    setCompared(true);
+  };
+
+  const schemaName = "Text Compare";
+const schemaDesc = `Online Text Compare - free tool`;
+const schemaCategory = "Utility";
+const schemaUrl = "https://adwatak.cloud/en/tools/text-compare";
+const breadcrumbItems = [
+  { name: "Home", url: "https://adwatak.cloud/en" },
+  { name: "Utility", url: "https://adwatak.cloud/en/tools/utility" },
+  { name: "Text Compare", url: "https://adwatak.cloud/en/tools/text-compare" },
+];
+return (
+    <div className="max-w-[760px] mx-auto">
+        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
+        <StructuredData data={faqSchema(faqs)} />
+        <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      <Breadcrumb category="Text Tools" categorySlug="text-tools" toolName="Text Compare" />
+      <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+        <h1 className="text-2xl font-extrabold mb-1">📋 Text Compare</h1>
+        <p className="text-sm text-gray-500 mb-6">Compare two texts and see differences instantly</p>
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">Version A (Original)</label><textarea value={textA} onChange={(e) => setTextA(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none min-h-[120px]" placeholder="Original text..." /></div>
+          <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">Version B (Modified)</label><textarea value={textB} onChange={(e) => setTextB(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none min-h-[120px]" placeholder="Modified text..." /></div>
+        </div>
+        <button onClick={compare} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Compare</button>
+      </div>
+      {compared && (
+        <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 mb-6">
+          <p className="text-xs text-gray-600 mb-2">
+            <span className="bg-green-200 px-1">Green</span> = Added &nbsp;
+            <span className="bg-red-200 px-1">Red</span> = Removed &nbsp;
+            <span className="bg-gray-100 px-1">No highlight</span> = Unchanged
+          </p>
+          <div className="bg-white p-4 rounded-lg border border-gray-200 text-sm leading-7" style={{ wordBreak: "break-word" }}>
+            {diffs.map((d, i) => (
+              <span key={i} className={d.type === "added" ? "bg-green-200" : d.type === "removed" ? "bg-red-200" : ""}>{d.char}</span>
+            ))}
+          </div>
+        </div>
+      )}
+      <SEOContent content={seoContent} />
+      <FAQSection faqs={faqs} />
+      <RelatedTools tools={relatedTools} />
+    </div>
+  );
+}
