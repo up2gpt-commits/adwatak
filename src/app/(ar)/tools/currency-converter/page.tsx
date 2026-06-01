@@ -63,8 +63,8 @@ export default function CurrencyConverter() {
     setLoading(true);
     setError("");
     try {
-      // Use free open-source currency API (supports all Arab currencies)
-      const res = await fetch("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json");
+      // Use our server-side proxy to avoid CORS issues
+      const res = await fetch("/api/currency-proxy");
       const data = await res.json();
       const rates = data?.usd;
       const fromLower = f.toLowerCase();
