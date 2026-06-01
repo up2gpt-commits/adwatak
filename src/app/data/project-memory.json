@@ -1,0 +1,60 @@
+{
+  "project": {
+    "name": "Adwatak",
+    "domain": "adwatak.cloud",
+    "description": "Free online tools for everyone — calculators, converters, text tools, image tools, and more. 50+ tools, bilingual Arabic/English.",
+    "targetAudience": "Arabic-speaking users globally + English-speaking users",
+    "monetization": "Google AdSense",
+    "keywords": [
+      "online tools", "free tools", "calculator", "converter", "text tools",
+      "image tools", "PDF tools", "SEO tools", "marketing tools",
+      "أدوات مجانية", "حاسبة", "محول", "أدوات نصية", "أدوات صور"
+    ]
+  },
+  "tools": {
+    "categories": [
+      { "id": "calculators", "ar": "حاسبات", "en": "Calculators", "tools": ["bmi-calculator", "vat-calculator", "loan-calculator", "mortgage-calculator", "emi-calculator", "compound-interest", "profit-margin", "age-calculator", "salary-calculator", "gold-calculator", "zakat-calculator", "calorie-calculator", "inheritance-calculator", "installment-calculator"] },
+      { "id": "converters", "ar": "محولات", "en": "Converters", "tools": ["currency-converter", "unit-converter", "color-converter", "hijri-converter", "number-to-words", "text-case"] },
+      { "id": "text", "ar": "أدوات نصية", "en": "Text Tools", "tools": ["word-counter", "text-cleaner", "text-compare", "arabic-lorem", "password-generator", "random-number", "hash-generator", "base64-encoder", "qr-generator", "qr-reader", "whatsapp-link", "bio-generator", "stopwatch", "typing-test"] },
+      { "id": "image", "ar": "أدوات صور", "en": "Image Tools", "tools": ["image-compressor", "image-resizer", "image-to-pdf", "background-remover", "image-to-text", "barcode-generator", "youtube-thumbnail-downloader"] },
+      { "id": "pdf", "ar": "أدوات PDF", "en": "PDF Tools", "tools": ["pdf-merger", "pdf-splitter", "pdf-to-word", "pdf-compressor"] },
+      { "id": "seo", "ar": "أدوات SEO", "en": "SEO & AI Tools", "tools": ["seo-audit", "ai-content-detector", "grammar-checker", "paraphrasing-tool", "plagiarism-checker", "social-character-counter"] },
+      { "id": "generators", "ar": "مولدات", "en": "Generators", "tools": ["invoice-generator", "qr-generator", "password-generator", "bio-generator", "barcode-generator"] },
+      { "id": "developer", "ar": "أدوات المطورين", "en": "Developer Tools", "tools": ["json-formatter", "css-minifier", "markdown-editor", "hash-generator", "base64-encoder"] }
+    ]
+  },
+  "caseStudies": [
+    {
+      "id": "adwatak-launch",
+      "title": "Adwatak Launch",
+      "content": "Launched adwatak.cloud with 50+ free online tools. First month: 10,000+ users. Growth strategy: SEO-optimized tool pages with bilingual Arabic/English support."
+    },
+    {
+      "id": "seo-milestone",
+      "title": "SEO Success",
+      "content": "Achieved top 10 rankings for 'free online tools' and multiple tool-specific keywords. Structured data, FAQ sections, and internal linking strategy."
+    }
+  ],
+  "competitors": [
+    { "name": "calculatorsoup.com", "strength": "Comprehensive calculators" },
+    { "name": "ilovepdf.com", "strength": "PDF tools leader" },
+    { "name": "smallseotools.com", "strength": "SEO tools, huge traffic" },
+    { "name": "canva.com", "strength": "Design + QR + basic tools" }
+  ],
+  "contentStrategy": {
+    "pillars": [
+      "Free online tools — every tool page is a landing page",
+      "Bilingual content — Arabic first, English second",
+      "Long-tail keyword targeting — each tool targets specific keywords",
+      "Internal linking — every tool links to 4-6 related tools",
+      "FAQ sections — 10+ FAQs per page for featured snippets",
+      "Structured data — Tool, FAQ, Breadcrumb schemas on every page"
+    ],
+    "targetKeywords": [
+      "free online tools", "calculator online", "PDF tools free",
+      "SEO audit free", "image compressor online", "QR code generator",
+      "BMI calculator", "VAT calculator", "currency converter",
+      "أدوات مجانية أونلاين", "حاسبة أونلاين", "أدوات PDF مجانية"
+    ]
+  }
+}
