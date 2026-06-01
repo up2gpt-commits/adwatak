@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
-const MODEL = "google/gemma-4-26b-a4b-it:free"; // Free model for plagiarism detection
+const MODEL = "openai/gpt-4o-mini";
 
 export async function POST(req: NextRequest) {
   try {
