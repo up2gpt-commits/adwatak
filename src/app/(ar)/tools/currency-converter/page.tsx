@@ -63,11 +63,17 @@ export default function CurrencyConverter() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(`https://api.frankfurter.app/latest?from=${f}&to=${t}`);
+      // Use free open-source currency API (supports all Arab currencies)
+      const res = await fetch("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json");
       const data = await res.json();
-      if (data.rates?.[t]) {
-        setRate(data.rates[t]);
-        setLastUpdated(data.date);
+      const rates = data?.usd;
+      const fromLower = f.toLowerCase();
+      const toLower = t.toLowerCase();
+      if (rates?.[fromLower] && rates?.[toLower]) {
+        // Cross rate: rate = rates[to] / rates[from]
+        const crossRate = rates[toLower] / rates[fromLower];
+        setRate(crossRate);
+        setLastUpdated(data.date || "");
       } else {
         setError("تعذر الحصول على سعر الصرف");
       }
