@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 // الأقسام الجديدة المنظمة
@@ -45,6 +45,7 @@ const tools = [
   { title: "عداد حروف السوشيال", desc: "Twitter, Instagram, TikTok والمزيد", icon: "📱", href: "/tools/social-character-counter", cat: "text" },
 
   // ===== أدوات الصور =====
+  { title: "استخراج النص من الصور", desc: "استخرج النصوص من الصور باستخدام OCR", icon: "👁️", href: "/tools/image-to-text", cat: "image" },
   { title: "إزالة خلفية الصورة", desc: "أزل الخلفية من أي صورة بالذكاء الاصطناعي", icon: "🖼️", href: "/tools/background-remover", cat: "image" },
   { title: "تغيير حجم الصور", desc: "تغيير أبعاد الصور مجاناً", icon: "📐", href: "/tools/image-resizer", cat: "image" },
   { title: "ضغط الصور", desc: "تقليل حجم ملفات الصور بجودة عالية", icon: "📦", href: "/tools/image-compressor", cat: "image" },
@@ -105,7 +106,7 @@ const categoryDescriptions: Record<string, { title: string; content: string }> =
   },
   image: {
     title: "أدوات الصور",
-    content: "كل ما تحتاجه للصور: إزالة خلفية الصورة بالذكاء الاصطناعي (مجاني)، تغيير حجم الصور، ضغط الصور، تحميل ثامبنيل يوتيوب، وتحويل الصور إلى PDF. كل الأدوات تعمل في المتصفح بدون رفع ملفات."
+    content: "كل ما تحتاجه للصور: استخراج النص من الصور بالـ OCR (مجاني)، إزالة خلفية الصورة بالذكاء الاصطناعي (مجاني)، تغيير حجم الصور، ضغط الصور، تحميل ثامبنيل يوتيوب، وتحويل الصور إلى PDF. كل الأدوات تعمل في المتصفح بدون رفع ملفات."
   },
   pdf: {
     title: "أدوات PDF",
@@ -136,6 +137,20 @@ const categoryDescriptions: Record<string, { title: string; content: string }> =
 export default function ToolGrid() {
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
+
+  // Read URL hash on mount → activate that category
+  const applyHashFilter = () => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash && categories.some((c) => c.key === hash)) {
+      setFilter(hash);
+    }
+  };
+
+  useEffect(() => {
+    applyHashFilter();
+    window.addEventListener("hashchange", applyHashFilter);
+    return () => window.removeEventListener("hashchange", applyHashFilter);
+  }, []);
 
   const filtered = tools.filter((t) => {
     const matchCat = filter === "all" || t.cat === filter;
@@ -169,7 +184,7 @@ export default function ToolGrid() {
       {/* Categories */}
       <div className="cats">
         {categories.map((c) => (
-          <button key={c.key} onClick={() => setFilter(c.key)}
+          <button key={c.key} id={c.key} onClick={() => setFilter(c.key)}
             className={`cat-btn ${filter === c.key ? "active" : ""}`}>
             {c.icon} {c.label}
           </button>

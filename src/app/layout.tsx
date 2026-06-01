@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: "أدواتك — كل الأدوات اللي محتاجها بالعربي",
     template: "%s",
   },
-  description: "مجموعة أدوات مجانية بالكامل باللغة العربية — حاسبات مالية، ميراث، زكاة، تحويل هجري، QR Code وأكثر. 40+ أداة بدون تسجيل.",
+  description: "مجموعة أدوات مجانية بالكامل باللغة العربية — حاسبات مالية، ميراث، زكاة، تحويل هجري، QR Code وأكثر. 50+ أداة بدون تسجيل.",
   keywords: ["أدوات", "حاسبات", "قرض عقاري", "ميراث", "زكاة", "تحويل هجري", "QR Code", "أدوات عربية", "حاسبة"],
   metadataBase: new URL(baseUrl),
   alternates: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ar_SA",
     siteName: "أدواتك",
-    title: "أدواتك — 40+ أداة مجانية بالعربي",
+    title: "أدواتك — 50+ أداة مجانية بالعربي",
     description: "كل الأدوات اللي محتاجها في مكان واحد — حاسبات مالية، أدوات إسلامية، مولدات، محولات وأكثر",
     url: baseUrl,
     images: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@adawatak",
     creator: "@adawatak",
-    title: "أدواتك — 40+ أداة مجانية بالعربي",
+    title: "أدواتك — 50+ أداة مجانية بالعربي",
     description: "كل الأدوات اللي محتاجها في مكان واحد — مجانية، بالعربي، بدون تسجيل",
     images: [`${baseUrl}/og-ar.svg`],
   },

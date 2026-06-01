@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { Inter } from "next/font/google";
+import Header from "../components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Adawatak",
-    title: "Adawatak — 40+ Free Online Tools",
+    title: "Adawatak — 50+ Free Online Tools",
     description: "Free online tools — calculators, converters, generators, and more. No signup required.",
     url: `${baseUrl}/en`,
     images: [
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@adawatak",
     creator: "@adawatak",
-    title: "Adawatak — 40+ Free Online Tools",
+    title: "Adawatak — 50+ Free Online Tools",
     description: "Free online tools — calculators, converters, generators, and more. No signup required.",
     images: [`${baseUrl}/og-en.svg`],
   },
@@ -53,44 +54,91 @@ export const metadata: Metadata = {
 export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={`${inter.variable}`} dir="ltr">
-      <header className="site-header">
-        <div className="container header-inner">
-          <a href="/en" className="logo"><span>🔧</span><span>Adawatak</span></a>
-          <nav className="nav">
-            <a href="/en">Home</a>
-            <a href="/en/blog">📝 Blog</a>
-            <div className="lang-switch">
-              <a href="/">عربي</a>
-              <a href="/en" className="active">EN</a>
-            </div>
-          </nav>
+      {/* Trust Bar */}
+      <div className="trust-bar">
+        <div className="container trust-bar-inner">
+          <div className="trust-item">
+            <span className="t-icon">🔒</span>
+            <span>100% Private — No file uploads</span>
+          </div>
+          <div className="trust-item">
+            <span className="t-icon">🆓</span>
+            <span>Free — No signup</span>
+          </div>
+          <div className="trust-item">
+            <span className="t-icon">⚡</span>
+            <span>Instant results</span>
+          </div>
+          <div className="trust-item">
+            <span className="t-icon">🔧</span>
+            <span>50+ tools</span>
+          </div>
         </div>
-      </header>
-      <main className="container en-content" style={{ padding: "32px 16px" }}>{children}</main>
+      </div>
+
+      {/* Header */}
+      <Header lang="en" />
+
+      <main className="container" style={{ padding: "32px 20px" }}>{children}</main>
+
+      {/* Footer */}
       <footer className="site-footer">
         <div className="container">
           <div className="footer-grid">
-            <div className="footer">
-              <h3>🔧 Adawatak</h3>
-              <p style={{ fontSize: "0.875rem", color: "#64748b" }}>Free online tools for everyone — no signup, no annoying ads. 40+ tools and counting.</p>
+            {/* Brand */}
+            <div className="footer footer-brand">
+              <div className="footer-logo">
+                <span>🔧</span>
+                <span>Adawatak</span>
+              </div>
+              <p className="footer-desc">
+                Free online tools platform with 50+ calculators, converters, generators, and utilities — all running in your browser. No signup, no uploads, no tracking.
+              </p>
+              <div className="footer-social">
+                <a href="https://twitter.com/adawatak" target="_blank" rel="noopener noreferrer" title="𝕏 Twitter">𝕏</a>
+                <a href="https://facebook.com/adawatak" target="_blank" rel="noopener noreferrer" title="Facebook">📘</a>
+                <a href="mailto:contact@adwatak.cloud" title="Contact us">✉️</a>
+              </div>
             </div>
+
+            {/* Categories */}
             <div className="footer">
               <h3>Categories</h3>
-              <a href="/en/category/calculators">Financial Calculators</a>
-              <a href="/en/category/islamic">Islamic Tools</a>
-              <a href="/en/category/text">Text Tools</a>
-              <a href="/en/category/converters">Converters</a>
-              <a href="/en/category/generators">Generators</a>
+              <a href="/#financial">💰 Financial Calculators</a>
+              <a href="/#islamic">🕌 Islamic Tools</a>
+              <a href="/#text">📝 Text Tools</a>
+              <a href="/#image">🖼️ Image Tools</a>
+              <a href="/#pdf">📄 PDF Tools</a>
+              <a href="/#converters">🔄 Converters</a>
+              <a href="/#generators">⚡ Generators</a>
+              <a href="/#dev">💻 Dev Tools</a>
             </div>
+
+            {/* Pages */}
             <div className="footer">
-              <h3>Useful Pages</h3>
-              <a href="/en/about">About</a>
-              <a href="/en/privacy">Privacy Policy</a>
-              <a href="/en/blog">Blog</a>
+              <h3>Important Pages</h3>
+              <a href="/en">🏠 Home</a>
+              <a href="/en/blog">📝 Blog</a>
+              <a href="/en/about">ℹ️ About</a>
+              <a href="/en/privacy">🔒 Privacy Policy</a>
+              <a href="mailto:contact@adwatak.cloud">📧 Contact</a>
+            </div>
+
+            {/* Newsletter */}
+            <div className="footer">
+              <h3>📬 Stay Updated</h3>
+              <p style={{ fontSize: "0.82rem", color: "#94a3b8", marginBottom: "12px", lineHeight: "1.7" }}>
+                Get notified when we add new tools.
+              </p>
+              <div className="footer-newsletter">
+                <input type="email" placeholder="Your email..." />
+                <button>Subscribe Free ✉️</button>
+              </div>
             </div>
           </div>
+
           <div className="copyright">
-            &copy; {new Date().getFullYear()} Adawatak &mdash; All rights reserved | adwatak.cloud
+            &copy; {new Date().getFullYear()} Adawatak &mdash; All rights reserved | adwatak.cloud | For everyone, everywhere 🌍
           </div>
         </div>
       </footer>

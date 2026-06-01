@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Us — Adawatak",
   description:
-    "Adawatak is a free online tools platform offering 40+ interactive tools in Arabic and English — calculators, Islamic tools, generators, and converters. No signup, no ads.",
+    "Adawatak is a free online tools platform offering 50+ interactive tools in Arabic and English — calculators, Islamic tools, generators, and converters. No signup, no ads.",
 };
 
 export default function AboutPage() {

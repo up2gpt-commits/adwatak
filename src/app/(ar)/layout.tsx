@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Header from "../components/Header";
 
 export const metadata: Metadata = {
   title: {
@@ -19,37 +20,21 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
           </div>
           <div className="trust-item">
             <span className="t-icon">🆓</span>
-            <span>مجاني ١٠٪ بدون تسجيل</span>
+            <span>مجاني بدون تسجيل</span>
           </div>
           <div className="trust-item">
             <span className="t-icon">⚡</span>
-            <span>نتائج فورية في المتصفح</span>
+            <span>نتائج فورية</span>
           </div>
           <div className="trust-item">
             <span className="t-icon">🔧</span>
-            <span>٤٠+ أداة بالعربي</span>
+            <span>٥٠+ أداة بالعربي</span>
           </div>
         </div>
       </div>
 
-      {/* Header */}
-      <header className="site-header">
-        <div className="container header-inner">
-          <a href="/" className="logo">
-            <span className="logo-icon">🔧</span>
-            <span className="logo-text">أدواتك</span>
-          </a>
-          <nav className="nav">
-            <a href="/">الرئيسية</a>
-            <a href="/blog">📝 المدونة</a>
-            <a href="/about">عن الموقع</a>
-            <div className="lang-switch">
-              <a href="/" className="active">عربي</a>
-              <a href="/en">EN</a>
-            </div>
-          </nav>
-        </div>
-      </header>
+      {/* Header (Client Component — hamburger + nav) */}
+      <Header lang="ar" />
 
       <main className="container" style={{ padding: "32px 20px" }}>{children}</main>
 
@@ -64,7 +49,7 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
                 <span>أدواتك</span>
               </div>
               <p className="footer-desc">
-                منصة عربية مجانية تجمع أكثر من ٤٠ أداة في مكان واحد. حاسبات مالية، أدوات إسلامية، محولات، مولدات والمزيد — كلها تعمل في المتصفح بدون تسجيل.
+                منصة عربية مجانية تجمع أكثر من ٥٠ أداة في مكان واحد. حاسبات مالية، أدوات إسلامية، محولات، مولدات والمزيد — كلها تعمل في المتصفح بدون تسجيل.
               </p>
               <div className="footer-social">
                 <a href="https://twitter.com/adawatak" target="_blank" rel="noopener noreferrer" title="𝕏 تويتر">𝕏</a>
@@ -110,7 +95,7 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
           </div>
 
           <div className="copyright">
-            © {new Date().getFullYear()} أدواتك — جميع الحقوق محفوظة | adwatak.cloud | صُنع بـ ❤️ في السعودية 🇸🇦
+            © {new Date().getFullYear()} أدواتك — جميع الحقوق محفوظة | adwatak.cloud | لكل العرب والعالم 🌍
           </div>
         </div>
       </footer>
