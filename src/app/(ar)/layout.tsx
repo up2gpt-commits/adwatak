@@ -10,12 +10,39 @@ export const metadata: Metadata = {
 export default function ArabicLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="ar-content" dir="rtl">
+      {/* Trust Bar */}
+      <div className="trust-bar">
+        <div className="container trust-bar-inner">
+          <div className="trust-item">
+            <span className="t-icon">🔒</span>
+            <span>خصوصية تامة — بدون رفع ملفات</span>
+          </div>
+          <div className="trust-item">
+            <span className="t-icon">🆓</span>
+            <span>مجاني ١٠٪ بدون تسجيل</span>
+          </div>
+          <div className="trust-item">
+            <span className="t-icon">⚡</span>
+            <span>نتائج فورية في المتصفح</span>
+          </div>
+          <div className="trust-item">
+            <span className="t-icon">🔧</span>
+            <span>٤٠+ أداة بالعربي</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Header */}
       <header className="site-header">
         <div className="container header-inner">
-          <a href="/" className="logo"><span>🔧</span><span>أدواتك</span></a>
+          <a href="/" className="logo">
+            <span className="logo-icon">🔧</span>
+            <span className="logo-text">أدواتك</span>
+          </a>
           <nav className="nav">
             <a href="/">الرئيسية</a>
             <a href="/blog">📝 المدونة</a>
+            <a href="/about">عن الموقع</a>
             <div className="lang-switch">
               <a href="/" className="active">عربي</a>
               <a href="/en">EN</a>
@@ -23,31 +50,67 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
           </nav>
         </div>
       </header>
-      <main className="container" style={{ padding: "32px 16px" }}>{children}</main>
+
+      <main className="container" style={{ padding: "32px 20px" }}>{children}</main>
+
+      {/* Footer */}
       <footer className="site-footer">
         <div className="container">
           <div className="footer-grid">
-            <div className="footer">
-              <h3>🔧 أدواتك</h3>
-              <p style={{ fontSize: "0.875rem", color: "#64748b" }}>أدوات مجانية بالكامل باللغة العربية — بدون تسجيل وبدون إعلانات مزعجة</p>
+            {/* Brand */}
+            <div className="footer footer-brand">
+              <div className="footer-logo">
+                <span>🔧</span>
+                <span>أدواتك</span>
+              </div>
+              <p className="footer-desc">
+                منصة عربية مجانية تجمع أكثر من ٤٠ أداة في مكان واحد. حاسبات مالية، أدوات إسلامية، محولات، مولدات والمزيد — كلها تعمل في المتصفح بدون تسجيل.
+              </p>
+              <div className="footer-social">
+                <a href="https://twitter.com/adawatak" target="_blank" rel="noopener noreferrer" title="𝕏 تويتر">𝕏</a>
+                <a href="https://facebook.com/adawatak" target="_blank" rel="noopener noreferrer" title="فيسبوك">📘</a>
+                <a href="mailto:contact@adwatak.cloud" title="تواصل معنا">✉️</a>
+              </div>
             </div>
+
+            {/* Categories */}
             <div className="footer">
-                <h3>أقسام</h3>
-                <a href="/category/calculators">الحاسبات المالية</a>
-                <a href="/category/islamic">الأدوات الإسلامية</a>
-                <a href="/category/text">أدوات نصية</a>
-                <a href="/category/converters">محولات</a>
-                <a href="/category/generators">مولدات</a>
+              <h3>الأقسام</h3>
+              <a href="/#financial">💰 حاسبات مالية</a>
+              <a href="/#islamic">🕌 الأدوات الإسلامية</a>
+              <a href="/#text">📝 أدوات نصية</a>
+              <a href="/#image">🖼️ أدوات الصور</a>
+              <a href="/#pdf">📄 أدوات PDF</a>
+              <a href="/#converters">🔄 محولات</a>
+              <a href="/#generators">⚡ مولدات</a>
+              <a href="/#dev">💻 تطوير ويب</a>
             </div>
+
+            {/* Pages */}
             <div className="footer">
-                <h3>صفحات مهمة</h3>
-                <a href="/about">عن الموقع</a>
-                <a href="/privacy">سياسة الخصوصية</a>
-                <a href="/blog">المدونة</a>
+              <h3>صفحات مهمة</h3>
+              <a href="/">🏠 الرئيسية</a>
+              <a href="/blog">📝 المدونة</a>
+              <a href="/about">ℹ️ عن الموقع</a>
+              <a href="/privacy">🔒 سياسة الخصوصية</a>
+              <a href="mailto:contact@adwatak.cloud">📧 تواصل معنا</a>
+            </div>
+
+            {/* Newsletter */}
+            <div className="footer">
+              <h3>📬 ابق على تواصل</h3>
+              <p style={{ fontSize: "0.82rem", color: "#94a3b8", marginBottom: "12px", lineHeight: "1.7" }}>
+                وصلك الجديد في أدواتنا أول ما يتنشر.
+              </p>
+              <div className="footer-newsletter">
+                <input type="email" placeholder="بريدك الإلكتروني..." />
+                <button>اشترك مجاناً ✉️</button>
+              </div>
             </div>
           </div>
+
           <div className="copyright">
-            © {new Date().getFullYear()} أدواتك — جميع الحقوق محفوظة | adwatak.cloud
+            © {new Date().getFullYear()} أدواتك — جميع الحقوق محفوظة | adwatak.cloud | صُنع بـ ❤️ في السعودية 🇸🇦
           </div>
         </div>
       </footer>
