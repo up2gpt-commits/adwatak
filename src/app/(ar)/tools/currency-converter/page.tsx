@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
@@ -7,110 +7,164 @@ import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+const currencies = [
+  { code: "SAR", name: "ريال سعودي", flag: "🇸🇦" },
+  { code: "AED", name: "درهم إماراتي", flag: "🇦🇪" },
+  { code: "EGP", name: "جنيه مصري", flag: "🇪🇬" },
+  { code: "KWD", name: "دينار كويتي", flag: "🇰🇼" },
+  { code: "QAR", name: "ريال قطري", flag: "🇶🇦" },
+  { code: "OMR", name: "ريال عماني", flag: "🇴🇲" },
+  { code: "BHD", name: "دينار بحريني", flag: "🇧🇭" },
+  { code: "JOD", name: "دينار أردني", flag: "🇯🇴" },
+  { code: "TRY", name: "ليرة تركية", flag: "🇹🇷" },
+  { code: "USD", name: "دولار أمريكي", flag: "🇺🇸" },
+  { code: "EUR", name: "يورو", flag: "🇪🇺" },
+  { code: "GBP", name: "جنيه إسترليني", flag: "🇬🇧" },
+  { code: "CNY", name: "يوان صيني", flag: "🇨🇳" },
+  { code: "INR", name: "روبيه هندي", flag: "🇮🇳" },
+];
+
 const faqs = [
-  { question: "ما هي العملات المدعومة في المحول؟", answer: "ندعم أكثر من 12 عملة: ريال سعودي (SAR)، درهم إماراتي (AED)، جنيه مصري (EGP)، دينار كويتي (KWD)، ريال قطري (QAR)، ريال عماني (OMR)، دينار بحريني (BHD)، دولار أمريكي (USD)، يورو (EUR)، جنيه إسترليني (GBP)، ليرة تركية (TRY)، دينار أردني (JOD)." },
-  { question: "من أين تأتي أسعار الصرف؟", answer: "أسعار الصرف هي سعر المتوسط بين البيع والشراء (Mid-market rate). هذه الأسعار للتوجيه فقط — البنوك والصرافات تضيف هامش ربح 1-5%. السعر الفعلي للتحويل قد يختلف." },
-  { question: "لماذا يختلف سعر الصرف من مكان لآخر؟", answer: "البنوك تضيف هامش ربح (spread) يختلف من بنك لآخر. صرافات المطارات الأغلى (2-5% فوق السعر الرسمي). التحويل البنكي المباشر (أونلاين) غالباً أفضل سعر. في السعودية، صرافة الروابي وحسين العودي من الأفضل." },
-  { question: "هل يمكن تحويل العملات بدون رسوم؟", answer: "لا، كل بنك أو صرافة يأخذ رسماً أو هامش ربح. أقل الرسوم عادة في البنوك الإلكترونية وبطاقات السفر (STC Pay، بطاقة الراجحي للسفر). بعض البنوك تقدم تحويلات بدون رسوم للعملات المرتبطة كالدرهم والدولار." },
-  { question: "ما هو أفضل وقت لتحويل العملات؟", answer: "تجنب نهاية الأسبوع (السبت-الأحد) لأن الأسواق مغلقة والهامش أعلى. أفضل وقت: الأحد-الخميس بين 8 صباحاً و10 مساءً بتوقيت لندن. تجنب أيام الأخبار الاقتصادية الكبرى (قرارات الفائدة، بيانات التوظيف)." },
-  { question: "هل العملات الخليجية مرتبطة بالدولار؟", answer: "نعم، معظم العملات الخليجية مرتبطة بالدولار بسعر صرف ثابت: الريال السعودي = 3.75 دولار، الدرهم الإماراتي = 3.67، الريال القطري = 3.64. الدينار الكويتي هو الأغلى عالمياً وغير مرتبط بالدولار بشكل كامل." },
-  { question: "كيف أحول الريال السعودي للجنيه المصري؟", answer: "سعر الصرف التقريبي: 1 SAR ≈ 12.5 EGP (يتغير يومياً). مثال: 1,000 ريال × 12.5 = 12,500 جنيه. استخدم المحول للحصول على السعر الحالي لأن الجنيه المصري متقلب." },
-  { question: "ما الفرق بين سعر البيع والشراء في العملات؟", answer: "سعر البيع = السعر الذي يبيع به البنك العملة لك. سعر الشراء = السعر الذي يشتري به البنك العملة منك. الفرق بينهما هو هامش ربح البنك (spread). المحول يعطي السعر الوسطي (Mid-rate)." },
-  { question: "هل يمكن تحويل العملات الرقمية (Bitcoin)؟", answer: "حالياً لا ندعم العملات الرقمية. نحول بين العملات التقليدية (Fiat) فقط. للعملات الرقمية، استخدم منصات متخصصة مثل Binance أو Coinbase." },
-  { question: "كيف أستخدم المحول للسفر؟", answer: "أدخل المبلغ بالعملة التي معك (مثلاً ريال سعودي)، اختر العملة الهدف (مثلاً دولار أمريكي). ستحصل على القيمة المعادلة. استخدم السعر كمؤشر — السعر الفعلي في الصرافة قد يختلف قليلاً." },
-  { question: "هل الأداة تحفظ أسعار الصرف؟", answer: "الأسعار في الأداة ثابتة للتوجيه (تدفع يدوياً). للحصول على أسعار حية، استخدم تطبيقات مثل XE.com أو Google Finance." },
-  { question: "لماذا اليورو والجنيه الإسترليني مهمان؟", answer: "للسفر والعمل مع الشركات الأوروبية والبريطانية. كثير من الشركات العربية تتعامل مع أوروبا وبريطانيا. اليورو ثاني أقوى عملة احتياطية عالمياً بعد الدولار." },
+  { question: "من أين تأتي الأسعار؟", answer: "أسعار الصرف الحية تأتي من Frankfurter API (تحديث يومي من البنك المركزي الأوروبي). الأسعار هي سعر السوق المتوسط (Mid-market rate). البنوك والصرافات تضيف هامش ربح 1-5%." },
+  { question: "لماذا يختلف السعر عن تطبيقي البنكي؟", answer: "البنوك والصرافات تزيد هامش ربح على السعر. سعرنا هو سعر السوق الأساسي. البنك قد يعرض سعراً أقل بنسبة 2-3%." },
+  { question: "هل العملات الخليجية مرتبطة بالدولار؟", answer: "نعم: SAR = 3.75/USD، AED = 3.67/USD، QAR = 3.64/USD، BHD = 0.376/USD، OMR = 0.384/USD. الدينار الكويتي معوم وليس مرتبطاً." },
+  { question: "كم مرة تتحدث الأسعار؟", answer: "مرة يومياً (أيام الأسبوع). أسواق الصرف تغلق في عطلة نهاية الأسبوع." },
+  { question: "هل الأداة مجانية؟", answer: "نعم 100%. الأسعار الحية مجاناً من API مفتوح." },
+  { question: "كيف أحصل على أفضل سعر صرف؟", answer: "تجنب صرافات المطارات (2-5% هامش). استخدم البنوك الإلكترونية أو تطبيقات التحويل (مثل Wise, STC Pay). تواصل مع البنك للمبالغ الكبيرة." },
 ];
 
 const relatedTools = [
   { title: "حاسبة الضريبة", icon: "🏛️", href: "/tools/vat-calculator" },
   { title: "حاسبة هامش الربح", icon: "📈", href: "/tools/profit-margin" },
   { title: "حاسبة الذهب", icon: "🥇", href: "/tools/gold-calculator" },
+  { title: "تحويل الوحدات", icon: "📐", href: "/tools/unit-converter" },
+  { title: "مولد الفواتير", icon: "🧾", href: "/tools/invoice-generator" },
   { title: "حاسبة القرض الشخصي", icon: "💰", href: "/tools/loan-calculator" },
-  { title: "حاسبة التقسيط", icon: "📊", href: "/tools/installment-calculator" },
-  { title: "حاسبة الراتب الصافي", icon: "💵", href: "/tools/salary-calculator" },
 ];
 
 const seoContent = [
-  "محوّل العملات يساعدك على التحويل الفوري بين أكثر من 12 عملة عربية ودولية — ريال سعودي، درهم إماراتي، جنيه مصري، دينار كويتي، دولار، يورو، وأكثر. أدخل المبلغ واختر العملتين للحصول على النتيجة.",
-  "تتذبذب أسعار صرف العملات يومياً حسب العرض والطلب في سوق الفوركس (سوق الصرف الأجنبي). العملات الخليجية (ماعدا الدينار الكويتي) مرتبطة بالدولار الأمريكي بسعر صرف ثابت. الجنيه المصري شهد تقلبات كبيرة في السنوات الأخيرة.",
-  "استخدم محوّل العملات للتخطيط للسفر (اعرف قيمة نقودك في البلد الوجهة)، مقارنة الأسعار بين الدول للتسوق أونلاين، حساب قيمة التحويلات البنكية الدولية، أو معرفة قيمة مشترياتك بالعملة المحلية.",
-  "مثال: كم تساوي 5,000 ريال سعودي بالدولار؟ السعر التقريبي: 1 SAR = 0.267 USD. 5,000 × 0.267 = 1,335 دولار. البنك قد يعطيك 1,300-1,320 دولار بعد خصم هامش الربح.",
-  "نصيحة للسفر: لا تغير كل نقودك في المطار — سعر الصرف هناك الأسوأ. غيّر مبلغاً صغيراً تكفيك أول يومين، والباقي غيّره في المدينة. استخدم بطاقة STC Pay أو بطاقة السفر من الراجحي لتحصل على سعر أفضل.",
-  "للتجار: أسعار الصرف التي نعرضها للتوجيه فقط. للتحويلات التجارية الكبيرة، تواصل مع البنك مباشرة للحصول على سعر تنافسي (البنوك تعطي سعر أفضل للمبالغ الكبيرة)."
+  "محوّل العملات الحية — أسعار صرف محدثة يومياً لأكثر من 14 عملة عربية وعالمية. أدخل المبلغ واختر العملتين للحصول على السعر الفوري.",
+  "أسعار الصرف من Frankfurter API (البنك المركزي الأوروبي). تدعم: ريال سعودي، درهم إماراتي، دولار، يورو، جنيه، وأكثر.",
+  "مثالية للتخطيط للسفر، التحويلات البنكية، والتجارة الإلكترونية. الأسعار محدثة يومياً.",
+  "استخدم المحول لمعرفة قيمة نقودك قبل السفر أو الشراء من مواقع أجنبية.",
 ];
 
 export default function CurrencyConverter() {
-  const [amount, setAmount] = useState("");
-  const rates: Record<string, number> = { SAR: 1, AED: 1.02, EGP: 12.5, KWD: 0.075, QAR: 0.99, USD: 0.267, EUR: 0.245, GBP: 0.212, BHD: 0.1, OMR: 0.105, JOD: 0.189, TRY: 3.8 };
+  const [amount, setAmount] = useState("1000");
   const [from, setFrom] = useState("SAR");
   const [to, setTo] = useState("USD");
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<number | null>(null);
+  const [rate, setRate] = useState<number | null>(null);
+  const [lastUpdated, setLastUpdated] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const convert = () => {
-    const a = parseFloat(amount);
-    if (a <= 0) return;
-    const inSAR = a / rates[from];
-    const converted = inSAR * rates[to];
-    setResult({ amount: a, from, to, converted, rate: rates[to] / rates[from] });
+  const fetchRate = async (f: string, t: string) => {
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch(`https://api.frankfurter.app/latest?from=${f}&to=${t}`);
+      const data = await res.json();
+      if (data.rates?.[t]) {
+        setRate(data.rates[t]);
+        setLastUpdated(data.date);
+      } else {
+        setError("تعذر الحصول على سعر الصرف");
+      }
+    } catch {
+      setError("تعذر الاتصال بخدمة الأسعار");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchRate(from, to);
+  }, [from, to]);
+
+  useEffect(() => {
+    if (rate !== null && amount) {
+      const a = parseFloat(amount);
+      setResult(isNaN(a) ? null : a * rate);
+    } else {
+      setResult(null);
+    }
+  }, [rate, amount]);
+
+  const swap = () => {
+    setFrom(to);
+    setTo(from);
   };
 
   const schemaName = "محوّل العملات";
-const schemaDesc = `Online محوّل العملات - free tool`;
-const schemaCategory = "Utility";
-const schemaUrl = "https://adwatak.cloud/tools/currency-converter";
-const breadcrumbItems = [
-  { name: "الرئيسية", url: "https://adwatak.cloud" },
-  { name: "Utility", url: "https://adwatak.cloud/tools/utility" },
-  { name: "محوّل العملات", url: "https://adwatak.cloud/tools/currency-converter" },
-];
-return (
+  const schemaDesc = "أسعار صرف حية — محدثة يومياً";
+  const schemaCategory = "Utility";
+  const schemaUrl = "https://adwatak.cloud/tools/currency-converter";
+  const breadcrumbItems = [
+    { name: "الرئيسية", url: "https://adwatak.cloud" },
+    { name: "محولات", url: "https://adwatak.cloud/tools/converters" },
+    { name: "محوّل العملات", url: "https://adwatak.cloud/tools/currency-converter" },
+  ];
+
+  return (
     <div className="max-w-[760px] mx-auto">
-        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'ar', schemaCategory)} />
-        <StructuredData data={faqSchema(faqs)} />
-        <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
-      <Breadcrumb lang="ar" category="الحاسبات المالية" categorySlug="calculators" toolName="محوّل العملات" />
+      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, "ar", schemaCategory)} />
+      <StructuredData data={faqSchema(faqs)} />
+      <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      <Breadcrumb category="محولات" categorySlug="converters" toolName="محوّل العملات" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">💱 محوّل العملات</h1>
-        <p className="text-sm text-gray-500 mb-6">حوّل بين العملات العربية والعالمية</p>
-        <div className="mb-4">
-          <label className="block text-sm font-semibold text-gray-700 mb-1.5">المبلغ</label>
-          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
-            className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="1,000" />
-        </div>
-        <div className="grid grid-cols-2 gap-4 mb-4">
+        <p className="text-sm text-gray-500 mb-6">أسعار صرف حية — محدثة يومياً</p>
+
+        <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1.5">من</label>
-            <select value={from} onChange={(e) => setFrom(e.target.value)}
-              className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white">
-              {Object.keys(rates).map(c => <option key={c} value={c}>{c}</option>)}
-            </select>
+            <label className="block text-sm font-semibold text-gray-700 mb-1.5">المبلغ</label>
+            <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
+              className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="1,000" />
           </div>
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1.5">إلى</label>
-            <select value={to} onChange={(e) => setTo(e.target.value)}
-              className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white">
-              {Object.keys(rates).map(c => <option key={c} value={c}>{c}</option>)}
-            </select>
+
+          <div className="grid grid-cols-[1fr,auto,1fr] gap-3 items-end">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">من</label>
+              <select value={from} onChange={(e) => setFrom(e.target.value)}
+                className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white">
+                {currencies.map((c) => <option key={c.code} value={c.code}>{c.flag} {c.code} — {c.name}</option>)}
+              </select>
+            </div>
+            <button onClick={swap}
+              className="bg-gray-200 hover:bg-gray-300 rounded-xl p-3 text-lg transition-all cursor-pointer border-none mb-0.5">
+              🔄
+            </button>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">إلى</label>
+              <select value={to} onChange={(e) => setTo(e.target.value)}
+                className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white">
+                {currencies.map((c) => <option key={c.code} value={c.code}>{c.flag} {c.code} — {c.name}</option>)}
+              </select>
+            </div>
           </div>
+
+          {loading && <p className="text-sm text-gray-400 text-center">⏳ جاري تحميل الأسعار...</p>}
+          {error && <p className="text-sm text-red-500 text-center">{error}</p>}
+
+          {result !== null && !loading && !error && (
+            <div className="bg-green-50 rounded-xl p-6 text-center border border-green-200">
+              <p className="text-xs text-green-600">{parseFloat(amount || "0").toLocaleString("ar-SA")} {from} =</p>
+              <p className="text-3xl font-black text-green-900 my-2">{result.toLocaleString("ar-SA", { maximumFractionDigits: 2 })} {to}</p>
+              <p className="text-xs text-gray-500">سعر الصرف: 1 {from} = {(rate || 0).toFixed(6)} {to}</p>
+              {lastUpdated && <p className="text-xs text-gray-400 mt-1">📅 آخر تحديث: {lastUpdated}</p>}
+            </div>
+          )}
+
+          {!loading && !error && rate === null && (
+            <p className="text-sm text-gray-400 text-center">هذه العملة غير مدعومة في المصدر. جرب زوجاً آخر.</p>
+          )}
         </div>
-        <p className="text-xs text-gray-400 mb-2">الأسعار للتوجيه فقط — البنوك تضيف هامش</p>
-        <button onClick={convert}
-          className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">
-          حوّل
-        </button>
       </div>
-      {result && (
-        <div className="bg-green-50 rounded-xl p-6 text-center border border-green-200 mb-6">
-          <p className="text-xs text-green-600">{result.amount.toLocaleString("ar-SA")} {result.from} =</p>
-          <p className="text-3xl font-black text-green-900 my-2">{result.converted.toLocaleString("ar-SA", { maximumFractionDigits: 2 })} {result.to}</p>
-          <p className="text-xs text-gray-500">سعر الصرف: 1 {result.from} = {result.rate.toFixed(4)} {result.to}</p>
-        </div>
-      )}
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
-    <ShareButtons lang="ar" />
+      <ShareButtons lang="ar" />
     </div>
   );
 }
