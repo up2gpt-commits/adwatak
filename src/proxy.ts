@@ -129,7 +129,7 @@ export function proxy(request: NextRequest) {
     pathname === "/robots.txt" ||
     pathname === "/sitemap.xml" ||
     pathname === "/manifest.webmanifest" ||
-    /\.(png|jpg|jpeg|gif|svg|webp|ico|css|js|json|woff2?)$/i.test(pathname)
+    /\.(png|jpg|jpeg|gif|svg|webp|ico|css|js|json|html|woff2?)$/i.test(pathname)
   ) {
     return NextResponse.next();
   }
