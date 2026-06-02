@@ -45,6 +45,7 @@ export default function Client() {
   const charsNoSpaces = text.replace(/\s/g, "").length;
   const sentences = text.split(/[.!?؟。]+/).filter(s => s.trim()).length;
   const paragraphs = text.split(/\n\n+/).filter(p => p.trim()).length;
+  const readingTime = Math.max(1, Math.ceil(words / 200)); // avg 200 words/min
 
   const schemaName = "عداد الكلمات والحروف";
 const schemaDesc = `Online عداد الكلمات والحروف - free tool`;
@@ -67,16 +68,17 @@ return (
         <textarea value={text} onChange={(e) => setText(e.target.value)}
           className="w-full h-[200px] p-4 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit resize-y"
           placeholder="الصق نصك هنا..." />
-        <div className="grid grid-cols-4 gap-3 mt-4">
+        <div className="grid grid-cols-5 gap-3 mt-4">
           {[
             { l: "كلمات", v: words },
             { l: "حروف", v: chars },
             { l: "حروف بدون مسافات", v: charsNoSpaces },
             { l: "جمل", v: sentences },
+            { l: "وقت القراءة", v: `${readingTime} دقيقة` },
           ].map((r, i) => (
-            <div key={i} className="bg-gray-50 rounded-xl p-4 text-center border border-gray-200">
+            <div key={i} className={`rounded-xl p-4 text-center border ${i === 4 ? "bg-amber-50 border-amber-200" : "bg-gray-50 border-gray-200"}`}>
               <p className="text-xs text-gray-500">{r.l}</p>
-              <p className="text-xl font-extrabold text-gray-900">{r.v.toLocaleString("ar-SA")}</p>
+              <p className="text-xl font-extrabold text-gray-900">{typeof r.v === "number" ? r.v.toLocaleString("ar-SA") : r.v}</p>
             </div>
           ))}
         </div>

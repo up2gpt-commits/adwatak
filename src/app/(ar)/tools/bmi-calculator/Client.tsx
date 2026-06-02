@@ -39,15 +39,23 @@ const seoContent = [
 ];
 
 export default function Client() {
+  const [unit, setUnit] = useState<"metric" | "imperial">("metric");
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [result, setResult] = useState<any>(null);
 
   const calculate = () => {
     const w = parseFloat(weight);
-    const h = parseFloat(height) / 100;
+    const h = parseFloat(height);
     if (w <= 0 || h <= 0) return;
-    const bmi = w / (h * h);
+    let bmi: number;
+    if (unit === "metric") {
+      const hM = h / 100;
+      bmi = w / (hM * hM);
+    } else {
+      // imperial: weight in lbs, height in inches
+      bmi = (w / (h * h)) * 703;
+    }
     let category = bmi < 18.5 ? "نقص وزن" : bmi < 25 ? "طبيعي" : bmi < 30 ? "زيادة وزن" : "سمنة";
     setResult({ bmi: bmi.toFixed(1), category });
   };
@@ -70,9 +78,13 @@ return (
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">⚖️ حاسبة BMI</h1>
         <p className="text-sm text-gray-500 mb-6">مؤشر كتلة الجسم — وزنك المثالي</p>
+        <div className="flex gap-2 mb-4">
+          <button onClick={() => setUnit("metric")} className={`px-4 py-2 rounded-full text-sm font-semibold cursor-pointer border-none ${unit === "metric" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"}`}>📏 متري (كجم/سم)</button>
+          <button onClick={() => setUnit("imperial")} className={`px-4 py-2 rounded-full text-sm font-semibold cursor-pointer border-none ${unit === "imperial" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"}`}>🏋️ إمبراطوري (رطل/بوصة)</button>
+        </div>
         <div className="grid grid-cols-2 gap-4 mb-4">
-          <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">الوزن (كجم)</label><input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="70" /></div>
-          <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">الطول (سم)</label><input type="number" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="175" /></div>
+          <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">الوزن ({unit === "metric" ? "كجم" : "رطل"})</label><input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder={unit === "metric" ? "70" : "154"} /></div>
+          <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">الطول ({unit === "metric" ? "سم" : "بوصة"})</label><input type="number" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder={unit === "metric" ? "175" : "69"} /></div>
         </div>
         <button onClick={calculate}
           className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">
