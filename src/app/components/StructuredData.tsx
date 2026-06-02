@@ -51,7 +51,7 @@ export function toolSchema(
   name: string,
   description: string,
   url: string,
-  lang: "ar" | "en" = "ar",
+  lang: "ar" | "en" | "tr" = "ar",
   category: string = "Finance"
 ) {
   return {

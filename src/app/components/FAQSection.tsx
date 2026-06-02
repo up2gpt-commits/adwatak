@@ -9,14 +9,14 @@ interface FAQ {
 
 interface FAQSectionProps {
   faqs: FAQ[];
-  lang?: "ar" | "en";
+  lang?: "ar" | "en" | "tr";
 }
 
 export default function FAQSection({ faqs, lang = "en" }: FAQSectionProps) {
   const [open, setOpen] = useState<number | null>(null);
 
-  const title = lang === "ar" ? "❓ الأسئلة الشائعة" : "❓ Frequently Asked Questions";
-  const subtitle = lang === "ar" ? "إجابات لأكثر الأسئلة شيوعاً" : "Answers to the most common questions";
+  const title = lang === "ar" ? "❓ الأسئلة الشائعة" : lang === "tr" ? "❓ Sıkça Sorulan Sorular" : "❓ Frequently Asked Questions";
+  const subtitle = lang === "ar" ? "إجابات لأكثر الأسئلة شيوعاً" : lang === "tr" ? "En yaygın soruların cevapları" : "Answers to the most common questions";
 
   return (
     <div className="mt-10 p-6 bg-white rounded-2xl border border-gray-200">

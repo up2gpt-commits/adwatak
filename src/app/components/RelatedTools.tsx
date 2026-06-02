@@ -1,6 +1,6 @@
 interface RelatedToolsProps {
   tools: Array<{ title: string; icon: string; href: string }>;
-  lang?: "ar" | "en";
+  lang?: "ar" | "en" | "tr";
 }
 
 export default function RelatedTools({ tools, lang = "en" }: RelatedToolsProps) {
