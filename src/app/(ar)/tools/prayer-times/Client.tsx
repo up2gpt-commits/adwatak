@@ -137,10 +137,10 @@ function calcPrayerTimes(lat: number, lng: number, tz: number, method: string, d
   // Equation of time
   const EqT = q / 15 - RA;
 
-  // Solar noon
+  // Solar noon (with longitude correction and equation of time)
   const noon = 12 + tz - lng / 15 - EqT;
 
-  // Helper: time for angle
+  // Helper: time for angle from solar noon (in hours)
   function timeForAngle(angle: number): number {
     const cosT = (Math.sin(toRadians(angle)) - Math.sin(toRadians(lat)) * Math.sin(toRadians(decl))) /
       (Math.cos(toRadians(lat)) * Math.cos(toRadians(decl)));
@@ -148,20 +148,32 @@ function calcPrayerTimes(lat: number, lng: number, tz: number, method: string, d
     return toDegrees(Math.acos(cosT)) / 15;
   }
 
+  // Standard angle for sunrise/sunset (accounting for atmospheric refraction)
+  const sunriseAngle = -0.833;
+
+  // Fajr: sun below horizon by fajrAngle degrees
   const fajrTime = noon - timeForAngle(-m.fajrAngle);
+
+  // Isha: either fixed angle from horizon, or fixed minutes after sunset
   let ishaTime: number;
   if (m.ishaOffset) {
-    const sunset = noon + timeForAngle(-0.833);
+    const sunset = noon + timeForAngle(sunriseAngle);
     ishaTime = sunset + m.ishaOffset / 60;
   } else {
     ishaTime = noon + timeForAngle(-m.ishaAngle);
   }
 
-  const sunrise = noon - timeForAngle(-0.833);
-  const sunset = noon + timeForAngle(-0.833);
-  const dhuhr = noon + 2 / 60; // +2 minutes
-  const asrShadow = 1 + Math.tan(toRadians(Math.abs(lat - decl)));
-  const asrTime = noon + timeForAngle(toDegrees(Math.atan(1 / asrShadow)));
+  // Sunrise & Sunset
+  const sunrise = noon - timeForAngle(sunriseAngle);
+  const sunset = noon + timeForAngle(sunriseAngle);
+
+  // Dhuhr: solar noon + 2 minutes (after sun passes zenith)
+  const dhuhr = noon + 2 / 60;
+
+  // Asr: when shadow = object height + shadow at noon
+  // Standard Hanafi formula: shadow_length = 1 + tan(|lat - decl|)
+  const asrAngle = toDegrees(Math.atan(1 / (1 + Math.tan(toRadians(Math.abs(lat - decl))))));
+  const asrTime = noon + timeForAngle(asrAngle);
 
   const formatTime = (t: number): string => {
     if (isNaN(t)) return "--:--";
