@@ -84,8 +84,7 @@ const featuredTools = [
   { title: "Color Converter", desc: "HEX ↔ RGB ↔ HSL", icon: "🎨", href: "/en/tools/color-converter" },
   { title: "Currency Converter", desc: "Live exchange rates", icon: "💱", href: "/en/tools/currency-converter" },
   { title: "PDF to Word", desc: "Convert PDF to editable text", icon: "📄", href: "/en/tools/pdf-to-word" },
-  { title: "Image to Text OCR", icon: "👁️", href: "/en/tools/image-to-text", desc: "Extract text from images using OCR", cat: "Image Tools" },
-  { title: "Screen Recorder", icon: "📹", href: "/en/tools/screen-recorder", desc: "Record your screen directly from the browser", cat: "Daily Tools" },
+  { title: "Image to Text OCR", icon: "👁️", href: "/en/tools/image-to-text", desc: "Extract text from images using OCR" },
 ];
 
 export default function EnHome() {
