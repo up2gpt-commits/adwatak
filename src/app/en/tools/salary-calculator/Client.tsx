@@ -1,0 +1,97 @@
+"use client";
+import { useState } from "react";
+import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import Breadcrumb from "../../../components/Breadcrumb";
+import ShareButtons from "../../../components/ShareButtons";
+import FAQSection from "../../../components/FAQSection";
+import RelatedTools from "../../../components/RelatedTools";
+import SEOContent from "../../../components/SEOContent";
+
+function fmt(n: number) { return n.toLocaleString("en-US", { maximumFractionDigits: 2 }); }
+
+const faqs = [
+  { question: "How is salary calculated?", answer: "Annual salary / pay periods = per-period pay. $60,000/year: biweekly ($2,307.69/check), semi-monthly ($2,500/check), monthly ($5,000/check). Hourly: hourly rate × hours worked. Overtime (1.5×) for hours over 40/week." },
+  { question: "Salary vs hourly — which is better?", answer: "Salary: stable income, paid time off, benefits, but no overtime pay. Hourly: overtime pay, flexible hours, but variable income and usually fewer benefits. Salary is better for stability. Hourly can earn more with overtime." },
+  { question: "How much tax comes out of my paycheck?", answer: "Federal income tax (10-37% brackets), FICA (7.65% = 6.2% Social Security + 1.45% Medicare), state income tax (0-13.3% depending on state), local taxes (some cities). Total: 15-40% depending on income and location." },
+  { question: "What is gross vs net pay?", answer: "Gross = your salary before deductions. Net = what hits your bank account. $75,000 salary: gross = $6,250/month. After federal, FICA, state, healthcare, 401(k): net ≈ $4,700-5,100/month. ~20-30% goes to taxes and benefits." },
+  { question: "What deductions come from salary?", answer: "Required: federal income tax, Social Security (6.2%), Medicare (1.45%), state/local tax. Optional: health insurance, 401(k) retirement, FSA/HSA, life insurance, union dues, wage garnishment. Your pay stub itemizes everything." },
+  { question: "How does 401(k) affect my paycheck?", answer: "Pre-tax: reduces taxable income. $75K salary, contributing 10% ($7,500/year): taxable income drops to $67,500. You save $1,650-$2,775 in taxes while saving for retirement. Many employers match — free money." },
+  { question: "What is the salary range for my job?", answer: "Check Glassdoor, LinkedIn, and Bureau of Labor Statistics (BLS.gov). Software engineer: $80-200K. Registered nurse: $60-120K. Teacher: $40-80K. Marketing manager: $60-130K. Varies by location, experience, and industry." },
+  { question: "How to negotiate salary?", answer: "Research market rate (3+ sources). Ask for 10-20% above your current salary. Give a range: 'I'm targeting $85-95K based on market research.' Focus on value you bring, not what you need. Everything is negotiable — base, bonus, equity, vacation." },
+  { question: "What is cost-to-company?", answer: "Your total cost to employer: salary + employer FICA (7.65%) + health insurance ($500-1,500/month) + 401(k) match (3-6%) + bonus + other benefits. Your $75K salary actually costs employer $95-110K. This matters for freelancers setting rates." },
+  { question: "How to calculate hourly rate from salary?", answer: "Annual salary / 2,080 (40h × 52 weeks). $60,000 / 2,080 = $28.85/hour. Freelancer rate: $28.85 × 2 (for overhead, taxes, benefits) = $57.70/hour. Adjust based on your specific costs and market rates." },
+  { question: "What is a cost of living adjustment (COLA)?", answer: "Annual salary increase based on inflation. 2023 COLA was 8.7% (highest in 40 years). Typical yearly raises: 2-5%. If you're not getting COLAs, your real salary is decreasing. Ask for at least inflation-matching raises." },
+  { question: "How do bonuses affect my salary?", answer: "Bonuses are taxed at your marginal rate (could be 22-37% federal + state). $10K bonus on $80K salary: about $6,000-6,500 after taxes. Ask if bonuses are guaranteed vs discretionary. Annual performance bonuses average 5-15% of salary." },
+];
+
+const relatedTools = [
+  { title: "Loan Calculator", icon: "💰", href: "/en/tools/loan-calculator" },
+  { title: "Compound Interest", icon: "📈", href: "/en/tools/compound-interest" },
+  { title: "VAT Calculator", icon: "🏛️", href: "/en/tools/vat-calculator" },
+  { title: "Profit Margin", icon: "📐", href: "/en/tools/profit-margin" },
+  { title: "EMI Calculator", icon: "🧮", href: "/en/tools/emi-calculator" },
+  { title: "Mortgage Calculator", icon: "🏠", href: "/en/tools/mortgage-calculator" },
+];
+
+const seoContent = [
+  "Our Salary Calculator converts between annual salary, monthly pay, biweekly pay, weekly pay, and hourly rate. It also estimates net pay after federal and state taxes. Use it to compare job offers, negotiate raises, or set freelance rates.",
+  "Example: $75,000 annual salary. Monthly: $6,250. Biweekly: $2,885. Weekly: $1,442. Hourly (40h/week): $36.06. After estimated taxes in Texas (no state income): ~$56,000 net. In California: ~$51,000 net. Location matters for take-home pay.",
+  "Federal tax brackets for 2024: 10% ($0-11,600), 12% ($11,601-47,150), 22% ($47,151-100,525), 24% ($100,526-191,950), 32%+ above. Your marginal rate matters for bonuses and raises. Use our calculator to estimate your effective (average) rate.",
+  "Benefits add 25-40% to your total compensation. Health insurance ($500-1,500/month employer cost), 401(k) match (3-6% of salary), paid time off (10-20 days), sick leave, life insurance, disability insurance. Factor benefits when comparing jobs.",
+  "Related: Use our Loan Calculator to see how much house you can afford based on salary. The Compound Interest tool shows retirement projections. The Profit Margin Calculator helps if you're running a business and paying yourself.",
+  "Your salary is the foundation of your financial life. Use our calculator to understand your true hourly worth, compare net pay across states, and plan your budget. A $5,000 raise might be worth only $3,500 after taxes — but $350K invested over 30 years at 8%."
+];
+
+export default function Client() {
+  const [type, setType] = useState<"annual" | "hourly">("annual");
+  const [amount, setAmount] = useState("75000");
+  const [result, setResult] = useState<{ annual: number; monthly: number; biweekly: number; weekly: number; hourly: number } | null>(null);
+
+  const calculate = () => {
+    const a = parseFloat(amount);
+    if (a <= 0) return;
+    setResult(type === "annual" ? { annual: a, monthly: a / 12, biweekly: a / 26, weekly: a / 52, hourly: a / 2080 } : { annual: a * 2080, monthly: (a * 2080) / 12, biweekly: (a * 2080) / 26, weekly: a * 40, hourly: a });
+  };
+
+  const schemaName = "Salary Calculator";
+const schemaDesc = `Online Salary Calculator - free tool`;
+const schemaCategory = "Utility";
+const schemaUrl = "https://adwatak.cloud/en/tools/salary-calculator";
+const breadcrumbItems = [
+  { name: "Home", url: "https://adwatak.cloud/en" },
+  { name: "Financial Calculators", url: "https://adwatak.cloud/en/category/calculators" },
+  { name: "Salary Calculator", url: "https://adwatak.cloud/en/tools/salary-calculator" },
+];
+return (
+    <div className="max-w-[760px] mx-auto">
+        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
+        <StructuredData data={faqSchema(faqs)} />
+        <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      <Breadcrumb category="Financial Calculators" categorySlug="calculators" toolName="Salary Calculator" />
+      <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+        <h1 className="text-2xl font-extrabold mb-1">💵 Salary Calculator</h1>
+        <p className="text-sm text-gray-500 mb-6">Convert between annual, monthly, weekly, and hourly pay</p>
+        <div className="flex gap-2 mb-4">
+          <button onClick={() => { setType("annual"); setResult(null); }} className={`px-4 py-2 rounded-full text-sm font-semibold cursor-pointer border-none ${type === "annual" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"}`}>Annual Salary</button>
+          <button onClick={() => { setType("hourly"); setResult(null); }} className={`px-4 py-2 rounded-full text-sm font-semibold cursor-pointer border-none ${type === "hourly" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"}`}>Hourly Rate</button>
+        </div>
+        <label className="block text-sm font-semibold text-gray-700 mb-1.5">{type === "annual" ? "Annual Salary ($)" : "Hourly Rate ($)"}</label>
+        <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none mb-4" placeholder={type === "annual" ? "75000" : "36"} />
+        <button onClick={calculate} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Calculate</button>
+      </div>
+      {result && (
+        <div className="grid grid-cols-3 gap-3 mb-6">
+          <div className="bg-blue-50 rounded-xl p-5 text-center border border-blue-200"><p className="text-xs text-blue-600 mb-1">Annual</p><p className="text-xl font-extrabold text-blue-900">${fmt(result.annual)}</p></div>
+          <div className="bg-green-50 rounded-xl p-5 text-center border border-green-200"><p className="text-xs text-green-600 mb-1">Monthly</p><p className="text-xl font-extrabold text-green-900">${fmt(result.monthly)}</p></div>
+          <div className="bg-yellow-50 rounded-xl p-5 text-center border border-yellow-300"><p className="text-xs text-yellow-700 mb-1">Biweekly</p><p className="text-xl font-extrabold text-yellow-900">${fmt(result.biweekly)}</p></div>
+          <div className="bg-red-50 rounded-xl p-5 text-center border border-red-200"><p className="text-xs text-red-600 mb-1">Weekly</p><p className="text-xl font-extrabold text-red-900">${fmt(result.weekly)}</p></div>
+          <div className="bg-purple-50 rounded-xl p-5 text-center border border-purple-300 col-span-2"><p className="text-xs text-purple-600 mb-1">Hourly</p><p className="text-xl font-extrabold text-purple-900">${fmt(result.hourly)}/hr</p></div>
+        </div>
+      )}
+      <SEOContent content={seoContent} />
+      <FAQSection faqs={faqs} />
+      <RelatedTools tools={relatedTools} />
+    <ShareButtons lang="en" />
+    </div>
+  );
+}

@@ -30,6 +30,175 @@ function todayEnStr(): string {
 
 const enBlogPosts: BlogPost[] = [
   {
+    slug: "islamic-inheritance-distribution-guide",
+    title: "Islamic Inheritance Distribution — Complete Shariah Guide 2026",
+    excerpt:
+      "Learn how Islamic inheritance works: fixed shares, heirs categories, step-by-step distribution with real examples, and common mistakes to avoid.",
+    date: "2026-06-02",
+    category: "Islamic",
+    readTime: "11 min read",
+    keywords: [
+      "islamic inheritance",
+      "shariah inheritance distribution",
+      "mirath",
+      "faraid",
+      "islamic will",
+      "estate planning islam",
+      "inheritance calculator",
+    ],
+    content: `
+      <h2>What Is Islamic Inheritance (Al-Mirath)?</h2>
+      <p>In Islam, the distribution of a deceased person's estate is not left to personal preference or cultural tradition. Allah ﷻ Himself outlined precise rules for inheritance in the Quran, making <strong>Al-Mirath</strong> (the inherited estate) one of the most detailed areas of Islamic law.</p>
+      <p>The science of inheritance distribution is called <strong>Al-Faraid</strong> (الفرائض), derived from the Arabic word "Faridah" meaning an obligatory duty. It is a precise mathematical system that ensures every rightful heir receives their divinely ordained share.</p>
+      <p>Understanding Islamic inheritance is essential for every Muslim — not just scholars. When a family member passes away, knowing the correct shares prevents disputes, injustice, and the sin of consuming wealth unlawfully.</p>
+
+      <h2>The Three Types of Heirs in Islam</h2>
+      <p>Islamic inheritance law categorizes heirs into three distinct groups based on how they receive their share:</p>
+
+      <h3>1. Ashab al-Furud (أصحاب الفروض) — Fixed-Share Heirs</h3>
+      <p>These heirs receive a <strong>specific, predetermined fraction</strong> mentioned in the Quran. There are 12 fixed-share heirs in total:</p>
+      <ul>
+        <li><strong>Husband:</strong> 1/2 (if no children) or 1/4 (if children exist)</li>
+        <li><strong>Wife:</strong> 1/4 (if no children) or 1/8 (if children exist)</li>
+        <li><strong>Father:</strong> 1/6 (if children exist) or residual share (if no children)</li>
+        <li><strong>Mother:</strong> 1/6 (if children or multiple siblings exist) or 1/3 (if no children and no multiple siblings)</li>
+        <li><strong>Daughter:</strong> 1/2 (if only one daughter, no son) or 2/3 shared among multiple daughters</li>
+        <li><strong>Full sister:</strong> 1/2 (if only one, no father, no children) or 2/3 shared among multiple sisters</li>
+        <li><strong>Paternal grandmother:</strong> 1/6</li>
+        <li><strong>Maternal grandmother:</strong> 1/6</li>
+        <li><strong>Paternal half-sister:</strong> 1/6 (if only one, with a full sister)</li>
+        <li><strong>Maternal half-sibling:</strong> 1/6 (if 1–3 siblings) or 1/3 (if 4+ siblings)</li>
+      </ul>
+
+      <h3>2. Asabat (العصبات) — Residual Heirs</h3>
+      <p>These heirs receive whatever remains <strong>after</strong> the fixed-share heirs have been given their portions. The primary residual heirs are:</p>
+      <ul>
+        <li><strong>Son</strong> (and his male descendants)</li>
+        <li><strong>Father</strong> (when no children exist)</li>
+        <li><strong>Full brother</strong> (when no father or children exist)</li>
+        <li><strong>Paternal half-brother</strong></li>
+        <li><strong>Uncle and his male descendants</strong></li>
+      </ul>
+      <p>A key rule: <strong>a son makes his sister a residual heir too</strong>. If there is one son and one daughter, the daughter receives half of what the son receives (2:1 ratio based on Quran 4:11).</p>
+
+      <h3>3. Dhawu al-Arham (ذوو الأرحام) — Distant Kindred</h3>
+      <p>These are relatives who are neither fixed-share nor residual heirs. They inherit <strong>only if</strong> there are no fixed-share or residual heirs remaining. Examples include maternal uncles, aunts, and their children.</p>
+
+      <h2>Step-by-Step: How to Distribute an Islamic Estate</h2>
+      <p>Follow these steps to correctly distribute an estate according to Shariah:</p>
+
+      <h3>Step 1: Deduct Funeral and Administrative Expenses</h3>
+      <p>From the total estate, first deduct reasonable funeral costs, burial expenses, and any administrative fees for settling the estate.</p>
+
+      <h3>Step 2: Pay Off Debts</h3>
+      <p>All outstanding debts must be paid before distribution — whether owed to people or to Allah (unpaid Zakat, unfulfilled vows, unperformed Hajj).</p>
+
+      <h3>Step 3: Execute the Wasiyyah (Will)</h3>
+      <p>The deceased's will can allocate <strong>up to one-third</strong> of the remaining estate to non-heirs (charity, friends, etc.). The remaining two-thirds goes to the legal heirs.</p>
+
+      <h3>Step 4: Distribute to Fixed-Share Heirs</h3>
+      <p>Calculate and distribute the fixed Quranic shares to all eligible heirs.</p>
+
+      <h3>Step 5: Distribute the Remainder to Residual Heirs</h3>
+      <p>Whatever remains goes to the residual heirs (sons, brothers, etc.). If there are no residual heirs, the remainder is redistributed among fixed-share heirs proportionally (a process called <strong>Al-Awl</strong> or <strong>Al-Radd</strong>, depending on the school of thought).</p>
+
+      <h2>Practical Example: Distributing $360,000</h2>
+      <p>Let us work through a real example. A man passes away leaving:</p>
+      <ul>
+        <li><strong>Estate after debts and expenses:</strong> $360,000</li>
+        <li><strong>Heirs:</strong> Wife, 2 daughters, father, mother</li>
+      </ul>
+
+      <h3>Calculating the Shares</h3>
+      <ul>
+        <li><strong>Wife:</strong> 1/8 (because children exist) → $360,000 × 1/8 = <strong>$45,000</strong></li>
+        <li><strong>2 Daughters:</strong> 2/3 shared equally → $360,000 × 2/3 = <strong>$240,000</strong> ($120,000 each)</li>
+        <li><strong>Father:</strong> 1/6 → $360,000 × 1/6 = <strong>$60,000</strong></li>
+        <li><strong>Mother:</strong> 1/6 → $360,000 × 1/6 = <strong>$60,000</strong></li>
+      </ul>
+
+      <div class="bg-gray-100 rounded-xl p-4 my-4 text-center font-mono text-lg">
+        Total shares: 1/8 + 2/3 + 1/6 + 1/6 = 3/24 + 16/24 + 4/24 + 4/4 = 27/24
+      </div>
+
+      <p>The sum exceeds 1 (27/24), so we apply <strong>Al-Awl</strong> (proportional reduction). The base is adjusted from 24 to 27:</p>
+      <ul>
+        <li><strong>Wife:</strong> 3/27 → $360,000 × 3/27 = <strong>$40,000</strong></li>
+        <li><strong>2 Daughters:</strong> 16/27 → $360,000 × 16/27 = <strong>$213,333</strong> ($106,667 each)</li>
+        <li><strong>Father:</strong> 4/27 → $360,000 × 4/27 = <strong>$53,333</strong></li>
+        <li><strong>Mother:</strong> 4/27 → $360,000 × 4/27 = <strong>$53,333</strong></li>
+      </ul>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-4 my-4">
+        <p class="font-bold text-green-800">Total distributed: $40,000 + $213,333 + $53,333 + $53,333 = $360,000 ✓</p>
+      </div>
+
+      <h2>Common Mistakes in Islamic Inheritance</h2>
+      <p>Many Muslim families unknowingly distribute estates incorrectly. Here are the most common errors:</p>
+      <ul>
+        <li>❌ <strong>Ignoring the will limit:</strong> Allocating more than 1/3 to non-heirs without heirs' consent</li>
+        <li>❌ <strong>Excluding female heirs:</strong> Some cultures deny daughters or sisters their rightful share — this is a major sin</li>
+        <li>❌ <strong>Not paying debts first:</strong> Distributing the estate before settling debts</li>
+        <li>❌ <strong>Confusing schools of thought:</strong> Al-Radd (redistribution of surplus) is applied differently across the four madhabs</li>
+        <li>❌ <strong>Forgetting the son-daughter ratio:</strong> A son receives twice the share of a daughter (Quran 4:11)</li>
+        <li>❌ <strong>Assuming grandchildren are excluded:</strong> If a son predeceased the grandfather, his children may still have rights (this varies by madhab)</li>
+      </ul>
+
+      <h2>Who Cannot Inherit in Islam?</h2>
+      <p>There are specific conditions that prevent inheritance:</p>
+      <ul>
+        <li><strong>Difference of religion:</strong> A non-Muslim does not inherit from a Muslim relative, and vice versa (according to the majority opinion)</li>
+        <li><strong>Homicide:</strong> The killer does not inherit from their victim, even if accidental (majority opinion includes accidental killing)</li>
+        <li><strong>Slavery:</strong> A slave does not inherit (historical ruling)</li>
+      </ul>
+
+      <h2>The Importance of Writing an Islamic Will (Wasiyyah)</h2>
+      <p>The Prophet Muhammad ﷺ said: <em>"It is not permissible for any Muslim who has something to bequeath to sleep for two nights except that his will is written and kept ready with him."</em> (Sahih al-Bukhari 2738)</p>
+      <p>An Islamic will should include:</p>
+      <ul>
+        <li>Your debts and who should pay them</li>
+        <li>Bequests up to 1/3 of the estate (to charity, non-heirs, etc.)</li>
+        <li>A declaration that the remaining 2+ thirds will be distributed according to Faraid</li>
+        <li>Appointment of an executor (Wasi) to oversee the distribution</li>
+        <li>Guardianship arrangements for minor children</li>
+      </ul>
+
+      <h2>Related Tools You May Find Useful</h2>
+      <p>Planning your estate involves more than just inheritance. You may also want to explore:</p>
+      <ul>
+        <li><a href="/en/tools/zakat-calculator" class="text-blue-600 hover:underline">Zakat Calculator</a> — Ensure your Zakat obligations are met during your lifetime</li>
+        <li><a href="/en/tools/hijri-converter" class="text-blue-600 hover:underline">Hijri Date Converter</a> — Track important dates for estate planning</li>
+        <li><a href="/en/tools/gold-calculator" class="text-blue-600 hover:underline">Gold Calculator</a> — Value your gold assets for accurate estate calculation</li>
+        <li><a href="/en/tools/currency-converter" class="text-blue-600 hover:underline">Currency Converter</a> — Convert assets held in multiple currencies</li>
+      </ul>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <h3>Q1: Can I leave all my money to one person in my will?</h3>
+      <p>No. In Islamic law, you can only bequeath up to <strong>one-third</strong> of your estate through a will, and it cannot go to someone who is already a legal heir (unless other heirs consent). The remaining two-thirds must be distributed according to the fixed Quranic shares.</p>
+
+      <h3>Q2: Do daughters inherit the same as sons?</h3>
+      <p>No. According to Quran 4:11, a son receives <strong>twice the share</strong> of a daughter. This is because men are financially responsible for maintaining their wives, children, and sometimes extended family. The daughter's share is her own — no one can claim it.</p>
+
+      <h3>Q3: What happens if there are no heirs at all?</h3>
+      <p>If no fixed-share, residual, or distant kindred heirs exist, the estate goes to <strong>Bait al-Mal</strong> (the public treasury) for the benefit of the Muslim community. In the absence of a functioning Bait al-Mal, it should be distributed to Islamic charities.</p>
+
+      <h3>Q4: Can I give my house to my daughter while I am alive?</h3>
+      <p>Yes. During your lifetime, you can gift your property to anyone — including your children. However, the majority of scholars recommend <strong>equal treatment</strong> among children in lifetime gifts to avoid injustice. This is separate from inheritance rules, which only apply after death.</p>
+
+      <h3>Q5: What is Al-Awl and Al-Radd?</h3>
+      <p><strong>Al-Awl</strong> (العول) is applied when the total fixed shares exceed 1 (the whole estate). All shares are proportionally reduced. <strong>Al-Radd</strong> (الرد) is applied when fixed shares total less than 1 and there are no residual heirs — the surplus is redistributed among fixed-share heirs proportionally. The application of Al-Radd varies between the four schools of Islamic jurisprudence.</p>
+
+      <h3>Q6: Does a non-Muslim family member inherit from a Muslim?</h3>
+      <p>According to the majority of scholars, a non-Muslim does not inherit from a Muslim relative, and a Muslim does not inherit from a non-Muslim relative. This is based on the hadith: "A Muslim does not inherit from a disbeliever, and a disbeliever does not inherit from a Muslim." (Sahih al-Bukhari)</p>
+
+      <h3>Q7: How do I calculate inheritance if the deceased had debts?</h3>
+      <p>Debts must be paid <strong>first</strong> from the estate before any distribution. This includes money owed to people, unpaid Zakat, unfulfilled vows (Nadhr), and the cost of unperformed Hajj if the deceased was able to perform it. Only the remaining amount is distributed among heirs.</p>
+
+      <h2>Try Our Islamic Inheritance Calculator</h2>
+      <p>Calculating Islamic inheritance manually can be complex — especially when dealing with Al-Awl, multiple heirs, and different scenarios. Use our <a href="/en/tools/inheritance-calculator" class="text-blue-600 hover:underline">free Islamic Inheritance Calculator</a> to get accurate, Shariah-compliant results in seconds. Simply enter the estate value and select the heirs, and the calculator will compute every share automatically.</p>
+    `,
+  },
+  {
     slug: "simple-vs-compound-interest",
     title: "Simple Interest vs Compound Interest — Complete Guide 2026",
     excerpt:

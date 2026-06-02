@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "../components/Header";
+import NewsletterForm from "../components/NewsletterForm";
 
 export const metadata: Metadata = {
   title: {
@@ -87,10 +88,7 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
               <p style={{ fontSize: "0.82rem", color: "#94a3b8", marginBottom: "12px", lineHeight: "1.7" }}>
                 وصلك الجديد في أدواتنا أول ما يتنشر.
               </p>
-              <div className="footer-newsletter">
-                <input type="email" placeholder="بريدك الإلكتروني..." />
-                <button>اشترك مجاناً ✉️</button>
-              </div>
+              <NewsletterForm lang="ar" />
             </div>
           </div>
 

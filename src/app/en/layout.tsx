@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { Inter } from "next/font/google";
 import Header from "../components/Header";
+import NewsletterForm from "../components/NewsletterForm";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -130,15 +131,12 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
               <p style={{ fontSize: "0.82rem", color: "#94a3b8", marginBottom: "12px", lineHeight: "1.7" }}>
                 Get notified when we add new tools.
               </p>
-              <div className="footer-newsletter">
-                <input type="email" placeholder="Your email..." />
-                <button>Subscribe Free ✉️</button>
-              </div>
+              <NewsletterForm lang="en" />
             </div>
           </div>
 
           <div className="copyright">
-            &copy; {new Date().getFullYear()} Adawatak &mdash; All rights reserved | adwatak.cloud | For everyone, everywhere 🌍
+            © {new Date().getFullYear()} Adawatak — All rights reserved | adwatak.cloud | For everyone, everywhere 🌍
           </div>
         </div>
       </footer>

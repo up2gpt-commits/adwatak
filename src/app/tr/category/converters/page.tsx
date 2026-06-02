@@ -1,0 +1,36 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dönüştürücüler — Adwatak",
+  description: "Ücretsiz dönüştürücüler: döviz, birim, renk, Hicri tarih, yaş hesaplama",
+};
+
+const tools = [
+  { title: "Döviz Çevirici", icon: "💱", href: "/tr/tools/currency-converter", desc: "Canlı kurlarla döviz dönüşümü" },
+  { title: "Birim Çevirici", icon: "📏", href: "/tr/tools/unit-converter", desc: "Uzunluk, ağırlık, sıcaklık, hacim" },
+  { title: "Renk Çevirici", icon: "🎨", href: "/tr/tools/color-converter", desc: "HEX ↔ RGB ↔ HSL" },
+  { title: "Hicri Tarih Çevirici", icon: "📅", href: "/tr/tools/hijri-converter", desc: "Hicri ↔ Miladi dönüşüm" },
+  { title: "Yaş Hesaplama", icon: "🎂", href: "/tr/tools/age-calculator", desc: "Yaş ve burç hesaplama" },
+];
+
+export default function ConvertersCategory() {
+  return (
+    <div style={{ maxWidth: "900px", margin: "0 auto", padding: "32px 16px" }}>
+      <h1 style={{ fontSize: "2rem", fontWeight: 900, marginBottom: "8px" }}>💱 Dönüştürücüler</h1>
+      <p style={{ color: "#64748b", marginBottom: "32px", fontSize: "1.1rem" }}>Ücretsiz dönüştürücüler: döviz, birim, renk, Hicri tarih, yaş hesaplama</p>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "16px" }}>
+        {tools.map((t, i) => (
+          <a key={i} href={t.href} style={{ background: "white", borderRadius: "16px", padding: "20px", border: "1px solid #f1f5f9", textDecoration: "none", color: "inherit" }}>
+            <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+              <span style={{ fontSize: "2rem" }}>{t.icon}</span>
+              <div><div style={{ fontWeight: 700, fontSize: "1rem" }}>{t.title}</div><div style={{ fontSize: "0.875rem", color: "#64748b" }}>{t.desc}</div></div>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div style={{ marginTop: "32px", padding: "24px", background: "white", borderRadius: "16px", border: "1px solid #e2e8f0" }}>
+        <p style={{ fontSize: "0.9rem", color: "#64748b" }}>Tüm hesaplamalar tarayıcınızda yapılır. Hiçbir veri sunucuya gönderilmez. <a href="/tr" style={{ color: "#2563eb" }}>← Ana Sayfa</a></p>
+      </div>
+    </div>
+  );
+}

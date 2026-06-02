@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts } from "@/lib/blog";
+import { getAllEnPosts } from "@/lib/blog-en";
 
 export const metadata: Metadata = {
   title: "Blog — Adawatak",
@@ -9,12 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function EnBlogPage() {
-  const posts = getAllPosts();
-
-  const categoryMap: Record<string, string> = {
-    "مالية": "Finance",
-    "إسلامية": "Islamic",
-  };
+  const posts = getAllEnPosts();
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -47,7 +42,7 @@ export default function EnBlogPage() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
                     <span className="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-0.5 rounded-full">
-                      {categoryMap[post.category] || post.category}
+                      {post.category}
                     </span>
                     <span className="text-xs text-gray-400">{post.date}</span>
                     <span className="text-xs text-gray-400">⏱️ {post.readTime}</span>

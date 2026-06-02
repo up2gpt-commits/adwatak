@@ -4,21 +4,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://adwatak.cloud";
 
   const staticPages = [
-    { path: "", lastModified: "2026-05-31" },
-    { path: "/about", lastModified: "2026-05-31" },
-    { path: "/privacy", lastModified: "2026-05-31" },
-    { path: "/blog", lastModified: "2026-05-31" },
-    { path: "/en", lastModified: "2026-05-31" },
-    { path: "/en/about", lastModified: "2026-05-31" },
-    { path: "/en/privacy", lastModified: "2026-05-31" },
-    { path: "/en/blog", lastModified: "2026-05-31" },
-    { path: "/category/calculators", lastModified: "2026-05-31" },
-    { path: "/category/converters", lastModified: "2026-05-31" },
-    { path: "/category/text", lastModified: "2026-05-31" },
-    { path: "/category/generators", lastModified: "2026-05-31" },
-    { path: "/category/dev", lastModified: "2026-05-31" },
-    { path: "/category/islamic", lastModified: "2026-05-31" },
-    { path: "/category/daily", lastModified: "2026-05-31" },
+    { path: "", lastModified: "2026-06-02" },
+    { path: "/about", lastModified: "2026-06-02" },
+    { path: "/privacy", lastModified: "2026-06-02" },
+    { path: "/blog", lastModified: "2026-06-02" },
+    { path: "/en", lastModified: "2026-06-02" },
+    { path: "/en/about", lastModified: "2026-06-02" },
+    { path: "/en/privacy", lastModified: "2026-06-02" },
+    { path: "/en/blog", lastModified: "2026-06-02" },
+    { path: "/tr", lastModified: "2026-06-02" },
+    { path: "/tr/about", lastModified: "2026-06-02" },
+    { path: "/tr/privacy", lastModified: "2026-06-02" },
+    { path: "/tr/blog", lastModified: "2026-06-02" },
+    { path: "/category/calculators", lastModified: "2026-06-02" },
+    { path: "/category/converters", lastModified: "2026-06-02" },
+    { path: "/category/text", lastModified: "2026-06-02" },
+    { path: "/category/generators", lastModified: "2026-06-02" },
+    { path: "/category/dev", lastModified: "2026-06-02" },
+    { path: "/category/islamic", lastModified: "2026-06-02" },
+    { path: "/category/daily", lastModified: "2026-06-02" },
   ];
 
   const arTools = [
@@ -57,13 +61,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "css-minifier", "grammar-checker",
   ];
 
+  // Same tools for Turkish (same slugs, different prefix)
+  const trTools = [...enTools];
+
   const arBlogSlugs = [
     "how-to-calculate-zakat", "how-to-calculate-mortgage",
     "simple-vs-compound-interest", "best-free-arabic-tools-2026",
+    "emi-calculator-guide-2026",
+    "inheritance-guide-2026", "vat-calculator-guide-2026",
+    "zakat-money-calculator-2026", "barcode-qr-guide-business",
+    "image-to-pdf-guide",
   ];
   const enBlogSlugs = [
     "how-to-calculate-zakat", "how-to-calculate-mortgage",
     "simple-vs-compound-interest", "best-free-arabic-tools-2026",
+    "emi-calculator-guide-2026",
+  ];
+  const trBlogSlugs = [
+    "adwatak-nedir-2026",
   ];
 
   const entries: MetadataRoute.Sitemap = [
@@ -71,29 +86,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}${page.path}`,
       lastModified: page.lastModified,
       changeFrequency: page.path === "" ? "daily" as const : "weekly" as const,
-      priority: page.path === "" ? 1.0 : page.path === "/en" ? 0.9 : 0.8,
+      priority: page.path === "" ? 1.0 : page.path === "/en" || page.path === "/tr" ? 0.9 : 0.8,
     })),
     ...arTools.map((slug) => ({
       url: `${baseUrl}/tools/${slug}`,
-      lastModified: "2026-05-31",
+      lastModified: "2026-06-02",
       changeFrequency: "weekly" as const,
       priority: 0.9,
     })),
     ...enTools.map((slug) => ({
       url: `${baseUrl}/en/tools/${slug}`,
-      lastModified: "2026-05-31",
+      lastModified: "2026-06-02",
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
+    ...trTools.map((slug) => ({
+      url: `${baseUrl}/tr/tools/${slug}`,
+      lastModified: "2026-06-02",
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
     ...arBlogSlugs.map((slug) => ({
       url: `${baseUrl}/blog/${slug}`,
-      lastModified: "2026-05-31",
+      lastModified: "2026-06-02",
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
     ...enBlogSlugs.map((slug) => ({
       url: `${baseUrl}/en/blog/${slug}`,
-      lastModified: "2026-05-31",
+      lastModified: "2026-06-02",
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...trBlogSlugs.map((slug) => ({
+      url: `${baseUrl}/tr/blog/${slug}`,
+      lastModified: "2026-06-02",
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

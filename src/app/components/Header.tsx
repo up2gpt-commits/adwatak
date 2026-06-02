@@ -2,82 +2,126 @@
 import { useState } from "react";
 
 interface HeaderProps {
-  lang?: "ar" | "en";
+  lang?: string;
 }
 
-const categoriesAr = [
-  { key: "financial", label: "💰 حاسبات مالية" },
-  { key: "text", label: "📝 أدوات نصية" },
-  { key: "image", label: "🖼️ أدوات الصور" },
-  { key: "pdf", label: "📄 أدوات PDF" },
-  { key: "converters", label: "🔄 محولات" },
-  { key: "generators", label: "⚡ مولدات" },
-  { key: "dev", label: "💻 تطوير ويب" },
-  { key: "islamic", label: "🕌 أدوات إسلامية" },
-  { key: "daily", label: "🌟 أخرى" },
+// 🌍 Language config — just add a new entry for any future language
+const LANGUAGES = [
+  { code: "ar", label: "عربي", labelEn: "Arabic", flag: "🇸🇦", home: "/", homeLabel: "الرئيسية" },
+  { code: "en", label: "English", labelEn: "English", flag: "🇬🇧", home: "/en", homeLabel: "Home" },
+  { code: "tr", label: "Türkçe", labelEn: "Turkish", flag: "🇹🇷", home: "/tr", homeLabel: "Ana Sayfa" },
 ];
 
-const categoriesEn = [
-  { key: "financial", label: "💰 Financial" },
-  { key: "text", label: "📝 Text Tools" },
-  { key: "image", label: "🖼️ Image Tools" },
-  { key: "pdf", label: "📄 PDF Tools" },
-  { key: "converters", label: "🔄 Converters" },
-  { key: "generators", label: "⚡ Generators" },
-  { key: "dev", label: "💻 Dev Tools" },
-  { key: "islamic", label: "🕌 Islamic Tools" },
-  { key: "daily", label: "🌟 Other" },
-];
+// Category labels per language (same category keys for all)
+const CATEGORY_LABELS: Record<string, { key: string; label: string }[]> = {
+  ar: [
+    { key: "financial", label: "💰 حاسبات مالية" },
+    { key: "text", label: "📝 أدوات نصية" },
+    { key: "image", label: "🖼️ أدوات الصور" },
+    { key: "pdf", label: "📄 أدوات PDF" },
+    { key: "converters", label: "🔄 محولات" },
+    { key: "generators", label: "⚡ مولدات" },
+    { key: "dev", label: "💻 تطوير ويب" },
+    { key: "islamic", label: "🕌 أدوات إسلامية" },
+    { key: "daily", label: "🌟 أخرى" },
+  ],
+  en: [
+    { key: "financial", label: "💰 Financial" },
+    { key: "text", label: "📝 Text Tools" },
+    { key: "image", label: "🖼️ Image Tools" },
+    { key: "pdf", label: "📄 PDF Tools" },
+    { key: "converters", label: "🔄 Converters" },
+    { key: "generators", label: "⚡ Generators" },
+    { key: "dev", label: "💻 Dev Tools" },
+    { key: "islamic", label: "🕌 Islamic Tools" },
+    { key: "daily", label: "🌟 Other" },
+  ],
+  tr: [
+    { key: "financial", label: "💰 Finansal" },
+    { key: "text", label: "📝 Metin" },
+    { key: "image", label: "🖼️ Görsel" },
+    { key: "pdf", label: "📄 PDF" },
+    { key: "converters", label: "🔄 Dönüştürücüler" },
+    { key: "generators", label: "⚡ Oluşturucular" },
+    { key: "dev", label: "💻 Geliştirici" },
+    { key: "islamic", label: "🕌 İslami" },
+    { key: "daily", label: "🌟 Diğer" },
+  ],
+};
+
+// Nav links per language
+const NAV_LINKS: Record<string, { href: string; label: string; icon: string; mobileIcon: string }[]> = {
+  ar: [
+    { href: "/", label: "الرئيسية", icon: "", mobileIcon: "🏠" },
+    { href: "/blog", label: "المدونة", icon: "📝", mobileIcon: "📝" },
+    { href: "/about", label: "عن الموقع", icon: "", mobileIcon: "ℹ️" },
+    { href: "/privacy", label: "الخصوصية", icon: "", mobileIcon: "🔒" },
+    { href: "mailto:contact@adwatak.cloud", label: "تواصل معنا", icon: "", mobileIcon: "📧" },
+  ],
+  en: [
+    { href: "/en", label: "Home", icon: "", mobileIcon: "🏠" },
+    { href: "/en/blog", label: "Blog", icon: "📝", mobileIcon: "📝" },
+    { href: "/en/about", label: "About", icon: "", mobileIcon: "ℹ️" },
+    { href: "/en/privacy", label: "Privacy", icon: "", mobileIcon: "🔒" },
+    { href: "mailto:contact@adwatak.cloud", label: "Contact", icon: "", mobileIcon: "📧" },
+  ],
+  tr: [
+    { href: "/tr", label: "Ana Sayfa", icon: "", mobileIcon: "🏠" },
+    { href: "/tr/blog", label: "Blog", icon: "📝", mobileIcon: "📝" },
+    { href: "/tr/about", label: "Hakkında", icon: "", mobileIcon: "ℹ️" },
+    { href: "/tr/privacy", label: "Gizlilik", icon: "", mobileIcon: "🔒" },
+    { href: "mailto:contact@adwatak.cloud", label: "İletişim", icon: "", mobileIcon: "📧" },
+  ],
+};
+
+// Dropdown labels per language
+const DD_LABELS: Record<string, string> = {
+  ar: "كل الأدوات",
+  en: "All Tools",
+  tr: "Tüm Araçlar",
+};
+
+// Brand names
+const BRAND_NAMES: Record<string, string> = {
+  ar: "أدواتك",
+  en: "Adawatak",
+  tr: "Adwatak",
+};
 
 export default function Header({ lang = "ar" }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [ddOpen, setDdOpen] = useState(false);
+  const [ddOpen, setDdOpen] = useState(false); // categories dropdown
+  const [langOpen, setLangOpen] = useState(false); // language selector
 
-  const isAr = lang === "ar";
-  const categories = isAr ? categoriesAr : categoriesEn;
-  const catLink = isAr ? "/" : "/en";
-  const brandName = isAr ? "أدواتك" : "Adawatak";
-  const ddLabel = isAr ? "كل الأدوات" : "All Tools";
+  // Resolve language (fallback to 'en' for unknown codes)
+  const activeLang = LANGUAGES.find(l => l.code === lang) || LANGUAGES[1];
+  const isRtl = activeLang.code === "ar";
 
-  const desktopLinks = isAr
-    ? [
-        { href: "/", label: "الرئيسية", icon: "" },
-        { href: "/blog", label: "المدونة", icon: "📝" },
-        { href: "/about", label: "عن الموقع", icon: "" },
-      ]
-    : [
-        { href: "/en", label: "Home", icon: "" },
-        { href: "/en/blog", label: "Blog", icon: "📝" },
-        { href: "/en/about", label: "About", icon: "" },
-      ];
+  const categories = CATEGORY_LABELS[activeLang.code] || CATEGORY_LABELS.en;
+  const catLink = activeLang.home;
+  const navLinks = NAV_LINKS[activeLang.code] || NAV_LINKS.en;
+  const ddLabel = DD_LABELS[activeLang.code] || DD_LABELS.en;
+  const brandName = BRAND_NAMES[activeLang.code] || BRAND_NAMES.en;
 
-  const mobileLinks = isAr
-    ? [
-        { href: "/", label: "الرئيسية", icon: "🏠" },
-        { href: "/blog", label: "المدونة", icon: "📝" },
-        { href: "/about", label: "عن الموقع", icon: "ℹ️" },
-        { href: "/privacy", label: "الخصوصية", icon: "🔒" },
-        { href: "mailto:contact@adwatak.cloud", label: "تواصل معنا", icon: "📧" },
-      ]
-    : [
-        { href: "/en", label: "Home", icon: "🏠" },
-        { href: "/en/blog", label: "Blog", icon: "📝" },
-        { href: "/en/about", label: "About", icon: "ℹ️" },
-        { href: "/en/privacy", label: "Privacy", icon: "🔒" },
-        { href: "mailto:contact@adwatak.cloud", label: "Contact", icon: "📧" },
-      ];
+  // Desktop nav: show first 3 links (home, blog, about)
+  const desktopLinks = navLinks.slice(0, 3);
+
+  const switchLang = (code: string) => {
+    const target = LANGUAGES.find(l => l.code === code);
+    if (target) window.location.href = target.home;
+  };
 
   return (
     <header className="site-header">
       <div className="container">
         <div className="header-inner">
           {/* Logo */}
-          <a href={isAr ? "/" : "/en"} className="logo">
+          <a href={activeLang.home} className="logo">
             <span className="logo-icon">🔧</span>
             <span className="logo-text">{brandName}</span>
           </a>
 
-          {/* Desktop: nav links + dropdown + lang */}
+          {/* ===== DESKTOP ===== */}
           <nav className="nav nav-desktop">
             {desktopLinks.map((link, i) => (
               <a key={i} href={link.href}>
@@ -85,17 +129,19 @@ export default function Header({ lang = "ar" }: HeaderProps) {
               </a>
             ))}
 
-            {/* Desktop dropdown */}
+            {/* Categories dropdown */}
             <div className="dd-desktop"
               onMouseEnter={() => setDdOpen(true)}
               onMouseLeave={() => setDdOpen(false)}>
-              <button className="dd-btn" onClick={() => setDdOpen(!ddOpen)}>
+              <button className="dd-btn" onClick={() => setDdOpen(!ddOpen)}
+                aria-label={ddLabel}>
                 🗂️ {ddLabel} <span className="dd-arrow">▾</span>
               </button>
               {ddOpen && (
                 <div className="dd-menu">
                   {categories.map((cat) => (
-                    <a key={cat.key} href={`${catLink}#${cat.key}`} className="dd-item" onClick={() => setDdOpen(false)}>
+                    <a key={cat.key} href={`${catLink}#${cat.key}`}
+                      className="dd-item" onClick={() => setDdOpen(false)}>
                       {cat.label}
                     </a>
                   ))}
@@ -103,23 +149,68 @@ export default function Header({ lang = "ar" }: HeaderProps) {
               )}
             </div>
 
-            <div className="lang-switch">
-              <a href="/" className={isAr ? "active" : ""}>عربي</a>
-              <a href="/en" className={isAr ? "" : "active"}>EN</a>
+            {/* ===== LANGUAGE SELECTOR (DESKTOP) ===== */}
+            <div className="lang-wrap"
+              onMouseEnter={() => setLangOpen(true)}
+              onMouseLeave={() => setLangOpen(false)}>
+              <button className="lang-btn"
+                onClick={() => setLangOpen(!langOpen)}
+                aria-label="Switch language">
+                {activeLang.flag} <span className="lang-label-desktop">{activeLang.label}</span>
+                <span className="dd-arrow">▾</span>
+              </button>
+              {langOpen && (
+                <div className="lang-menu">
+                  {LANGUAGES.map((l) => (
+                    <button key={l.code}
+                      className={`lang-item ${l.code === activeLang.code ? "active" : ""}`}
+                      onClick={() => { setLangOpen(false); switchLang(l.code); }}>
+                      <span className="lang-item-flag">{l.flag}</span>
+                      <span className="lang-item-label">{l.label}</span>
+                      <span className="lang-item-sublabel">{l.labelEn}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </nav>
 
-          {/* Mobile header */}
+          {/* ===== MOBILE HEADER ===== */}
           <div className="mobile-header-actions">
-            {/* Mobile dropdown */}
+            {/* Language Dropdown (Mobile) */}
+            <div className="lang-mobile-wrap">
+              <button className="lang-btn-mobile"
+                onClick={() => setLangOpen(!langOpen)}
+                aria-label="Switch language">
+                {activeLang.flag}
+                <span className="dd-arrow">{langOpen ? "▴" : "▾"}</span>
+              </button>
+              {langOpen && (
+                <div className="lang-menu-mobile">
+                  {LANGUAGES.map((l) => (
+                    <button key={l.code}
+                      className={`lang-item ${l.code === activeLang.code ? "active" : ""}`}
+                      onClick={() => { setLangOpen(false); switchLang(l.code); }}>
+                      <span className="lang-item-flag">{l.flag}</span>
+                      <span className="lang-item-label">{l.label}</span>
+                      <span className="lang-item-sublabel">{l.labelEn}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Categories dropdown (Mobile) */}
             <div className="dd-mobile-wrap">
-              <button className="dd-btn-mobile" onClick={() => setDdOpen(!ddOpen)}>
+              <button className="dd-btn-mobile" onClick={() => setDdOpen(!ddOpen)}
+                aria-label={ddLabel}>
                 🗂️ <span className="dd-arrow">{ddOpen ? "▴" : "▾"}</span>
               </button>
               {ddOpen && (
                 <div className="dd-menu-mobile">
                   {categories.map((cat) => (
-                    <a key={cat.key} href={`${catLink}#${cat.key}`} onClick={() => setDdOpen(false)}>
+                    <a key={cat.key} href={`${catLink}#${cat.key}`} onClick={() => setDdOpen(false)}
+                      className="dd-mobile-item">
                       {cat.label}
                     </a>
                   ))}
@@ -127,29 +218,27 @@ export default function Header({ lang = "ar" }: HeaderProps) {
               )}
             </div>
 
-            <div className="lang-switch lang-switch-mobile">
-              <a href="/" className={isAr ? "active" : ""}>عربي</a>
-              <a href="/en" className={isAr ? "" : "active"}>EN</a>
-            </div>
+            {/* Hamburger */}
             <button className={`hamburger ${menuOpen ? "open" : ""}`}
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={isAr ? "القائمة" : "Menu"}>
+              aria-label={activeLang.code === "ar" ? "القائمة" : "Menu"}>
               <span></span><span></span><span></span>
             </button>
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* ===== MOBILE MENU (FULL OVERLAY) ===== */}
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-          {mobileLinks.map((link, i) => (
+          {navLinks.map((link, i) => (
             <a key={i} href={link.href} onClick={() => setMenuOpen(false)}>
-              {link.icon} {link.label}
+              {link.mobileIcon} {link.label}
             </a>
           ))}
           <div className="mobile-tools-section">
             <p className="mobile-tools-heading">🗂️ {ddLabel}</p>
             {categories.map((cat) => (
-              <a key={cat.key} href={`${catLink}#${cat.key}`} className="mobile-tools-item" onClick={() => setMenuOpen(false)}>
+              <a key={cat.key} href={`${catLink}#${cat.key}`}
+                className="mobile-tools-item" onClick={() => setMenuOpen(false)}>
                 {cat.label}
               </a>
             ))}

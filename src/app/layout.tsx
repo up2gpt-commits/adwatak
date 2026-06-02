@@ -10,10 +10,12 @@ const arabic = Noto_Sans_Arabic({
 
 const baseUrl = "https://adwatak.cloud";
 
+// Root metadata — only applies to pages that don't override it
+// Child pages/layouts should export their own metadata
 export const metadata: Metadata = {
   title: {
     default: "أدواتك — كل الأدوات اللي محتاجها بالعربي",
-    template: "%s",
+    template: "%s — أدواتك",
   },
   description: "مجموعة أدوات مجانية بالكامل باللغة العربية — حاسبات مالية، ميراث، زكاة، تحويل هجري، QR Code وأكثر. 50+ أداة بدون تسجيل.",
   keywords: ["أدوات", "حاسبات", "قرض عقاري", "ميراث", "زكاة", "تحويل هجري", "QR Code", "أدوات عربية", "حاسبة"],
@@ -23,6 +25,7 @@ export const metadata: Metadata = {
     languages: {
       "ar": baseUrl,
       "en": `${baseUrl}/en`,
+      "tr": `${baseUrl}/tr`,
     },
   },
   openGraph: {
@@ -60,6 +63,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
+        {/* PWA */}
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="theme-color" content="#2563eb" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="mobile-web-app-capable" content="yes" />
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3SRR9PMGN"></script>
         <script dangerouslySetInnerHTML={{ __html: `
