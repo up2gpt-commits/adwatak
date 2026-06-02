@@ -94,6 +94,18 @@ function detectFromGeo(country: string | null): Locale | null {
   return COUNTRY_LOCALE[country] || null;
 }
 
+/** Known search engine crawlers — skip auto-redirect for SEO */
+const CRAWLERS = [
+  "googlebot", "bingbot", "slurp", "duckduckbot", "baiduspider",
+  "yandexbot", "facebookexternalhit", "twitterbot", "applebot",
+];
+
+function isCrawler(userAgent: string | null): boolean {
+  if (!userAgent) return false;
+  const ua = userAgent.toLowerCase();
+  return CRAWLERS.some((bot) => ua.includes(bot));
+}
+
 /** Set lang cookie on response */
 function setLangCookie(response: NextResponse, value: string): void {
   response.cookies.set(COOKIE_NAME, value, {
@@ -125,6 +137,13 @@ export function proxy(request: NextRequest) {
   // ── Cookie exists → respect it (no redirect) ──────────────────
   const langCookie = request.cookies.get(COOKIE_NAME)?.value;
   if (langCookie && LOCALES.includes(langCookie as Locale)) {
+    return NextResponse.next();
+  }
+
+  // ── Skip auto-redirect for search engine crawlers (SEO) ───────
+  // Googlebot, Bingbot etc. should always see the canonical (Arabic /)
+  // so they index the right version in search results
+  if (isCrawler(request.headers.get("user-agent"))) {
     return NextResponse.next();
   }
 
