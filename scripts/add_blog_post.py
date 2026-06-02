@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
-REPO_ROOT = Path(__file__).parent
+REPO_ROOT = Path(__file__).parent.parent
 
 
 def today_str():
