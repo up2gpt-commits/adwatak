@@ -85,6 +85,7 @@ const featuredTools = [
   { title: "Currency Converter", desc: "Live exchange rates", icon: "💱", href: "/en/tools/currency-converter" },
   { title: "PDF to Word", desc: "Convert PDF to editable text", icon: "📄", href: "/en/tools/pdf-to-word" },
   { title: "Image to Text OCR", icon: "👁️", href: "/en/tools/image-to-text", desc: "Extract text from images using OCR" },
+  { title: "AI Essay Writer", icon: "✍️", href: "/en/tools/ai-essay-writer", desc: "Write complete articles with AI", cat: "Text Tools" },
 ];
 
 export default function EnHome() {
