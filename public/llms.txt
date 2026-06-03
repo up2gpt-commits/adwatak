@@ -1,0 +1,48 @@
+# Adawatak (أدواتك) — Free Online Tools Platform
+> https://adwatak.cloud
+
+Adawatak (أدواتك) is a free online tools platform with 60+ tools in Arabic, English, Turkish, and Indonesian. All tools run client-side in the browser — no signup, no uploads, fully private.
+
+## Tool Categories
+- Financial Calculators: mortgage, loan, EMI, salary, VAT, profit margin, installment, compound interest, gold, currency converter
+- Health Calculators: BMI, BMR, calorie, body fat
+- Islamic Tools: Zakat calculator, inheritance calculator (Faraid), prayer times, Qibla direction, Hijri date converter
+- Text Tools: word counter, text case converter, text cleaner, text compare, AI content detector, plagiarism checker, grammar checker, paraphrasing tool, typing speed test, Arabic Lorem Ipsum
+- Image Tools: image resizer, image compressor, background remover, image to PDF, YouTube thumbnail downloader, image to text (OCR)
+- PDF Tools: PDF merger, PDF compressor, PDF splitter, PDF to Word
+- Converters: unit converter, color converter, number to words, Base64 encoder, hash generator, barcode generator
+- Generators: QR code generator, QR code reader, password generator, random number, bio generator, invoice generator, WhatsApp link
+
+## Featured Tools (English)
+- Mortgage Calculator: https://adwatak.cloud/en/tools/mortgage-calculator
+- BMI Calculator: https://adwatak.cloud/en/tools/bmi-calculator
+- Zakat Calculator: https://adwatak.cloud/en/tools/zakat-calculator
+- QR Code Generator: https://adwatak.cloud/en/tools/qr-generator
+- Prayer Times: https://adwatak.cloud/en/tools/prayer-times
+- Inheritance Calculator: https://adwatak.cloud/en/tools/inheritance-calculator
+- Hijri Converter: https://adwatak.cloud/en/tools/hijri-converter
+- Currency Converter: https://adwatak.cloud/en/tools/currency-converter
+- VAT Calculator: https://adwatak.cloud/en/tools/vat-calculator
+
+## Multilingual
+- Arabic (العربية): https://adwatak.cloud/
+- English: https://adwatak.cloud/en
+- Turkish (Türkçe): https://adwatak.cloud/tr
+- Indonesian (Bahasa Indonesia): https://adwatak.cloud/id
+
+## Blog
+- English blog: https://adwatak.cloud/en/blog
+- Arabic blog: https://adwatak.cloud/blog
+
+## Key Attributes
+- All tools are 100% free
+- No registration or signup required
+- Privacy-first: all calculations run in-browser, no data sent to servers
+- Works offline (PWA)
+- 4 languages: Arabic, English, Turkish, Indonesian
+- Mobile-friendly responsive design
+- Structured data: WebApplication, FAQPage, HowTo, Speakable, BreadcrumbList on every tool page
+
+## About
+Adawatak (أدواتك) serves users across the Arab world and globally. Built with Next.js, deployed on Vercel.
+Contact: contact@adwatak.cloud
