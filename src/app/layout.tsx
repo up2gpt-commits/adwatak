@@ -103,8 +103,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body>
         <DynamicHtmlLang />
-        <StructuredData data={orgSchema()} />
-        <StructuredData data={websiteSchema("ar")} />
+        <StructuredData data={orgSchema("https://adwatak.cloud")} />
+        <StructuredData data={websiteSchema(lang as "ar" | "en" | "tr" | "id")} />
         {children}
       </body>
     </html>

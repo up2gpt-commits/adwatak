@@ -13,12 +13,12 @@ export default function StructuredData({ data }: { data: Record<string, unknown>
 // Core schemas (SEO)
 // ══════════════════════════════════════════
 
-export function orgSchema() {
+export function orgSchema(pageUrl?: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "أدواتك — Adawatak",
-    url: "https://adwatak.cloud",
+    url: pageUrl || "https://adwatak.cloud",
     logo: {
       "@type": "ImageObject",
       url: "https://adwatak.cloud/favicon.svg",
@@ -27,8 +27,8 @@ export function orgSchema() {
     },
     description: "Free online tools platform — calculators, converters, generators. أدوات مجانية باللغة العربية — حاسبات مالية، أدوات إسلامية، مولدات، محولات وأكثر",
     sameAs: [
-      "https://adwatak.cloud/en",
-      "https://adwatak.cloud/tr",
+      "https://twitter.com/adawatak",
+      "https://facebook.com/adawatak",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -38,18 +38,19 @@ export function orgSchema() {
   };
 }
 
-export function websiteSchema(lang: "ar" | "en" = "ar") {
+export function websiteSchema(lang: "ar" | "en" | "tr" | "id" = "ar") {
   const name = lang === "ar" ? "أدواتك" : "Adawatak";
   const desc = lang === "ar"
     ? "مجموعة أدوات مجانية بالكامل باللغة العربية — حاسبات مالية، أدوات إسلامية، مولدات، محولات وأكثر"
     : "Free online tools — calculators, converters, generators, and more. No signup required.";
+  const prefix = lang === "ar" ? "" : lang === "tr" ? "tr/" : lang === "id" ? "id/" : "en/";
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name,
-    url: lang === "ar" ? "https://adwatak.cloud" : "https://adwatak.cloud/en",
+    url: `https://adwatak.cloud/${prefix}`,
     description: desc,
-    inLanguage: lang === "ar" ? "ar" : "en",
+    inLanguage: lang,
     potentialAction: {
       "@type": "SearchAction",
       target: {

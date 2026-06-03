@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "../components/Header";
 import NewsletterForm from "../components/NewsletterForm";
+import StructuredData, { orgSchema, websiteSchema } from "../components/StructuredData";
 
 export const metadata: Metadata = {
   title: {
