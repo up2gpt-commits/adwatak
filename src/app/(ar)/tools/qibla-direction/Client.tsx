@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import FAQSection from "../../../components/FAQSection";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { howToSchema, speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
@@ -454,6 +454,9 @@ export default function Client() {
         { name: "أدوات إسلامية", url: "https://adwatak.cloud/category/islamic" },
         { name: "اتجاه القبلة", url: "https://adwatak.cloud/tools/qibla-direction" },
       ])} />
+      {/* GEO: Speakable — marks key content for AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
+      />
       <Breadcrumb lang="ar" category="أدوات إسلامية" categorySlug="islamic" toolName="اتجاه القبلة" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">

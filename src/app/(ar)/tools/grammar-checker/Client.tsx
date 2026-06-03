@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { howToSchema, speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -77,6 +77,9 @@ export default function Client() {
       <StructuredData data={toolSchema("المدقق النحوي", "تدقيق الأخطاء النحوية والإملائية وعلامات الترقيم", "https://adwatak.cloud/tools/grammar-checker", "ar", "Text Analysis")} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema([{name:"الرئيسية",url:"https://adwatak.cloud"},{name:"أدوات نصية",url:"https://adwatak.cloud/category/text"},{name:"المدقق النحوي",url:"https://adwatak.cloud/tools/grammar-checker"}])} />
+      {/* GEO: Speakable — marks key content for AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
+      />
       <Breadcrumb lang="ar" category="أدوات نصية" categorySlug="text" toolName="المدقق النحوي" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">📝 المدقق النحوي</h1>

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useCallback } from "react";
-import StructuredData, { toolSchema, faqSchema } from "../../../components/StructuredData";
+import StructuredData, { howToSchema, speakableSchema, toolSchema, faqSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -150,6 +150,9 @@ export default function Client() {
     <div className="max-w-[760px] mx-auto">
       <StructuredData data={toolSchema("استخراج النص من الصور", "استخراج النص من الصور بالذكاء الاصطناعي — OCR AI مجاني", "https://adwatak.cloud/tools/image-to-text", "ar", "Tools")} />
       <StructuredData data={faqSchema(faqs)} />
+      {/* GEO: Speakable — marks key content for AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
+      />
       <Breadcrumb lang="ar" category="أدوات أخرى" categorySlug="tools" toolName="استخراج النص من الصور" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">👁️ استخراج النص من الصور</h1>

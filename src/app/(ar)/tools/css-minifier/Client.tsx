@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { howToSchema, speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -93,6 +93,9 @@ export default function Client() {
       <StructuredData data={toolSchema("تصغير وتنسيق CSS", "تصغير (Minify) وتنسيق (Format) أكواد CSS أونلاين", "https://adwatak.cloud/tools/css-minifier", "ar", "Developer Tools")} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema([{name:"الرئيسية",url:"https://adwatak.cloud"},{name:"أدوات مطورين",url:"https://adwatak.cloud/category/dev"},{name:"تصغير CSS",url:"https://adwatak.cloud/tools/css-minifier"}])} />
+      {/* GEO: Speakable — marks key content for AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
+      />
       <Breadcrumb lang="ar" category="تطوير ويب" categorySlug="dev" toolName="تصغير CSS" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🎨 تصغير وتنسيق CSS</h1>

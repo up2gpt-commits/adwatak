@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { howToSchema, speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
@@ -116,6 +116,9 @@ export default function Client() {
       <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'ar', schemaCategory)} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      {/* GEO: Speakable — marks key content for AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
+      />
       <Breadcrumb lang="ar" category="أدوات أخرى" categorySlug="daily" toolName="قارئ QR Code" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">📷 قارئ QR Code</h1>

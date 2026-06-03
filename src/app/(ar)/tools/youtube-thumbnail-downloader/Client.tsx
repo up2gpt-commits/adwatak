@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { howToSchema, speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -76,6 +76,9 @@ export default function Client() {
       <StructuredData data={toolSchema("تحميل ثامبنيل يوتيوب", "تحميل الصور المصغرة لفيديوهات يوتيوب بجودة عالية مجاناً", "https://adwatak.cloud/tools/youtube-thumbnail-downloader", "ar", "Image Tools")} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema([{name:"الرئيسية",url:"https://adwatak.cloud"},{name:"أدوات صور",url:"https://adwatak.cloud/tools/image"},{name:"تحميل ثامبنيل يوتيوب",url:"https://adwatak.cloud/tools/youtube-thumbnail-downloader"}])} />
+      {/* GEO: Speakable — marks key content for AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
+      />
       <Breadcrumb lang="ar" category="أدوات الصور" categorySlug="image" toolName="تحميل ثامبنيل يوتيوب" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">▶️ تحميل ثامبنيل يوتيوب</h1>

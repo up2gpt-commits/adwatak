@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { howToSchema, speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -90,6 +90,9 @@ export default function Client() {
       <StructuredData data={toolSchema("تغيير حجم الصور", "تغيير أبعاد الصور مجاناً — أونلاين، بدون رفع لسيرفر", "https://adwatak.cloud/tools/image-resizer", "ar", "Image Tools")} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema([{name:"الرئيسية",url:"https://adwatak.cloud"},{name:"أدوات صور",url:"https://adwatak.cloud/tools/image"},{name:"تغيير حجم الصور",url:"https://adwatak.cloud/tools/image-resizer"}])} />
+      {/* GEO: Speakable — marks key content for AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
+      />
       <Breadcrumb lang="ar" category="أدوات الصور" categorySlug="image" toolName="تغيير حجم الصور" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🖼️ تغيير حجم الصور</h1>

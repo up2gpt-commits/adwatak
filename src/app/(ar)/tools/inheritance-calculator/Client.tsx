@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { howToSchema, speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
@@ -68,6 +68,9 @@ export default function Client() {
       <StructuredData data={toolSchema("حاسبة الميراث الإسلامي", "Online حاسبة الميراث الإسلامي - free tool", "https://adwatak.cloud/tools/inheritance-calculator", "ar", "Utility")} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema([{ name: "الرئيسية", url: "https://adwatak.cloud" }, { name: "أدوات إسلامية", url: "https://adwatak.cloud/category/islamic" }, { name: "حاسبة الميراث الإسلامي", url: "https://adwatak.cloud/tools/inheritance-calculator" }])} />
+      {/* GEO: Speakable — marks key content for AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
+      />
       <Breadcrumb lang="ar" category="أدوات إسلامية" categorySlug="islamic" toolName="حاسبة الميراث الإسلامي" />
 
       {/* Main Card */}
