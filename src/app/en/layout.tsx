@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     languages: {
       "ar": baseUrl,
       "en": `${baseUrl}/en`,
+      "tr": `${baseUrl}/tr`,
+      "id": `${baseUrl}/id`,
+      "x-default": baseUrl,
     },
   },
   openGraph: {

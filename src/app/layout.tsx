@@ -26,6 +26,7 @@ export const metadata: Metadata = {
       "ar": baseUrl,
       "en": `${baseUrl}/en`,
       "tr": `${baseUrl}/tr`,
+      "id": `${baseUrl}/id`,
     },
   },
   openGraph: {

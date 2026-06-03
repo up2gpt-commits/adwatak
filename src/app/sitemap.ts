@@ -16,6 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/tr/about", lastModified: "2026-06-02" },
     { path: "/tr/privacy", lastModified: "2026-06-02" },
     { path: "/tr/blog", lastModified: "2026-06-02" },
+    { path: "/id", lastModified: "2026-06-03" },
+    { path: "/id/about", lastModified: "2026-06-03" },
+    { path: "/id/privacy", lastModified: "2026-06-03" },
+    { path: "/id/blog", lastModified: "2026-06-03" },
     { path: "/category/calculators", lastModified: "2026-06-02" },
     { path: "/category/converters", lastModified: "2026-06-02" },
     { path: "/category/text", lastModified: "2026-06-02" },
@@ -61,8 +65,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "css-minifier", "grammar-checker",
   ];
 
-  // Same tools for Turkish (same slugs, different prefix)
+  // Same tools for Turkish and Indonesian (same slugs, different prefix)
   const trTools = [...enTools];
+  const idTools = [...enTools];
 
   const arBlogSlugs = [
     "how-to-calculate-zakat", "how-to-calculate-mortgage",
@@ -79,6 +84,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   const trBlogSlugs = [
     "adwatak-nedir-2026",
+  ];
+  const idBlogSlugs = [
+    "apa-itu-adwatak",
   ];
 
   const entries: MetadataRoute.Sitemap = [
@@ -106,6 +114,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
+    ...idTools.map((slug) => ({
+      url: `${baseUrl}/id/tools/${slug}`,
+      lastModified: "2026-06-03",
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
     ...arBlogSlugs.map((slug) => ({
       url: `${baseUrl}/blog/${slug}`,
       lastModified: "2026-06-02",
@@ -121,6 +135,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...trBlogSlugs.map((slug) => ({
       url: `${baseUrl}/tr/blog/${slug}`,
       lastModified: "2026-06-02",
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...idBlogSlugs.map((slug) => ({
+      url: `${baseUrl}/id/blog/${slug}`,
+      lastModified: "2026-06-03",
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

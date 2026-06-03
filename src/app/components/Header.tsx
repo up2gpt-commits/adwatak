@@ -10,6 +10,7 @@ const LANGUAGES = [
   { code: "ar", label: "عربي", labelEn: "Arabic", flag: "🇸🇦", home: "/", homeLabel: "الرئيسية" },
   { code: "en", label: "English", labelEn: "English", flag: "🇬🇧", home: "/en", homeLabel: "Home" },
   { code: "tr", label: "Türkçe", labelEn: "Turkish", flag: "🇹🇷", home: "/tr", homeLabel: "Ana Sayfa" },
+  { code: "id", label: "Bahasa Indonesia", labelEn: "Indonesian", flag: "🇮🇩", home: "/id", homeLabel: "Beranda" },
 ];
 
 // Category labels per language (same category keys for all)
@@ -47,6 +48,17 @@ const CATEGORY_LABELS: Record<string, { key: string; label: string }[]> = {
     { key: "islamic", label: "🕌 İslami" },
     { key: "daily", label: "🌟 Diğer" },
   ],
+  id: [
+    { key: "financial", label: "💰 Keuangan" },
+    { key: "text", label: "📝 Teks" },
+    { key: "image", label: "🖼️ Gambar" },
+    { key: "pdf", label: "📄 PDF" },
+    { key: "converters", label: "🔄 Konverter" },
+    { key: "generators", label: "⚡ Generator" },
+    { key: "dev", label: "💻 Pengembang" },
+    { key: "islamic", label: "🕌 Islami" },
+    { key: "daily", label: "🌟 Lainnya" },
+  ],
 };
 
 // Nav links per language
@@ -72,6 +84,13 @@ const NAV_LINKS: Record<string, { href: string; label: string; icon: string; mob
     { href: "/tr/privacy", label: "Gizlilik", icon: "", mobileIcon: "🔒" },
     { href: "mailto:contact@adwatak.cloud", label: "İletişim", icon: "", mobileIcon: "📧" },
   ],
+  id: [
+    { href: "/id", label: "Beranda", icon: "", mobileIcon: "🏠" },
+    { href: "/id/blog", label: "Blog", icon: "📝", mobileIcon: "📝" },
+    { href: "/id/about", label: "Tentang", icon: "", mobileIcon: "ℹ️" },
+    { href: "/id/privacy", label: "Privasi", icon: "", mobileIcon: "🔒" },
+    { href: "mailto:contact@adwatak.cloud", label: "Kontak", icon: "", mobileIcon: "📧" },
+  ],
 };
 
 // Dropdown labels per language
@@ -79,6 +98,7 @@ const DD_LABELS: Record<string, string> = {
   ar: "كل الأدوات",
   en: "All Tools",
   tr: "Tüm Araçlar",
+  id: "Semua Alat",
 };
 
 // Brand names
@@ -86,6 +106,7 @@ const BRAND_NAMES: Record<string, string> = {
   ar: "أدواتك",
   en: "Adawatak",
   tr: "Adwatak",
+  id: "Adwatak",
 };
 
 export default function Header({ lang = "ar" }: HeaderProps) {

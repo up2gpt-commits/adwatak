@@ -12,6 +12,7 @@ export default function NewsletterForm({ lang = "ar" }: NewsletterFormProps) {
   const [message, setMessage] = useState("");
 
   const isTr = lang === "tr";
+  const isId = lang === "id";
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -25,16 +26,16 @@ export default function NewsletterForm({ lang = "ar" }: NewsletterFormProps) {
       });
       if (res.ok) {
         setStatus("success");
-        setMessage(lang === "ar" ? "✅ تم الاشتراك بنجاح!" : isTr ? "✅ Başarıyla abone olundu!" : "✅ Subscribed successfully!");
+        setMessage(lang === "ar" ? "✅ تم الاشتراك بنجاح!" : isTr ? "✅ Başarıyla abone olundu!" : isId ? "✅ Berhasil berlangganan!" : "✅ Subscribed successfully!");
         setEmail("");
       } else {
         const data = await res.json();
         setStatus("error");
-        setMessage(data.error || (lang === "ar" ? "❌ حدث خطأ" : isTr ? "❌ Bir hata oluştu" : "❌ Something went wrong"));
+        setMessage(data.error || (lang === "ar" ? "❌ حدث خطأ" : isTr ? "❌ Bir hata oluştu" : isId ? "❌ Terjadi kesalahan" : "❌ Something went wrong"));
       }
     } catch {
       setStatus("error");
-      setMessage(lang === "ar" ? "❌ حدث خطأ في الاتصال" : isTr ? "❌ Bağlantı hatası" : "❌ Connection error");
+      setMessage(lang === "ar" ? "❌ حدث خطأ في الاتصال" : isTr ? "❌ Bağlantı hatası" : isId ? "❌ Kesalahan koneksi" : "❌ Connection error");
     }
     setTimeout(() => { setStatus("idle"); setMessage(""); }, 4000);
   };
@@ -45,7 +46,7 @@ export default function NewsletterForm({ lang = "ar" }: NewsletterFormProps) {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder={lang === "ar" ? "بريدك الإلكتروني..." : isTr ? "E-posta adresiniz..." : "Your email..."}
+        placeholder={lang === "ar" ? "بريدك الإلكتروني..." : isTr ? "E-posta adresiniz..." : isId ? "Alamat email Anda..." : "Your email..."}
         required
         disabled={status === "loading"}
       />
@@ -56,7 +57,9 @@ export default function NewsletterForm({ lang = "ar" }: NewsletterFormProps) {
             ? "اشترك مجاناً ✉️"
             : isTr
               ? "Ücretsiz Abone Ol ✉️"
-              : "Subscribe Free ✉️"}
+              : isId
+                ? "Berlangganan Gratis ✉️"
+                : "Subscribe Free ✉️"}
       </button>
       {message && (
         <p className={`text-xs mt-2 ${status === "success" ? "text-green-600" : "text-red-500"}`}>

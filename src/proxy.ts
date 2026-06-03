@@ -15,7 +15,7 @@ import type { NextRequest } from "next/server";
 
 // ── Constants ────────────────────────────────────────────────────
 
-const LOCALES = ["ar", "en", "tr"] as const;
+const LOCALES = ["ar", "en", "tr", "id"] as const;
 type Locale = (typeof LOCALES)[number];
 const DEFAULT_LOCALE: Locale = "ar";
 
@@ -28,6 +28,7 @@ const ARABIC_COUNTRIES = new Set([
 /** Country → locale mapping (non-Arabic overrides) */
 const COUNTRY_LOCALE: Record<string, Locale> = {
   TR: "tr",
+  ID: "id",
 };
 
 const COOKIE_NAME = "lang";
@@ -150,7 +151,7 @@ export function proxy(request: NextRequest) {
   // ── No cookie — only auto-detect on entry pages ───────────────
   const currentLang = getPathLocale(pathname);
   const isEntryPage =
-    pathname === "/" || pathname === "/en" || pathname === "/tr";
+    pathname === "/" || pathname === "/en" || pathname === "/tr" || pathname === "/id";
 
   if (!isEntryPage) {
     // Deep link — pass through without redirect

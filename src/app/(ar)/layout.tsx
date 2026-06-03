@@ -7,6 +7,16 @@ export const metadata: Metadata = {
     default: "أدواتك — كل الأدوات اللي محتاجها بالعربي",
     template: "%s — أدواتك",
   },
+  alternates: {
+    canonical: "https://adwatak.cloud",
+    languages: {
+      "ar": "https://adwatak.cloud",
+      "en": "https://adwatak.cloud/en",
+      "tr": "https://adwatak.cloud/tr",
+      "id": "https://adwatak.cloud/id",
+      "x-default": "https://adwatak.cloud",
+    },
+  },
 };
 
 export default function ArabicLayout({ children }: { children: React.ReactNode }) {
