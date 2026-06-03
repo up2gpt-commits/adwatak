@@ -156,7 +156,8 @@ export function proxy(request: NextRequest) {
   // Googlebot, Bingbot etc. should always see the canonical (Arabic /)
   // so they index the right version in search results
   if (isCrawler(request.headers.get("user-agent"))) {
-    return NextResponse.next();
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
+    return response;
   }
 
   // ── No cookie — only auto-detect on root "/" ─────────────────
@@ -165,14 +166,15 @@ export function proxy(request: NextRequest) {
   // If user explicitly navigated to /en, /tr, /id — RESPECT their choice.
   // Never redirect away from an explicit language prefix.
   if (currentLang) {
-    const response = NextResponse.next();
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
     setLangCookie(response, currentLang);
     return response;
   }
 
   // Only the bare "/" root triggers auto-redirect
   if (pathname !== "/") {
-    return NextResponse.next();
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
+    return response;
   }
 
   // ── Detect language ───────────────────────────────────────────
@@ -194,7 +196,7 @@ export function proxy(request: NextRequest) {
 
   // Already on the right path — just set cookie
   if (currentLang === detected || (detected === "ar" && !currentLang)) {
-    const response = NextResponse.next();
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
     setLangCookie(response, detected);
     return response;
   }
