@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema ,howToSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -88,6 +88,11 @@ return (
         <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
       {/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
+      {/* GEO: HowTo — adim adim kullanim */}
+      <StructuredData data={howToSchema("Bu araci nasil kullanirim", "Tarayicinizda calisan ucretsiz arac. Kayit gerektirmez.", [{name:"Araci acin",text:"Adwatak sitesinde bu arac sayfasina gidin"},{name:"Verilerinizi girin",text:"Gerekli alanlari doldurun"},{name:"Sonuc alin",text:"Hesapla veya olustur butonuna tiklayin"},{name:"Kullanin veya paylasin",text:"Sonucu kopyalayin, indirin veya paylasin"}],"bir dakikadan az","tr")} />
+      {/* GEO: Speakable — AI/ses motorlari */}
+      <StructuredData data={speakableSchema(["h1","h2","main"])} />
+
       <Breadcrumb category="Other Tools" categorySlug="utility-tools" toolName="Unit Converter" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">📏 Unit Converter</h1>

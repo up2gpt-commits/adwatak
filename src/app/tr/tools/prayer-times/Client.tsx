@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
-import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema ,howToSchema } from "../../../components/StructuredData";
 import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
@@ -203,6 +203,11 @@ export default function Client() {
       ])} />
       {/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
+      {/* GEO: HowTo — adim adim kullanim */}
+      <StructuredData data={howToSchema("Bu araci nasil kullanirim", "Tarayicinizda calisan ucretsiz arac. Kayit gerektirmez.", [{name:"Araci acin",text:"Adwatak sitesinde bu arac sayfasina gidin"},{name:"Verilerinizi girin",text:"Gerekli alanlari doldurun"},{name:"Sonuc alin",text:"Hesapla veya olustur butonuna tiklayin"},{name:"Kullanin veya paylasin",text:"Sonucu kopyalayin, indirin veya paylasin"}],"bir dakikadan az","tr")} />
+      {/* GEO: Speakable — AI/ses motorlari */}
+      <StructuredData data={speakableSchema(["h1","h2","main"])} />
+
       <Breadcrumb lang="tr" category="İslami Araçlar" categorySlug="islamic" toolName="Namaz Vakitleri" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
