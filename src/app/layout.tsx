@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
+import { cookies } from "next/headers";
 import "./globals.css";
 import { Noto_Sans_Arabic } from "next/font/google";
 import StructuredData, { orgSchema, websiteSchema } from "./components/StructuredData";
@@ -12,10 +12,17 @@ const arabic = Noto_Sans_Arabic({
 
 const baseUrl = "https://adwatak.cloud";
 
-// Detect locale from x-locale header (set by proxy.ts) for server-side <html lang="">
-function detectLocale(headersList: { get(name: string): string | null }): string {
-  // x-locale is set by proxy.ts middleware — reliable for all requests
-  return headersList.get("x-locale") || "ar";
+// Detect locale from cookie — the most reliable signal since proxy.ts
+// sets the lang cookie on every request before the layout renders.
+// This gives us the correct lang in the very first HTML byte.
+function extractLang(pathname: string, cookieValue: string | undefined): string {
+  // Cookie has the highest priority (set by proxy.ts on every visit)
+  if (cookieValue && ["ar", "en", "tr", "id"].includes(cookieValue)) {
+    return cookieValue;
+  }
+  // Fallback: detect from URL path
+  const match = pathname.match(/^\/(en|tr|id)(\/|$)/);
+  return match ? match[1] : "ar";
 }
 
 // Root metadata — only applies to pages that don't override it
@@ -64,9 +71,11 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // Server-side lang detection from x-locale header (set by proxy.ts)
-  const headersList = await headers();
-  const lang = detectLocale(headersList);
+  // Server-side lang detection: read lang cookie set by proxy.ts
+  const cookieStore = await cookies();
+  const langCookie = cookieStore.get("lang")?.value;
+  // Also read pathname from x-invoke-path as fallback
+  const lang = extractLang("/", langCookie);
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
