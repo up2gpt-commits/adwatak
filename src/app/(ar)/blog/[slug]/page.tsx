@@ -7,6 +7,39 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
+/** Extract FAQ pairs from blog post HTML content */
+function extractFaqFromHtml(html: string): { question: string; answer: string }[] {
+  const faqs: { question: string; answer: string }[] = [];
+  // Match h3 followed by p — standard FAQ pattern from our blog prompts
+  const faqRegex = /<h3[^>]*>([^<]+)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+  let match;
+  while ((match = faqRegex.exec(html)) !== null) {
+    const question = match[1].trim();
+    // Strip HTML tags from answer
+    const answer = match[2].trim().replace(/<[^>]*>/g, "").trim();
+    if (question && answer) {
+      faqs.push({ question, answer });
+    }
+  }
+  return faqs;
+}
+
+/** Build FAQPage schema from extracted FAQs */
+function buildFaqSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -55,12 +88,22 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     image: "https://adwatak.cloud/og-ar.svg",
   };
 
+  // Extract FAQ from article content
+  const faqs = extractFaqFromHtml(post.content);
+  const faqSchema = faqs.length >= 3 ? buildFaqSchema(faqs) : null;
+
   return (
     <div className="max-w-3xl mx-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-blue-600">الرئيسية</Link>
