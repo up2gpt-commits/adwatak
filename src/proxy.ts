@@ -148,13 +148,19 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // ── No cookie — only auto-detect on entry pages ───────────────
+  // ── No cookie — only auto-detect on root "/" ─────────────────
   const currentLang = getPathLocale(pathname);
-  const isEntryPage =
-    pathname === "/" || pathname === "/en" || pathname === "/tr" || pathname === "/id";
 
-  if (!isEntryPage) {
-    // Deep link — pass through without redirect
+  // If user explicitly navigated to /en, /tr, /id — RESPECT their choice.
+  // Never redirect away from an explicit language prefix.
+  if (currentLang) {
+    const response = NextResponse.next();
+    setLangCookie(response, currentLang);
+    return response;
+  }
+
+  // Only the bare "/" root triggers auto-redirect
+  if (pathname !== "/") {
     return NextResponse.next();
   }
 

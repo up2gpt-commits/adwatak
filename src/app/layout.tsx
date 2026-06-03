@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Noto_Sans_Arabic } from "next/font/google";
 import StructuredData, { orgSchema, websiteSchema } from "./components/StructuredData";
+import DynamicHtmlLang from "./components/DynamicHtmlLang";
 
 const arabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}} />
       </head>
       <body>
+        <DynamicHtmlLang />
         <StructuredData data={orgSchema()} />
         <StructuredData data={websiteSchema("ar")} />
         {children}
