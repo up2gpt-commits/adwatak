@@ -1,5 +1,5 @@
 "use client";import { useState } from "react";
-import StructuredData,{toolSchema,faqSchema,breadcrumbSchema} from "../../../components/StructuredData";
+import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";import RelatedTools from "../../../components/RelatedTools";import SEOContent from "../../../components/SEOContent";
 const faqs=[
@@ -39,7 +39,11 @@ return(<div className="max-w-[760px] mx-auto">
 <StructuredData data={toolSchema("Paraphrasing Tool","Rewrite text in a new style while preserving the original meaning","https://adwatak.cloud/en/tools/paraphrasing-tool","en","Text Analysis")}/>
 <StructuredData data={faqSchema(faqs)}/>
 <StructuredData data={breadcrumbSchema([{name:"Home",url:"https://adwatak.cloud/en"},{name:"Text Tools",url:"https://adwatak.cloud/en/category/text"},{name:"Paraphrasing Tool",url:"https://adwatak.cloud/en/tools/paraphrasing-tool"}])}/>
-<Breadcrumb lang="en" category="Text Tools" categorySlug="text" toolName="Paraphrasing Tool"/>
+{/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
+<StructuredData data={speakableSchema(["h1", "h2", "main"])} />
+      {/* GEO: Speakable — AI engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
+      <Breadcrumb lang="en" category="Text Tools" categorySlug="text" toolName="Paraphrasing Tool"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
 <h1 className="text-2xl font-extrabold mb-1">✏️ Paraphrasing Tool</h1><p className="text-sm text-gray-500 mb-6">Rewrite text in a new style while preserving the original meaning</p>
 <textarea value={text} onChange={(e)=>setText(e.target.value)} className="w-full h-[180px] p-4 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit resize-y" placeholder="Paste text to paraphrase..." />

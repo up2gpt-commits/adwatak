@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -134,6 +134,8 @@ export default function Client() {
       <StructuredData data={toolSchema("SEO Audit", "Free SEO audit and analysis tool for any website", "https://adwatak.cloud/en/tools/seo-audit", "en", "SEO")} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema([{name:"Home",url:"https://adwatak.cloud/en"},{name:"Developer Tools",url:"https://adwatak.cloud/en/category/dev"},{name:"SEO Audit",url:"https://adwatak.cloud/en/tools/seo-audit"}])} />
+      {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       <Breadcrumb lang="en" category="Dev Tools" categorySlug="dev" toolName="SEO Audit" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🔍 SEO Audit</h1>

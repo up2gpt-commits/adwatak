@@ -1,5 +1,5 @@
 "use client";import { useState } from "react";
-import StructuredData,{toolSchema,faqSchema,breadcrumbSchema} from "../../../components/StructuredData";
+import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";import RelatedTools from "../../../components/RelatedTools";import SEOContent from "../../../components/SEOContent";
 const faqs=[
@@ -39,7 +39,11 @@ return(<div className="max-w-[760px] mx-auto">
 <StructuredData data={toolSchema("Grammar Checker","Check grammar, spelling, and punctuation errors","https://adwatak.cloud/en/tools/grammar-checker","en","Text Analysis")}/>
 <StructuredData data={faqSchema(faqs)}/>
 <StructuredData data={breadcrumbSchema([{name:"Home",url:"https://adwatak.cloud/en"},{name:"Text Tools",url:"https://adwatak.cloud/en/category/text"},{name:"Grammar Checker",url:"https://adwatak.cloud/en/tools/grammar-checker"}])}/>
-<Breadcrumb lang="en" category="Text Tools" categorySlug="text" toolName="Grammar Checker"/>
+{/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
+<StructuredData data={speakableSchema(["h1", "h2", "main"])} />
+      {/* GEO: Speakable — AI engines */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
+      <Breadcrumb lang="en" category="Text Tools" categorySlug="text" toolName="Grammar Checker"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
 <h1 className="text-2xl font-extrabold mb-1">📝 Grammar Checker</h1>
 <p className="text-sm text-gray-500 mb-6">Check grammar, spelling, and punctuation errors</p>

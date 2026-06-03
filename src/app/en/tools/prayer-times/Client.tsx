@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
@@ -228,6 +228,8 @@ export default function Client() {
         { name: "Islamic Tools", url: "https://adwatak.cloud/en/category/islamic" },
         { name: "Prayer Times", url: "https://adwatak.cloud/en/tools/prayer-times" },
       ])} />
+      {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       <Breadcrumb lang="en" category="Islamic Tools" categorySlug="islamic" toolName="Prayer Times" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">

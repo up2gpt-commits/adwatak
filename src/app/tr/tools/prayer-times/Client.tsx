@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
@@ -201,6 +201,8 @@ export default function Client() {
         { name: "İslami Araçlar", url: "https://adwatak.cloud/tr/category/islamic" },
         { name: "Namaz Vakitleri", url: "https://adwatak.cloud/tr/tools/prayer-times" },
       ])} />
+      {/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       <Breadcrumb lang="tr" category="İslami Araçlar" categorySlug="islamic" toolName="Namaz Vakitleri" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">

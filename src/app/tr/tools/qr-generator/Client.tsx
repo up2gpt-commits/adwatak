@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -65,6 +65,8 @@ return (
         <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
         <StructuredData data={faqSchema(faqs)} />
         <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      {/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       <Breadcrumb category="Dev Tools" categorySlug="developer-tools" toolName="QR Code Generator" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">📱 QR Code Generator</h1>

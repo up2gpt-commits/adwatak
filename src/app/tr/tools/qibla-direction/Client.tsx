@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import FAQSection from "../../../components/FAQSection";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
@@ -261,6 +261,8 @@ export default function Client() {
         { name: "İslami Araçlar", url: "https://adwatak.cloud/tr/category/islamic" },
         { name: "Kıble Yönü", url: "https://adwatak.cloud/tr/tools/qibla-direction" },
       ])} />
+      {/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       <Breadcrumb lang="tr" category="İslami Araçlar" categorySlug="islamic" toolName="Kıble Yönü" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">

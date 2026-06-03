@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
@@ -44,6 +44,8 @@ export default function Client() {
       <StructuredData data={toolSchema("VKİ Hesaplama", "Vücut Kitle İndeksi hesapla — metrik ve imparatorluk birimleri", "https://adwatak.cloud/tr/tools/bmi-calculator", "tr", "Health")} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema([{ name: "Ana Sayfa", url: "https://adwatak.cloud/tr" }, { name: "Diğer Araçlar", url: "https://adwatak.cloud/tr/category/daily" }, { name: "VKİ Hesaplama", url: "https://adwatak.cloud/tr/tools/bmi-calculator" }])} />
+      {/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       <Breadcrumb lang="tr" category="Diğer Araçlar" categorySlug="daily" toolName="VKİ Hesaplama" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">⚖️ VKİ Hesaplama</h1>
