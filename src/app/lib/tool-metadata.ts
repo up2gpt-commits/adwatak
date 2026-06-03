@@ -991,3 +991,49 @@ export function getToolInfo(slug: string, lang: "ar" | "en" | "tr" = "ar") {
     schemaCategory: tool.schemaCategory,
   };
 }
+
+/**
+ * AEO: Get direct answer summary for AI engines.
+ * Concise 1-2 sentence answer AI engines can quote directly.
+ */
+export function getToolDirectAnswer(slug: string, lang: "ar" | "en" | "tr" = "ar"): string {
+  const tool = TOOLS_META[slug];
+  if (!tool) return "";
+
+  if (lang === "ar") {
+    return `${tool.nameAr} — ${tool.descAr}`;
+  } else if (lang === "tr") {
+    return `${tool.nameTr} — ${tool.descTr}`;
+  }
+  return `${tool.nameEn} — ${tool.descEn}`;
+}
+
+/**
+ * GEO: Speakable specification for tool pages.
+ */
+export function getToolSpeakableData(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    cssSelector: [".tool-description", ".faq-answer", "h1", "h2", ".seo-content"],
+  };
+}
+
+/**
+ * GEO: Get keywords for long-tail targeting.
+ */
+export function getToolKeywords(slug: string, lang: "ar" | "en" | "tr" = "ar"): string[] {
+  const tool = TOOLS_META[slug];
+  if (!tool) return [];
+
+  const name = lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : tool.nameEn;
+  const category = lang === "ar" ? tool.categoryAr : lang === "tr" ? tool.categoryTr : tool.categoryEn;
+
+  if (lang === "ar") {
+    return [name, category, `${name} مجاني`, `استخدام ${name}`, `كيف ${name}`];
+  }
+  if (lang === "tr") {
+    return [name, category, `${name} ücretsiz`, `nasıl ${name} kullanılır`];
+  }
+  return [name, category, `free ${name}`, `how to use ${name}`, `${name} online`];
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import StructuredData, { toolSchema, faqSchema, breadcrumbSchema } from "@/app/components/StructuredData";
+import StructuredData, { toolSchema, faqSchema, breadcrumbSchema, howToSchema, speakableSchema } from "@/app/components/StructuredData";
 import FAQSection from "@/app/components/FAQSection";
 import RelatedTools from "@/app/components/RelatedTools";
 import SEOContent from "@/app/components/SEOContent";
@@ -74,11 +74,24 @@ export default function MortgageCalculatorClient(props: Props) {
     setResult({ monthly, total, totalInterest, schedule });
   };
 
+  // GEO: HowTo steps for this tool
+  const toolSteps = [
+    { name: "أدخل سعر العقار", text: "اكتب السعر الإجمالي للعقار بالريال السعودي (مثلاً 800,000)" },
+    { name: "أدخل الدفعة الأولى", text: "اكتب قيمة الدفعة الأولى التي ستدفعها مقدماً (كلما زادت قل القسط)" },
+    { name: "أدخل نسبة الفائدة", text: "أدخل نسبة الفائدة السنوية من البنك (تتراوح بين 3.5% إلى 6.5%)" },
+    { name: "أدخل مدة القرض", text: "اختر مدة السداد بالسنوات (من 5 إلى 30 سنة)" },
+    { name: "اضغط احسب", text: "ستظهر النتائج: القسط الشهري، إجمالي الفائدة، وجدول الاستهلاك" },
+  ];
+
   return (
     <div className="max-w-[760px] mx-auto">
       <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'ar', schemaCategory)} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      {/* GEO: HowTo schema — helps AI engines understand the tool usage */}
+      <StructuredData data={howToSchema(`استخدام ${title}`, desc, toolSteps, "2 دقائق", lang)} />
+      {/* GEO: Speakable — marks content for voice/AI engines */}
+      <StructuredData data={speakableSchema([".tool-result", ".faq-item", "h1", "h2"])} />
       <Breadcrumb lang={lang} category={category} categorySlug={categorySlug} toolName={title} />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
