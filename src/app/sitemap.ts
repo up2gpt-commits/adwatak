@@ -3,30 +3,20 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://adwatak.cloud";
 
-  const staticPages = [
-    { path: "", lastModified: "2026-06-02" },
-    { path: "/about", lastModified: "2026-06-02" },
-    { path: "/privacy", lastModified: "2026-06-02" },
-    { path: "/blog", lastModified: "2026-06-02" },
-    { path: "/en", lastModified: "2026-06-02" },
-    { path: "/en/about", lastModified: "2026-06-02" },
-    { path: "/en/privacy", lastModified: "2026-06-02" },
-    { path: "/en/blog", lastModified: "2026-06-02" },
-    { path: "/tr", lastModified: "2026-06-02" },
-    { path: "/tr/about", lastModified: "2026-06-02" },
-    { path: "/tr/privacy", lastModified: "2026-06-02" },
-    { path: "/tr/blog", lastModified: "2026-06-02" },
-    { path: "/id", lastModified: "2026-06-03" },
-    { path: "/id/about", lastModified: "2026-06-03" },
-    { path: "/id/privacy", lastModified: "2026-06-03" },
-    { path: "/id/blog", lastModified: "2026-06-03" },
-    { path: "/category/calculators", lastModified: "2026-06-02" },
-    { path: "/category/converters", lastModified: "2026-06-02" },
-    { path: "/category/text", lastModified: "2026-06-02" },
-    { path: "/category/generators", lastModified: "2026-06-02" },
-    { path: "/category/dev", lastModified: "2026-06-02" },
-    { path: "/category/islamic", lastModified: "2026-06-02" },
-    { path: "/category/daily", lastModified: "2026-06-02" },
+  const locales = ["", "en", "tr", "id"] as const;
+
+  const staticPaths = [
+    "", "/about", "/privacy", "/blog",
+  ];
+
+  const categoryPaths = [
+    "/category/calculators",
+    "/category/converters",
+    "/category/text",
+    "/category/generators",
+    "/category/dev",
+    "/category/islamic",
+    "/category/daily",
   ];
 
   const arTools = [
@@ -45,27 +35,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "vat-calculator", "whatsapp-link", "word-counter", "zakat-calculator",
     "plagiarism-checker", "grammar-checker", "paraphrasing-tool", "image-resizer",
     "image-compressor", "youtube-thumbnail-downloader", "css-minifier",
-    "markdown-editor", "ip-lookup",
+    "markdown-editor", "ip-lookup", "seo-content-generator",
   ];
 
-  const enTools = [
-    "age-calculator", "ai-content-detector", "arabic-lorem", "background-remover",
-    "barcode-generator", "base64-encoder",
-    "bmi-calculator", "calorie-calculator", "color-converter", "compound-interest",
-    "currency-converter", "emi-calculator", "gold-calculator", "hash-generator",
-    "hijri-converter", "image-to-pdf", "image-compressor", "image-resizer",
-    "inheritance-calculator", "installment-calculator", "ip-lookup",
-    "json-formatter", "loan-calculator", "markdown-editor", "mortgage-calculator",
-    "number-to-words", "paraphrasing-tool", "password-generator", "pdf-compressor",
-    "pdf-merger", "pdf-to-word", "plagiarism-checker", "profit-margin",
-    "qr-generator", "qr-reader", "random-number", "salary-calculator",
-    "seo-audit", "social-character-counter", "stopwatch", "typing-test",
-    "text-case", "text-cleaner", "text-compare", "unit-converter",
-    "vat-calculator", "whatsapp-link", "word-counter", "zakat-calculator",
-    "css-minifier", "grammar-checker",
-  ];
-
-  // Same tools for Turkish and Indonesian (same slugs, different prefix)
+  const enTools = arTools.filter(t => t !== "seo-content-generator" || true);
   const trTools = [...enTools];
   const idTools = [...enTools];
 
@@ -82,69 +55,97 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "simple-vs-compound-interest", "best-free-arabic-tools-2026",
     "emi-calculator-guide-2026",
   ];
-  const trBlogSlugs = [
-    "adwatak-nedir-2026",
-  ];
-  const idBlogSlugs = [
-    "apa-itu-adwatak",
-  ];
+  const trBlogSlugs = ["adwatak-nedir-2026"];
+  const idBlogSlugs = ["apa-itu-adwatak"];
 
-  const entries: MetadataRoute.Sitemap = [
-    ...staticPages.map((page) => ({
-      url: `${baseUrl}${page.path}`,
-      lastModified: page.lastModified,
-      changeFrequency: page.path === "" ? "daily" as const : "weekly" as const,
-      priority: page.path === "" ? 1.0 : page.path === "/en" || page.path === "/tr" ? 0.9 : 0.8,
-    })),
-    ...arTools.map((slug) => ({
-      url: `${baseUrl}/tools/${slug}`,
-      lastModified: "2026-06-02",
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-    })),
-    ...enTools.map((slug) => ({
-      url: `${baseUrl}/en/tools/${slug}`,
-      lastModified: "2026-06-02",
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-    ...trTools.map((slug) => ({
-      url: `${baseUrl}/tr/tools/${slug}`,
-      lastModified: "2026-06-02",
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-    ...idTools.map((slug) => ({
-      url: `${baseUrl}/id/tools/${slug}`,
-      lastModified: "2026-06-03",
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-    ...arBlogSlugs.map((slug) => ({
-      url: `${baseUrl}/blog/${slug}`,
-      lastModified: "2026-06-02",
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
-    ...enBlogSlugs.map((slug) => ({
-      url: `${baseUrl}/en/blog/${slug}`,
-      lastModified: "2026-06-02",
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    })),
-    ...trBlogSlugs.map((slug) => ({
-      url: `${baseUrl}/tr/blog/${slug}`,
-      lastModified: "2026-06-02",
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    })),
-    ...idBlogSlugs.map((slug) => ({
-      url: `${baseUrl}/id/blog/${slug}`,
-      lastModified: "2026-06-03",
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    })),
-  ];
+  const entries: MetadataRoute.Sitemap = [];
+
+  // Static pages + categories with hreflang
+  for (const locale of locales) {
+    const prefix = locale === "" ? "" : `/${locale}`;
+
+    // Static pages
+    for (const path of staticPaths) {
+      const url = `${baseUrl}${prefix}${path}`;
+      const alternates: Record<string, string> = {};
+      for (const l of locales) {
+        alternates[l === "" ? "x-default" : l] = `${baseUrl}${l === "" ? "" : `/${l}`}${path}`;
+      }
+      entries.push({
+        url,
+        lastModified: "2026-06-03",
+        changeFrequency: path === "" ? "daily" as const : "weekly" as const,
+        priority: path === "" ? 1.0 : path === "/en" || path === "/tr" || path === "/id" ? 0.9 : 0.8,
+        alternates: { languages: alternates },
+      });
+    }
+
+    // Category pages (AR only has content, others get redirect — so only include AR)
+    if (locale === "") {
+      for (const catPath of categoryPaths) {
+        entries.push({
+          url: `${baseUrl}${catPath}`,
+          lastModified: "2026-06-03",
+          changeFrequency: "weekly" as const,
+          priority: 0.7,
+        });
+      }
+    }
+  }
+
+  // Tool pages with hreflang
+  const toolLocales = [
+    { tools: arTools, locale: "" },
+    { tools: enTools, locale: "en" },
+    { tools: trTools, locale: "tr" },
+    { tools: idTools, locale: "id" },
+  ] as const;
+
+  for (const { tools, locale: toolLocale } of toolLocales) {
+    const prefix = toolLocale === "" ? "" : `/${toolLocale}`;
+    for (const slug of tools) {
+      const url = `${baseUrl}${prefix}/tools/${slug}`;
+      const alternates: Record<string, string> = {};
+      for (const l of locales) {
+        alternates[l === "" ? "x-default" : l] = `${baseUrl}${l === "" ? "" : `/${l}`}/tools/${slug}`;
+      }
+      entries.push({
+        url,
+        lastModified: "2026-06-03",
+        changeFrequency: "weekly" as const,
+        priority: toolLocale === "" ? 0.9 : 0.8,
+        alternates: { languages: alternates },
+      });
+    }
+  }
+
+  // Blog posts with hreflang
+  const blogEntries = [
+    { slugs: arBlogSlugs, locale: "" },
+    { slugs: enBlogSlugs, locale: "en" },
+    { slugs: trBlogSlugs, locale: "tr" },
+    { slugs: idBlogSlugs, locale: "id" },
+  ] as const;
+
+  for (const { slugs, locale: blogLocale } of blogEntries) {
+    const prefix = blogLocale === "" ? "" : `/${blogLocale}`;
+    for (const slug of slugs) {
+      const url = `${baseUrl}${prefix}/blog/${slug}`;
+      const alternates: Record<string, string> = {};
+      if (blogLocale === "" || blogLocale === "en") {
+        alternates["ar"] = `${baseUrl}/blog/${slug}`;
+        alternates["en"] = `${baseUrl}/en/blog/${slug}`;
+        alternates["x-default"] = `${baseUrl}/blog/${slug}`;
+      }
+      entries.push({
+        url,
+        lastModified: "2026-06-03",
+        changeFrequency: "monthly" as const,
+        priority: blogLocale === "" ? 0.7 : 0.6,
+        ...(Object.keys(alternates).length > 0 ? { alternates: { languages: alternates } } : {}),
+      });
+    }
+  }
 
   return entries;
 }
