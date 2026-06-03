@@ -1,5 +1,5 @@
 "use client";import { useState, useRef } from "react";
-import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema } from "../../../components/StructuredData";
+import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema,howToSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";import RelatedTools from "../../../components/RelatedTools";import SEOContent from "../../../components/SEOContent";
 const faqs=[
@@ -38,14 +38,14 @@ const resize=()=>{if(!image)return;const img=new Image();img.onload=()=>{const c
 const onW=(v:number)=>{setW(v);if(keepRatio&&image)setH(Math.round(v*(image.height/image.width)));};
 const onH=(v:number)=>{setH(v);if(keepRatio&&image)setW(Math.round(v*(image.width/image.height)));};
 return(<div className="max-w-[760px] mx-auto">
-<StructuredData data={toolSchema("Image Resizer","Change image dimensions online — free, no server upload","https://adwatak.cloud/en/tools/image-resizer","en","Image Tools")}/>
-<StructuredData data={faqSchema(faqs)}/>
-<StructuredData data={breadcrumbSchema([{name:"Home",url:"https://adwatak.cloud/en"},{name:"Image Tools",url:"https://adwatak.cloud/en/tools/image"},{name:"Image Resizer",url:"https://adwatak.cloud/en/tools/image-resizer"}])}/>
-{/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
-<StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      {/* GEO: Speakable — AI engines */}
-      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <Breadcrumb lang="en" category="Other Tools" categorySlug="image" toolName="Image Resizer"/>
+{/* GEO: HowTo — step by step for AI engines */}
+      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
+      {/* GEO: Speakable — AI/voice engines */}
+{/* GEO: HowTo — step by step for AI engines */}
+      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
+      {/* GEO: Speakable — AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1","h2","main"])} />
+<Breadcrumb lang="en" category="Other Tools" categorySlug="image" toolName="Image Resizer"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
 <h1 className="text-2xl font-extrabold mb-1">🖼️ Image Resizer</h1><p className="text-sm text-gray-500 mb-6">Change image dimensions — in your browser, no server upload</p>
 <input type="file" accept="image/*" onChange={handleImage} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 mb-4" />

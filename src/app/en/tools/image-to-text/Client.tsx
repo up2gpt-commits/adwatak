@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useCallback } from "react";
-import StructuredData, { speakableSchema, toolSchema, faqSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema,howToSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -150,8 +150,10 @@ export default function Client() {
     <div className="max-w-[760px] mx-auto">
       <StructuredData data={toolSchema("Image to Text OCR", "Extract text from images using AI OCR — Free, fast, accurate", "https://adwatak.cloud/en/tools/image-to-text", "en", "Tools")} />
       <StructuredData data={faqSchema(faqs)} />
-      {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
-      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
+      {/* GEO: HowTo — step by step for AI engines */}
+      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
+      {/* GEO: Speakable — AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1","h2","main"])} />
       <Breadcrumb lang="en" category="Other Tools" categorySlug="tools" toolName="Image to Text OCR" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">👁️ Image to Text OCR</h1>

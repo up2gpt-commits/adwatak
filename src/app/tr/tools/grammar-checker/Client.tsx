@@ -1,5 +1,5 @@
 "use client";import { useState } from "react";
-import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema } from "../../../components/StructuredData";
+import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema,howToSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";import RelatedTools from "../../../components/RelatedTools";import SEOContent from "../../../components/SEOContent";
 const faqs=[
@@ -36,14 +36,14 @@ const[text,setText]=useState("");const[result,setResult]=useState<any>(null);con
 const check=async()=>{if(text.trim().length<10){setError("Please enter text");return;}setError("");setLoading(true);setResult(null);try{const res=await fetch("/api/grammar-checker",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:text.trim(),lang:"en"})});if(!res.ok)throw new Error((await res.json()).error||"Check failed");setResult(await res.json());}catch(e:any){setError(e.message||"Error occurred.");}finally{setLoading(false);}};
 const gc=(s:number)=>s>=80?"text-green-600":s>=50?"text-yellow-600":"text-red-600";const gb=(s:number)=>s>=80?"bg-green-50 border-green-200":s>=50?"bg-yellow-50 border-yellow-200":"bg-red-50 border-red-200";const ge=(s:number)=>s>=80?"✅":s>=50?"⚠️":"❌";
 return(<div className="max-w-[760px] mx-auto">
-<StructuredData data={toolSchema("Grammar Checker","Check grammar, spelling, and punctuation errors","https://adwatak.cloud/en/tools/grammar-checker","en","Text Analysis")}/>
-<StructuredData data={faqSchema(faqs)}/>
-<StructuredData data={breadcrumbSchema([{name:"Home",url:"https://adwatak.cloud/en"},{name:"Text Tools",url:"https://adwatak.cloud/en/category/text"},{name:"Grammar Checker",url:"https://adwatak.cloud/en/tools/grammar-checker"}])}/>
-{/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
-<StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      {/* GEO: Speakable — AI engines */}
-      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <Breadcrumb lang="en" category="Text Tools" categorySlug="text" toolName="Grammar Checker"/>
+{/* GEO: HowTo — adim adim kullanim */}
+      <StructuredData data={howToSchema("Bu araci nasil kullanirim", "Tarayicinizda calisan ucretsiz arac. Kayit gerektirmez.", [{name:"Araci acin",text:"Adwatak sitesinde bu arac sayfasina gidin"},{name:"Verilerinizi girin",text:"Gerekli alanlari doldurun"},{name:"Sonuc alin",text:"Hesapla veya olustur butonuna tiklayin"},{name:"Kullanin veya paylasin",text:"Sonucu kopyalayin, indirin veya paylasin"}],"bir dakikadan az","tr")} />
+      {/* GEO: Speakable — AI/ses motorlari */}
+{/* GEO: HowTo — adim adim kullanim */}
+      <StructuredData data={howToSchema("Bu araci nasil kullanirim", "Tarayicinizda calisan ucretsiz arac. Kayit gerektirmez.", [{name:"Araci acin",text:"Adwatak sitesinde bu arac sayfasina gidin"},{name:"Verilerinizi girin",text:"Gerekli alanlari doldurun"},{name:"Sonuc alin",text:"Hesapla veya olustur butonuna tiklayin"},{name:"Kullanin veya paylasin",text:"Sonucu kopyalayin, indirin veya paylasin"}],"bir dakikadan az","tr")} />
+      {/* GEO: Speakable — AI/ses motorlari */}
+      <StructuredData data={speakableSchema(["h1","h2","main"])} />
+<Breadcrumb lang="en" category="Text Tools" categorySlug="text" toolName="Grammar Checker"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
 <h1 className="text-2xl font-extrabold mb-1">📝 Grammar Checker</h1>
 <p className="text-sm text-gray-500 mb-6">Check grammar, spelling, and punctuation errors</p>

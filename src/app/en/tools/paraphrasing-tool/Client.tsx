@@ -1,5 +1,5 @@
 "use client";import { useState } from "react";
-import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema } from "../../../components/StructuredData";
+import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema,howToSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";import RelatedTools from "../../../components/RelatedTools";import SEOContent from "../../../components/SEOContent";
 const faqs=[
@@ -36,14 +36,14 @@ const[text,setText]=useState("");const[result,setResult]=useState<any>(null);con
 const paraphrase=async()=>{if(text.trim().length<20){setError("Please enter at least 20 characters");return;}setError("");setLoading(true);setResult(null);try{const res=await fetch("/api/paraphrasing-tool",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:text.trim(),lang:"en"})});if(!res.ok)throw new Error((await res.json()).error||"Paraphrasing failed");setResult(await res.json());}catch(e:any){setError(e.message||"Error.");}finally{setLoading(false);}};
 const copyResult=()=>{if(result?.paraphrasedText){navigator.clipboard.writeText(result.paraphrasedText);setCopied(true);setTimeout(()=>setCopied(false),2000);}};
 return(<div className="max-w-[760px] mx-auto">
-<StructuredData data={toolSchema("Paraphrasing Tool","Rewrite text in a new style while preserving the original meaning","https://adwatak.cloud/en/tools/paraphrasing-tool","en","Text Analysis")}/>
-<StructuredData data={faqSchema(faqs)}/>
-<StructuredData data={breadcrumbSchema([{name:"Home",url:"https://adwatak.cloud/en"},{name:"Text Tools",url:"https://adwatak.cloud/en/category/text"},{name:"Paraphrasing Tool",url:"https://adwatak.cloud/en/tools/paraphrasing-tool"}])}/>
-{/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
-<StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      {/* GEO: Speakable — AI engines */}
-      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <Breadcrumb lang="en" category="Text Tools" categorySlug="text" toolName="Paraphrasing Tool"/>
+{/* GEO: HowTo — step by step for AI engines */}
+      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
+      {/* GEO: Speakable — AI/voice engines */}
+{/* GEO: HowTo — step by step for AI engines */}
+      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
+      {/* GEO: Speakable — AI/voice engines */}
+      <StructuredData data={speakableSchema(["h1","h2","main"])} />
+<Breadcrumb lang="en" category="Text Tools" categorySlug="text" toolName="Paraphrasing Tool"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
 <h1 className="text-2xl font-extrabold mb-1">✏️ Paraphrasing Tool</h1><p className="text-sm text-gray-500 mb-6">Rewrite text in a new style while preserving the original meaning</p>
 <textarea value={text} onChange={(e)=>setText(e.target.value)} className="w-full h-[180px] p-4 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit resize-y" placeholder="Paste text to paraphrase..." />

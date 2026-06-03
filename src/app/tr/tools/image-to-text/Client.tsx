@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useCallback } from "react";
-import StructuredData, { speakableSchema, toolSchema, faqSchema } from "../../../components/StructuredData";
+import StructuredData, { speakableSchema, toolSchema, faqSchema,howToSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";
@@ -150,9 +150,11 @@ export default function Client() {
     <div className="max-w-[760px] mx-auto">
       <StructuredData data={toolSchema("Image to Text OCR", "Extract text from images using AI OCR — Free, fast, accurate", "https://adwatak.cloud/en/tools/image-to-text", "en", "Tools")} />
       <StructuredData data={faqSchema(faqs)} />
-      {/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
-      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <Breadcrumb lang="en" category="Other Tools" categorySlug="tools" toolName="Image to Text OCR" />
+      {/* GEO: HowTo — adım adım kullanım */}
+      <StructuredData data={howToSchema("Bu araci nasil kullanirim", "Tarayicinizda calisan ucretsiz arac. Kayit gerektirmez.", [{name:"Araci acin",text:"Adwatak sitesinde bu arac sayfasina gidin"},{name:"Verilerinizi girin",text:"Gerekli alanlari doldurun"},{name:"Sonuc alin",text:"Hesapla veya olustur butonuna tiklayin"},{name:"Kullanin veya paylasin",text:"Sonucu kopyalayin, indirin veya paylasin"}],"bir dakikadan az","tr")} />
+      {/* GEO: Speakable — AI/ses motorlari */}
+      <StructuredData data={speakableSchema(["h1","h2","main"])} />
+      <Breadcrumb lang="tr" category="Diger Araclar" categorySlug="tools" toolName="Goruntuden Metin" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">👁️ Image to Text OCR</h1>
         <p className="text-sm text-gray-500 mb-6">Extract text from images using AI — faster and more accurate than traditional OCR</p>
