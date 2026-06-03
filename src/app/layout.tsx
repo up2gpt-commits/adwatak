@@ -12,10 +12,10 @@ const arabic = Noto_Sans_Arabic({
 
 const baseUrl = "https://adwatak.cloud";
 
-// Detect locale from pathname for server-side <html lang="">
-function detectLangFromPath(pathname: string): string {
-  const match = pathname.match(/^\/(en|tr|id)(\/|$)/);
-  return match ? match[1] : "ar";
+// Detect locale from x-locale header (set by proxy.ts) for server-side <html lang="">
+function detectLocale(headersList: { get(name: string): string | null }): string {
+  // x-locale is set by proxy.ts middleware — reliable for all requests
+  return headersList.get("x-locale") || "ar";
 }
 
 // Root metadata — only applies to pages that don't override it
@@ -64,10 +64,9 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // Server-side lang detection from request path
+  // Server-side lang detection from x-locale header (set by proxy.ts)
   const headersList = await headers();
-  const pathname = headersList.get("x-invoke-path") || "/";
-  const lang = detectLangFromPath(pathname);
+  const lang = detectLocale(headersList);
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (

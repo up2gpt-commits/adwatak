@@ -135,10 +135,21 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // ── Set x-locale header for server-side <html lang> detection ──
+  // This runs before layouts render, so RootLayout reads the correct
+  // locale from headers() and sets <html lang={locale}> in the very
+  // first byte of HTML — critical for Google Bot (no JS rendering needed).
+  const localeMatch = pathname.match(/^\/(en|tr|id)(\/|$)/);
+  const locale = localeMatch ? localeMatch[1] : "ar";
+
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-locale", locale);
+
   // ── Cookie exists → respect it (no redirect) ──────────────────
   const langCookie = request.cookies.get(COOKIE_NAME)?.value;
   if (langCookie && LOCALES.includes(langCookie as Locale)) {
-    return NextResponse.next();
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
+    return response;
   }
 
   // ── Skip auto-redirect for search engine crawlers (SEO) ───────
