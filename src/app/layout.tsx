@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
 import { Noto_Sans_Arabic } from "next/font/google";
 import StructuredData, { orgSchema, websiteSchema } from "./components/StructuredData";
@@ -11,8 +12,13 @@ const arabic = Noto_Sans_Arabic({
 
 const baseUrl = "https://adwatak.cloud";
 
+// Detect locale from pathname for server-side <html lang="">
+function detectLangFromPath(pathname: string): string {
+  const match = pathname.match(/^\/(en|tr|id)(\/|$)/);
+  return match ? match[1] : "ar";
+}
+
 // Root metadata — only applies to pages that don't override it
-// Child pages/layouts should export their own metadata
 export const metadata: Metadata = {
   title: {
     default: "أدواتك — كل الأدوات اللي محتاجها بالعربي",
@@ -28,6 +34,7 @@ export const metadata: Metadata = {
       "en": `${baseUrl}/en`,
       "tr": `${baseUrl}/tr`,
       "id": `${baseUrl}/id`,
+      "x-default": baseUrl,
     },
   },
   openGraph: {
@@ -56,9 +63,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // Server-side lang detection from request path
+  const headersList = await headers();
+  const pathname = headersList.get("x-invoke-path") || "/";
+  const lang = detectLangFromPath(pathname);
+  const dir = lang === "ar" ? "rtl" : "ltr";
+
   return (
-    <html lang="ar">
+    <html lang={lang} dir={dir}>
       <head>
         {/* Google Search Console */}
         <meta name="google-site-verification" content="C-FZDgjuzgQ5tk9t5-xzMFWsYz9eAMW4rKRLvVvjkOk" />
