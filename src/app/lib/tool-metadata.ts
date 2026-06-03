@@ -1103,10 +1103,11 @@ export function generateToolMetadata(slug: string, lang: "ar" | "en" | "tr" | "i
     alternates: {
       canonical,
       languages: {
-        "ar": `https://adwatak.cloud/tools/${slug}`,
-        "en": `https://adwatak.cloud/en/tools/${slug}`,
-        "tr": `https://adwatak.cloud/tr/tools/${slug}`,
-        "id": `https://adwatak.cloud/id/tools/${slug}`,
+        ar: `https://adwatak.cloud/tools/${slug}`,
+        en: `https://adwatak.cloud/en/tools/${slug}`,
+        tr: `https://adwatak.cloud/tr/tools/${slug}`,
+        id: `https://adwatak.cloud/id/tools/${slug}`,
+        "x-default": `https://adwatak.cloud/tools/${slug}`,
       },
     },
     openGraph: {
