@@ -103,30 +103,35 @@ export default function TrHome() {
     daily: "Diğer",
   };
   
-  // Read URL hash → activate that category and scroll
+  // Read URL hash → activate that category
   const applyHashFilter = () => {
     const hash = window.location.hash.replace("#", "");
     if (hash && hashToCat[hash]) {
       setActiveCat(hashToCat[hash]);
-      // Scroll to All Tools section on mobile
+    }
+  };
+
+  // Separate scroll function — only called on events, not on interval
+  const scrollToTools = () => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash && hashToCat[hash]) {
       setTimeout(() => {
         const el = document.querySelector("[data-scroll-target]");
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
+      }, 150);
     }
   };
 
   useEffect(() => {
-    // Process initial hash
     applyHashFilter();
-    // Listen for hash changes — use multiple events for mobile reliability
-    window.addEventListener("hashchange", applyHashFilter);
-    window.addEventListener("popstate", applyHashFilter);
-    // Also check hash periodically for stubborn mobile browsers
-    const interval = setInterval(applyHashFilter, 500);
+    scrollToTools();
+    const onHash = () => { applyHashFilter(); scrollToTools(); };
+    window.addEventListener("hashchange", onHash);
+    window.addEventListener("popstate", onHash);
+    const interval = setInterval(applyHashFilter, 800);
     return () => {
-      window.removeEventListener("hashchange", applyHashFilter);
-      window.removeEventListener("popstate", applyHashFilter);
+      window.removeEventListener("hashchange", onHash);
+      window.removeEventListener("popstate", onHash);
       clearInterval(interval);
     };
   }, []);
