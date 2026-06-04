@@ -115,10 +115,10 @@ export default function Header({ lang = "ar" }: HeaderProps) {
   const [langOpen, setLangOpen] = useState(false); // language selector
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
-  // Init theme on mount
+  // Init theme on mount — only use saved preference, not system
   useEffect(() => {
     const saved = localStorage.getItem("theme");
-    if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (saved === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
       setTheme("dark");
     } else {
