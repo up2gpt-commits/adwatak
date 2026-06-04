@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface HeaderProps {
   lang?: string;
@@ -113,6 +113,26 @@ export default function Header({ lang = "ar" }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [ddOpen, setDdOpen] = useState(false); // categories dropdown
   const [langOpen, setLangOpen] = useState(false); // language selector
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  // Init theme on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      setTheme("dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      setTheme("light");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    setTheme(next);
+  };
 
   // Resolve language (fallback to 'en' for unknown codes)
   const activeLang = LANGUAGES.find(l => l.code === lang) || LANGUAGES[1];
@@ -133,7 +153,7 @@ export default function Header({ lang = "ar" }: HeaderProps) {
   };
 
   return (
-    <header className="site-header">
+    <header className="site-header scroll-shadow-header">
       <div className="container">
         <div className="header-inner">
           {/* Logo */}
@@ -194,6 +214,13 @@ export default function Header({ lang = "ar" }: HeaderProps) {
                 </div>
               )}
             </div>
+
+            {/* ===== THEME TOGGLE (DESKTOP) ===== */}
+            <button className="theme-toggle" onClick={toggleTheme}
+              aria-label={theme === "light" ? "Dark mode" : "Light mode"}
+              title={theme === "light" ? "الوضع الليلي" : "الوضع النهاري"}>
+              <span className="theme-toggle-icon">{theme === "light" ? "🌙" : "☀️"}</span>
+            </button>
           </nav>
 
           {/* ===== MOBILE HEADER ===== */}
@@ -238,6 +265,12 @@ export default function Header({ lang = "ar" }: HeaderProps) {
                 </div>
               )}
             </div>
+
+            {/* ===== THEME TOGGLE (MOBILE) ===== */}
+            <button className="theme-toggle-btn-mobile" onClick={toggleTheme}
+              aria-label={theme === "light" ? "Dark mode" : "Light mode"}>
+              {theme === "light" ? "🌙" : "☀️"}
+            </button>
 
             {/* Hamburger */}
             <button className={`hamburger ${menuOpen ? "open" : ""}`}

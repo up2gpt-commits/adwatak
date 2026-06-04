@@ -59,7 +59,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={`${inter.variable}`} dir="ltr">
       {/* Trust Bar */}
-      <div className="trust-bar">
+      <div className="trust-bar scroll-fade-in">
         <div className="container trust-bar-inner">
           <div className="trust-item">
             <span className="t-icon">🔒</span>
@@ -83,12 +83,12 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
       {/* Header */}
       <Header lang="en" />
 
-      <main className="container" style={{ padding: "32px 20px" }}>{children}</main>
+      <main className="container" style={{ padding: "32px 20px 48px" }}>{children}</main>
 
       {/* Footer */}
       <footer className="site-footer">
         <div className="container">
-          <div className="footer-grid">
+          <div className="footer-grid scroll-fade-in">
             {/* Brand */}
             <div className="footer footer-brand">
               <div className="footer-logo">
@@ -138,7 +138,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          <div className="copyright">
+          <div className="copyright scroll-fade-in">
             © {new Date().getFullYear()} Adawatak — All rights reserved | adwatak.cloud | For everyone, everywhere 🌍
           </div>
         </div>

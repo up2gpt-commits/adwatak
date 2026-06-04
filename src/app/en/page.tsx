@@ -128,7 +128,7 @@ export default function EnHome() {
   return (
     <>
       {/* Hero */}
-      <section className="hero">
+      <section className="hero scroll-fade-in">
         <div className="hero-badge">
           <span>🚀</span>
           <span>The #1 Free Online Tools Platform — 50+ Tools</span>
@@ -158,7 +158,7 @@ export default function EnHome() {
       </section>
 
       {/* Featured */}
-      <section className="featured-section" style={{ marginTop: "40px" }}>
+      <section className="featured-section scroll-fade-in" style={{ marginTop: "40px" }}>
         <div className="section-header">
           <h2 className="section-title">
             <span className="s-icon">⭐</span>
@@ -167,7 +167,7 @@ export default function EnHome() {
         </div>
         <div className="tools-grid-3">
           {featuredTools.map((tool, i) => (
-            <a key={i} href={tool.href} className="featured-card">
+            <a key={i} href={tool.href} className="featured-card card-shine">
               <span className="f-icon">{tool.icon}</span>
               <div className="f-title">{tool.title}</div>
               <div className="f-desc">{tool.desc}</div>
@@ -177,7 +177,7 @@ export default function EnHome() {
       </section>
 
       {/* Divider */}
-      <div className="section-header" style={{ marginTop: "56px", marginBottom: "4px" }}>
+      <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }}>
         <h2 className="section-title">
           <span className="s-icon">🗂️</span>
           All Tools
@@ -205,7 +205,7 @@ export default function EnHome() {
       {filtered.length > 0 ? (
         <div className="tools-grid">
           {filtered.map(t => (
-            <a key={t.href} href={t.href} className="tool-card">
+            <a key={t.href} href={t.href} className="tool-card card-shine">
               <div className="tool-card-inner">
                 <span className="tool-icon">{t.icon}</span>
                 <div>
@@ -226,7 +226,7 @@ export default function EnHome() {
       )}
 
       {/* Stats */}
-      <div className="stats">
+      <div className="stats scroll-fade-in">
         {[
           { num: "50+", label: "Free Tools", icon: "🔧" },
           { num: "100%", label: "No Signup", icon: "🔓" },
@@ -242,7 +242,7 @@ export default function EnHome() {
       </div>
 
       {/* SEO Content */}
-      <div className="mt-16 p-8 bg-white rounded-2xl border border-gray-200" style={{ marginTop: "56px" }}>
+      <div className="mt-16 p-8 scroll-fade-in bg-white rounded-2xl border border-gray-200" style={{ marginTop: "56px" }}>
         <h2 className="text-xl font-extrabold text-gray-900 mb-4">
           🔧 Adawatak — The Free Online Tools Hub
         </h2>
@@ -260,7 +260,7 @@ export default function EnHome() {
       </div>
 
       {/* Blog CTA */}
-      <div className="blog-cta">
+      <div className="blog-cta scroll-fade-in">
         <h2>📝 Blog</h2>
         <p>Tips, guides, and insights to help you get the most out of our tools</p>
         <a href="/en/blog" className="cta-btn">

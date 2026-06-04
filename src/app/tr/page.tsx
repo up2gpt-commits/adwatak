@@ -125,7 +125,7 @@ export default function TrHome() {
   return (
     <>
       {/* Hero */}
-      <section className="hero">
+      <section className="hero scroll-fade-in">
         <div className="hero-badge">
           <span>🚀</span>
           <span>1 Numaralı Ücretsiz Araç Platformu — 50+ Araç</span>
@@ -155,7 +155,7 @@ export default function TrHome() {
       </section>
 
       {/* Search + Category Filter */}
-      <div className="search-wrap" style={{ marginTop: "40px" }}>
+      <div className="search-wrap scroll-fade-in" style={{ marginTop: "40px" }}>
         <input
           type="text"
           placeholder="🔍 Araç ara..."
@@ -174,7 +174,7 @@ export default function TrHome() {
       </div>
 
       {/* Featured / Popular Tools */}
-      <section className="featured-section" style={{ marginTop: "32px" }}>
+      <section className="featured-section scroll-fade-in" style={{ marginTop: "32px" }}>
         <div className="section-header">
           <h2 className="section-title">
             <span className="s-icon">⭐</span>
@@ -183,7 +183,7 @@ export default function TrHome() {
         </div>
         <div className="tools-grid-3">
           {featuredTools.map((tool, i) => (
-            <a key={i} href={tool.href} className="featured-card">
+            <a key={i} href={tool.href} className="featured-card card-shine">
               <span className="f-icon">{tool.icon}</span>
               <div className="f-title">{tool.title}</div>
               <div className="f-desc">{tool.desc}</div>
@@ -193,7 +193,7 @@ export default function TrHome() {
       </section>
 
       {/* Divider */}
-      <div className="section-header" style={{ marginTop: "56px", marginBottom: "4px" }}>
+      <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }}>
         <h2 className="section-title">
           <span className="s-icon">🗂️</span>
           Tüm Araçlar
@@ -210,7 +210,7 @@ export default function TrHome() {
       ) : (
         <div className="tools-grid">
           {filtered.map((tool, i) => (
-            <a key={i} href={tool.href} className="tool-card">
+            <a key={i} href={tool.href} className="tool-card card-shine">
               <div className="tool-card-inner">
                 <span className="tool-icon">{tool.icon}</span>
                 <div>
@@ -224,7 +224,7 @@ export default function TrHome() {
       )}
 
       {/* Stats */}
-      <div className="stats">
+      <div className="stats scroll-fade-in">
         {[
           { num: "50+", label: "ücretsiz araç", icon: "🔧" },
           { num: "%100", label: "kayıt gerekmez", icon: "🔓" },
@@ -240,7 +240,7 @@ export default function TrHome() {
       </div>
 
       {/* SEO Content Section */}
-      <div className="mt-16 p-8 bg-white rounded-2xl border border-gray-200" style={{ marginTop: "56px" }}>
+      <div className="mt-16 p-8 scroll-fade-in bg-white rounded-2xl border border-gray-200" style={{ marginTop: "56px" }}>
         <h2 className="text-xl font-extrabold text-gray-900 mb-4">
           🔧 Adwatak — Kapsamlı Ücretsiz Araç Platformu
         </h2>
@@ -262,7 +262,7 @@ export default function TrHome() {
       </div>
 
       {/* Blog CTA */}
-      <div className="blog-cta">
+      <div className="blog-cta scroll-fade-in">
         <h2>📝 Blog</h2>
         <p>
           Araçlarımızdan en iyi şekilde yararlanmanız için rehberler ve makaleler

@@ -169,7 +169,7 @@ export default function ToolGrid() {
           placeholder="ابحث عن أداة... (مثال: حاسبة، QR، PDF)"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="search-input"
+          className="search-input-enhanced"
         />
       </div>
 
@@ -195,7 +195,7 @@ export default function ToolGrid() {
       {filtered.length > 0 ? (
         <div className="tools-grid">
           {filtered.map((tool) => (
-            <Link key={tool.href} href={tool.href} className="tool-card">
+            <Link key={tool.href} href={tool.href} className="tool-card card-shine">
               <div className="tool-card-inner">
                 <span className="tool-icon">{tool.icon}</span>
                 <div>

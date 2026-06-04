@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="hero">
+      <section className="hero scroll-fade-in">
         <div className="hero-badge">
           <span>🚀</span>
           <span>المنصة العربية الأولى للأدوات المجانية — ٥٠+ أداة</span>
@@ -45,7 +45,7 @@ export default function Home() {
       </section>
 
       {/* Featured / Popular Tools */}
-      <section className="featured-section" style={{ marginTop: "40px" }}>
+      <section className="featured-section scroll-fade-in" style={{ marginTop: "40px" }}>
         <div className="section-header">
           <h2 className="section-title">
             <span className="s-icon">⭐</span>
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
         <div className="tools-grid-3">
           {featuredTools.map((tool, i) => (
-            <a key={i} href={tool.href} className="featured-card">
+            <a key={i} href={tool.href} className="featured-card card-shine">
               <span className="f-icon">{tool.icon}</span>
               <div className="f-title">{tool.title}</div>
               <div className="f-desc">{tool.desc}</div>
@@ -64,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="section-header" style={{ marginTop: "56px", marginBottom: "4px" }}>
+      <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }}>
         <h2 className="section-title">
           <span className="s-icon">🗂️</span>
           كل الأدوات
@@ -75,7 +75,7 @@ export default function Home() {
       <ToolGrid />
 
       {/* Stats */}
-      <div className="stats">
+      <div className="stats scroll-fade-in">
         {[
           { num: "50+", label: "أداة مجانية", icon: "🔧" },
           { num: "100%", label: "بدون تسجيل", icon: "🔓" },
@@ -91,7 +91,7 @@ export default function Home() {
       </div>
 
       {/* SEO Content Section */}
-      <div className="mt-16 p-8 bg-white rounded-2xl border border-gray-200" style={{ marginTop: "56px" }}>
+      <div className="mt-16 p-8 scroll-fade-in bg-white rounded-2xl border border-gray-200" style={{ marginTop: "56px" }}>
         <h2 className="text-xl font-extrabold text-gray-900 mb-4">
           🔧 أدواتك — منصة الأدوات العربية الشاملة
         </h2>
@@ -113,7 +113,7 @@ export default function Home() {
       </div>
 
       {/* Blog CTA */}
-      <div className="blog-cta">
+      <div className="blog-cta scroll-fade-in">
         <h2>📝 المدونة</h2>
         <p>
           مقالات وشروحات تساعدك تفهم وتستفيد من أدواتنا
