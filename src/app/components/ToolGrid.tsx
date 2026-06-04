@@ -143,13 +143,24 @@ export default function ToolGrid() {
     const hash = window.location.hash.replace("#", "");
     if (hash && categories.some((c) => c.key === hash)) {
       setFilter(hash);
+      // Scroll to Tools section on mobile
+      setTimeout(() => {
+        const el = document.querySelector("[data-scroll-target]");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
     }
   };
 
   useEffect(() => {
     applyHashFilter();
     window.addEventListener("hashchange", applyHashFilter);
-    return () => window.removeEventListener("hashchange", applyHashFilter);
+    window.addEventListener("popstate", applyHashFilter);
+    const interval = setInterval(applyHashFilter, 500);
+    return () => {
+      window.removeEventListener("hashchange", applyHashFilter);
+      window.removeEventListener("popstate", applyHashFilter);
+      clearInterval(interval);
+    };
   }, []);
 
   const filtered = tools.filter((t) => {
@@ -163,7 +174,7 @@ export default function ToolGrid() {
   return (
     <>
       {/* Search bar */}
-      <div className="max-w-[520px] mx-auto mt-6 relative">
+      <div className="max-w-[520px] mx-auto mt-6 relative" data-scroll-target>
         <input
           type="text"
           placeholder="ابحث عن أداة... (مثال: حاسبة، QR، PDF)"

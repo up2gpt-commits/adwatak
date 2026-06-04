@@ -102,11 +102,17 @@ export default function TrHome() {
     islamic: "İslami Araçlar",
     daily: "Diğer",
   };
-
+  
+  // Read URL hash → activate that category and scroll
   const applyHashFilter = () => {
     const hash = window.location.hash.replace("#", "");
     if (hash && hashToCat[hash]) {
       setActiveCat(hashToCat[hash]);
+      // Scroll to All Tools section on mobile
+      setTimeout(() => {
+        const el = document.querySelector("[data-scroll-target]");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
     }
   };
 
@@ -204,7 +210,7 @@ export default function TrHome() {
       </section>
 
       {/* Divider */}
-      <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }}>
+      <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }} data-scroll-target>
         <h2 className="section-title">
           <span className="s-icon">🗂️</span>
           Tüm Araçlar
