@@ -129,18 +129,19 @@ export default function EnHome() {
     applyHashFilter();
     // Scroll on initial load if hash present
     scrollToTools();
-    // Listen for hash changes — use multiple events for mobile reliability
+    // Listen for hash changes
     const onHash = () => { applyHashFilter(); scrollToTools(); };
     window.addEventListener("hashchange", onHash);
     window.addEventListener("popstate", onHash);
-    // Poll hash silently — only update filter, NO scroll
-    const interval = setInterval(applyHashFilter, 800);
     return () => {
       window.removeEventListener("hashchange", onHash);
       window.removeEventListener("popstate", onHash);
-      clearInterval(interval);
     };
   }, []);
+
+  // Reverse map: category name → hash key
+  const catToHash: Record<string, string> = {};
+  for (const [k, v] of Object.entries(hashToCat)) { catToHash[v] = k; }
 
   const filtered = allTools.filter(t => {
     const matchSearch = !search || t.title.toLowerCase().includes(search.toLowerCase()) || t.desc.toLowerCase().includes(search.toLowerCase());
@@ -221,9 +222,9 @@ export default function EnHome() {
       </div>
 
       <div className="cats">
-        <button onClick={() => setActiveCat(null)} className={`cat-btn ${!activeCat ? "active" : ""}`} id="all">🗂️ All</button>
+        <button onClick={() => { setActiveCat(null); window.location.hash = ""; }} className={`cat-btn ${!activeCat ? "active" : ""}`} id="all">🗂️ All</button>
         {categories.map(c => (
-          <button key={c.slug} onClick={() => setActiveCat(c.name)} className={`cat-btn ${activeCat === c.name ? "active" : ""}`} id={c.slug}>{c.icon} {c.name}</button>
+          <button key={c.slug} onClick={() => { window.location.hash = catToHash[c.name] || ""; }} className={`cat-btn ${activeCat === c.name ? "active" : ""}`} id={c.slug}>{c.icon} {c.name}</button>
         ))}
       </div>
 
@@ -246,7 +247,7 @@ export default function EnHome() {
           <p className="emoji">🔍</p>
           <p>No results found</p>
           <p className="text-xs text-gray-400 mt-1">Try a different search or category</p>
-          <button onClick={() => { setSearch(""); setActiveCat(null); }} className="mt-4 cat-btn">Show all tools</button>
+          <button onClick={() => { setSearch(""); setActiveCat(null); window.location.hash = ""; }} className="mt-4 cat-btn">Show all tools</button>
         </div>
       )}
 

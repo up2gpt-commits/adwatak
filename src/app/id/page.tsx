@@ -128,13 +128,15 @@ export default function IdHome() {
     const onHash = () => { applyHashFilter(); scrollToTools(); };
     window.addEventListener("hashchange", onHash);
     window.addEventListener("popstate", onHash);
-    const interval = setInterval(applyHashFilter, 800);
     return () => {
       window.removeEventListener("hashchange", onHash);
       window.removeEventListener("popstate", onHash);
-      clearInterval(interval);
     };
   }, []);
+
+  // Reverse map: category name → hash key
+  const catToHash: Record<string, string> = {};
+  for (const [k, v] of Object.entries(hashToCat)) { catToHash[v] = k; }
 
   const filtered = allTools.filter(t => {
     const matchSearch = !search || t.title.toLowerCase().includes(search.toLowerCase()) || t.desc.toLowerCase().includes(search.toLowerCase());
@@ -182,14 +184,14 @@ export default function IdHome() {
           type="text"
           placeholder="🔍 Cari alat..."
           value={search}
-          onChange={(e) => { setSearch(e.target.value); setActiveCat(null); }}
+          onChange={(e) => { setSearch(e.target.value); setActiveCat(null); window.location.hash = ""; }}
           className="search-input"
         />
       </div>
       <div className="cats">
-        <button onClick={() => setActiveCat(null)} className={`cat-btn ${!activeCat ? "active" : ""}`} id="all">🗂️ Semua</button>
+        <button onClick={() => { setActiveCat(null); window.location.hash = ""; }} className={`cat-btn ${!activeCat ? "active" : ""}`} id="all">🗂️ Semua</button>
         {categories.map((cat) => (
-          <button key={cat.slug} onClick={() => setActiveCat(cat.name)} className={`cat-btn ${activeCat === cat.name ? "active" : ""}`} id={cat.slug}>
+          <button key={cat.slug} onClick={() => { window.location.hash = catToHash[cat.name] || ""; }} className={`cat-btn ${activeCat === cat.name ? "active" : ""}`} id={cat.slug}>
             {cat.icon} {cat.name}
           </button>
         ))}

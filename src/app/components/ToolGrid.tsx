@@ -163,11 +163,9 @@ export default function ToolGrid() {
     const onHash = () => { applyHashFilter(); scrollToTools(); };
     window.addEventListener("hashchange", onHash);
     window.addEventListener("popstate", onHash);
-    const interval = setInterval(applyHashFilter, 800);
     return () => {
       window.removeEventListener("hashchange", onHash);
       window.removeEventListener("popstate", onHash);
-      clearInterval(interval);
     };
   }, []);
 
@@ -203,7 +201,7 @@ export default function ToolGrid() {
       {/* Categories */}
       <div className="cats">
         {categories.map((c) => (
-          <button key={c.key} id={c.key} onClick={() => setFilter(c.key)}
+          <button key={c.key} id={c.key} onClick={() => { window.location.hash = c.key === "all" ? "" : c.key; }}
             className={`cat-btn ${filter === c.key ? "active" : ""}`}>
             {c.icon} {c.label}
           </button>
