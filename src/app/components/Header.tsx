@@ -182,7 +182,7 @@ export default function Header({ lang = "ar" }: HeaderProps) {
                 <div className="dd-menu">
                   {categories.map((cat) => (
                     <a key={cat.key} href={`${catLink}#${cat.key}`}
-                      className="dd-item" onClick={() => setDdOpen(false)}>
+                      className="dd-item" onClick={(e) => { setDdOpen(false); window.location.hash = cat.key; e.preventDefault(); }}>
                       {cat.label}
                     </a>
                   ))}
@@ -257,7 +257,7 @@ export default function Header({ lang = "ar" }: HeaderProps) {
               {ddOpen && (
                 <div className="dd-menu-mobile">
                   {categories.map((cat) => (
-                    <a key={cat.key} href={`${catLink}#${cat.key}`} onClick={() => setDdOpen(false)}
+                    <a key={cat.key} href={`${catLink}#${cat.key}`} onClick={(e) => { setDdOpen(false); window.location.hash = cat.key; e.preventDefault(); }}
                       className="dd-mobile-item">
                       {cat.label}
                     </a>
@@ -292,7 +292,7 @@ export default function Header({ lang = "ar" }: HeaderProps) {
             <p className="mobile-tools-heading">🗂️ {ddLabel}</p>
             {categories.map((cat) => (
               <a key={cat.key} href={`${catLink}#${cat.key}`}
-                className="mobile-tools-item" onClick={() => setMenuOpen(false)}>
+                className="mobile-tools-item" onClick={(e) => { setMenuOpen(false); window.location.hash = cat.key; e.preventDefault(); }}>
                 {cat.label}
               </a>
             ))}

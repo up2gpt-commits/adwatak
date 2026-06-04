@@ -111,9 +111,18 @@ export default function IdHome() {
   };
 
   useEffect(() => {
+    // Process initial hash
     applyHashFilter();
+    // Listen for hash changes — use multiple events for mobile reliability
     window.addEventListener("hashchange", applyHashFilter);
-    return () => window.removeEventListener("hashchange", applyHashFilter);
+    window.addEventListener("popstate", applyHashFilter);
+    // Also check hash periodically for stubborn mobile browsers
+    const interval = setInterval(applyHashFilter, 500);
+    return () => {
+      window.removeEventListener("hashchange", applyHashFilter);
+      window.removeEventListener("popstate", applyHashFilter);
+      clearInterval(interval);
+    };
   }, []);
 
   const filtered = allTools.filter(t => {

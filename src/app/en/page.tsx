@@ -105,7 +105,7 @@ export default function EnHome() {
     daily: "Other",
   };
 
-  // Read URL hash on mount → activate that category
+  // Read URL hash → activate that category
   const applyHashFilter = () => {
     const hash = window.location.hash.replace("#", "");
     if (hash && hashToCat[hash]) {
@@ -114,9 +114,18 @@ export default function EnHome() {
   };
 
   useEffect(() => {
+    // Process initial hash
     applyHashFilter();
+    // Listen for hash changes — use multiple events for mobile reliability
     window.addEventListener("hashchange", applyHashFilter);
-    return () => window.removeEventListener("hashchange", applyHashFilter);
+    window.addEventListener("popstate", applyHashFilter);
+    // Also check hash periodically for stubborn mobile browsers
+    const interval = setInterval(applyHashFilter, 500);
+    return () => {
+      window.removeEventListener("hashchange", applyHashFilter);
+      window.removeEventListener("popstate", applyHashFilter);
+      clearInterval(interval);
+    };
   }, []);
 
   const filtered = allTools.filter(t => {
