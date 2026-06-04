@@ -14,11 +14,13 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="hero scroll-fade-in">
+        <div className="hero-grid"></div>
+        <div className="hero-orb-2"></div>
         <div className="hero-badge">
-          <span>🚀</span>
+          <span className="hero-badge-dot"></span>
           <span>المنصة العربية الأولى للأدوات المجانية — ٥٠+ أداة</span>
         </div>
-        <h1>كل الأدوات اللي محتاجها<br />في مكان واحد</h1>
+        <h1><span className="hero-gradient-text">كل الأدوات اللي محتاجها</span><br />في مكان واحد</h1>
         <p>
           حاسبات مالية، أدوات إسلامية، محولات نصوص، مولدات، أدوات PDF والمزيد — كلها مجانية ١٠٠٪، بالعربي، وبدون أي تسجيل
         </p>

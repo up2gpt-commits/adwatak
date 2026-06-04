@@ -126,11 +126,13 @@ export default function TrHome() {
     <>
       {/* Hero */}
       <section className="hero scroll-fade-in">
+        <div className="hero-grid"></div>
+        <div className="hero-orb-2"></div>
         <div className="hero-badge">
-          <span>🚀</span>
-          <span>1 Numaralı Ücretsiz Araç Platformu — 50+ Araç</span>
+          <span className="hero-badge-dot"></span>
+          <span>1 Numaralı Ücretsiz Çevrimiçi Araç Platformu</span>
         </div>
-        <h1>İhtiyacınız Olan Her Araç.<br />Ücretsiz. Sonsuza Kadar.</h1>
+        <h1><span className="hero-gradient-text">İhtiyacınız Olan Her Araç.</span><br />Ücretsiz. Sonsuza Kadar.</h1>
         <p>
           Hesaplayıcılar, dönüştürücüler, oluşturucular, PDF araçları ve daha fazlası — %100 ücretsiz, kayıt gerekmez ve hiçbir şey yüklenmez.
         </p>

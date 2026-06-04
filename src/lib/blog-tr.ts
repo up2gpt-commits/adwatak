@@ -31,6 +31,244 @@ function todayTrStr(): string {
 
 const trBlogPosts: BlogPost[] = [
   {
+    slug: "zekat-hesaplama-rehberi-2026-altin-para-hisseler",
+    title: "Zekat Hesaplama Nasıl Yapılır 2026 — Altın, Para ve Hisse Senetleri İçin Detaylı Rehber",
+    excerpt:
+      "Zekat hesaplama 2026: Altın, para ve hisse senetleri için zekat nasıl hesaplanır? Nisab miktarı, hangi mallardan zekat verilir, örnek hesaplamalar ve Adwatak ücretsiz zekat hesaplama aracı ile adım adım rehber.",
+    date: "2026-06-03",
+    category: "İslami Araçlar",
+    readTime: "10 dakika okuma",
+    keywords: [
+      "zekat hesaplama 2026",
+      "zekat nisabı 2026",
+      "altın zekat hesaplama",
+      "para zekatı nasıl hesaplanır",
+      "hisse senedi zekatı",
+      "zekat hesaplama aracı",
+      "zekat ne zaman verilir",
+      "zekat farz mı",
+      "zekat hesaplama örnekleri",
+      "ücretsiz zekat hesaplama",
+      "zekat eşi nisap",
+      "İslamda zekat kuralları",
+    ],
+    content: `
+<h2>Zekat Hesaplama 2026 — Altın, Para ve Hisse Senetleri İçin Detaylı Rehger</h2>
+<p><strong>Zekat</strong>, İslam'ın beş şartından biridir ve belirli bir nisab (eşik) üzerinden hesaplanarak yoksullara, ihtiyaç sahiplerine ve belirlenen sekiz sınıfa dağıtılır. 2026 yılında zekat hesaplamak için <strong>altının gram fiyatı, döviz kurları ve nisab miktarı</strong> gibi güncel verileri bilmeniz gerekir. Bu rehberde, altın, para ve hisse senetleri için zekat nasıl hesaplanır, nisab miktarı ne kadar ve hangi koşullarda zekat farz olur detaylıca açıklanmaktadır.</p>
+<p>Zekat hesaplamak artık çok kolay: <a href="https://adwatak.cloud/tr/tools/zakat-calculator" target="_blank" rel="noopener"><strong>Adwatak ücretsiz zekat hesaplama aracı</strong></a> ile anında hesaplayabilirsiniz. Ancak hesaplamanın arkasındaki mantığı bilmek de önemlidir — bu rehber hem pratik hem teorik bilgiyi sunar.</p>
+
+<h2>Zekat Nedir ve Neden Farzdır?</h2>
+<p>Zekat, Arapça "zekâ" (temizlenme, büyüme) kökünden gelir. Mali anlamda, belirli bir miktar malın <strong>%2,5'ini</strong> belirlenen kişilere vermek anlamına gelir. Zekat, Kur'an-ı Kerim'de namazla birlikte sıkça emredilen bir ibadettir:</p>
+<p><em>"Namazı kılın, zekatı verin..."</em> (Bakara, 2/43)</p>
+<p>Zekat farz oluşu, <strong>Kur'an, Sünnet ve İcma</strong> ile kesinleşmiştir. Zekat vermeyen kişi için Kur'an'da ağır uyarılar vardır (Tevbe, 9/34-35).</p>
+
+<h2>Zekatın Farz Olma Şartları</h2>
+<p>Zekatın farz olması için aşağıdaki şartların tamamının gerçekleşmesi gerekir:</p>
+
+<h3>1. Müslüman Olmak</h3>
+<p>Zekat, Müslüman bireyler için farzdır. Gayrimüslimler zekat yükümlülüğü altında değildir.</p>
+
+<h3>2. Akıl ve Baligh Olmak</h3>
+<p>Akıllı ve ergenlik çağına ulaşmış olmak gerekir. Küçük çocukların ve akıl hastalarının mallarından zekat farz değildir (bazı mezheplere göre veli/vekil hesaplayıp verebilir).</p>
+
+<h3>3. Hür (Köle) Olmamak</h3>
+<p>Özgür bireyler için geçerlidir.</p>
+
+<h3>4. Nisab Miktarına Ulaşmak</h3>
+<p>Malların, belirlenen <strong>nisab miktarına</strong> (eşiğe) ulaşması gerekir. 2026 yılı nisab miktarı aşağıda detaylıca açıklanmıştır.</p>
+
+<h3>5. Haul (Bir Yıl) Tamamlanması</h3>
+<p>Malların üzerinden <strong>bir hicri yıl</strong> (354 gün) geçmesi gerekir. Ancak ticari mallar ve gelirler için farklı görüşler de mevcuttur.</p>
+
+<h3>6. Tam Mülkiyet</h3>
+<p>Malın tamamen kişinin mülkiyetinde olması, üzerinde başkasının hakkı bulunmaması gerekir.</p>
+
+<h2>Zekat Nisabı 2026 — Altın ve Para Cinsinden</h2>
+<p>Nisab, zekatın farz olduğu minimum miktardır. 2026 yılında nisab miktarı şu şekildedir:</p>
+
+<h3>Altın Cinsinden Nisab</h3>
+<p><strong>85 gram altın</strong> veya eş değerinde para/tercihen altın. Bu, saf altın (24 ayar) bazından hesaplanır.</p>
+<p>2026 yılında gram altın fiyatı değişkenlik gösterse de, nisab miktarı <strong>85 gram altın</strong> olarak sabittir. Güncel altın fiyatına göre nisabın para karşılığını hesaplayabilirsiniz.</p>
+
+<h3>Gümüş Cinsinden Nisab</h3>
+<p><strong>595 gram gümüş</strong> veya eş değerinde para. Ancak gümüş nisabı, altın nisabına göre daha az tercih edilir; çoğu alim, altın nisabını esas almayı önerir.</p>
+
+<h3>Para (Nakit) Cinsinden Nisab</h3>
+<p>Nakit paranızın nisab miktarı, <strong>85 gram altının güncel piyasa değerine</strong> eşit olmalıdır. Örneğin, gram altın 4.000 ₺ ise nisab = 85 × 4.000 = <strong>340.000 ₺</strong> olur.</p>
+
+<p><strong>Örnek Nisab Hesabı (2026 Tahmini):</strong></p>
+<ul>
+  <li>Gram altın: ~4.000 ₺</li>
+  <li>Nisab (85 gram): <strong>~340.000 ₺</strong></li>
+  <li>Zekat (%2,5): <strong>~8.500 ₺</strong></li>
+</ul>
+
+<p><em>Not: Güncel altın fiyatları için <a href="https://adwatak.cloud/tr/tools/zakat-calculator" target="_blank" rel="noopener"><strong>Adwatak zekat hesaplama aracını</strong></a> kullanın — otomatik olarak güncel fiyatları alır.</em></p>
+
+<h2>Hangi Mallardan Zekat Verilir?</h2>
+<p>İslam hukukunda zekat verilmesi gereken mal kategorileri bellidir:</p>
+
+<h3>1. Altın ve Gümüş</h3>
+<p>Takı, sikke, külçe veya herhangi formda altın ve gümüş — nisabı geçerse ve bir yıl geçerse zekat farzdır. <strong>Not:</strong> Kullanılan takı hakkında mezhepler arasında ihtilaf vardır; Hanefi mezhebine göre kullanılan takılardan da zekat verilir.</p>
+
+<h3>2. Nakit Para ve Banka Hesapları</h3>
+<p>Türk Lirası, döviz veya herhangi bir para birimi cinsinden nakit, banka hesapları, vadesiz mevduat — hepsi nisabı geçerse zekata tabidir.</p>
+
+<h3>3. Ticari Mallar</h3>
+<p>Satılmak amacıyla alınmış her türlülük mal (gıda, tekstil, elektronik vb.) ticari mal sayılır. Bunların nisabı, ticari değerleri üzerinden hesaplanır.</p>
+
+<h3>4. Hayvanlar (Enam)</h3>
+<p>Deve, sığır, koyun/keçi gibi belirli hayvanlardan, belirli sayılarda zekat verilir. Bu konu ayrı bir detay gerektirir.</p>
+
+<h3>5. Tarımsal Ürünler</h3>
+<p>Buğday, arz, kuru üzüm, hurma gibi belirli ürünlerden hasat anında zekat verilir. Nisab: <strong>653 kg</strong> (kuru ağırlık).</p>
+
+<h3>6. Hisse Senetleri ve Yatırım Araçları</h3>
+<p>Hisse senetleri, <strong>ticari mal</strong> olarak değerlendirilir. Satılmak için tutulan hisselerin piyasa değerinden zekat verilir. Şirket hisselerinin zekatı, şirketin aktiflerine göre de hesaplanabilir (detaylar aşağıda).</p>
+
+<h3>7. Emeklik ve Bireysel Emeklilik (TEB, BES) Hesapları</h3>
+<p>Emeklilik hesaplarındaki paralar, erişim durumuna göre zekata tabidir. Hanefi mezhebine göre, paraya ulaşabilme imkânı varsa zekat farzdır.</p>
+
+<h2>Zekat Hesaplama Yöntemleri</h2>
+
+<h3>Altın İçin Zekat Hesaplama</h3>
+<p><strong>Formül:</strong> Toplam altın (gram) × Gram altın fiyatı = Toplam değer → Nisabı geçerse × %2,5 = Zekat</p>
+<p><strong>Örnek:</strong> 200 gram altınınız var, gram altın 4.000 ₺:</p>
+<ul>
+  <li>Toplam değer: 200 × 4.000 = 800.000 ₺</li>
+  <li>Nisab: 340.000 ₺ (geçti)</li>
+  <li>Zekat: 800.000 × 0,025 = <strong>20.000 ₺</strong></li>
+</ul>
+
+<h3>Nakit Para İçin Zekat Hesaplama</h3>
+<p><strong>Formül:</strong> Toplam nakit − Nisab = Zekat matrahı → × %2,5</p>
+<p><strong>Örnek:</strong> Banka hesabınızda 500.000 ₺ var:</p>
+<ul>
+  <li>Nisab: 340.000 ₺ (geçti)</li>
+  <li>Zekat: 500.000 × 0,025 = <strong>12.500 ₺</strong></li>
+</ul>
+
+<h3>Hisse Senedi İçin Zekat Hesaplama</h3>
+<p>Hisse senetleri, <strong>ticari mal</strong> sayılır. Hesaplama:</p>
+<ul>
+  <li>Hisse sayısı × Güncel hisse fiyatı = Toplam piyasa değeri</li>
+  <li>Nisabı geçerse × %2,5 = Zekat</li>
+</ul>
+<p><strong>Örnek:</strong> 100 adet hisse, hisse başına 50 ₺:</p>
+<ul>
+  <li>Toplam değer: 100 × 50 = 5.000 ₺</li>
+  <li>Nisab: 340.000 ₺ (geçmedi → zekat yok)</li>
+</ul>
+<p><strong>Alternatif Yöntem (Şirket bilançosu bazlı):</strong> Bazı alimler, hisse senedi zekatını şirketin nakit aktifleri üzerinden hesaplamayı tercih eder. Bu yöntem daha detaylıdır ve şirketin mali tablolarını gerektirir.</p>
+
+<h3>Döviz Cinsinden Zekat</h3>
+<p>Döviz (USD, EUR vb.) nakit olarak değerlendirilir. Hesaplama:</p>
+<ul>
+  <li>Döviz miktarı × Güncel kuru = TL karşılığı</li>
+  <li>Nisabı geçerse × %2,5 = Zekat (TL veya döviz cinsinden)</li>
+</ul>
+
+<h2>Zekat Ne Zaman Verilir?</h2>
+<p>Zekat, <strong>nisabın üzerinde bir yıl (haul)</strong> geçtikten sonra verilir. Zekat yılının başlangıcı, malın nisabı ilk geçtiği tarihtir. Örneğin, 1 Ocak 2025'te nisabı geçen bir mal için zekat, 1 Ocak 2026'da vadesi gelir.</p>
+<p><strong>Önemli:</strong> Zekat yılının sonunda mal miktarı nisabın altına düşse bile, yıl başında nisabı geçmişse zekat yükümlülüğü devam eder.</p>
+
+<h2>Zekat Kimlere Verilir? (Sekiz Sınıf)</h2>
+<p>Kur'an-ı Kerim'de (Tevbe, 9/60) zekatın verileceği sekiz sınıf açıkça belirtilmiştir:</p>
+<ul>
+  <li><strong>Fakirler:</strong> Temel ihtiyaçlarını karşılayamayanlar</li>
+  <li><strong>Miskinler:</strong> Biraz geliri olan ama yetersiz olanlar</li>
+  <li><strong>Zekat memurları:</strong> Zekatı toplayan ve dağıtan görevliler</li>
+  <li><strong>Müellefe-i kulup:</strong> Müslümanlığa yeni giren veya kalpleri İslama ısındırılması gerekenler</li>
+  <li><strong>Özgür kılınacak köleler:</strong> (Günümüzde geçerli değil)</li>
+  <li><strong>Borçlular:</strong> Borçları yüzünden zor durumda olanlar</li>
+  <li><strong>Fi sebîlillah:</strong> Allah yolunda olanlar (gazi, öğrenci, muhacir vb.)</li>
+  <li><strong>İbnü's-sabil:</strong> Yolda kalmış, yolunu kaybeden yolcular</li>
+</ul>
+
+<h2>Zekat Hesaplamada Sık Yapılan Hatalar</h2>
+<ul>
+  <li><strong>Nisabı yanlış hesaplamak:</strong> Güncel altın fiyatını kullanmak yerine eski fiyatları kullanmak.</li>
+  <li><strong>Haul şartını unutmak:</strong> Malın üzerinden bir yıl geçmeden zekat hesaplamak (tarım ve maden hariç).</li>
+  <li><strong>Borçları düşmemek:</strong> Zekat matrahından kısa vadeli borçlar düşülebilir, ancak uzun vadeli borçların tümünü düşmek hakkında ihtilaf vardır.</li>
+  <li><strong>Takı zekatını ihmal etmek:</strong> Hanefi mezhebine göre kullanılan altın/gümüş takılardan da zekat verilir.</li>
+  <li><strong>Hisse senetlerini hesaba katmamak:</strong> Yatırım hesaplarındaki hisseleri unutmak.</li>
+  <li><strong>Zekatı yanlış kişilere vermek:</strong> Zekat, Kur'an'da belirtilen sekiz sınıf dışında kişilere verilemez.</li>
+</ul>
+
+<h2>Adwatak Zekat Hesaplama Aracı ile Kolay Hesaplama</h2>
+<p><a href="https://adwatak.cloud/tr/tools/zakat-calculator" target="_blank" rel="noopener"><strong>Adwatak zekat hesaplama aracı</strong></a>, zekat hesaplamayı basit ve hızlı hale getiren ücretsiz bir çevrimiçi araçtır. Kayıt gerektirmez, tüm hesaplamalar tarayıcınızda yapılır.</p>
+
+<h3>Nasıl Kullanılır?</h3>
+<ul>
+  <li><strong>Adım 1:</strong> Altınızın gramını veya nakit paranızı girin.</li>
+  <li><strong>Adım 2:</strong> Güncel altın fiyatı otomatik alınır (veya manuel girebilirsiniz).</li>
+  <li><strong>Adım 3:</strong> Araç, nisabı kontrol eder ve zekat miktarını anında gösterir.</li>
+  <li><strong>Adım 4:</strong> Hisse senetleri ve diğer yatırımlar için ayrı hesaplama seçeneği mevcuttur.</li>
+</ul>
+
+<h2>Zekat ve Diğer İslami Araçlar</h2>
+<p>Zekat hesaplamanın yanı sıra, İslami yaşam için şu araçları da kullanabilirsiniz:</p>
+<ul>
+  <li><a href="https://adwatak.cloud/tr/tools/inheritance-calculator" target="_blank" rel="noopener"><strong>İslami Miras Hesaplama</strong></a> — Feraiz kurallarına göre miras paylaşımı</li>
+  <li><a href="https://adwatak.cloud/tr/tools/kible-yonu" target="_blank" rel="noopener"><strong>Kıble Yönü</strong></a> — Konumunuza göre kıble yönü bulma</li>
+  <li><a href="https://adwatak.cloud/tr/tools/namaz-vakitleri" target="_blank" rel="noopener"><strong>Namaz Vakitleri</strong></a> — Diyanet'e göre namaz vakitleri</li>
+  <li><a href="https://adwatak.cloud/tr/tools/hicri-tarih" target="_blank" rel="noopener"><strong>Hicri ↔ Miladi Tarih Çevirici</strong></a> — Tarih dönüşümü</li>
+</ul>
+
+<h2>Sıkça Sorulan Sorular (FAQ)</h2>
+
+<h3>1. Zekat hesaplama nasıl yapılır 2026?</h3>
+<p>Zekat hesaplamak için önce toplam mal varlığınızı (altın, nakit, hisse, ticari mal) belirleyin. Ardından nisab miktarını (85 gram altının güncel değeri) kontrol edin. Nisabı geçiyorsa, toplam mal varlığının <strong>%2,5'ini</strong> zekat olarak hesaplayın. <a href="https://adwatak.cloud/tr/tools/zakat-calculator" target="_blank" rel="noopener"><strong>Adwatak zekat hesaplama aracı</strong></a> bu işlemi otomatik olarak yapar.</p>
+
+<h3>2. Zekat nisabı 2026 ne kadar?</h3>
+<p>2026 yılında zekat nisabı <strong>85 gram altın</strong> veya eş değerinde paradır. Gram altının güncel piyasa fiyatına göre TL karşılığı değişir. Örneğin gram altın 4.000 ₺ ise nisab yaklaşık 340.000 ₺'dir. Kesin miktar için güncel altın fiyatını kontrol edin.</p>
+
+<h3>3. Altın zekatı nasıl hesaplanır?</h3>
+<p>Altın zekatı hesaplamak için toplam altınızın gramını güncel gram altın fiyatıyla çarpın. Elde edilen toplam değer nisabı geçerse, bu değerin <strong>%2,5'ini</strong> zekat olarak verin. Örneğin 200 gram altın × 4.000 ₺ = 800.000 ₺ × 0,025 = 20.000 ₺ zekat. Hanefi mezhebine göre kullanılan altın takılardan da zekat verilir.</p>
+
+<h3>4. Para zekatı nasıl hesaplanır?</h3>
+<p>Banka hesaplarındaki nakit para, döviz ve diğer nakit varlıklar toplanır. Toplam nakit değer, 85 gram altının güncel değerine eşit veya fazlaysa, toplam nakit üzerinden <strong>%2,5 zekat</strong> verilir. Örneğin 500.000 ₺ nakit için zekat: 500.000 × 0,025 = 12.500 ₺.</p>
+
+<h3>5. Hisse senedi zekatı nasıl hesaplanır?</h3>
+<p>Hisse senetleri ticari mal sayılır. Hesaplama: hisse sayısı × güncel fiyat = piyasa değeri. Bu değer nisabı geçerse × %2,5 = zekat. Alternatif olarak, şirketin nakit aktifleri üzerinden de hesaplanabilir. Uzun vadeli yatırım amaçlı hisseler için farklı görüşler mevcuttur; fakih'e danışmanız önerilir.</p>
+
+<h3>6. Zekat farz mı vacip midir?</h3>
+<p>Zekat, İslam'ın beş şartından biri olarak <strong>farzdır</strong>. Farz, Kur'an ve Sünnet ile kesin olarak emredilen, yapmayanın günah işleyeceği ibadettir. Vacip ise biraz daha hafif bir yükümlülük kategorisidir. Zekatın farz oluşu, tüm mezheplerde ittifakla kabul edilmiştir.</p>
+
+<h3>7. Zekat ne zaman verilmelidir?</h3>
+<p>Zekat, malın nisabı geçirdiği tarihten itibaren <strong>bir hicri yıl (354 gün)</strong> sonra vadesi gelir. Zekat yılının başlangıcı, malın ilk kez nisabı geçtiği tarihtir. Ramazan'da zekat vermenin fazileti vardır, ancak zekatın Ramazan'da verilmesi şart değildir.</p>
+
+<h3>8. Zekat vermeyen kişi hakkında ne denir?</h3>
+<p>Kur'an-ı Kerim'de zekat vermeyenler için ağır uyarılar vardır (Tevbe, 9/34-35). Zekat vermek, İslam'ın beş şartından biri olduğu için, bilerek ve inatla vermek <strong>tekfir (dışlama)</strong> konusu tartışılmıştır. Cumhur ulema, zekatı inkar etmeyip de geri veren kişinin tevbeye davet edilmesini ve zekatın zorla alınmasını uygun görür.</p>
+
+<h3>9. Zekat evli çiftler için ayrı ayrı mı hesaplanır?</h3>
+<p>Evet, zekat <strong>bireysel</strong> bir yükümlülüktür. Her bireyin kendi mal varlığı ayrı ayrı hesaplanır. Kocanın mallarından kocası, karısının mallarından karısı zekat hesaplar. Ortak mallar için ise pay oranına göre zekat hesaplanır.</li>
+
+<h3>10. Borcu olan kişi zekat hesaplarken borcu düşebilir mi?</h3>
+<p>Bu konuda mezhepler arasında ihtilaf vardır. <strong>Hanefi mezhebi</strong> göre kısa vadeli borçlar (bir yıl içinde ödenecek) zekat matrahından düşülebilir. <strong>Şafii ve Hanbeli mezheplerine</strong> göre ise borçlar zekat matrahından düşülemez. En güvenli yol, borçları düşmeden zekat hesaplamaktır.</p>
+
+<h3>11. Takı olarak kullanılan altın ve gümüşten zekat verilir mi?</h3>
+<p>Bu konuda mezhepler arasında ihtilaf vardır. <strong>Hanefi mezhebi</strong>, kadınların kullandığı altın ve gümüş takıların — normal miktarda olsa bile — zekata tabi olduğunu söyler. <strong>Şafii, Maliki ve Hanbeli mezhepleri</strong> ise, normal kullanım miktarındaki takılardan zekat verilmez; ancak fazla miktarda veya yatırım amaçlı takılardan zekat verilir.</p>
+
+<h3>12. Zekatı kime verebilirim?</h3>
+<p>Zekat, Kur'an-ı Kerim'de (Tevbe, 9/60) belirtilen <strong>sekiz sınıfa</strong> verilmelidir: fakir, miskin, zekat memuru, müellefe-i kulup, köle (özür), borçlu, fi sebîlillah ve ibnü's-sabil. Zekat, akrabaya verilemez (akraba sadakası ayrıdır), ölülere vasiyet edilemez ve cami, okul gibi yapı inşaatına harcanamaz.</p>
+
+<h3>13. Zekat ile sadaka arasındaki fark nedir?</h3>
+<p><strong>Zekat</strong> farzdır, belirli bir oranda (%2,5), belirli mallardan ve belirli kişilere verilir. <strong>Sadaka</strong> ise gönüllüdür, herhangi bir oran ve sınır yoktur, herkese ve her amaçla verilebilir. Zekat, İslam'ın beş şartından biridir; sadaka ise sünnettir (mendup/vacip tartışması vardır).</p>
+
+<h3>14. Emeklilik hesabındaki paradan zekat verilir mi?</h3>
+<p>Emeklilik hesaplarındaki paralar, erişim durumuna göre değerlendirilir. <strong>Hanefi mezhebi</strong> göre paraya ulaşabilme imkânı varsa (örneğin BES hesabı) zekat farzdır. Paraya erişim kısıtlıysa (örneğin erken çekilme yasağı olan BES), bazı alimler zekatı tali yükümlülük olarak görür. Detaylı bilgi için fakih'e danışın.</p>
+
+<h3>15. Zekat hesaplayıcısı güvenilir mi?</h3>
+<p>Evet, <a href="https://adwatak.cloud/tr/tools/zakat-calculator" target="_blank" rel="noopener"><strong>Adwatak zekat hesaplayıcısı</strong></a> İslam hukukunun temel ilkelerine göre tasarlanmıştır. Ancak karmaşık durumlar (hisse senedi, ticari mal, karışık mallar) için bir fakih'ten danışmanız en doğrusudur. Araç, genel hesaplamalar için güvenilir sonuçlar üretir.</p>
+
+<h3>16. Zekat yılının başlangıcı nasıl belirlenir?</h3>
+<p>Zekat yılı, malınızın ilk kez nisabı geçtiği tarihten itibaren başlar. Örneğin, 15 Mart 2025'te nisabı geçen bir mal için zekat, 15 Mart 2026'da vadesi gelir. Her mal için ayrı zekat yılı hesaplanabilir. Toplu hesaplama yapmak isterseniz, en eski nisab geçiş tarihini baz alabilirsiniz.</p>
+
+<p><a href="https://adwatak.cloud/tr/tools/zakat-calculator" target="_blank" rel="noopener"><strong>→ Şimdi Zekat Hesapla (Ücretsiz)</strong></a></p>
+`,
+  },
+  {
     slug: "adwatak-nedir-2026",
     title: "Adwatak Nedir? — 50+ Ücretsiz Çevrimiçi Araç Platformu Hakkında Kapsamlı Rehber 2026",
     excerpt:
@@ -43,50 +281,50 @@ const trBlogPosts: BlogPost[] = [
 <h2>Hangi Araçlar Sunuluyor?</h2>
 <h3>💰 Finansal Hesaplamalar</h3>
 <ul>
-  <li><strong>Konut Kredisi Hesaplama</strong> — Aylık ödeme ve amortisman tablosu</li>
-  <li><strong>Kişisel Kredi Hesaplama</strong> — Kredi faizi ve toplam geri ödeme</li>
-  <li><strong>EMI Hesaplama</strong> — Eşit aylık taksit hesaplama</li>
-  <li><strong>Bileşik Faiz Hesaplama</strong> — Yatırım büyüme hesaplamaları</li>
-  <li><strong>KDV Hesaplama</strong> — KDV ekleme ve çıkarma</li>
-  <li><strong>Net Maaş Hesaplama</strong> — Kesintiler sonrası net maaş</li>
-  <li><strong>Altın Hesaplama</strong> — Gram altın değeri ve zekat</li>
-  <li><strong>Kâr Marjı Hesaplama</strong> — Kar marjı ve başabaş noktası</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/mortgage-calculator"><strong>Konut Kredisi Hesaplama</strong></a> — Aylık ödeme ve amortisman tablosu</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/loan-calculator"><strong>Kişisel Kredi Hesaplama</strong></a> — Kredi faizi ve toplam geri ödeme</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/emi-calculator"><strong>EMI Hesaplama</strong></a> — Eşit aylık taksit hesaplama</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/compound-interest"><strong>Bileşik Faiz Hesaplama</strong></a> — Yatırım büyüme hesaplamaları</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/vat-calculator"><strong>KDV Hesaplama</strong></a> — KDV ekleme ve çıkarma</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/salary-calculator"><strong>Net Maaş Hesaplama</strong></a> — Kesintiler sonrası net maaş</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/gold-calculator"><strong>Altın Hesaplama</strong></a> — Gram altın değeri ve zekat</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/profit-margin"><strong>Kâr Marjı Hesaplama</strong></a> — Kar marjı ve başabaş noktası</li>
 </ul>
 
 <h3>🕌 İslami Araçlar</h3>
 <ul>
-  <li><strong>İslami Miras Hesaplama</strong> — Feraiz kurallarına göre miras paylaşımı</li>
-  <li><strong>Zekat Hesaplama</strong> — Para, altın ve hisseler için zekat</li>
-  <li><strong>Kıble Yönü</strong> — Konumunuza göre kıble yönü</li>
-  <li><strong>Namaz Vakitleri</strong> — Konumunuza göre namaz vakitleri</li>
-  <li><strong>Hicri ↔ Miladi Çevirici</strong> — Tarih dönüşümü</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/inheritance-calculator"><strong>İslami Miras Hesaplama</strong></a> — Feraiz kurallarına göre miras paylaşımı</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/zakat-calculator"><strong>Zekat Hesaplama</strong></a> — Para, altın ve hisseler için zekat</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/qibla-direction"><strong>Kıble Yönü</strong></a> — Konumunuza göre kıble yönü</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/prayer-times"><strong>Namaz Vakitleri</strong></a> — Konumunuza göre namaz vakitleri</li>
+  <li><strong><a href="https://adwatak.cloud/tr/tools/hijri-converter"><strong>Hicri ↔ Miladi Çevirici</strong></a> — Tarih dönüşümü</li>
 </ul>
 
 <h3>📝 Metin Araçları</h3>
 <ul>
-  <li>Kelime ve Karakter Sayacı</li>
-  <li>Metin Büyük/Küçük Harf Dönüştürücü</li>
-  <li>Sayıyı Yazıya Çevirme</li>
-  <li>Metin Temizleyici</li>
-  <li>Metin Karşılaştırma</li>
-  <li>Yapay Zeka İçerik Dedektörü</li>
-  <li>Dil Bilgisi Denetleyici</li>
+  <li><a href="https://adwatak.cloud/tr/tools/word-counter">Kelime ve Karakter Sayacı</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/text-case">Metin Büyük/Küçük Harf Dönüştürücü</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/number-to-words">Sayıyı Yazıya Çevirme</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/text-cleaner">Metin Temizleyici</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/text-compare">Metin Karşılaştırma</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/ai-content-detector">Yapay Zeka İçerik Dedektörü</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/grammar-checker">Dil Bilgisi Denetleyici</a></li>
 </ul>
 
 <h3>📄 PDF Araçları</h3>
 <ul>
-  <li>PDF Birleştirme</li>
-  <li>PDF Ayırma</li>
-  <li>PDF Sıkıştırma</li>
-  <li>PDF'den Word'e Dönüştürme</li>
+  <li><a href="https://adwatak.cloud/tr/tools/pdf-merger">PDF Birleştirme</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/pdf-splitter">PDF Ayırma</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/pdf-compressor">PDF Sıkıştırma</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/pdf-to-word">PDF'den Word'e Dönüştürme</a></li>
 </ul>
 
 <h3>⚡ Oluşturucular</h3>
 <ul>
-  <li>QR Kod Oluşturucu</li>
-  <li>Barkod Oluşturucu</li>
-  <li>Şifre Oluşturucu</li>
-  <li>Fatura Oluşturucu</li>
+  <li><a href="https://adwatak.cloud/tr/tools/qr-generator">QR Kod Oluşturucu</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/barcode-generator">Barkod Oluşturucu</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/password-generator">Şifre Oluşturucu</a></li>
+  <li><a href="https://adwatak.cloud/tr/tools/invoice-generator">Fatura Oluşturucu</a></li>
 </ul>
 
 <h2>Adwatak'ı Neden Kullanmalısınız?</h2>

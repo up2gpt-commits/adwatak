@@ -129,11 +129,13 @@ export default function EnHome() {
     <>
       {/* Hero */}
       <section className="hero scroll-fade-in">
+        <div className="hero-grid"></div>
+        <div className="hero-orb-2"></div>
         <div className="hero-badge">
-          <span>🚀</span>
-          <span>The #1 Free Online Tools Platform — 50+ Tools</span>
+          <span className="hero-badge-dot"></span>
+          <span>The #1 Free Online Tools Platform</span>
         </div>
-        <h1>Every Tool You Need.<br />Free. Forever.</h1>
+        <h1><span className="hero-gradient-text">Every Tool You Need.</span><br />Free. Forever.</h1>
         <p>
           Calculators, converters, generators, PDF tools, and more — 100% free, no signup, and nothing gets uploaded.
         </p>

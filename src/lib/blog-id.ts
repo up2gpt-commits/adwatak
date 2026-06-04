@@ -43,50 +43,50 @@ const idBlogPosts: BlogPost[] = [
 <h2>Alat Apa Saja yang Tersedia?</h2>
 <h3>💰 Kalkulator Keuangan</h3>
 <ul>
-  <li><strong>Kalkulator KPR</strong> — Cicilan bulanan dan tabel amortisasi</li>
-  <li><strong>Kalkulator Pinjaman</strong> — Bunga pinjaman dan total pembayaran</li>
-  <li><strong>Kalkulator EMI</strong> — Cicilan Bulanan Tetap (EMI)</li>
-  <li><strong>Kalkulator Bunga Majemuk</strong> — Perhitungan pertumbuhan investasi</li>
-  <li><strong>Kalkulator PPN</strong> — Tambah atau kurangi PPN</li>
-  <li><strong>Kalkulator Gaji Bersih</strong> — Gaji setelah potongan</li>
-  <li><strong>Kalkulator Emas</strong> — Nilai emas per gram dan zakat</li>
-  <li><strong>Kalkulator Margin Keuntungan</strong> — Margin dan titik impas</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/mortgage-calculator"><strong>Kalkulator KPR</strong></a> — Cicilan bulanan dan tabel amortisasi</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/loan-calculator"><strong>Kalkulator Pinjaman</strong></a> — Bunga pinjaman dan total pembayaran</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/emi-calculator"><strong>Kalkulator EMI</strong></a> — Cicilan Bulanan Tetap (EMI)</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/compound-interest"><strong>Kalkulator Bunga Majemuk</strong></a> — Perhitungan pertumbuhan investasi</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/vat-calculator"><strong>Kalkulator PPN</strong></a> — Tambah atau kurangi PPN</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/salary-calculator"><strong>Kalkulator Gaji Bersih</strong></a> — Gaji setelah potongan</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/gold-calculator"><strong>Kalkulator Emas</strong></a> — Nilai emas per gram dan zakat</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/profit-margin"><strong>Kalkulator Margin Keuntungan</strong></a> — Margin dan titik impas</li>
 </ul>
 
 <h3>🕌 Alat Islami</h3>
 <ul>
-  <li><strong>Kalkulator Waris Islam</strong> — Pembagian waris menurut syariat Islam (Faraid)</li>
-  <li><strong>Kalkulator Zakat</strong> — Zakat atas uang, emas, dan saham</li>
-  <li><strong>Arah Kiblat</strong> — Arah kiblat dari lokasi Anda</li>
-  <li><strong>Waktu Sholat</strong> — Waktu sholat berdasarkan lokasi Anda</li>
-  <li><strong>Konversi Hijriah ↔ Masehi</strong> — Konversi tanggal</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/inheritance-calculator"><strong>Kalkulator Waris Islam</strong></a> — Pembagian waris menurut syariat Islam (Faraid)</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/zakat-calculator"><strong>Kalkulator Zakat</strong></a> — Zakat atas uang, emas, dan saham</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/qibla-direction"><strong>Arah Kiblat</strong></a> — Arah kiblat dari lokasi Anda</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/prayer-times"><strong>Waktu Sholat</strong></a> — Waktu sholat berdasarkan lokasi Anda</li>
+  <li><strong><a href="https://adwatak.cloud/id/tools/hijri-converter"><strong>Konversi Hijriah ↔ Masehi</strong></a> — Konversi tanggal</li>
 </ul>
 
 <h3>📝 Alat Teks</h3>
 <ul>
-  <li>Penghitung Kata & Karakter</li>
-  <li>Konversi Huruf Teks</li>
-  <li>Angka ke Huruf</li>
-  <li>Pembersih Teks</li>
-  <li>Perbandingan Teks</li>
-  <li>Detektor Konten AI</li>
-  <li>Pemeriksa Tata Bahasa</li>
+  <li><a href="https://adwatak.cloud/id/tools/word-counter">Penghitung Kata &amp; Karakter</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/text-case">Konversi Huruf Teks</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/number-to-words">Angka ke Huruf</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/text-cleaner">Pembersih Teks</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/text-compare">Perbandingan Teks</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/ai-content-detector">Detektor Konten AI</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/grammar-checker">Pemeriksa Tata Bahasa</a></li>
 </ul>
 
 <h3>📄 Alat PDF</h3>
 <ul>
-  <li>Penggabung PDF</li>
-  <li>Pemisah PDF</li>
-  <li>Kompresor PDF</li>
-  <li>PDF ke Word</li>
+  <li><a href="https://adwatak.cloud/id/tools/pdf-merger">Penggabung PDF</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/pdf-splitter">Pemisah PDF</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/pdf-compressor">Kompresor PDF</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/pdf-to-word">PDF ke Word</a></li>
 </ul>
 
 <h3>⚡ Generator</h3>
 <ul>
-  <li>Pembuat Kode QR</li>
-  <li>Pembuat Barcode</li>
-  <li>Pembuat Kata Sandi</li>
-  <li>Pembuat Faktur</li>
+  <li><a href="https://adwatak.cloud/id/tools/qr-generator">Pembuat Kode QR</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/barcode-generator">Pembuat Barcode</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/password-generator">Pembuat Kata Sandi</a></li>
+  <li><a href="https://adwatak.cloud/id/tools/invoice-generator">Pembuat Faktur</a></li>
 </ul>
 
 <h2>Mengapa Menggunakan Adwatak?</h2>

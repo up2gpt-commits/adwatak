@@ -126,11 +126,13 @@ export default function IdHome() {
     <>
       {/* Hero */}
       <section className="hero scroll-fade-in">
+        <div className="hero-grid"></div>
+        <div className="hero-orb-2"></div>
         <div className="hero-badge">
-          <span>🚀</span>
-          <span>Platform Alat Gratis #1 — 50+ Alat</span>
+          <span className="hero-badge-dot"></span>
+          <span>Platform Alat Online Gratis #1</span>
         </div>
-        <h1>Semua Alat yang Anda Butuhkan.<br />Gratis. Selamanya.</h1>
+        <h1><span className="hero-gradient-text">Semua Alat yang Anda Butuhkan.</span><br />Gratis. Selamanya.</h1>
         <p>
           Kalkulator, konverter, generator, alat PDF, dan banyak lagi — 100% gratis, tidak perlu daftar, dan tidak ada yang diunggah.
         </p>
