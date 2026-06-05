@@ -1,5 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useSearch } from "../components/SearchProvider";
+import { SearchProvider } from "../components/SearchProvider";
+import SearchBar from "../components/SearchBar";
 
 const categories = [
   { name: "Financial Calculators", slug: "calculators", icon: "💰", count: "10", desc: "Mortgage, loans, EMI, profit margin, VAT, salary and more" },
@@ -9,7 +12,7 @@ const categories = [
   { name: "Converters", slug: "converters", icon: "🔄", count: "5", desc: "Currency, unit, color, date, number to words converter" },
   { name: "Generators", slug: "generators", icon: "⚡", count: "6", desc: "QR codes, barcodes, passwords, names" },
   { name: "Developer Tools", slug: "dev", icon: "💻", count: "7", desc: "JSON, Base64, hash, SEO audit, CSS, Markdown, IP lookup" },
-  { name: "Islamic Tools", slug: "islamic", icon: "🕌", count: "2", desc: "Inheritance, Zakat calculators" },
+  { name: "Islamic Tools", slug: "islamic", icon: "🕌", count: "7", desc: "Inheritance, Zakat, Qibla, Prayer Times, Tasbeeh, Umrah, Fidyah" },
   { name: "Other", slug: "daily", icon: "🌟", count: "5", desc: "Age, BMI, calorie, stopwatch, food analyzer" },
 ];
 
@@ -23,6 +26,9 @@ const allTools = [
   { title: "VAT Calculator", icon: "🏛️", href: "/en/tools/vat-calculator", desc: "Add or extract VAT at any rate", cat: "Financial Calculators" },
   { title: "Gold Calculator", icon: "🥇", href: "/en/tools/gold-calculator", desc: "Gold value by karat and weight", cat: "Financial Calculators" },
   { title: "Installment Calculator", icon: "📊", href: "/en/tools/installment-calculator", desc: "Calculate installment payment plans", cat: "Financial Calculators" },
+  { title: "Car Installment Calculator", icon: "🚗", href: "/en/tools/car-installment", desc: "Car loan payment with down payment", cat: "Financial Calculators" },
+  { title: "Percentage Calculator", icon: "🧮", href: "/en/tools/percentage-calculator", desc: "Calculate percentages three ways", cat: "Financial Calculators" },
+  { title: "Date Duration Calculator", icon: "📆", href: "/en/tools/date-duration", desc: "Days between two dates", cat: "Financial Calculators" },
   { title: "Calorie Calculator", icon: "🔥", href: "/en/tools/calorie-calculator", desc: "Daily calorie needs for weight goals", cat: "Other" },
 
   { title: "Word Counter", icon: "📝", href: "/en/tools/word-counter", desc: "Count words, characters, sentences", cat: "Text Tools" },
@@ -37,6 +43,7 @@ const allTools = [
   { title: "Typing Speed Test", icon: "⌨️", href: "/en/tools/typing-test", desc: "Measure your WPM typing speed", cat: "Text Tools" },
   { title: "Social Character Counter", icon: "📱", href: "/en/tools/social-character-counter", desc: "Count chars for Twitter, Instagram, etc", cat: "Text Tools" },
   { title: "Lorem Ipsum Generator", icon: "📄", href: "/en/tools/arabic-lorem", desc: "Generate placeholder text", cat: "Text Tools" },
+  { title: "Bio Generator", icon: "👤", href: "/en/tools/bio-generator", desc: "Create attractive social media bio", cat: "Text Tools" },
 
   { title: "Background Remover", icon: "🖼️", href: "/en/tools/background-remover", desc: "Remove backgrounds with AI", cat: "Image Tools" },
   { title: "Image Resizer", icon: "🖼️", href: "/en/tools/image-resizer", desc: "Change image dimensions online", cat: "Image Tools" },
@@ -45,6 +52,7 @@ const allTools = [
   { title: "Image to PDF", icon: "📄", href: "/en/tools/image-to-pdf", desc: "Convert images to PDF", cat: "Image Tools" },
 
   { title: "PDF Merger", icon: "📎", href: "/en/tools/pdf-merger", desc: "Combine multiple PDFs into one", cat: "PDF Tools" },
+  { title: "PDF Splitter", icon: "✂️", href: "/en/tools/pdf-splitter", desc: "Split PDF into separate pages", cat: "PDF Tools" },
   { title: "PDF Compressor", icon: "📦", href: "/en/tools/pdf-compressor", desc: "Reduce PDF file size", cat: "PDF Tools" },
   { title: "PDF to Word", icon: "📄", href: "/en/tools/pdf-to-word", desc: "Convert PDF to editable Word", cat: "PDF Tools" },
 
@@ -52,6 +60,9 @@ const allTools = [
   { title: "Unit Converter", icon: "📏", href: "/en/tools/unit-converter", desc: "Length, weight, temperature, volume", cat: "Converters" },
   { title: "Color Converter", icon: "🎨", href: "/en/tools/color-converter", desc: "HEX ↔ RGB ↔ HSL with preview", cat: "Converters" },
   { title: "Hijri Date Converter", icon: "📅", href: "/en/tools/hijri-converter", desc: "Hijri to Gregorian date conversion", cat: "Converters" },
+  { title: "Temperature Converter", icon: "🌡️", href: "/en/tools/temperature-converter", desc: "Celsius, Fahrenheit, Kelvin conversion", cat: "Converters" },
+  { title: "Timezone Converter", icon: "🕐", href: "/en/tools/timezone-converter", desc: "Convert time between timezones", cat: "Converters" },
+  { title: "Pixel Converter", icon: "📏", href: "/en/tools/pixel-converter", desc: "Convert pixels to cm, inches, points", cat: "Converters" },
   { title: "Age Calculator", icon: "🎂", href: "/en/tools/age-calculator", desc: "Calculate exact age and zodiac sign", cat: "Other" },
 
   { title: "QR Code Generator", icon: "🔳", href: "/en/tools/qr-generator", desc: "Generate QR codes from URLs or text", cat: "Generators" },
@@ -61,6 +72,8 @@ const allTools = [
   { title: "Invoice Generator", icon: "🧾", href: "/en/tools/invoice-generator", desc: "Professional invoice creator", cat: "Generators" },
   { title: "WhatsApp Link", icon: "💬", href: "/en/tools/whatsapp-link", desc: "Direct chat links with pre-filled message", cat: "Generators" },
   { title: "Random Number", icon: "🎲", href: "/en/tools/random-number", desc: "Random numbers in any range", cat: "Generators" },
+  { title: "Name Generator", icon: "👤", href: "/en/tools/name-generator", desc: "Generate Arabic and English names", cat: "Generators" },
+  { title: "AI Essay Writer", icon: "✍️", href: "/en/tools/ai-essay-writer", desc: "Write complete articles with AI", cat: "Generators" },
 
   { title: "JSON Formatter", icon: "📋", href: "/en/tools/json-formatter", desc: "Format, validate, and minify JSON", cat: "Developer Tools" },
   { title: "Base64 Encoder", icon: "📦", href: "/en/tools/base64-encoder", desc: "Encode and decode Base64 strings", cat: "Developer Tools" },
@@ -69,11 +82,22 @@ const allTools = [
   { title: "CSS Minifier", icon: "🎨", href: "/en/tools/css-minifier", desc: "Minify and format CSS code", cat: "Developer Tools" },
   { title: "Markdown Editor", icon: "📝", href: "/en/tools/markdown-editor", desc: "Write Markdown with live preview", cat: "Developer Tools" },
   { title: "IP Lookup", icon: "🌐", href: "/en/tools/ip-lookup", desc: "Info about any IP address", cat: "Developer Tools" },
+  { title: "URL Encoder/Decoder", icon: "🔗", href: "/en/tools/encoder", desc: "Encode and decode URLs", cat: "Developer Tools" },
+  { title: "Encryption Tool", icon: "🔐", href: "/en/tools/encryption-tool", desc: "Encrypt and decrypt text securely", cat: "Developer Tools" },
+  { title: "SEO Content Generator", icon: "📝", href: "/en/tools/seo-content-generator", desc: "Generate SEO-optimized content", cat: "Developer Tools" },
+  { title: "UUID Generator", icon: "🆔", href: "/en/tools/uuid-generator", desc: "Generate UUID v4/v7 identifiers", cat: "Developer Tools" },
+  { title: "Keyword Research Tool", icon: "🔎", href: "/en/tools/keyword-research", desc: "Research keywords for SEO", cat: "Developer Tools" },
 
   { title: "Inheritance Calculator", icon: "📜", href: "/en/tools/inheritance-calculator", desc: "Islamic inheritance (Faraid) distribution", cat: "Islamic Tools" },
   { title: "Zakat Calculator", icon: "🕌", href: "/en/tools/zakat-calculator", desc: "Annual 2.5% zakat obligation", cat: "Islamic Tools" },
+  { title: "Qibla Direction", icon: "🧭", href: "/en/tools/qibla-direction", desc: "Find Qibla direction from your location", cat: "Islamic Tools" },
+  { title: "Prayer Times", icon: "🕐", href: "/en/tools/prayer-times", desc: "Prayer times by your location", cat: "Islamic Tools" },
+  { title: "Tasbeeh Counter", icon: "📿", href: "/en/tools/tasbeeh-counter", desc: "Digital Tasbeeh for daily dhikr", cat: "Islamic Tools" },
+  { title: "Umrah Calculator", icon: "🕋", href: "/en/tools/umrah-calculator", desc: "Calculate Umrah costs and step-by-step guide", cat: "Islamic Tools" },
+  { title: "Fidyah & Kaffarah", icon: "⚖️", href: "/en/tools/fidyah-kaffarah", desc: "Calculate Fidyah & Kaffarah for oath, Ramadan, Zhihar", cat: "Islamic Tools" },
 
   { title: "BMI Calculator", icon: "⚖️", href: "/en/tools/bmi-calculator", desc: "Body Mass Index with metric/imperial", cat: "Other" },
+  { title: "Ideal Weight Calculator", icon: "⚖️", href: "/en/tools/ideal-weight", desc: "Calculate ideal weight based on height", cat: "Other" },
   { title: "Food Calorie Analyzer", icon: "📸", href: "/en/tools/food-calorie-analyzer", desc: "Snap a photo, get instant calorie analysis", cat: "Other" },
   { title: "Stopwatch & Timer", icon: "⏱️", href: "/en/tools/stopwatch", desc: "Stopwatch with lap tracking", cat: "Other" },
 ];
@@ -91,8 +115,8 @@ const featuredTools = [
   { title: "Keyword Research Tool", icon: "🔎", href: "/en/tools/keyword-research", desc: "Research keywords for SEO optimization", cat: "Developer Tools" },
 ];
 
-export default function EnHome() {
-  const [search, setSearch] = useState("");
+function EnHomeInner() {
+  const { search } = useSearch();
   const [activeCat, setActiveCat] = useState<string | null>(null);
 
   // Hash key → category name mapping (matches Header dropdown keys)
@@ -113,26 +137,25 @@ export default function EnHome() {
     const hash = window.location.hash.replace("#", "");
     if (hash && hashToCat[hash]) {
       setActiveCat(hashToCat[hash]);
+    } else if (!hash) {
+      setActiveCat(null);
     }
   };
 
-  // Separate scroll function — only called on events, not on interval
+  // Separate scroll function — only called on hash events
   const scrollToTools = () => {
     const hash = window.location.hash.replace("#", "");
     if (hash && hashToCat[hash]) {
       setTimeout(() => {
-        const el = document.querySelector("[data-scroll-target]");
+        const el = document.querySelector("[data-tools-section]");
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 150);
     }
   };
 
   useEffect(() => {
-    // Process initial hash
     applyHashFilter();
-    // Scroll on initial load if hash present
-    scrollToTools();
-    // Listen for hash changes
+    // Don't scroll on mount — only on hash changes
     const onHash = () => { applyHashFilter(); scrollToTools(); };
     window.addEventListener("hashchange", onHash);
     window.addEventListener("popstate", onHash);
@@ -151,6 +174,8 @@ export default function EnHome() {
     const matchCat = !activeCat || t.cat === activeCat;
     return matchSearch && matchCat;
   });
+
+  const isSearching = search.trim().length > 0;
 
   return (
     <>
@@ -186,73 +211,85 @@ export default function EnHome() {
         </div>
       </section>
 
-      {/* Featured */}
-      <section className="featured-section scroll-fade-in" style={{ marginTop: "40px" }}>
-        <div className="section-header">
+      {/* Smart Search */}
+      <div className="mt-8 mb-4" data-scroll-target>
+        <SearchBar lang="en" />
+      </div>
+
+      {/* Featured / Popular Tools — hides when searching or category selected */}
+      {!isSearching && !activeCat && (
+        <section className="featured-section scroll-fade-in" style={{ marginTop: "40px" }}>
+          <div className="section-header">
+            <h2 className="section-title">
+              <span className="s-icon">⭐</span>
+              Most Popular Tools
+            </h2>
+          </div>
+          <div className="tools-grid-3">
+            {featuredTools.map((tool, i) => (
+              <a key={i} href={tool.href} className="featured-card card-shine">
+                <span className="f-icon">{tool.icon}</span>
+                <div className="f-title">{tool.title}</div>
+                <div className="f-desc">{tool.desc}</div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* All Tools header — hides when searching */}
+      {!isSearching && (
+        <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }}>
           <h2 className="section-title">
-            <span className="s-icon">⭐</span>
-            Most Popular Tools
+            <span className="s-icon">🗂️</span>
+            All Tools
           </h2>
         </div>
-        <div className="tools-grid-3">
-          {featuredTools.map((tool, i) => (
-            <a key={i} href={tool.href} className="featured-card card-shine">
-              <span className="f-icon">{tool.icon}</span>
-              <div className="f-title">{tool.title}</div>
-              <div className="f-desc">{tool.desc}</div>
-            </a>
-          ))}
-        </div>
-      </section>
+      )}
 
-      {/* Divider */}
-      <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }} data-scroll-target>
-        <h2 className="section-title">
-          <span className="s-icon">🗂️</span>
-          All Tools
-        </h2>
-      </div>
-
-      {/* Search + Categories */}
-      <div className="search-wrap">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search tools... (e.g. mortgage, QR code, BMI)"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
-
-      <div className="cats">
-        <button onClick={() => { setActiveCat(null); window.location.hash = ""; }} className={`cat-btn ${!activeCat ? "active" : ""}`} id="all">🗂️ All</button>
-        {categories.map(c => (
-          <button key={c.slug} onClick={() => { window.location.hash = catToHash[c.name] || ""; }} className={`cat-btn ${activeCat === c.name ? "active" : ""}`} id={c.slug}>{c.icon} {c.name}</button>
-        ))}
-      </div>
-
-      {filtered.length > 0 ? (
-        <div className="tools-grid">
-          {filtered.map(t => (
-            <a key={t.href} href={t.href} className="tool-card card-shine">
-              <div className="tool-card-inner">
-                <span className="tool-icon">{t.icon}</span>
-                <div>
-                  <h3 className="tool-title">{t.title}</h3>
-                  <p className="tool-desc">{t.desc}</p>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      ) : (
-        <div className="empty">
-          <p className="emoji">🔍</p>
-          <p>No results found</p>
-          <p className="text-xs text-gray-400 mt-1">Try a different search or category</p>
-          <button onClick={() => { setSearch(""); setActiveCat(null); window.location.hash = ""; }} className="mt-4 cat-btn">Show all tools</button>
+      {/* Search results header */}
+      {isSearching && (
+        <div className="search-results-header">
+          <span className="srh-icon">🔍</span>
+          <span>Search results for: <strong>"{search}"</strong></span>
+          <span className="srh-count">{filtered.length} tools</span>
         </div>
       )}
+
+      {/* Categories — hidden when searching */}
+      {!isSearching && (
+        <div className="cats">
+          <button onClick={() => { setActiveCat(null); window.location.hash = ""; }} className={`cat-btn ${!activeCat ? "active" : ""}`} id="all">🗂️ All</button>
+          {categories.map(c => (
+            <button key={c.slug} onClick={() => { setActiveCat(c.name); window.location.hash = catToHash[c.name] || ""; }} className={`cat-btn ${activeCat === c.name ? "active" : ""}`} id={c.slug}>{c.icon} {c.name}</button>
+          ))}
+        </div>
+      )}
+
+      <div data-tools-section>
+        {filtered.length > 0 ? (
+          <div className="tools-grid">
+            {filtered.map((t, i) => (
+              <a key={i} href={t.href} className="tool-card card-shine">
+                <div className="tool-card-inner">
+                  <span className="tool-icon">{t.icon}</span>
+                  <div>
+                    <h3 className="tool-title">{t.title}</h3>
+                    <p className="tool-desc">{t.desc}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div className="empty">
+            <p className="emoji">🔍</p>
+            <p>No results found</p>
+            <p className="text-xs text-gray-400 mt-1">Try a different search or category</p>
+            <button onClick={() => { /* The search state is managed by SearchProvider so this resets via the SearchBar clear */ }} className="mt-4 cat-btn">Show all tools</button>
+          </div>
+        )}
+      </div>
 
       {/* Stats */}
       <div className="stats scroll-fade-in">
@@ -297,5 +334,13 @@ export default function EnHome() {
         </a>
       </div>
     </>
+  );
+}
+
+export default function EnHome() {
+  return (
+    <SearchProvider>
+      <EnHomeInner />
+    </SearchProvider>
   );
 }

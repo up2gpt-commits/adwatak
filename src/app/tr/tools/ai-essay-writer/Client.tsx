@@ -146,12 +146,30 @@ export default function ClientTr() {
   const [type, setType] = useState("argumentative");
   const [length, setLength] = useState("medium");
   const [result, setResult] = useState<{ title: string; introduction: string; body: string[]; conclusion: string } | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const handleGenerate = () => {
+  const handleGenerate = async () => {
     if (!topic.trim()) return;
-    setResult(generateEssay(topic.trim(), type, length));
+    setLoading(true);
+    setError("");
+    setResult(null);
     setCopied(false);
+    try {
+      const r = await fetch("/api/ai-essay-writer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ topic: topic.trim(), type, length, lang: "tr" }),
+      });
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.error || "Makale oluşturulamadı");
+      setResult(data);
+    } catch (e: any) {
+      setError(e.message || "Bir hata oluştu. Lütfen tekrar deneyin.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const fullText = result
@@ -219,12 +237,18 @@ export default function ClientTr() {
 
           <button
             onClick={handleGenerate}
-            disabled={!topic.trim()}
+            disabled={!topic.trim() || loading}
             className="w-full py-3.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold text-sm rounded-lg hover:from-blue-700 hover:to-blue-800 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-md"
           >
-            ✨ Makale Oluştur
+            {loading ? "⏳ Makale oluşturuluyor..." : "✨ Makale Oluştur"}
           </button>
         </div>
+
+        {error && (
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-4 text-sm text-red-700">
+            ⚠️ {error}
+          </div>
+        )}
 
         {result && (
           <div className="border-t border-gray-200 pt-6">

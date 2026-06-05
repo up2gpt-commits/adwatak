@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { chatCompletion, AllProvidersFailedError } from "@/app/lib/openrouter";
 
-const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY || "";
+export const maxDuration = 60;
 
 const SYSTEM_PROMPT = `You are an OCR (Optical Character Recognition) engine. Your ONLY job is to extract all text from the provided image accurately.
 
@@ -23,64 +24,29 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid image format" }, { status: 400 });
     }
 
-    // Use the language parameter to adjust the system prompt
     const langHint = lang.includes("ara")
-      ? lang.includes("eng")
-        ? "Arabic and English"
-        : "Arabic"
+      ? lang.includes("eng") ? "Arabic and English" : "Arabic"
       : "English";
 
-    const response = await fetch(
-      "https://openrouter.ai/api/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${OPENROUTER_KEY}`,
-          "Content-Type": "application/json",
-          "HTTP-Referer": "https://adwatak.cloud",
-          "X-Title": "Adwatak OCR",
-        },
-        body: JSON.stringify({
-          model: "qwen/qwen3-vl-8b-instruct",
-          messages: [
-            {
-              role: "system",
-              content: SYSTEM_PROMPT,
-            },
-            {
-              role: "user",
-              content: [
-                {
-                  type: "text",
-                  text: `Extract all text from this image. Language: ${langHint}. Return ONLY the extracted text.`,
-                },
-                {
-                  type: "image_url",
-                  image_url: { url: image },
-                },
-              ],
-            },
+    const { content } = await chatCompletion({
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        {
+          role: "user",
+          content: [
+            { type: "text", text: `Extract all text from this image. Language: ${langHint}. Return ONLY the extracted text.` },
+            { type: "image_url", image_url: { url: image } },
           ],
-          max_tokens: 4096,
-          temperature: 0.1,
-        }),
-      }
-    );
+        },
+      ],
+      vision: true,
+      maxTokens: 3000,
+      temperature: 0.1,
+      timeoutMs: 55000,
+    });
 
-    if (!response.ok) {
-      const errorText = await response.text().catch(() => "Unknown error");
-      console.error("OpenRouter API error:", response.status, errorText.slice(0, 200));
-      return NextResponse.json(
-        { error: `OCR service error (${response.status})` },
-        { status: 502 }
-      );
-    }
-
-    const data = await response.json();
-    const text = data?.choices?.[0]?.message?.content?.trim() || "";
-
-    // If the model says no text found
-    if (text === "(لم يتم العثور على نص)" || text.includes("no text") || text.length === 0) {
+    const text = (content || "").trim();
+    if (text === "(لم يتم العثور على نص)" || text.toLowerCase().includes("no text") || text.length === 0) {
       return NextResponse.json({ text: "" });
     }
 
@@ -89,6 +55,13 @@ export async function POST(req: NextRequest) {
       words: text.split(/\s+/).filter((w: string) => w.length > 0).length,
     });
   } catch (err: any) {
+    if (err instanceof AllProvidersFailedError) {
+      console.error("OCR vision: all providers failed", err.attempts);
+      return NextResponse.json(
+        { error: `OCR service unavailable. Please try again later.` },
+        { status: 502 }
+      );
+    }
     console.error("OCR Vision API error:", err);
     return NextResponse.json(
       { error: err?.message || "OCR processing failed" },

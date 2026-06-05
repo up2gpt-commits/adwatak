@@ -149,7 +149,34 @@ export default function Header({ lang = "ar" }: HeaderProps) {
 
   const switchLang = (code: string) => {
     const target = LANGUAGES.find(l => l.code === code);
-    if (target) window.location.href = target.home;
+    if (!target) return;
+    if (target.code === activeLang.code) return;
+
+    // Try to preserve current page context
+    // Arabic uses no prefix; other langs use /<code>/ prefix
+    const currentPath = window.location.pathname;
+    const langPrefixes = LANGUAGES.map(l => `/${l.code}`).filter(p => p !== "/");
+
+    // Strip any existing lang prefix to get a "base" path
+    let basePath = currentPath;
+    for (const p of langPrefixes) {
+      if (basePath === p || basePath.startsWith(p + "/")) {
+        basePath = basePath.slice(p.length) || "/";
+        break;
+      }
+    }
+
+    // Build target URL
+    let targetUrl: string;
+    if (target.code === "ar") {
+      targetUrl = basePath; // Arabic has no prefix
+    } else {
+      targetUrl = `${target.home.replace(/\/$/, "")}${basePath === "/" ? "" : basePath}`;
+    }
+
+    // Use SPA navigation if same path, hard nav otherwise
+    if (targetUrl === currentPath) return;
+    window.location.href = targetUrl;
   };
 
   return (

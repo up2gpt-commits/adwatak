@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { chatCompletion, parseJSON, AllProvidersFailedError } from "@/app/lib/openrouter";
 
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
-const MODEL = "openai/gpt-4o-mini";
+export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   try {
@@ -48,48 +48,29 @@ Respond in JSON only:
 - readabilityScore = readability ease score
 - corrections = array of corrections`;
 
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-        "HTTP-Referer": "https://adwatak.cloud",
-        "X-Title": "Adwatak Grammar Checker",
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: text.slice(0, 8000) },
-        ],
-        temperature: 0.1,
-        max_tokens: 1500,
-      }),
+    const { content } = await chatCompletion({
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: text.slice(0, 8000) },
+      ],
+      temperature: 0.1,
+      maxTokens: 1500,
+      timeoutMs: 50000,
     });
 
-    if (!response.ok) {
-      const errBody = await response.text();
-      console.error("OpenRouter error:", response.status, errBody);
-      return NextResponse.json(
-        { error: lang === "ar" ? "تعذر الاتصال بخدمة التدقيق." : "Grammar check service unavailable." },
-        { status: 502 }
-      );
-    }
-
-    const data = await response.json();
-    const content = data.choices?.[0]?.message?.content || "";
-
-    let result;
-    try {
-      result = JSON.parse(content);
-    } catch {
-      const jsonMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/);
-      if (jsonMatch) {
-        result = JSON.parse(jsonMatch[1].trim());
-      } else {
-        result = { score: 70, errorCount: 0, readabilityScore: 70, corrections: [], explanation: "تم التحليل بنجاح." };
-      }
-    }
+    const result = parseJSON<{
+      score: number;
+      errorCount: number;
+      readabilityScore: number;
+      corrections: { original: string; suggestion: string; reason: string }[];
+      explanation: string;
+    }>(content) || {
+      score: 70,
+      errorCount: 0,
+      readabilityScore: 70,
+      corrections: [],
+      explanation: "تم التحليل بنجاح.",
+    };
 
     return NextResponse.json({
       score: Math.max(0, Math.min(100, result.score || 70)),
@@ -98,7 +79,14 @@ Respond in JSON only:
       corrections: result.corrections || [],
       explanation: result.explanation || "تم التحليل بنجاح.",
     });
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AllProvidersFailedError) {
+      console.error("Grammar: all providers failed", error.attempts);
+      return NextResponse.json(
+        { error: "Grammar check service unavailable. Please try again later." },
+        { status: 502 }
+      );
+    }
     console.error("Grammar Checker error:", error);
     return NextResponse.json(
       { error: "حدث خطأ غير متوقع." },

@@ -104,12 +104,26 @@ export default function Client(){
   const[type,setType]=useState("argumentative");
   const[length,setLength]=useState("medium");
   const[result,setResult]=useState<{title:string;introduction:string;body:string[];conclusion:string}|null>(null);
+  const[loading,setLoading]=useState(false);
+  const[error,setError]=useState("");
   const[copied,setCopied]=useState(false);
 
-  const handle=()=>{
+  const handle=async()=>{
     if(!topic.trim())return;
-    setResult(generateEssay(topic.trim(),type,length));
+    setLoading(true);
+    setError("");
+    setResult(null);
     setCopied(false);
+    try{
+      const r=await fetch("/api/ai-essay-writer",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({topic:topic.trim(),type,length,lang:"ar"})});
+      const data=await r.json();
+      if(!r.ok)throw new Error(data.error||"فشل توليد المقال");
+      setResult(data);
+    }catch(e:any){
+      setError(e.message||"حدث خطأ. حاول مرة أخرى.");
+    }finally{
+      setLoading(false);
+    }
   };
 
   const full=result?`${result.title}\n\n${result.introduction}\n\n${result.body.join("\n\n")}\n\n${result.conclusion}`:"";
@@ -134,11 +148,12 @@ export default function Client(){
             <option value="short">قصير (~300 كلمة)</option><option value="medium">متوسط (~600 كلمة)</option><option value="long">طويل (~1000 كلمة)</option>
           </select>
         </div>
-        <button onClick={handle} disabled={!topic.trim()}
+        <button onClick={handle} disabled={!topic.trim()||loading}
           className="w-full py-3.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-lg hover:from-blue-700 disabled:opacity-40 transition-all shadow-md">
-          ✨ توليد المقال
+          {loading?"⏳ جاري التوليد...":"✨ توليد المقال"}
         </button>
       </div>
+      {error&&<div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-4 text-sm text-red-700">⚠️ {error}</div>}
       {result&&<div className="border-t pt-6">
         <div className="flex items-center justify-between mb-4">
           <span className="bg-green-100 text-green-700 text-xs px-2.5 py-1 rounded-full font-medium">✓ {wc} كلمة</span>

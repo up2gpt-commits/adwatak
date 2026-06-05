@@ -128,9 +128,9 @@ export function howToSchema(
   description: string,
   steps: { name: string; text: string; url?: string }[],
   totalTime?: string,
-  lang: "ar" | "en" | "tr" = "ar"
+  lang: "ar" | "en" | "tr" | "id" = "ar"
 ) {
-  const schemaLang = lang === "tr" ? "tr" : lang === "ar" ? "ar" : "en";
+  const schemaLang = lang === "tr" ? "tr" : lang === "ar" ? "ar" : lang === "id" ? "id" : "en";
   return {
     "@context": "https://schema.org",
     "@type": "HowTo",

@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { chatCompletion, parseJSON, AllProvidersFailedError } from "@/app/lib/openrouter";
 
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
-// Use deepseek-v4-flash — more reliable on OpenRouter
-const MODEL = "deepseek/deepseek-v4-flash";
+export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   try {
@@ -47,61 +46,46 @@ Respond in JSON only:
 - changes = number of major changes
 - explanation = brief explanation of changes`;
 
-    const modelsToTry = [MODEL, "openai/gpt-4o-mini", "qwen/qwen-3-235b"];
+    const { content } = await chatCompletion({
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: text.slice(0, 5000) },
+      ],
+      temperature: 0.3,
+      maxTokens: 3000,
+      timeoutMs: 55000,
+    });
 
-    for (const model of modelsToTry) {
-      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-          "HTTP-Referer": "https://adwatak.cloud",
-          "X-Title": "Adwatak Paraphrasing Tool",
-        },
-        body: JSON.stringify({
-          model,
-          messages: [
-            { role: "system", content: systemPrompt },
-            { role: "user", content: text.slice(0, 5000) },
-          ],
-          temperature: 0.3,
-          max_tokens: 3000,
-        }),
-      });
+    const parsed = parseJSON<{
+      paraphrasedText: string;
+      originalWordCount: number;
+      newWordCount: number;
+      changes: number;
+      explanation: string;
+    }>(content) || {
+      paraphrasedText: content,
+      originalWordCount: text.split(/\s+/).length,
+      newWordCount: content.split(/\s+/).length,
+      changes: 0,
+      explanation: lang === "ar" ? "تمت إعادة الصياغة." : "Paraphrased successfully.",
+    };
 
-      if (response.ok) {
-        const data = await response.json();
-        const content = data.choices?.[0]?.message?.content || "";
-
-        let result;
-        try {
-          result = JSON.parse(content);
-        } catch {
-          const jsonMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/);
-          if (jsonMatch) {
-            result = JSON.parse(jsonMatch[1].trim());
-          } else {
-            result = { paraphrasedText: content, originalWordCount: 0, newWordCount: 0, changes: 0, explanation: lang === "ar" ? "تمت إعادة الصياغة." : "Paraphrased successfully." };
-          }
-        }
-
-        return NextResponse.json({
-          paraphrasedText: result.paraphrasedText || text,
-          originalWordCount: result.originalWordCount || text.split(/\s+/).length,
-          newWordCount: result.newWordCount || result.paraphrasedText?.split(/\s+/).length || 0,
-          changes: result.changes || 0,
-          explanation: result.explanation || (lang === "ar" ? "تمت إعادة الصياغة بنجاح." : "Paraphrased successfully."),
-        });
-      }
+    return NextResponse.json({
+      paraphrasedText: parsed.paraphrasedText || text,
+      originalWordCount: parsed.originalWordCount || text.split(/\s+/).length,
+      newWordCount: parsed.newWordCount || parsed.paraphrasedText?.split(/\s+/).length || 0,
+      changes: parsed.changes || 0,
+      explanation: parsed.explanation || (lang === "ar" ? "تمت إعادة الصياغة بنجاح." : "Paraphrased successfully."),
+    });
+  } catch (err: any) {
+    if (err instanceof AllProvidersFailedError) {
+      console.error("Paraphrasing: all providers failed", err.attempts);
+      return NextResponse.json(
+        { error: lang === "ar" ? "تعذر الاتصال بخدمة إعادة الصياغة حالياً. حاول مرة أخرى لاحقاً." : "Paraphrasing service unavailable. Please try again later." },
+        { status: 502 }
+      );
     }
-
-    // All models failed — return fallback error
-    return NextResponse.json(
-      { error: lang === "ar" ? "تعذر الاتصال بخدمة إعادة الصياغة حالياً. حاول مرة أخرى لاحقاً." : "Paraphrasing service unavailable. Please try again later." },
-      { status: 502 }
-    );
-  } catch (error) {
-    console.error("Paraphrasing Tool error:", error);
+    console.error("Paraphrasing Tool error:", err);
     return NextResponse.json(
       { error: "حدث خطأ غير متوقع." },
       { status: 500 }

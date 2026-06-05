@@ -4,6 +4,18 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: "/home/ops123/adwatak",
   },
+  async redirects() {
+    return [
+      // Explicit /ar/* paths → root (Arabic is the default locale, no prefix)
+      { source: "/ar", destination: "/", permanent: true },
+      { source: "/ar/", destination: "/", permanent: true },
+      {
+        source: "/ar/:path*",
+        destination: "/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

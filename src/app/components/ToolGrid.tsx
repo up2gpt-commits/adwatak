@@ -30,6 +30,8 @@ const tools = [
   { title: "حاسبة الفائدة المركبة", desc: "احسب عائد استثمارك مع الفائدة المركبة", icon: "📈", href: "/tools/compound-interest", cat: "financial", keywords: ["compound", "فائدة", "استثمار"] },
   { title: "حاسبة الذهب", desc: "احسب قيمة الذهب والزكاة والنصاب", icon: "🥇", href: "/tools/gold-calculator", cat: "financial", keywords: ["gold", "ذهب"] },
   { title: "حاسبة تقسيط السيارة", desc: "احسب أقساط تمويل السيارة", icon: "🚗", href: "/tools/car-installment", cat: "financial", keywords: ["car", "سيارة", "تمويل"] },
+  { title: "حاسبة النسبة المئوية", desc: "حساب النسبة المئوية بثلاث طرق", icon: "🧮", href: "/tools/percentage-calculator", cat: "financial", keywords: ["نسبة", "percent", "٪"] },
+  { title: "حاسبة المدة بين تاريخين", desc: "الفرق بين تاريخين باليوم والشهر والسنة", icon: "📆", href: "/tools/date-duration", cat: "financial", keywords: ["تاريخ", "مدة", "فرق", "days"] },
 
   // ===== أدوات نصية =====
   { title: "عداد الكلمات والحروف", desc: "عداد الكلمات والحروف والجمل للنص", icon: "📝", href: "/tools/word-counter", cat: "text", keywords: ["word", "words", "كلمات", "حروف", "count"] },
@@ -44,6 +46,7 @@ const tools = [
   { title: "إعادة الصياغة", desc: "إعادة كتابة النص بأسلوب جديد", icon: "✏️", href: "/tools/paraphrasing-tool", cat: "text", keywords: ["paraphrase", "صياغة", "rewrite", "اعادة"] },
   { title: "اختبار سرعة الكتابة", desc: "قياس سرعة طباعتك بالعربية والإنجليزية", icon: "⌨️", href: "/tools/typing-test", cat: "text", keywords: ["typing", "كتابة", "speed", "type"] },
   { title: "عداد حروف السوشيال", desc: "Twitter, Instagram, TikTok والمزيد", icon: "📱", href: "/tools/social-character-counter", cat: "text", keywords: ["social", "سوشيال", "twitter", "tiktok", "instagram"] },
+  { title: "مولد السيرة الذاتية", desc: "إنشاء سيرة ذاتية جذابة لمواقع السوشيال ميديا", icon: "👤", href: "/tools/bio-generator", cat: "text", keywords: ["bio", "سيرة", "profile", "pofile"] },
 
   // ===== أدوات الصور =====
   { title: "استخراج النص من الصور", desc: "استخرج النصوص من الصور باستخدام OCR", icon: "👁️", href: "/tools/image-to-text", cat: "image", keywords: ["ocr", "صور", "نص", "image", "img"] },
@@ -64,6 +67,9 @@ const tools = [
   { title: "تحويل الوحدات", desc: "الطول والوزن والحجم والحرارة", icon: "📐", href: "/tools/unit-converter", cat: "converters", keywords: ["unit", "وحدات", "تحويل", "converter"] },
   { title: "تحويل الألوان", desc: "HEX ↔ RGB ↔ HSL مع معاينة", icon: "🎨", href: "/tools/color-converter", cat: "converters", keywords: ["color", "لون", "الوان", "hex", "rgb"] },
   { title: "تحويل هجري ↔ ميلادي", desc: "حوّل التاريخ بين الهجري والميلادي", icon: "📅", href: "/tools/hijri-converter", cat: "converters", keywords: ["hijri", "هجري", "ميلادي", "تاريخ"] },
+  { title: "محول درجة الحرارة", desc: "تحويل بين مئوية وفهرنهايت وكلفن", icon: "🌡️", href: "/tools/temperature-converter", cat: "converters", keywords: ["حرارة", "temperature", "celsius"] },
+  { title: "محول المنطقة الزمنية", desc: "تحويل الوقت بين المناطق الزمنية", icon: "🕐", href: "/tools/timezone-converter", cat: "converters", keywords: ["timezone", "زمن", "منطقة"] },
+  { title: "محول البكسل", desc: "تحويل البكسل إلى سنتيمتر وبوصة", icon: "📏", href: "/tools/pixel-converter", cat: "converters", keywords: ["pixel", "بكسل", "px"] },
 
   // ===== مولدات =====
   { title: "مولد QR Code", desc: "إنشاء QR Code لرابط أو نص", icon: "🔳", href: "/tools/qr-generator", cat: "generators", keywords: ["qr", "qr code", "qrcode", "باركود"] },
@@ -74,6 +80,7 @@ const tools = [
   { title: "رابط واتساب مباشر", desc: "رابط يفتح واتساب مباشرة", icon: "💬", href: "/tools/whatsapp-link", cat: "generators", keywords: ["whatsapp", "واتساب", "whats", "wa"] },
   { title: "مولد أرقام عشوائية", desc: "أرقام عشوائية بين نطاق محدد", icon: "🎲", href: "/tools/random-number", cat: "generators", keywords: ["random", "عشوائي", "رقم"] },
   { title: "مولد أسماء", desc: "أسماء عربية وإنجليزية", icon: "👤", href: "/tools/name-generator", cat: "generators", keywords: ["name", "اسم", "names"] },
+  { title: "كاتب المقالات AI", desc: "كتابة مقالات متكاملة بالذكاء الاصطناعي", icon: "✍️", href: "/tools/ai-essay-writer", cat: "generators", keywords: ["ai", "مقالات", "essay", "كتابة"] },
 
   // ===== تطوير ويب =====
   { title: "JSON Formatter", desc: "تنسيق وتجميل والتحقق من JSON", icon: "📋", href: "/tools/json-formatter", cat: "dev", keywords: ["json", "formatter", "format"] },
@@ -83,17 +90,27 @@ const tools = [
   { title: "تصغير CSS", desc: "Minify و Format أكواد CSS", icon: "🎨", href: "/tools/css-minifier", cat: "dev", keywords: ["css", "minify", "minifier", "تصغير"] },
   { title: "محرر ماركداون", desc: "كتابة Markdown مع معاينة مباشرة", icon: "📝", href: "/tools/markdown-editor", cat: "dev", keywords: ["markdown", "md", "ماركداون"] },
   { title: "البحث عن IP", desc: "الكشف عن معلومات أي عنوان IP", icon: "🌐", href: "/tools/ip-lookup", cat: "dev", keywords: ["ip", "lookup", "ip lookup"] },
+  { title: "أداة ترميز URL", desc: "تشفير وفك تشفير الروابط", icon: "🔗", href: "/tools/encoder", cat: "dev", keywords: ["url", "encode", "decode", "ترميز"] },
+  { title: "مولد محتوى SEO", desc: "توليد محتوى محسّن لمحركات البحث", icon: "📝", href: "/tools/seo-content-generator", cat: "dev", keywords: ["seo", "سيو", "content", "محتوى"] },
+  { title: "مولّد UUID", desc: "توليد المعرفات الفريدة v4/v7", icon: "🆔", href: "/tools/uuid-generator", cat: "dev", keywords: ["uuid", "معرف", "id"] },
+  { title: "أداة الكلمات المفتاحية", desc: "ابحث عن كلمات مفتاحية مقترحة", icon: "🔎", href: "/tools/keyword-research", cat: "dev", keywords: ["keyword", "كلمات", "seo"] },
+  { title: "أداة التشفير", desc: "تشفير وفك تشفير النصوص بأمان", icon: "🔐", href: "/tools/encryption-tool", cat: "dev", keywords: ["encrypt", "تشفير", "decrypt"] },
 
   // ===== أدوات إسلامية =====
   { title: "حاسبة الميراث الإسلامي", desc: "احسب أنصبة الميراث حسب الشريعة", icon: "📜", href: "/tools/inheritance-calculator", cat: "islamic", keywords: ["ميراث", "الميراث", "inheritance", "فرائض"] },
   { title: "حاسبة الزكاة", desc: "زكاة المال والذهب والأسهم", icon: "🕌", href: "/tools/zakat-calculator", cat: "islamic", keywords: ["زكاة", "zakat", "زكاه"] },
   { title: "اتجاه القبلة", desc: "اعرف اتجاه القبلة من موقعك", icon: "🧭", href: "/tools/qibla-direction", cat: "islamic", keywords: ["قبلة", "qibla", "قبله"] },
   { title: "مواقيت الصلاة", desc: "مواقيت الصلاة حسب موقعك الجغرافي", icon: "🕐", href: "/tools/prayer-times", cat: "islamic", keywords: ["صلاة", "prayer", "pray", "اذان", "مواقيت"] },
+  { title: "المسبحة الإلكترونية", desc: "مسبحة إلكترونية للتسبيح والذكر", icon: "📿", href: "/tools/tasbeeh-counter", cat: "islamic", keywords: ["تسبيح", "سبح", "مسبحة", "tasbeeh", "ذكر"] },
+  { title: "حاسبة العمرة", desc: "احسب تكاليف العمرة مع جدول المناسك", icon: "🕋", href: "/tools/umrah-calculator", cat: "islamic", keywords: ["عمرة", "umrah", "مناسك", "العمرة"] },
+  { title: "حاسبة الفدية والكفارة", desc: "احسب كفارة اليمين والجماع والظهار والفدية", icon: "⚖️", href: "/tools/fidyah-kaffarah", cat: "islamic", keywords: ["كفارة", "فدية", "يمين", "kaffarah", "فيده"] },
 
   // ===== أخرى =====
   { title: "محلل السعرات بالصور", desc: "صور طعامك واحصل على تفاصيل السعرات بالذكاء الاصطناعي", icon: "📸", href: "/tools/food-calorie-analyzer", cat: "daily", keywords: ["calorie", "سعرات", "طعام", "اكل", "cal"] },
   { title: "حاسبة العمر", desc: "عمرك بالهجري والميلادي وأبراجك", icon: "🎂", href: "/tools/age-calculator", cat: "daily", keywords: ["age", "عمر", "سن", "عمرك"] },
   { title: "حاسبة BMI", desc: "مؤشر كتلة الجسم — وزنك المثالي", icon: "⚖️", href: "/tools/bmi-calculator", cat: "daily", keywords: ["bmi", "وزن", "كتلة", "body"] },
+  { title: "حاسبة السعرات الحرارية", desc: "احسب احتياجك اليومي من السعرات", icon: "🔥", href: "/tools/calorie-calculator", cat: "daily", keywords: ["سعرات", "calorie", "حرق"] },
+  { title: "حاسبة الوزن المثالي", desc: "احسب وزنك المثالي بناءً على الطول والعمر", icon: "⚖️", href: "/tools/ideal-weight", cat: "daily", keywords: ["وزن", "ideal", "weight"] },
   { title: "ساعة إيقاف + مؤقت", desc: "ساعة إيقاف مع لفات ومؤقت", icon: "⏱️", href: "/tools/stopwatch", cat: "daily", keywords: ["stopwatch", "ساعة", "stop", "مؤقت"] },
 ];
 
@@ -153,7 +170,7 @@ const categoryDescriptions: Record<string, { title: string; content: string }> =
   },
   islamic: {
     title: "الأدوات الإسلامية",
-    content: "أدوات إسلامية: حاسبة الميراث حسب الشريعة، حاسبة الزكاة للمال والذهب والأسهم، اتجاه القبلة، ومواقيت الصلاة حسب موقعك."
+    content: "أدوات إسلامية متكاملة: حاسبة الميراث حسب الشريعة، حاسبة الزكاة للمال والذهب والأسهم، اتجاه القبلة، مواقيت الصلاة حسب موقعك، المسبحة الإلكترونية للتسبيح والذكر، حاسبة العمرة مع جدول المناسك، وحاسبة الفدية والكفارة بأنواعها الأربعة."
   },
   daily: {
     title: "أدوات أخرى مفيدة",
@@ -177,7 +194,7 @@ export default function ToolGrid() {
     const hash = window.location.hash.replace("#", "");
     if (hash && categories.some((c) => c.key === hash)) {
       setTimeout(() => {
-        const el = document.querySelector("[data-scroll-target]");
+        const el = document.querySelector("[data-tools-section]");
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 150);
     }
@@ -185,7 +202,7 @@ export default function ToolGrid() {
 
   useEffect(() => {
     applyHashFilter();
-    scrollToTools();
+    // Don't scroll on mount — only on hash changes
     const onHash = () => { applyHashFilter(); scrollToTools(); };
     window.addEventListener("hashchange", onHash);
     window.addEventListener("popstate", onHash);
@@ -207,7 +224,7 @@ export default function ToolGrid() {
   const currentCat = displayFilter !== "all" ? categoryDescriptions[displayFilter] : null;
 
   return (
-    <>
+    <div data-tools-section>
       {/* Category descriptions for SEO */}
       {currentCat && (
         <div className="max-w-[800px] mx-auto mb-6 p-6 bg-white rounded-2xl border border-gray-200">
@@ -216,15 +233,26 @@ export default function ToolGrid() {
         </div>
       )}
 
-      {/* Categories */}
-      <div className="cats">
-        {categories.map((c) => (
-          <button key={c.key} id={c.key} onClick={() => { window.location.hash = c.key === "all" ? "" : c.key; }}
-            className={`cat-btn ${displayFilter === c.key ? "active" : ""}`}>
-            {c.icon} {c.label}
-          </button>
-        ))}
-      </div>
+      {/* Search results header */}
+      {search.trim() && (
+        <div className="search-results-header">
+          <span className="srh-icon">🔍</span>
+          <span>نتائج البحث عن: <strong>"{search}"</strong></span>
+          <span className="srh-count">{filtered.length} أداة</span>
+        </div>
+      )}
+
+      {/* Categories — hidden when searching */}
+      {!search.trim() && (
+        <div className="cats">
+          {categories.map((c) => (
+            <button key={c.key} id={c.key} onClick={() => { window.location.hash = c.key === "all" ? "" : c.key; }}
+              className={`cat-btn ${displayFilter === c.key ? "active" : ""}`}>
+              {c.icon} {c.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Tools Grid */}
       {filtered.length > 0 ? (
@@ -252,6 +280,6 @@ export default function ToolGrid() {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 }

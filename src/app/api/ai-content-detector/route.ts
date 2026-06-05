@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { chatCompletion, parseJSON, AllProvidersFailedError } from "@/app/lib/openrouter";
 
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
-const MODEL = "openai/gpt-4o-mini"; // Fast + cheap for classification tasks
+export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   try {
@@ -29,68 +29,34 @@ export async function POST(req: NextRequest) {
 Respond in JSON only:
 {"score": 85, "explanation": "The text shows repetitive patterns..."}`;
 
-    const response = await fetch(
-      "https://openrouter.ai/api/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-          "HTTP-Referer": "https://adwatak.cloud",
-          "X-Title": "Adwatak AI Content Detector",
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          messages: [
-            { role: "system", content: systemPrompt },
-            { role: "user", content: text.slice(0, 10000) }, // Limit text
-          ],
-          temperature: 0.1, // Low temp for consistent results
-          max_tokens: 500,
-        }),
-      }
-    );
+    const { content } = await chatCompletion({
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: text.slice(0, 10000) },
+      ],
+      temperature: 0.1,
+      maxTokens: 500,
+      timeoutMs: 40000,
+    });
 
-    if (!response.ok) {
-      const errBody = await response.text();
-      console.error("OpenRouter error:", response.status, errBody);
-      return NextResponse.json(
-        { error: "تعذر الاتصال بخدمة التحليل. حاول مرة أخرى." },
-        { status: 502 }
-      );
-    }
-
-    const data = await response.json();
-    const content = data.choices?.[0]?.message?.content || "";
-
-    // Parse the JSON response from the model
-    let result;
-    try {
-      // Try direct parse
-      result = JSON.parse(content);
-    } catch {
-      // Try to extract JSON from markdown code blocks
-      const jsonMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/);
-      if (jsonMatch) {
-        result = JSON.parse(jsonMatch[1].trim());
-      } else {
-        // Last resort: extract score with regex
-        const scoreMatch = content.match(/["']?score["']?\s*[:=]\s*(\d+)/i);
-        const explanationMatch = content.match(/["']?explanation["']?\s*[:=]\s*["']([^"']+)["']/i);
-        result = {
-          score: scoreMatch ? parseInt(scoreMatch[1]) : 50,
-          explanation: explanationMatch
-            ? explanationMatch[1]
-            : "تعذر تحليل النص بدقة. حاول مرة أخرى بنص مختلف.",
-        };
-      }
-    }
+    // Parse with multiple fallbacks (parseJSON handles markdown + raw extraction)
+    const result = parseJSON<{ score: number; explanation: string }>(content) || {
+      score: 50,
+      explanation: "تعذر تحليل النص بدقة. حاول مرة أخرى بنص مختلف.",
+    };
 
     return NextResponse.json({
       score: Math.max(0, Math.min(100, result.score || 50)),
       explanation: result.explanation || "تم التحليل بنجاح.",
     });
-  } catch (error) {
+  } catch (error: any) {
+    if (error instanceof AllProvidersFailedError) {
+      console.error("AI detector: all providers failed", error.attempts);
+      return NextResponse.json(
+        { error: "تعذر الاتصال بخدمة التحليل. حاول مرة أخرى." },
+        { status: 502 }
+      );
+    }
     console.error("AI Content Detector error:", error);
     return NextResponse.json(
       { error: "حدث خطأ غير متوقع. حاول مرة أخرى." },

@@ -10,6 +10,9 @@ const tools = [
   { title: "حاسبة العمر", icon: "🎂", href: "/tools/age-calculator", desc: "عمرك بالهجري والميلادي وأبراجك" },
   { title: "اتجاه القبلة", icon: "🧭", href: "/tools/qibla-direction", desc: "اعرف اتجاه القبلة من موقعك" },
   { title: "مواقيت الصلاة", icon: "🕐", href: "/tools/prayer-times", desc: "مواقيت الصلاة حسب موقعك الجغرافي" },
+  { title: "المسبحة الإلكترونية", icon: "📿", href: "/tools/tasbeeh-counter", desc: "مسبحة إلكترونية للتسبيح والذكر" },
+  { title: "حاسبة العمرة", icon: "🕋", href: "/tools/umrah-calculator", desc: "احسب تكاليف العمرة مع جدول المناسك" },
+  { title: "حاسبة الفدية والكفارة", icon: "⚖️", href: "/tools/fidyah-kaffarah", desc: "احسب كفارة اليمين والجماع والظهار والفدية" },
 ];
 
 export default function IslamicCategory() {
@@ -23,7 +26,7 @@ export default function IslamicCategory() {
       <div style={{ background: "white", borderRadius: "16px", padding: "32px", border: "1px solid #e2e8f0", marginBottom: "24px" }}>
         <h1 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#0f172a", marginBottom: "8px" }}>🕌 الأدوات الإسلامية</h1>
         <p style={{ fontSize: "0.95rem", color: "#64748b", lineHeight: 1.8 }}>
-          أدوات إسلامية فريدة لمساعدتك في عباداتك اليومية. حاسبة الميراث الإسلامي حسب الشريعة، حاسبة الزكاة للمال والذهب والأسهم، تحويل التاريخ الهجري والميلادي، حاسبة العمر، مواقيت الصلاة، وتحديد اتجاه القبلة. كل الأدوات مبنية على أسس شرعية صحيحة.
+          أدوات إسلامية فريدة لمساعدتك في عباداتك اليومية. حاسبة الميراث الإسلامي حسب الشريعة، حاسبة الزكاة للمال والذهب والأسهم، تحويل التاريخ الهجري والميلادي، حاسبة العمر، مواقيت الصلاة، تحديد اتجاه القبلة، المسبحة الإلكترونية للتسبيح والذكر، حاسبة العمرة مع جدول المناسك، وحاسبة الفدية والكفارة بأنواعها الأربعة. كل الأدوات مبنية على أسس شرعية صحيحة.
         </p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "16px", marginBottom: "48px" }}>

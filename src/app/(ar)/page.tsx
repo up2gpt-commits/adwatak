@@ -1,17 +1,10 @@
 import ToolGrid from "../components/ToolGrid";
 import { SearchProvider } from "../components/SearchProvider";
 import SearchBar from "../components/SearchBar";
+import FeaturedTools from "../components/FeaturedTools";
+import AllToolsHeader from "../components/AllToolsHeader";
 
 export default function Home() {
-  const featuredTools = [
-    { title: "حاسبة القرض العقاري", desc: "احسب القسط مع جدول الاستهلاك", icon: "🏠", href: "/tools/mortgage-calculator" },
-    { title: "حاسبة الميراث", desc: "أنصبة الميراث حسب الشريعة", icon: "📜", href: "/tools/inheritance-calculator" },
-    { title: "حاسبة BMI", desc: "مؤشر كتلة الجسم", icon: "⚖️", href: "/tools/bmi-calculator" },
-    { title: "مولد QR Code", desc: "إنشاء QR لأي رابط أو نص", icon: "🔳", href: "/tools/qr-generator" },
-    { title: "محوّل الألوان", desc: "HEX ↔ RGB ↔ HSL", icon: "🎨", href: "/tools/color-converter" },
-    { title: "PDF إلى Word", desc: "تحويل PDF لنص قابل للتعديل", icon: "📄", href: "/tools/pdf-to-word" },
-  ];
-
   return (
     <SearchProvider>
       {/* Hero */}
@@ -48,37 +41,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Smart Search — between badges and featured tools */}
+      {/* Smart Search — between badges and tools list */}
       <div className="mt-8 mb-4" data-scroll-target>
         <SearchBar />
       </div>
 
-      {/* Featured / Popular Tools */}
-      <section className="featured-section scroll-fade-in" style={{ marginTop: "40px" }}>
-        <div className="section-header">
-          <h2 className="section-title">
-            <span className="s-icon">⭐</span>
-            الأدوات الأكثر استخداماً
-          </h2>
-        </div>
-        <div className="tools-grid-3">
-          {featuredTools.map((tool, i) => (
-            <a key={i} href={tool.href} className="featured-card card-shine">
-              <span className="f-icon">{tool.icon}</span>
-              <div className="f-title">{tool.title}</div>
-              <div className="f-desc">{tool.desc}</div>
-            </a>
-          ))}
-        </div>
-      </section>
+      {/* Featured / Popular Tools — hides automatically when search is active */}
+      <FeaturedTools />
 
-      {/* Divider */}
-      <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }}>
-        <h2 className="section-title">
-          <span className="s-icon">🗂️</span>
-          كل الأدوات
-        </h2>
-      </div>
+      {/* All Tools header — hides when search is active */}
+      <AllToolsHeader />
 
       {/* Interactive ToolGrid (Client Component) */}
       <ToolGrid />

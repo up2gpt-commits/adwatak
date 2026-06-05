@@ -1,5 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useSearch } from "../components/SearchProvider";
+import { SearchProvider } from "../components/SearchProvider";
+import SearchBar from "../components/SearchBar";
 
 const categories = [
   { name: "Finansal Hesaplamalar", slug: "calculators", icon: "💰", count: "10", desc: "Konut kredisi, krediler, EMI, kar marjı, KDV, maaş ve daha fazlası" },
@@ -9,7 +12,7 @@ const categories = [
   { name: "Dönüştürücüler", slug: "converters", icon: "🔄", count: "5", desc: "Döviz, birim, renk, tarih, sayıyı yazıya çevirme" },
   { name: "Oluşturucular", slug: "generators", icon: "⚡", count: "6", desc: "QR kod, barkod, şifre, isim oluşturucu" },
   { name: "Geliştirici Araçları", slug: "dev", icon: "💻", count: "7", desc: "JSON, Base64, hash, SEO denetimi, CSS, Markdown, IP sorgulama" },
-  { name: "İslami Araçlar", slug: "islamic", icon: "🕌", count: "2", desc: "Miras, Zekat hesaplayıcıları" },
+  { name: "İslami Araçlar", slug: "islamic", icon: "🕌", count: "7", desc: "Miras, Zekat, Kıble, Namaz Vakitleri, Tasbih, Umre, Fidye ve Kaffarat" },
   { name: "Diğer", slug: "daily", icon: "🌟", count: "5", desc: "Yaş, VKİ, kalori, kronometre, fotoğrafla kalori analizi" },
 ];
 
@@ -23,6 +26,9 @@ const allTools = [
   { title: "KDV Hesaplama", icon: "🏛️", href: "/tr/tools/vat-calculator", desc: "KDV ekleme veya çıkarma", cat: "Finansal Hesaplamalar" },
   { title: "Altın Hesaplama", icon: "🥇", href: "/tr/tools/gold-calculator", desc: "Altın değeri ve gram fiyatı", cat: "Finansal Hesaplamalar" },
   { title: "Taksit Hesaplama", icon: "📊", href: "/tr/tools/installment-calculator", desc: "Taksit planı hesaplama", cat: "Finansal Hesaplamalar" },
+  { title: "Araba Taksit Hesaplama", icon: "🚗", href: "/tr/tools/car-installment", desc: "Araba kredisi taksit hesaplama", cat: "Finansal Hesaplamalar" },
+  { title: "Yüzde Hesaplayıcı", icon: "🧮", href: "/tr/tools/percentage-calculator", desc: "Yüzdeleri üç şekilde hesaplama", cat: "Finansal Hesaplamalar" },
+  { title: "Tarih Farkı Hesaplayıcı", icon: "📆", href: "/tr/tools/date-duration", desc: "İki tarih arasındaki fark", cat: "Finansal Hesaplamalar" },
   { title: "Kalori Hesaplama", icon: "🔥", href: "/tr/tools/calorie-calculator", desc: "Günlük kalori ihtiyacı", cat: "Diğer" },
 
   { title: "Kelime Sayacı", icon: "📝", href: "/tr/tools/word-counter", desc: "Kelime, karakter, cümle sayma", cat: "Metin Araçları" },
@@ -37,6 +43,7 @@ const allTools = [
   { title: "Yazma Hızı Testi", icon: "⌨️", href: "/tr/tools/typing-test", desc: "Dakikadaki kelime hızınız", cat: "Metin Araçları" },
   { title: "Sosyal Medya Karakter Sayacı", icon: "📱", href: "/tr/tools/social-character-counter", desc: "Twitter, Instagram karakter sayma", cat: "Metin Araçları" },
   { title: "Arapça Lorem Ipsum", icon: "📄", href: "/tr/tools/arabic-lorem", desc: "Yer tutucu metin oluşturma", cat: "Metin Araçları" },
+  { title: "Biyografi Oluşturucu", icon: "👤", href: "/tr/tools/bio-generator", desc: "Sosyal medya biyografisi oluşturma", cat: "Metin Araçları" },
 
   { title: "Arka Plan Kaldırma", icon: "🖼️", href: "/tr/tools/background-remover", desc: "AI ile arka plan kaldırma", cat: "Görsel Araçları" },
   { title: "Görsel Boyutlandırma", icon: "🖼️", href: "/tr/tools/image-resizer", desc: "Görsel boyutlarını değiştirme", cat: "Görsel Araçları" },
@@ -45,6 +52,7 @@ const allTools = [
   { title: "Görselden PDF'e", icon: "📄", href: "/tr/tools/image-to-pdf", desc: "Görselleri PDF'e dönüştürme", cat: "Görsel Araçları" },
 
   { title: "PDF Birleştirme", icon: "📎", href: "/tr/tools/pdf-merger", desc: "Birden çok PDF'i birleştirme", cat: "PDF Araçları" },
+  { title: "PDF Ayırma", icon: "✂️", href: "/tr/tools/pdf-splitter", desc: "PDF'i ayrı sayfalara bölme", cat: "PDF Araçları" },
   { title: "PDF Sıkıştırma", icon: "📦", href: "/tr/tools/pdf-compressor", desc: "PDF dosya boyutunu azaltma", cat: "PDF Araçları" },
   { title: "PDF'den Word'e", icon: "📄", href: "/tr/tools/pdf-to-word", desc: "PDF'i düzenlenebilir Word'e çevirme", cat: "PDF Araçları" },
 
@@ -52,6 +60,9 @@ const allTools = [
   { title: "Birim Çevirici", icon: "📏", href: "/tr/tools/unit-converter", desc: "Uzunluk, ağırlık, sıcaklık, hacim", cat: "Dönüştürücüler" },
   { title: "Renk Çevirici", icon: "🎨", href: "/tr/tools/color-converter", desc: "HEX ↔ RGB ↔ HSL önizlemeli", cat: "Dönüştürücüler" },
   { title: "Hicri Tarih Çevirici", icon: "📅", href: "/tr/tools/hijri-converter", desc: "Hicri ↔ Miladi tarih dönüşümü", cat: "Dönüştürücüler" },
+  { title: "Sıcaklık Dönüştürücü", icon: "🌡️", href: "/tr/tools/temperature-converter", desc: "Celsius, Fahrenheit, Kelvin dönüşümü", cat: "Dönüştürücüler" },
+  { title: "Saat Dilimi Dönüştürücü", icon: "🕐", href: "/tr/tools/timezone-converter", desc: "Saat dilimleri arası dönüşüm", cat: "Dönüştürücüler" },
+  { title: "Piksel Dönüştürücü", icon: "📏", href: "/tr/tools/pixel-converter", desc: "Pikselleri cm, inç dönüştürme", cat: "Dönüştürücüler" },
   { title: "Yaş Hesaplama", icon: "🎂", href: "/tr/tools/age-calculator", desc: "Yaş ve burç hesaplama", cat: "Diğer" },
 
   { title: "QR Kod Oluşturucu", icon: "🔳", href: "/tr/tools/qr-generator", desc: "URL veya metinden QR kod oluşturma", cat: "Oluşturucular" },
@@ -61,6 +72,7 @@ const allTools = [
   { title: "Fatura Oluşturucu", icon: "🧾", href: "/tr/tools/invoice-generator", desc: "Profesyonel fatura oluşturma", cat: "Oluşturucular" },
   { title: "WhatsApp Bağlantı", icon: "💬", href: "/tr/tools/whatsapp-link", desc: "Önceden doldurulmuş mesajla bağlantı", cat: "Oluşturucular" },
   { title: "Rastgele Sayı", icon: "🎲", href: "/tr/tools/random-number", desc: "Herhangi aralıkta rastgele sayı", cat: "Oluşturucular" },
+  { title: "AI Makale Yazarı", icon: "✍️", href: "/tr/tools/ai-essay-writer", desc: "AI ile tam makaleler yazma", cat: "Oluşturucular" },
 
   { title: "JSON Biçimlendirici", icon: "📋", href: "/tr/tools/json-formatter", desc: "JSON biçimlendirme, doğrulama, küçültme", cat: "Geliştirici Araçları" },
   { title: "Base64 Kodlayıcı", icon: "📦", href: "/tr/tools/base64-encoder", desc: "Base64 kodlama ve kod çözme", cat: "Geliştirici Araçları" },
@@ -69,11 +81,22 @@ const allTools = [
   { title: "CSS Küçültücü", icon: "🎨", href: "/tr/tools/css-minifier", desc: "CSS kodlarını küçültme ve biçimlendirme", cat: "Geliştirici Araçları" },
   { title: "Markdown Düzenleyici", icon: "📝", href: "/tr/tools/markdown-editor", desc: "Canlı önizlemeli Markdown yazma", cat: "Geliştirici Araçları" },
   { title: "IP Sorgulama", icon: "🌐", href: "/tr/tools/ip-lookup", desc: "Herhangi bir IP adresi hakkında bilgi", cat: "Geliştirici Araçları" },
+  { title: "URL Kodlayıcı", icon: "🔗", href: "/tr/tools/encoder", desc: "URL kodlama ve kod çözme", cat: "Geliştirici Araçları" },
+  { title: "Şifreleme Aracı", icon: "🔐", href: "/tr/tools/encryption-tool", desc: "Metin şifreleme ve şifre çözme", cat: "Geliştirici Araçları" },
+  { title: "SEO İçerik Oluşturucu", icon: "📝", href: "/tr/tools/seo-content-generator", desc: "SEO uyumlu içerik oluşturma", cat: "Geliştirici Araçları" },
+  { title: "UUID Oluşturucu", icon: "🆔", href: "/tr/tools/uuid-generator", desc: "UUID v4/v7 oluşturma", cat: "Geliştirici Araçları" },
+  { title: "Anahtar Kelime Aracı", icon: "🔎", href: "/tr/tools/keyword-research", desc: "Anahtar kelime araştırma", cat: "Geliştirici Araçları" },
 
   { title: "İslami Miras Hesaplama", icon: "📜", href: "/tr/tools/inheritance-calculator", desc: "İslam miras hukuku (Feraiz) dağılımı", cat: "İslami Araçlar" },
   { title: "Zekat Hesaplama", icon: "🕌", href: "/tr/tools/zakat-calculator", desc: "Yıllık %2.5 zekat yükümlülüğü", cat: "İslami Araçlar" },
+  { title: "Kıble Yönü", icon: "🧭", href: "/tr/tools/qibla-direction", desc: "Konumunuza göre kıble yönü bulma", cat: "İslami Araçlar" },
+  { title: "Namaz Vakitleri", icon: "🕐", href: "/tr/tools/prayer-times", desc: "Konumunuza göre namaz vakitleri", cat: "İslami Araçlar" },
+  { title: "Tasbih Sayacı", icon: "📿", href: "/tr/tools/tasbeeh-counter", desc: "Dijital tesbih ile zikir sayma", cat: "İslami Araçlar" },
+  { title: "Umre Hesaplama", icon: "🕋", href: "/tr/tools/umrah-calculator", desc: "Umre maliyetlerini ve rehberini hesaplama", cat: "İslami Araçlar" },
+  { title: "Fidye ve Kaffarat", icon: "⚖️", href: "/tr/tools/fidyah-kaffarah", desc: "Yemin, Ramazan, Zıhır kaffaratı ve oruç fidyesi", cat: "İslami Araçlar" },
 
   { title: "VKİ Hesaplama", icon: "⚖️", href: "/tr/tools/bmi-calculator", desc: "Vücut Kitle İndeksi hesaplama", cat: "Diğer" },
+  { title: "İdeal Kilo Hesaplayıcı", icon: "⚖️", href: "/tr/tools/ideal-weight", desc: "Boy ve yaşa göre ideal kilo", cat: "Diğer" },
   { title: "Fotoğrafla Kalori Analizi", icon: "📸", href: "/tr/tools/food-calorie-analyzer", desc: "Fotoğraf çekin, anlık kalori analizi alın", cat: "Diğer" },
   { title: "Kronometre", icon: "⏱️", href: "/tr/tools/stopwatch", desc: "Tur takipli kronometre", cat: "Diğer" },
 ];
@@ -89,8 +112,8 @@ const featuredTools = [
   { title: "Görselden Metin (OCR)", icon: "👁️", href: "/tr/tools/image-to-text", desc: "OCR ile görsellerden metin çıkarma", cat: "Görsel Araçları" },
 ];
 
-export default function TrHome() {
-  const [search, setSearch] = useState("");
+function TrHomeInner() {
+  const { search } = useSearch();
   const [activeCat, setActiveCat] = useState<string | null>(null);
 
   const hashToCat: Record<string, string> = {
@@ -104,21 +127,21 @@ export default function TrHome() {
     islamic: "İslami Araçlar",
     daily: "Diğer",
   };
-  
-  // Read URL hash → activate that category
+
   const applyHashFilter = () => {
     const hash = window.location.hash.replace("#", "");
     if (hash && hashToCat[hash]) {
       setActiveCat(hashToCat[hash]);
+    } else if (!hash) {
+      setActiveCat(null);
     }
   };
 
-  // Separate scroll function — only called on events, not on interval
   const scrollToTools = () => {
     const hash = window.location.hash.replace("#", "");
     if (hash && hashToCat[hash]) {
       setTimeout(() => {
-        const el = document.querySelector("[data-scroll-target]");
+        const el = document.querySelector("[data-tools-section]");
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 150);
     }
@@ -126,7 +149,6 @@ export default function TrHome() {
 
   useEffect(() => {
     applyHashFilter();
-    scrollToTools();
     const onHash = () => { applyHashFilter(); scrollToTools(); };
     window.addEventListener("hashchange", onHash);
     window.addEventListener("popstate", onHash);
@@ -136,7 +158,6 @@ export default function TrHome() {
     };
   }, []);
 
-  // Reverse map: category name → hash key
   const catToHash: Record<string, string> = {};
   for (const [k, v] of Object.entries(hashToCat)) { catToHash[v] = k; }
 
@@ -145,6 +166,8 @@ export default function TrHome() {
     const matchCat = !activeCat || t.cat === activeCat;
     return matchSearch && matchCat;
   });
+
+  const isSearching = search.trim().length > 0;
 
   return (
     <>
@@ -180,74 +203,86 @@ export default function TrHome() {
         </div>
       </section>
 
-      {/* Search + Category Filter */}
-      <div className="search-wrap scroll-fade-in" style={{ marginTop: "40px" }}>
-        <input
-          type="text"
-          placeholder="🔍 Araç ara..."
-          value={search}
-          onChange={(e) => { setSearch(e.target.value); setActiveCat(null); window.location.hash = ""; }}
-          className="search-input"
-        />
-      </div>
-      <div className="cats">
-        <button onClick={() => { setActiveCat(null); window.location.hash = ""; }} className={`cat-btn ${!activeCat ? "active" : ""}`} id="all">🗂️ Tümü</button>
-        {categories.map((cat) => (
-          <button key={cat.slug} onClick={() => { window.location.hash = catToHash[cat.name] || ""; }} className={`cat-btn ${activeCat === cat.name ? "active" : ""}`} id={cat.slug}>
-            {cat.icon} {cat.name}
-          </button>
-        ))}
+      {/* Smart Search */}
+      <div className="mt-8 mb-4" data-scroll-target>
+        <SearchBar lang="tr" />
       </div>
 
-      {/* Featured / Popular Tools */}
-      <section className="featured-section scroll-fade-in" style={{ marginTop: "32px" }}>
-        <div className="section-header">
+      {/* Featured — hides when searching or category selected */}
+      {!isSearching && !activeCat && (
+        <section className="featured-section scroll-fade-in" style={{ marginTop: "40px" }}>
+          <div className="section-header">
+            <h2 className="section-title">
+              <span className="s-icon">⭐</span>
+              En Popüler Araçlar
+            </h2>
+          </div>
+          <div className="tools-grid-3">
+            {featuredTools.map((tool, i) => (
+              <a key={i} href={tool.href} className="featured-card card-shine">
+                <span className="f-icon">{tool.icon}</span>
+                <div className="f-title">{tool.title}</div>
+                <div className="f-desc">{tool.desc}</div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* All Tools header — hides when searching */}
+      {!isSearching && (
+        <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }}>
           <h2 className="section-title">
-            <span className="s-icon">⭐</span>
-            En Popüler Araçlar
+            <span className="s-icon">🗂️</span>
+            Tüm Araçlar
           </h2>
         </div>
-        <div className="tools-grid-3">
-          {featuredTools.map((tool, i) => (
-            <a key={i} href={tool.href} className="featured-card card-shine">
-              <span className="f-icon">{tool.icon}</span>
-              <div className="f-title">{tool.title}</div>
-              <div className="f-desc">{tool.desc}</div>
-            </a>
-          ))}
-        </div>
-      </section>
+      )}
 
-      {/* Divider */}
-      <div className="section-header scroll-fade-in" style={{ marginTop: "56px", marginBottom: "4px" }} data-scroll-target>
-        <h2 className="section-title">
-          <span className="s-icon">🗂️</span>
-          Tüm Araçlar
-        </h2>
-      </div>
-
-      {/* Tool Grid */}
-      {filtered.length === 0 ? (
-        <div className="empty">
-          <p className="emoji">🔍</p>
-          <p>Aramanızla eşleşen araç bulunamadı</p>
-          <p className="text-xs text-gray-400 mt-1">Farklı bir arama veya kategori deneyin</p>
+      {/* Search results header */}
+      {isSearching && (
+        <div className="search-results-header">
+          <span className="srh-icon">🔍</span>
+          <span>Arama sonuçları: <strong>"{search}"</strong></span>
+          <span className="srh-count">{filtered.length} araç</span>
         </div>
-      ) : (
-        <div className="tools-grid">
-          {filtered.map((tool, i) => (
-            <a key={i} href={tool.href} className="tool-card card-shine">
-              <div className="tool-card-inner">
-                <span className="tool-icon">{tool.icon}</span>
-                <div>
-                  <h3 className="tool-title">{tool.title}</h3>
-                  <p className="tool-desc">{tool.desc}</p>
-                </div>
-              </div>
-            </a>
+      )}
+
+      {/* Categories — hidden when searching */}
+      {!isSearching && (
+        <div className="cats">
+          <button onClick={() => { setActiveCat(null); window.location.hash = ""; }} className={`cat-btn ${!activeCat ? "active" : ""}`} id="all">🗂️ Tümü</button>
+          {categories.map((cat) => (
+            <button key={cat.slug} onClick={() => { window.location.hash = catToHash[cat.name] || ""; }} className={`cat-btn ${activeCat === cat.name ? "active" : ""}`} id={cat.slug}>
+              {cat.icon} {cat.name}
+            </button>
           ))}
         </div>
       )}
+
+      <div data-tools-section>
+        {filtered.length === 0 ? (
+          <div className="empty">
+            <p className="emoji">🔍</p>
+            <p>Aramanızla eşleşen araç bulunamadı</p>
+            <p className="text-xs text-gray-400 mt-1">Farklı bir arama veya kategori deneyin</p>
+          </div>
+        ) : (
+          <div className="tools-grid">
+            {filtered.map((tool, i) => (
+              <a key={i} href={tool.href} className="tool-card card-shine">
+                <div className="tool-card-inner">
+                  <span className="tool-icon">{tool.icon}</span>
+                  <div>
+                    <h3 className="tool-title">{tool.title}</h3>
+                    <p className="tool-desc">{tool.desc}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
 
       {/* Stats */}
       <div className="stats scroll-fade-in">
@@ -298,5 +333,13 @@ export default function TrHome() {
         </a>
       </div>
     </>
+  );
+}
+
+export default function TrHome() {
+  return (
+    <SearchProvider>
+      <TrHomeInner />
+    </SearchProvider>
   );
 }

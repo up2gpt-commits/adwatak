@@ -539,6 +539,177 @@ const idBlogPosts: BlogPost[] = [
     keywords: ["KPR", "kredit rumah", "cara menghitung KPR", "simulasi KPR", "cicilan KPR", "kalkulator KPR", "bunga KPR", "DP rumah"],
   },
   {
+    slug: "panduan-lengkap-pembagian-waris-menurut-islam-faraid",
+    title: "Panduan Lengkap Pembagian Waris Menurut Islam (Faraid) — Cara Menghitung dan Contoh Kasus 2026",
+    excerpt:
+      "Panduan lengkap pembagian waris dalam Islam: siapa saja ahli waris, bagian masing-masing (ashab al-furudz dan ashabul ashabah), contoh perhitungan faraid, cara menyelesaikan masalah waris, dan jawaban atas 10+ pertanyaan seputar hukum waris Islam.",
+    content: `
+<h2>Bagaimana Cara Pembagian Waris Menurut Islam (Faraid)?</h2>
+<p><strong>Faraid</strong> (فقا ئض) adalah ilmu dalam agama Islam yang membahas tentang pembagian harta warisan secara adil dan sesuai dengan ketentuan syariat. Kata "faraid" berasal dari bahasa Arab yang berarti "ketentuan yang ditetapkan" — merujuk pada bagian-bagian waris yang telah ditentukan secara eksplisit dalam Al-Qur'an, khususnya dalam <strong>QS. An-Nisa ayat 11-12</strong>.</p>
+<p>Pembagian waris dalam Islam bukan sekadar soal membagi harta — ini adalah perintah Allah SWT yang bersifat wajib. Kesalahan dalam pembagian waris bisa menimbulkan sengketa keluarga, ketidakadilan, dan bahkan dosa bagi yang melanggarnya. Oleh karena itu, memahami ilmu faraid adalah kepentingan setiap Muslim.</p>
+<p>Artikel ini akan memandu Anda secara lengkap: siapa saja ahli waris, berapa bagian masing-masing, bagaimana cara menghitungnya, contoh kasus nyata, dan jawaban atas pertanyaan yang paling sering diajukan seputar pembagian waris dalam Islam.</p>
+
+<h2>Dasar Hukum Pembagian Waris dalam Islam</h2>
+<p>Pembagian waris dalam Islam berlandaskan pada tiga sumber utama:</p>
+<ul>
+  <li><strong>Al-Qur'an:</strong> QS. An-Nisa (4): 11-12 memuat ketentuan bagian waris secara detail untuk laki-laki, perempuan, suami, istri, dan ibu.</li>
+  <li><strong>Hadis:</strong> Rasulullah ﷺ bersabda: "Bagikanlah harta waris kepada orang-orang yang berhak menurut kitab Allah." (HR. Bukhari & Muslim)</li>
+  <li><strong>Ijma' ulama:</strong> Para ulama sepakat bahwa pembagian waris dengan ketentuan Al-Qur'an adalah wajib hukumnya.</li>
+</ul>
+
+<h2>Syarat dan Rukun Waris</h2>
+<h3>Syarat Pewarisan</h3>
+<p>Agar seseorang berhak menerima warisan, harus terpenuhi tiga syarat:</p>
+<ol>
+  <li><strong>Meninggalnya pewaris:</strong> Pewaris telah benar-benar meninggal (secara hukum atau nyata).</li>
+  <li><strong>Hidupnya ahli waris:</strong> Ahli waris masih hidup pada saat pewaris meninggal (termasuk janin yang lahir hidup).</li>
+  <li><strong>Tidak ada halangan waris:</strong> Tidak ada penghalang seperti perbudakan, pembunuhan, atau perbedaan agama (menurut mayoritas ulama).</li>
+</ol>
+
+<h3>Rukun Waris</h3>
+<ul>
+  <li><strong>Al-Muwarrits (pewaris):</strong> Orang yang meninggal dan meninggalkan harta.</li>
+  <li><strong>Al-Warits (ahli waris):</strong> Orang yang berhak menerima warisan.</li>
+  <li><strong>Al-Mirts (harta warisan):</strong> Harta yang ditinggalkan oleh pewaris setelah dikurangi biaya pengurusan jenazah, hutang, dan wasiat (maksimal 1/3 harta).</li>
+</ul>
+
+<h2>Tiga Hak yang Didahulukan Sebelum Pembagian Waris</h2>
+<p>Sebelum harta dibagikan kepada ahli waris, ada tiga hak yang harus didahulukan:</p>
+<ol>
+  <li><strong>Biaya pengurusan jenazah:</strong> Biaya memandikan, mengkafani, menguburkan, dan merawat makam.</li>
+  <li><strong>Pelunasan hutang:</strong> Semua hutang pewaris harus dilunasi terlebih dahulu, baik hutang kepada manusia maupun kepada Allah (zakat, kafarat, nadzar yang belum ditunaikan).</li>
+  <li><strong>Pelaksanaan wasiat:</strong> Wasiat pewaris dilaksanakan maksimal 1/3 dari sisa harta setelah dikurangi biaya jenazah dan hutang. Wasiat tidak boleh diberikan kepada ahli waris (menurut mayoritas ulama).</li>
+</ol>
+
+<h2>Siapa Saja Ahli Waris dalam Islam?</h2>
+<p>Ahli waris dalam Islam dibagi menjadi tiga kelompok:</p>
+
+<h3>1. Ashab al-Furudz (Ahli Waris dengan Bagian Tertentu)</h3>
+<p>Ini adalah ahli waris yang bagiannya sudah ditentukan secara pasti dalam Al-Qur'an:</p>
+<ul>
+  <li><strong>Suami:</strong> 1/2 (jika istri tidak punya anak) atau 1/4 (jika istri punya anak)</li>
+  <li><strong>Istri:</strong> 1/4 (jika suami tidak punya anak) atau 1/8 (jika suami punya anak). Jika lebih dari satu istri, bagian dibagi rata.</li>
+  <li><strong>Ayah:</strong> 1/6 (jika pewaris punya anak) atau 1/3 sisa (jika tidak punya anak tapi punya saudara) atau seluruh sisa (jika tidak punya anak dan saudara)</li>
+  <li><strong>Ibu:</strong> 1/6 (jika pewaris punya anak atau punya banyak saudara) atau 1/3 (jika tidak punya anak dan tidak punya banyak saudara)</li>
+  <li><strong>Anak perempuan:</strong> 1/2 (jika satu orang dan tidak ada anak laki-laki) atau 2/3 (jika dua orang atau lebih, tidak ada anak laki-laki)</li>
+  <li><strong>Anak perempuan dari anak laki-laki (cucu perempuan):</strong> 1/2 (jika satu, tidak ada anak kandung perempuan dan anak laki-laki) atau 1/6 (jika ada satu anak kandung perempuan)</li>
+  <li><strong>Saudara kandung perempuan:</strong> 1/2 (jika satu, tidak ada anak, ayah, dan saudara laki-laki) atau 2/3 (jika dua atau lebih)</li>
+  <li><strong>Saudara seibu:</strong> 1/6 (jika satu orang) atau 1/3 (jika dua orang atau lebih)</li>
+</ul>
+
+<h3>2. Ashabul Ashabah (Ahli Waris dengan Bagian Sisa)</h3>
+<p>Ini adalah ahli waris laki-laki yang menerima sisa harta setelah ashab al-furudz mendapat bagiannya. Urutan prioritas:</p>
+<ol>
+  <li>Anak laki-laki</li>
+  <li>Cucu laki-laki (dari anak laki-laki)</li>
+  <li>Ayah</li>
+  <li>Saudara kandung laki-laki</li>
+  <li>Anak laki-laki dari saudara kandung</li>
+  <li>Paman (saudara ayah)</li>
+  <li>Anak laki-laki dari paman</li>
+  <li>Laki-laki yang memerdekakan budak (jika ada)</li>
+</ol>
+
+<h3>3. Dzawil Arham (Ahli Waris yang Bukan Ashab al-Furudz maupun Ashabah)</h3>
+<p>Ini adalah kerabat perempuan atau kerabat melalui jalur perempuan yang tidak termasuk dalam dua kelompok di atas, seperti: anak perempuan dari anak perempuan, saudara perempuan dari ibu, dan lainnya. Mereka mendapat warisan jika tidak ada ashab al-furudz dan ashabul ashabah.
+
+<h2>Contoh Perhitungan Waris Lengkap</h2>
+<h3>Kasus 1: Pewaris Meninggalkan Istri, Ayah, Ibu, dan Dua Anak Laki-laki</h3>
+<p>Bapak Ahmad meninggal dunia meninggalkan harta bersih (setelah dikurangi biaya jenazah, hutang, dan wasiat) sebesar <strong>Rp 1.200.000.000</strong>. Ahli warisnya: istri, ayah, ibu, dan 2 anak laki-laki.</p>
+<p>Perhitungan bagian:</p>
+<ul>
+  <li>Istri: 1/8 (karena ada anak) → 1/8 × Rp 1.200.000.000 = <strong>Rp 150.000.000</strong></li>
+  <li>Ayah: 1/6 (karena ada anak) → 1/6 × Rp 1.200.000.000 = <strong>Rp 200.000.000</strong></li>
+  <li>Ibu: 1/6 (karena ada anak) → 1/6 × Rp 1.200.000.000 = <strong>Rp 200.000.000</strong></li>
+  <li>Sisa: Rp 1.200.000.000 − Rp 150.000.000 − Rp 200.000.000 − Rp 200.000.000 = Rp 650.000.000</li>
+  <li>2 anak laki-laki mendapat sisa: Rp 650.000.000 ÷ 2 = <strong>Rp 325.000.000 per anak</strong></li>
+</ul>
+<p>Total: Rp 150.000.000 + Rp 200.000.000 + Rp 200.000.000 + Rp 650.000.000 = Rp 1.200.000.000 ✅</p>
+
+<h3>Kasus 2: Pewaris Meninggalkan Suami, Ibu, dan Satu Anak Perempuan</h3>
+<p>Ibu Fatimah meninggal dunia meninggalkan harta bersih <strong>Rp 900.000.000</strong>. Ahli warisnya: suami, ibu, dan 1 anak perempuan.</p>
+<ul>
+  <li>Suami: 1/4 (karena ada anak) → 1/4 × Rp 900.000.000 = <strong>Rp 225.000.000</strong></li>
+  <li>Ibu: 1/6 (karena ada anak) → 1/6 × Rp 900.000.000 = <strong>Rp 150.000.000</strong></li>
+  <li>Anak perempuan: 1/2 (karena satu orang dan tidak ada anak laki-laki) → 1/2 × Rp 900.000.000 = <strong>Rp 450.000.000</strong></li>
+  <li>Total bagian: 1/4 + 1/6 + 1/2 = 3/12 + 2/12 + 6/12 = 11/12</li>
+  <li>Sisa: 1/12 × Rp 900.000.000 = Rp 75.000.000 → dibagikan dengan metode <strong>radd</strong> (pengembalian proporsional) karena jumlah bagian kurang dari 1</li>
+</ul>
+
+<h3>Apa Itu Radd?</h3>
+<p><strong>Radd</strong> adalah metode pembagian waris ketika total bagian ashab al-furudz kurang dari 1 (artinya ada sisa harta yang tidak terbagikan). Dalam kasus ini, sisa harta dibagikan secara proporsional kepada semua ashab al-furudz (kecuali suami/istri menurut mazhab Syafi'i). Contoh di atas: sisa Rp 75.000.000 dibagikan secara proporsional kepada ibu dan anak perempuan (suami tidak mendapat radd menurut mazhab Syafi'i).</p>
+
+<h3>Apa Itu Aul dan Ijma'?</h3>
+<p><strong>Aul</strong> (kelebihan) terjadi ketika total bagian ashab al-furudz melebihi 1. Dalam kasus ini, bagian masing-masing dikurangi secara proporsional. Contoh klasik: suami (1/2), ibu (1/3), 2 saudara seibu (1/3), 2 saudara kandung perempuan (2/3). Total: 1/2 + 1/3 + 1/3 + 2/3 = 2 1/2 — melebihi 1. Masing-masing bagian dikurangi secara proporsional sehingga total menjadi 1.</p>
+
+<h2>Ahli Waris yang Tidak Mendapat Bagian</h2>
+<p>Ada beberapa kondisi di mana seseorang yang secara umum berhak waris menjadi tidak mendapat bagian:</p>
+<ul>
+  <li><strong>Hijab (terhalang):</strong> Beberapa ahli waris bisa menghalangi yang lain. Misalnya: cucu laki-laki terhalang oleh anak laki-laki; saudara kandung terhalang oleh anak laki-laki dan ayah; saudara seayah terhalang oleh anak laki-laki, cucu laki-laki, dan ayah.</li>
+  <li><strong>Pembunuhan:</strong> Siapa yang membunuh pewaris (secara sengaja atau tidak sengaja menurut sebagian ulama) tidak berhak mendapat warisan dari orang yang dibunuhnya.</li>
+  <li><strong>Perbedaan agama:</strong> Menurut mayoritas ulama, Muslim tidak mewarisi harta non-Muslim dan sebaliknya.</li>
+  <li><strong>Perbudakan:</strong> Budak tidak mewarisi dan tidak diwarisi (kondisi ini sudah tidak ada saat ini).</li>
+</ul>
+
+<h2>Bagaimana Cara Menghitung Waris dengan Kalkulator?</h2>
+<p>Menghitung waris secara manual memerlukan pemahaman mendalam tentang ilmu faraid, termasuk kondisi-kondisi khusus seperti aul, radd, dan hijab. Untuk kemudahan dan keakuratan, Anda bisa menggunakan <a href="https://adwatak.cloud/id/tools/inheritance-calculator" target="_blank" rel="noopener noreferrer">Kalkulator Waris Islam Adwatak</a> yang menghitung otomatis berdasarkan data yang Anda masukkan.</p>
+<p>Langkah-langkah menggunakan kalkulator waris:</p>
+<ol>
+  <li>Buka <a href="https://adwatak.cloud/id/tools/inheritance-calculator" target="_blank" rel="noopener noreferrer">adwatak.cloud/id/tools/inheritance-calculator</a>.</li>
+  <li>Masukkan data pewaris (jenis kelamin, status perkawinan).</li>
+  <li>Tambahkan semua ahli waris yang masih hidup.</li>
+  <li>Masukkan total harta warisan (setelah dikurangi biaya jenazah, hutang, dan wasiat).</li>
+  <li>Klik "Hitung" untuk mendapatkan hasil pembagian yang akurat.</li>
+</ol>
+
+<h2>Hubungan Ilmu Faraid dengan Ibadah Lainnya</h2>
+<p>Pembagian waris tidak lepas dari konteks kehidupan Muslim secara keseluruhan. Seorang Muslim yang baik juga perlu memahami <a href="https://adwatak.cloud/id/tools/zakat-calculator" target="_blank" rel="noopener noreferrer">perhitungan zakat</a> atas harta yang dimilikinya, karena zakat juga menjadi salah satu hak yang harus dikeluarkan dari harta sebelum pembagian waris. Demikian pula, memahami <a href="https://adwatak.cloud/id/tools/hijri-converter" target="_blank" rel="noopener noreferrer">kalender Hijriah</a> penting untuk menentukan waktu-waktu ibadah dan perhitungan haul zakat yang terkait dengan harta warisan.</p>
+<p>Untuk kebutuhan ibadah sehari-hari, Adwatak juga menyediakan <a href="https://adwatak.cloud/id/tools/prayer-times" target="_blank" rel="noopener noreferrer">waktu sholat</a> dan <a href="https://adwatak.cloud/id/tools/qibla-direction" target="_blank" rel="noopener noreferrer">arah kiblat</a> — semuanya gratis dan mudah digunakan.</p>
+
+<h2>Kesimpulan</h2>
+<p>Pembagian waris dalam Islam (faraid) adalah ilmu yang sangat penting dan wajib dipahami oleh setiap Muslim. Dengan memahami siapa saja ahli waris, berapa bagian masing-masing, dan bagaimana cara menghitungnya, kita bisa memastikan harta warisan dibagikan secara adil dan sesuai dengan ketentuan Allah SWT. Kesalahan dalam pembagian waris bukan hanya menimbulkan sengketa keluarga, tapi juga bisa menjadi dosa bagi yang melanggarnya.</p>
+<p>Untuk perhitungan yang akurat dan mudah, gunakan <a href="https://adwatak.cloud/id/tools/inheritance-calculator" target="_blank" rel="noopener noreferrer">Kalkulator Waris Islam Adwatak</a>. Jika kasus waris Anda kompleks (misalnya melibatkan aul, radd, atau masalah hijab), konsultasikan dengan ahli faraid atau lembaga peradilan agama terdekat untuk memastikan pembagian yang benar.</p>
+
+<h2>Pertanyaan yang Sering Diajukan</h2>
+
+<h3>Apakah anak perempuan bisa mendapat warisan dalam Islam?</h3>
+<p>Ya, anak perempuan berhak mendapat warisan dalam Islam. Bagian anak perempuan adalah 1/2 jika satu orang dan tidak ada anak laki-laki, atau 2/3 jika dua orang atau lebih dan tidak ada anak laki-laki. Jika ada anak laki-laki, maka anak perempuan menjadi ashahul ashabah (mendapat sisa) dengan perbandingan 2 bagian laki-laki : 1 bagian perempuan, berdasarkan QS. An-Nisa: 11. Ini adalah ketentuan Allah yang adil — anak laki-laki mendapat lebih karena mereka bertanggung jawab atas nafkah keluarga.</p>
+
+<h3>Bagaimana jika pewaris tidak punya anak?</h3>
+<p>Jika pewaris tidak punya anak, pembagian waris berubah secara signifikan. Suami mendapat 1/2 (bukan 1/4), istri mendapat 1/4 (bukan 1/8). Ayah bisa mendapat bagian lebih besar karena tidak terhalang oleh anak. Saudara-saudara pewaris yang sebelumnya terhalang oleh anak laki-laki kini bisa mendapat bagian. Setiap kondisi memiliki perhitungan yang berbeda, sehingga penting untuk memasukkan data lengkap ke dalam <a href="https://adwatak.cloud/id/tools/inheritance-calculator" target="_blank" rel="noopener noreferrer">kalkulator waris</a> untuk hasil yang akurat.</p>
+
+<h3>Apakah istri/suami selalu mendapat warisan?</h3>
+<p>Ya, suami dan istri selalu mendapat warisan dari pasangannya, terlepas dari ada atau tidaknya anak, ayah, atau saudara pewaris. Hubungan perkawinan adalah hubungan waris yang paling kuat. Bagian suami: 1/2 jika istri tidak punya anak, 1/4 jika istri punya anak. Bagian istri: 1/4 jika suami tidak punya anak, 1/8 jika suami punya anak. Jika suami memiliki lebih dari satu istri, bagian 1/8 (atau 1/4) dibagi rata di antara mereka.</p>
+
+<h3>Apakah anak dari istri yang sudah cerai berhak mendapat warisan?</h3>
+<p>Ya, anak kandung dari istri yang sudah cerai tetap berhak mendapat warisan dari ayahnya. Perceraian antara orang tua tidak memutuskan hubungan kewarisan antara anak dan ayah. Anak kandung tetap menjadi ahli waris ashabul ashabah (penerima sisa) yang prioritasnya paling tinggi. Yang terputus oleh perceraian adalah hubungan suami-istri (istri yang sudah cerai tidak mendapat warisan dari mantan suami), tapi bukan hubungan anak-orang tua.</p>
+
+<h3>Bagaimana pembagian waris jika pewaris hanya punya satu anak perempuan?</h3>
+<p>Jika pewaris hanya meninggalkan satu anak perempuan dan tidak ada anak laki-laki, anak perempuan mendapat 1/2 harta sebagai bagian farudz (bagian tertentu). Sisa 1/2 dibagikan kepada ahli waris lainnya. Jika hanya ada anak perempuan dan suami: suami mendapat 1/4, anak perempuan mendapat 1/2, dan sisa 1/4 dibagikan dengan metode radd (pengembalian proporsional) kepada anak perempuan (menurut mazhab yang membolehkan radd kepada selain suami/istri).</p>
+
+<h3>Apakah wasiat bisa diberikan kepada ahli waris?</h3>
+<p>Menurut mayoritas ulama (mazhab Syafi'i, Hanbali, dan Maliki), wasiat tidak boleh diberikan kepada ahli waris, karena ahli waris sudah mendapat bagian yang ditentukan oleh Al-Qur'an. Rasulullah ﷺ bersabda: "Sesungguhnya Allah telah memberikan kepada setiap orang yang berhak bagiannya, maka tidak ada wasiat untuk ahli waris." (HR. Abu Dawud, Tirmidzi, dan Ibnu Majah). Namun, mazhab Hanafi membolehkan wasiat kepada ahli waris dengan persetujuan ahli waris lainnya.</p>
+
+<h3>Bagaimana jika harta warisan berupa tanah atau properti?</h3>
+<p>Harta warisan berupa tanah atau properti dibagikan dengan dua cara: (1) <strong>Dijual terlebih dahulu</strong>, kemudian hasil penjualan dibagikan sesuai bagian masing-masing ahli waris. Ini adalah cara paling umum dan praktis. (2) <strong>Dibagi secara fisik</strong> jika memungkinkan (misalnya tanah yang bisa dipetak-petakkan secara adil). Jika tidak memungkinkan pembagian fisik, maka properti dijual dan hasilnya dibagikan. Nilai properti ditentukan berdasarkan harga pasar pada saat pembagian.</p>
+
+<h3>Apakah hutang pewaris mengurangi harta warisan?</h3>
+<p>Ya, hutang pewaris harus dilunasi terlebih dahulu sebelum harta dibagikan kepada ahli waris. Ini termasuk hutang kepada manusia (pinjaman, kredit) dan hutang kepada Allah (zakat yang belum dibayar, kafarat, nadzar). Jika hutang menghabiskan seluruh harta, maka ahli waris tidak mendapat apa-apa. Biaya pengurusan jenazah juga didahulukan sebelum pembagian waris.</p>
+
+<h3>Bagaimana jika ada ahli waris yang meninggal sebelum harta dibagikan?</h3>
+<p>Jika seorang ahli waris meninggal setelah pewaris tapi sebelum harta dibagikan, maka bagian warisnya berpindah kepada ahli waris orang tersebut (bukan kembali ke harta pewaris awal). Misalnya, jika anak laki-laki meninggal sebelum pembagian, bagiannya diwariskan kepada anak-anaknya (cucu pewaris). Ini disebut <strong>waris pengganti</strong> (al-wiratsah al-badaliyah) dan menjadi perbedaan pendapat di kalangan ulama — mazhab Syafi'i tidak mengakui waris pengganti, sementara mazhab Hanafi dan undang-undang beberapa negara Muslim mengakuinya.</p>
+
+<h3>Apa perbedaan pembagian waris menurut mazhab yang berbeda?</h3>
+<p>Keempat mazhab Sunni (Hanafi, Maliki, Syafi'i, Hanbali) memiliki perbedaan dalam beberapa kasus waris, antara lain: (1) <strong>Radd:</strong> Mazhab Syafi'i tidak membolehkan radd kepada suami/istri, sementara mazhab lain membolehkan. (2) <strong>Waris pengganti:</strong> Mazhab Hanafi mengakui waris pengganti (cucu menggantikan posisi orang tua yang meninggal lebih dulu), sementara mazhab Syafi'i tidak. (3) <strong>Grandfather (kakek):</strong> Cara kakek mendapat waris berbeda antar mazhab. Di Indonesia, yang berlaku adalah mazhab Syafi'i sebagai mayoritas, merujuk pada Kompilasi Hukum Islam (KHI).</p>
+
+<h3>Bagaimana cara menyelesaikan sengketa waris?</h3>
+<p>Jika terjadi sengketa dalam pembagian waris, langkah-langkah yang bisa dilakukan: (1) <strong>Musyawarah keluarga</strong> — diskusikan secara baik-baik dengan semua ahli waris. (2) <strong>Mediasi</strong> — libatkan pihak ketua seperti tokoh agama, ulama, atau lembaga mediasi. (3) <strong>Konsultasi dengan ahli faraid</strong> — minta bantuan ulama atau lembaga yang memahami ilmu faraid. (4) <strong>Peradilan Agama</strong> — sebagai upaya terakhir, ajukan ke Pengadilan Agama untuk mendapatkan putusan yang mengikat. Di Indonesia, Pengadilan Agama berwenang menyelesaikan sengketa waris bagi warga Muslim.</p>`,
+    date: "2026-06-05",
+    category: "Alat Islami",
+    readTime: "12 menit membaca",
+    keywords: ["pembagian waris islam", "faraid", "ilmu faraid", "kalkulator waris", "hukum waris islam", "ahli waris", "bagian waris", "contoh perhitungan waris", "radd waris", "aul waris", "hijab waris", "warisan dalam islam"],
+  },
+  {
     slug: "cara-menghitung-bmi-dan-berat-badan-ideal-2026",
     title: "Cara Menghitung BMI dan Berat Badan Ideal — Panduan Lengkap 2026",
     excerpt:
