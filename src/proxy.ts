@@ -118,6 +118,8 @@ function setLangCookie(response: NextResponse, value: string): void {
 
 // ── API security: CORS + body size ────────────────────────────────
 
+import { mintToken, routeCookieName } from "./app/lib/api-token";
+
 const ALLOWED_ORIGINS = new Set([
   "https://adwatak.cloud",
   "https://www.adwatak.cloud",
@@ -130,6 +132,20 @@ const ALLOWED_ORIGINS = new Set([
 
 const MAX_BODY_SIZE = 10 * 1024 * 1024; // 10 MB
 
+// Routes that have AI backends needing tokens
+const AI_API_ROUTES = new Set([
+  "ai-essay-writer",
+  "paraphrasing-tool",
+  "grammar-checker",
+  "plagiarism-checker",
+  "ai-content-detector",
+  "keyword-research",
+  "calorie-vision",
+  "ocr-vision",
+  "seo-audit",
+  "seo-content-generator",
+]);
+
 function applyApiSecurity(request: NextRequest, response: NextResponse): NextResponse {
   // Add security headers to every /api response
   response.headers.set("X-Content-Type-Options", "nosniff");
@@ -140,10 +156,26 @@ function applyApiSecurity(request: NextRequest, response: NextResponse): NextRes
   const allowOrigin = origin && ALLOWED_ORIGINS.has(origin) ? origin : "https://adwatak.cloud";
   response.headers.set("Access-Control-Allow-Origin", allowOrigin);
   response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  response.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  response.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-API-Token");
   response.headers.set("Vary", "Origin");
 
   return response;
+}
+
+/** Set a fresh API token cookie for a given tool. Idempotent — overwrites if exists. */
+function setApiTokenCookie(response: NextResponse, request: NextRequest, toolName: string): void {
+  const route = `/api/${toolName}`;
+  if (!AI_API_ROUTES.has(toolName)) return;
+  const token = mintToken(route, request);
+  response.cookies.set({
+    name: routeCookieName(route),
+    value: token.token,
+    httpOnly: true,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+    maxAge: 5 * 60, // 5 minutes (same as TTL)
+  });
 }
 
 // ── Proxy Handler ────────────────────────────────────────────────
@@ -178,6 +210,19 @@ export function proxy(request: NextRequest) {
 
     // Apply CORS + security headers to the normal /api response
     return applyApiSecurity(request, NextResponse.next());
+  }
+
+  // ── /tools/<name> — mint a fresh API token cookie for this tool ──
+  // Pages that use an AI tool get a per-route token cookie. The browser
+  // auto-sends it on the subsequent fetch to /api/<name>.
+  const toolMatch = pathname.match(/^\/(?:en|tr|id|ar)?\/?tools\/([a-z0-9-]+)/);
+  if (toolMatch && !pathname.startsWith("/_next/") && !pathname.startsWith("/api/")) {
+    const toolName = toolMatch[1];
+    if (AI_API_ROUTES.has(toolName)) {
+      const response = NextResponse.next();
+      setApiTokenCookie(response, request, toolName);
+      return response;
+    }
   }
 
   // ── Skip non-page routes ─────────────────────────────────────

@@ -1,10 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getClientIp } from "@/app/lib/rate-limit";
+import { extractToken, verifyToken } from "@/app/lib/api-token";
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
 const MODEL = "openai/gpt-4o-mini";
 
 export async function POST(req: NextRequest) {
+  // Token gate: reject requests without a valid signed API token
+  // (Token is set as a cookie when the user loads the /tools/<name> page,
+  //  or sent via X-API-Token header for testing/Postman.)
+  const token = extractToken(req, "/api/seo-audit");
+  const tv = verifyToken(token, "/api/seo-audit", req);
+  if (!tv.ok) {
+    console.warn(`[api:seo-audit] token rejected:`, tv.reason);
+    return NextResponse.json(
+      { error: "Invalid or missing API token. Please reload the page.", reason: tv.reason },
+      { status: 401 }
+    );
+  }
+
   // Rate limiting: 6 req / 60s per IP
   const rl = rateLimit({ key: `api:seo-audit:${getClientIp(req)}`, max: 6, windowSec: 60 });
   if (!rl.allowed) {

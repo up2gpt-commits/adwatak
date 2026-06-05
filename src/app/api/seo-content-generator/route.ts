@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import projectMemory from "../../data/project-memory.json";
 import { rateLimit, getClientIp } from "@/app/lib/rate-limit";
+import { extractToken, verifyToken } from "@/app/lib/api-token";
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
 const MODEL = "google/gemini-2.0-flash-001:free";
@@ -74,6 +75,19 @@ Respond in JSON format:
 }
 
 export async function POST(req: NextRequest) {
+  // Token gate: reject requests without a valid signed API token
+  // (Token is set as a cookie when the user loads the /tools/<name> page,
+  //  or sent via X-API-Token header for testing/Postman.)
+  const token = extractToken(req, "/api/seo-content-generator");
+  const tv = verifyToken(token, "/api/seo-content-generator", req);
+  if (!tv.ok) {
+    console.warn(`[api:seo-content-generator] token rejected:`, tv.reason);
+    return NextResponse.json(
+      { error: "Invalid or missing API token. Please reload the page.", reason: tv.reason },
+      { status: 401 }
+    );
+  }
+
   // Rate limiting: 8 req / 60s per IP
   const rl = rateLimit({ key: `api:seo-content-generator:${getClientIp(req)}`, max: 8, windowSec: 60 });
   if (!rl.allowed) {
