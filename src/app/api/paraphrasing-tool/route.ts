@@ -4,8 +4,11 @@ import { chatCompletion, parseJSON, AllProvidersFailedError } from "@/app/lib/op
 export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
+  let lang: string = "en";
   try {
-    const { text, lang } = await req.json();
+    const body = await req.json();
+    const text: string = body?.text;
+    lang = body?.lang || "en";
 
     if (!text || text.trim().length < 20) {
       return NextResponse.json(
