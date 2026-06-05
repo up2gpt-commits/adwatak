@@ -116,15 +116,73 @@ function setLangCookie(response: NextResponse, value: string): void {
   });
 }
 
+// ── API security: CORS + body size ────────────────────────────────
+
+const ALLOWED_ORIGINS = new Set([
+  "https://adwatak.cloud",
+  "https://www.adwatak.cloud",
+  "https://adawatak-up2gpt-8789s-projects.vercel.app",
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "http://localhost:3002",
+  "http://localhost:3007",
+]);
+
+const MAX_BODY_SIZE = 10 * 1024 * 1024; // 10 MB
+
+function applyApiSecurity(request: NextRequest, response: NextResponse): NextResponse {
+  // Add security headers to every /api response
+  response.headers.set("X-Content-Type-Options", "nosniff");
+  response.headers.set("X-Frame-Options", "DENY");
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+
+  const origin = request.headers.get("origin");
+  const allowOrigin = origin && ALLOWED_ORIGINS.has(origin) ? origin : "https://adwatak.cloud";
+  response.headers.set("Access-Control-Allow-Origin", allowOrigin);
+  response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  response.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  response.headers.set("Vary", "Origin");
+
+  return response;
+}
+
 // ── Proxy Handler ────────────────────────────────────────────────
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // ── /api/* — security + CORS gate ─────────────────────────────
+  if (pathname.startsWith("/api/")) {
+    // CORS preflight short-circuit
+    if (request.method === "OPTIONS") {
+      return new NextResponse(null, { status: 204, headers: applyApiSecurity(request, new NextResponse()).headers });
+    }
+
+    // Block oversized request bodies
+    const contentLength = request.headers.get("content-length");
+    if (contentLength && parseInt(contentLength, 10) > MAX_BODY_SIZE) {
+      return applyApiSecurity(
+        request,
+        NextResponse.json({ error: "Request body too large" }, { status: 413 }),
+      );
+    }
+
+    // Block unknown cross-origin browser fetches (allow same-origin & no-origin)
+    const origin = request.headers.get("origin");
+    if (origin && !ALLOWED_ORIGINS.has(origin)) {
+      return applyApiSecurity(
+        request,
+        NextResponse.json({ error: "Origin not allowed" }, { status: 403 }),
+      );
+    }
+
+    // Apply CORS + security headers to the normal /api response
+    return applyApiSecurity(request, NextResponse.next());
+  }
+
   // ── Skip non-page routes ─────────────────────────────────────
   if (
     pathname.startsWith("/_next/") ||
-    pathname.startsWith("/api/") ||
     pathname.startsWith("/static/") ||
     pathname === "/favicon.ico" ||
     pathname === "/robots.txt" ||
