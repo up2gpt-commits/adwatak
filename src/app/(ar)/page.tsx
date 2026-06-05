@@ -1,4 +1,6 @@
 import ToolGrid from "../components/ToolGrid";
+import { SearchProvider } from "../components/SearchProvider";
+import SearchBar from "../components/SearchBar";
 
 export default function Home() {
   const featuredTools = [
@@ -11,7 +13,7 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <SearchProvider>
       {/* Hero */}
       <section className="hero scroll-fade-in">
         <div className="hero-grid"></div>
@@ -45,6 +47,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Smart Search — between badges and featured tools */}
+      <div className="mt-8 mb-4" data-scroll-target>
+        <SearchBar />
+      </div>
 
       {/* Featured / Popular Tools */}
       <section className="featured-section scroll-fade-in" style={{ marginTop: "40px" }}>
@@ -124,6 +131,6 @@ export default function Home() {
           تصفح المدونة ←
         </a>
       </div>
-    </>
+    </SearchProvider>
   );
 }
