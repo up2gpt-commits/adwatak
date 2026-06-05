@@ -288,15 +288,6 @@ export default function Header({ lang = "ar" }: HeaderProps) {
               {link.mobileIcon} {link.label}
             </a>
           ))}
-          <div className="mobile-tools-section">
-            <p className="mobile-tools-heading">🗂️ {ddLabel}</p>
-            {categories.map((cat) => (
-              <a key={cat.key} href={`${catLink}#${cat.key}`}
-                className="mobile-tools-item" onClick={() => setMenuOpen(false)}>
-                {cat.label}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </header>
