@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { chatCompletion, parseJSON, AllProvidersFailedError } from "@/app/lib/openrouter";
+import { rateLimit, getClientIp } from "@/app/lib/rate-limit";
 
 export const maxDuration = 60;
 
@@ -43,6 +44,16 @@ Return format EXACTLY:
 If the input is gibberish, empty, or not a real keyword, return: {"error": "Invalid keyword. Please enter a real search term."}`;
 
 export async function POST(req: NextRequest) {
+  // Rate limiting: 10 req / 60s per IP
+  const rl = rateLimit({ key: `api:keyword-research:${getClientIp(req)}`, max: 10, windowSec: 60 });
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: `Too many requests. Try again in ${rl.resetIn} seconds.`, retryAfter: rl.resetIn },
+      { status: 429, headers: { "Retry-After": String(rl.resetIn), "X-RateLimit-Limit": String(rl.limit), "X-RateLimit-Remaining": "0" } }
+    );
+  }
+
+
   try {
     const { keyword, lang } = await req.json();
     if (!keyword || typeof keyword !== "string" || keyword.trim().length < 2) {

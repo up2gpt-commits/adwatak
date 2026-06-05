@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import projectMemory from "../../data/project-memory.json";
+import { rateLimit, getClientIp } from "@/app/lib/rate-limit";
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
 const MODEL = "google/gemini-2.0-flash-001:free";
@@ -73,6 +74,16 @@ Respond in JSON format:
 }
 
 export async function POST(req: NextRequest) {
+  // Rate limiting: 8 req / 60s per IP
+  const rl = rateLimit({ key: `api:seo-content-generator:${getClientIp(req)}`, max: 8, windowSec: 60 });
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: `Too many requests. Try again in ${rl.resetIn} seconds.`, retryAfter: rl.resetIn },
+      { status: 429, headers: { "Retry-After": String(rl.resetIn), "X-RateLimit-Limit": String(rl.limit), "X-RateLimit-Remaining": "0" } }
+    );
+  }
+
+
   try {
     const body: ArticleRequest = await req.json();
     const { keyword, caseStudy = "", count = 5, lang = "en", angle = "" } = body;

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { chatCompletion, parseJSON, AllProvidersFailedError } from "@/app/lib/openrouter";
+import { rateLimit, getClientIp } from "@/app/lib/rate-limit";
 
 export const maxDuration = 60;
 
@@ -38,6 +39,16 @@ Return format EXACTLY:
 }`;
 
 export async function POST(req: NextRequest) {
+  // Rate limiting: 8 req / 60s per IP
+  const rl = rateLimit({ key: `api:calorie-vision:${getClientIp(req)}`, max: 8, windowSec: 60 });
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: `Too many requests. Try again in ${rl.resetIn} seconds.`, retryAfter: rl.resetIn },
+      { status: 429, headers: { "Retry-After": String(rl.resetIn), "X-RateLimit-Limit": String(rl.limit), "X-RateLimit-Remaining": "0" } }
+    );
+  }
+
+
   try {
     const { image } = await req.json();
     if (!image || typeof image !== "string")

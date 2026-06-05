@@ -1,9 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getClientIp } from "@/app/lib/rate-limit";
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
 const MODEL = "openai/gpt-4o-mini";
 
 export async function POST(req: NextRequest) {
+  // Rate limiting: 6 req / 60s per IP
+  const rl = rateLimit({ key: `api:seo-audit:${getClientIp(req)}`, max: 6, windowSec: 60 });
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: `Too many requests. Try again in ${rl.resetIn} seconds.`, retryAfter: rl.resetIn },
+      { status: 429, headers: { "Retry-After": String(rl.resetIn), "X-RateLimit-Limit": String(rl.limit), "X-RateLimit-Remaining": "0" } }
+    );
+  }
+
+
   try {
     const { url, lang } = await req.json();
 
