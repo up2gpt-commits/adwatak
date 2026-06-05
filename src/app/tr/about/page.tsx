@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Hakkımızda — Adwatak",
   description:
     "Adwatak, 50'den fazla interaktif araç sunan ücretsiz bir çevrimiçi araç platformudur — hesaplayıcılar, İslami araçlar, oluşturucular ve dönüştürücüler. Kayıt gerekmez, reklam yok.",
+  alternates: {
+    canonical: "https://adwatak.cloud/tr/about",
+  },
 };
 
 export default function AboutPage() {

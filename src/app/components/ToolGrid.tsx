@@ -90,6 +90,7 @@ const tools = [
   { title: "مواقيت الصلاة", desc: "مواقيت الصلاة حسب موقعك الجغرافي", icon: "🕐", href: "/tools/prayer-times", cat: "islamic" },
 
   // ===== أخرى =====
+  { title: "محلل السعرات بالصور", desc: "صور طعامك واحصل على تفاصيل السعرات بالذكاء الاصطناعي", icon: "📸", href: "/tools/food-calorie-analyzer", cat: "daily" },
   { title: "حاسبة العمر", desc: "عمرك بالهجري والميلادي وأبراجك", icon: "🎂", href: "/tools/age-calculator", cat: "daily" },
   { title: "حاسبة BMI", desc: "مؤشر كتلة الجسم — وزنك المثالي", icon: "⚖️", href: "/tools/bmi-calculator", cat: "daily" },
   { title: "ساعة إيقاف + مؤقت", desc: "ساعة إيقاف مع لفات ومؤقت", icon: "⏱️", href: "/tools/stopwatch", cat: "daily" },

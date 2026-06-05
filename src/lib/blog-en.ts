@@ -30,6 +30,657 @@ function todayEnStr(): string {
 
 const enBlogPosts: BlogPost[] = [
   {
+    slug: "zakat-on-real-estate-rental-income-2026",
+    title: "Zakat on Real Estate & Rental Income: Complete 2026 Guide",
+    excerpt:
+      "Do you pay Zakat on rental property? Learn exactly how Zakat applies to real estate, rental income, and property investments in 2026 — with calculation examples, scholarly opinions, and step-by-step guidance.",
+    date: "2026-06-05",
+    category: "Islamic Finance",
+    readTime: "16 min read",
+    keywords: [
+      "do you pay zakat on rental property",
+      "how to calculate zakat on rental income 2026",
+      "zakat on real estate investment",
+      "is zakat due on house you live in",
+      "zakat on rental property islamic ruling",
+      "how much zakat on rental income",
+      "zakat on commercial property vs residential",
+      "do i pay zakat on investment property",
+      "zakat on apartment building rental income",
+      "nisab for rental income zakat calculation",
+      "zakat on property you plan to sell",
+      "is zakat obligatory on saved rental money",
+    ],
+    content: `
+      <h2>Do You Have to Pay Zakat on Rental Property? The Direct Answer</h2>
+      <p><strong>Zakat is NOT due on the property itself</strong> if it is for personal use or held for long-term rental income. However, <strong>Zakat IS due on the rental income you receive</strong> — once that income has been in your possession for one full Hijri year (Hawl) and meets the Nisab threshold. In other words, you do not pay 2.5% on the market value of your apartment building. You pay Zakat on the <strong>net rental savings</strong> — the money left after expenses — when it has sat in your hands for a full lunar year and exceeds the Nisab. If you are holding property for resale (as a trader), the rules are different: Zakat applies to the <strong>current market value</strong> of the property annually. This guide covers every scenario in detail.</p>
+
+      <h2>Why Is Zakat on Real Estate So Confusing?</h2>
+      <p>Real estate is one of the most misunderstood areas of Zakat because property can serve different purposes — and each purpose has a different Zakat ruling. The same apartment building could be:</p>
+      <ul>
+        <li><strong>A personal residence</strong> — No Zakat at all. Your home is exempt.</li>
+        <li><strong>A rental property generating monthly income</strong> — No Zakat on the building itself. Zakat applies to the rental income only when it meets Nisab and completes a Hawl.</li>
+        <li><strong>Property held for resale (investment/trading)</strong> — Zakat is due on the full current market value every year, because it is treated like merchandise.</li>
+        <li><strong>Land purchased for future development</strong> — If you intend to sell it eventually, it is treated as trade goods and Zakat applies to its market value annually.</li>
+      </ul>
+      <p>The key question scholars ask is: <strong>"What is your intention for this property?"</strong> That single factor determines which Zakat rules apply.</p>
+
+      <h2>How Do You Calculate Zakat on Rental Income? Step by Step</h2>
+      <p>Here is the exact method for calculating Zakat on rental income, agreed upon by the majority of contemporary scholars including the International Islamic Fiqh Academy:</p>
+
+      <h3>Step 1: Determine Your Net Annual Rental Income</h3>
+      <p>Add up all rental income received over the year, then subtract all expenses directly related to generating that income:</p>
+      <ul>
+        <li><strong>Add:</strong> Total rent collected from all tenants over 12 months</li>
+        <li><strong>Subtract:</strong> Property maintenance and repairs</li>
+        <li><strong>Subtract:</strong> Property management fees</li>
+        <li><strong>Subtract:</strong> Insurance costs</li>
+        <li><strong>Subtract:</strong> Mortgage interest (if applicable — scholars differ on deducting interest; many say do not deduct it)</li>
+        <li><strong>Subtract:</strong> Property taxes or government fees</li>
+        <li><strong>Subtract:</strong> Vacancy losses (months when the property was unoccupied)</li>
+      </ul>
+      <p><strong>Example:</strong> You collect $24,000 in annual rent. Expenses total $6,000 (maintenance $2,000, management $1,500, insurance $1,000, taxes $1,500). Your net rental income = <strong>$18,000</strong>.</p>
+
+      <h3>Step 2: Check if It Meets the Nisab Threshold</h3>
+      <p>The Nisab is the minimum wealth threshold for Zakat. As of 2026, the Nisab in gold terms is <strong>85 grams of pure gold</strong>, and in silver terms it is <strong>595 grams of silver</strong>. Using gold prices in 2026 (approximately $75–$80 per gram), the Nisab is roughly <strong>$6,375–$6,800</strong>. If your net rental income (combined with other Zakatable assets like cash, gold, and stocks) meets or exceeds this amount, Zakat is obligatory.</p>
+      <p><strong>Important:</strong> You do not check Nisab against rental income alone. You combine it with all your other Zakatable wealth — cash in bank accounts, gold, silver, stocks, and other savings — and check the total against Nisab.</p>
+
+      <h3>Step 3: Apply the 2.5% Zakat Rate</h3>
+      <p>Once your total Zakatable wealth meets Nisab and has been held for one Hijri year, pay <strong>2.5%</strong> on the total amount.</p>
+      <p><strong>Continuing the example:</strong> Net rental income = $18,000. Cash savings = $5,000. Gold holdings = $3,000. Total Zakatable wealth = $26,000. Zakat due = $26,000 × 0.025 = <strong>$650</strong>.</p>
+
+      <h3>Step 4: Choose Your Calculation Method</h3>
+      <p>There are two accepted methods for calculating Zakat on rental income:</p>
+      <ul>
+        <li><strong>Method A — Hawl-based (most common):</strong> Track your rental income throughout the year. On your annual Zakat date, calculate the total net rental income that has been in your possession for a full Hijri year. Add it to your other Zakatable assets and pay 2.5% on the total.</li>
+        <li><strong>Method B — Monthly extraction (simpler):</strong> Each month, immediately set aside 2.5% of your net rental income for Zakat. This is easier to track and ensures you do not fall behind. Many scholars permit this method as a form of advance payment.</li>
+      </ul>
+      <p>Method B is recommended for most people because it spreads the Zakat obligation across the year and avoids a large lump-sum payment.</p>
+
+      <h2>Is Zakat Due on the Property Itself or Just the Income?</h2>
+      <p>This is the most common question, and the answer depends entirely on your intention:</p>
+
+      <h3>Property Held for Rental (Long-Term Investment)</h3>
+      <p><strong>Zakat on the property value: NO.</strong> The building, land, and apartment are not Zakatable assets because they are not "growing" wealth in the Zakat sense — they are fixed assets used to generate income. <strong>Zakat on the rental income: YES.</strong> The cash you receive from tenants is wealth that grows and is subject to Zakat under the rules of cash/wealth Zakat.</p>
+
+      <h3>Property Held for Resale (Trading/Speculation)</h3>
+      <p><strong>Zakat on the property value: YES.</strong> If you bought a property intending to sell it when the price rises, it is treated as <strong>trade merchandise (Urud al-Tijarah)</strong>. You must pay Zakat on its <strong>current market value</strong> every year on your Zakat date — not the price you paid for it. If you bought an apartment for $200,000 and it is now worth $250,000, your Zakat base is $250,000 × 0.025 = <strong>$6,250</strong>.</p>
+
+      <h3>Your Personal Residence</h3>
+      <p><strong>Zakat: NONE.</strong> Whether it is a mansion worth $2 million or a small apartment, your primary residence is completely exempt from Zakat. This is by scholarly consensus (Ijma). The same applies to furniture, cars, clothing, and personal belongings inside the home.</p>
+
+      <h2>How Does Zakat Work for Different Real Estate Scenarios?</h2>
+
+      <h3>Zakat on a Rental Apartment Building</h3>
+      <p>You own a building with 5 apartments. Each rents for $1,000/month. Annual gross income = $60,000. Expenses (maintenance, management, taxes) = $15,000. Net income = $45,000. You combine this $45,000 with your other Zakatable assets. If the total exceeds Nisab, you pay 2.5% on the combined amount. The building itself is not included in the Zakat calculation.</p>
+
+      <h3>Zakat on Vacant Land You Plan to Sell</h3>
+      <p>If you purchased land as an investment to sell later, it is treated as trade goods. Every year on your Zakat date, assess the <strong>current market value</strong> of the land and pay 2.5%. If the land was purchased for $100,000 and is now worth $130,000, Zakat = $130,000 × 0.025 = $3,250. If the land value decreased to $90,000, Zakat = $90,000 × 0.025 = $2,250.</p>
+
+      <h3>Zakat on a Mortgage-Financed Rental Property</h3>
+      <p>If you own a rental property with an outstanding mortgage, the Zakat calculation focuses on your <strong>net rental income</strong> (after mortgage payments, if you choose to deduct them — scholars differ). The property value itself is not Zakatable if held for rent. However, if you have equity in the property and are paying down the mortgage, some scholars recommend including your equity portion in your Zakat base if the property is intended for eventual resale. When in doubt, consult a local scholar.</p>
+
+      <h3>Zakat on Commercial Property (Shops, Offices, Warehouses)</h3>
+      <p>The same rules as residential rental property apply. If held for rental income, Zakat is on the net income only. If held for resale, Zakat is on the market value. Commercial properties often generate higher rental income, which means the Zakat obligation can be significant. Track your income and expenses carefully.</p>
+
+      <h2>Common Mistakes People Make with Real Estate Zakat</h2>
+
+      <h3>Mistake 1: Paying Zakat on the Full Property Value When It Is for Rent</h3>
+      <p>This is the most common error. People see their $500,000 apartment building and think they owe $12,500 in Zakat. If the building is held for rental income, you owe Zakat only on the <strong>net rental savings</strong>, not the property value. Paying on the full value means you are paying far more than required — which is generous but not obligatory.</p>
+
+      <h3>Mistake 2: Not Paying Zakat on Rental Income at All</h3>
+      <p>Some people assume that because the property is "real estate," Zakat does not apply. This is incorrect. Rental income is cash wealth, and cash wealth is subject to Zakat. If you have been collecting rent for years without paying Zakat on the accumulated savings, you may owe Zakat for past years. Calculate what you should have paid and make up the difference.</p>
+
+      <h3>Mistake 3: Forgetting to Combine All Zakatable Assets</h3>
+      <p>Zakat is not calculated on each asset type separately. You must combine all Zakatable wealth — cash, gold, stocks, rental income savings, business inventory — into one total, check it against Nisab, and pay 2.5% on the combined amount. Do not calculate rental income Zakat in isolation.</p>
+
+      <h3>Mistake 4: Using the Wrong Hawl Start Date</h3>
+      <p>Your Hawl (one-year period) starts when your wealth <strong>first reaches Nisab</strong>, not from the beginning of the calendar year. If your total wealth crossed the Nisab threshold in Ramadan, your Zakat year ends next Ramadan. Many people simplify this by choosing a fixed date (like 1st Ramadan or 1st Muharram) and paying on that date every year — this is permitted by most scholars.</p>
+
+      <h2>What Do the Four Schools of Thought Say?</h2>
+      <p>There is a well-known difference of opinion among the four Sunni schools (Madhahib) regarding Zakat on rental income:</p>
+      <ul>
+        <li><strong>Hanafi school:</strong> The most lenient on this issue. Hanafi scholars generally say Zakat is due on rental income only when it has been held for a full year AND meets Nisab. The property itself is never Zakatable if not for trade. Many contemporary Hanafi scholars also allow deducting expenses from rental income before calculating Zakat.</li>
+        <li><strong>Shafi'i school:</strong> Similar to Hanafi — Zakat on the income, not the property. However, some Shafi'i scholars are stricter about the Hawl requirement and say each rental payment must individually complete a year.</li>
+        <li><strong>Maliki school:</strong> Malikis generally agree that Zakat is on the net income. They also have detailed rules about when income is considered "mixed" with existing wealth for Hawl purposes.</li>
+        <li><strong>Hanbali school:</strong> Hanbalis agree that rental income is subject to Zakat. Some Hanbali scholars recommend the monthly extraction method (setting aside 2.5% of each rent payment) to avoid complications with the Hawl.</li>
+      </ul>
+      <p>The <strong>majority contemporary position</strong> — endorsed by the International Islamic Fiqh Academy (OIC) and most modern Zakat councils — is: <strong>Zakat is due on net rental income when combined with other wealth and meeting Nisab for one Hawl. The property itself is exempt if held for rent.</strong></p>
+
+      <h2>How to Track Your Rental Income for Zakat: Practical Tips</h2>
+      <p>Accurate Zakat calculation requires good records. Here is a practical system:</p>
+      <ul>
+        <li><strong>Open a separate bank account</strong> for rental income. This makes tracking much easier than mixing it with personal funds.</li>
+        <li><strong>Record every expense</strong> related to the property: repairs, management fees, insurance, taxes. Keep receipts.</li>
+        <li><strong>Set a fixed Zakat date</strong> — many people choose 1st Ramadan or the date they first reached Nisab. Mark it on your calendar.</li>
+        <li><strong>Use a spreadsheet</strong> to track monthly net income. At the end of your Zakat year, sum the totals.</li>
+        <li><strong>Combine with other assets</strong> on your Zakat date: add cash, gold, stocks, and any other Zakatable wealth to your rental savings total.</li>
+        <li><strong>Use our <a href="/en/tools/zakat-calculator">Zakat Calculator</a></strong> to quickly compute your total Zakat obligation once you have your numbers.</li>
+      </ul>
+
+      <h2>Zakat on Real Estate vs. Other Investments: A Comparison</h2>
+      <p>Understanding how real estate Zakat compares to other investments helps you plan your overall Zakat strategy:</p>
+      <ul>
+        <li><strong>Cash savings:</strong> 2.5% on the full amount after one Hawl. Simplest form of Zakat.</li>
+        <li><strong>Gold and silver:</strong> 2.5% on the market value if you hold 85g+ of gold or 595g+ of silver. <a href="/en/tools/gold-calculator">Use our Gold Calculator</a> to check current values.</li>
+        <li><strong>Stocks and shares:</strong> 2.5% on the market value of shares held for trading, or on the income/dividends if held for long-term investment. <a href="/en/blog/zakat-on-stocks-investment-portfolios-2026">Read our guide on Zakat on stocks</a>.</li>
+        <li><strong>Cryptocurrency:</strong> 2.5% on the market value, treated like cash/trade goods. <a href="/en/blog/zakat-on-cryptocurrency-digital-assets-2026">Read our crypto Zakat guide</a>.</li>
+        <li><strong>Rental property:</strong> 2.5% on net rental income (not property value) when combined with other wealth and meeting Nisab.</li>
+        <li><strong>Property for resale:</strong> 2.5% on the current market value annually — same as trade goods.</li>
+      </ul>
+
+      <h2>Can You Deduct Expenses from Rental Income Before Calculating Zakat?</h2>
+      <p><strong>Yes, the majority of scholars permit deducting direct expenses</strong> from rental income before calculating Zakat. This includes maintenance, management fees, insurance, property taxes, and vacancy losses. What you cannot deduct is personal living expenses, debt payments (other than property-related costs), or money you spent on yourself and your family.</p>
+      <p>The logic is simple: Zakat is on <strong>net wealth</strong>, not gross income. If you collected $30,000 in rent but spent $10,000 keeping the property functional, your Zakatable amount from this source is $20,000 — not $30,000.</p>
+
+      <h2>What If You Cannot Afford to Pay Zakat on Rental Income?</h2>
+      <p>Zakat is only obligatory if your wealth meets Nisab. If your rental income is fully spent on living expenses and you have no accumulated savings, you may not owe Zakat at all. Zakat is a right of the poor in your wealth — if there is no surplus wealth beyond your needs, there is no Zakat obligation. However, if you have savings from rental income that have been sitting for a year, Zakat is due regardless of your current financial situation.</p>
+
+      <h2>Related Tools and Resources</h2>
+      <p>Make your Zakat calculation easier with these free tools:</p>
+      <ul>
+        <li><strong><a href="/en/tools/zakat-calculator">Zakat Calculator</a></strong> — Calculate your total Zakat on all wealth types including rental income.</li>
+        <li><strong><a href="/en/tools/gold-calculator">Gold Calculator</a></strong> — Check current gold prices to determine your Nisab threshold.</li>
+        <li><strong><a href="/en/tools/hijri-converter">Hijri Date Converter</a></strong> — Track your Hijri year for accurate Hawl calculation.</li>
+        <li><strong><a href="/en/tools/inheritance-calculator">Islamic Inheritance Calculator</a></strong> — Plan your estate according to Islamic law.</li>
+        <li><strong><a href="/en/blog/calculate-zakat-on-gold-2026-complete-guide">Complete Guide to Zakat on Gold</a></strong> — Understand how gold holdings affect your Zakat.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <h3>Do I Pay Zakat on My House If I Rent a Room?</h3>
+      <p>Your primary residence is always exempt from Zakat, regardless of whether you rent out a room. However, the <strong>rental income you receive</strong> is subject to Zakat like any other cash income — if it meets Nisab and completes a Hawl when combined with your other wealth. The house itself remains exempt.</p>
+
+      <h3>Is Zakat Due on Rental Income I Immediately Spend?</h3>
+      <p>If you receive rent and immediately spend it on bills, food, or other expenses — and nothing remains by the end of the month — then there is no accumulated wealth to pay Zakat on. Zakat is on <strong>savings</strong>, not income that is fully consumed. However, if you consistently save a portion of your rental income, that savings is subject to Zakat after one Hawl.</p>
+
+      <h3>How Do I Calculate Zakat on Multiple Rental Properties?</h3>
+      <p>Combine the net income from all rental properties into one total. Add this to your other Zakatable assets (cash, gold, stocks). Check the combined total against Nisab. If it meets the threshold, pay 2.5% on the entire amount. You do not calculate Zakat separately for each property.</p>
+
+      <h3>Do I Pay Zakat on the Equity in a Mortgage-Financed Property?</h3>
+      <p>If the property is held for rental income, most scholars say no — you pay Zakat on the net rental income only, not on your equity in the property. If the property is held for resale, then yes, Zakat applies to the full market value (or your equity portion, depending on the scholar you follow). This is an area where scholarly opinions vary, so consult a trusted local scholar for your specific situation.</p>
+
+      <h3>What If I Bought Property as a Long-Term Investment but Might Sell It Later?</h3>
+      <p>Your Zakat treatment depends on your <strong>current intention</strong>. If you are currently holding it for rental income, it is treated as a rental property (Zakat on income only). If you change your intention to sell, it becomes a trade good (Zakat on market value). If you are genuinely undecided, most scholars recommend treating it as a rental property (the more lenient position) until you make a firm decision to sell.</p>
+
+      <h3>Can I Deduct Mortgage Payments from My Rental Income for Zakat?</h3>
+      <p>Scholars differ on this. Some permit deducting the full mortgage payment (principal + interest) as a property-related expense. Others say only deduct the interest portion, or only deduct expenses directly related to maintaining the property (not debt repayment). The safest approach is to consult a scholar who understands both Islamic finance and your local mortgage structure. When in doubt, do not deduct mortgage payments — this results in paying slightly more Zakat, which is the more cautious approach.</p>
+
+      <h3>Is Zakat Due on Commercial Real Estate Differently Than Residential?</h3>
+      <p>The Zakat rules are the same regardless of property type. If held for rent, Zakat is on net income. If held for resale, Zakat is on market value. The only difference is practical: commercial properties often have higher rental income, different expense structures (CAM charges, longer vacancy periods), and different market dynamics. Apply the same principles but adjust the numbers accordingly.</p>
+
+      <h3>What Happens If I Did Not Pay Zakat on Rental Income in Previous Years?</h3>
+      <p>If you were obligated to pay Zakat on rental income in previous years but did not, you must make up the missed payments. Calculate what you should have paid each year (net rental income × 2.5%, or combined with other assets) and pay the total as soon as possible. This is a debt to the poor and must be fulfilled. If you genuinely did not know the ruling, Allah does not burden a soul beyond its capacity — but now that you know, make up the payments.</p>
+
+      <h3>Should I Pay Zakat on Rental Income Monthly or Annually?</h3>
+      <p>Both methods are permissible. <strong>Monthly payment</strong> (setting aside 2.5% of each rent payment) is simpler and spreads the burden. <strong>Annual payment</strong> (calculating total net income at the end of your Hawl) is more precise. Many scholars recommend monthly payment for people with steady rental income because it is easier to manage and ensures you do not forget. The total amount paid should be the same either way.</p>
+
+      <h3>Does Zakat Apply to Airbnb or Short-Term Rental Income?</h3>
+      <p>Yes. Short-term rental income (Airbnb, furnished apartments, vacation rentals) is treated the same as long-term rental income for Zakat purposes. The net income — after deducting platform fees, cleaning costs, furnishing expenses, and other direct costs — is subject to Zakat when it meets Nisab and completes a Hawl. The property itself remains exempt if held for rental purposes.</p>
+
+      <h3>How Is Zakat on Real Estate Different from Islamic Inheritance Rules?</h3>
+      <p>Zakat and inheritance are completely different Islamic obligations. <strong>Zakat</strong> is an annual wealth tax of 2.5% on surplus wealth, paid during your lifetime. <strong>Inheritance (Faraid)</strong> is the distribution of your estate after death, with fixed shares for heirs specified in the Quran. Real estate you own is subject to Zakat during your life (on income or value, depending on intention) and is distributed according to inheritance rules after your death. <a href="/en/blog/islamic-inheritance-distribution-guide">Read our complete inheritance guide</a> to understand how property is divided among heirs.</p>
+    `,
+  },
+  {
+    slug: "how-prayer-times-are-calculated-math-explained",
+    title: "How Prayer Times Are Calculated — The Math Behind Every Adhan",
+    excerpt:
+      "Prayer times are calculated using the sun's position relative to your location. Learn exactly how Fajr, Dhuhr, Asr, Maghrib, and Isha times are determined — the astronomical formulas, angles, and methods used by every prayer app in the world.",
+    date: "2026-06-04",
+    category: "Islamic",
+    readTime: "14 min read",
+    keywords: [
+      "how are prayer times calculated",
+      "what time is fajr prayer calculated",
+      "how do prayer apps calculate prayer times",
+      "fajr angle 18 degrees vs 15 degrees",
+      "how is asr prayer time calculated",
+      "prayer time calculation methods",
+      "why prayer times differ between apps",
+      "how to calculate qibla and prayer times",
+      "prayer time calculation formula explained",
+      "makkah prayer time vs local calculation",
+      "what causes prayer time differences between mosques",
+      "hanafi asr time vs standard asr time",
+    ],
+    content: `
+      <h2>How Are Prayer Times Calculated? The Complete Mathematical Explanation</h2>
+      <p>Prayer times are calculated using <strong>astronomical formulas based on the sun's position</strong> relative to a specific geographic location. Each of the five daily prayers — Fajr, Dhuhr, Asr, Maghrib, and Isha — corresponds to a specific solar angle or event. <strong>Fajr</strong> begins at true dawn when the sun is 15–18 degrees below the horizon. <strong>Dhuhr</strong> starts when the sun passes its zenith (highest point). <strong>Asr</strong> begins when an object's shadow equals its length (Hanafi: twice its length) plus the noon shadow. <strong>Maghrib</strong> starts at sunset when the sun's disk disappears below the horizon. <strong>Isha</strong> begins when twilight disappears, typically when the sun is 15–18 degrees below the horizon. Every prayer app, mosque timetable, and website uses these same core formulas — the differences come down to which <strong>calculation angles and conventions</strong> they adopt.</p>
+
+      <h2>Why Do Prayer Times Differ Between Apps and Mosques?</h2>
+      <p>If you have ever compared prayer times on your phone with your local mosque's timetable and found a 5–15 minute difference, you are not imagining things. The variation comes from several legitimate factors:</p>
+      <ul>
+        <li><strong>Calculation method:</strong> Different organizations use different sun angles for Fajr and Isha. The Muslim World League uses 18° for Fajr and 17° for Isha. ISNA (North America) uses 15° for both. Umm al-Qura (Makkah) uses a fixed 90-minute offset from Maghrib for Isha. Egypt uses 19.5° for Fajr and 17.5° for Isha.</li>
+        <li><strong>Asr school of thought:</strong> The Hanafi school calculates Asr when an object's shadow is <strong>twice</strong> its own length plus the noon shadow. The Shafi'i, Maliki, and Hanbali schools use <strong>once</strong> the length. This can create a difference of 30–60 minutes.</li>
+        <li><strong>Geographic coordinates:</strong> Even a small error in latitude/longitude can shift prayer times by several minutes, especially at higher latitudes.</li>
+        <li><strong>Altitude and terrain:</strong> Mosques in valleys or high-altitude cities may adjust times based on actual visible sunset vs. calculated sunset.</li>
+        <li><strong>Seasonal adjustments:</strong> Some mosques round times slightly for community convenience, especially in summer when days are extremely long.</li>
+      </ul>
+      <p>None of these approaches is "wrong" — they represent different scholarly interpretations and practical considerations. The key is consistency and following a reliable method.</p>
+
+      <h2>The Five Prayers: Exact Calculation for Each</h2>
+
+      <h3>How Is Fajr Time Calculated?</h3>
+      <p>Fajr begins at <strong>Subul-Sadiq</strong> (true dawn) — the horizontal spread of light across the eastern horizon, as opposed to the vertical glow of false dawn (Fajr al-Kadhib) that appears earlier. Astronomically, this corresponds to when the <strong>center of the sun is at a specific angle below the horizon</strong>.</p>
+      <p>The most commonly used angles are:</p>
+      <ul>
+        <li><strong>18 degrees:</strong> Used by the Muslim World League, most of the Middle East, and many South Asian countries. This produces an earlier Fajr time.</li>
+        <li><strong>15 degrees:</strong> Used by ISNA (Islamic Society of North America). This produces a later Fajr time, which some scholars prefer for safety.</li>
+        <li><strong>19.5 degrees:</strong> Used by the Egyptian General Survey Authority. This produces the earliest Fajr time among major methods.</li>
+      </ul>
+      <p>The formula calculates the time when the sun's geometric center reaches the chosen angle below the horizon, then adjusts for atmospheric refraction (which bends sunlight and makes the sun appear slightly higher than it actually is). At higher latitudes (above 55°N), these angles can produce Fajr times that are extremely early or do not exist at all during certain weeks in summer — which is why special "high-latitude" rules were developed.</p>
+
+      <h3>How Is Dhuhr Time Calculated?</h3>
+      <p>Dhuhr is the simplest prayer to calculate. It begins when the <strong>sun crosses the local meridian</strong> — its highest point in the sky for that day. This is essentially <strong>solar noon</strong>, though it rarely matches exactly 12:00 on your clock.</p>
+      <p>The formula accounts for three factors:</p>
+      <ul>
+        <li><strong>Longitude correction:</strong> Every degree of longitude away from your time zone's reference meridian shifts solar noon by 4 minutes. If you live 5 degrees east of the reference, solar noon occurs 20 minutes before noon. If 5 degrees west, 20 minutes after.</li>
+        <li><strong>Equation of time:</strong> Earth's elliptical orbit and axial tilt cause solar noon to vary by up to ±16 minutes throughout the year compared to clock noon.</li>
+        <li><strong>Daylight saving time:</strong> If your region observes DST, the clock shifts forward by 1 hour, pushing Dhuhr later on the clock.</li>
+      </ul>
+      <p>In practice, Dhuhr on your clock might fall anywhere from 11:30 AM to 1:30 PM depending on your location and time of year. Most apps add a small buffer (1–3 minutes) after the exact meridian crossing to ensure the sun has definitively passed its zenith.</p>
+
+      <h3>How Is Asr Time Calculated?</h3>
+      <p>Asr begins when the shadow of any vertical object equals a specific multiple of the object's height <strong>plus the shadow length at solar noon</strong>. This is where the major scholarly difference exists:</p>
+      <ul>
+        <li><strong>Shafi'i, Maliki, and Hanbali (Standard):</strong> Shadow = object height + noon shadow. This is the most common method worldwide and produces an earlier Asr time.</li>
+        <li><strong>Hanafi:</strong> Shadow = 2 × object height + noon shadow. This produces a later Asr time, typically 30–60 minutes after the standard method.</li>
+      </ul>
+      <p>The astronomical formula converts this shadow ratio into a solar elevation angle. For the standard method, the sun angle at Asr varies throughout the year (since the noon shadow length changes with the seasons). In winter, when the sun is lower, Asr starts earlier. In summer, when the sun is higher, Asr starts later.</p>
+      <p><strong>Practical example:</strong> In Riyadh on June 21 (summer solstice), standard Asr might begin around 3:15 PM, while Hanafi Asr would begin around 4:00 PM. On December 21 (winter solstice), standard Asr might begin around 2:45 PM, and Hanafi around 3:30 PM.</p>
+
+      <h3>How Is Maghrib Time Calculated?</h3>
+      <p>Maghrib begins at <strong>sunset</strong> — when the upper edge of the sun's disk disappears below the horizon. The calculation accounts for:</p>
+      <ul>
+        <li><strong>Solar angle:</strong> The standard is 0.833° below the horizon (accounting for the sun's apparent radius of 0.267° and average atmospheric refraction of 0.566°).</li>
+        <li><strong>Altitude adjustment:</strong> If you are on a mountain or in a high-rise building, you can see the sun set later than someone at sea level. Some apps allow you to input your altitude for precision.</li>
+        <li><strong>Terrain:</strong> Mountains to the west can block the sun earlier than the calculated time. Some mosques in mountainous areas adjust Maghrib slightly earlier based on actual observation.</li>
+      </ul>
+      <p>Maghrib is unique because it is the only prayer that is traditionally tied to <strong>actual visual observation</strong> of the sunset. The Prophet Muhammad (peace be upon him) said: "Prayer time is from when this twilight (Fajr) appears until the shadow becomes equal to the object (Asr)... Maghrib time remains as long as twilight has not disappeared." This is why some scholars emphasize that Maghrib should be prayed promptly — within 15–30 minutes of sunset.</p>
+
+      <h3>How Is Isha Time Calculated?</h3>
+      <p>Isha begins when <strong>complete darkness</strong> arrives — when the twilight glow disappears from the western horizon. Like Fajr, this is defined by the sun's angle below the horizon:</p>
+      <ul>
+        <li><strong>17 degrees:</strong> Muslim World League. This is the most widely used angle globally.</li>
+        <li><strong>15 degrees:</strong> ISNA. Produces a later Isha time.</li>
+        <li><strong>18 degrees:</strong> Used by some South Asian countries. Produces an earlier Isha time.</li>
+        <li><strong>Fixed time (Umm al-Qura):</strong> Isha is set at exactly 90 minutes after Maghrib (or 120 minutes during Ramadan). This method is used in Makkah and some Gulf countries.</li>
+        <li><strong>14 degrees:</strong> Used by the University of Islamic Sciences, Karachi. Produces a later Isha time.</li>
+      </ul>
+      <p>At extreme latitudes (above approximately 55°N), the sun may never reach 17° below the horizon during summer months. This creates a period where "true night" never arrives. Scholars have proposed several solutions: using the nearest day when Isha is calculable, using the nearest city at a normal latitude, or using a fixed proportion of the night. Most major apps implement one of these high-latitude adjustments.</p>
+
+      <h2>What Are the Major Prayer Time Calculation Methods?</h2>
+      <p>Different regions and organizations have standardized specific parameter sets. Here are the most widely used methods:</p>
+
+      <h3>Muslim World League (MWL)</h3>
+      <p>Used across Europe, the Middle East, and parts of Africa. Fajr angle: 18°. Isha angle: 17°. Asr: standard (shadow = 1× height). This is the default method in many popular apps including Muslim Pro and PrayTimes.org.</p>
+
+      <h3>ISNA (Islamic Society of North America)</h3>
+      <p>Used across the United States and Canada. Fajr angle: 15°. Isha angle: 15°. Asr: standard. Designed for North American latitudes with slightly more conservative angles.</p>
+
+      <h3>Egyptian General Survey Authority (EGA)</h3>
+      <p>Used in Egypt and parts of North Africa. Fajr angle: 19.5°. Isha angle: 17.5°. Asr: standard. Produces the earliest Fajr among major methods.</p>
+
+      <h3>University of Islamic Sciences, Karachi (UISK)</h3>
+      <p>Used in Pakistan, Bangladesh, and parts of India. Fajr angle: 18°. Isha angle: 18°. Asr: standard. Produces an earlier Isha time.</p>
+
+      <h3>Umm al-Qura University (Makkah)</h3>
+      <p>Used in Saudi Arabia. Fajr angle: 18.5°. Isha: fixed 90 minutes after Maghrib (120 minutes in Ramadan). Asr: standard. The fixed Isha time is unique to this method.</p>
+
+      <h3>Dubai</h3>
+      <p>Used in the UAE. Fajr angle: 18.2°. Isha angle: 18.2°. Asr: standard. Very similar to MWL but with slight adjustments.</p>
+
+      <h3>Qatar</h3>
+      <p>Similar to Umm al-Qura but with Fajr at 18° and Isha as a fixed 90 minutes after Maghrib.</p>
+
+      <h3>Kuwait</h3>
+      <p>Fajr angle: 18°. Isha angle: 17.5°. Asr: standard.</p>
+
+      <h3>Moonsighting Committee</h3>
+      <p>Fajr angle: 18°. Isha angle: 18°. Asr: standard. This method also incorporates moon sighting for Ramadan and Eid determinations.</p>
+
+      <h3>Diyanet (Turkey)</h3>
+      <p>Used in Turkey and the Balkans. Fajr angle: 18°. Isha angle: 17°. Asr: standard. Turkey uses the standard European time zone system with these angles.</p>
+
+      <h3>Singapore</h3>
+      <p>Fajr angle: 20°. Isha angle: 18°. Asr: standard. The higher Fajr angle (20°) produces a later Fajr time, which is common in Southeast Asian countries.</p>
+
+      <h2>How Do Prayer Apps Handle High Latitude Locations?</h2>
+      <p>In cities like London, Oslo, Stockholm, and Anchorage, the sun's behavior in summer and winter creates extreme prayer time challenges. In summer, Fajr can begin at 1:00 AM and Isha may not start until 1:00 AM the next day — leaving almost no night. In winter, the opposite occurs with very short days.</p>
+      <p>Scholars and developers have developed several approaches:</p>
+      <ul>
+        <li><strong>Angle-based division:</strong> The night is divided into sevenths, and Fajr/Isha are assigned to specific portions. This is the "one-seventh" rule used by some scholars.</li>
+        <li><strong>Nearest city rule:</strong> Use the prayer times of the nearest city at a "normal" latitude (below 48°) where standard angles work.</li>
+        <li><strong>Nearest day rule:</strong> Use the last day when standard angles produced valid results.</li>
+        <li><strong>Fixed interval:</strong> Set Fajr at a fixed time before sunrise (e.g., 90 minutes) and Isha at a fixed time after Maghrib (e.g., 90 minutes).</li>
+        <li><strong>Combination:</strong> Most apps use a hybrid approach, switching between methods depending on the severity of the latitude issue.</li>
+      </ul>
+      <p>If you live at a high latitude, consult your local mosque or Islamic center for their recommended approach. Many communities in Scandinavia and northern Canada have established local conventions.</p>
+
+      <h2>How to Verify Your Prayer Times Are Accurate</h2>
+      <p>Here is a practical checklist to ensure your prayer times are correct:</p>
+      <ul>
+        <li><strong>Check your coordinates:</strong> Open your prayer app settings and verify your latitude and longitude. An error of 0.5° can shift times by 2–5 minutes.</li>
+        <li><strong>Confirm the calculation method:</strong> Make sure your app uses the method recommended by your local mosque or country. In Saudi Arabia, use Umm al-Qura. In Egypt, use EGA. In the US, ISNA or MWL are common.</li>
+        <li><strong>Check Asr setting:</strong> If you follow the Hanafi school, ensure your app is set to Hanafi Asr. Most apps default to the standard (Shafi'i) method.</li>
+        <li><strong>Account for altitude:</strong> If you live in a high-rise building or mountainous area, adjust accordingly. Higher altitude = later sunset = later Maghrib.</li>
+        <li><strong>Cross-reference:</strong> Compare your app with at least two other sources — your local mosque timetable, another app, and our <a href="/en/tools/prayer-times">Prayer Times tool</a> at Adwatak.</li>
+        <li><strong>Seasonal awareness:</strong> Prayer times shift by 30–90 minutes over the course of a year in most locations. Do not rely on a printed timetable from last year.</li>
+      </ul>
+
+      <h2>How Qibla Direction Relates to Prayer Time Calculations</h2>
+      <p>The same astronomical formulas used to calculate prayer times are also used to determine the <strong>Qibla direction</strong> (direction of the Kaaba in Makkah). Both calculations require knowing your exact latitude and longitude, and both use spherical trigonometry to determine the relationship between your location and a reference point.</p>
+      <p>The Qibla calculation uses the <strong>great circle formula</strong> — the shortest path between two points on a sphere. This is why the Qibla direction from North America is northeast (not east, as many people assume), and from Japan it is west-northwest. If you want to find the Qibla direction from your city, use our <a href="/en/tools/qibla-direction">Qibla Direction tool</a> for an accurate, instant result.</p>
+
+      <h2>Common Mistakes People Make with Prayer Times</h2>
+
+      <h3>Mistake 1: Using the Wrong Calculation Method</h3>
+      <p>Many Muslims download a prayer app and never check which calculation method it uses. If you live in Saudi Arabia but your app is set to ISNA (North American) settings, your Fajr could be off by 15–20 minutes. Always verify the method matches your region.</p>
+
+      <h3>Mistake 2: Ignoring Hanafi Asr</h3>
+      <p>Hanafi Muslims who do not change their app's Asr setting will pray Asr 30–60 minutes too early. This is one of the most common errors. Go into your app's settings and select "Hanafi" for Asr if that is your madhab.</p>
+
+      <h3>Mistake 3: Relying on Outdated Printed Timetables</h3>
+      <p>Paper timetables are often printed for an entire month using a single calculation. But prayer times shift by 1–2 minutes per day. Over a month, this accumulates to 30–60 minutes of drift. Always use a live digital source for accuracy.</p>
+
+      <h3>Mistake 4: Not Accounting for Daylight Saving Time</h3>
+      <p>When clocks spring forward or fall back, your prayer times shift by a full hour. Some apps handle this automatically; others do not. If you notice a sudden 1-hour jump in your prayer times, check your DST settings.</p>
+
+      <h3>Mistake 5: Confusing Solar Noon with 12:00 PM</h3>
+      <p>Dhuhr is based on solar noon, not clock noon. In some cities, solar noon occurs at 11:45 AM or 1:15 PM on your clock. If you assume Dhuhr is always at 12:15, you could be praying outside the valid time.</p>
+
+      <h2>Practical Example: Calculating Prayer Times for Riyadh on June 4, 2026</h2>
+      <p>Here is how the math works for a real location. Riyadh, Saudi Arabia (latitude 24.7136°N, longitude 46.6753°E) on June 4, 2026:</p>
+      <ul>
+        <li><strong>Sunrise:</strong> Calculated at approximately 5:05 AM. The sun's center crosses the horizon (adjusted for refraction at 0.833°).</li>
+        <li><strong>Solar noon:</strong> Calculated at approximately 11:53 AM (accounting for Riyadh's longitude offset from the time zone meridian and the equation of time).</li>
+        <li><strong>Dhuhr:</strong> 11:53 AM + 2 minute buffer = <strong>11:55 AM</strong></li>
+        <li><strong>Asr (standard):</strong> When shadow = object height + noon shadow. Calculated at approximately <strong>3:25 PM</strong></li>
+        <li><strong>Asr (Hanafi):</strong> When shadow = 2× object height + noon shadow. Calculated at approximately <strong>4:10 PM</strong></li>
+        <li><strong>Sunset:</strong> Calculated at approximately 6:38 PM.</li>
+        <li><strong>Maghrib:</strong> 6:38 PM + 2 minute buffer = <strong>6:40 PM</strong></li>
+        <li><strong>Isha (Umm al-Qura):</strong> Maghrib + 90 minutes = <strong>8:10 PM</strong></li>
+        <li><strong>Isha (MWL 17°):</strong> When sun reaches 17° below horizon = approximately <strong>8:05 PM</strong></li>
+        <li><strong>Fajr (Umm al-Qura 18.5°):</strong> When sun reaches 18.5° below horizon = approximately <strong>3:55 AM</strong></li>
+      </ul>
+      <p>Notice how the different methods produce slightly different times. The Umm al-Qura fixed Isha (8:10 PM) is close to the MWL angle-based Isha (8:05 PM), but they are calculated using completely different approaches.</p>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <h3>Why Do Different Prayer Apps Show Different Times for the Same Location?</h3>
+      <p>Different apps use different calculation methods, sun angles, and rounding conventions. For example, one app might use the Muslim World League method (Fajr at 18°) while another uses ISNA (Fajr at 15°), creating a 10–15 minute difference in Fajr. Additionally, some apps round times to the nearest 5 minutes for simplicity, while others show exact minutes. The app's geocoding accuracy also matters — if your coordinates are slightly off, the times will shift. To get the most accurate times, use an app that lets you select your preferred calculation method and verify your coordinates.</p>
+
+      <h3>What Is the Correct Angle for Fajr — 15°, 18°, or 19.5°?</h3>
+      <p>There is scholarly debate on this question. The 18° angle is the most widely accepted and is used by the Muslim World League, which represents scholars from over 200 countries. The 15° angle (used by ISNA) is considered more conservative by some scholars because it produces a later Fajr, ensuring you do not start fasting or praying too early. The 19.5° angle (Egyptian method) produces the earliest Fajr. All three are legitimate scholarly positions. The safest approach is to follow the method used by your local mosque or country's official religious authority.</p>
+
+      <h3>How Is Asr Time Different in the Hanafi School?</h3>
+      <p>In the Hanafi school, Asr begins when the shadow of an object is equal to <strong>twice</strong> the object's height plus the shadow at solar noon. In the Shafi'i, Maliki, and Hanbali schools, it is <strong>once</strong> the object's height plus the noon shadow. This means Hanafi Asr starts later — typically 30 to 60 minutes after the standard Asr time, depending on the season and latitude. If you are Hanafi, make sure your prayer app has a "Hanafi Asr" setting. Most major apps including Muslim Pro, Athan, and PrayTimes offer this option in their settings.</p>
+
+      <h3>Can I Pray Isha Right After Maghrib?</h3>
+      <p>Technically, yes — Isha begins when twilight disappears, which happens at a specific sun angle below the horizon. However, it is recommended (Mustahabb) to delay Isha slightly. The Prophet Muhammad (peace be upon him) said: "If it were not a hardship for my Ummah, I would have delayed this prayer to the middle of the night." Most scholars recommend praying Isha within the first third of the night, and some prefer the first half. In summer at high latitudes, when Isha may start very late, many scholars permit praying Isha earlier for convenience.</p>
+
+      <h3>What Happens to Prayer Times in Places Like Norway or Alaska in Summer?</h3>
+      <p>In extreme northern latitudes, the sun may not dip far enough below the horizon for Fajr and Isha to be calculated using standard angles. During certain weeks in summer, there may be no true night — the sun barely sets and immediately rises again. Scholars have ruled that Muslims in these locations should use alternative methods: either the nearest day when normal times are possible, the nearest city at a normal latitude, or divide the night into portions and assign Fajr and Isha to specific segments. Many mosques in Scandinavia and northern Canada have established local conventions — consult your local Islamic center for guidance.</p>
+
+      <h3>How Accurate Are Phone Compass Apps for Qibla Direction?</h3>
+      <p>Phone compass apps can be accurate to within 2–5 degrees if properly calibrated, but they are susceptible to magnetic interference from metal objects, electronics, and building structures. For the most accurate Qibla direction, use a dedicated tool like our <a href="/en/tools/qibla-direction">Qibla Direction Calculator</a> at Adwatak, which uses your GPS coordinates and spherical trigonometry to calculate the exact great-circle direction to the Kaaba. This method is more reliable than a magnetic compass, especially indoors.</p>
+
+      <h3>Why Does My Mosque's Fajr Time Differ from My App by 10 Minutes?</h3>
+      <p>This is extremely common and usually has a simple explanation. Your mosque may use a different calculation method, a different Fajr angle, or may add a safety buffer to ensure Fajr is not prayed too early. Some mosques also use actual moon sighting and visual dawn observation rather than purely astronomical calculations. Additionally, if your mosque is in a different part of the city or at a different altitude, the times will naturally differ slightly. A 5–10 minute difference is normal and does not mean either source is wrong.</p>
+
+      <h3>How Do I Calculate Prayer Times Manually Without an App?</h3>
+      <p>You can calculate approximate prayer times using basic astronomical data. For any location, you need: (1) your latitude and longitude, (2) the date, and (3) the sun's declination for that day (available in astronomical almanacs or online). Using the formula: cos(H) = [sin(−0.833°) − sin(lat) × sin(dec)] / [cos(lat) × cos(dec)], where H is the hour angle, you can calculate sunrise and sunset. From there, Dhuhr is solar noon, Asr uses the shadow ratio formula, and Fajr/Isha use their respective angles. However, this requires trigonometry and is time-consuming — which is why most people use apps or our <a href="/en/tools/prayer-times">Prayer Times tool</a> for instant, accurate results.</p>
+
+      <h3>Is It Permissible to Combine Prayers to Avoid Difficult Times?</h3>
+      <p>Combining prayers (Jam') is permitted in specific circumstances according to most scholars. The Hanafi school generally only permits combining at Arafah and Muzdalifah during Hajj. The Shafi'i and Hanbali schools permit combining due to rain, illness, or travel. Some scholars also permit combining for genuine hardship, such as extreme prayer times at high latitudes. If you face genuinely difficult prayer times (e.g., Fajr at 2:00 AM and Isha at 1:00 AM with only 1 hour of sleep), consult a knowledgeable scholar about your specific situation.</p>
+
+      <h3>How Does the Equation of Time Affect Prayer Times?</h3>
+      <p>The equation of time accounts for the fact that Earth's orbit is elliptical (not perfectly circular) and its axis is tilted. This means the sun does not cross the meridian at exactly 12:00 clock time every day. The difference ranges from about −14 minutes (in November) to +16 minutes (in February). This affects Dhuhr time directly — solar noon might occur at 11:46 AM or 12:14 PM on your clock. All accurate prayer time calculators account for this. If you are calculating manually, you can find the equation of time value for any date in astronomical tables.</p>
+
+      <h3>What Is the Best Prayer Time App to Use?</h3>
+      <p>The best app is one that: (1) uses the calculation method recommended in your country, (2) allows you to select your Asr school (Hanafi vs. standard), (3) updates automatically for daylight saving time, (4) uses accurate GPS coordinates, and (5) is regularly updated. Popular options include Muslim Pro, Athan, PrayTimes, and the built-in prayer time features on most smartphones. You can also use our <a href="/en/tools/prayer-times">Prayer Times tool</a> at Adwatak for a quick, accurate reference without installing anything.</p>
+
+      <h2>Summary</h2>
+      <p>Prayer times are not arbitrary — they are calculated using precise astronomical formulas based on the sun's position relative to your exact location. The five daily prayers correspond to specific solar angles and events: Fajr at dawn (sun 15–18° below horizon), Dhuhr at solar noon, Asr when shadows reach a specific ratio, Maghrib at sunset, and Isha at complete darkness (sun 15–18° below horizon). Differences between apps and mosques come from legitimate variations in calculation methods, Fajr/Isha angles, Asr school of thought, and geographic precision. Understanding these formulas helps you verify your times, choose the right settings, and appreciate the remarkable precision built into every adhan. For accurate prayer times and Qibla direction, visit <a href="https://adwatak.cloud">Adwatak.cloud</a> — your free, privacy-first Islamic tools platform.</p>
+    `,
+  },
+  {
+    slug: "zakat-on-stocks-investment-portfolios-2026",
+    title: "How to Calculate Zakat on Stocks and Investments in 2026",
+    excerpt:
+      "Zakat on stocks and investment portfolios explained: learn exactly how to calculate Zakat on shares, mutual funds, ETFs, and retirement accounts in 2026 — step-by-step methods, scholar opinions, and practical examples.",
+    date: "2026-06-04",
+    category: "Islamic Finance",
+    readTime: "15 min read",
+    keywords: [
+      "how to calculate zakat on stocks",
+      "zakat on investment portfolio 2026",
+      "is zakat due on stocks",
+      "zakat on shares and dividends",
+      "zakat on mutual funds and etfs",
+      "zakat on 401k and retirement accounts",
+      "how much zakat on stock market",
+      "zakat on stocks scholars opinion",
+      "is zakat obligatory on investments",
+      "zakat calculation on equity investments",
+      "do i pay zakat on my stock portfolio",
+      "zakat on stocks hanafi shafi",
+    ],
+    content: `
+      <h2>How Do You Calculate Zakat on Stocks and Investment Portfolios in 2026?</h2>
+      <p>Calculating Zakat on stocks and investment portfolios in 2026 depends on your investment intent and the type of asset you hold. If you own stocks as a <strong>long-term investor</strong> (holding shares for their underlying business value), most scholars say you calculate Zakat on your <strong>proportional share of the company's Zakatable assets</strong> — primarily cash, receivables, and inventory. If you are a <strong>short-term trader</strong> (buying and selling shares for price fluctuations), you treat your entire portfolio as <strong>trade goods</strong> and pay 2.5% Zakat on the <strong>total current market value</strong> on your Zakat due date. For mutual funds and ETFs, the same principles apply: calculate based on the fund's underlying assets or its full market value depending on your holding intent. This guide covers every scenario — individual stocks, index funds, retirement accounts, dividends, and the exact calculation methods endorsed by major Islamic finance scholars.</p>
+
+      <h2>Why Is Zakat on Stocks Different from Zakat on Cash?</h2>
+      <p>Unlike cash or gold, stocks represent <strong>ownership in a business</strong> — not pure money. A company's balance sheet contains a mix of Zakatable assets (cash, accounts receivable, inventory) and non-Zakatable assets (machinery, buildings, equipment used for production). This distinction matters because Zakat is only due on the Zakatable portion of what you own.</p>
+      <p>However, this complexity does not exempt you from Zakat. The obligation remains — the calculation method simply adjusts to reflect the nature of the asset. The two main scholarly approaches are:</p>
+      <ul>
+        <li><strong>Investment approach (long-term holding):</strong> Calculate Zakat on your proportional share of the company's Zakatable assets only. This is the method preferred by scholars like Dr. Yousef Al-Qaradawi and the Islamic Fiqh Council.</li>
+        <li><strong>Trade approach (short-term trading):</strong> Pay 2.5% on the full current market value of your entire portfolio. This applies if you actively buy and sell stocks for profit.</li>
+      </ul>
+      <p>Most Muslims today hold stocks through brokerage accounts, retirement plans, or index funds. Understanding which approach applies to you is essential for fulfilling your Zakat obligation correctly.</p>
+
+      <h2>How Do You Know If You Are an Investor or a Trader?</h2>
+      <p>The distinction between investor and trader determines your Zakat calculation method. Here is how to tell which category you fall into:</p>
+
+      <h3>You Are a Trader If:</h3>
+      <ul>
+        <li>You buy and sell stocks frequently (weekly, daily, or multiple times per month)</li>
+        <li>Your primary goal is to profit from short-term price movements</li>
+        <li>You follow market news, charts, and technical analysis to time your trades</li>
+        <li>You hold stocks for days or weeks, not years</li>
+      </ul>
+      <p><strong>Your Zakat method:</strong> Pay 2.5% on the <strong>total market value</strong> of your entire portfolio on your Zakat due date. Treat your holdings like any other trade goods.</p>
+
+      <h3>You Are an Investor If:</h3>
+      <ul>
+        <li>You buy stocks and hold them for months or years</li>
+        <li>Your primary goal is long-term capital appreciation and dividend income</li>
+        <li>You analyze company fundamentals, not daily price charts</li>
+        <li>You may add to your positions periodically but rarely sell</li>
+      </ul>
+      <p><strong>Your Zakat method:</strong> Calculate Zakat on your <strong>proportional share of the company's Zakatable assets</strong>. This requires looking at the company's financial statements. The practical shortcut: estimate that approximately 20-30% of a typical company's assets are Zakatable (cash, receivables, inventory), and apply 2.5% to that portion of your holdings.</p>
+
+      <h2>Step-by-Step: How to Calculate Zakat on Individual Stocks</h2>
+      <p>Here is the exact process for calculating Zakat on stocks you hold as a long-term investor:</p>
+
+      <h3>Step 1: Determine Your Zakat Due Date</h3>
+      <p>Your Zakat year (Hawl) begins when your total Zakatable wealth first reached the Nisab. Many Muslims use a fixed annual date like 1st Ramadan. On this date, you will assess all your holdings.</p>
+
+      <h3>Step 2: List All Your Stock Holdings</h3>
+      <p>Make a complete list of every stock you own on your Zakat date, including:</p>
+      <ul>
+        <li>Individual company shares (Apple, Amazon, Saudi Aramco, etc.)</li>
+        <li>Shares held in brokerage accounts (Interactive Brokers, E*TRADE, etc.)</li>
+        <li>Shares in retirement accounts (401k, IRA, pension funds)</li>
+        <li>Fractional shares</li>
+      </ul>
+
+      <h3>Step 3: Find Each Company's Zakatable Assets</h3>
+      <p>For each company, look at its most recent quarterly or annual financial statement. You need three numbers:</p>
+      <ul>
+        <li><strong>Cash and cash equivalents</strong></li>
+        <li><strong>Accounts receivable</strong> (money owed to the company)</li>
+        <li><strong>Inventory</strong> (goods ready for sale)</li>
+      </ul>
+      <p>Add these three figures together to get the company's total Zakatable assets. Then calculate your proportional share:</p>
+      <div class="bg-gray-100 rounded-xl p-4 my-4 text-center font-mono text-lg">
+        Your Zakatable Share = (Total Zakatable Assets ÷ Total Shares Outstanding) × Your Shares
+      </div>
+
+      <h3>Step 4: Apply the 2.5% Rate</h3>
+      <p>Sum up your Zakatable share across all stocks, then multiply by 2.5%:</p>
+      <div class="bg-gray-100 rounded-xl p-4 my-4 text-center font-mono text-lg">
+        Zakat = Total Zakatable Share × 0.025
+      </div>
+
+      <h3>Step 5: Add Dividends Received During the Year</h3>
+      <p>Dividends you received and still hold (did not spend) are treated as cash savings. Add them to your total Zakatable wealth and include them in your Zakat calculation at 2.5%.</p>
+
+      <h2>Practical Example: Zakat on a Stock Portfolio</h2>
+      <p>Ahmed holds the following stocks on his Zakat due date (1st Ramadan 1447):</p>
+      <ul>
+        <li><strong>100 shares of Company A:</strong> Market value $5,000. Company A has $200 million in Zakatable assets and 50 million shares outstanding. Ahmed's share: ($200M ÷ 50M) × 100 = <strong>$400</strong></li>
+        <li><strong>50 shares of Company B:</strong> Market value $3,000. Company B has $100 million in Zakatable assets and 25 million shares outstanding. Ahmed's share: ($100M ÷ 25M) × 50 = <strong>$200</strong></li>
+        <li><strong>200 shares of Company C:</strong> Market value $8,000. Company C has $500 million in Zakatable assets and 200 million shares outstanding. Ahmed's share: ($500M ÷ 200M) × 200 = <strong>$500</strong></li>
+      </ul>
+      <p><strong>Total Zakatable share: $400 + $200 + $500 = $1,100</strong></p>
+      <p><strong>Zakat owed: $1,100 × 2.5% = $27.50</strong></p>
+      <p>If Ahmed also has $10,000 in cash savings, $2,000 in gold, and $500 in unpaid dividends, his total Zakatable wealth is $10,000 + $2,000 + $500 + $1,100 = $13,600, and his total Zakat would be <strong>$13,600 × 2.5% = $340</strong>.</p>
+
+      <h2>How Do You Calculate Zakat on Mutual Funds and ETFs?</h2>
+      <p>Mutual funds and ETFs pool money from many investors to buy a diversified basket of stocks, bonds, and other securities. Calculating Zakat on these is more complex because you do not directly own the underlying stocks — you own units in the fund.</p>
+
+      <h3>The Simplified Method (Recommended for Most People)</h3>
+      <p>Most contemporary scholars, including those on the AAOIFI (Accounting and Auditing Organization for Islamic Financial Institutions) board, allow a simplified approach for mutual funds and ETFs:</p>
+      <ul>
+        <li>Check the fund's latest fact sheet or annual report for its <strong>asset allocation</strong></li>
+        <li>Estimate the percentage invested in <strong>equities (stocks)</strong> versus bonds, cash, and other assets</li>
+        <li>Apply the 2.5% Zakat rate to the <strong>full current value of your units</strong> if the fund is primarily equity-based (more than 50% stocks)</li>
+        <li>If the fund is primarily bond-based or money-market, Zakat is still due on the full value because the units themselves are tradeable assets</li>
+      </ul>
+      <p>For example, if you hold $20,000 in an S&P 500 index ETF, you would pay <strong>$20,000 × 2.5% = $500</strong> in Zakat. This simplified method is widely accepted and much more practical than trying to calculate the Zakatable assets of every company in the fund.</p>
+
+      <h3>The Detailed Method (For Those Who Want Precision)</h3>
+      <p>If you want to be more precise, you can use the fund's holdings data (available on the fund's website) to calculate your proportional share of each underlying company's Zakatable assets. This is time-consuming but more accurate. For a fund holding 500+ stocks, the simplified method is generally considered sufficient by scholars.</p>
+
+      <h2>Is Zakat Due on Retirement Accounts Like 401k and IRA?</h2>
+      <p>This is one of the most common questions Muslims ask. Retirement accounts — 401(k), IRA, Roth IRA, 403(b), and pension funds — present a unique Zakat question because the funds are often <strong>locked until retirement age</strong>.</p>
+
+      <h3>The Majority Scholarly Position</h3>
+      <p>Most contemporary scholars, including Dr. Yousef Al-Qaradawi and the European Council for Fatwa and Research (ECFR), hold that Zakat is due on retirement accounts <strong>every year</strong>, even before you can access the funds. The reasoning:</p>
+      <ul>
+        <li>You are the legal owner of the funds, even if access is restricted</li>
+        <li>Zakat is due on wealth you own, not only wealth you can immediately spend</li>
+        <li>The obligation does not wait until retirement</li>
+      </ul>
+      <p><strong>Calculation method:</strong> Determine the total value of your retirement account on your Zakat due date. If the account holds primarily stocks or mutual funds, use the simplified method (2.5% of total value). If it holds bonds or money market funds, pay 2.5% of the total value.</p>
+
+      <h3>The Alternative Position</h3>
+      <p>Some scholars argue that Zakat on retirement accounts is only due <strong>when you withdraw the funds</strong>, similar to how Zakat on debt is treated. Under this view, you would pay Zakat for all previous years when you actually receive the money. This position is less common but is held by some scholars who view restricted-access wealth differently.</p>
+
+      <h3>Practical Recommendation</h3>
+      <p>To be on the safe side, most scholars recommend paying Zakat annually on retirement accounts. If this is financially difficult, you can follow the alternative position and pay accumulated Zakat when you withdraw. Consult a knowledgeable scholar for your specific situation. Use our <a href="/en/tools/zakat-calculator">Zakat Calculator</a> to determine your exact Zakat amount.</p>
+
+      <h2>How Do You Calculate Zakat on Dividends?</h2>
+      <p>Dividends are payments made to shareholders from a company's profits. Here is how Zakat applies to dividends:</p>
+      <ul>
+        <li><strong>Dividends received and still unspent:</strong> If you received dividends during the year and still have the money (in your bank account or reinvested), Zakat is due on the full amount at 2.5% as part of your cash savings.</li>
+        <li><strong>Dividends immediately spent:</strong> If you spent the dividends on living expenses right away and do not have a full Hawl's worth accumulated, Zakat is not due on those specific dividends.</li>
+        <li><strong>Dividends reinvested (DRIP):</strong> If dividends are automatically reinvested into more shares, they become part of your stock holdings and are Zakatable under the stock calculation methods described above.</li>
+      </ul>
+      <p>The key principle: Zakat is on <strong>accumulated wealth held for one year</strong>, not on income that was immediately spent.</p>
+
+      <h2>What About Zakat on Islamic Funds and Sharia-Compliant Investments?</h2>
+      <p>If you invest in Islamic mutual funds, Sharia-compliant ETFs, or Sukuk (Islamic bonds), the Zakat calculation follows the same principles:</p>
+      <ul>
+        <li><strong>Islamic equity funds:</strong> These invest only in Sharia-compliant companies. Calculate Zakat on your proportional share of the fund's Zakatable assets, or use the simplified method (2.5% of your units' market value).</li>
+        <li><strong>Sukuk (Islamic bonds):</strong> If the Sukuk represents ownership in a tangible asset (like a building or project), Zakat is due on your share of the asset's value. If it is more like a debt instrument, Zakat is due on the full value as cash-equivalent.</li>
+        <li><strong>Sharia-compliant robo-advisors:</strong> Platforms like Wahed Invest or Amana funds — calculate Zakat on the total value of your account using the simplified method.</li>
+      </ul>
+      <p>Being Sharia-compliant does not exempt you from Zakat. In fact, paying Zakat on your Islamic investments is a core part of fulfilling your financial obligations in Islam.</p>
+
+      <h2>Common Mistakes People Make When Paying Zakat on Stocks</h2>
+      <p>Avoid these frequent errors:</p>
+      <ul>
+        <li><strong>Ignoring stocks entirely:</strong> Some people pay Zakat on cash and gold but forget their stock portfolio. Stocks are Zakatable wealth — do not leave them out.</li>
+        <li><strong>Using the wrong method:</strong> If you are a day trader, use the trade goods method (2.5% of market value). If you are a long-term investor, use the asset-based method. Mixing them up leads to incorrect calculations.</li>
+        <li><strong>Forgetting retirement accounts:</strong> 401(k), IRA, and pension funds are Zakatable. Include them in your calculation.</li>
+        <li><strong>Double-counting dividends:</strong> If you already included reinvested dividends in your stock valuation, do not count them again as cash.</li>
+        <li><strong>Not accounting for margin or borrowed funds:</strong> If you bought stocks on margin (with borrowed money), subtract the loan amount from your portfolio value before calculating Zakat. You do not owe Zakat on wealth you do not fully own.</li>
+        <li><strong>Waiting for the portfolio to recover:</strong> If your portfolio dropped from $50,000 to $20,000, you still calculate Zakat on $20,000 — the current value, not the peak value.</li>
+        <li><strong>Confusing Zakat with capital gains tax:</strong> Zakat is 2.5% of your <em>total wealth</em> held for one year. It is not a tax on profits or gains. Even if your portfolio lost money, Zakat is still due if the remaining value meets the Nisab.</li>
+      </ul>
+
+      <h2>How Does Zakat on Stocks Compare to Other Zakatable Assets?</h2>
+      <p>Here is a quick comparison to help you understand where stocks fit in your overall Zakat calculation:</p>
+      <ul>
+        <li><strong>Cash and bank accounts:</strong> 2.5% of total balance held for one year</li>
+        <li><strong>Gold and silver:</strong> 2.5% of market value if above 85g gold / 595g silver</li>
+        <li><strong>Stocks (trader):</strong> 2.5% of total portfolio market value</li>
+        <li><strong>Stocks (investor):</strong> 2.5% of proportional share of Zakatable assets</li>
+        <li><strong>Mutual funds and ETFs:</strong> 2.5% of total value (simplified method)</li>
+        <li><strong>Retirement accounts:</strong> 2.5% of total value (majority position)</li>
+        <li><strong>Cryptocurrency:</strong> 2.5% of total market value — see our <a href="/en/blog/zakat-on-cryptocurrency-digital-assets-2026">Complete Crypto Zakat Guide</a></li>
+      </ul>
+      <p>Add all these amounts together to get your total annual Zakat obligation. For a complete overview of Zakat rules, read our <a href="/en/blog/how-to-calculate-zakat">Complete Guide to Calculating Zakat</a>. To calculate Zakat on gold, see <a href="/en/blog/calculate-zakat-on-gold-2026-complete-guide">How to Calculate Zakat on Gold in 2026</a>.</p>
+
+      <h2>Summary: Your Stock Zakat Checklist</h2>
+      <p>Follow this checklist every Zakat year:</p>
+      <ul>
+        <li>✅ Determine if you are an investor or a trader</li>
+        <li>✅ List all stock holdings across all accounts (brokerage, retirement, etc.)</li>
+        <li>✅ Calculate using the appropriate method (asset-based for investors, market value for traders)</li>
+        <li>✅ Include mutual funds, ETFs, and index funds</li>
+        <li>✅ Add retirement account values (401k, IRA, pension)</li>
+        <li>✅ Include unspent dividends and cash from sold shares</li>
+        <li>✅ Subtract any margin loans or debts against your portfolio</li>
+        <li>✅ Add stock Zakat to your total Zakat from all other assets</li>
+        <li>✅ Pay 2.5% of the total to eligible recipients</li>
+        <li>✅ Keep records for next year</li>
+      </ul>
+      <p>Use our <a href="/en/tools/zakat-calculator">Zakat Calculator</a> to simplify your calculations and ensure accuracy.</p>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <h3>Is Zakat obligatory on stocks and shares?</h3>
+      <p>Yes, Zakat is obligatory on stocks and shares according to the majority of Islamic scholars. If you hold stocks as a long-term investor, you pay Zakat on your proportional share of the company's Zakatable assets (cash, receivables, inventory). If you are a short-term trader, you pay 2.5% on the full market value of your portfolio. The key condition is that your total Zakatable wealth — including stocks, cash, gold, and other assets — must meet the Nisab threshold (85 grams of gold or 595 grams of silver equivalent) and be held for one lunar year.</p>
+
+      <h3>How do I calculate Zakat on my stock portfolio if I do not know the company's financial details?</h3>
+      <p>If you cannot access detailed financial statements for every company you invest in, most scholars allow you to use a simplified method: pay 2.5% on the total market value of your equity holdings. This is especially practical for diversified portfolios with many stocks. Alternatively, you can estimate that roughly 20-30% of a typical company's assets are Zakatable and apply 2.5% to that portion. For index funds and ETFs, the simplified method (2.5% of total value) is widely accepted by scholars and is the most practical approach.</p>
+
+      <h3>Do I pay Zakat on stocks that have lost value?</h3>
+      <p>Yes. Zakat is based on the <strong>current market value</strong> of your holdings on your Zakat due date, not what you originally paid. If your portfolio was worth $50,000 when you bought in and is now worth $20,000, you calculate Zakat on $20,000 (or your share of the underlying Zakatable assets at current prices). The only exception is if your total combined wealth — across all assets — falls below the Nisab threshold, in which case Zakat is not due.</p>
+
+      <h3>Is Zakat due on my 401(k) or IRA if I cannot access it until retirement?</h3>
+      <p>The majority of contemporary scholars say yes — Zakat is due on retirement accounts every year, even before you can withdraw. You owe 2.5% of the account's current value annually. However, some scholars hold the alternative view that Zakat is only due when you actually withdraw the funds. To be cautious, most scholars recommend paying annually. If this is financially difficult, consult a knowledgeable scholar about your specific situation and consider paying accumulated Zakat when you retire and withdraw the funds.</p>
+
+      <h3>How do I calculate Zakat on index funds like the S&P 500?</h3>
+      <p>For index funds and ETFs, use the simplified method: pay 2.5% on the total current market value of your units. If you hold $30,000 in an S&P 500 index fund, your Zakat on that holding is $30,000 × 2.5% = $750. This method is endorsed by AAOIFI and most contemporary scholars because it is impractical to calculate the Zakatable assets of every company in a 500-stock index. The simplified method ensures you fulfill your obligation without excessive complexity.</p>
+
+      <h3>Should I pay Zakat on dividends separately or as part of my stock holdings?</h3>
+      <p>It depends on what you did with the dividends. If you reinvested them (through a DRIP), they are now part of your stock holdings and are included in your stock Zakat calculation. If you received them as cash and still have the money, add them to your cash savings and pay 2.5% on them as part of your cash Zakat. If you spent them immediately on living expenses, Zakat is not due on those specific dividends. The key is to avoid double-counting: do not include dividends in both your stock value and your cash savings.</p>
+
+      <h3>What if I bought stocks with borrowed money (margin trading)?</h3>
+      <p>If you purchased stocks on margin (using borrowed funds), you must subtract the loan amount from your portfolio value before calculating Zakat. You only owe Zakat on the <strong>net value</strong> — the portion you actually own. For example, if your margin portfolio is worth $40,000 but you owe $15,000 on the margin loan, your Zakatable amount is $25,000. Note that margin trading involves interest (riba), which is prohibited in Islam. Scholars strongly advise avoiding margin trading altogether and using only your own capital for investments.</p>
+
+      <h3>Do I pay Zakat on stocks in a child's custodial account (UTMA/UGMA)?</h3>
+      <p>Yes. Custodial accounts belong to the child, and Zakat is due on the holdings. In practice, the parent or guardian is responsible for paying Zakat on the child's behalf until the child reaches the age of majority. The calculation method is the same: 2.5% of the proportional Zakatable assets (for long-term holdings) or 2.5% of market value (for trading accounts). If the child's total wealth meets the Nisab, Zakat is obligatory.</p>
+
+      <h3>Is there a difference between how Hanafi and Shafi'i schools treat Zakat on stocks?</h3>
+      <p>The basic obligation is the same across all four Sunni schools of thought. However, there are minor differences in methodology. The Hanafi school is generally more expansive in what it considers Zakatable, and some Hanafi scholars recommend using the market value method for all stocks (treating them as trade goods), which simplifies calculation. The Shafi'i and Maliki schools tend to favor the asset-based method for long-term holdings. In practice, both methods are accepted, and you should follow the guidance of the scholar or institution you trust most.</p>
+
+      <h3>Can I deduct my debts from my stock portfolio value before calculating Zakat?</h3>
+      <p>There is a scholarly debate on this. The majority position is that <strong>short-term debts</strong> (due within one year) can be deducted from your Zakatable wealth before calculating Zakat. Long-term debts (like a 30-year mortgage) are generally not deducted — you pay Zakat on your full wealth and the debt is handled separately. For margin loans or any debt directly tied to your stock portfolio, most scholars allow deduction. If you have personal loans or credit card debt, you can deduct the amount due within the next 12 months from your total Zakatable wealth.</p>
+
+      <h3>What happens if I cannot afford to pay Zakat on my entire stock portfolio?</h3>
+      <p>Zakat is only obligatory if your total net wealth meets the Nisab threshold. If your stock portfolio is your only asset and it has dropped significantly, you may no longer meet the Nisab — in which case Zakat is not due. However, if you have other assets (cash, gold, etc.) that push you above the Nisab, Zakat is obligatory on your total wealth. If paying the full amount is genuinely difficult, Islam allows you to pay what you can and make up the rest later. Zakat is a debt owed to Allah and should be paid as soon as you are able.</p>
+
+      <h3>How do I handle Zakat on stocks if I live in a non-Muslim country?</h3>
+      <p>The Zakat obligation is the same regardless of where you live. Calculate your Zakatable wealth using the methods described above, and pay Zakat to eligible recipients as defined in the Quran (9:60). You can pay Zakat to eligible individuals in your local community, to Islamic charities that distribute Zakat, or to Muslims in need anywhere in the world. Many Islamic organizations accept Zakat payments online and distribute them to verified recipients. The calculation method does not change based on your country of residence — only the Nisab threshold in local currency may differ slightly based on gold and silver prices.</p>
+    `,
+  },
+  {
     slug: "zakat-on-cryptocurrency-digital-assets-2026",
     title: "Is Zakat Due on Cryptocurrency? Complete Guide for 2026",
     excerpt:

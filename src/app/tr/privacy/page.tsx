@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Gizlilik Politikası — Adwatak",
   description:
     "Adwatak gizlilik politikası — verilerinizi nasıl işlediğimiz, hangi bilgileri topladığımız ve bir kullanıcı olarak haklarınız.",
+  alternates: {
+    canonical: "https://adwatak.cloud/tr/privacy",
+  },
 };
 
 export default function PrivacyPage() {

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import QRCode from "qrcode";
 import StructuredData, { howToSchema, speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
 import FAQSection from "../../../components/FAQSection";
 import RelatedTools from "../../../components/RelatedTools";
@@ -42,43 +43,110 @@ const seoContent = [
 
 export default function Client() {
   const [text, setText] = useState("");
+  const [size, setSize] = useState("200");
+  const [qrDataUrl, setQrDataUrl] = useState<string | null>(null);
+  const [error, setError] = useState("");
+
+  async function generate() {
+    if (!text.trim()) {
+      setError("من فضلك أدخل النص أو الرابط");
+      return;
+    }
+    setError("");
+    try {
+      const dataUrl = await QRCode.toDataURL(text.trim(), {
+        width: parseInt(size),
+        margin: 2,
+        color: { dark: "#000000", light: "#ffffff" },
+        errorCorrectionLevel: "M",
+      });
+      setQrDataUrl(dataUrl);
+    } catch (err) {
+      setError("فشل في إنشاء QR Code. حاول بنص أقصر.");
+    }
+  }
+
   const schemaName = "مولد QR Code";
-const schemaDesc = `Online مولد QR Code - free tool`;
-const schemaCategory = "Utility";
-const schemaUrl = "https://adwatak.cloud/tools/qr-generator";
-const breadcrumbItems = [
-  { name: "الرئيسية", url: "https://adwatak.cloud" },
-  { name: "مولدات", url: "https://adwatak.cloud/category/calculators" },
-  { name: "مولد QR Code", url: "https://adwatak.cloud/tools/qr-generator" },
-];
-return (
+  const schemaDesc = "مولد رمز QR Code مجاني - أنشئ رموز QR للروابط والنصوص والمزيد";
+  const schemaCategory = "Utility";
+  const schemaUrl = "https://adwatak.cloud/tools/qr-generator";
+  const breadcrumbItems = [
+    { name: "الرئيسية", url: "https://adwatak.cloud" },
+    { name: "مولدات", url: "https://adwatak.cloud/category/calculators" },
+    { name: "مولد QR Code", url: "https://adwatak.cloud/tools/qr-generator" },
+  ];
+
+  return (
     <div className="max-w-[760px] mx-auto">
-        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'ar', schemaCategory)} />
-        <StructuredData data={faqSchema(faqs)} />
-        <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
-      {/* GEO: Speakable — marks key content for AI/voice engines */}
-      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
-      />
+      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'ar', schemaCategory)} />
+      <StructuredData data={faqSchema(faqs)} />
+      <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       <Breadcrumb lang="ar" category="مولدات" categorySlug="generators" toolName="مولد QR Code" />
-      <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">🔳 مولد QR Code</h1>
-        <p className="text-sm text-gray-500 mb-6">إنشاء QR Code لرابط أو نص</p>
-        <textarea value={text} onChange={(e) => setText(e.target.value)}
-          className="w-full h-[120px] p-4 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit resize-y"
-          placeholder="أدخل النص أو الرابط..." />
-        {text && (
-          <div className="text-center mt-6 p-6 bg-gray-50 rounded-xl">
-            <div className="w-[200px] h-[200px] bg-white mx-auto flex items-center justify-center border-2 border-gray-200 rounded-xl">
-              <span className="text-6xl">🔳</span>
-            </div>
-            <p className="text-xs text-gray-400 mt-2">QR Code سيظهر هنا</p>
-          </div>
+      
+      <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6 dark:bg-gray-800 dark:border-gray-700">
+        <h1 className="text-2xl font-extrabold mb-1 dark:text-white">🔳 مولد QR Code</h1>
+        <p className="text-sm text-gray-500 mb-6 dark:text-gray-400">إنشاء QR Code لرابط أو نص</p>
+        
+        <textarea
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          className="w-full h-[120px] p-4 border-2 border-gray-200 rounded-xl text-base outline-none resize-y dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          placeholder="أدخل النص أو الرابط..."
+        />
+        
+        <div className="mb-4 mt-4">
+          <label className="block text-sm font-semibold text-gray-700 mb-1.5 dark:text-gray-300">حجم QR (بكسل)</label>
+          <select
+            value={size}
+            onChange={(e) => setSize(e.target.value)}
+            className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          >
+            <option value="150">صغير (150×150)</option>
+            <option value="200">متوسط (200×200)</option>
+            <option value="300">كبير (300×300)</option>
+            <option value="500">كبير جداً (500×500)</option>
+          </select>
+        </div>
+
+        {error && (
+          <p className="text-red-500 text-sm mb-3">{error}</p>
         )}
+        
+        <button
+          onClick={generate}
+          className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer hover:bg-blue-700 transition-colors mt-4"
+        >
+          إنشاء QR Code
+        </button>
       </div>
+
+      {qrDataUrl && (
+        <div className="bg-gray-50 rounded-xl p-5 text-center border border-gray-200 mb-6 dark:bg-gray-800 dark:border-gray-700">
+          <img src={qrDataUrl} alt="QR Code" className="inline-block max-w-full" />
+          <p className="text-xs text-gray-500 mt-2 dark:text-gray-400">امسح لعرض {text}</p>
+          <div className="flex gap-3 justify-center mt-3">
+            <a
+              href={qrDataUrl}
+              download="qrcode.png"
+              className="inline-block bg-blue-600 text-white font-bold px-6 py-2 rounded-xl no-underline text-sm hover:bg-blue-700 transition-colors"
+            >
+              تحميل PNG
+            </a>
+            <button
+              onClick={() => { const a = document.createElement("a"); a.href = qrDataUrl; a.download = "qrcode.svg"; a.click(); }}
+              className="inline-block bg-gray-600 text-white font-bold px-6 py-2 rounded-xl text-sm cursor-pointer hover:bg-gray-700 transition-colors border-none"
+            >
+              تحميل SVG
+            </button>
+          </div>
+        </div>
+      )}
+
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
-    <ShareButtons lang="ar" />
+      <ShareButtons lang="ar" />
     </div>
   );
 }

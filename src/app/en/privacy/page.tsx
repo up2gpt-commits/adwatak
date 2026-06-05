@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy — Adawatak",
   description:
     "Adawatak privacy policy — how we handle your data, what information we collect, and your rights as a user.",
+  alternates: {
+    canonical: "https://adwatak.cloud/en/privacy",
+  },
 };
 
 export default function PrivacyPage() {

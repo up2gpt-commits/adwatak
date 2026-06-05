@@ -9,7 +9,7 @@ interface FAQ {
 
 interface FAQSectionProps {
   faqs: FAQ[];
-  lang?: "ar" | "en" | "tr";
+  lang?: "ar" | "en" | "tr" | "id";
 }
 
 export default function FAQSection({ faqs, lang = "en" }: FAQSectionProps) {

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 interface ShareButtonsProps {
   title?: string;
   url?: string;
-  lang?: "ar" | "en" | "tr";
+  lang?: "ar" | "en" | "tr" | "id";
 }
 
 export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsProps) {
@@ -30,11 +30,13 @@ export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsPr
       <div className="mt-8 mb-6">
         <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
           <h3 className="font-bold text-gray-900 mb-4 text-lg">
-            {lang === "ar" ? "🔗 شارك الأداة" : "🔗 Share this tool"}
+            {lang === "ar" ? "🔗 شارك الأداة" : lang === "id" ? "🔗 Bagikan alat ini" : "🔗 Share this tool"}
           </h3>
           <p className="text-sm text-gray-400">
             {lang === "ar"
               ? "شارك الأداة مع أصحابك — كل الأداة مجانية ومتاحة بدون تسجيل"
+              : lang === "id"
+              ? "Bagikan alat ini ke teman — gratis, tanpa daftar"
               : "Share this free tool with friends — no signup required"}
           </p>
         </div>
@@ -44,7 +46,7 @@ export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsPr
 
   const shareLinks = [
     {
-      name: lang === "ar" ? "واتساب" : "WhatsApp",
+      name: lang === "ar" ? "واتساب" : lang === "id" ? "WhatsApp" : "WhatsApp",
       icon: "💬",
       href: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
       color: "bg-green-500 hover:bg-green-600",
@@ -56,7 +58,7 @@ export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsPr
       color: "bg-black hover:bg-gray-800",
     },
     {
-      name: lang === "ar" ? "فيسبوك" : "Facebook",
+      name: lang === "ar" ? "فيسبوك" : lang === "id" ? "Facebook" : "Facebook",
       icon: "📘",
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
       color: "bg-blue-600 hover:bg-blue-700",
@@ -68,7 +70,7 @@ export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsPr
       color: "bg-blue-500 hover:bg-blue-600",
     },
     {
-      name: lang === "ar" ? "لينكد إن" : "LinkedIn",
+      name: lang === "ar" ? "لينكد إن" : lang === "id" ? "LinkedIn" : "LinkedIn",
       icon: "💼",
       href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
       color: "bg-blue-700 hover:bg-blue-800",
@@ -85,7 +87,7 @@ export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsPr
     <div className="mt-8 mb-6">
       <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
         <h3 className="font-bold text-gray-900 mb-4 text-lg">
-          {lang === "ar" ? "🔗 شارك الأداة" : "🔗 Share this tool"}
+          {lang === "ar" ? "🔗 شارك الأداة" : lang === "id" ? "🔗 Bagikan alat ini" : "🔗 Share this tool"}
         </h3>
         <div className="flex flex-wrap gap-3">
           {shareLinks.map((link) => (
@@ -105,13 +107,13 @@ export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsPr
             className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2.5 rounded-xl text-sm font-medium transition-all"
           >
             <span>🔗</span>
-            <span>{lang === "ar" ? "نسخ الرابط" : "Copy link"}</span>
+            <span>{lang === "ar" ? "نسخ الرابط" : lang === "id" ? "Salin tautan" : "Copy link"}</span>
           </button>
         </div>
         {/* Direct link field */}
         <div className="mt-4">
           <label className="text-xs text-gray-400 font-medium block mb-1">
-            {lang === "ar" ? "الرابط المباشر:" : "Direct link:"}
+            {lang === "ar" ? "الرابط المباشر:" : lang === "id" ? "Tautan langsung:" : "Direct link:"}
           </label>
           <div className="flex gap-2">
             <input
@@ -125,13 +127,15 @@ export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsPr
               onClick={copyLink}
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all"
             >
-              {lang === "ar" ? "نسخ" : "Copy"}
+              {lang === "ar" ? "نسخ" : lang === "id" ? "Salin" : "Copy"}
             </button>
           </div>
         </div>
         <p className="text-xs text-gray-400 mt-3">
           {lang === "ar"
             ? "شارك الأداة مع أصحابك — كل الأداة مجانية ومتاحة بدون تسجيل"
+            : lang === "id"
+            ? "Bagikan alat ini ke teman — gratis, tanpa daftar"
             : "Share this free tool with friends — no signup required"}
         </p>
       </div>

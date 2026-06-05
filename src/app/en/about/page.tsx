@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "About Us — Adawatak",
   description:
     "Adawatak is a free online tools platform offering 50+ interactive tools in Arabic and English — calculators, Islamic tools, generators, and converters. No signup, no ads.",
+  alternates: {
+    canonical: "https://adwatak.cloud/en/about",
+  },
 };
 
 export default function AboutPage() {

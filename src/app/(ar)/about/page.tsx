@@ -1,6 +1,9 @@
 export const metadata = {
   title: "عن الموقع — أدواتك",
   description: "أدواتك هي منصة عربية مجانية تقدم أكثر من 40 أداة تفاعلية باللغة العربية — حاسبات مالية، أدوات إسلامية، مولدات، ومحولات. بدون تسجيل وبدون إعلانات مزعجة.",
+  alternates: {
+    canonical: "https://adwatak.cloud/about",
+  },
 };
 export default function AboutPage() {
   return (

@@ -1,6 +1,9 @@
 export const metadata = {
   title: "سياسة الخصوصية — أدواتك",
-  description: "سياسة الخصوصية لموقع أدواتك — نوضح كيف نتعامل مع بياناتك وما المعلومات التي نجمعها.",
+  description: "سياسة الخصوصية لمنصة أدواتك — كيف نتعامل مع بياناتك، ما المعلومات التي نجمعها، وحقوقك كمستخدم.",
+  alternates: {
+    canonical: "https://adwatak.cloud/privacy",
+  },
 };
 export default function PrivacyPage() {
   return (

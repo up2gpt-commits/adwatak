@@ -10,7 +10,7 @@ const categories = [
   { name: "Oluşturucular", slug: "generators", icon: "⚡", count: "6", desc: "QR kod, barkod, şifre, isim oluşturucu" },
   { name: "Geliştirici Araçları", slug: "dev", icon: "💻", count: "7", desc: "JSON, Base64, hash, SEO denetimi, CSS, Markdown, IP sorgulama" },
   { name: "İslami Araçlar", slug: "islamic", icon: "🕌", count: "2", desc: "Miras, Zekat hesaplayıcıları" },
-  { name: "Diğer", slug: "daily", icon: "🌟", count: "4", desc: "Yaş, VKİ, kalori, kronometre" },
+  { name: "Diğer", slug: "daily", icon: "🌟", count: "5", desc: "Yaş, VKİ, kalori, kronometre, fotoğrafla kalori analizi" },
 ];
 
 const allTools = [
@@ -74,6 +74,7 @@ const allTools = [
   { title: "Zekat Hesaplama", icon: "🕌", href: "/tr/tools/zakat-calculator", desc: "Yıllık %2.5 zekat yükümlülüğü", cat: "İslami Araçlar" },
 
   { title: "VKİ Hesaplama", icon: "⚖️", href: "/tr/tools/bmi-calculator", desc: "Vücut Kitle İndeksi hesaplama", cat: "Diğer" },
+  { title: "Fotoğrafla Kalori Analizi", icon: "📸", href: "/tr/tools/food-calorie-analyzer", desc: "Fotoğraf çekin, anlık kalori analizi alın", cat: "Diğer" },
   { title: "Kronometre", icon: "⏱️", href: "/tr/tools/stopwatch", desc: "Tur takipli kronometre", cat: "Diğer" },
 ];
 
@@ -84,6 +85,7 @@ const featuredTools = [
   { title: "Renk Çevirici", desc: "HEX ↔ RGB ↔ HSL", icon: "🎨", href: "/tr/tools/color-converter" },
   { title: "Döviz Çevirici", desc: "Canlı döviz kurları", icon: "💱", href: "/tr/tools/currency-converter" },
   { title: "PDF'den Word'e", desc: "PDF'i düzenlenebilir metne çevirme", icon: "📄", href: "/tr/tools/pdf-to-word" },
+  { title: "Fotoğrafla Kalori Analizi", icon: "📸", href: "/tr/tools/food-calorie-analyzer", desc: "Fotoğraf çekin, anlık kalori analizi" },
   { title: "Görselden Metin (OCR)", icon: "👁️", href: "/tr/tools/image-to-text", desc: "OCR ile görsellerden metin çıkarma", cat: "Görsel Araçları" },
 ];
 

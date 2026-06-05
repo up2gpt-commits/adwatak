@@ -4,7 +4,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Kebijakan Privasi — Adwatak",
   description:
-    "Kebijakan privasi Adwatak — bagaimana kami memproses data Anda, informasi apa yang kami kumpulkan, dan hak Anda sebagai pengguna.",
+    "Kebijakan privasi Adwatak — bagaimana kami menangani data Anda, informasi apa yang kami kumpulkan, dan hak Anda sebagai pengguna.",
+  alternates: {
+    canonical: "https://adwatak.cloud/id/privacy",
+  },
 };
 
 export default function PrivacyPage() {

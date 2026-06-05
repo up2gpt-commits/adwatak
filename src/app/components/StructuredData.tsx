@@ -70,7 +70,7 @@ export function toolSchema(
   name: string,
   description: string,
   url: string,
-  lang: "ar" | "en" | "tr" = "ar",
+  lang: "ar" | "en" | "tr" | "id" = "ar",
   category: string = "Finance"
 ) {
   return {
@@ -236,7 +236,7 @@ export function articleSchema(
       name: authorName,
       url: "https://adwatak.cloud",
     },
-    image: imageUrl || "https://adwatak.cloud/og-ar.svg",
+    image: imageUrl || "https://adwatak.cloud/og-ar.png",
     publisher: {
       "@type": "Organization",
       name: "Adawatak",

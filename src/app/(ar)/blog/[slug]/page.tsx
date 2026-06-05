@@ -56,13 +56,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "article",
       siteName: "أدواتك",
       locale: "ar_SA",
-      images: [{ url: `${baseUrl}/og-ar.svg`, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: `${baseUrl}/og-ar.png`, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} | أدواتك`,
       description: post.excerpt,
-      images: [`${baseUrl}/og-ar.svg`],
+      images: [`${baseUrl}/og-ar.png`],
     },
   };
 }
@@ -85,7 +85,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     datePublished: post.date,
     dateModified: post.date,
     author: { "@type": "Organization", name: "أدواتك" },
-    image: "https://adwatak.cloud/og-ar.svg",
+    image: "https://adwatak.cloud/og-ar.png",
   };
 
   // Extract FAQ from article content

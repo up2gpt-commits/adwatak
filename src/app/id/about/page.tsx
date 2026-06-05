@@ -4,7 +4,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Tentang Kami — Adwatak",
   description:
-    "Adwatak adalah platform alat online gratis dengan 50+ alat interaktif — kalkulator, alat Islami, generator, dan konverter. Tidak perlu daftar, tanpa iklan.",
+    "Adwatak adalah platform alat online gratis yang menawarkan 50+ alat interaktif — kalkulator, alat Islami, generator, dan konverter. Tanpa pendaftaran, tanpa iklan.",
+  alternates: {
+    canonical: "https://adwatak.cloud/id/about",
+  },
 };
 
 export default function AboutPage() {

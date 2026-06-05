@@ -52,13 +52,13 @@ export async function generateMetadata({
       type: "article",
       siteName: "Adwatak",
       locale: "tr_TR",
-      images: [{ url: `${baseUrl}/og-tr.svg`, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: `${baseUrl}/og-tr.png`, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} | Adwatak`,
       description: post.excerpt,
-      images: [`${baseUrl}/og-tr.svg`],
+      images: [`${baseUrl}/og-tr.png`],
     },
   };
 }
@@ -87,7 +87,7 @@ export default async function TrBlogPost({
     datePublished: post.date,
     dateModified: post.date,
     author: { "@type": "Organization", name: "Adwatak" },
-    image: "https://adwatak.cloud/og-tr.svg",
+    image: "https://adwatak.cloud/og-tr.png",
   };
 
   const faqs = extractFaqFromHtml(post.content);

@@ -54,13 +54,13 @@ export async function generateMetadata({
       type: "article",
       siteName: "Adawatak",
       locale: "en_US",
-      images: [{ url: `${baseUrl}/og-en.svg`, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: `${baseUrl}/og-en.png`, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} | Adawatak`,
       description: post.excerpt,
-      images: [`${baseUrl}/og-en.svg`],
+      images: [`${baseUrl}/og-en.png`],
     },
   };
 }
@@ -89,7 +89,7 @@ export default async function EnBlogPost({
     datePublished: post.date,
     dateModified: post.date,
     author: { "@type": "Organization", name: "Adawatak" },
-    image: "https://adwatak.cloud/og-en.svg",
+    image: "https://adwatak.cloud/og-en.png",
   };
 
   const faqs = extractFaqFromHtml(post.content);

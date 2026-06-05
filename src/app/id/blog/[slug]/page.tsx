@@ -52,13 +52,13 @@ export async function generateMetadata({
       type: "article",
       siteName: "Adwatak",
       locale: "id_ID",
-      images: [{ url: `${baseUrl}/og-id.svg`, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: `${baseUrl}/og-id.png`, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} | Adwatak`,
       description: post.excerpt,
-      images: [`${baseUrl}/og-id.svg`],
+      images: [`${baseUrl}/og-id.png`],
     },
   };
 }
@@ -87,7 +87,7 @@ export default async function IdBlogPost({
     datePublished: post.date,
     dateModified: post.date,
     author: { "@type": "Organization", name: "Adwatak" },
-    image: "https://adwatak.cloud/og-id.svg",
+    image: "https://adwatak.cloud/og-id.png",
   };
 
   const faqs = extractFaqFromHtml(post.content);

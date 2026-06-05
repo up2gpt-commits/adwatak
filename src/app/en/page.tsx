@@ -10,7 +10,7 @@ const categories = [
   { name: "Generators", slug: "generators", icon: "⚡", count: "6", desc: "QR codes, barcodes, passwords, names" },
   { name: "Developer Tools", slug: "dev", icon: "💻", count: "7", desc: "JSON, Base64, hash, SEO audit, CSS, Markdown, IP lookup" },
   { name: "Islamic Tools", slug: "islamic", icon: "🕌", count: "2", desc: "Inheritance, Zakat calculators" },
-  { name: "Other", slug: "daily", icon: "🌟", count: "4", desc: "Age, BMI, calorie, stopwatch" },
+  { name: "Other", slug: "daily", icon: "🌟", count: "5", desc: "Age, BMI, calorie, stopwatch, food analyzer" },
 ];
 
 const allTools = [
@@ -74,6 +74,7 @@ const allTools = [
   { title: "Zakat Calculator", icon: "🕌", href: "/en/tools/zakat-calculator", desc: "Annual 2.5% zakat obligation", cat: "Islamic Tools" },
 
   { title: "BMI Calculator", icon: "⚖️", href: "/en/tools/bmi-calculator", desc: "Body Mass Index with metric/imperial", cat: "Other" },
+  { title: "Food Calorie Analyzer", icon: "📸", href: "/en/tools/food-calorie-analyzer", desc: "Snap a photo, get instant calorie analysis", cat: "Other" },
   { title: "Stopwatch & Timer", icon: "⏱️", href: "/en/tools/stopwatch", desc: "Stopwatch with lap tracking", cat: "Other" },
 ];
 
@@ -85,7 +86,9 @@ const featuredTools = [
   { title: "Currency Converter", desc: "Live exchange rates", icon: "💱", href: "/en/tools/currency-converter" },
   { title: "PDF to Word", desc: "Convert PDF to editable text", icon: "📄", href: "/en/tools/pdf-to-word" },
   { title: "Image to Text OCR", icon: "👁️", href: "/en/tools/image-to-text", desc: "Extract text from images using OCR" },
+  { title: "Food Calorie Analyzer", icon: "📸", href: "/en/tools/food-calorie-analyzer", desc: "Snap a photo, get instant calorie info" },
   { title: "AI Essay Writer", icon: "✍️", href: "/en/tools/ai-essay-writer", desc: "Write complete articles with AI", cat: "Text Tools" },
+  { title: "Keyword Research Tool", icon: "🔎", href: "/en/tools/keyword-research", desc: "Research keywords for SEO optimization", cat: "Developer Tools" },
 ];
 
 export default function EnHome() {

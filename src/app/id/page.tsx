@@ -10,7 +10,7 @@ const categories = [
   { name: "Generator", slug: "generators", icon: "⚡", count: "6", desc: "QR code, barcode, kata sandi, faktur" },
   { name: "Alat Pengembang", slug: "dev", icon: "💻", count: "7", desc: "JSON, Base64, hash, audit SEO, CSS, Markdown, IP lookup" },
   { name: "Alat Islami", slug: "islamic", icon: "🕌", count: "2", desc: "Waris, Zakat kalkulator" },
-  { name: "Lainnya", slug: "daily", icon: "🌟", count: "4", desc: "Usia, BMI, kalori, stopwatch" },
+  { name: "Lainnya", slug: "daily", icon: "🌟", count: "5", desc: "Usia, BMI, kalori, stopwatch, analisis kalori foto" },
 ];
 
 const allTools = [
@@ -74,6 +74,7 @@ const allTools = [
   { title: "Kalkulator Zakat", icon: "🕌", href: "/id/tools/zakat-calculator", desc: "Kewajiban zakat tahunan 2.5%", cat: "Alat Islami" },
 
   { title: "Kalkulator BMI", icon: "⚖️", href: "/id/tools/bmi-calculator", desc: "Indeks Massa Tubuh", cat: "Lainnya" },
+  { title: "Analisis Kalori Makanan", icon: "📸", href: "/id/tools/food-calorie-analyzer", desc: "Foto makanan, dapatkan analisis kalori instan", cat: "Lainnya" },
   { title: "Stopwatch", icon: "⏱️", href: "/id/tools/stopwatch", desc: "Stopwatch dengan penghitung putaran", cat: "Lainnya" },
 ];
 
@@ -84,6 +85,7 @@ const featuredTools = [
   { title: "Konverter Warna", desc: "HEX ↔ RGB ↔ HSL", icon: "🎨", href: "/id/tools/color-converter" },
   { title: "Konverter Mata Uang", desc: "Kurs mata uang langsung", icon: "💱", href: "/id/tools/currency-converter" },
   { title: "PDF ke Word", desc: "Konversi PDF ke teks yang dapat diedit", icon: "📄", href: "/id/tools/pdf-to-word" },
+  { title: "Analisis Kalori Makanan", icon: "📸", href: "/id/tools/food-calorie-analyzer", desc: "Foto makanan, analisis kalori instan" },
   { title: "Gambar ke Teks (OCR)", icon: "👁️", href: "/id/tools/image-to-text", desc: "Ekstrak teks dari gambar dengan OCR", cat: "Alat Gambar" },
 ];
 
