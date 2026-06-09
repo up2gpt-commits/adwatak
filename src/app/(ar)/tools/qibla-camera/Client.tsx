@@ -213,7 +213,7 @@ function ARCamera({
   // Load Kaaba SVG
   useEffect(() => {
     const img = new Image();
-    img.src = "data:image/svg+xml;base64," + btoa(generateKaabaSVG());
+    img.src = "data:image/svg+xml," + encodeURIComponent(generateKaabaSVG());
     kaabaImgRef.current = img;
   }, []);
 

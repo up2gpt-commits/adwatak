@@ -149,7 +149,7 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
 
   useEffect(() => {
     const img = new Image();
-    img.src = "data:image/svg+xml;base64," + btoa(generateKaabaSVG());
+    img.src = "data:image/svg+xml," + encodeURIComponent(generateKaabaSVG());
     kaabaImgRef.current = img;
   }, []);
 
