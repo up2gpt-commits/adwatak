@@ -147,14 +147,6 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
 
   const L = (a: string, e: string) => locale === "ar" ? a : e;
 
-  const getAngleDiff = useCallback((h: number) => {
-    if (h < 0) return -1;
-    let d = bearing - h;
-    if (d > 180) d -= 360;
-    if (d < -180) d += 360;
-    return Math.abs(d);
-  }, [bearing]);
-
   useEffect(() => {
     const img = new Image();
     img.src = "data:image/svg+xml;base64," + btoa(generateKaabaSVG());
@@ -198,6 +190,9 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    let currentBearing = bearing;
+    let alignedState = false;
+
     const resize = () => {
       const c = containerRef.current;
       if (!c) return;
@@ -216,7 +211,13 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
       ctx.clearRect(0, 0, w, h);
 
       const currentHeading = headingRef.current;
-      const diff = currentHeading >= 0 ? getAngleDiff(currentHeading) : -1;
+      let diff = -1;
+      if (currentHeading >= 0) {
+        let d = currentBearing - currentHeading;
+        if (d > 180) d -= 360;
+        if (d < -180) d += 360;
+        diff = Math.abs(d);
+      }
 
       if (currentHeading >= 0) {
         smoothAngleRef.current = lerpAngle(smoothAngleRef.current, currentHeading, Math.min(1, dt * 8));
@@ -229,7 +230,10 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
         revealProgressRef.current = Math.max(0, revealProgressRef.current - dt * 3);
       }
 
-      if (isAligned !== aligned) setAligned(isAligned);
+      if (isAligned !== alignedState) {
+        alignedState = isAligned;
+        setAligned(isAligned);
+      }
 
       // Bottom gradient
       const bg = ctx.createLinearGradient(0, h - 160, 0, h);
@@ -283,7 +287,7 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
         const cx = w / 2, cy = h / 2 - 20;
 
         if (!isAligned) {
-          let turnAngle = bearing - currentHeading;
+          let turnAngle = currentBearing - currentHeading;
           if (turnAngle > 180) turnAngle -= 360;
           if (turnAngle < -180) turnAngle += 360;
           const turnDir = turnAngle > 0 ? 1 : -1;
@@ -341,7 +345,7 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
       ctx.font = "bold 14px sans-serif";
       ctx.textAlign = "left";
       ctx.textBaseline = "top";
-      ctx.fillText(`Qibla: ${bearing.toFixed(1)}°`, 16, 16);
+      ctx.fillText(`Qibla: ${currentBearing.toFixed(1)}°`, 16, 16);
 
       if (currentHeading >= 0) {
         ctx.font = "13px sans-serif";
@@ -356,7 +360,7 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener("resize", resize);
     };
-  }, [bearing, aligned, getAngleDiff, locale]);
+  }, [locale]);
 
   return (
     <div ref={containerRef} className="fixed inset-0 z-50 bg-black overflow-hidden">

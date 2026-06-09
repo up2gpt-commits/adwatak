@@ -191,12 +191,12 @@ function ARCamera({
   const headingRef = useRef(-1);
   const smoothAngleRef = useRef(0);
   const revealProgressRef = useRef(0);
+  const alignedRef = useRef(false);
   const rafRef = useRef(0);
   const [heading, setHeading] = useState(-1);
   const [aligned, setAligned] = useState(false);
   const [cameraReady, setCameraReady] = useState(false);
   const [camError, setCamError] = useState("");
-  const [, forceUpdate] = useState(0);
   const kaabaImgRef = useRef<HTMLImageElement | null>(null);
 
   const getAngleDiff = useCallback(
@@ -240,25 +240,27 @@ function ARCamera({
     };
   }, []);
 
-  // Device orientation
+  // Device orientation — only update ref in RAF, state only when meaningful
   useEffect(() => {
     const handler = (e: DeviceOrientationEvent) => {
       if (e.alpha !== null) {
-        const h = 360 - e.alpha;
-        headingRef.current = h;
-        setHeading(h);
+        headingRef.current = 360 - e.alpha;
+        setHeading(360 - e.alpha);
       }
     };
     window.addEventListener("deviceorientation", handler);
     return () => window.removeEventListener("deviceorientation", handler);
   }, []);
 
-  // Animation loop
+  // Animation loop — STABLE deps, no aligned/bearing/getAngleDiff
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    let currentBearing = bearing; // closed over once
+    let alignedState = false;
 
     const resize = () => {
       const c = containerRef.current;
@@ -279,14 +281,20 @@ function ARCamera({
       ctx.clearRect(0, 0, w, h);
 
       const currentHeading = headingRef.current;
-      const diff = currentHeading >= 0 ? getAngleDiff(currentHeading) : -1;
+      let diff = -1;
+      if (currentHeading >= 0) {
+        let d = currentBearing - currentHeading;
+        if (d > 180) d -= 360;
+        if (d < -180) d += 360;
+        diff = Math.abs(d);
+      }
 
       // Smooth arrow rotation
       if (currentHeading >= 0) {
         smoothAngleRef.current = lerpAngle(smoothAngleRef.current, currentHeading, Math.min(1, dt * 8));
       }
 
-      // Aligned check
+      // Aligned check — use local + ref, not state
       const isAligned = diff >= 0 && diff < 5;
       if (isAligned) {
         revealProgressRef.current = Math.min(1, revealProgressRef.current + dt * 2);
@@ -294,7 +302,9 @@ function ARCamera({
         revealProgressRef.current = Math.max(0, revealProgressRef.current - dt * 3);
       }
 
-      if (isAligned !== aligned) {
+      if (isAligned !== alignedState) {
+        alignedState = isAligned;
+        alignedRef.current = isAligned;
         setAligned(isAligned);
       }
 
@@ -363,7 +373,7 @@ function ARCamera({
 
         if (!isAligned) {
           // Calculate which way to turn
-          let turnAngle = bearing - currentHeading;
+          let turnAngle = currentBearing - currentHeading;
           if (turnAngle > 180) turnAngle -= 360;
           if (turnAngle < -180) turnAngle += 360;
 
@@ -375,12 +385,9 @@ function ARCamera({
           ctx.shadowColor = "rgba(0,0,0,0.4)";
           ctx.shadowBlur = 8;
 
-          // Arrow body
-          const arrowLen = 120;
           const arrowColor = diff < 20 ? (diff < 10 ? "#22c55e" : "#eab308") : "#ef4444";
 
           // Arrow pointing in the direction to turn
-          // Show a curved arrow indicating which way to turn
           const turnDir = turnAngle > 0 ? 1 : -1;
           const intensity = Math.min(Math.abs(turnAngle) / 30, 1);
 
@@ -444,7 +451,7 @@ function ARCamera({
             cy + 115
           );
         } else {
-          // === ALIGNED — Show Kaaba ===
+          // === ALIGNED — Show Kaaba glow on canvas ===
           ctx.shadowBlur = 0;
 
           // Glow effect
@@ -471,12 +478,12 @@ function ARCamera({
       const pad = 16;
       const topText =
         locale === "ar"
-          ? `اتجاه القبلة: ${bearing.toFixed(1)}°`
+          ? `اتجاه القبلة: ${currentBearing.toFixed(1)}°`
           : locale === "tr"
-            ? `Kıble yönü: ${bearing.toFixed(1)}°`
+            ? `Kıble yönü: ${currentBearing.toFixed(1)}°`
             : locale === "id"
-              ? `Arah kiblat: ${bearing.toFixed(1)}°`
-              : `Qibla: ${bearing.toFixed(1)}°`;
+              ? `Arah kiblat: ${currentBearing.toFixed(1)}°`
+              : `Qibla: ${currentBearing.toFixed(1)}°`;
       ctx.fillText(topText, locale === "ar" ? w - pad : pad, pad);
 
       if (currentHeading >= 0) {
@@ -489,10 +496,6 @@ function ARCamera({
         );
       }
 
-      // Back button (top left for AR / top right for Arabic)
-      const backText = locale === "ar" ? "✕ رجوع" : "✕ Back";
-      ctx.font = "16px sans-serif";
-
       rafRef.current = requestAnimationFrame(draw);
     };
     rafRef.current = requestAnimationFrame(draw);
@@ -500,7 +503,7 @@ function ARCamera({
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener("resize", resize);
     };
-  }, [bearing, aligned, getAngleDiff, locale]);
+  }, [locale]); // STABLE — no aligned, no bearing, no getAngleDiff
 
   return (
     <div ref={containerRef} className="fixed inset-0 z-50 bg-black overflow-hidden">
