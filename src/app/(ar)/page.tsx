@@ -13,7 +13,7 @@ export default function Home() {
         <div className="hero-orb-2"></div>
         <div className="hero-badge">
           <span className="hero-badge-dot"></span>
-          <span>المنصة العربية الأولى للأدوات المجانية — ٥٠+ أداة</span>
+          <span>المنصة العربية الأولى للأدوات المجانية — 80+ أداة</span>
         </div>
         <h1><span className="hero-gradient-text">كل الأدوات اللي محتاجها</span><br />في مكان واحد</h1>
         <p>
