@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: "Adwatak — Ücretsiz Çevrimiçi Araçlar",
     template: "%s — Adwatak",
   },
-  description: "Herkes için ücretsiz çevrimiçi araçlar — hesaplayıcılar, dönüştürücüler, oluşturucular ve daha fazlası. Kayıt gerekmez, reklam yok. 50+ araç.",
+  description: "Herkes için ücretsiz çevrimiçi araçlar — hesaplayıcılar, dönüştürücüler, oluşturucular ve daha fazlası. Kayıt gerekmez, reklam yok. 80+ araç.",
   keywords: ["araçlar", "hesaplayıcılar", "dönüştürücüler", "oluşturucular", "ücretsiz araçlar", "çevrimiçi araçlar"],
   metadataBase: new URL(baseUrl),
   alternates: {

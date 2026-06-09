@@ -40,7 +40,7 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
           </div>
           <div className="trust-item">
             <span className="t-icon">🔧</span>
-            <span>٥٠+ أداة بالعربي</span>
+            <span>80+ أداة بالعربي</span>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
                 <span>أدواتك</span>
               </div>
               <p className="footer-desc">
-                منصة عربية مجانية تجمع أكثر من ٥٠ أداة في مكان واحد. حاسبات مالية، أدوات إسلامية، محولات، مولدات والمزيد — كلها تعمل في المتصفح بدون تسجيل.
+                منصة عربية مجانية تجمع 80+ أداة في مكان واحد. حاسبات مالية، أدوات إسلامية، محولات، مولدات والمزيد — كلها تعمل في المتصفح بدون تسجيل.
               </p>
               <div className="footer-social">
                 <a href="https://twitter.com/adawatak" target="_blank" rel="noopener noreferrer" title="𝕏 تويتر">
