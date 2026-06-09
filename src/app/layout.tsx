@@ -108,6 +108,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           gtag('js', new Date());
           gtag('config', 'G-X3SRR9PMGN');
         `}} />
+        {/* Google AdSense */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0124489588683535" crossOrigin="anonymous" />
       </head>
       <body>
         <DynamicHtmlLang />
