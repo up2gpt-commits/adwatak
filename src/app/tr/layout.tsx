@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "tr_TR",
     siteName: "Adwatak",
-    title: "Adwatak — 50+ Ücretsiz Çevrimiçi Araç",
+    title: "Adwatak — 80+ Ücretsiz Çevrimiçi Araç",
     description: "Ücretsiz çevrimiçi araçlar — hesaplayıcılar, dönüştürücüler, oluşturucular ve daha fazlası. Kayıt gerekmez.",
     url: `${baseUrl}/tr`,
     images: [
@@ -83,7 +83,7 @@ export default async function TrLayout({ children }: { children: React.ReactNode
           </div>
           <div className="trust-item">
             <span className="t-icon">🔧</span>
-            <span>50+ araç</span>
+            <span>80+ araç</span>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default async function TrLayout({ children }: { children: React.ReactNode
                 <span>Adwatak</span>
               </div>
               <p className="footer-desc">
-                50'den fazla hesaplayıcı, dönüştürücü, oluşturucu ve yardımcı araç sunan ücretsiz çevrimiçi araç platformu — tümü tarayıcınızda çalışır. Kayıt gerekmez, dosya yükleme yok, takip yok.
+                80+ hesaplayıcı, dönüştürücü, oluşturucu ve yardımcı araç sunan ücretsiz çevrimiçi araç platformu — tümü tarayıcınızda çalışır. Kayıt gerekmez, dosya yükleme yok, takip yok.
               </p>
               <div className="footer-social">
                 <a href="https://twitter.com/adawatak" target="_blank" rel="noopener noreferrer" title="X Twitter">
@@ -163,6 +163,7 @@ export default async function TrLayout({ children }: { children: React.ReactNode
               <a href="/tr/blog">📝 Blog</a>
               <a href="/tr/about">ℹ️ Hakkımızda</a>
               <a href="/tr/privacy">🔒 Gizlilik Politikası</a>
+              <a href="/tr/terms">📜 Hizmet Şartları</a>
               <a href="mailto:contact@adwatak.cloud">📧 İletişim</a>
             </div>
 

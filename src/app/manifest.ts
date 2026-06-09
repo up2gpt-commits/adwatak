@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "أدواتك — Adawatak",
     short_name: "أدواتك",
-    description: "50+ أداة عربية مجانية — حاسبات مالية، أدوات إسلامية، محولات، مولدات",
+    description: "80+ أداة عربية مجانية — حاسبات مالية، أدوات إسلامية، محولات، مولدات",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

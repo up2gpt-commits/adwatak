@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: "Adwatak — Alat Online Gratis",
     template: "%s — Adwatak",
   },
-  description: "Alat online gratis untuk semua — kalkulator, konverter, generator, dan banyak lagi. Tidak perlu daftar, tanpa iklan. 50+ alat.",
+  description: "Alat online gratis untuk semua — kalkulator, konverter, generator, dan banyak lagi. Tidak perlu daftar, tanpa iklan. 80+ alat.",
   keywords: ["alat", "kalkulator", "konverter", "generator", "alat gratis", "alat online"],
   metadataBase: new URL(baseUrl),
   alternates: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     siteName: "Adwatak",
-    title: "Adwatak — 50+ Alat Online Gratis",
+    title: "Adwatak — 80+ Alat Online Gratis",
     description: "Alat online gratis — kalkulator, konverter, generator, dan banyak lagi. Tidak perlu daftar.",
     url: `${baseUrl}/id`,
     images: [
@@ -83,7 +83,7 @@ export default async function IdLayout({ children }: { children: React.ReactNode
           </div>
           <div className="trust-item">
             <span className="t-icon">🔧</span>
-            <span>50+ alat</span>
+            <span>80+ alat</span>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default async function IdLayout({ children }: { children: React.ReactNode
                 <span>Adwatak</span>
               </div>
               <p className="footer-desc">
-                Platform alat online gratis dengan 50+ kalkulator, konverter, generator, dan utilitas — semua berjalan di browser Anda. Tidak perlu daftar, tidak ada unggah file, tanpa pelacakan.
+                Platform alat online gratis dengan 80+ kalkulator, konverter, generator, dan utilitas — semua berjalan di browser Anda. Tidak perlu daftar, tidak ada unggah file, tanpa pelacakan.
               </p>
               <div className="footer-social">
                 <a href="https://twitter.com/adawatak" target="_blank" rel="noopener noreferrer" title="X Twitter">
@@ -163,6 +163,7 @@ export default async function IdLayout({ children }: { children: React.ReactNode
               <a href="/id/blog">📝 Blog</a>
               <a href="/id/about">ℹ️ Tentang Kami</a>
               <a href="/id/privacy">🔒 Kebijakan Privasi</a>
+              <a href="/id/terms">📜 Ketentuan Layanan</a>
               <a href="mailto:contact@adwatak.cloud">📧 Hubungi Kami</a>
             </div>
 

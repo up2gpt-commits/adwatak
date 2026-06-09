@@ -270,12 +270,12 @@ const trBlogPosts: BlogPost[] = [
   },
   {
     slug: "adwatak-nedir-2026",
-    title: "Adwatak Nedir? — 50+ Ücretsiz Çevrimiçi Araç Platformu Hakkında Kapsamlı Rehber 2026",
+    title: "Adwatak Nedir? — 80+ Ücretsiz Çevrimiçi Araç Platformu Hakkında Kapsamlı Rehber 2026",
     excerpt:
-      "Adwatak.cloud nedir, hangi araçları sunar, nasıl kullanılır? Finansal hesaplamalardan İslami araçlara, metin araçlarından PDF dönüştürücülere kadar 50+ ücretsiz aracı keşfedin.",
+      "Adwatak.cloud nedir, hangi araçları sunar, nasıl kullanılır? Finansal hesaplamalardan İslami araçlara, metin araçlarından PDF dönüştürücülere kadar 80+ ücretsiz aracı keşfedin.",
     content: `
 <h2>Adwatak.cloud Nedir?</h2>
-<p><strong>Adwatak</strong> (Arapça: أدواتك — "Araçların"), herkes için ücretsiz çevrimiçi araçlar sunan bir platformdur. 50'den fazla interaktif araçla, finansal hesaplamalardan İslami araçlara, metin düzenleyicilerden PDF dönüştürücülere kadar her ihtiyaca cevap verir.</p>
+<p><strong>Adwatak</strong> (Arapça: أدواتك — "Araçların"), herkes için ücretsiz çevrimiçi araçlar sunan bir platformdur. 80+ interaktif araçla, finansal hesaplamalardan İslami araçlara, metin düzenleyicilerden PDF dönüştürücülere kadar her ihtiyaca cevap verir.</p>
 <p>Platform, Arapça, İngilizce ve şimdi de Türkçe olarak hizmet vermektedir. Tüm araçlar tamamen ücretsizdir, kayıt gerektirmez ve tarayıcınızda çalışır — hiçbir veriniz sunucuya gönderilmez.</p>
 
 <h2>Hangi Araçlar Sunuluyor?</h2>

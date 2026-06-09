@@ -83,7 +83,7 @@ export default async function EnLayout({ children }: { children: React.ReactNode
           </div>
           <div className="trust-item">
             <span className="t-icon">🔧</span>
-            <span>50+ tools</span>
+            <span>80+ tools</span>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default async function EnLayout({ children }: { children: React.ReactNode
                 <span>Adawatak</span>
               </div>
               <p className="footer-desc">
-                Free online tools platform with 50+ calculators, converters, generators, and utilities — all running in your browser. No signup, no uploads, no tracking.
+                Free online tools platform with 80+ calculators, converters, generators, and utilities — all running in your browser. No signup, no uploads, no tracking.
               </p>
               <div className="footer-social">
                 <a href="https://twitter.com/adawatak" target="_blank" rel="noopener noreferrer" title="X Twitter">
@@ -163,6 +163,7 @@ export default async function EnLayout({ children }: { children: React.ReactNode
               <a href="/en/blog">📝 Blog</a>
               <a href="/en/about">ℹ️ About</a>
               <a href="/en/privacy">🔒 Privacy Policy</a>
+              <a href="/en/terms">📜 Terms of Service</a>
               <a href="mailto:contact@adwatak.cloud">📧 Contact</a>
             </div>
 

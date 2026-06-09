@@ -287,7 +287,7 @@ function TrHomeInner() {
       {/* Stats */}
       <div className="stats scroll-fade-in">
         {[
-          { num: "50+", label: "ücretsiz araç", icon: "🔧" },
+          { num: "80+", label: "ücretsiz araç", icon: "🔧" },
           { num: "%100", label: "kayıt gerekmez", icon: "🔓" },
           { num: "0₺", label: "sonsuza kadar ücretsiz", icon: "💚" },
           { num: "7/24", label: "her zaman açık", icon: "🌐" },
@@ -307,7 +307,7 @@ function TrHomeInner() {
         </h2>
         <div className="text-sm text-gray-600 leading-8">
           <p className="mb-3">
-            <strong>Adwatak</strong>, 50'den fazla ücretsiz çevrimiçi aracı tek bir platformda sunar. 
+            <strong>Adwatak</strong>, 80+ ücretsiz çevrimiçi aracı tek bir platformda sunar. 
             Finansal hesaplayıcılar (konut kredisi, kişisel kredi, taksit, EMI, kar marjı, KDV), 
             İslami araçlar (miras, zekat, Hicri çevirici, namaz vakitleri, kıble yönü), 
             metin araçları, PDF dönüştürücüler, birim çeviriciler ve geliştirici araçları.

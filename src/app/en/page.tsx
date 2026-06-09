@@ -294,7 +294,7 @@ function EnHomeInner() {
       {/* Stats */}
       <div className="stats scroll-fade-in">
         {[
-          { num: "50+", label: "Free Tools", icon: "🔧" },
+          { num: "80+", label: "Free Tools", icon: "🔧" },
           { num: "100%", label: "No Signup", icon: "🔓" },
           { num: "0$", label: "Free Forever", icon: "💚" },
           { num: "24/7", label: "Always Available", icon: "🌐" },
@@ -314,7 +314,7 @@ function EnHomeInner() {
         </h2>
         <div className="text-sm text-gray-600 leading-8">
           <p className="mb-3">
-            Adawatak is a completely free online tools platform with 50+ utilities for everyday use. We offer financial calculators (mortgage, loan, EMI, VAT, profit margin), Islamic tools (inheritance, zakat, prayer times, qibla), text tools (word counter, grammar checker, plagiarism detector), PDF tools (merge, compress, convert), generators (QR codes, barcodes, passwords, invoices), and developer tools (JSON, Base64, hash, SEO audit).
+            Adawatak is a completely free online tools platform with 80+ utilities for everyday use. We offer financial calculators (mortgage, loan, EMI, VAT, profit margin), Islamic tools (inheritance, zakat, prayer times, qibla), text tools (word counter, grammar checker, plagiarism detector), PDF tools (merge, compress, convert), generators (QR codes, barcodes, passwords, invoices), and developer tools (JSON, Base64, hash, SEO audit).
           </p>
           <p className="mb-3">
             All tools run directly in your browser — nothing is uploaded to our servers. Your privacy is our priority. No account needed, no tracking, no ads.

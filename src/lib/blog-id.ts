@@ -32,12 +32,12 @@ function todayIdStr(): string {
 const idBlogPosts: BlogPost[] = [
   {
     slug: "apa-itu-adwatak",
-    title: "Apa Itu Adwatak? — Panduan Lengkap Platform 50+ Alat Online Gratis 2026",
+    title: "Apa Itu Adwatak? — Panduan Lengkap Platform 80+ Alat Online Gratis 2026",
     excerpt:
-      "Apa itu Adwatak.cloud, alat apa saja yang tersedia, dan cara menggunakannya? Temukan 50+ alat gratis dari kalkulator keuangan hingga alat Islami, alat teks, konverter PDF, dan banyak lagi.",
+      "Apa itu Adwatak.cloud, alat apa saja yang tersedia, dan cara menggunakannya? Temukan 80+ alat gratis dari kalkulator keuangan hingga alat Islami, alat teks, konverter PDF, dan banyak lagi.",
     content: `
 <h2>Apa Itu Adwatak.cloud?</h2>
-<p><strong>Adwatak</strong> (Arab: أدواتك — "Alat Anda") adalah platform yang menyediakan alat online gratis untuk semua orang. Dengan 50+ alat interaktif, dari kalkulator keuangan hingga alat Islami, editor teks hingga konverter PDF, Adwatak menjawab setiap kebutuhan digital Anda.</p>
+<p><strong>Adwatak</strong> (Arab: أدواتك — "Alat Anda") adalah platform yang menyediakan alat online gratis untuk semua orang. Dengan 80+ alat interaktif, dari kalkulator keuangan hingga alat Islami, editor teks hingga konverter PDF, Adwatak menjawab setiap kebutuhan digital Anda.</p>
 <p>Platform ini tersedia dalam bahasa Arab, Inggris, Turki, dan Indonesia. Semua alat sepenuhnya gratis, tidak perlu daftar, dan berjalan di browser Anda — tidak ada data yang dikirim ke server.</p>
 
 <h2>Alat Apa Saja yang Tersedia?</h2>

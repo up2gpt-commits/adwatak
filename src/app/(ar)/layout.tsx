@@ -120,6 +120,7 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
               <a href="/blog">📝 المدونة</a>
               <a href="/about">ℹ️ عن الموقع</a>
               <a href="/privacy">🔒 سياسة الخصوصية</a>
+              <a href="/terms">📜 شروط الخدمة</a>
               <a href="mailto:contact@adwatak.cloud">📧 تواصل معنا</a>
             </div>
 

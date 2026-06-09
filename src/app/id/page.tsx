@@ -287,7 +287,7 @@ function IdHomeInner() {
       {/* Stats */}
       <div className="stats scroll-fade-in">
         {[
-          { num: "50+", label: "Alat Gratis", icon: "🔧" },
+          { num: "80+", label: "Alat Gratis", icon: "🔧" },
           { num: "100%", label: "Tanpa Daftar", icon: "🔓" },
           { num: "0Rp", label: "Gratis Selamanya", icon: "💚" },
           { num: "24/7", label: "Selalu Tersedia", icon: "🌐" },
@@ -307,7 +307,7 @@ function IdHomeInner() {
         </h2>
         <div className="text-sm text-gray-600 leading-8">
           <p className="mb-3">
-            Adwatak adalah platform alat online gratis dengan 50+ utilitas untuk kebutuhan sehari-hari. Kami menyediakan kalkulator keuangan (KPR, pinjaman, EMI, PPN, margin laba), alat Islami (waris, zakat, waktu sholat, kiblat), alat teks (penghitung kata, tata bahasa, deteksi plagiarisme), alat PDF (gabung, kompres, konversi), generator (QR code, barcode, kata sandi, faktur), dan alat pengembang (JSON, Base64, hash, audit SEO).
+            Adwatak adalah platform alat online gratis dengan 80+ utilitas untuk kebutuhan sehari-hari. Kami menyediakan kalkulator keuangan (KPR, pinjaman, EMI, PPN, margin laba), alat Islami (waris, zakat, waktu sholat, kiblat), alat teks (penghitung kata, tata bahasa, deteksi plagiarisme), alat PDF (gabung, kompres, konversi), generator (QR code, barcode, kata sandi, faktur), dan alat pengembang (JSON, Base64, hash, audit SEO).
           </p>
           <p className="mb-3">
             Semua alat berjalan langsung di peramban Anda — tidak ada yang diunggah ke server kami. Privasi Anda adalah prioritas kami. Tanpa akun, tanpa pelacakan, tanpa iklan.

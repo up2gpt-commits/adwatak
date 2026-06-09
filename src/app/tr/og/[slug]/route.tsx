@@ -11,7 +11,7 @@ export async function GET(
   const tool = TOOLS_META[slug];
 
   const nameTr = tool?.nameTr || "Adwatak";
-  const descTr = tool?.descTr || "50+ ücretsiz çevrimiçi araç";
+  const descTr = tool?.descTr || "80+ ücretsiz çevrimiçi araç";
   const icon = getToolIcon(slug);
 
   return new ImageResponse(

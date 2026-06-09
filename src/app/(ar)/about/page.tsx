@@ -1,6 +1,6 @@
 export const metadata = {
   title: "عن الموقع — أدواتك",
-  description: "أدواتك هي منصة عربية مجانية تقدم أكثر من 40 أداة تفاعلية باللغة العربية — حاسبات مالية، أدوات إسلامية، مولدات، ومحولات. بدون تسجيل وبدون إعلانات مزعجة.",
+  description: "أدواتك هي منصة عربية مجانية تقدم 80+ أداة تفاعلية باللغة العربية — حاسبات مالية، أدوات إسلامية، مولدات، ومحولات. بدون تسجيل وبدون إعلانات مزعجة.",
   alternates: {
     canonical: "https://adwatak.cloud/about",
   },
@@ -34,6 +34,10 @@ export default function AboutPage() {
             <li style={{ marginBottom: "8px" }}>مُحدثة حسب الأنظمة السعودية والإماراتية والمصرية</li>
             <li style={{ marginBottom: "8px" }}>تصميم يعمل على الجوال والكمبيوتر</li>
           </ul>
+          <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#0f172a", margin: "24px 0 12px" }}>الفريق</h2>
+          <p style={{ marginBottom: "16px" }}>
+            <strong>محمود</strong> — مؤسس ومطور منصة أدواتك. يعمل على توفير أدوات عربية مجانية عالية الجودة للجميع.
+          </p>
           <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#0f172a", margin: "24px 0 12px" }}>التقنية</h2>
           <p>
             مبني بـ <strong>Next.js</strong> — إطار عمل حديث يضمن سرعة عالية وأداء ممتاز.
