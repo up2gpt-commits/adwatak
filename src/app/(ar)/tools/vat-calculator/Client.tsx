@@ -6,6 +6,7 @@ import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
+import EmbedButton from "../../../components/EmbedButton";
 
 const faqs = [
   { question: "ما معنى VAT؟", answer: "VAT = Value Added Tax = ضريبة القيمة المضافة. هي ضريبة استهلاك غير مباشرة تُفرض على الفرق بين تكلفة المدخلات وسعر المخرجات في كل مرحلة من مراحل الإنتاج والتوزيع. في السعودية نسبة VAT هي 15%، وفي الإمارات 5%، وفي مصر 14%." },
@@ -123,6 +124,9 @@ return (
           </div>
         </div>
       )}
+      <div className="text-center mb-2">
+        <EmbedButton lang="ar" />
+      </div>
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />

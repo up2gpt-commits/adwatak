@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: blob: https:",
               "font-src 'self' https://fonts.gstatic.com",
               "connect-src 'self' https://openrouter.ai https://www.google-analytics.com",
-              "frame-ancestors 'none'",
+              "frame-ancestors *",
               "media-src 'self' blob:",
               "worker-src 'self' blob:",
             ].join("; "),

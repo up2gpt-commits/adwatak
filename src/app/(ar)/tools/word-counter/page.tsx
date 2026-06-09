@@ -1,8 +1,17 @@
-import { generateToolMetadata } from "@/app/lib/tool-metadata";
+import { generateToolMetadata, generateToolSchemas } from "@/app/lib/tool-metadata";
+import StructuredData from "@/app/components/StructuredData";
 import Client from "./Client";
 
 export const metadata = generateToolMetadata("word-counter", "ar")!;
 
 export default function Page() {
-  return <Client />;
+  const schemas = generateToolSchemas("word-counter", "ar");
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <StructuredData key={i} data={schema} />
+      ))}
+      <Client />
+    </>
+  );
 }

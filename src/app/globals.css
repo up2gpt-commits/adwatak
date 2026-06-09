@@ -2599,3 +2599,12 @@ input, textarea, select {
               color 0.3s ease,
               box-shadow 0.3s ease !important;
 }
+
+/* ===== Qibla Camera AR — bounce-gentle ===== */
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-bounce-gentle {
+  animation: bounce-gentle 3s ease-in-out infinite;
+}

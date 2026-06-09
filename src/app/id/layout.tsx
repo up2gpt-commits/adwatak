@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { Inter } from "next/font/google";
+import { headers } from "next/headers";
 import Header from "../components/Header";
 import NewsletterForm from "../components/NewsletterForm";
 
@@ -55,9 +56,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function IdLayout({ children }: { children: React.ReactNode }) {
+export default async function IdLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers();
+  const isEmbed = headersList.get("x-is-embed") === "true";
+
+  if (isEmbed) {
+    return <div className={`${inter.variable}`} dir="ltr">{children}</div>;
+  }
+
   return (
-    <div className={`$\{inter.variable}`} dir="ltr">
+    <div className={`${inter.variable}`} dir="ltr">
       {/* Trust Bar */}
       <div className="trust-bar scroll-fade-in">
         <div className="container trust-bar-inner">

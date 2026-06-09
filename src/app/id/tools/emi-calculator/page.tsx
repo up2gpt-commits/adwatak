@@ -1,8 +1,17 @@
-import { generateToolMetadata } from "@/app/lib/tool-metadata";
+import { generateToolMetadata, generateToolSchemas } from "@/app/lib/tool-metadata";
+import StructuredData from "@/app/components/StructuredData";
 import Client from "./Client";
 
 export const metadata = generateToolMetadata("emi-calculator", "id")!;
 
 export default function Page() {
-  return <Client />;
+  const schemas = generateToolSchemas("emi-calculator", "id");
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <StructuredData key={i} data={schema} />
+      ))}
+      <Client />
+    </>
+  );
 }

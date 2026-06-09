@@ -1,20 +1,17 @@
-import { Metadata } from "next";
+import { generateToolMetadata, generateToolSchemas } from "@/app/lib/tool-metadata";
+import StructuredData from "@/app/components/StructuredData";
 import Client from "./Client";
 
-export const metadata: Metadata = {
-  title: "محلل السعرات بالصور — تعرف على سعرات أي طعام بالتصوير",
-  description:
-    "أداة مجانية لتحليل السعرات الحرارية من خلال صورة الطعام. صور أي وجبة واحصل على تفاصيل دقيقة عن السعرات والبروتين والكربوهيدرات والدهون.",
-  alternates: {
-    canonical: "https://adwatak.cloud/tools/food-calorie-analyzer",
-  },
-  openGraph: {
-    title: "محلل السعرات بالصور — أدواتك",
-    description:
-      "صور طعامك واحصل على تحليل كامل للسعرات الحرارية والمغذيات مجاناً.",
-  },
-};
+export const metadata = generateToolMetadata("food-calorie-analyzer", "ar")!;
 
 export default function Page() {
-  return <Client />;
+  const schemas = generateToolSchemas("food-calorie-analyzer", "ar");
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <StructuredData key={i} data={schema} />
+      ))}
+      <Client />
+    </>
+  );
 }

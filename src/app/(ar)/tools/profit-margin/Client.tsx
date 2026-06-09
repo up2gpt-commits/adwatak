@@ -40,81 +40,252 @@ const seoContent = [
   "نصيحة للتجار: لا تخلط بين هامش الربح الإجمالي وصافي الربح. الهامش الإجمالي يخصم فقط تكلفة المنتج. صافي الربح يخصم كل شيء: إيجار، رواتب، كهرباء، تسويق، صيانة. استخدم حاسبة هامش الربح للتسعير المبدئي، واحسب صافي الربح بعد إضافة كل التكاليف."
 ];
 
+interface Scenario { name: string; cost: number; price: number; margin: number; markup: number; profit: number }
+
 export default function Client() {
   const [cost, setCost] = useState("");
   const [price, setPrice] = useState("");
   const [margin, setMargin] = useState("");
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<{
+    margin: number; markup: number; profit: number; price: number; cost: number
+  } | null>(null);
+  const [scenarios, setScenarios] = useState<Scenario[]>([]);
+  const [showWhatIf, setShowWhatIf] = useState(false);
 
   const calculate = () => {
     const c = parseFloat(cost);
     const p = parseFloat(price);
     const m = parseFloat(margin);
     if (c > 0 && p > 0) {
-      setResult({ margin: ((p - c) / p * 100), markup: ((p - c) / c * 100), profit: p - c, price: p, cost: c });
-    } else if (c > 0 && m > 0) {
+      const res = { margin: ((p - c) / p * 100), markup: ((p - c) / c * 100), profit: p - c, price: p, cost: c };
+      setResult(res);
+      return;
+    }
+    if (c > 0 && m > 0 && m < 100) {
       const calcPrice = c / (1 - m / 100);
       setResult({ margin: m, markup: (calcPrice - c) / c * 100, profit: calcPrice - c, price: calcPrice, cost: c });
-    } else if (p > 0 && m > 0) {
+      return;
+    }
+    if (p > 0 && m > 0 && m < 100) {
       const calcCost = p * (1 - m / 100);
       setResult({ margin: m, markup: (p - calcCost) / calcCost * 100, profit: p - calcCost, price: p, cost: calcCost });
     }
   };
 
+  const saveScenario = () => {
+    if (!result) return;
+    const count = scenarios.length;
+    const totalProfit = scenarios.reduce((s, x) => s + x.profit, 0) + result.profit;
+    const label = `منتج ${count + 1}`;
+    setScenarios([...scenarios, { name: label, ...result }]);
+  };
+
+  const removeScenario = (idx: number) => {
+    setScenarios(scenarios.filter((_, i) => i !== idx));
+  };
+
+  const clearAll = () => {
+    setScenarios([]);
+  };
+
+  // What-if analysis
+  const whatIfData = result ? [-20, -15, -10, -5, 0, 5, 10, 15, 20].map(pct => {
+    const newPrice = result.price * (1 + pct / 100);
+    const newProfit = newPrice - result.cost;
+    return { change: pct, price: newPrice, profit: newProfit, margin: (newProfit / newPrice * 100), markup: (newProfit / result.cost * 100) };
+  }) : [];
+
   const schemaName = "حاسبة هامش الربح";
-const schemaDesc = `Online حاسبة هامش الربح - free tool`;
-const schemaCategory = "Utility";
-const schemaUrl = "https://adwatak.cloud/tools/profit-margin";
-const breadcrumbItems = [
-  { name: "الرئيسية", url: "https://adwatak.cloud" },
-  { name: "الحاسبات المالية", url: "https://adwatak.cloud/category/calculators" },
-  { name: "حاسبة هامش الربح", url: "https://adwatak.cloud/tools/profit-margin" },
-];
-return (
+  const schemaDesc = "Online حاسبة هامش الربح - free tool";
+  const schemaCategory = "Utility";
+  const schemaUrl = "https://adwatak.cloud/tools/profit-margin";
+  const breadcrumbItems = [
+    { name: "الرئيسية", url: "https://adwatak.cloud" },
+    { name: "الحاسبات المالية", url: "https://adwatak.cloud/category/calculators" },
+    { name: "حاسبة هامش الربح", url: "https://adwatak.cloud/tools/profit-margin" },
+  ];
+
+  const inputStyle = "w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 transition-all";
+  const labelStyle = "block text-sm font-semibold text-gray-700 mb-1.5";
+  const cardStyle = "bg-white/80 backdrop-blur-sm rounded-2xl border border-white/30 shadow-lg p-6 mb-5";
+  const gradientBtn = "bg-gradient-to-l from-indigo-600 to-blue-600 text-white font-bold p-3.5 rounded-xl border-none text-lg w-full cursor-pointer hover:from-indigo-700 hover:to-blue-700 transition-all shadow-md hover:shadow-lg active:scale-[0.98]";
+  const resultCardStyle = "bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-sm rounded-xl p-5 text-center border border-white/40 shadow-sm";
+
+  return (
     <div className="max-w-[760px] mx-auto">
-        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'ar', schemaCategory)} />
-        <StructuredData data={faqSchema(faqs)} />
-        <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
-      {/* GEO: Speakable — marks key content for AI/voice engines */}
-      <StructuredData data={speakableSchema(["h1", "h2", "main"])}
-      />
+      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'ar', schemaCategory)} />
+      <StructuredData data={faqSchema(faqs)} />
+      <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       <Breadcrumb lang="ar" category="الحاسبات المالية" categorySlug="calculators" toolName="حاسبة هامش الربح" />
-      <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+
+      {/* Main Calculator Card */}
+      <div className={cardStyle}>
         <h1 className="text-2xl font-extrabold mb-1">📈 حاسبة هامش الربح</h1>
-        <p className="text-sm text-gray-500 mb-6">احسب هامش الربح والمارك أب والتكلفة أو سعر البيع</p>
+        <p className="text-sm text-gray-500 mb-6">احسب هامش الربح والمارك أب والتكلفة أو سعر البيع — أدخل أي قيمتين</p>
+
         {[
-          { label: "التكلفة (ريال)", value: cost, set: setCost, placeholder: "80" },
-          { label: "سعر البيع (ريال) — اختياري", value: price, set: setPrice, placeholder: "100" },
-          { label: "هامش الربح (%) — اختياري", value: margin, set: setMargin, placeholder: "20" },
+          { label: "التكلفة (ريال)", value: cost, set: setCost, placeholder: "80", step: "any" },
+          { label: "سعر البيع (ريال) — اختياري", value: price, set: setPrice, placeholder: "100", step: "any" },
+          { label: "هامش الربح (%) — اختياري", value: margin, set: setMargin, placeholder: "20", step: "any" },
         ].map((f, i) => (
           <div key={i} className="mb-4">
-            <label className="block text-sm font-semibold text-gray-700 mb-1.5">{f.label}</label>
-            <input type="number" value={f.value} onChange={(e) => f.set(e.target.value)}
-              className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder={f.placeholder} />
+            <label className={labelStyle}>{f.label}</label>
+            <div className="relative">
+              <input type="number" value={f.value} onChange={(e) => f.set(e.target.value)}
+                step={f.step}
+                className={inputStyle} placeholder={f.placeholder} />
+            </div>
           </div>
         ))}
-        <p className="text-xs text-gray-400 mb-2">أدخل أي قيمتين وسيُحسب الباقي</p>
-        <button onClick={calculate}
-          className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">
-          احسب
+
+        <p className="text-xs text-gray-400 mb-3">أدخل قيمتين وسيُحسب الباقي تلقائياً</p>
+        <button onClick={calculate} className={gradientBtn}>
+          <span className="inline-flex items-center gap-2">🧮 احسب</span>
         </button>
       </div>
+
+      {/* Results Section */}
       {result && (
-        <div className="grid grid-cols-2 gap-3 mb-6">
-          <div className="bg-blue-50 rounded-xl p-5 text-center border border-blue-200">
-            <p className="text-xs text-blue-600">هامش الربح</p>
-            <p className="text-xl font-extrabold">{result.margin.toFixed(2)}%</p>
+        <>
+          {/* KPI Cards */}
+          <div className="grid grid-cols-3 gap-3 mb-5">
+            <div className={resultCardStyle}>
+              <p className="text-xs text-indigo-500 mb-1 font-medium">هامش الربح</p>
+              <p className="text-2xl font-extrabold text-indigo-600">{result.margin.toFixed(2)}%</p>
+            </div>
+            <div className={resultCardStyle}>
+              <p className="text-xs text-emerald-500 mb-1 font-medium">المارك أب</p>
+              <p className="text-2xl font-extrabold text-emerald-600">{result.markup.toFixed(2)}%</p>
+            </div>
+            <div className={resultCardStyle}>
+              <p className="text-xs text-amber-500 mb-1 font-medium">صافي الربح</p>
+              <p className="text-2xl font-extrabold text-amber-600">{result.profit.toFixed(2)} ريال</p>
+            </div>
           </div>
-          <div className="bg-green-50 rounded-xl p-5 text-center border border-green-200">
-            <p className="text-xs text-green-600">المارك أب</p>
-            <p className="text-xl font-extrabold">{result.markup.toFixed(2)}%</p>
+
+          {/* Visual Stacked Bar Chart */}
+          <div className={cardStyle}>
+            <h3 className="text-sm font-bold text-gray-700 mb-3">📊 توزيع التكلفة مقابل الربح</h3>
+            {(() => {
+              const total = result.cost + result.profit;
+              const costPct = (result.cost / total * 100);
+              const profitPct = (result.profit / total * 100);
+              return (
+                <>
+                  <div className="h-10 rounded-xl overflow-hidden flex mb-2 shadow-inner">
+                    <div className="bg-gradient-to-r from-gray-300 to-gray-400 flex items-center justify-center text-xs font-bold text-gray-700 transition-all duration-300"
+                      style={{ width: `${costPct}%` }}>
+                      {costPct >= 12 ? `التكلفة ${costPct.toFixed(1)}%` : ""}
+                    </div>
+                    <div className="bg-gradient-to-r from-emerald-400 to-emerald-500 flex items-center justify-center text-xs font-bold text-white transition-all duration-300"
+                      style={{ width: `${profitPct}%` }}>
+                      {profitPct >= 12 ? `الربح ${profitPct.toFixed(1)}%` : ""}
+                    </div>
+                  </div>
+                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>🔵 التكلفة: {result.cost.toFixed(2)} ريال</span>
+                    <span>🟢 الربح: {result.profit.toFixed(2)} ريال</span>
+                    <span>💰 الإجمالي: {total.toFixed(2)} ريال</span>
+                  </div>
+                </>
+              );
+            })()}
           </div>
-        </div>
+
+          {/* What-If Analysis */}
+          <div className={cardStyle}>
+            <button onClick={() => setShowWhatIf(!showWhatIf)}
+              className="flex items-center justify-between w-full text-right">
+              <h3 className="text-sm font-bold text-gray-700">🔮 تحليل السيناريوهات — ماذا لو تغير السعر؟</h3>
+              <span className={`text-gray-400 text-lg transition-transform ${showWhatIf ? 'rotate-180' : ''}`}>▾</span>
+            </button>
+            {showWhatIf && (
+              <div className="mt-4 overflow-x-auto">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200">
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">تغير السعر</th>
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">السعر</th>
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">الربح</th>
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">الهامش</th>
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">المارك أب</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {whatIfData.map((row, i) => (
+                      <tr key={i} className={`border-b border-gray-100 hover:bg-indigo-50/50 transition-colors ${row.change === 0 ? 'bg-indigo-50 font-bold' : ''}`}>
+                        <td className={`p-2.5 ${row.change > 0 ? 'text-emerald-600' : row.change < 0 ? 'text-red-500' : 'text-indigo-600'}`}>
+                          {row.change > 0 ? `+${row.change}%` : `${row.change}%`}
+                        </td>
+                        <td className="p-2.5">{row.price.toFixed(2)}</td>
+                        <td className="p-2.5">{row.profit.toFixed(2)}</td>
+                        <td className="p-2.5">{row.margin.toFixed(2)}%</td>
+                        <td className="p-2.5">{row.markup.toFixed(2)}%</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p className="text-xs text-gray-400 mt-3">الخط الغامق = السعر الحالي. جرّب سيناريوهات مختلفة لترى تأثير تغيير السعر على هامش الربح.</p>
+              </div>
+            )}
+          </div>
+
+          {/* Scenario Comparison */}
+          <div className={cardStyle}>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-sm font-bold text-gray-700">📋 مقارنة سيناريوهات</h3>
+              <div className="flex gap-2">
+                {scenarios.length > 0 && (
+                  <button onClick={clearAll} className="text-xs text-red-500 hover:text-red-700 font-medium px-2 py-1 rounded-lg hover:bg-red-50 transition-colors">مسح الكل</button>
+                )}
+                <button onClick={saveScenario} className="text-xs text-indigo-600 hover:text-indigo-800 font-medium px-3 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 transition-colors">+ حفظ السيناريو الحالي</button>
+              </div>
+            </div>
+            {scenarios.length === 0 ? (
+              <p className="text-xs text-gray-400 text-center py-4">اضغط "حفظ السيناريو الحالي" لمقارنة منتجات أو تسعيرات مختلفة</p>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200">
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">المنتج</th>
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">التكلفة</th>
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">السعر</th>
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">الهامش</th>
+                      <th className="p-2.5 text-right text-gray-600 font-semibold">الربح</th>
+                      <th className="p-2.5"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {scenarios.map((s, i) => (
+                      <tr key={i} className="border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+                        <td className="p-2.5 font-medium">{s.name}</td>
+                        <td className="p-2.5">{s.cost.toFixed(2)}</td>
+                        <td className="p-2.5">{s.price.toFixed(2)}</td>
+                        <td className="p-2.5">
+                          <span className={`${s.margin >= 20 ? 'text-emerald-600' : s.margin >= 10 ? 'text-amber-600' : 'text-red-500'} font-semibold`}>
+                            {s.margin.toFixed(1)}%
+                          </span>
+                        </td>
+                        <td className="p-2.5">{s.profit.toFixed(2)}</td>
+                        <td className="p-2.5">
+                          <button onClick={() => removeScenario(i)} className="text-red-400 hover:text-red-600 transition-colors text-xs">✕</button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        </>
       )}
+
       <SEOContent content={seoContent} lang="ar" />
       <FAQSection faqs={faqs} lang="ar" />
       <RelatedTools tools={relatedTools} lang="ar" />
-    <ShareButtons lang="ar" />
+      <ShareButtons lang="ar" />
     </div>
   );
 }

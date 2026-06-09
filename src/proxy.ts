@@ -248,6 +248,12 @@ export function proxy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-locale", locale);
 
+  // ── Embed detection — `x-is-embed` header for layouts ──
+  // Allows en/tr/id layouts to skip header/footer chrome on embed pages
+  if (pathname.includes("/embed/")) {
+    requestHeaders.set("x-is-embed", "true");
+  }
+
   // ── Cookie exists → respect it (no redirect) ──────────────────
   const langCookie = request.cookies.get(COOKIE_NAME)?.value;
   if (langCookie && LOCALES.includes(langCookie as Locale)) {

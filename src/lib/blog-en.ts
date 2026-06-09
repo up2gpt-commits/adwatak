@@ -1482,4 +1482,347 @@ const enBlogPosts: BlogPost[] = [
       <p><a href="https://adwatak.cloud">Adwatak</a> is the most comprehensive free tools platform for the Middle East and North Africa. Whether you need to calculate a mortgage, zakat, generate a QR code, or check your text length — all the tools you need in one place, for free.</p>
     `,
   },
+  {
+    slug: "digital-tasbeeh-guide-2026",
+    title: "Digital Tasbeeh — A Complete Guide to Daily Islamic Remembrances",
+    excerpt:
+      "A complete guide to digital tasbeeh and daily Islamic remembrances (Adhkar): types of remembrances, their virtues, how to use a digital tasbeeh counter, and the best times for dhikr. Discover how to make remembrance of Allah part of your daily routine.",
+    date: "2026-06-08",
+    category: "Islamic",
+    readTime: "14 min read",
+    keywords: [
+      "digital tasbeeh",
+      "tasbeeh counter",
+      "daily adhkar",
+      "islamic remembrances",
+      "dhikr guide",
+      "morning adhkar",
+      "evening adhkar",
+      "tasbeeh app",
+      "digital dhikr counter",
+      "best times for dhikr",
+      "adhkar after prayer",
+      "islamic daily routine",
+    ],
+    content: `
+      <h2>Introduction: Why Is Dhikr (Remembrance of Allah) So Important?</h2>
+      <p>Allah says in the Quran: <em>"So remember Me; I will remember you. And be grateful to Me and do not deny Me"</em> (Al-Baqarah 2:152). Dhikr is the food of the heart — it revives the heart after its death, guides the mind after its confusion, and brings the servant closer to their Lord in every single moment of the day.</p>
+      <p>In the age of technology, the <strong>digital tasbeeh</strong> has emerged as a practical tool that helps Muslims maintain their daily dhikr and tasbeeh effortlessly. Whether you are at work, commuting, or at home — the digital tasbeeh is always with you.</p>
+      <p>💡 <strong>Try the <a href="/en/tools/tasbeeh-counter">Tasbeeh Counter on Adwatak</a></strong> — a free, easy-to-use digital tasbeeh!</p>
+
+      <h2>What Is Tasbeeh? Linguistic and Shariah Definition</h2>
+      <p><strong>Tasbeeh</strong> linguistically comes from the Arabic root "sabh" — meaning to declare Allah free from any imperfection or deficiency. In Islamic terminology, tasbeeh means saying <strong>"SubhanAllah"</strong> (Glory be to Allah) and similar phrases of glorification and exaltation.</p>
+      <p>Tasbeeh is not just a word you say — it is a <strong>state of the heart</strong> that expresses the greatness of Allah and His transcendence above anything unworthy of His majesty. When you say "SubhanAllah," you are affirming that Allah is free from all imperfection, all deficiency, and all comparison to His creation.</p>
+
+      <h2>Types of Daily Adhkar — Not Just Tasbeeh!</h2>
+      <p>Daily Islamic remembrances are diverse and not limited to tasbeeh alone. There are many types, each with its own virtue and reward:</p>
+
+      <h3>1. Tasbeeh (SubhanAllah — Glory be to Allah)</h3>
+      <p>The Prophet Muhammad (peace be upon him) said: <em>"Two words that are light on the tongue, heavy on the scale, and beloved to the Most Merciful: SubhanAllahi wa bihamdihi, SubhanAllahil Adeem"</em> (Bukhari & Muslim). 💡 <strong>Use the <a href="/en/tools/tasbeeh-counter">Tasbeeh Counter</a></strong> to track your daily dhikr.</p>
+
+      <h3>2. Hamd (Alhamdulillah — Praise be to Allah)</h3>
+      <p>The Prophet (peace be upon him) said: <em>"The best supplication is Alhamdulillah"</em> (Tirmidhi). Hamd fills the Scale on the Day of Judgment and is one of the greatest causes of healing.</p>
+
+      <h3>3. Takbeer (Allahu Akbar — Allah is the Greatest)</h3>
+      <p>Takbeer is among the greatest forms of dhikr — it is the first thing said in prayer, in the adhan, and on the two Eids. The Prophet (peace be upon him) said: <em>"The most beloved words to Allah are four: SubhanAllah, Alhamdulillah, La ilaha illallah, and Allahu Akbar"</em> (Muslim).</p>
+
+      <h3>4. Tahleel (La ilaha illallah — There is no god but Allah)</h3>
+      <p>The best of all dhikr — the Prophet (peace be upon him) said: <em>"The best thing I and the Prophets before me have said is: La ilaha illallah wahdahu la sharika lah..."</em> (Tirmidhi).</p>
+
+      <h3>5. Istighfar (Astaghfirullah — I seek forgiveness from Allah)</h3>
+      <p>Istighfar is a door to provision and forgiveness. The Prophet (peace be upon him) said: <em>"Whoever makes istighfir a habit, Allah will make for them a way out of every distress, a relief from every worry, and will provide for them from where they do not expect"</em> (Abu Dawud).</p>
+
+      <h3>6. Salawat (Sending blessings upon the Prophet)</h3>
+      <p>The Prophet (peace be upon him) said: <em>"Whoever sends one blessing upon me, Allah will send ten blessings upon him"</em> (Muslim). Salawat is among the greatest and most beloved forms of dhikr to Allah.</p>
+
+      <h2>Morning and Evening Adhkar — Your Daily Fortress</h2>
+      <p>The morning and evening adhkar are among the most important remembrances a Muslim should maintain. Allah says: <em>"O you who believe, remember Allah with much remembrance, and glorify Him morning and evening"</em> (Al-Ahzab 33:41-42).</p>
+
+      <h3>Morning Adhkar</h3>
+      <p>Said after Fajr prayer until sunrise. Key morning adhkar include:</p>
+      <ul>
+        <li>🌅 <strong>Ayat al-Kursi</strong> — The Prophet (peace be upon him) said: <em>"Whoever recites it in the morning will be protected from the jinn until evening"</em></li>
+        <li>📿 <strong>Al-Mu'awwidhatayn</strong> (Surah Al-Falaq and An-Nas) — Three times morning and evening</li>
+        <li>🤲 <strong>Morning supplication:</strong> "Asbahna wa asbahal mulku lillah, walhamdulillah..."</li>
+        <li>📿 <strong>SubhanAllahi wa bihamdihi</strong> — 100 times</li>
+      </ul>
+
+      <h3>Evening Adhkar</h3>
+      <p>Said after Asr prayer until sunset. Similar to morning adhkar with "asbahna" changed to "amsayna."</p>
+      <p>💡 <strong>Use the <a href="/en/tools/prayer-times">Prayer Times tool</a></strong> to know the exact prayer times in your city.</p>
+
+      <h2>Digital Tasbeeh — How Does It Help You?</h2>
+      <p>The digital tasbeeh is a simple tool that helps you:</p>
+      <ul>
+        <li>📊 <strong>Track your dhikr count</strong> — Never lose count or miscount</li>
+        <li>🎯 <strong>Meet daily goals</strong> — Set your target (33, 99, 1000) and stay committed</li>
+        <li>📱 <strong>Use anywhere</strong> — On your phone or computer</li>
+        <li>🔄 <strong>Reset easily</strong> — If you make a mistake or want to start fresh</li>
+      </ul>
+      <p>💡 <strong><a href="/en/tools/tasbeeh-counter">Try the Tasbeeh Counter on Adwatak</a></strong> — free, ad-free, and works on all devices!</p>
+
+      <h2>Adhkar After Prayer — 33 Tasbeeh, 33 Hamd, 34 Takbeer</h2>
+      <p>Among the most important adhkar every Muslim should maintain: the remembrances after each obligatory prayer. The Prophet (peace be upon him) said: <em>"Whoever says SubhanAllah 33 times, Alhamdulillah 33 times, and Allahu Akbar 34 times after every prayer — that makes 100 — their sins will be forgiven even if they are like the foam of the sea"</em> (Muslim).</p>
+      <p>💡 <strong>Tip:</strong> Use the <a href="/en/tools/tasbeeh-counter">Tasbeeh Counter</a> after each prayer to ensure you reach the correct count without error.</p>
+
+      <h2>Adhkar for Sleep and Waking</h2>
+      <p>Sleep is the brother of death — and a Muslim should remember Allah before sleeping and upon waking. Key sleep adhkar include:</p>
+      <ul>
+        <li>🌙 <strong>Reciting Ayat al-Kursi</strong> — The Prophet (peace be upon him) said: <em>"Whoever recites it, Allah will assign a guardian over them, and no devil will approach them until morning"</em></li>
+        <li>📿 <strong>Reciting Surah Al-Ikhlas and Al-Mu'awwidhatayn</strong> — Three times with blowing into the palms</li>
+        <li>🤲 <strong>Sleep supplication:</strong> "Bismika Allahumma amutu wa ahya"</li>
+        <li>📿 <strong>SubhanAllah (33), Alhamdulillah (33), Allahu Akbar (34)</strong></li>
+      </ul>
+
+      <h2>Ramadan Adhkar — The Season of Remembrance</h2>
+      <p>Ramadan is the month of dhikr and Quran. The Prophet (peace be upon him) said: <em>"Fasting and the Quran will intercede for the servant on the Day of Judgment"</em> (Ahmad). In Ramadan, dhikr carries multiplied rewards — so make the most of every moment.</p>
+      <p>💡 <strong>Use the <a href="/en/tools/hijri-converter">Hijri Date Converter</a></strong> to know the exact start and end of Ramadan according to the Hijri calendar.</p>
+
+      <h2>Suggested Daily Dhikr Schedule</h2>
+      <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;">
+        <thead>
+          <tr style="background:#1a1a2e; color:#fff;">
+            <th style="padding:10px; text-align:left;">Time</th>
+            <th style="padding:10px; text-align:left;">Dhikr</th>
+            <th style="padding:10px; text-align:left;">Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:8px;">After Fajr</td><td style="padding:8px;">Morning Adhkar</td><td style="padding:8px;">Once</td></tr>
+          <tr><td style="padding:8px;">After each prayer</td><td style="padding:8px;">Tasbeeh + Hamd + Takbeer</td><td style="padding:8px;">33 + 33 + 34</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:8px;">After Asr</td><td style="padding:8px;">Evening Adhkar</td><td style="padding:8px;">Once</td></tr>
+          <tr><td style="padding:8px;">Before sleep</td><td style="padding:8px;">Sleep Adhkar</td><td style="padding:8px;">Once</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:8px;">Throughout the day</td><td style="padding:8px;">Istighfar + Salawat</td><td style="padding:8px;">100+ times</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <h3>What is the best time for tasbeeh and dhikr?</h3>
+      <p>All times have virtue, but the best times are: after obligatory prayers, in the morning and evening, in the last third of the night, and during Ramadan. The Prophet (peace be upon him) said: <em>"The most beloved deeds to Allah are the most consistent, even if they are small."</em></p>
+
+      <h3>Does the digital tasbeeh count adhkar accurately?</h3>
+      <p>Yes, the digital tasbeeh is designed to accurately track your dhikr count. The <a href="/en/tools/tasbeeh-counter">Tasbeeh Counter on Adwatak</a> helps you achieve your daily target without miscounting. But more important than the number is the <strong>presence of heart</strong> and reflection on the meaning of the dhikr.</p>
+
+      <h3>How many tasbeeh should I do per day?</h3>
+      <p>There is no fixed number — but the Sunnah is to maintain: 33 tasbeeh + 33 hamd + 34 takbeer after each prayer (5 prayers = 500 tasbeeh daily minimum). Plus morning, evening, and sleep adhkar. A Muslim can easily remember Allah <strong>1000+ times</strong> per day!</p>
+
+      <h3>Is it permissible to do tasbeeh without a counter?</h3>
+      <p>Absolutely! Counting on fingers is the best and most rewarded method. The Prophet (peace be upon him) said: <em>"The fingers are excellent counters"</em> (Abu Dawud). The digital tasbeeh is just a helpful tool — not a requirement.</p>
+
+      <h3>What is the virtue of saying "SubhanAllahi wa bihamdihi" 100 times?</h3>
+      <p>The Prophet (peace be upon him) said: <em>"Whoever says SubhanAllahi wa bihamdihi 100 times a day, their sins will be forgiven even if they are like the foam of the sea"</em> (Bukhari & Muslim).</p>
+
+      <h3>Are morning and evening adhkar obligatory?</h3>
+      <p>Morning and evening adhkar are <strong>highly recommended Sunnah</strong> — not obligatory. But the Prophet (peace be upon him) maintained them consistently and strongly encouraged them.</p>
+
+      <h3>How do I teach my children daily adhkar?</h3>
+      <p>Start with simple adhkar: tasbeeh after prayer, sleep adhkar, and the supplication before eating. Use the <a href="/en/tools/tasbeeh-counter">Tasbeeh Counter</a> as an interactive tool — children love numbers and challenges.</p>
+
+      <h3>Is digital tasbeeh accepted as worship?</h3>
+      <p>Yes — the digital tasbeeh is just a counting tool, like counting on your fingers. What matters is the intention and the act of remembering Allah.</p>
+
+      <h3>What are the adhkar for travel?</h3>
+      <p>When the Prophet (peace be upon him) mounted his animal for travel, he said: <em>"Allahu Akbar, Allahu Akbar, Allahu Akbar, Subhanalladhi sakhkhara lana hadha..."</em> (Muslim). And upon returning: <em>"Ayibun, ta'ibun, 'abidun, lirabbina hamidun."</em></p>
+
+      <h3>Are there specific adhkar for exams or work stress?</h3>
+      <p>Yes! Among the most important adhkar during stressful times: <em>"La ilaha illa Anta, Subhanaka, inni kuntu minaz-zalimeen"</em> — the supplication of distress. And <em>"HasbiyAllahu la ilaha illa Huwa..."</em> — 7 times morning and evening. And <strong>"Rabbi shrah li sadri wa yassir li amri"</strong>.</p>
+
+      <h3>How do I know prayer times for morning and evening adhkar?</h3>
+      <p>Use the <a href="/en/tools/prayer-times">Prayer Times tool on Adwatak</a> — you will know the exact Fajr and Asr times in your city.</p>
+
+      <h3>What is the Hijri date for Ramadan 1447?</h3>
+      <p>Use the <a href="/en/tools/hijri-converter">Hijri Date Converter on Adwatak</a> to find the Hijri date corresponding to any Gregorian date. Ramadan 1447 AH begins approximately in February 2026.</p>
+
+      <h2>Summary</h2>
+      <p>Tasbeeh and dhikr are among the greatest and easiest acts of worship — no ablution required, no specific time, no special place. All you need is a present heart and a tongue moist with the remembrance of Allah. Use the <a href="/en/tools/tasbeeh-counter">Tasbeeh Counter on Adwatak</a> as a helpful tool, and maintain your daily adhkar.</p>
+      <p>🔔 <strong>Start now:</strong> <a href="/en/tools/tasbeeh-counter">Try the Tasbeeh Counter</a> | <a href="/en/tools/prayer-times">Prayer Times</a> | <a href="/en/tools/hijri-converter">Hijri Date Converter</a></p>
+    `,
+  },
+  {
+    slug: "fidyah-kaffarah-complete-guide-2026",
+    title: "Fidyah and Kaffarah in Islam — Complete Guide to Expiation",
+    excerpt:
+      "Complete guide to Fidyah and Kaffarah in Islam: what they are, when they are required, how to calculate them, the difference between them, and practical examples for fasting, oaths, and Hajj violations.",
+    date: "2026-06-08",
+    category: "Islamic",
+    readTime: "15 min read",
+    keywords: [
+      "fidyah in islam",
+      "kaffarah in islam",
+      "fidyah vs kaffarah",
+      "how to calculate fidyah",
+      "kaffarah for breaking fast",
+      "fidyah for missed fasting",
+      "kaffarah for breaking oath",
+      "fidyah kaffarah calculator",
+      "expiation in islam",
+      "fidyah amount 2026",
+      "kaffarah for hajj violations",
+      "fidyah for elderly who cannot fast",
+    ],
+    content: `
+      <h2>What Are Fidyah and Kaffarah? The Essential Difference</h2>
+      <p><strong>Fidyah</strong> and <strong>Kaffarah</strong> are two forms of expiation in Islam, but they serve different purposes and apply in different situations.</p>
+      <p><strong>Fidyah</strong> is a compensatory payment made when you are <strong>unable</strong> to fulfill an obligation due to a valid, ongoing reason (such as chronic illness or old age). It is an acknowledgment that you cannot perform the act and a way to make up for it by feeding those in need.</p>
+      <p><strong>Kaffarah</strong> is a punitive expiation required when you <strong>deliberately</strong> violate an obligation or oath. It is more severe than fidyah because it involves a conscious decision to break a commitment.</p>
+      <p>💡 <strong>Use the <a href="/en/tools/fidyah-kaffarah">Fidyah & Kaffarah Calculator on Adwatak</a></strong> — calculate your obligation instantly!</p>
+
+      <h2>Fidyah — When Is It Required?</h2>
+
+      <h3>1. Fidyah for Missed Fasts (Unable to Fast)</h3>
+      <p>If you have a <strong>chronic illness</strong> or are <strong>elderly</strong> and cannot fast, and there is no realistic expectation of recovery, you must pay fidyah for each missed day. The fidyah is to feed one poor person for each day missed.</p>
+      <p><strong>Amount:</strong> Approximately the cost of one meal per day. In 2026, this is roughly <strong>$5–$15 per day</strong> depending on your location.</p>
+
+      <h3>2. Fidyah for Pregnant or Nursing Women</h3>
+      <p>Pregnant or nursing women who miss fasting due to health concerns may pay fidyah instead of making up the fasts later (though making up the fasts is preferred if possible).</p>
+
+      <h3>3. Fidyah for the Deceased's Missed Fasts</h3>
+      <p>If a person died with missed fasts, their heirs may pay fidyah on their behalf from the deceased's estate.</p>
+
+      <h2>Kaffarah — When Is It Required?</h2>
+
+      <h3>1. Kaffarah for Deliberately Breaking a Fast</h3>
+      <p>If you deliberately break a Ramadan fast without a valid excuse, the kaffarah is:</p>
+      <ul>
+        <li><strong>Option A:</strong> Free a slave (not applicable today)</li>
+        <li><strong>Option B:</strong> Fast for <strong>60 consecutive days</strong></li>
+        <li><strong>Option C:</strong> If unable to fast 60 days, feed <strong>60 poor people</strong> (approximately $300–$900 total)</li>
+      </ul>
+      <p><strong>Important:</strong> The 60 days of fasting must be <strong>consecutive</strong>. If you break the chain, you must start over.</p>
+
+      <h3>2. Kaffarah for Breaking an Oath (Yameen)</h3>
+      <p>If you swear an oath by Allah and then deliberately break it, the kaffarah is:</p>
+      <ul>
+        <li>Feed <strong>10 poor people</strong> (approximately $50–$150)</li>
+        <li>Or clothe 10 poor people</li>
+        <li><strong>If unable:</strong> Fast for <strong>3 consecutive days</strong></li>
+      </ul>
+
+      <h3>3. Kaffarah for Hajj Violations</h3>
+      <p>During Hajj or Umrah, certain violations require kaffarah:</p>
+      <ul>
+        <li><strong>Sexual intercourse during Hajj:</strong> Fast 60 days, or feed 60 poor people, or sacrifice a sheep</li>
+        <li><strong>Wearing sewn garments (for men):</strong> Fast 3 days, or feed 6 poor people, or sacrifice a sheep</li>
+        <li><strong>Cutting hair or nails during ihram:</strong> Same as above</li>
+        <li><strong>Covering the head (for men) during ihram:</strong> Same as above</li>
+      </ul>
+
+      <h3>4. Kaffarah for Zihar</h3>
+      <p>Zihar is when a husband compares his wife to a forbidden relative. The kaffarah is: Fast for <strong>60 consecutive days</strong> or feed <strong>60 poor people</strong>.</p>
+
+      <h2>Fidyah vs Kaffarah — Quick Comparison</h2>
+      <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;">
+        <thead>
+          <tr style="background:#1a1a2e; color:#fff;">
+            <th style="padding:10px; text-align:left;">Aspect</th>
+            <th style="padding:10px; text-align:left;">Fidyah</th>
+            <th style="padding:10px; text-align:left;">Kaffarah</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:8px;">Reason</td><td style="padding:8px;">Unable to fulfill (valid excuse)</td><td style="padding:8px;">Deliberately violated</td></tr>
+          <tr><td style="padding:8px;">Severity</td><td style="padding:8px;">Compensatory (lighter)</td><td style="padding:8px;">Punitive (heavier)</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:8px;">Amount (fasting)</td><td style="padding:8px;">Feed 1 poor person per day missed</td><td style="padding:8px;">Fast 60 days OR feed 60 poor people</td></tr>
+          <tr><td style="padding:8px;">Amount (oath)</td><td style="padding:8px;">Not applicable</td><td style="padding:8px;">Feed 10 poor people OR fast 3 days</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:8px;">Consecutive?</td><td style="padding:8px;">No — per day basis</td><td style="padding:8px;">Yes — 60 consecutive days</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2>How to Calculate Fidyah and Kaffarah in 2026</h2>
+
+      <h3>Fidyah Calculation</h3>
+      <div style="background:#f0f4ff; border-radius:12px; padding:20px; margin:16px 0;">
+        <p><strong>Formula:</strong> Fidyah = Number of missed days × Cost of one meal per person</p>
+        <p><strong>Example:</strong> An elderly person who could not fast for all 30 days of Ramadan 2026, with an average meal cost of $10:</p>
+        <ul><li>Fidyah = 30 × $10 = <strong>$300</strong></li></ul>
+      </div>
+
+      <h3>Kaffarah Calculation (Breaking Fast)</h3>
+      <div style="background:#fff8e1; border-radius:12px; padding:20px; margin:16px 0;">
+        <p><strong>Option B (Feeding 60 people):</strong> 60 × Cost of one meal per person</p>
+        <p><strong>Example:</strong> With an average meal cost of $10: Kaffarah = 60 × $10 = <strong>$600</strong></p>
+        <p><strong>Option A (Fasting 60 days):</strong> No monetary cost, but must be consecutive days.</p>
+      </div>
+
+      <h3>Kaffarah Calculation (Breaking Oath)</h3>
+      <div style="background:#e8f5e9; border-radius:12px; padding:20px; margin:16px 0;">
+        <p><strong>Feeding 10 people:</strong> 10 × Cost of one meal per person</p>
+        <p><strong>Example:</strong> With an average meal cost of $10: Kaffarah = 10 × $10 = <strong>$100</strong></p>
+        <p><strong>Alternative:</strong> Fast 3 consecutive days.</p>
+      </div>
+
+      <p>💡 <strong><a href="/en/tools/fidyah-kaffarah">Calculate your Fidyah and Kaffarah on Adwatak</a></strong> — enter your situation and get the exact amount instantly!</p>
+
+      <h2>Who Receives Fidyah and Kaffarah Payments?</h2>
+      <p>Fidyah and kaffarah payments should be given to the same eight categories of people eligible to receive Zakat (At-Tawbah 9:60):</p>
+      <ul>
+        <li><strong>Fuqara (The Poor):</strong> Those who cannot meet their basic needs</li>
+        <li><strong>Masakin (The Needy):</strong> Those with some income but insufficient</li>
+        <li><strong>Amil (Zakat Administrators):</strong> Those who manage and distribute zakat</li>
+        <li><strong>Mu'allaf (New Muslims):</strong> Those whose hearts are being reconciled to Islam</li>
+        <li><strong>Gharimin (Debtors):</strong> Those burdened by debt for lawful purposes</li>
+        <li><strong>Fi Sabilillah (In the Cause of Allah):</strong> Those striving in Allah's path</li>
+        <li><strong>Ibnus Sabil (Travelers):</strong> Stranded travelers</li>
+      </ul>
+      <p>💡 <strong>Use the <a href="/en/tools/zakat-calculator">Zakat Calculator</a></strong> to determine distribution amounts, and the <a href="/en/tools/inheritance-calculator">Islamic Inheritance Calculator</a> for estate planning.</p>
+
+      <h2>Common Mistakes People Make</h2>
+
+      <h3>Mistake 1: Confusing Fidyah with Kaffarah</h3>
+      <p>Many people use the terms interchangeably, but they are different. Fidyah is for those who <strong>cannot</strong> fast. Kaffarah is for those who <strong>deliberately</strong> break a fast or oath.</p>
+
+      <h3>Mistake 2: Not Making Up Missed Fasts When Possible</h3>
+      <p>If you miss a fast due to a <strong>temporary</strong> excuse (illness, travel), you must <strong>make up</strong> those fasts. Fidyah is only for <strong>permanent</strong> inability to fast.</p>
+
+      <h3>Mistake 3: Breaking the 60-Day Consecutive Fast</h3>
+      <p>If you choose to fast 60 consecutive days as kaffarah, you <strong>cannot break the chain</strong>. If you break it (even with a valid excuse), you must start over from day one.</p>
+
+      <h3>Mistake 4: Paying Fidyah for Someone Who Died with Missed Fasts</h3>
+      <p>If a person died with missed fasts, their heirs should pay fidyah from the deceased's estate — one meal per missed day.</p>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <h3>What is the difference between fidyah and kaffarah?</h3>
+      <p><strong>Fidyah</strong> is compensation for being <strong>unable</strong> to fulfill an obligation. <strong>Kaffarah</strong> is expiation for <strong>deliberately</strong> violating an obligation. Fidyah is lighter (feed 1 person per day), while kaffarah is heavier (fast 60 days or feed 60 people).</p>
+
+      <h3>How much is fidyah for missed fasting in 2026?</h3>
+      <p>Fidyah is approximately the cost of one meal per missed day — roughly <strong>$5 to $15 per day</strong> in 2026. For a full month (30 days), the total would be approximately $150–$450.</p>
+
+      <h3>Can I pay fidyah in advance for future missed fasts?</h3>
+      <p>Yes, you can pay fidyah in advance if you know you will be unable to fast. If you recover, you should make up the fasts and the fidyah payment can be considered as charity.</p>
+
+      <h3>What if I deliberately break a fast — do I need to make it up AND pay kaffarah?</h3>
+      <p>Yes. You must: (1) <strong>Make up</strong> that fast day (qada), AND (2) Pay the <strong>kaffarah</strong> (fast 60 consecutive days or feed 60 poor people). Both obligations must be fulfilled.</p>
+
+      <h3>Can I feed one person 60 meals instead of feeding 60 different people?</h3>
+      <p>According to the majority of scholars, you must feed <strong>60 different people</strong>, each receiving one meal. Feeding one person 60 meals does not fulfill the kaffarah.</p>
+
+      <h3>Is kaffarah required for breaking a voluntary (nafl) fast?</h3>
+      <p>No. Kaffarah is only required for breaking <strong>obligatory</strong> fasts (Ramadan). Breaking a voluntary fast does not require kaffarah.</p>
+
+      <h3>What if I cannot afford to pay kaffarah?</h3>
+      <p>If you cannot afford to feed 60 people, you should fast 60 consecutive days instead. If you are also unable to fast, seek forgiveness from Allah and try to feed as many people as you can afford.</p>
+
+      <h3>Can fidyah and kaffarah be paid through a zakat organization?</h3>
+      <p>Yes, you can pay through reputable Islamic charities and zakat organizations. Ensure the organization is trustworthy and follows Shariah guidelines.</p>
+
+      <h3>Do I need to pay fidyah for missed prayers?</h3>
+      <p>No. Fidyah and kaffarah apply to fasting, oaths, and Hajj violations. Missed prayers must be made up (qada) — there is no monetary compensation for missed prayers.</p>
+
+      <h3>How do I calculate fidyah for a deceased person?</h3>
+      <p>For each missed fast day, pay the equivalent of one meal (approximately $5–$15 in 2026). This should be paid from the deceased's estate before distribution to heirs.</p>
+
+      <h3>Is there a calculator for fidyah and kaffarah?</h3>
+      <p>Yes! The <a href="/en/tools/fidyah-kaffarah">Fidyah & Kaffarah Calculator on Adwatak</a> helps you calculate your exact obligation based on your situation.</p>
+
+      <h2>Summary</h2>
+      <p>Fidyah and Kaffarah are important Islamic obligations that ensure accountability and compassion. Fidyah compensates for genuine inability to fulfill obligations, while kaffarah serves as expiation for deliberate violations. Use the <a href="/en/tools/fidyah-kaffarah">Fidyah & Kaffarah Calculator</a> to determine your obligation accurately, and consult a knowledgeable scholar for complex situations.</p>
+      <p>🔔 <strong>Calculate now:</strong> <a href="/en/tools/fidyah-kaffarah">Fidyah & Kaffarah Calculator</a> | <a href="/en/tools/zakat-calculator">Zakat Calculator</a> | <a href="/en/tools/inheritance-calculator">Islamic Inheritance Calculator</a></p>
+    `,
+  },
 ];

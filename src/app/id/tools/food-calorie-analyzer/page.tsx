@@ -1,20 +1,17 @@
-import { Metadata } from "next";
+import { generateToolMetadata, generateToolSchemas } from "@/app/lib/tool-metadata";
+import StructuredData from "@/app/components/StructuredData";
 import Client from "./Client";
 
-export const metadata: Metadata = {
-  title: "Analisis Kalori Makanan dari Foto — Hitung Kalori dengan Foto",
-  description:
-    "Alat analisis kalori makanan berbasis AI gratis. Foto makanan Anda dan dapatkan detail kalori, protein, karbohidrat, dan lemak secara instan.",
-  alternates: {
-    canonical: "https://adwatak.cloud/id/tools/food-calorie-analyzer",
-  },
-  openGraph: {
-    title: "Analisis Kalori Makanan — Adwatak",
-    description:
-      "Foto makanan Anda dan dapatkan analisis kalori & nutrisi instan secara gratis.",
-  },
-};
+export const metadata = generateToolMetadata("food-calorie-analyzer", "id")!;
 
 export default function Page() {
-  return <Client />;
+  const schemas = generateToolSchemas("food-calorie-analyzer", "id");
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <StructuredData key={i} data={schema} />
+      ))}
+      <Client />
+    </>
+  );
 }

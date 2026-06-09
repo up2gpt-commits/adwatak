@@ -228,14 +228,14 @@ export const TOOLS_META: Record<string, ToolMeta> = {
   },
   "qibla-direction": {
     slug: "qibla-direction",
-    nameAr: "اتجاه القبلة",
-    nameEn: "Qibla Direction",
-    nameTr: "Kıble Yönü",
-    nameId: "Arah Kiblat",
-    descAr: "اعرف اتجاه القبلة من موقعك الجغرافي — بوصلة القبلة أونلاين",
-    descEn: "Find Qibla direction from your location — online Qibla compass",
-    descTr: "Konumunuza göre kıble yönünü bulun — çevrimiçi kıble pusulası",
-    descId: "Temukan arah kiblat dari lokasi Anda — kompas kiblat online",
+    nameAr: "بوصلة القبلة",
+    nameEn: "Qibla Finder",
+    nameTr: "Kıble Pusulası",
+    nameId: "Kompas Kiblat",
+    descAr: "اعرف اتجاه القبلة بالضبط من مكانك — استخدم البوصلة الحقيقية لجوالك لتحديد اتجاه الكعبة بدقة عالية مع معلومات الموقع",
+    descEn: "Find the exact Qibla direction from your location — uses your phone's real compass to point to the Kaaba with high accuracy and location data",
+    descTr: "Bulunduğunuz yerden kıble yönünü tam olarak bulun — Kabe'ye yönelik hassas pusula ve konum bilgileri",
+    descId: "Temukan arah kiblat yang tepat dari lokasi Anda — gunakan kompas ponsel untuk menunjuk ke Ka'bah dengan akurasi tinggi",
     categoryAr: "الأدوات الإسلامية",
     categoryEn: "Islamic Tools",
     categoryTr: "İslami Araçlar",
@@ -1410,6 +1410,205 @@ export function generateBreadcrumbSchema(slug: string, lang: "ar" | "en" | "tr" 
     { name: homeText, url: `https://adwatak.cloud${prefix}` },
     { name: category, url: `https://adwatak.cloud${prefix}/category/${tool.categorySlug}` },
     { name: name, url: toolUrl },
+  ];
+}
+
+/**
+ * Generate all structured data (JSON-LD) schemas for a tool page.
+ * Returns array of schema objects: WebApplication, BreadcrumbList, FAQPage, SpeakableSpecification
+ */
+export function generateToolSchemas(
+  slug: string,
+  lang: "ar" | "en" | "tr" | "id" = "ar"
+): Record<string, unknown>[] {
+  const tool = TOOLS_META[slug];
+  if (!tool) return [];
+
+  const name =
+    lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : tool.nameEn;
+  const desc =
+    lang === "ar" ? tool.descAr : lang === "tr" ? tool.descTr : lang === "id" ? tool.descId : tool.descEn;
+  const category =
+    lang === "ar"
+      ? tool.categoryAr
+      : lang === "tr"
+        ? tool.categoryTr
+        : lang === "id"
+          ? tool.categoryId
+          : tool.categoryEn;
+  const homeText =
+    lang === "ar" ? "الرئيسية" : lang === "tr" ? "Ana Sayfa" : lang === "id" ? "Beranda" : "Home";
+  const siteName = lang === "ar" ? "أدواتك" : "Adawatak";
+  const prefix = lang === "ar" ? "" : `/${lang}`;
+  const toolUrl = `https://adwatak.cloud${prefix}/tools/${slug}`;
+  const schemaLang = lang === "ar" ? "ar" : lang === "tr" ? "tr" : lang === "id" ? "id" : "en";
+
+  // 1. WebApplication schema
+  const webAppSchema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name,
+    description: desc.substring(0, 200),
+    url: toolUrl,
+    applicationCategory: tool.schemaCategory,
+    operatingSystem: "All",
+    browserRequirements: "Modern browser (Chrome, Firefox, Safari, Edge)",
+    featureList: [
+      "Free to use",
+      "No registration required",
+      "Works offline in browser",
+      "Privacy-first — no data sent to server",
+    ],
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    inLanguage: schemaLang,
+    author: {
+      "@type": "Organization",
+      name: siteName,
+      url: "https://adwatak.cloud",
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteName,
+      url: "https://adwatak.cloud",
+    },
+  };
+
+  // 2. BreadcrumbList schema
+  const breadcrumbSchema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: homeText,
+        item: `https://adwatak.cloud${prefix}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: category,
+        item: `https://adwatak.cloud${prefix}/category/${tool.categorySlug}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name,
+        item: toolUrl,
+      },
+    ],
+  };
+
+  // 3. FAQPage schema
+  const faqs = _getToolFaqs(slug, lang, name);
+  const faqSchema: Record<string, unknown> | null =
+    faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((q) => ({
+            "@type": "Question",
+            name: q.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: q.answer,
+            },
+          })),
+        }
+      : null;
+
+  // 4. Speakable schema (for AI engines / voice assistants)
+  const speakableSchema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "[data-tool-description]", "summary"],
+  };
+
+  const schemas: Record<string, unknown>[] = [webAppSchema, breadcrumbSchema];
+  if (faqSchema) schemas.push(faqSchema);
+  schemas.push(speakableSchema);
+
+  return schemas;
+}
+
+/** Internal: get tool-specific FAQs for schema markup */
+function _getToolFaqs(
+  slug: string,
+  lang: "ar" | "en" | "tr" | "id",
+  name: string
+): { question: string; answer: string }[] {
+  const FAQS: Record<string, Record<string, { question: string; answer: string }[]>> = {
+    "vat-calculator": {
+      ar: [
+        { question: "ما هي حاسبة الضريبة المضافة؟", answer: "أداة مجانية تحسب قيمة الضريبة على السلع والخدمات. تدعم السعودية 15%، الإمارات 5%، مصر 14%، البحرين 10%." },
+        { question: "كيف أحسب الضريبة المضافة؟", answer: "أدخل المبلغ واختر الدولة، وستحسب الحاسبة الضريبة تلقائياً." },
+      ],
+      en: [
+        { question: "What is a VAT Calculator?", answer: "A free tool that calculates tax on goods and services. Supports Saudi Arabia 15%, UAE 5%, Egypt 14%, Bahrain 10%." },
+        { question: "How do I calculate VAT?", answer: "Enter the amount and choose your country. The calculator computes tax automatically." },
+      ],
+    },
+    "zakat-calculator": {
+      ar: [
+        { question: "ما هي حاسبة الزكاة؟", answer: "تحسب مقدار الزكاة الواجبة على المال والذهب والأسهم وفقاً للشريعة الإسلامية." },
+        { question: "ما هو نصاب الزكاة؟", answer: "الحد الأدنى للمال الذي تجب فيه الزكاة — 85 جرام ذهب أو 595 جرام فضة." },
+      ],
+      en: [
+        { question: "What is a Zakat Calculator?", answer: "Computes obligatory charity on money, gold, and stocks according to Islamic Sharia." },
+        { question: "What is the Nisab?", answer: "The minimum wealth threshold for Zakat — 85 grams of gold or 595 grams of silver." },
+      ],
+    },
+    "mortgage-calculator": {
+      ar: [
+        { question: "ما هي حاسبة القرض العقاري؟", answer: "تحسب القسط الشهري مع جدول الاستهلاك التفصيلي للقروض العقارية." },
+        { question: "كيف أحسب قسط القرض؟", answer: "أدخل مبلغ القرض ومدة السداد ونسبة الفائدة." },
+      ],
+      en: [
+        { question: "What is a Mortgage Calculator?", answer: "Computes monthly payments with full amortization schedule for home loans." },
+        { question: "How do I calculate my mortgage?", answer: "Enter loan amount, repayment period, and interest rate." },
+      ],
+    },
+    "inheritance-calculator": {
+      ar: [
+        { question: "ما هي حاسبة الميراث الإسلامي؟", answer: "تحسب أنصبة الورثة حسب الشريعة الإسلامية — الفرائض والعصبات." },
+        { question: "كيف يتم حساب الميراث؟", answer: "أدخل بيانات المتوفي والورثة، وتقوم الحاسبة بحساب نصيب كل وريث." },
+      ],
+      en: [
+        { question: "What is an Islamic Inheritance Calculator?", answer: "Calculates inheritance shares according to Islamic Sharia." },
+        { question: "How is inheritance calculated?", answer: "Enter the deceased's data and heirs, and the calculator computes each heir's share." },
+      ],
+    },
+  };
+
+  const langFaqs = FAQS[slug]?.[lang] || FAQS[slug]?.["ar"];
+  if (langFaqs) return langFaqs;
+
+  // Generic fallbacks per language
+  if (lang === "ar") {
+    return [
+      { question: `ما هو ${name}؟`, answer: `${name} أداة مجانية من أدواتك تعمل 100% في المتصفح بدون تسجيل.` },
+      { question: `هل ${name} مجاني؟`, answer: `نعم، ${name} مجاني بالكامل بدون تسجيل.` },
+    ];
+  }
+  if (lang === "tr") {
+    return [
+      { question: `${name} nedir?`, answer: `${name}, Adwatak'ın ücretsiz bir aracıdır.` },
+      { question: `${name} ücretsiz mi?`, answer: `Evet, ${name} tamamen ücretsizdir.` },
+    ];
+  }
+  if (lang === "id") {
+    return [
+      { question: `Apa itu ${name}?`, answer: `${name} adalah alat gratis dari Adwatak.` },
+      { question: `Apakah ${name} gratis?`, answer: `Ya, ${name} sepenuhnya gratis.` },
+    ];
+  }
+  return [
+    { question: `What is ${name}?`, answer: `${name} is a free tool from Adawatak that works 100% in the browser.` },
+    { question: `Is ${name} free?`, answer: `Yes, ${name} is completely free with no registration.` },
   ];
 }
 
