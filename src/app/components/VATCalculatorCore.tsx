@@ -9,7 +9,7 @@ interface VATResult {
 }
 
 interface Props {
-  lang: "ar" | "en" | "tr" | "id";
+  lang: "ar" | "en" | "tr" | "id" | "fr";
   defaultRate?: number;
   compact?: boolean;
 }

@@ -15,7 +15,7 @@ import type { NextRequest } from "next/server";
 
 // ── Constants ────────────────────────────────────────────────────
 
-const LOCALES = ["ar", "en", "tr", "id"] as const;
+const LOCALES = ["ar", "en", "tr", "id", "fr"] as const;
 type Locale = (typeof LOCALES)[number];
 const DEFAULT_LOCALE: Locale = "ar";
 
@@ -29,6 +29,17 @@ const ARABIC_COUNTRIES = new Set([
 const COUNTRY_LOCALE: Record<string, Locale> = {
   TR: "tr",
   ID: "id",
+  FR: "fr",
+  SN: "fr",
+  ML: "fr",
+  NE: "fr",
+  CI: "fr",
+  GN: "fr",
+  BF: "fr",
+  BJ: "fr",
+  TG: "fr",
+  CD: "fr",
+  CM: "fr",
 };
 
 const COOKIE_NAME = "lang";
@@ -215,7 +226,7 @@ export function proxy(request: NextRequest) {
   // ── /tools/<name> — mint a fresh API token cookie for this tool ──
   // Pages that use an AI tool get a per-route token cookie. The browser
   // auto-sends it on the subsequent fetch to /api/<name>.
-  const toolMatch = pathname.match(/^\/(?:en|tr|id|ar)?\/?tools\/([a-z0-9-]+)/);
+  const toolMatch = pathname.match(/^\/(?:en|tr|id|fr|ar)?\/?tools\/([a-z0-9-]+)/);
   if (toolMatch && !pathname.startsWith("/_next/") && !pathname.startsWith("/api/")) {
     const toolName = toolMatch[1];
     if (AI_API_ROUTES.has(toolName)) {
@@ -242,7 +253,7 @@ export function proxy(request: NextRequest) {
   // This runs before layouts render, so RootLayout reads the correct
   // locale from headers() and sets <html lang={locale}> in the very
   // first byte of HTML — critical for Google Bot (no JS rendering needed).
-  const localeMatch = pathname.match(/^\/(en|tr|id)(\/|$)/);
+  const localeMatch = pathname.match(/^\/(en|tr|id|fr)(\/|$)/);
   const locale = localeMatch ? localeMatch[1] : "ar";
 
   const requestHeaders = new Headers(request.headers);

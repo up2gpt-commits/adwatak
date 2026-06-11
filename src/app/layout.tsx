@@ -17,11 +17,11 @@ const baseUrl = "https://adwatak.cloud";
 // This gives us the correct lang in the very first HTML byte.
 function extractLang(pathname: string, cookieValue: string | undefined): string {
   // Cookie has the highest priority (set by proxy.ts on every visit)
-  if (cookieValue && ["ar", "en", "tr", "id"].includes(cookieValue)) {
+  if (cookieValue && ["ar", "en", "tr", "id", "fr"].includes(cookieValue)) {
     return cookieValue;
   }
   // Fallback: detect from URL path
-  const match = pathname.match(/^\/(en|tr|id)(\/|$)/);
+  const match = pathname.match(/^\/(en|tr|id|fr)(\/|$)/);
   return match ? match[1] : "ar";
 }
 
@@ -40,6 +40,7 @@ export const metadata: Metadata = {
       "en": `${baseUrl}/en`,
       "tr": `${baseUrl}/tr`,
       "id": `${baseUrl}/id`,
+      "fr": `${baseUrl}/fr`,
       "x-default": baseUrl,
     },
   },
@@ -114,7 +115,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <DynamicHtmlLang />
         <StructuredData data={orgSchema("https://adwatak.cloud")} />
-        <StructuredData data={websiteSchema(lang as "ar" | "en" | "tr" | "id")} />
+        <StructuredData data={websiteSchema(lang as "ar" | "en" | "tr" | "id" | "fr")} />
         {children}
       </body>
     </html>

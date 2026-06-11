@@ -38,7 +38,7 @@ export function orgSchema(pageUrl?: string) {
   };
 }
 
-export function websiteSchema(lang: "ar" | "en" | "tr" | "id" = "ar") {
+export function websiteSchema(lang: "ar" | "en" | "tr" | "id" | "fr" = "ar") {
   const name = lang === "ar" ? "أدواتك" : "Adawatak";
   const desc = lang === "ar"
     ? "مجموعة أدوات مجانية بالكامل باللغة العربية — حاسبات مالية، أدوات إسلامية، مولدات، محولات وأكثر"
@@ -70,7 +70,7 @@ export function toolSchema(
   name: string,
   description: string,
   url: string,
-  lang: "ar" | "en" | "tr" | "id" = "ar",
+  lang: "ar" | "en" | "tr" | "id" | "fr" = "ar",
   category: string = "Finance"
 ) {
   return {
@@ -128,7 +128,7 @@ export function howToSchema(
   description: string,
   steps: { name: string; text: string; url?: string }[],
   totalTime?: string,
-  lang: "ar" | "en" | "tr" | "id" = "ar"
+  lang: "ar" | "en" | "tr" | "id" | "fr" = "ar"
 ) {
   const schemaLang = lang === "tr" ? "tr" : lang === "ar" ? "ar" : lang === "id" ? "id" : "en";
   return {
@@ -258,7 +258,7 @@ interface ToolPageSchemas {
   toolName: string;
   toolDescription: string;
   toolUrl: string;
-  lang: "ar" | "en" | "tr";
+  lang: "ar" | "en" | "tr" | "id" | "fr";
   category: string;
   faqs: { question: string; answer: string }[];
   breadcrumbItems: { name: string; url: string }[];

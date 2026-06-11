@@ -2,7 +2,7 @@ interface BreadcrumbProps {
   category: string;
   categorySlug: string;
   toolName: string;
-  lang?: "ar" | "en" | "tr" | "id";
+  lang?: "ar" | "en" | "tr" | "id" | "fr";
 }
 
 // Valid category paths — only links to real pages

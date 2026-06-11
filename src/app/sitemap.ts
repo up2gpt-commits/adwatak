@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://adwatak.cloud";
 
-  const locales = ["", "en", "tr", "id"] as const;
+  const locales = ["", "en", "tr", "id", "fr"] as const;
 
   const staticPaths = [
     "", "/about", "/privacy", "/blog",
@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const enTools = arTools.filter(t => t !== "seo-content-generator" || true);
   const trTools = [...enTools];
   const idTools = [...enTools];
+  const frTools = [...enTools];
 
   const arBlogSlugs = [
     "how-to-calculate-zakat", "how-to-calculate-mortgage",
@@ -57,6 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   const trBlogSlugs = ["adwatak-nedir-2026"];
   const idBlogSlugs = ["apa-itu-adwatak"];
+  const frBlogSlugs: string[] = [];
 
   const entries: MetadataRoute.Sitemap = [];
 
@@ -75,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url,
         lastModified: "2026-06-03",
         changeFrequency: path === "" ? "daily" as const : "weekly" as const,
-        priority: path === "" ? 1.0 : path === "/en" || path === "/tr" || path === "/id" ? 0.9 : 0.8,
+        priority: path === "" ? 1.0 : path === "/en" || path === "/tr" || path === "/id" || path === "/fr" ? 0.9 : 0.8,
         alternates: { languages: alternates },
       });
     }
@@ -99,6 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { tools: enTools, locale: "en" },
     { tools: trTools, locale: "tr" },
     { tools: idTools, locale: "id" },
+    { tools: frTools, locale: "fr" },
   ] as const;
 
   for (const { tools, locale: toolLocale } of toolLocales) {
@@ -125,6 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slugs: enBlogSlugs, locale: "en" },
     { slugs: trBlogSlugs, locale: "tr" },
     { slugs: idBlogSlugs, locale: "id" },
+    { slugs: frBlogSlugs, locale: "fr" },
   ] as const;
 
   for (const { slugs, locale: blogLocale } of blogEntries) {

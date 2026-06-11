@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 interface Props {
-  lang: "ar" | "en" | "tr" | "id";
+  lang: "ar" | "en" | "tr" | "id" | "fr";
   toolSlug?: string;
 }
 

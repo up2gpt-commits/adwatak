@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 
 interface NewsletterFormProps {
-  lang?: "ar" | "en" | "tr" | "id";
+  lang?: "ar" | "en" | "tr" | "id" | "fr";
 }
 
 export default function NewsletterForm({ lang = "ar" }: NewsletterFormProps) {

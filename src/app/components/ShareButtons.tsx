@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 interface ShareButtonsProps {
   title?: string;
   url?: string;
-  lang?: "ar" | "en" | "tr" | "id";
+  lang?: "ar" | "en" | "tr" | "id" | "fr";
 }
 
 export default function ShareButtons({ title, url, lang = "ar" }: ShareButtonsProps) {

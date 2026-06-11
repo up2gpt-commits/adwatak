@@ -1,6 +1,6 @@
 interface SEOContentProps {
   content: string[];
-  lang?: "ar" | "en" | "tr" | "id";
+  lang?: "ar" | "en" | "tr" | "id" | "fr";
 }
 
 export default function SEOContent({ content, lang = "en" }: SEOContentProps) {

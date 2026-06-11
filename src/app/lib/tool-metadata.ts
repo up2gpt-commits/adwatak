@@ -9,14 +9,17 @@ export interface ToolMeta {
   nameEn: string;
   nameTr: string;
   nameId: string;
+  nameFr: string;
   descAr: string;
   descEn: string;
   descTr: string;
   descId: string;
+  descFr: string;
   categoryAr: string;
   categoryEn: string;
   categoryTr: string;
   categoryId: string;
+  categoryFr: string;
   categorySlug: string;
   schemaCategory: string;
 }
@@ -36,6 +39,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Calculateur Hypothécaire",
+    descFr: "Calculez vos mensualités hypothécaires avec tableau d'amortissement détaillé",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -53,6 +59,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Calculateur de Prêt Personnel",
+    descFr: "Calculez les mensualités de prêt personnel avec intérêts totaux",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -70,6 +79,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Calculateur d'Échéances",
+    descFr: "Calculez les mensualités pour tout type de prêt",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -87,6 +99,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Calculateur EMI",
+    descFr: "Calculez vos mensualités (EMI) avec intérêts totaux",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -104,6 +119,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Marge Bénéficiaire",
+    descFr: "Calculez la marge bénéficiaire, le coût et le prix de vente",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -121,6 +139,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Calculateur de TVA",
+    descFr: "Calculez la TVA, prix HT et TTC",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -138,6 +159,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Calculateur de Salaire",
+    descFr: "Calculez votre salaire net après impôts et cotisations",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -155,6 +179,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Intérêts Composés",
+    descFr: "Calculez les intérêts composés avec apports réguliers",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -172,6 +199,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Calculateur d'Or",
+    descFr: "Calculez la valeur de l'or selon le poids et le carat",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -189,6 +219,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Financial Calculators",
     categoryTr: "Finansal Hesaplamalar",
     categoryId: "Kalkulator Keuangan",
+    nameFr: "Calculateur Auto",
+    descFr: "Calculez les mensualités de financement automobile",
+    categoryFr: "Kalkulator Keuangan",
     categorySlug: "calculators",
     schemaCategory: "Finance",
   },
@@ -206,6 +239,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Islamic Tools",
     categoryTr: "İslami Araçlar",
     categoryId: "Alat Islami",
+    nameFr: "Calculateur d'Héritage",
+    descFr: "Héritage selon la loi islamique (Faraid)",
+    categoryFr: "Alat Islami",
     categorySlug: "islamic",
     schemaCategory: "Islamic",
   },
@@ -223,6 +259,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Islamic Tools",
     categoryTr: "İslami Araçlar",
     categoryId: "Alat Islami",
+    nameFr: "Calculateur de Zakat",
+    descFr: "Calculez votre Zakat annuelle",
+    categoryFr: "Alat Islami",
     categorySlug: "islamic",
     schemaCategory: "Islamic",
   },
@@ -240,6 +279,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Islamic Tools",
     categoryTr: "İslami Araçlar",
     categoryId: "Alat Islami",
+    nameFr: "Direction Qibla",
+    descFr: "Direction de la Qibla depuis n'importe où",
+    categoryFr: "Alat Islami",
     categorySlug: "islamic",
     schemaCategory: "Islamic",
   },
@@ -257,6 +299,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Islamic Tools",
     categoryTr: "İslami Araçlar",
     categoryId: "Alat Islami",
+    nameFr: "Heures de Prière",
+    descFr: "Heures de prière exactes selon votre position",
+    categoryFr: "Alat Islami",
     categorySlug: "islamic",
     schemaCategory: "Islamic",
   },
@@ -274,6 +319,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Converters",
     categoryTr: "Dönüştürücüler",
     categoryId: "Konverter",
+    nameFr: "Convertisseur Hijri",
+    descFr: "Convertissez entre Hijri et Grégorien",
+    categoryFr: "Konverter",
     categorySlug: "converters",
     schemaCategory: "Converter",
   },
@@ -291,6 +339,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Converters",
     categoryTr: "Dönüştürücüler",
     categoryId: "Konverter",
+    nameFr: "Convertisseur de Devises",
+    descFr: "Convertissez les devises en temps réel",
+    categoryFr: "Konverter",
     categorySlug: "converters",
     schemaCategory: "Converter",
   },
@@ -308,6 +359,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Converters",
     categoryTr: "Dönüştürücüler",
     categoryId: "Konverter",
+    nameFr: "Convertisseur d'Unités",
+    descFr: "Convertissez des unités de mesure",
+    categoryFr: "Konverter",
     categorySlug: "converters",
     schemaCategory: "Converter",
   },
@@ -325,6 +379,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Converters",
     categoryTr: "Dönüştürücüler",
     categoryId: "Konverter",
+    nameFr: "Convertisseur de Couleurs",
+    descFr: "Convertissez entre HEX, RGB, HSL",
+    categoryFr: "Konverter",
     categorySlug: "converters",
     schemaCategory: "Converter",
   },
@@ -342,6 +399,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Compteur de Mots",
+    descFr: "Comptez mots, caractères, phrases",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -359,6 +419,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Convertisseur de Casse",
+    descFr: "Convertissez la casse du texte",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -376,6 +439,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Nombres en Lettres",
+    descFr: "Convertissez les nombres en lettres",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -393,6 +459,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Lorem Ipsum Arabe",
+    descFr: "Générez du texte lorem ipsum arabe",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -410,6 +479,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Nettoyeur de Texte",
+    descFr: "Nettoyez votre texte facilement",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -427,6 +499,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Comparateur de Texte",
+    descFr: "Comparez deux textes",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -444,6 +519,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Détecteur Contenu IA",
+    descFr: "Détectez les textes générés par IA",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -461,6 +539,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Détecteur de Plagiat",
+    descFr: "Détectez le plagiat en ligne",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -478,6 +559,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Vérificateur Grammatical",
+    descFr: "Corrigez la grammaire",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -495,6 +579,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Reformulation de Texte",
+    descFr: "Reformulez des textes avec l'IA",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -512,6 +599,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Test de Frappe",
+    descFr: "Testez votre vitesse de frappe",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -529,6 +619,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Compteur Réseaux",
+    descFr: "Compteur pour réseaux sociaux",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -546,6 +639,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Text Tools",
     categoryTr: "Metin Araçları",
     categoryId: "Alat Teks",
+    nameFr: "Générateur de Bio",
+    descFr: "Générez des biographies",
+    categoryFr: "Alat Teks",
     categorySlug: "text",
     schemaCategory: "Text",
   },
@@ -563,6 +659,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Image Tools",
     categoryTr: "Görsel Araçları",
     categoryId: "Alat Gambar",
+    nameFr: "Suppression Arrière-plan",
+    descFr: "Supprimez l'arrière-plan des images",
+    categoryFr: "Alat Gambar",
     categorySlug: "daily",
     schemaCategory: "Image",
   },
@@ -580,6 +679,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Image Tools",
     categoryTr: "Görsel Araçları",
     categoryId: "Alat Gambar",
+    nameFr: "Image vers Texte (OCR)",
+    descFr: "Extrayez le texte des images (OCR)",
+    categoryFr: "Alat Gambar",
     categorySlug: "daily",
     schemaCategory: "Image",
   },
@@ -597,6 +699,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Image Tools",
     categoryTr: "Görsel Araçları",
     categoryId: "Alat Gambar",
+    nameFr: "Redimensionneur Image",
+    descFr: "Redimensionnez vos images",
+    categoryFr: "Alat Gambar",
     categorySlug: "daily",
     schemaCategory: "Image",
   },
@@ -614,6 +719,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Image Tools",
     categoryTr: "Görsel Araçları",
     categoryId: "Alat Gambar",
+    nameFr: "Compresseur Image",
+    descFr: "Compressez vos images",
+    categoryFr: "Alat Gambar",
     categorySlug: "daily",
     schemaCategory: "Image",
   },
@@ -631,6 +739,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "PDF Tools",
     categoryTr: "PDF Araçları",
     categoryId: "Alat PDF",
+    nameFr: "Image vers PDF",
+    descFr: "Convertissez des images en PDF",
+    categoryFr: "Alat PDF",
     categorySlug: "daily",
     schemaCategory: "PDF",
   },
@@ -648,6 +759,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Image Tools",
     categoryTr: "Görsel Araçları",
     categoryId: "Alat Gambar",
+    nameFr: "Miniatures YouTube",
+    descFr: "Téléchargez les miniatures YouTube",
+    categoryFr: "Alat Gambar",
     categorySlug: "daily",
     schemaCategory: "Image",
   },
@@ -665,6 +779,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "PDF Tools",
     categoryTr: "PDF Araçları",
     categoryId: "Alat PDF",
+    nameFr: "Fusionneur PDF",
+    descFr: "Fusionnez plusieurs PDF",
+    categoryFr: "Alat PDF",
     categorySlug: "daily",
     schemaCategory: "PDF",
   },
@@ -682,6 +799,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "PDF Tools",
     categoryTr: "PDF Araçları",
     categoryId: "Alat PDF",
+    nameFr: "Diviseur PDF",
+    descFr: "Divisez un PDF en fichiers",
+    categoryFr: "Alat PDF",
     categorySlug: "daily",
     schemaCategory: "PDF",
   },
@@ -699,6 +819,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "PDF Tools",
     categoryTr: "PDF Araçları",
     categoryId: "Alat PDF",
+    nameFr: "Compresseur PDF",
+    descFr: "Compressez les fichiers PDF",
+    categoryFr: "Alat PDF",
     categorySlug: "daily",
     schemaCategory: "PDF",
   },
@@ -716,6 +839,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "PDF Tools",
     categoryTr: "PDF Araçları",
     categoryId: "Alat PDF",
+    nameFr: "PDF vers Word",
+    descFr: "Convertissez PDF en Word",
+    categoryFr: "Alat PDF",
     categorySlug: "daily",
     schemaCategory: "PDF",
   },
@@ -733,6 +859,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Generators",
     categoryTr: "Oluşturucular",
     categoryId: "Generator",
+    nameFr: "Générateur QR Code",
+    descFr: "Générez des QR codes personnalisés",
+    categoryFr: "Generator",
     categorySlug: "generators",
     schemaCategory: "Generator",
   },
@@ -750,6 +879,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Generators",
     categoryTr: "Oluşturucular",
     categoryId: "Generator",
+    nameFr: "Lecteur QR Code",
+    descFr: "Lisez les codes QR depuis le navigateur",
+    categoryFr: "Generator",
     categorySlug: "generators",
     schemaCategory: "Generator",
   },
@@ -767,6 +899,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Generators",
     categoryTr: "Oluşturucular",
     categoryId: "Generator",
+    nameFr: "Générateur Code-barres",
+    descFr: "Générez des codes-barres",
+    categoryFr: "Generator",
     categorySlug: "generators",
     schemaCategory: "Generator",
   },
@@ -784,6 +919,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Generators",
     categoryTr: "Oluşturucular",
     categoryId: "Generator",
+    nameFr: "Générateur de Mots de Passe",
+    descFr: "Générez des mots de passe sécurisés",
+    categoryFr: "Generator",
     categorySlug: "generators",
     schemaCategory: "Generator",
   },
@@ -801,6 +939,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Generators",
     categoryTr: "Oluşturucular",
     categoryId: "Generator",
+    nameFr: "Générateur de Factures",
+    descFr: "Générez des factures professionnelles",
+    categoryFr: "Generator",
     categorySlug: "generators",
     schemaCategory: "Generator",
   },
@@ -818,6 +959,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Generators",
     categoryTr: "Oluşturucular",
     categoryId: "Generator",
+    nameFr: "Lien WhatsApp",
+    descFr: "Générez des liens WhatsApp",
+    categoryFr: "Generator",
     categorySlug: "generators",
     schemaCategory: "Generator",
   },
@@ -835,6 +979,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Generators",
     categoryTr: "Oluşturucular",
     categoryId: "Generator",
+    nameFr: "Nombres Aléatoires",
+    descFr: "Générez des nombres aléatoires",
+    categoryFr: "Generator",
     categorySlug: "generators",
     schemaCategory: "Generator",
   },
@@ -852,6 +999,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Generators",
     categoryTr: "Oluşturucular",
     categoryId: "Generator",
+    nameFr: "Générateur de Noms",
+    descFr: "Générez des noms pour personnages",
+    categoryFr: "Generator",
     categorySlug: "generators",
     schemaCategory: "Generator",
   },
@@ -869,6 +1019,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Generators",
     categoryTr: "Oluşturucular",
     categoryId: "Generator",
+    nameFr: "Rédacteur IA",
+    descFr: "Rédigez des articles avec l'IA",
+    categoryFr: "Generator",
     categorySlug: "generators",
     schemaCategory: "Generator",
   },
@@ -886,6 +1039,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Calculators",
     categoryTr: "Hesaplayıcılar",
     categoryId: "Kalkulator",
+    nameFr: "Durée Entre Dates",
+    descFr: "Calculez la durée exacte entre deux dates",
+    categoryFr: "Kalkulator",
     categorySlug: "calculators",
     schemaCategory: "Calculator",
   },
@@ -903,6 +1059,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Developer Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Chiffrement de Texte",
+    descFr: "Chiffrez et déchiffrez du texte",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Developer",
   },
@@ -920,6 +1079,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Calculators",
     categoryTr: "Hesaplayıcılar",
     categoryId: "Kalkulator",
+    nameFr: "Poids Idéal",
+    descFr: "Calculez votre poids idéal selon votre taille",
+    categoryFr: "Kalkulator",
     categorySlug: "calculators",
     schemaCategory: "Calculator",
   },
@@ -937,6 +1099,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Developer Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Recherche de Mots-clés",
+    descFr: "Recherchez des mots-clés SEO",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Developer",
   },
@@ -954,6 +1119,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Calculators",
     categoryTr: "Hesaplayıcılar",
     categoryId: "Kalkulator",
+    nameFr: "Calculateur de Pourcentage",
+    descFr: "Calculez des pourcentages facilement",
+    categoryFr: "Kalkulator",
     categorySlug: "calculators",
     schemaCategory: "Calculator",
   },
@@ -971,6 +1139,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Converters",
     categoryTr: "Dönüştürücüler",
     categoryId: "Konverter",
+    nameFr: "Convertisseur Pixel",
+    descFr: "Convertissez pixels en centimètres",
+    categoryFr: "Konverter",
     categorySlug: "converters",
     schemaCategory: "Converter",
   },
@@ -988,6 +1159,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Converters",
     categoryTr: "Dönüştürücüler",
     categoryId: "Konverter",
+    nameFr: "Convertisseur Température",
+    descFr: "Convertissez entre Celsius, Fahrenheit, Kelvin",
+    categoryFr: "Konverter",
     categorySlug: "converters",
     schemaCategory: "Converter",
   },
@@ -1005,6 +1179,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Converters",
     categoryTr: "Dönüştürücüler",
     categoryId: "Konverter",
+    nameFr: "Convertisseur Fuseau Horaire",
+    descFr: "Convertissez les fuseaux horaires",
+    categoryFr: "Konverter",
     categorySlug: "converters",
     schemaCategory: "Converter",
   },
@@ -1022,6 +1199,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Dev Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Formateur JSON",
+    descFr: "Formatez, validez et minimisez JSON",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Development",
   },
@@ -1039,6 +1219,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Dev Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Encodeur Base64",
+    descFr: "Encodez et décodez en Base64",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Development",
   },
@@ -1056,6 +1239,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Dev Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Générateur de Hash",
+    descFr: "Générez des hash MD5, SHA",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Development",
   },
@@ -1073,6 +1259,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Dev Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Audit SEO",
+    descFr: "Analyse SEO complète de tout site",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Development",
   },
@@ -1090,6 +1279,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Dev Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Minificateur CSS",
+    descFr: "Minifiez et formatez le CSS",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Development",
   },
@@ -1107,6 +1299,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Dev Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Éditeur Markdown",
+    descFr: "Éditeur Markdown avec aperçu",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Development",
   },
@@ -1124,6 +1319,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Dev Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Recherche IP",
+    descFr: "Informations sur toute adresse IP",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Development",
   },
@@ -1141,6 +1339,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Dev Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Encodeur/Décodeur",
+    descFr: "Encodez et décodez du texte",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Development",
   },
@@ -1158,6 +1359,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Other Tools",
     categoryTr: "Diğer Araçlar",
     categoryId: "Alat Lainnya",
+    nameFr: "Calculateur d'Âge",
+    descFr: "Calculez votre âge exact en années, mois, jours",
+    categoryFr: "Alat Lainnya",
     categorySlug: "daily",
     schemaCategory: "Utility",
   },
@@ -1175,6 +1379,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Other Tools",
     categoryTr: "Diğer Araçlar",
     categoryId: "Alat Lainnya",
+    nameFr: "Calculateur IMC",
+    descFr: "Calculez votre Indice de Masse Corporelle",
+    categoryFr: "Alat Lainnya",
     categorySlug: "daily",
     schemaCategory: "Health",
   },
@@ -1192,6 +1399,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Other Tools",
     categoryTr: "Diğer Araçlar",
     categoryId: "Alat Lainnya",
+    nameFr: "Calculateur de Calories",
+    descFr: "Calculez vos besoins caloriques quotidiens",
+    categoryFr: "Alat Lainnya",
     categorySlug: "daily",
     schemaCategory: "Health",
   },
@@ -1209,6 +1419,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Other Tools",
     categoryTr: "Diğer Araçlar",
     categoryId: "Alat Lainnya",
+    nameFr: "Chronomètre",
+    descFr: "Chronomètre avec tours",
+    categoryFr: "Alat Lainnya",
     categorySlug: "daily",
     schemaCategory: "Utility",
   },
@@ -1226,6 +1439,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Dev Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Contenu SEO IA",
+    descFr: "Générez du contenu SEO avec l'IA",
+    categoryFr: "Alat Pengembang",
     categorySlug: "dev",
     schemaCategory: "Development",
   },
@@ -1243,6 +1459,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Islamic Tools",
     categoryTr: "İslami Araçlar",
     categoryId: "Alat Islami",
+    nameFr: "Compteur Tasbih",
+    descFr: "Compteur Tasbih numérique",
+    categoryFr: "Alat Islami",
     categorySlug: "islamic",
     schemaCategory: "Islamic",
   },
@@ -1260,6 +1479,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Developer Tools",
     categoryTr: "Geliştirici Araçları",
     categoryId: "Alat Pengembang",
+    nameFr: "Générateur d'UUID",
+    descFr: "Générez des UUID v4/v7",
+    categoryFr: "Alat Pengembang",
     categorySlug: "developer-tools",
     schemaCategory: "DeveloperTools",
   },
@@ -1277,6 +1499,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Other Tools",
     categoryTr: "Diğer Araçlar",
     categoryId: "Alat Lainnya",
+    nameFr: "Analyseur Alimentaire",
+    descFr: "Analyse calorique par photo",
+    categoryFr: "Alat Lainnya",
     categorySlug: "daily",
     schemaCategory: "Health",
   },
@@ -1294,6 +1519,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Islamic Tools",
     categoryTr: "İslami Araçlar",
     categoryId: "Alat Islami",
+    nameFr: "Calculateur Omra",
+    descFr: "Calculez les coûts de la Omra",
+    categoryFr: "Alat Islami",
     categorySlug: "islamic",
     schemaCategory: "Islamic",
   },
@@ -1311,6 +1539,9 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categoryEn: "Islamic Tools",
     categoryTr: "İslami Araçlar",
     categoryId: "Alat Islami",
+    nameFr: "Fidyah and Kaffarah",
+    descFr: "Calculez Fidyah et Kaffarah",
+    categoryFr: "Alat Islami",
     categorySlug: "islamic",
     schemaCategory: "Islamic",
   },
@@ -1319,12 +1550,12 @@ export const TOOLS_META: Record<string, ToolMeta> = {
 /**
  * Generate Next.js Metadata for a tool page
  */
-export function generateToolMetadata(slug: string, lang: "ar" | "en" | "tr" | "id" = "ar") {
+export function generateToolMetadata(slug: string, lang: "ar" | "en" | "tr" | "id" | "fr" = "ar") {
   const tool = TOOLS_META[slug];
   if (!tool) return null;
 
-  const name = lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : tool.nameEn;
-  const desc = lang === "ar" ? tool.descAr : lang === "tr" ? tool.descTr : lang === "id" ? tool.descId : tool.descEn;
+  const name = lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : lang === "fr" ? tool.nameFr : tool.nameEn;
+  const desc = lang === "ar" ? tool.descAr : lang === "tr" ? tool.descTr : lang === "id" ? tool.descId : lang === "fr" ? tool.descFr : tool.descEn;
   // Don't append site name — root layout template adds "%s — أدواتك" automatically
   const title = name;
   const canonical = lang === "ar"
@@ -1333,6 +1564,8 @@ export function generateToolMetadata(slug: string, lang: "ar" | "en" | "tr" | "i
     ? `https://adwatak.cloud/tr/tools/${slug}`
     : lang === "id"
     ? `https://adwatak.cloud/id/tools/${slug}`
+    : lang === "fr"
+    ? `https://adwatak.cloud/fr/tools/${slug}`
     : `https://adwatak.cloud/en/tools/${slug}`;
 
   return {
@@ -1345,6 +1578,7 @@ export function generateToolMetadata(slug: string, lang: "ar" | "en" | "tr" | "i
         en: `https://adwatak.cloud/en/tools/${slug}`,
         tr: `https://adwatak.cloud/tr/tools/${slug}`,
         id: `https://adwatak.cloud/id/tools/${slug}`,
+        fr: `https://adwatak.cloud/fr/tools/${slug}`,
         "x-default": `https://adwatak.cloud/tools/${slug}`,
       },
     },
@@ -1352,8 +1586,8 @@ export function generateToolMetadata(slug: string, lang: "ar" | "en" | "tr" | "i
       title,
       description: desc.substring(0, 200),
       url: canonical,
-      siteName: lang === "ar" ? "أدواتك" : lang === "tr" ? "Adwatak" : lang === "id" ? "Adwatak" : "Adawatak",
-      locale: lang === "ar" ? "ar_SA" : lang === "tr" ? "tr_TR" : lang === "id" ? "id_ID" : "en_US",
+      siteName: lang === "ar" ? "أدواتك" : lang === "tr" ? "Adwatak" : lang === "id" ? "Adwatak" : lang === "fr" ? "Adwatak" : "Adawatak",
+      locale: lang === "ar" ? "ar_SA" : lang === "tr" ? "tr_TR" : lang === "id" ? "id_ID" : lang === "fr" ? "fr_FR" : "en_US",
       type: "website" as const,
       images: [
         {
@@ -1363,6 +1597,8 @@ export function generateToolMetadata(slug: string, lang: "ar" | "en" | "tr" | "i
             ? `https://adwatak.cloud/tr/og/${slug}`
             : lang === "id"
             ? `https://adwatak.cloud/id/og/${slug}`
+            : lang === "fr"
+            ? `https://adwatak.cloud/fr/og/${slug}`
             : `https://adwatak.cloud/en/og/${slug}`,
           width: 1200,
           height: 630,
@@ -1390,20 +1626,22 @@ export function generateToolMetadata(slug: string, lang: "ar" | "en" | "tr" | "i
 /**
  * Generate breadcrumb schema data (JSON-LD) for a tool
  */
-export function generateBreadcrumbSchema(slug: string, lang: "ar" | "en" | "tr" | "id" = "ar") {
+export function generateBreadcrumbSchema(slug: string, lang: "ar" | "en" | "tr" | "id" | "fr" = "ar") {
   const tool = TOOLS_META[slug];
   if (!tool) return null;
 
-  const name = lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : tool.nameEn;
-  const category = lang === "ar" ? tool.categoryAr : lang === "tr" ? tool.categoryTr : lang === "id" ? tool.categoryId : tool.categoryEn;
-  const homeText = lang === "ar" ? "الرئيسية" : lang === "tr" ? "Ana Sayfa" : lang === "id" ? "Beranda" : "Home";
-  const prefix = lang === "ar" ? "" : lang === "tr" ? "/tr" : lang === "id" ? "/id" : "/en";
+  const name = lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : lang === "fr" ? tool.nameFr : tool.nameEn;
+  const category = lang === "ar" ? tool.categoryAr : lang === "tr" ? tool.categoryTr : lang === "id" ? tool.categoryId : lang === "fr" ? tool.categoryFr : tool.categoryEn;
+  const homeText = lang === "ar" ? "الرئيسية" : lang === "tr" ? "Ana Sayfa" : lang === "id" ? "Beranda" : lang === "fr" ? "Accueil" : "Home";
+  const prefix = lang === "ar" ? "" : lang === "tr" ? "/tr" : lang === "id" ? "/id" : lang === "fr" ? "/fr" : "/en";
   const toolUrl = lang === "ar"
     ? `https://adwatak.cloud/tools/${slug}`
     : lang === "tr"
     ? `https://adwatak.cloud/tr/tools/${slug}`
     : lang === "id"
     ? `https://adwatak.cloud/id/tools/${slug}`
+    : lang === "fr"
+    ? `https://adwatak.cloud/fr/tools/${slug}`
     : `https://adwatak.cloud/en/tools/${slug}`;
 
   return [
@@ -1419,15 +1657,15 @@ export function generateBreadcrumbSchema(slug: string, lang: "ar" | "en" | "tr" 
  */
 export function generateToolSchemas(
   slug: string,
-  lang: "ar" | "en" | "tr" | "id" = "ar"
+  lang: "ar" | "en" | "tr" | "id" | "fr" = "ar"
 ): Record<string, unknown>[] {
   const tool = TOOLS_META[slug];
   if (!tool) return [];
 
   const name =
-    lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : tool.nameEn;
+    lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : lang === "fr" ? tool.nameFr : tool.nameEn;
   const desc =
-    lang === "ar" ? tool.descAr : lang === "tr" ? tool.descTr : lang === "id" ? tool.descId : tool.descEn;
+    lang === "ar" ? tool.descAr : lang === "tr" ? tool.descTr : lang === "id" ? tool.descId : lang === "fr" ? tool.descFr : tool.descEn;
   const category =
     lang === "ar"
       ? tool.categoryAr
@@ -1435,9 +1673,11 @@ export function generateToolSchemas(
         ? tool.categoryTr
         : lang === "id"
           ? tool.categoryId
-          : tool.categoryEn;
+          : lang === "fr"
+            ? tool.categoryFr
+            : tool.categoryEn;
   const homeText =
-    lang === "ar" ? "الرئيسية" : lang === "tr" ? "Ana Sayfa" : lang === "id" ? "Beranda" : "Home";
+    lang === "ar" ? "الرئيسية" : lang === "tr" ? "Ana Sayfa" : lang === "id" ? "Beranda" : lang === "fr" ? "Accueil" : "Home";
   const siteName = lang === "ar" ? "أدواتك" : "Adawatak";
   const prefix = lang === "ar" ? "" : `/${lang}`;
   const toolUrl = `https://adwatak.cloud${prefix}/tools/${slug}`;
@@ -1538,7 +1778,7 @@ export function generateToolSchemas(
 /** Internal: get tool-specific FAQs for schema markup */
 function _getToolFaqs(
   slug: string,
-  lang: "ar" | "en" | "tr" | "id",
+  lang: "ar" | "en" | "tr" | "id" | "fr",
   name: string
 ): { question: string; answer: string }[] {
   const FAQS: Record<string, Record<string, { question: string; answer: string }[]>> = {
@@ -1660,12 +1900,12 @@ export function getToolSpeakableData(): Record<string, unknown> {
 /**
  * GEO: Get keywords for long-tail targeting.
  */
-export function getToolKeywords(slug: string, lang: "ar" | "en" | "tr" | "id" = "ar"): string[] {
+export function getToolKeywords(slug: string, lang: "ar" | "en" | "tr" | "id" | "fr" = "ar"): string[] {
   const tool = TOOLS_META[slug];
   if (!tool) return [];
 
-  const name = lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : tool.nameEn;
-  const category = lang === "ar" ? tool.categoryAr : lang === "tr" ? tool.categoryTr : lang === "id" ? tool.categoryId : tool.categoryEn;
+  const name = lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : lang === "fr" ? tool.nameFr : tool.nameEn;
+  const category = lang === "ar" ? tool.categoryAr : lang === "tr" ? tool.categoryTr : lang === "id" ? tool.categoryId : lang === "fr" ? tool.categoryFr : tool.categoryEn;
 
   if (lang === "ar") {
     return [name, category, `${name} مجاني`, `استخدام ${name}`, `كيف ${name}`];
@@ -1675,6 +1915,9 @@ export function getToolKeywords(slug: string, lang: "ar" | "en" | "tr" | "id" = 
   }
   if (lang === "id") {
     return [name, category, `${name} gratis`, `cara menggunakan ${name}`, `${name} online`];
+  }
+  if (lang === "fr") {
+    return [name, category, `${name} gratuit`, `comment utiliser ${name}`, `${name} en ligne`];
   }
   return [name, category, `free ${name}`, `how to use ${name}`, `${name} online`];
 }
