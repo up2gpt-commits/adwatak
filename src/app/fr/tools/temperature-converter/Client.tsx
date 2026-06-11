@@ -37,11 +37,11 @@ export default function Client(){
   };
 
   return (<div className="max-w-[760px] mx-auto">
-    <StructuredData data={toolSchema("Temperature Converter","Convert Celsius, Fahrenheit, Kelvin","https://adwatak.cloud/fr/tools/temperature-converter","fr","Converters")}/>
+    <StructuredData data={toolSchema("Temperature Converter","Convert Celsius, Fahrenheit, Kelvin","https://adwatak.cloud/fr/tools/temperature-converter","fr","Convertisseurs")}/>
     <StructuredData data={faqSchema(faqs)}/>
-    <Breadcrumb lang="fr" category="Converters" categorySlug="tools" toolName="Temperature Converter"/>
+    <Breadcrumb lang="fr" category="Convertisseurs" categorySlug="tools" toolName="Temperature Converter"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-      <h1 className="text-2xl font-extrabold mb-1">🌡️ Temperature Converter</h1>
+      <h1 className="text-2xl font-extrabold mb-1">🌡️ Convertisseur de Température</h1>
       <p className="text-sm text-gray-500 mb-6">Convert between Celsius, Fahrenheit, and Kelvin</p>
       <div className="space-y-4">
         {[{key:"C",label:"Celsius (°C)"},{key:"F",label:"Fahrenheit (°F)"},{key:"K",label:"Kelvin (K)"}].map(({key,label})=>(

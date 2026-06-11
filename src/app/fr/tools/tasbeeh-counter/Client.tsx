@@ -112,8 +112,8 @@ export default function Client() {
   const schemaCategory = "Islamic";
   const schemaUrl = "https://adwatak.cloud/fr/tools/tasbeeh-counter";
   const breadcrumbItems = [
-    { name: "Home", url: "https://adwatak.cloud/fr" },
-    { name: "Islamic Tools", url: "https://adwatak.cloud/fr/category/islamic" },
+    { name: "Accueil", url: "https://adwatak.cloud/fr" },
+    { name: "Islamique", url: "https://adwatak.cloud/fr/category/islamic" },
     { name: "📿 Tasbeeh Counter", url: "https://adwatak.cloud/fr/tools/tasbeeh-counter" },
   ];
 
@@ -122,15 +122,15 @@ export default function Client() {
       <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'fr', schemaCategory)} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
-      <StructuredData data={howToSchema("How to use the Tasbeeh Counter", "Free online tool. Works directly in your browser. No registration required.", [
+      <StructuredData data={howToSchema("How to use the Tasbeeh Counter", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [
         { name: "Choose a Dhikr", text: "Select a dhikr from the list — Subhan Allah, Alhamdulillah, Allahu Akbar, etc." },
         { name: "Tap to Count", text: "Tap the large button or anywhere on the circle to increment the counter" },
         { name: "Complete the Set", text: "Continue until you reach the target count (33 or 34) — a completion message will appear" },
         { name: "Move to Next", text: "After completing, move to the next dhikr or reset the counter" },
-      ], "less than a minute", "fr")} />
+      ], "moins d'une minute", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
 
-      <Breadcrumb category="Islamic Tools" categorySlug="islamic" toolName="Tasbeeh Counter" />
+      <Breadcrumb category="Outils Islamiques" categorySlug="islamic" toolName="Tasbeeh Counter" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1 text-center">📿 Tasbeeh Counter</h1>

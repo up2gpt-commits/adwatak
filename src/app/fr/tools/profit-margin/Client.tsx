@@ -101,12 +101,12 @@ export default function Client() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("Profit Margin Calculator", "Online Profit Margin Calculator - free tool", "https://adwatak.cloud/fr/tools/profit-margin", "fr", "Utility")} />
+      <StructuredData data={toolSchema("Profit Margin Calculator", "En ligne Profit Margin Calculator  - outil gratuit", "https://adwatak.cloud/fr/tools/profit-margin", "fr", "Utility")} />
       <StructuredData data={faqSchema(faqs)} />
-      <StructuredData data={breadcrumbSchema([{ name: "Home", url: "https://adwatak.cloud/fr" }, { name: "Financial Calculators", url: "https://adwatak.cloud/fr/category/calculators" }, { name: "Profit Margin Calculator", url: "https://adwatak.cloud/fr/tools/profit-margin" }])} />
-      <StructuredData data={howToSchema("How to use the Profit Margin Calculator", "Free online tool. Works directly in your browser. No registration required.", [{ name: "Open the tool", text: "Navigate to the Profit Margin Calculator on Adwatak" }, { name: "Enter your data", text: "Fill in cost, price, or desired margin (any 2 values)" }, { name: "Click Calculate", text: "Press the calculate button to get results instantly" }, { name: "Save scenarios", text: "Compare multiple products using the Scenario feature" }], "less than a minute", "fr")} />
+      <StructuredData data={breadcrumbSchema([{ name: "Accueil", url: "https://adwatak.cloud/fr" }, { name: "Calculateurs Financiers", url: "https://adwatak.cloud/fr/category/calculators" }, { name: "Marge Bénéficiaire", url: "https://adwatak.cloud/fr/tools/profit-margin" }])} />
+      <StructuredData data={howToSchema("How to use the Profit Margin Calculator", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{ name: "Ouvrir l'outil", text: "Navigate to the Profit Margin Calculator on Adwatak" }, { name: "Entrez vos données", text: "Fill in cost, price, or desired margin (any 2 values)" }, { name: "Click Calculate", text: "Press the calculate button to get results instantly" }, { name: "Save scenarios", text: "Compare multiple products using the Scenario feature" }], "moins d'une minute", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <Breadcrumb lang="fr" category="Financial Calculators" categorySlug="calculators" toolName="Profit Margin Calculator" />
+      <Breadcrumb lang="fr" category="Calculateurs Financiers" categorySlug="calculators" toolName="Profit Margin Calculator" />
 
       {/* Main Calculator Card */}
       <div className={cardStyle}>

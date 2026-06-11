@@ -32,7 +32,7 @@ const relatedTools = [
 ];
 
 const seoContent = [
-  "Our free Unit Converter handles length, weight, temperature, volume, area, and speed conversions instantly. Switch between metric and imperial systems with a single click. Perfect for travel, cooking, science, international business, and everyday calculations.",
+  "Notre Unit Converter handles length, weight, temperature, volume, area, and speed conversions instantly. Switch between metric and imperial systems with a single click. Perfect for travel, cooking, science, international business, and everyday calculations.",
   "Categories: Length (meters, feet, inches, miles, km). Weight (kg, lbs, oz, stones). Temperature (°C, °F, K). Volume (L, gal, cups, fl oz). Area (sq m, sq ft, acres, hectares). Speed (km/h, mph, m/s). More categories coming soon.",
   "Example conversions: 100 kg = 220.5 lbs. 1 mile = 1.609 km. 30°C = 86°F. 1 gallon = 3.785 liters. 1 acre = 4,047 sq m. 60 km/h = 37.3 mph. All conversions use exact conversion factors, not approximations.",
   "Why it matters: The USA, Myanmar, and Liberia are the only countries using imperial measurement. The rest of the world uses metric. If you travel, shop online internationally, or work with global partners, a unit converter is essential.",
@@ -72,14 +72,14 @@ export default function Client() {
     }
   };
 
-  const schemaName = "Unit Converter";
-const schemaDesc = `Online Unit Converter - free tool`;
+  const schemaName = "Convertisseur d'Unités";
+const schemaDesc = `Online Unit Converter - outil gratuit`;
 const schemaCategory = "Utility";
 const schemaUrl = "https://adwatak.cloud/fr/tools/unit-converter";
 const breadcrumbItems = [
-  { name: "Home", url: "https://adwatak.cloud/fr" },
-  { name: "Converters", url: "https://adwatak.cloud/fr/category/calculators" },
-  { name: "Unit Converter", url: "https://adwatak.cloud/fr/tools/unit-converter" },
+  { name: "Accueil", url: "https://adwatak.cloud/fr" },
+  { name: "Convertisseurs", url: "https://adwatak.cloud/fr/category/calculators" },
+  { name: "Convertisseur d'Unités", url: "https://adwatak.cloud/fr/tools/unit-converter" },
 ];
 return (
     <div className="max-w-[760px] mx-auto">
@@ -89,13 +89,13 @@ return (
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Other Tools" categorySlug="utility-tools" toolName="Unit Converter" />
+      <Breadcrumb category="Autres" categorySlug="utility-tools" toolName="Unit Converter" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">📏 Unit Converter</h1>
+        <h1 className="text-2xl font-extrabold mb-1">📏 Convertisseur d'Unités</h1>
         <p className="text-sm text-gray-500 mb-6">Convert between metric and imperial units — length, weight, temperature, volume, area, speed</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {["length", "weight", "temperature", "volume", "area", "speed"].map((c) => (
@@ -115,7 +115,7 @@ return (
             </select>
           </div>
         </div>
-        <button onClick={convert} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Convert</button>
+        <button onClick={convert} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Convertir</button>
       </div>
       {result && (
         <div className="bg-green-50 rounded-xl p-5 text-center border border-green-200 mb-6">

@@ -32,7 +32,7 @@ const relatedTools = [
 ];
 
 const seoContent = [
-  "Our free Hijri Converter converts between Islamic (Hijri) and Gregorian (Western) calendar dates instantly. Enter either date to see its equivalent. Perfect for tracking Ramadan dates, Islamic holidays, planning Hajj, and converting birth dates for official documents.",
+  "Notre Hijri Converter converts between Islamic (Hijri) and Gregorian (Western) calendar dates instantly. Enter either date to see its equivalent. Perfect for tracking Ramadan dates, Islamic holidays, planning Hajj, and converting birth dates for official documents.",
   "The Islamic calendar has 12 lunar months totaling 354-355 days. This means Hijri dates shift ~11 days earlier each Gregorian year. Ramadan 2024 might be March-April, but in 2030 it will be January. Our converter handles these shifts accurately.",
   "Calendar methods: Our converter uses the Umm al-Qura calendar (official in Saudi Arabia) for calculated dates. Actual moon sighting may differ by 1 day depending on location and visibility conditions. Check local moon sighting announcements for Ramadan and Eid dates.",
   "Common uses: (1) Find your Hijri birth date. (2) Check Ramadan start/end dates for any year. (3) Convert contract dates for Saudi business. (4) Plan Eid al-Adha and Hajj dates. (5) Track Islamic anniversary dates (marriage, conversion).",
@@ -61,14 +61,14 @@ export default function Client() {
     setHijriResult(`${hDay} ${hijriMonths[hMonth]} ${hYear} AH`);
   };
 
-  const schemaName = "Hijri Converter";
-const schemaDesc = `Online Hijri Converter - free tool`;
+  const schemaName = "Convertisseur Hijri";
+const schemaDesc = `Online Hijri Converter - outil gratuit`;
 const schemaCategory = "Utility";
 const schemaUrl = "https://adwatak.cloud/fr/tools/hijri-converter";
 const breadcrumbItems = [
-  { name: "Home", url: "https://adwatak.cloud/fr" },
-  { name: "Converters", url: "https://adwatak.cloud/fr/category/calculators" },
-  { name: "Hijri Converter", url: "https://adwatak.cloud/fr/tools/hijri-converter" },
+  { name: "Accueil", url: "https://adwatak.cloud/fr" },
+  { name: "Convertisseurs", url: "https://adwatak.cloud/fr/category/calculators" },
+  { name: "Convertisseur Hijri", url: "https://adwatak.cloud/fr/tools/hijri-converter" },
 ];
 return (
     <div className="max-w-[760px] mx-auto">
@@ -78,13 +78,13 @@ return (
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Islamic Tools" categorySlug="calculators" toolName="Hijri Converter" />
+      <Breadcrumb category="Outils Islamiques" categorySlug="calculators" toolName="Hijri Converter" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">🌙 Hijri Converter</h1>
+        <h1 className="text-2xl font-extrabold mb-1">🌙 Convertisseur Hijri</h1>
         <p className="text-sm text-gray-500 mb-6">Convert between Gregorian and Islamic Hijri calendar dates</p>
         <label className="block text-sm font-semibold text-gray-700 mb-1.5">Gregorian Date</label>
         <input type="date" value={gregorian} onChange={(e) => setGregorian(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none mb-4" />

@@ -30,7 +30,7 @@ const relatedTools = [
 ];
 
 const seoContent = [
-  "Free online encoder and decoder tool supporting three methods: Base64 encoding/decoding for binary data transmission, URL encoding/decoding for safe web links, and HTML entity encoding for XSS-safe text. Everything runs in your browser — no data is sent to any server.",
+  "En ligne gratuit encoder and decoder tool supporting three methods: Base64 encoding/decoding for binary data transmission, URL encoding/decoding for safe web links, and HTML entity encoding for XSS-safe text. Everything runs in your browser — no data is sent to any server.",
   "Every web developer needs to understand encoding: Base64 for image data and API payloads, URL Encoding for query parameters and links, and HTML Entities for preventing XSS attacks in web applications.",
   "Encoding is NOT encryption — any encoded data can be trivially reversed. Use encoding for representation and transport, not for security. For protection, use bcrypt (passwords) or TLS (transport).",
   "This tool works 100% client-side — your text never leaves your browser. Full privacy guaranteed."
@@ -52,31 +52,31 @@ export default function Client() {
     } catch { setResult("Encoding/decoding error — check your input"); }
   };
 
-  const schemaName = "URL Encoder/Decoder";
+  const schemaName = "Encodeur/Décodeur URL";
 const schemaDesc = `Free online encoder and decoder tool for Base64, URL encoding, and more.`;
 const schemaCategory = "Utility";
 const schemaUrl = "https://adwatak.cloud/fr/tools/encoder";
 const breadcrumbItems = [
-  { name: "Home", url: "https://adwatak.cloud" },
-  { name: "Dev Tools", url: "https://adwatak.cloud/fr/category/dev" },
-  { name: "URL Encoder/Decoder", url: "https://adwatak.cloud/fr/tools/encoder" },
+  { name: "Accueil", url: "https://adwatak.cloud" },
+  { name: "Développement", url: "https://adwatak.cloud/fr/category/dev" },
+  { name: "Encodeur/Décodeur URL", url: "https://adwatak.cloud/fr/tools/encoder" },
 ];
 return (
     <div className="max-w-[760px] mx-auto">
         <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'fr', schemaCategory)} />
         <StructuredData data={faqSchema(faqs)} />
         <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
-        <StructuredData data={howToSchema("How to use this encoder", "Free online tool. Works directly in your browser. No registration required.", [
+        <StructuredData data={howToSchema("How to use this encoder", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [
           {name:"Choose encoding type", text:"Select Base64, URL, or HTML encoding from the dropdown"},
           {name:"Enter your text", text:"Paste or type the text you want to encode or decode"},
           {name:"Click the button", text:"Press execute to process your text"},
           {name:"Copy the result", text:"Use the copy button or select the encoded/decoded output"}
-        ], "less than a minute", "fr")} />
+        ], "moins d'une minute", "fr")} />
         <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <Breadcrumb lang="fr" category="Dev Tools" categorySlug="dev" toolName="URL Encoder/Decoder" />
+      <Breadcrumb lang="fr" category="Développement" categorySlug="dev" toolName="URL Encoder/Decoder" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">🔧 URL Encoder/Decoder</h1>
-        <p className="text-sm text-gray-500 mb-6">Encode and decode Base64, URLs, and more — client-side only</p>
+        <h1 className="text-2xl font-extrabold mb-1">🔧 Encodeur/Décodeur URL</h1>
+        <p className="text-sm text-gray-500 mb-6">Encodez et décodez du texte en Base64, URL et plus — côté client</p>
         <select value={mode} onChange={(e) => setMode(e.target.value)}
           className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white mb-4">
           <option value="base64-encode">Base64 Encode</option>
@@ -86,7 +86,7 @@ return (
         </select>
         <textarea value={input} onChange={(e) => setInput(e.target.value)}
           className="w-full h-[120px] p-4 border-2 border-gray-200 rounded-xl text-sm outline-none font-inherit resize-y mb-4"
-          placeholder="Enter text..." />
+          placeholder="Entrez le texte..." />
         <button onClick={process}
           className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">
           Execute

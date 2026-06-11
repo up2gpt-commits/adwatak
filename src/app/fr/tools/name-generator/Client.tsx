@@ -63,17 +63,17 @@ export default function Client() {
     setNames(result);
   };
 
-  const schemaName = "Name Generator";const schemaDesc = "Online Name Generator - free tool";const schemaCategory = "Utility";const schemaUrl = "https://adwatak.cloud/fr/tools/name-generator";const breadcrumbItems = [{name:"Home",url:"https://adwatak.cloud/fr"},{name:"Generators",url:"https://adwatak.cloud/fr/category/generators"},{name:"Name Generator",url:"https://adwatak.cloud/fr/tools/name-generator"}];
+  const schemaName = "Générateur de Noms";const schemaDesc = "En ligne Name Generator  - outil gratuit";const schemaCategory = "Utility";const schemaUrl = "https://adwatak.cloud/fr/tools/name-generator";const breadcrumbItems = [{name:"Home",url:"https://adwatak.cloud/fr"},{name:"Générateurs",url:"https://adwatak.cloud/fr/category/generators"},{name:"Générateur de Noms",url:"https://adwatak.cloud/fr/tools/name-generator"}];
   return (
     <div className="max-w-[760px] mx-auto">
       <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'fr', schemaCategory)} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
-      <StructuredData data={howToSchema("How to use the Name Generator","Generate creative names instantly in your browser. No registration required.",[{name:"Choose a category",text:"Select from 7 categories: Baby, Brand, Username, Business, Pet, Fantasy, or Startup"},{name:"Set the count",text:"Choose how many names to generate (1-20)"},{name:"Generate names",text:"Click the Generate button to get random creative names"},{name:"Copy and use",text:"Copy individual names or save them for your project"}],"less than a minute","fr")} />
+      <StructuredData data={howToSchema("How to use the Name Generator","Generate creative names instantly in your browser. No registration required.",[{name:"Choose a category",text:"Select from 7 categories: Baby, Brand, Username, Business, Pet, Fantasy, or Startup"},{name:"Set the count",text:"Choose how many names to generate (1-20)"},{name:"Generate names",text:"Click the Generate button to get random creative names"},{name:"Copy and use",text:"Copy individual names or save them for your project"}],"moins d'une minute","fr")} />
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
-      <Breadcrumb category="Generators" categorySlug="generators" toolName="Name Generator" />
+      <Breadcrumb category="Générateurs" categorySlug="generators" toolName="Name Generator" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">👤 Name Generator</h1>
+        <h1 className="text-2xl font-extrabold mb-1">👤 Générateur de Noms</h1>
         <p className="text-sm text-gray-500 mb-6">Generate creative names — baby, brand, username, business & more</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {categories.map((c) => (

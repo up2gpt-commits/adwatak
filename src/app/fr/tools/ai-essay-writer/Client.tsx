@@ -199,7 +199,7 @@ export default function ClientEn() {
       <Breadcrumb lang="fr" category="Text Tools" categorySlug="tools" toolName="AI Essay Writer" />
       
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">✍️ AI Essay Writer</h1>
+        <h1 className="text-2xl font-extrabold mb-1">✍️ Rédacteur IA</h1>
         <p className="text-sm text-gray-500 mb-6">Generate complete structured essays with AI</p>
 
         <div className="space-y-4 mb-6">

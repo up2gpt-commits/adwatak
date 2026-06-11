@@ -452,7 +452,7 @@ export default function Client({ locale = "fr" }: { locale?: "ar" | "fr" | "tr" 
   return (
     <div className="max-w-[760px] mx-auto">
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">📸 Qibla Camera Finder</h1>
+        <h1 className="text-2xl font-extrabold mb-1">📸 Caméra Qibla AR</h1>
         <p className="text-sm text-gray-500 mb-6">Point your camera toward Qibla and see the Kaaba!</p>
 
         {mode === "idle" && (

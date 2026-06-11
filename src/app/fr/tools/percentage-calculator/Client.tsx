@@ -33,11 +33,11 @@ export default function Client() {
   };
 
   return (<div className="max-w-[760px] mx-auto">
-    <StructuredData data={toolSchema("Percentage Calculator","Calculate percentages quickly","https://adwatak.cloud/fr/tools/percentage-calculator","fr","Calculators")}/>
+    <StructuredData data={toolSchema("Percentage Calculator","Calculate percentages quickly","https://adwatak.cloud/fr/tools/percentage-calculator","fr","Calculateurs")}/>
     <StructuredData data={faqSchema(faqs)}/>
-    <Breadcrumb lang="fr" category="Calculators" categorySlug="tools" toolName="Percentage Calculator"/>
+    <Breadcrumb lang="fr" category="Calculateurs" categorySlug="tools" toolName="Percentage Calculator"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-      <h1 className="text-2xl font-extrabold mb-1">📊 Percentage Calculator</h1>
+      <h1 className="text-2xl font-extrabold mb-1">📊 Calculateur de Pourcentage</h1>
       <p className="text-sm text-gray-500 mb-6">Calculate percentages quickly and easily</p>
       <div className="space-y-4 mb-6">
         <select value={mode} onChange={e=>setMode(e.target.value)} className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white">
@@ -51,7 +51,7 @@ export default function Client() {
           <div><label className="block text-xs font-semibold text-gray-600 mb-1">{mode=="percent-of"?"Number":(mode=="what-percent"?"Second number":"New value")}</label>
             <input type="number" value={v2} onChange={e=>setV2(e.target.value)} className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm"/></div>
         </div>
-        <button onClick={calc} className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-lg hover:from-blue-700 transition-all shadow-md">Calculate</button>
+        <button onClick={calc} className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-lg hover:from-blue-700 transition-all shadow-md">Calculer</button>
         {res!==null && <div className="bg-blue-50 rounded-xl p-6 text-center border border-blue-200">
           <p className="text-sm text-gray-500 mb-1">
             {mode=="percent-of"?`${v1}% of ${v2}`:mode=="what-percent"?`${v1} is ${res.toFixed(2)}% of ${v2}`:`Change: ${res>=0?"Increase":"Decrease"} ${Math.abs(res).toFixed(2)}%`}

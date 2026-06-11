@@ -42,7 +42,7 @@ export default function ClientEn(){
     <StructuredData data={faqSchema(faqs)}/>
     <Breadcrumb lang="fr" category="Daily Tools" categorySlug="tools" toolName="Date Duration Calculator"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-      <h1 className="text-2xl font-extrabold mb-1">📅 Date Duration Calculator</h1>
+      <h1 className="text-2xl font-extrabold mb-1">📅 Calculateur de Durée</h1>
       <p className="text-sm text-gray-500 mb-6">Calculate days, months, years between two dates</p>
       <div className="space-y-4 mb-6">
         <div><label className="block text-xs font-semibold text-gray-600 mb-1">Start Date</label>

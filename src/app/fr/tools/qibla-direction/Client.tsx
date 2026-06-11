@@ -461,17 +461,17 @@ export default function Client() {
         { question: "How do I find the Qibla in a hotel or new place?", answer: "Open the tool and click 'Detect My Location' or select your city from the list." },
       ])} />
       <StructuredData data={breadcrumbSchema([
-        { name: "Home", url: "https://adwatak.cloud/fr" },
-        { name: "Islamic Tools", url: "https://adwatak.cloud/fr/category/islamic" },
-        { name: "Qibla Direction", url: "https://adwatak.cloud/fr/tools/qibla-direction" },
+        { name: "Accueil", url: "https://adwatak.cloud/fr" },
+        { name: "Islamique", url: "https://adwatak.cloud/fr/category/islamic" },
+        { name: "Direction de la Qibla", url: "https://adwatak.cloud/fr/tools/qibla-direction" },
       ])} />
       {/* GEO: Speakable — marks key content for AI/voice engines */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])}
       />
-      <Breadcrumb lang="fr" category="Islamic Tools" categorySlug="islamic" toolName="Qibla Direction" />
+      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Qibla Direction" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">🧭 Qibla Direction</h1>
+        <h1 className="text-2xl font-extrabold mb-1">🧭 Direction de la Qibla</h1>
         <p className="text-sm text-gray-500 mb-6">Find the Qibla direction from anywhere in the world — precise Haversine calculation</p>
 
         {/* ─── Result ─── */}

@@ -106,18 +106,18 @@ export default function Client() {
         { question: "Do I need to pay Kaffarah for unintentional breaking of oath?", answer: "Kaffarah is only for deliberate breaking of an oath. If the oath was broken under coercion or forgetfulness, no Kaffarah is due according to most scholars." },
       ])} />
       <StructuredData data={breadcrumbSchema([
-        { name: "Home", url: "https://adwatak.cloud/fr" },
-        { name: "Islamic Tools", url: "https://adwatak.cloud/fr/category/islamic" },
-        { name: "Fidyah & Kaffarah Calculator", url: "https://adwatak.cloud/fr/tools/fidyah-kaffarah" },
+        { name: "Accueil", url: "https://adwatak.cloud/fr" },
+        { name: "Islamique", url: "https://adwatak.cloud/fr/category/islamic" },
+        { name: "Calculateur Fidyah & Kaffarah", url: "https://adwatak.cloud/fr/tools/fidyah-kaffarah" },
       ])} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name: "Select type", text: "Choose the type of Kaffarah or Fidyah"}, {name: "Enter count", text: "Enter the number of times or days"}, {name: "Choose food type", text: "Select food type and amount per person"}, {name: "Calculate", text: "Click calculate to see the amount and estimated cost"}], "less than 2 minutes", "fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name: "Select type", text: "Choose the type of Kaffarah or Fidyah"}, {name: "Enter count", text: "Enter the number of times or days"}, {name: "Choose food type", text: "Select food type and amount per person"}, {name: "Calculate", text: "Click calculate to see the amount and estimated cost"}], "less than 2 minutes", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
 
-      <Breadcrumb lang="fr" category="Islamic Tools" categorySlug="islamic" toolName="Fidyah & Kaffarah Calculator" />
+      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Fidyah & Kaffarah Calculator" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">⚖️ Fidyah & Kaffarah Calculator</h1>
+        <h1 className="text-2xl font-extrabold mb-1">⚖️ Calculateur Fidyah & Kaffarah</h1>
         <p className="text-sm text-gray-500 mb-6">Calculate Fidyah & Kaffarah amounts with detailed Islamic rulings</p>
 
         <div className="mb-6">

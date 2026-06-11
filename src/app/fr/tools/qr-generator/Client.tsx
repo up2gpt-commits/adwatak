@@ -63,19 +63,19 @@ export default function Client() {
     }
   }
 
-  const schemaName = "QR Code Generator";
-  const schemaDesc = "Free online QR Code Generator - create QR codes for URLs, text, and more";
+  const schemaName = "Générateur QR Code";
+  const schemaDesc = "En ligne gratuit QR Code Generator - create QR codes for URLs, text, and more";
   const schemaUrl = "https://adwatak.cloud/fr/tools/qr-generator";
 
   return (
     <div className="max-w-[760px] mx-auto">
       <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, "fr", "Utility")} />
       <StructuredData data={faqSchema(faqs)} />
-      <StructuredData data={breadcrumbSchema([{ name: "Home", url: "https://adwatak.cloud/fr" }, { name: "Dev Tools", url: "https://adwatak.cloud/fr/category/dev" }, { name: "QR Code Generator", url: schemaUrl }])} />
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{ name: "Open the tool", text: "Navigate to this tool page on Adawatak" }, { name: "Enter your data", text: "Fill in the required fields" }, { name: "Get results", text: "Click the calculate or generate button" }, { name: "Use or share", text: "Copy, download, or share the results" }], "less than a minute", "fr")} />
+      <StructuredData data={breadcrumbSchema([{ name: "Accueil", url: "https://adwatak.cloud/fr" }, { name: "Développement", url: "https://adwatak.cloud/fr/category/dev" }, { name: "Générateur QR Code", url: schemaUrl }])} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{ name: "Ouvrir l'outil", text: "Navigate to this tool page on Adawatak" }, { name: "Entrez vos données", text: "Remplissez les champs requis" }, { name: "Obtenez les résultats", text: "Cliquez sur le bouton Calculer ou Générer" }, { name: "Utilisez ou partagez", text: "Copiez, téléchargez ou partagez les résultats" }], "moins d'une minute", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
 
-      <Breadcrumb category="Dev Tools" categorySlug="developer-tools" toolName="QR Code Generator" />
+      <Breadcrumb category="Développement" categorySlug="developer-tools" toolName="QR Code Generator" />
       
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6 dark:bg-gray-800 dark:border-gray-700">
         <h1 className="text-2xl font-extrabold mb-1 dark:text-white">📱 QR Code Generator</h1>

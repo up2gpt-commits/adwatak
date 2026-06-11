@@ -105,14 +105,14 @@ export default function Client() {
     setTo(from);
   };
 
-  const schemaName = "Currency Converter";
-  const schemaDesc = "Online Currency Converter — live mid-market rates";
+  const schemaName = "Convertisseur de Devises";
+  const schemaDesc = "En ligne Currency Converter — live mid-market rates";
   const schemaCategory = "Utility";
   const schemaUrl = "https://adwatak.cloud/fr/tools/currency-converter";
   const breadcrumbItems = [
-    { name: "Home", url: "https://adwatak.cloud/fr" },
-    { name: "Converters", url: "https://adwatak.cloud/fr/category/converters" },
-    { name: "Currency Converter", url: "https://adwatak.cloud/fr/tools/currency-converter" },
+    { name: "Accueil", url: "https://adwatak.cloud/fr" },
+    { name: "Convertisseurs", url: "https://adwatak.cloud/fr/category/converters" },
+    { name: "Convertisseur de Devises", url: "https://adwatak.cloud/fr/tools/currency-converter" },
   ];
 
   return (
@@ -123,13 +123,13 @@ export default function Client() {
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Converters" categorySlug="converters" toolName="Currency Converter" />
+      <Breadcrumb category="Convertisseurs" categorySlug="converters" toolName="Currency Converter" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">💱 Currency Converter</h1>
+        <h1 className="text-2xl font-extrabold mb-1">💱 Convertisseur de Devises</h1>
         <p className="text-sm text-gray-500 mb-6">Live exchange rates — updated daily</p>
 
         <div className="space-y-4">

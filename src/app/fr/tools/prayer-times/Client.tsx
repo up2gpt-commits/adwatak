@@ -224,21 +224,21 @@ export default function Client() {
         { question: "How many cities are available?", answer: "Over 60 cities across 35+ countries." },
       ])} />
       <StructuredData data={breadcrumbSchema([
-        { name: "Home", url: "https://adwatak.cloud/fr" },
-        { name: "Islamic Tools", url: "https://adwatak.cloud/fr/category/islamic" },
-        { name: "Prayer Times", url: "https://adwatak.cloud/fr/tools/prayer-times" },
+        { name: "Accueil", url: "https://adwatak.cloud/fr" },
+        { name: "Islamique", url: "https://adwatak.cloud/fr/category/islamic" },
+        { name: "Heures de Prière", url: "https://adwatak.cloud/fr/tools/prayer-times" },
       ])} />
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb lang="fr" category="Islamic Tools" categorySlug="islamic" toolName="Prayer Times" />
+      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Prayer Times" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">🕐 Prayer Times</h1>
+        <h1 className="text-2xl font-extrabold mb-1">🕐 Heures de Prière</h1>
         <p className="text-sm text-gray-500 mb-6">Accurate prayer times for your location — local calculation with countdown to next prayer</p>
 
         <div className="mb-4">
@@ -331,7 +331,7 @@ export default function Client() {
             <div><label className="block text-sm font-semibold text-gray-700 mb-2">Longitude:</label><input type="number" step="any" value={manualLng} onChange={(e) => setManualLng(e.target.value)} placeholder="e.g. 31.2357" className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 outline-none" /></div>
             <div><label className="block text-sm font-semibold text-gray-700 mb-2">Timezone (UTC):</label><input type="number" step="any" value={manualTz} onChange={(e) => setManualTz(e.target.value)} placeholder="e.g. 3 (Saudi), 2 (Egypt)" className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 outline-none" /></div>
             <div className="flex gap-3">
-              <button onClick={handleManual} disabled={!manualLat || !manualLng || !manualTz} className="flex-1 bg-amber-600 hover:bg-amber-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Calculate</button>
+              <button onClick={handleManual} disabled={!manualLat || !manualLng || !manualTz} className="flex-1 bg-amber-600 hover:bg-amber-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Calculer</button>
               <button onClick={reset} className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl transition-colors">Back</button>
             </div>
           </div>

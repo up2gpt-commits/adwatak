@@ -121,18 +121,18 @@ export default function Client() {
         { question: "How do I know my Miqat?", answer: "There are five Miqat locations: Dhul-Hulayfah (for Madinah), Al-Juhfah (for Egypt/Sham), Yalamlam (for Yemen), Qarn al-Manazil (for Najd), and Dhat Irq (for Iraq). Ask your travel agent." },
       ])} />
       <StructuredData data={breadcrumbSchema([
-        { name: "Home", url: "https://adwatak.cloud/fr" },
-        { name: "Islamic Tools", url: "https://adwatak.cloud/fr/category/islamic" },
-        { name: "Umrah Calculator", url: "https://adwatak.cloud/fr/tools/umrah-calculator" },
+        { name: "Accueil", url: "https://adwatak.cloud/fr" },
+        { name: "Islamique", url: "https://adwatak.cloud/fr/category/islamic" },
+        { name: "Calculateur Omra", url: "https://adwatak.cloud/fr/tools/umrah-calculator" },
       ])} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name: "Select currency", text: "Choose your preferred currency"}, {name: "Enter costs", text: "Fill in each cost category — visa, flight, hotel, transport, expenses"}, {name: "Set travelers", text: "Enter the number of travelers"}, {name: "Calculate", text: "Click the calculate button to see total and per-person costs"}], "less than 2 minutes", "fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name: "Select currency", text: "Choose your preferred currency"}, {name: "Enter costs", text: "Fill in each cost category — visa, flight, hotel, transport, expenses"}, {name: "Set travelers", text: "Enter the number of travelers"}, {name: "Calculate", text: "Click the calculate button to see total and per-person costs"}], "less than 2 minutes", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
 
-      <Breadcrumb lang="fr" category="Islamic Tools" categorySlug="islamic" toolName="Umrah Calculator" />
+      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Umrah Calculator" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">🕋 Umrah Calculator</h1>
+        <h1 className="text-2xl font-extrabold mb-1">🕋 Calculateur Omra</h1>
         <p className="text-sm text-gray-500 mb-6">Calculate total Umrah cost — visa, flight, accommodation, transport, daily expenses</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">

@@ -287,7 +287,7 @@ export default function Client() {
             url: "https://adwatak.cloud/fr",
           },
           {
-            name: "Other Tools",
+            name: "Autres",
             url: "https://adwatak.cloud/fr/category/daily",
           },
           {
@@ -312,7 +312,7 @@ export default function Client() {
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
 
       <Breadcrumb
-        category="Other Tools"
+        category="Autres"
         categorySlug="daily"
         toolName="Food Calorie Analyzer"
       />

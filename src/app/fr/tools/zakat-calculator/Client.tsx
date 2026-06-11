@@ -55,14 +55,14 @@ export default function Client() {
     setResult({ total, nisabCheck: total >= nisab ? "Above Nisab" : "Below Nisab", zakat: total >= nisab ? total * 0.025 : 0 });
   };
 
-  const schemaName = "Zakat Calculator";
-const schemaDesc = `Online Zakat Calculator - free tool`;
+  const schemaName = "Calculateur de Zakat";
+const schemaDesc = `Online Zakat Calculator - outil gratuit`;
 const schemaCategory = "Utility";
 const schemaUrl = "https://adwatak.cloud/fr/tools/zakat-calculator";
 const breadcrumbItems = [
-  { name: "Home", url: "https://adwatak.cloud/fr" },
-  { name: "Islamic Tools", url: "https://adwatak.cloud/fr/category/calculators" },
-  { name: "Zakat Calculator", url: "https://adwatak.cloud/fr/tools/zakat-calculator" },
+  { name: "Accueil", url: "https://adwatak.cloud/fr" },
+  { name: "Islamique", url: "https://adwatak.cloud/fr/category/calculators" },
+  { name: "Calculateur de Zakat", url: "https://adwatak.cloud/fr/tools/zakat-calculator" },
 ];
 return (
     <div className="max-w-[760px] mx-auto">
@@ -72,11 +72,11 @@ return (
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Islamic Tools" categorySlug="calculators" toolName="Zakat Calculator" />
+      <Breadcrumb category="Outils Islamiques" categorySlug="calculators" toolName="Zakat Calculator" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">☪️ Zakat Calculator</h1>
         <p className="text-sm text-gray-500 mb-6">Calculate your annual Zakat obligation accurately</p>
@@ -86,7 +86,7 @@ return (
           <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">Stocks & Investments ($)</label><input type="number" value={stocks} onChange={(e) => setStocks(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="10000" /></div>
           <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">Business Inventory ($)</label><input type="number" value={business} onChange={(e) => setBusiness(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="3000" /></div>
         </div>
-        <button onClick={calculate} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Calculate Zakat</button>
+        <button onClick={calculate} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Calculer la Zakat</button>
       </div>
       {result && (
         <div className="grid grid-cols-3 gap-3 mb-6">
