@@ -85,7 +85,7 @@ return (
       <Breadcrumb category="Outils Islamiques" categorySlug="calculators" toolName="Hijri Converter" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🌙 Convertisseur Hijri</h1>
-        <p className="text-sm text-gray-500 mb-6">Convert between Gregorian and Islamic Hijri calendar dates</p>
+        <p className="text-sm text-gray-500 mb-6">Convertissez entre dates Hijri et Grégorien</p>
         <label className="block text-sm font-semibold text-gray-700 mb-1.5">Gregorian Date</label>
         <input type="date" value={gregorian} onChange={(e) => setGregorian(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none mb-4" />
         <button onClick={convert} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Convert to Hijri</button>

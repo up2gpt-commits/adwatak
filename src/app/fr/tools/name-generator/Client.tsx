@@ -74,7 +74,7 @@ export default function Client() {
       <Breadcrumb category="Générateurs" categorySlug="generators" toolName="Name Generator" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">👤 Générateur de Noms</h1>
-        <p className="text-sm text-gray-500 mb-6">Generate creative names — baby, brand, username, business & more</p>
+        <p className="text-sm text-gray-500 mb-6">Générez des noms pour personnages</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {categories.map((c) => (
             <button key={c.key} onClick={() => setCat(c.key)}

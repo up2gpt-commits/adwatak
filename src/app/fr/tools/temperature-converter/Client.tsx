@@ -42,7 +42,7 @@ export default function Client(){
     <Breadcrumb lang="fr" category="Convertisseurs" categorySlug="tools" toolName="Temperature Converter"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
       <h1 className="text-2xl font-extrabold mb-1">🌡️ Convertisseur de Température</h1>
-      <p className="text-sm text-gray-500 mb-6">Convert between Celsius, Fahrenheit, and Kelvin</p>
+      <p className="text-sm text-gray-500 mb-6">Convertissez entre Celsius, Fahrenheit, Kelvin</p>
       <div className="space-y-4">
         {[{key:"C",label:"Celsius (°C)"},{key:"F",label:"Fahrenheit (°F)"},{key:"K",label:"Kelvin (K)"}].map(({key,label})=>(
           <div key={key}>

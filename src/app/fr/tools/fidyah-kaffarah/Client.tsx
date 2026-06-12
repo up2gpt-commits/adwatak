@@ -118,7 +118,7 @@ export default function Client() {
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">⚖️ Calculateur Fidyah & Kaffarah</h1>
-        <p className="text-sm text-gray-500 mb-6">Calculate Fidyah & Kaffarah amounts with detailed Islamic rulings</p>
+        <p className="text-sm text-gray-500 mb-6">Calculez Fidyah et Kaffarah pour le jeûne et les serments</p>
 
         <div className="mb-6">
           <label className="block text-sm font-semibold text-gray-700 mb-3">Select Kaffarah or Fidyah type:</label>

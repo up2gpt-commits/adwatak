@@ -134,7 +134,7 @@ export default function Client() {
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1 text-center">📿 Tasbeeh Counter</h1>
-        <p className="text-sm text-gray-500 mb-6 text-center">Digital dhikr counter with auto-save — 33 counts per tasbeeh</p>
+        <p className="text-sm text-gray-500 mb-6 text-center">Compteur Tasbih numérique pour le dhikr quotidien</p>
 
         {/* Dhikr selector */}
         <div className="flex flex-wrap gap-2 justify-center mb-6">

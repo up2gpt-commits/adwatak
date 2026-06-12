@@ -239,7 +239,7 @@ export default function Client() {
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🕐 Heures de Prière</h1>
-        <p className="text-sm text-gray-500 mb-6">Accurate prayer times for your location — local calculation with countdown to next prayer</p>
+        <p className="text-sm text-gray-500 mb-6">Obtenez les heures de prière selon votre position</p>
 
         <div className="mb-4">
           <label className="block text-sm font-semibold text-gray-700 mb-2">Calculation Method:</label>

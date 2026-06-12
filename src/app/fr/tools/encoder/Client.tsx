@@ -76,7 +76,7 @@ return (
       <Breadcrumb lang="fr" category="Développement" categorySlug="dev" toolName="URL Encoder/Decoder" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🔧 Encodeur/Décodeur URL</h1>
-        <p className="text-sm text-gray-500 mb-6">Encodez et décodez du texte en Base64, URL et plus — côté client</p>
+        <p className="text-sm text-gray-500 mb-6">Encodez et décodez du texte en plusieurs formats</p>
         <select value={mode} onChange={(e) => setMode(e.target.value)}
           className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white mb-4">
           <option value="base64-encode">Base64 Encode</option>

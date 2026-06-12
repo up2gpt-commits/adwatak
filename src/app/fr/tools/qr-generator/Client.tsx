@@ -79,7 +79,7 @@ export default function Client() {
       
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6 dark:bg-gray-800 dark:border-gray-700">
         <h1 className="text-2xl font-extrabold mb-1 dark:text-white">📱 QR Code Generator</h1>
-        <p className="text-sm text-gray-500 mb-6 dark:text-gray-400">Generate free QR codes for URLs, text, and more</p>
+        <p className="text-sm text-gray-500 mb-6 dark:text-gray-400">Générez des codes QR personnalisés</p>
         
         <label className="block text-sm font-semibold text-gray-700 mb-1.5 dark:text-gray-300">URL or Text</label>
         <input

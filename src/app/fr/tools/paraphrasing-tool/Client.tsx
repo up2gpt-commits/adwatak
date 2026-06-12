@@ -45,7 +45,7 @@ return(<div className="max-w-[760px] mx-auto">
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 <Breadcrumb lang="fr" category="Text Tools" categorySlug="text" toolName="Paraphrasing Tool"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-<h1 className="text-2xl font-extrabold mb-1">✏️ Paraphrasing Tool</h1><p className="text-sm text-gray-500 mb-6">Rewrite text in a new style while preserving the original meaning</p>
+<h1 className="text-2xl font-extrabold mb-1">✏️ Paraphrasing Tool</h1><p className="text-sm text-gray-500 mb-6">Reformulez du texte pour améliorer votre écriture</p>
 <textarea value={text} onChange={(e)=>setText(e.target.value)} className="w-full h-[180px] p-4 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit resize-y" placeholder="Paste text to paraphrase..." />
 <button onClick={paraphrase} disabled={loading} className="mt-4 w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold py-3 px-6 rounded-xl transition-all">{loading?"Paraphrasing...":"✏️ Paraphrase"}</button>
 {error&&<div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">{error}</div>}

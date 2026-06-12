@@ -96,7 +96,7 @@ return (
       <Breadcrumb category="Autres" categorySlug="utility-tools" toolName="Unit Converter" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">📏 Convertisseur d'Unités</h1>
-        <p className="text-sm text-gray-500 mb-6">Convert between metric and imperial units — length, weight, temperature, volume, area, speed</p>
+        <p className="text-sm text-gray-500 mb-6">Convertissez entre unités de mesure</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {["length", "weight", "temperature", "volume", "area", "speed"].map((c) => (
             <button key={c} onClick={() => { setCategory(c); setResult(""); }} className={`px-3 py-1.5 rounded-full text-sm font-semibold cursor-pointer border-none capitalize ${category === c ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"}`}>{c}</button>

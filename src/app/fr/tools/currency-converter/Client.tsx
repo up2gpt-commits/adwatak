@@ -130,7 +130,7 @@ export default function Client() {
       <Breadcrumb category="Convertisseurs" categorySlug="converters" toolName="Currency Converter" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">💱 Convertisseur de Devises</h1>
-        <p className="text-sm text-gray-500 mb-6">Live exchange rates — updated daily</p>
+        <p className="text-sm text-gray-500 mb-6">Convertissez des devises en temps réel</p>
 
         <div className="space-y-4">
           <div>

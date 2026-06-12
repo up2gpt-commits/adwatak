@@ -321,9 +321,7 @@ export default function Client() {
         <h1 className="text-2xl sm:text-3xl font-extrabold mb-2">
           📸 Food Calorie Analyzer
         </h1>
-        <p className="text-sm text-gray-500 mb-6">
-          Snap any meal and get instant calorie & nutrition analysis — free
-        </p>
+        <p className="text-sm text-gray-500 mb-6">Analyse calorique par photo</p>
 
         {!image && (
           <div

@@ -200,7 +200,7 @@ export default function ClientEn() {
       
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">✍️ Rédacteur IA</h1>
-        <p className="text-sm text-gray-500 mb-6">Generate complete structured essays with AI</p>
+        <p className="text-sm text-gray-500 mb-6">Générez des essais et articles avec l'IA</p>
 
         <div className="space-y-4 mb-6">
           <div>

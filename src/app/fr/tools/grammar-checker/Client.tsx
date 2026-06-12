@@ -46,7 +46,7 @@ return(<div className="max-w-[760px] mx-auto">
 <Breadcrumb lang="fr" category="Text Tools" categorySlug="text" toolName="Grammar Checker"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
 <h1 className="text-2xl font-extrabold mb-1">📝 Grammar Checker</h1>
-<p className="text-sm text-gray-500 mb-6">Check grammar, spelling, and punctuation errors</p>
+<p className="text-sm text-gray-500 mb-6">Vérifiez la grammaire et l'orthographe</p>
 <textarea value={text} onChange={(e)=>setText(e.target.value)} className="w-full h-[200px] p-4 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit resize-y" placeholder="Paste your text here..." />
 <button onClick={check} disabled={loading} className="mt-4 w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold py-3 px-6 rounded-xl transition-all">{loading?"Checking...":"🔍 Check"}</button>
 {error&&<div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">{error}</div>}

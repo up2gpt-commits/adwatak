@@ -111,7 +111,7 @@ export default function Client() {
       {/* Main Calculator Card */}
       <div className={cardStyle}>
         <h1 className="text-2xl font-extrabold mb-1">📈 Profit Margin Calculator</h1>
-        <p className="text-sm text-gray-500 mb-6">Calculate profit margin, markup, selling price, or max cost — enter any 2 values</p>
+        <p className="text-sm text-gray-500 mb-6">Calculez la marge bénéficiaire, le coût et le prix de vente</p>
 
         {[
           { label: "Cost ($)", value: cost, set: setCost, placeholder: "60", step: "any" },

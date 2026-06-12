@@ -10,11 +10,11 @@ import SEOContent from "../../../components/SEOContent";
 function fmt(n: number) { return n.toLocaleString("en-US", { maximumFractionDigits: 2 }); }
 
 const faqs = [
-  { question: "What is Zakat?", answer: "Zakat is the third pillar of Islam — an obligatory charity of 2.5% of wealth held for one lunar year. It applies to cash, gold, silver, investments, business inventory, and rental income above the Nisab threshold." },
-  { question: "What is Nisab?", answer: "The minimum wealth threshold before Zakat is due. Nisab = value of 85g of gold or 595g of silver (use the lower silver value to include更多人). In 2024: roughly $5,000-6,000 (85g gold) or $500-600 (595g silver). Most scholars recommend the silver Nisab." },
-  { question: "What wealth is Zakat-eligible?", answer: "Cash (bank accounts, savings), gold and silver (including jewelry by most scholars), stocks and investments, business inventory (not fixed assets), rental income, cryptocurrency (growing consensus), loans you expect to be repaid." },
+  { question: "Qu'est-ce que la Zakat ?", answer: "Zakat is the third pillar of Islam — an obligatory charity of 2.5% of wealth held for one lunar year. It applies to cash, gold, silver, investments, business inventory, and rental income above the Nisab threshold." },
+  { question: "Qu'est-ce que le Nisab ?", answer: "The minimum wealth threshold before Zakat is due. Nisab = value of 85g of gold or 595g of silver (use the lower silver value to include更多人). In 2024: roughly $5,000-6,000 (85g gold) or $500-600 (595g silver). Most scholars recommend the silver Nisab." },
+  { question: "Quels biens sont éligibles à la Zakat ?", answer: "Cash (bank accounts, savings), gold and silver (including jewelry by most scholars), stocks and investments, business inventory (not fixed assets), rental income, cryptocurrency (growing consensus), loans you expect to be repaid." },
   { question: "What wealth is exempt from Zakat?", answer: "Primary residence, personal car, business equipment, household furniture, debts owed to others, salary before you receive it, retirement accounts (401k/IRA — unvested or inaccessible portions). Contested by some scholars." },
-  { question: "When is Zakat due?", answer: "After one lunar year (355 days) of holding wealth above Nisab. Choose a fixed date (e.g., Ramadan 1st) to simplify calculation. Pay at any time during the year. Many pay in Ramadan for multiplied rewards." },
+  { question: "Quand la Zakat est-elle due ?", answer: "After one lunar year (355 days) of holding wealth above Nisab. Choose a fixed date (e.g., Ramadan 1st) to simplify calculation. Pay at any time during the year. Many pay in Ramadan for multiplied rewards." },
   { question: "Who receives Zakat?", answer: "Eight categories from Quran 9:60: the poor, the needy, Zakat administrators, those whose hearts are to be reconciled, slaves/captives, those in debt, for Allah's cause (fi sabilillah), and the stranded traveler." },
   { question: "Can Zakat be paid in advance?", answer: "Yes, you can pay Zakat before the year ends if you're sure wealth will stay above Nisab. Some scholars allow paying months in advance. Calculate at year-end and pay immediately — don't delay." },
   { question: "Zakat on gold jewelry?", answer: "Most scholars: gold jewelry is Zakat-eligible at 2.5%. Some (Hanafi): jewelry for permissible use is exempt. To be safe, calculate Zakat on jewelry value. Check with your scholar for their ruling." },
@@ -79,7 +79,7 @@ return (
       <Breadcrumb category="Outils Islamiques" categorySlug="calculators" toolName="Zakat Calculator" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">☪️ Zakat Calculator</h1>
-        <p className="text-sm text-gray-500 mb-6">Calculate your annual Zakat obligation accurately</p>
+        <p className="text-sm text-gray-500 mb-6">Calculez votre Zakat annuelle facilement</p>
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">Cash & Savings ($)</label><input type="number" value={cash} onChange={(e) => setCash(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="15000" /></div>
           <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">Gold & Silver ($)</label><input type="number" value={gold} onChange={(e) => setGold(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="5000" /></div>

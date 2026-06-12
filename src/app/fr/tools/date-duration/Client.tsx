@@ -43,7 +43,7 @@ export default function ClientEn(){
     <Breadcrumb lang="fr" category="Daily Tools" categorySlug="tools" toolName="Date Duration Calculator"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
       <h1 className="text-2xl font-extrabold mb-1">📅 Calculateur de Durée</h1>
-      <p className="text-sm text-gray-500 mb-6">Calculate days, months, years between two dates</p>
+      <p className="text-sm text-gray-500 mb-6">Calculez la durée entre deux dates</p>
       <div className="space-y-4 mb-6">
         <div><label className="block text-xs font-semibold text-gray-600 mb-1">Start Date</label>
           <input type="date" value={start} onChange={e=>setStart(e.target.value)} className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"/></div>

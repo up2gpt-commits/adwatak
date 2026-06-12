@@ -157,7 +157,7 @@ export default function Client() {
       <Breadcrumb lang="fr" category="Autres" categorySlug="tools" toolName="Image to Text OCR" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">👁️ Image to Text OCR</h1>
-        <p className="text-sm text-gray-500 mb-6">Extract text from images using AI — faster and more accurate than traditional OCR</p>
+        <p className="text-sm text-gray-500 mb-6">Extrayez le texte des images par OCR</p>
 
         {/* AI Badge */}
         <div className="mb-4 p-3 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl border border-purple-200 flex items-center gap-2">

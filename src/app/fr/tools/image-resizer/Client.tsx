@@ -47,7 +47,7 @@ return(<div className="max-w-[760px] mx-auto">
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 <Breadcrumb lang="fr" category="Autres" categorySlug="image" toolName="Image Resizer"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-<h1 className="text-2xl font-extrabold mb-1">🖼️ Redimensionneur Image</h1><p className="text-sm text-gray-500 mb-6">Change image dimensions — in your browser, no server upload</p>
+<h1 className="text-2xl font-extrabold mb-1">🖼️ Redimensionneur Image</h1><p className="text-sm text-gray-500 mb-6">Redimensionnez vos images en ligne</p>
 <input type="file" accept="image/*" onChange={handleImage} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 mb-4" />
 {image&&(<><div className="flex gap-4 mb-4"><div className="flex-1"><label className="text-xs text-gray-500 block mb-1">Width (px)</label><input type="number" value={w} onChange={(e)=>onW(Number(e.target.value))} className="w-full p-2 border-2 border-gray-200 rounded-xl text-sm outline-none" min={1}/></div><div className="flex-1"><label className="text-xs text-gray-500 block mb-1">Height (px)</label><input type="number" value={h} onChange={(e)=>onH(Number(e.target.value))} className="w-full p-2 border-2 border-gray-200 rounded-xl text-sm outline-none" min={1}/></div></div>
 <label className="flex items-center gap-2 text-sm text-gray-600 mb-4"><input type="checkbox" checked={keepRatio} onChange={(e)=>setKeepRatio(e.target.checked)}/>Keep aspect ratio</label>

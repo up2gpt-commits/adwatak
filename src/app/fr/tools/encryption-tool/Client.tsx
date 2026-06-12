@@ -49,7 +49,7 @@ export default function ClientEn(){
     <Breadcrumb lang="fr" category="Outils Développement" categorySlug="tools" toolName="Encryption Tool"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
       <h1 className="text-2xl font-extrabold mb-1">🔐 Outil de Chiffrement</h1>
-      <p className="text-sm text-gray-500 mb-6">Encrypt and decrypt text using multiple methods</p>
+      <p className="text-sm text-gray-500 mb-6">Chiffrez et déchiffrez du texte en toute sécurité</p>
       <div className="space-y-4">
         <div className="grid grid-cols-3 gap-3">
           <select value={mode} onChange={e=>setMode(e.target.value)} className="px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white">

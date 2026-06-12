@@ -472,7 +472,7 @@ export default function Client() {
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🧭 Direction de la Qibla</h1>
-        <p className="text-sm text-gray-500 mb-6">Find the Qibla direction from anywhere in the world — precise Haversine calculation</p>
+        <p className="text-sm text-gray-500 mb-6">Trouvez la direction de la Qibla depuis n'importe où</p>
 
         {/* ─── Result ─── */}
         {mode === "result" && (

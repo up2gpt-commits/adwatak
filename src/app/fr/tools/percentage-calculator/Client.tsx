@@ -38,7 +38,7 @@ export default function Client() {
     <Breadcrumb lang="fr" category="Calculateurs" categorySlug="tools" toolName="Percentage Calculator"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
       <h1 className="text-2xl font-extrabold mb-1">📊 Calculateur de Pourcentage</h1>
-      <p className="text-sm text-gray-500 mb-6">Calculate percentages quickly and easily</p>
+      <p className="text-sm text-gray-500 mb-6">Calculez des pourcentages facilement</p>
       <div className="space-y-4 mb-6">
         <select value={mode} onChange={e=>setMode(e.target.value)} className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white">
           <option value="percent-of">Percentage of a number</option>

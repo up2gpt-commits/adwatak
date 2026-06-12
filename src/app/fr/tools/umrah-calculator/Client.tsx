@@ -105,7 +105,7 @@ export default function Client() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("Umrah Calculator", "Calculate total Umrah cost — visa, flight, accommodation, transport, daily expenses with step-by-step Umrah guide", "https://adwatak.cloud/fr/tools/umrah-calculator", "fr", "Islamic")} />
+      <StructuredData data={toolSchema("Umrah Calculator", "Calculez les coûts de la Omra with step-by-step Umrah guide", "https://adwatak.cloud/fr/tools/umrah-calculator", "fr", "Islamic")} />
       <StructuredData data={faqSchema([
         { question: "How much does Umrah cost in 2026?", answer: "Costs vary by country, duration, and hotel level. Rough estimates: from USA $2,500-$5,000, from UK £2,000-£4,000, from Turkey $1,500-$3,000, from Indonesia $1,500-$3,500. Use this calculator for a personalized estimate." },
         { question: "Does the calculator include visa costs?", answer: "Yes, the Umrah calculator covers visas, flights, accommodation, transport, and daily expenses — every item is customizable." },
@@ -133,7 +133,7 @@ export default function Client() {
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🕋 Calculateur Omra</h1>
-        <p className="text-sm text-gray-500 mb-6">Calculate total Umrah cost — visa, flight, accommodation, transport, daily expenses</p>
+        <p className="text-sm text-gray-500 mb-6">Calculez les coûts de la Omra</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div>
