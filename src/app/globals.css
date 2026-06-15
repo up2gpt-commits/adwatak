@@ -968,6 +968,74 @@ input, textarea, select {
   min-height: 340px;
 }
 
+/* ===== MOBILE: collapse hero to single column ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 32px 0 24px;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 16px;
+  }
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  [dir="rtl"] .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+  .hero p {
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .hero-badges {
+    justify-content: center;
+  }
+  [dir="rtl"] .hero-badges {
+    justify-content: center;
+  }
+  .hero-visual {
+    min-height: auto;
+  }
+  .hero-icon-grid {
+    max-width: 280px;
+    gap: 10px;
+  }
+  .hero-icon-item {
+    padding: 14px 8px;
+  }
+  .hero-icon-item .hi-icon {
+    font-size: 1.4rem;
+  }
+  .hero-icon-item .hi-label {
+    font-size: 0.6rem;
+  }
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+  }
+}
+
+/* Tablet tweaks */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-inner {
+    gap: 32px;
+    padding: 0 20px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+  }
+  .hero-icon-grid {
+    max-width: 340px;
+  }
+}
+
 /* Floating gradient orbs */
 .hero::after {
   content: '';
