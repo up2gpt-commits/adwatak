@@ -4,39 +4,65 @@ import SearchBar from "../components/SearchBar";
 import FeaturedTools from "../components/FeaturedTools";
 import AllToolsHeader from "../components/AllToolsHeader";
 
+const visualIcons = [
+  { icon: "🏠", label: "قرض عقاري" },
+  { icon: "💰", label: "تمويل" },
+  { icon: "🧮", label: "تقسيط" },
+  { icon: "🔄", label: "تحويل" },
+  { icon: "🔳", label: "QR كود" },
+  { icon: "🕌", label: "إسلامي" },
+];
+
 export default function Home() {
   return (
     <SearchProvider>
-      {/* Hero */}
+      {/* Hero — two-column layout */}
       <section className="hero scroll-fade-in">
         <div className="hero-grid"></div>
         <div className="hero-orb-2"></div>
-        <div className="hero-badge">
-          <span className="hero-badge-dot"></span>
-          <span>المنصة العربية الأولى للأدوات المجانية — 80+ أداة</span>
-        </div>
-        <h1><span className="hero-gradient-text">كل الأدوات اللي محتاجها</span><br />في مكان واحد</h1>
-        <p>
-          حاسبات مالية، أدوات إسلامية، محولات نصوص، مولدات، أدوات PDF والمزيد — كلها مجانية ١٠٠٪، بالعربي، وبدون أي تسجيل
-        </p>
+        <div className="hero-inner">
+          {/* Right column: text content (renders first in RTL as right side) */}
+          <div className="hero-content">
+            <div className="hero-badge">
+              <span className="hero-badge-dot"></span>
+              <span>المنصة العربية الأولى للأدوات المجانية — 80+ أداة</span>
+            </div>
+            <h1><span className="hero-gradient-text">كل الأدوات اللي محتاجها</span><br />في مكان واحد</h1>
+            <p>
+              حاسبات مالية، أدوات إسلامية، محولات نصوص، مولدات، أدوات PDF والمزيد — كلها مجانية ١٠٠٪، بالعربي، وبدون أي تسجيل
+            </p>
 
-        {/* Trust Badges */}
-        <div className="hero-badges">
-          <div className="hero-badge-item">
-            <span className="b-icon">🔒</span>
-            <span>خصوصية تامة</span>
+            {/* Trust Badges */}
+            <div className="hero-badges">
+              <div className="hero-badge-item">
+                <span className="b-icon">🔒</span>
+                <span>خصوصية تامة</span>
+              </div>
+              <div className="hero-badge-item">
+                <span className="b-icon">🆓</span>
+                <span>بدون تسجيل</span>
+              </div>
+              <div className="hero-badge-item">
+                <span className="b-icon">⚡</span>
+                <span>نتائج فورية</span>
+              </div>
+              <div className="hero-badge-item">
+                <span className="b-icon">🌐</span>
+                <span>يعمل أونلاين</span>
+              </div>
+            </div>
           </div>
-          <div className="hero-badge-item">
-            <span className="b-icon">🆓</span>
-            <span>بدون تسجيل</span>
-          </div>
-          <div className="hero-badge-item">
-            <span className="b-icon">⚡</span>
-            <span>نتائج فورية</span>
-          </div>
-          <div className="hero-badge-item">
-            <span className="b-icon">🌐</span>
-            <span>يعمل أونلاين</span>
+
+          {/* Left column: visual icon grid in RTL */}
+          <div className="hero-visual">
+            <div className="hero-icon-grid">
+              {visualIcons.map((item, i) => (
+                <div key={i} className="hero-icon-item" style={{ "--i": i } as React.CSSProperties}>
+                  <span className="hi-icon">{item.icon}</span>
+                  <span className="hi-label">{item.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

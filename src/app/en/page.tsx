@@ -91,6 +91,7 @@ const allTools = [
   { title: "Inheritance Calculator", icon: "📜", href: "/en/tools/inheritance-calculator", desc: "Islamic inheritance (Faraid) distribution", cat: "Islamic Tools" },
   { title: "Zakat Calculator", icon: "🕌", href: "/en/tools/zakat-calculator", desc: "Annual 2.5% zakat obligation", cat: "Islamic Tools" },
   { title: "Qibla Direction", icon: "🧭", href: "/en/tools/qibla-direction", desc: "Find Qibla direction from your location", cat: "Islamic Tools" },
+  { title: "Qibla Camera AR", icon: "📸", href: "/en/tools/qibla-camera", desc: "See Qibla direction via camera AR", cat: "Islamic Tools" },
   { title: "Prayer Times", icon: "🕐", href: "/en/tools/prayer-times", desc: "Prayer times by your location", cat: "Islamic Tools" },
   { title: "Tasbeeh Counter", icon: "📿", href: "/en/tools/tasbeeh-counter", desc: "Digital Tasbeeh for daily dhikr", cat: "Islamic Tools" },
   { title: "Umrah Calculator", icon: "🕋", href: "/en/tools/umrah-calculator", desc: "Calculate Umrah costs and step-by-step guide", cat: "Islamic Tools" },
@@ -100,6 +101,7 @@ const allTools = [
   { title: "Ideal Weight Calculator", icon: "⚖️", href: "/en/tools/ideal-weight", desc: "Calculate ideal weight based on height", cat: "Other" },
   { title: "Food Calorie Analyzer", icon: "📸", href: "/en/tools/food-calorie-analyzer", desc: "Snap a photo, get instant calorie analysis", cat: "Other" },
   { title: "Stopwatch & Timer", icon: "⏱️", href: "/en/tools/stopwatch", desc: "Stopwatch with lap tracking", cat: "Other" },
+  { title: "Mosquito Repellent Sound", icon: "🦟", href: "/en/tools/mosquito-repellent", desc: "15,000 Hz frequency mosquito deterrent", cat: "Other" },
 ];
 
 const featuredTools = [
@@ -177,36 +179,62 @@ function EnHomeInner() {
 
   const isSearching = search.trim().length > 0;
 
+  const visualIcons = [
+    { icon: "🏠", label: "Mortgage" },
+    { icon: "💰", label: "Finance" },
+    { icon: "🧮", label: "EMI" },
+    { icon: "🔄", label: "Convert" },
+    { icon: "🔳", label: "QR Code" },
+    { icon: "🕌", label: "Islamic" },
+  ];
+
   return (
     <>
-      {/* Hero */}
+      {/* Hero — two-column layout */}
       <section className="hero scroll-fade-in">
         <div className="hero-grid"></div>
         <div className="hero-orb-2"></div>
-        <div className="hero-badge">
-          <span className="hero-badge-dot"></span>
-          <span>The #1 Free Online Tools Platform</span>
-        </div>
-        <h1><span className="hero-gradient-text">Every Tool You Need.</span><br />Free. Forever.</h1>
-        <p>
-          Calculators, converters, generators, PDF tools, and more — 100% free, no signup, and nothing gets uploaded.
-        </p>
-        <div className="hero-badges">
-          <div className="hero-badge-item">
-            <span className="b-icon">🔒</span>
-            <span>100% Private</span>
+        <div className="hero-inner">
+          {/* Left column: text content */}
+          <div className="hero-content">
+            <div className="hero-badge">
+              <span className="hero-badge-dot"></span>
+              <span>The #1 Free Online Tools Platform</span>
+            </div>
+            <h1><span className="hero-gradient-text">Every Tool You Need.</span><br />Free. Forever.</h1>
+            <p>
+              Calculators, converters, generators, PDF tools, and more — 100% free, no signup, and nothing gets uploaded.
+            </p>
+            <div className="hero-badges">
+              <div className="hero-badge-item">
+                <span className="b-icon">🔒</span>
+                <span>100% Private</span>
+              </div>
+              <div className="hero-badge-item">
+                <span className="b-icon">🆓</span>
+                <span>No signup</span>
+              </div>
+              <div className="hero-badge-item">
+                <span className="b-icon">⚡</span>
+                <span>Instant results</span>
+              </div>
+              <div className="hero-badge-item">
+                <span className="b-icon">🌐</span>
+                <span>Works online</span>
+              </div>
+            </div>
           </div>
-          <div className="hero-badge-item">
-            <span className="b-icon">🆓</span>
-            <span>No signup</span>
-          </div>
-          <div className="hero-badge-item">
-            <span className="b-icon">⚡</span>
-            <span>Instant results</span>
-          </div>
-          <div className="hero-badge-item">
-            <span className="b-icon">🌐</span>
-            <span>Works online</span>
+
+          {/* Right column: visual icon grid */}
+          <div className="hero-visual">
+            <div className="hero-icon-grid">
+              {visualIcons.map((item, i) => (
+                <div key={i} className="hero-icon-item" style={{ "--i": i } as React.CSSProperties}>
+                  <span className="hi-icon">{item.icon}</span>
+                  <span className="hi-label">{item.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
