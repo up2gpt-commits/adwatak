@@ -982,43 +982,35 @@ input, textarea, select {
     align-items: center;
     text-align: center;
   }
-  [dir="rtl"] .hero-content {
+  [dir="rtl"] .hero-content,
+  [dir="ltr"] .hero-content {
     align-items: center;
     text-align: center;
   }
   .hero h1 {
     font-size: clamp(1.8rem, 7vw, 2.6rem);
+    text-align: center;
   }
   .hero p {
     font-size: 0.95rem;
     max-width: 100%;
     margin: 0 auto;
+    text-align: center;
   }
   .hero-badges {
     justify-content: center;
   }
-  [dir="rtl"] .hero-badges {
+  [dir="rtl"] .hero-badges,
+  [dir="ltr"] .hero-badges {
     justify-content: center;
   }
   .hero-visual {
-    min-height: auto;
-  }
-  .hero-icon-grid {
-    max-width: 280px;
-    gap: 10px;
-  }
-  .hero-icon-item {
-    padding: 14px 8px;
-  }
-  .hero-icon-item .hi-icon {
-    font-size: 1.4rem;
-  }
-  .hero-icon-item .hi-label {
-    font-size: 0.6rem;
+    display: none;
   }
   .hero-badge {
     font-size: 0.7rem;
     padding: 6px 14px;
+    margin: 0 auto 24px;
   }
 }
 
