@@ -8,10 +8,10 @@ import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  {question:"What is Temperature Converter?",answer:"A free tool to convert temperatures between Celsius, Fahrenheit, and Kelvin in real-time."},
-  {question:"How to convert?",answer:"Type a value in any field — the others update automatically."},
-  {question:"What is the difference between Celsius and Fahrenheit?",answer:"Celsius is used worldwide. Fahrenheit is used in the US. Water freezes at 0°C / 32°F and boils at 100°C / 212°F."},
-  {question:"What is Kelvin?",answer:"Kelvin is the SI unit for temperature. 0K = -273.15°C (absolute zero)."},
+  {question:"Qu'est-ce que le convertisseur de température ?",answer:"Un outil gratuit pour convertir les températures entre Celsius, Fahrenheit et Kelvin en temps réel."},
+  {question:"Comment convertir ?",answer:"Type a value in any field — the others update automatically."},
+  {question:"Quelle est la différence entre Celsius et Fahrenheit ?",answer:"Celsius is used worldwide. Fahrenheit is used in the US. Water freezes at 0°C / 32°F and boils at 100°C / 212°F."},
+  {question:"Qu'est-ce que le Kelvin ?",answer:"Kelvin is the SI unit for temperature. 0K = -273.15°C (absolute zero)."},
 ];
 
 const relatedTools = [

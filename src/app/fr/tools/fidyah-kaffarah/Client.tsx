@@ -92,18 +92,18 @@ export default function Client() {
     <div className="max-w-[760px] mx-auto">
       <StructuredData data={toolSchema("Calculateur de Fidyah et Kaffarah", "Calculate Fidyah & Kaffarah — oath breaking, Ramadan intimacy, Zhihar, fasting fidyah with Islamic rulings", "https://adwatak.cloud/fr/tools/fidyah-kaffarah", "fr", "Islamic")} />
       <StructuredData data={faqSchema([
-        { question: "What is Kaffarah for breaking an oath?", answer: "Kaffarah for breaking an oath is: feed 10 needy people, or clothe them, or free a slave. Whoever cannot afford it must fast for three days. (Quran 5:89)" },
-        { question: "What is the Kaffarah for intercourse in Ramadan?", answer: "Whoever intentionally has intercourse during Ramadan day must make up the day AND pay Kaffarah: free a slave, or fast 60 consecutive days, or feed 60 needy people." },
-        { question: "What is Kaffarah for Zhihar?", answer: "Zhihar is when a husband says 'You are like my mother's back.' Kaffarah: free a slave, or fast 60 consecutive days, or feed 60 needy people." },
-        { question: "What is Fidyah for fasting?", answer: "Fidyah is for those permanently unable to fast: feed one needy person per missed day. Approximately 1.5kg of rice per person." },
-        { question: "Can I feed instead of fasting for Kaffarah?", answer: "Yes, if you are genuinely unable to fast due to health reasons. The inability must be real and confirmed." },
-        { question: "How much food per person?", answer: "Approximately 1.5kg of rice or equivalent average food. Some scholars say half a sa' (approx 1.5kg)." },
+        { question: "Qu'est-ce que la Kaffarah pour avoir rompu un serment ?", answer: "Kaffarah for breaking an oath is: feed 10 needy people, or clothe them, or free a slave. Whoever cannot afford it must fast for three days. (Quran 5:89)" },
+        { question: "Quelle est la Kaffarah pour les rapports sexuels pendant le Ramadan ?", answer: "Whoever intentionally has intercourse during Ramadan day must make up the day AND pay Kaffarah: free a slave, or fast 60 consecutive days, or feed 60 needy people." },
+        { question: "Qu'est-ce que la Kaffarah pour le Zhihar ?", answer: "Zhihar is when a husband says 'You are like my mother's back.' Kaffarah: free a slave, or fast 60 consecutive days, or feed 60 needy people." },
+        { question: "Qu'est-ce que la Fidyah pour le jeûne ?", answer: "Fidyah is for those permanently unable to fast: feed one needy person per missed day. Approximately 1.5kg of rice per person." },
+        { question: "Puis-je nourrir au lieu de jeûner pour la Kaffarah ?", answer: "Yes, if you are genuinely unable to fast due to health reasons. The inability must be real and confirmed." },
+        { question: "Quelle quantité de nourriture par personne ?", answer: "Approximately 1.5kg of rice or equivalent average food. Some scholars say half a sa' (approx 1.5kg)." },
         { question: "Must the fasting be consecutive?", answer: "Yes, Kaffarah fasting (3 days for oath, 60 days for Zhihar/Ramadan) must be consecutive according to most scholars." },
-        { question: "Does a woman pay Kaffarah for breaking an oath?", answer: "Yes, Kaffarah for oath applies to both men and women equally." },
-        { question: "Can I pay money instead of food?", answer: "Most scholars say money cannot replace food in Kaffarah. However, some contemporary scholars permit giving money to the poor directly." },
-        { question: "What's the difference between Fidyah and Kaffarah?", answer: "Kaffarah is for prohibited acts (oath, Ramadan intercourse, Zhihar). Fidyah is for inability to perform obligations (fasting for the permanently unable)." },
-        { question: "Is this calculator free?", answer: "Yes, the Fidyah & Kaffarah calculator is completely free and runs in your browser." },
-        { question: "Do I need to pay Kaffarah for unintentional breaking of oath?", answer: "Kaffarah is only for deliberate breaking of an oath. If the oath was broken under coercion or forgetfulness, no Kaffarah is due according to most scholars." },
+        { question: "Une femme paie-t-elle la Kaffarah pour avoir rompu un serment ?", answer: "Yes, Kaffarah for oath applies to both men and women equally." },
+        { question: "Puis-je payer de l'argent au lieu de nourriture ?", answer: "Most scholars say money cannot replace food in Kaffarah. However, some contemporary scholars permit giving money to the poor directly." },
+        { question: "Quelle est la différence entre la Fidyah et la Kaffarah ?", answer: "Kaffarah is for prohibited acts (oath, Ramadan intercourse, Zhihar). Fidyah is for inability to perform obligations (fasting for the permanently unable)." },
+        { question: "Ce calculateur est-il gratuit ?", answer: "Yes, the Fidyah & Kaffarah calculator is completely free and runs in your browser." },
+        { question: "Dois-je payer la Kaffarah pour une rupture involontaire de serment ?", answer: "Kaffarah is only for deliberate breaking of an oath. If the oath was broken under coercion or forgetfulness, no Kaffarah is due according to most scholars." },
       ])} />
       <StructuredData data={breadcrumbSchema([
         { name: "Accueil", url: "https://adwatak.cloud/fr" },

@@ -449,11 +449,11 @@ export default function Client() {
       <StructuredData data={toolSchema("Direction de la Qibla", "Trouvez la direction de la Qibla depuis n'importe où dans le monde — boussole interactive avec calcul précis par la formule de Haversine", "https://adwatak.cloud/fr/tools/qibla-direction", "fr", "Islamic")} />
       <StructuredData data={faqSchema([
         { question: "Qu'est-ce que la Qibla ?", answer: "La Qibla est la direction de la Kaaba à La Mecque, en Arabie saoudite (21,4225°N, 39,8262°E). Les musulmans se tournent vers cette direction pendant la prière." },
-        { question: "La Qibla est-elle toujours en direction de La Mecque ?", answer: "The exact direction varies depending on your location. In Egypt the Qibla is roughly east, in the US it's northeast, in Europe it's southeast." },
+        { question: "La Qibla est-elle toujours en direction de La Mecque ?", answer: "La direction exacte varie selon votre emplacement. En Égypte, la Qibla est approximativement à l'est, aux États-Unis au nord-est, en Europe au sud-est." },
         { question: "Comment la direction de la Qibla est-elle calculée ?", answer: "Using the Haversine formula to calculate the angle between your location and the Kaaba on the Earth's surface." },
-        { question: "Dois-je être parfaitement précis ?", answer: "The Islamic requirement is the general direction, not the exact degree. The Prophet ﷺ said: 'Between the east and west is a Qibla.'" },
+        { question: "Dois-je être parfaitement précis ?", answer: "L'exigence islamique est la direction générale, pas le degré exact. Le Prophète ﷺ a dit : « Entre l'est et l'ouest se trouve une Qibla. »" },
         { question: "La boussole du téléphone est-elle précise pour la Qibla ?", answer: "La boussole du téléphone donne la direction du nord magnétique. Notre outil calcule la direction précise à partir de vos coordonnées." },
-        { question: "What if I'm in space?", answer: "Tournez-vous vers la Kaaba du mieux que vous pouvez. La direction générale est suffisante." },
+        { question: "Et si je suis dans l'espace ?", answer: "Tournez-vous vers la Kaaba du mieux que vous pouvez. La direction générale est suffisante." },
         { question: "Puis-je utiliser l'outil sans GPS ?", answer: "Oui ! Vous pouvez sélectionner votre ville dans la liste ou saisir les coordonnées manuellement." },
         { question: "Quelles villes sont disponibles ?", answer: "Plus de 60 villes dans plus de 35 pays arabes et internationaux." },
         { question: "L'outil est-il gratuit ?", answer: "Yes, completely free and works in the browser without any server." },
@@ -669,9 +669,9 @@ export default function Client() {
       ]} lang="fr" />
       <FAQSection faqs={[
         { question: "Qu'est-ce que la Qibla ?", answer: "La Qibla est la direction de la Kaaba à La Mecque, en Arabie saoudite (21,4225°N, 39,8262°E). Les musulmans se tournent vers cette direction dans leurs prières depuis n'importe où dans le monde." },
-        { question: "La Qibla est-elle toujours en direction de La Mecque ?", answer: "The exact direction varies depending on your location. In Egypt the Qibla is roughly east, in the US it's northeast, in Europe it's southeast." },
+        { question: "La Qibla est-elle toujours en direction de La Mecque ?", answer: "La direction exacte varie selon votre emplacement. En Égypte, la Qibla est approximativement à l'est, aux États-Unis au nord-est, en Europe au sud-est." },
         { question: "Comment la direction de la Qibla est-elle calculée ?", answer: "Using the Haversine formula to calculate the angle between your location and the Kaaba on the Earth's surface." },
-        { question: "Dois-je être parfaitement précis ?", answer: "The Islamic requirement is the general direction, not the exact degree. The Prophet ﷺ said: 'Between the east and west is a Qibla.'" },
+        { question: "Dois-je être parfaitement précis ?", answer: "L'exigence islamique est la direction générale, pas le degré exact. Le Prophète ﷺ a dit : « Entre l'est et l'ouest se trouve une Qibla. »" },
         { question: "Puis-je utiliser l'outil sans GPS ?", answer: "Oui ! Vous pouvez sélectionner votre ville dans la liste ou saisir les coordonnées manuellement." },
         { question: "Quelles villes sont disponibles ?", answer: "Plus de 60 villes dans plus de 35 pays arabes et internationaux, dont l'Arabie saoudite, l'Égypte, les Émirats arabes unis, la Turquie, le Pakistan, les États-Unis, le Royaume-Uni et bien d'autres." },
         { question: "L'outil est-il gratuit ?", answer: "Yes, completely free and works in the browser without any server." },

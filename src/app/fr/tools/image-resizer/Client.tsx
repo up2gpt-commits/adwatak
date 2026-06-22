@@ -3,18 +3,18 @@ import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema,ho
 import Breadcrumb from "../../../components/Breadcrumb";import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";import RelatedTools from "../../../components/RelatedTools";import SEOContent from "../../../components/SEOContent";
 const faqs=[
-{question:"What is Image Resizer?",answer:"A free tool to change image dimensions (width & height). Supports JPG, PNG, WebP, GIF. Everything happens in your browser — no upload to any server."},
-{question:"Do I need to upload to your server?",answer:"No! Everything runs locally using HTML Canvas. Your image never leaves your device. Complete privacy."},
-{question:"What formats are supported?",answer:"JPG, PNG, WebP, GIF, BMP. Download as JPG, PNG, or WebP."},
-{question:"Is the quality preserved?",answer:"Mostly. Resizing uses advanced Canvas algorithms. Shrinking preserves quality well. Enlarging may reduce clarity as pixels are interpolated."},
-{question:"What is aspect ratio?",answer:"The proportional relationship between width and height. Enable 'Keep aspect ratio' to prevent image distortion when changing one dimension."},
-{question:"Is it completely free?",answer:"Yes, 100% free. No registration, no limits, no watermarks."},
+{question:"Qu'est-ce que Image Resizer ?",answer:"Un outil gratuit pour modifier les dimensions d'une image (largeur et hauteur). Prend en charge JPG, PNG, WebP, GIF. Tout se passe dans votre navigateur — aucun téléchargement vers un serveur."},
+{question:"Dois-je téléverser sur votre serveur ?",answer:"Non ! Tout fonctionne localement en utilisant HTML Canvas. Votre image ne quitte jamais votre appareil. Confidentialité totale."},
+{question:"Quels formats sont pris en charge ?",answer:"JPG, PNG, WebP, GIF, BMP. Télécharger en JPG, PNG ou WebP."},
+{question:"La qualité est-elle préservée ?",answer:"La plupart du temps. Le redimensionnement utilise des algorithmes avancés de Canvas. La réduction préserve bien la qualité. L'agrandissement peut réduire la netteté car les pixels sont interpolés."},
+{question:"Qu'est-ce que le rapport hauteur/largeur ?",answer:"La relation proportionnelle entre la largeur et la hauteur. Activez « Conserver les proportions » pour éviter la distorsion de l'image lors de la modification d'une dimension."},
+{question:"Est-ce totalement gratuit ?",answer:"Yes, 100% free. No registration, no limits, no watermarks."},
 {question:"Maximum image size?",answer:"Up to 20 megapixels. Larger images may slow down the browser."},
-{question:"Does it work on mobile?",answer:"Yes, fully responsive and works on all devices."},
-{question:"How to use it?",answer:"Upload an image, set new width/height, toggle aspect ratio lock, and click resize. Preview and download the result."},
-{question:"Can I enlarge images?",answer:"Yes, but enlarging may reduce quality since the tool interpolates pixels rather than adding real detail."},
-{question:"What's the difference between resize and compress?",answer:"Resize changes dimensions. Compress reduces file size while keeping dimensions. Use both for best results."},
-{question:"What's the best format for web?",answer:"WebP: 25-35% smaller than JPG with same quality. All modern browsers support it. JPG is universally supported."},
+{question:"Cela fonctionne-t-il sur mobile ?",answer:"Yes, fully responsive and works on all devices."},
+{question:"Comment l'utiliser ?",answer:"Upload an image, set new width/height, toggle aspect ratio lock, and click resize. Preview and download the result."},
+{question:"Puis-je agrandir des images ?",answer:"Yes, but enlarging may reduce quality since the tool interpolates pixels rather than adding real detail."},
+{question:"Quelle est la différence entre redimensionner et compresser ?",answer:"Resize changes dimensions. Compress reduces file size while keeping dimensions. Use both for best results."},
+{question:"Quel est le meilleur format pour le web ?",answer:"WebP: 25-35% smaller than JPG with same quality. All modern browsers support it. JPG is universally supported."},
 ];
 const relatedTools=[
 {title:"Compresseur d'Images",icon:"📦",href:"/fr/tools/image-compressor"},

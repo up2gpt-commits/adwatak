@@ -15,7 +15,7 @@ const faqs = [
   { question: "Quels formats d'image sont pris en charge ?", answer: "Tous les formats courants : JPG, PNG, WEBP, BMP, GIF." },
   { question: "Fonctionne-t-il sur mobile ?", answer: "Oui, entièrement responsive sur tous les appareils." },
   { question: "Prend-il en charge l'arabe et l'anglais ensemble ?", answer: "Oui, il gère parfaitement l'arabe, l'anglais et le texte mixte dans la même image." },
-  { question: "What if results aren't accurate?", answer: "Utilisez une image de meilleure qualité avec un texte plus clair. L'IA fonctionne mieux avec des images bien éclairées et haute résolution." },
+  { question: "Que faire si les résultats ne sont pas précis ?", answer: "Utilisez une image de meilleure qualité avec un texte plus clair. L'IA fonctionne mieux avec des images bien éclairées et haute résolution." },
   { question: "Puis-je l'utiliser commercialement ?", answer: "Oui, les résultats sont gratuits pour un usage personnel et commercial." },
   { question: "Est-il mis à jour ?", answer: "Yes, powered by Google DeepMind's latest Gemma 4 Vision model." },
 ];

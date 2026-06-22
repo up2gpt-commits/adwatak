@@ -8,11 +8,11 @@ import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  {question:"What is Percentage Calculator?",answer:"A free tool to calculate percentages three ways: percentage of a number, what percent is X of Y, and percentage increase/decrease."},
-  {question:"Is it free?",answer:"Yes, 100% free. No registration."},
-  {question:"How to calculate percentage of a number?",answer:"Select first option, enter the percentage and number, click Calculate."},
-  {question:"Does it support decimals?",answer:"Yes, supports decimal numbers with high precision."},
-  {question:"Does it work offline?",answer:"Yes, everything runs in your browser."},
+  {question:"Qu'est-ce que le calculateur de pourcentage ?",answer:"Un outil gratuit pour calculer des pourcentages de trois manières : pourcentage d'un nombre, quel pourcentage représente X par rapport à Y, et augmentation/diminution en pourcentage."},
+  {question:"Est-ce gratuit ?",answer:"Yes, 100% free. No registration."},
+  {question:"Comment calculer le pourcentage d'un nombre ?",answer:"Select first option, enter the percentage and number, click Calculate."},
+  {question:"Prend-il en charge les décimales ?",answer:"Yes, supports decimal numbers with high precision."},
+  {question:"Fonctionne-t-il hors ligne ?",answer:"Yes, everything runs in your browser."},
 ];
 
 const relatedTools = [{title:"Marge Bénéficiaire",icon:"📊",href:"/fr/tools/profit-margin"},{title:"VAT Calculator",icon:"🏛️",href:"/fr/tools/vat-calculator"},{title:"Intérêts Composés",icon:"📈",href:"/fr/tools/compound-interest"},{title:"Calculateur d'IMC",icon:"⚖️",href:"/fr/tools/bmi-calculator"}];

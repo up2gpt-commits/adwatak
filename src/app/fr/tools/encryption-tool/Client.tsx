@@ -8,10 +8,10 @@ import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  {question:"What is Encryption Tool?",answer:"A free tool to encrypt and decrypt text using Caesar Cipher, Base64, and Reverse text methods."},
-  {question:"Is it secure?",answer:"Basic/educational encryption only. For real security use professional tools."},
-  {question:"What is Caesar Cipher?",answer:"A simple encryption that shifts letters by a key (1-25)."},
-  {question:"Is my data safe?",answer:"Everything runs in your browser. No data leaves your device."},
+  {question:"Qu'est-ce qu'un outil de chiffrement ?",answer:"Un outil gratuit pour chiffrer et déchiffrer du texte en utilisant le chiffrement de César, Base64 et la méthode d'inversion de texte."},
+  {question:"Est-ce sécurisé ?",answer:"Chiffrement basique/éducatif uniquement. Pour une sécurité réelle, utilisez des outils professionnels."},
+  {question:"Qu'est-ce que le chiffrement de César ?",answer:"Un chiffrement simple qui décale les lettres d'une clé (1-25)."},
+  {question:"Mes données sont-elles en sécurité ?",answer:"Tout s'exécute dans votre navigateur. Aucune donnée ne quitte votre appareil."},
 ];
 const relatedTools = [
   {title:"Générateur de Mots de Passe",icon:"🔑",href:"/fr/tools/password-generator"},
