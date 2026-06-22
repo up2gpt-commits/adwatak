@@ -68,7 +68,15 @@ export default function ClientEn(){
         {result&&<div className="bg-gray-50 rounded-xl p-4 border border-gray-200 text-sm whitespace-pre-wrap break-words max-h-40 overflow-y-auto">{result}</div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="fr"/>
+    seoContent=[
+  "Chiffrez votre texte avec AES, RSA et plus encore.",
+  "Sécurisez instantanément vos données sensibles en ligne.",
+  "Déchiffrez les messages avec la bonne clé.",
+  "Outil de chiffrement gratuit, rapide et facile.",
+  "Protégez votre vie privée avec des chiffrements forts.",
+];
+
+      <SEOContent content={seo} lang="fr"/>
     <FAQSection faqs={faqs} lang="fr"/>
     <RelatedTools tools={relatedTools} lang="fr"/>
     <ShareButtons lang="fr"/>

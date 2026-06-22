@@ -205,6 +205,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Calculate fidyah for missed Ramadan fasts.",
+  "Determine kaffarah amounts easily.",
+  "Based on Islamic rulings and local prices.",
+  "Fulfill your religious obligations accurately.",
+  "Free online fidyah and kaffarah calculator.",
+];
+
       <SEOContent content={[
         "Fidyah & Kaffarah Calculator — Calculate Kaffarah for oath, Ramadan intercourse, Zhihar, and Fidyah for fasting.",
         "Includes detailed Islamic rulings with Quran and Sunnah evidence for each type.",

@@ -65,7 +65,15 @@ export default function Client(){
         </div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="ar"/>
+    seoContent=[
+  "احسب الأيام بين تاريخين فورًا.",
+  "أضف أو اطرح أيامًا من أي تاريخ بسهولة.",
+  "احسب المدة الدقيقة بالأيام والأسابيع والأشهر.",
+  "خطط للأحداث أو المواعيد النهائية أو حسابات العمر.",
+  "أداة مجانية لحساب مدة التاريخ عبر الإنترنت.",
+];
+
+      <SEOContent content={seo} lang="ar"/>
     <FAQSection faqs={faqs} lang="ar"/>
     <RelatedTools tools={relatedTools} lang="ar"/>
     <ShareButtons lang="ar"/>

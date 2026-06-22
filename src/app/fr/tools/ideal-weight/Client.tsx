@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "Trouvez votre poids idéal en fonction de la taille et de l'âge.",
+  "Utilisez des formules éprouvées comme Devine, Robinson.",
+  "Vérifiez si vous êtes dans une fourchette de poids santé.",
+  "Fixez-vous des objectifs de remise en forme réalistes dès aujourd'hui.",
+  "Calculateur gratuit en ligne du poids corporel idéal.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

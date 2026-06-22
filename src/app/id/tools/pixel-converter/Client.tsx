@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "Konversi piksel ke cm, inci, dan lainnya.",
+  "Sesuaikan DPI layar atau cetak dengan akurat.",
+  "Sempurna untuk desainer dan pengembang.",
+  "Hitung dimensi gambar dalam satuan nyata.",
+  "Konverter piksel ke ukuran fisik gratis.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

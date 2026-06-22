@@ -76,7 +76,15 @@ export default function Client(){
         {result&&<div className="bg-gray-50 rounded-xl p-4 border border-gray-200 text-sm whitespace-pre-wrap break-words max-h-40 overflow-y-auto">{result}</div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="ar"/>
+    seoContent=[
+  "قم بتشفير نصك باستخدام AES وRSA والمزيد.",
+  "قم بتأمين البيانات الحساسة فوراً عبر الإنترنت.",
+  "قم بفك تشفير الرسائل باستخدام المفتاح الصحيح.",
+  "أداة تشفير مجانية وسريعة وسهلة.",
+  "احمِ خصوصيتك باستخدام شفرات قوية.",
+];
+
+      <SEOContent content={seo} lang="ar"/>
     <FAQSection faqs={faqs} lang="ar"/>
     <RelatedTools tools={relatedTools} lang="ar"/>
     <ShareButtons lang="ar"/>

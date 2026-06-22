@@ -101,7 +101,15 @@ export default function ClientEn(){
         {result&&<div className="bg-gray-50 rounded-xl p-4 border border-gray-200 text-sm whitespace-pre-wrap break-words max-h-40 overflow-y-auto">{result}</div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="en"/>
+    seoContent=[
+  "Encrypt your text with AES, RSA, and more.",
+  "Secure sensitive data instantly online.",
+  "Decrypt messages with the right key.",
+  "Free, fast, and easy encryption tool.",
+  "Protect your privacy with strong ciphers.",
+];
+
+      <SEOContent content={seo} lang="en"/>
     <FAQSection faqs={faqs} lang="en"/>
     <RelatedTools tools={relatedTools} lang="en"/>
     <ShareButtons lang="en"/>

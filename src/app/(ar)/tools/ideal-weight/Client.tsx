@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "اعثر على وزنك المثالي بناءً على الطول والعمر.",
+  "استخدم صيغًا مثبتة مثل ديفين وروبنسون.",
+  "تحقق مما إذا كنت ضمن نطاق الوزن الصحي.",
+  "حدد أهداف لياقة بدنية واقعية اليوم.",
+  "حاسبة وزن الجسم المثالي المجانية عبر الإنترنت.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

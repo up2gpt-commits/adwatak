@@ -226,6 +226,14 @@ export default function Client() {
         </div>
       </div>
 
+      seoContent=[
+  "Estimez avec précision les coûts de votre voyage Omra.",
+  "Incluez les vols, les hôtels, les visas et plus encore.",
+  "Planifiez votre budget de pèlerinage en toute simplicité.",
+  "Personnalisez selon la taille de la famille et les préférences.",
+  "Calculateur de coût Omra gratuit en ligne.",
+];
+
       <SEOContent content={[
         "Calculateur de Omra — Calculez le coût total de la Omra : visa, billet d'avion, hôtel à La Mecque et Médine, transport local et dépenses quotidiennes.",
         "Prend en charge 8 devises : USD, SAR, EUR, GBP, TRY, IDR, PKR, EGP.",

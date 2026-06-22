@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "Convertissez l'heure instantanément entre tous les fuseaux horaires.",
+  "Trouvez le décalage horaire exact dans le monde entier.",
+  "Planifiez facilement des réunions entre continents.",
+  "Prend en charge toutes les grandes villes et les décalages UTC.",
+  "Outil de conversion de fuseau horaire en ligne gratuit.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

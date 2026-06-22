@@ -325,6 +325,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Şehriniz için doğru namaz vakitlerini alın.",
+  "Ezan hatırlatıcılarıyla günlük namaz programı.",
+  "Dünya çapında ayarlanabilir hesaplama yöntemleri.",
+  "Sabah, öğle, ikindi, akşam, yatsıyı asla kaçırmayın.",
+  "Ücretsiz çevrimiçi İslami namaz vakitleri aracı.",
+];
+
       <SEOContent content={[
         "Konumunuzun namaz vakitleri — harici API'siz matematiksel hesaplama.",
         "8 hesaplama yöntemi: Umm al-Qura, Mısır, İslam Dünya Ligi, Karachi, ISNA, Kuveyt, Katar, Singapur.",

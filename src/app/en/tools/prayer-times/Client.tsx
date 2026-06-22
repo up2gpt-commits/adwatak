@@ -352,6 +352,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Get accurate prayer times for your city.",
+  "Daily salah schedule with azan reminders.",
+  "Adjustable calculation methods worldwide.",
+  "Never miss Fajr, Dhuhr, Asr, Maghrib, Isha.",
+  "Free Islamic prayer times tool online.",
+];
+
       <SEOContent content={[
         "Accurate prayer times for your location — mathematical calculation without external API.",
         "8 calculation methods: Umm al-Qura, Egyptian, Muslim World League, Karachi, ISNA, Kuwait, Qatar, Singapore.",

@@ -96,7 +96,15 @@ export default function ClientEn(){
         </div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="en"/>
+    seoContent=[
+  "Calculate days between two dates instantly.",
+  "Add or subtract days from any date with ease.",
+  "Find exact duration in days, weeks, months.",
+  "Plan events, deadlines, or age calculations.",
+  "Free online date duration calculator tool.",
+];
+
+      <SEOContent content={seo} lang="en"/>
     <FAQSection faqs={faqs} lang="en"/>
     <RelatedTools tools={relatedTools} lang="en"/>
     <ShareButtons lang="en"/>

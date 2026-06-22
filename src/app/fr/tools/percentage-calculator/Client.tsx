@@ -60,7 +60,15 @@ export default function Client() {
         </div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="fr"/>
+    seoContent=[
+  "Calculez instantanément les pourcentages pour n'importe quel nombre.",
+  "Trouvez facilement l'augmentation ou la diminution en pourcentage.",
+  "Calculez les remises, les pourboires et les majorations.",
+  "Qu'est-ce que X% de Y ? Obtenez des réponses rapidement.",
+  "Outil gratuit de calcul de pourcentage en ligne.",
+];
+
+      <SEOContent content={seo} lang="fr"/>
     <FAQSection faqs={faqs} lang="fr"/>
     <RelatedTools tools={relatedTools} lang="fr"/>
     <ShareButtons lang="fr"/>

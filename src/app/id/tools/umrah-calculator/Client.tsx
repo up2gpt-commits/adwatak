@@ -225,6 +225,14 @@ export default function Client() {
         </div>
       </div>
 
+      seoContent=[
+  "Perkirakan biaya perjalanan Umrah Anda dengan akurat.",
+  "Termasuk penerbangan, hotel, visa, dan lainnya.",
+  "Rencanakan anggaran ibadah Anda dengan mudah.",
+  "Sesuaikan dengan jumlah anggota keluarga dan preferensi.",
+  "Kalkulator biaya Umrah online gratis.",
+];
+
       <SEOContent content={[
         "Kalkulator Umrah — Hitung total biaya Umrah: visa, tiket pesawat, hotel di Makkah & Madinah, transportasi lokal, dan pengeluaran harian.",
         "Mendukung 8 mata uang: IDR, USD, SAR, EUR, GBP, TRY, PKR, EGP.",

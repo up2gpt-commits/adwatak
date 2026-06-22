@@ -393,6 +393,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Temukan arah Kiblat yang tepat dari mana saja.",
+  "Gunakan peta atau kompas untuk menemukan Ka'bah.",
+  "Arah yang akurat berdasarkan GPS Anda.",
+  "Penting untuk salat harian dan perjalanan.",
+  "Pencari arah Kiblat online gratis.",
+];
+
       <SEOContent content={[
         "Pencari Arah Kiblat — Tempatkan arah Ka'bah di Mekkah dari mana saja di dunia.",
         "Menggunakan rumus Haversine untuk perhitungan bearing lingkaran besar yang presisi. 3 metode lokasi: GPS, pemilihan kota, atau koordinat manual.",

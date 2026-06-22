@@ -62,7 +62,16 @@ export default function Client() {
         </div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="ar"/>
+    seoContent=[
+  "احسب النسب المئوية فورًا لأي رقم.",
+  "اعثر على الزيادة أو النقصان في النسبة المئوية بسهولة.",
+  "احسب الخصومات والإكراميات والهوامش الربحية.",
+  "ما هو X% من Y؟",
+  "احصل على الإجابات بسرعة.",
+  "أداة مجانية لحساب النسب المئوية عبر الإنترنت.",
+];
+
+      <SEOContent content={seo} lang="ar"/>
     <FAQSection faqs={faqs} lang="ar"/>
     <RelatedTools tools={relatedTools} lang="ar"/>
     <ShareButtons lang="ar"/>

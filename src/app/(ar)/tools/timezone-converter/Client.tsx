@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "تحويل الوقت عبر أي منطقة زمنية فورًا",
+  "معرفة فارق التوقيت الدقيق حول العالم",
+  "جدولة الاجتماعات عبر القارات بسهولة",
+  "يدعم جميع المدن الرئيسية وإزاحات التوقيت العالمي المنسق (UTC)",
+  "أداة مجانية لتحويل المناطق الزمنية عبر الإنترنت",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

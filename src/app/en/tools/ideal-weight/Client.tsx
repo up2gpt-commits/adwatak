@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "Find your ideal weight based on height and age.",
+  "Use proven formulas like Devine, Robinson.",
+  "Check if you're in a healthy weight range.",
+  "Set realistic fitness goals today.",
+  "Free ideal body weight calculator online.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

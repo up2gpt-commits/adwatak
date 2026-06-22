@@ -352,6 +352,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Dapatkan waktu sholat yang akurat untuk kota Anda.",
+  "Jadwal sholat harian dengan pengingat azan.",
+  "Metode perhitungan yang dapat disesuaikan di seluruh dunia.",
+  "Jangan lewatkan Subuh, Dzuhur, Ashar, Maghrib, Isya.",
+  "Alat waktu sholat Islam gratis online.",
+];
+
       <SEOContent content={[
         "Waktu sholat akurat untuk lokasi Anda perhitungan matematis tanpa API eksternal.",
         "8 metode perhitungan: Umm al-Qura, Mesir, Muslim World League, Karachi, ISNA, Kuwait, Qatar, Singapura.",

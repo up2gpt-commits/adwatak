@@ -205,6 +205,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Calculate fidyah for missed Ramadan fasts.",
+  "Determine kaffarah amounts easily.",
+  "Based on Islamic rulings and local prices.",
+  "Fulfill your religious obligations accurately.",
+  "Free online fidyah and kaffarah calculator.",
+];
+
       <SEOContent content={[
         "Fidye ve Kaffarat Hesaplama — Yemin, Ramazan ilişkisi, Zıhır kaffaratı ve oruç fidyesini hesaplayın.",
         "Her tür için Kur'an ve Sünnet delilleriyle detaylı şer'i açıklamalar içerir.",

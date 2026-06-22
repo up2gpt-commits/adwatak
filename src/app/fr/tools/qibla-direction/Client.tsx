@@ -660,6 +660,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Trouvez la direction exacte de la Qibla depuis n'importe où.",
+  "Utilisez la carte ou la boussole pour localiser la Kaaba.",
+  "Relèvement précis basé sur votre GPS.",
+  "Essentiel pour les prières quotidiennes et les voyages.",
+  "Chercheur de direction Qibla en ligne gratuit.",
+];
+
       <SEOContent content={[
         "Chercheur de direction de la Qibla — Trouvez la direction de la Kaaba à La Mecque depuis n'importe où dans le monde. Utilise des calculs géométriques précis (formule de Haversine) pour calculer le relèvement géographique de votre position vers la Kaaba.",
         "3 location methods: automatic GPS, city selection from 60+ cities, or manual coordinate entry.",

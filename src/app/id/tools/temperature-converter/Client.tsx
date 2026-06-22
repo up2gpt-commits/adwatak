@@ -85,7 +85,15 @@ export default function Client(){
         </div>
       </div>
     </div>
-    <SEOContent content={seo} lang="id"/>
+    seoContent=[
+  "Konversi Celsius ke Fahrenheit dan Kelvin.",
+  "Konversi satuan suhu instan.",
+  "Hasil akurat untuk sains dan memasak.",
+  "Beralih antara °C, °F, K dengan mudah.",
+  "Alat konverter suhu online gratis.",
+];
+
+      <SEOContent content={seo} lang="id"/>
     <FAQSection faqs={faqs} lang="id"/>
     <RelatedTools tools={relatedTools} lang="id"/>
     <ShareButtons lang="id"/>

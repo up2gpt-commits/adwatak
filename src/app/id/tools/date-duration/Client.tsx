@@ -96,7 +96,15 @@ export default function ClientEn(){
         </div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="id"/>
+    seoContent=[
+  "Hitung hari antara dua tanggal secara instan.",
+  "Tambahkan atau kurangi hari dari tanggal mana pun dengan mudah.",
+  "Temukan durasi tepat dalam hari, minggu, bulan.",
+  "Rencanakan acara, tenggat waktu, atau perhitungan usia.",
+  "Alat kalkulator durasi tanggal online gratis.",
+];
+
+      <SEOContent content={seo} lang="id"/>
     <FAQSection faqs={faqs} lang="id"/>
     <RelatedTools tools={relatedTools} lang="id"/>
     <ShareButtons lang="id"/>

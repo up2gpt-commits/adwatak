@@ -101,7 +101,15 @@ export default function ClientEn(){
         {result&&<div className="bg-gray-50 rounded-xl p-4 border border-gray-200 text-sm whitespace-pre-wrap break-words max-h-40 overflow-y-auto">{result}</div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="id"/>
+    seoContent=[
+  "Enkripsi teks Anda dengan AES, RSA, dan lainnya.",
+  "Amankan data sensitif secara instan secara online.",
+  "Dekripsi pesan dengan kunci yang tepat.",
+  "Alat enkripsi gratis, cepat, dan mudah.",
+  "Lindungi privasi Anda dengan sandi yang kuat.",
+];
+
+      <SEOContent content={seo} lang="id"/>
     <FAQSection faqs={faqs} lang="id"/>
     <RelatedTools tools={relatedTools} lang="id"/>
     <ShareButtons lang="id"/>

@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "Konversi waktu di seluruh zona waktu secara instan.",
+  "Temukan perbedaan waktu yang tepat di seluruh dunia.",
+  "Jadwalkan rapat lintas benua dengan mudah.",
+  "Mendukung semua kota besar dan offset UTC.",
+  "Alat konverter zona waktu online gratis.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

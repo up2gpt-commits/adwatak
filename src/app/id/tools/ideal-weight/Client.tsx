@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "Temukan berat badan ideal Anda berdasarkan tinggi dan usia.",
+  "Gunakan rumus yang terbukti seperti Devine, Robinson.",
+  "Periksa apakah Anda berada dalam rentang berat badan yang sehat.",
+  "Tetapkan tujuan kebugaran yang realistis hari ini.",
+  "Kalkulator berat badan ideal online gratis.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

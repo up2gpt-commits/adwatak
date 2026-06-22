@@ -660,6 +660,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Find the exact Qibla direction from anywhere.",
+  "Use map or compass to locate Kaaba.",
+  "Accurate bearing based on your GPS.",
+  "Essential for daily prayers and travel.",
+  "Free online Qibla direction finder.",
+];
+
       <SEOContent content={[
         "Qibla Direction Finder — Find the direction of the Kaaba in Mecca from anywhere in the world. Uses precise geometric calculations (Haversine formula) to calculate the geographic bearing from your location to the Kaaba.",
         "3 location methods: automatic GPS, city selection from 60+ cities, or manual coordinate entry.",

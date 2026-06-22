@@ -205,6 +205,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Calculez la fidyah pour les jeûnes manqués du Ramadan.",
+  "Déterminez facilement les montants de la kaffarah.",
+  "Basé sur les règles islamiques et les prix locaux.",
+  "Remplissez vos obligations religieuses avec précision.",
+  "Calculateur gratuit en ligne de fidyah et kaffarah.",
+];
+
       <SEOContent content={[
         "Calculateur de Fidyah et Kaffarah — Calculez la Kaffarah pour serment, rapport intime en Ramadan, Zhihar, et la Fidyah pour le jeûne.",
         "Inclut les règles islamiques détaillées avec les preuves du Coran et de la Sunnah pour chaque type.",

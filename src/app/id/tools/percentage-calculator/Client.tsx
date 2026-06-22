@@ -91,7 +91,15 @@ export default function Client() {
         </div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="id"/>
+    seoContent=[
+  "Hitung persentase secara instan untuk angka apa pun.",
+  "Temukan kenaikan atau penurunan persentase dengan mudah.",
+  "Hitung diskon, tip, dan markup.",
+  "Berapa X% dari Y? Dapatkan jawabannya dengan cepat.",
+  "Alat kalkulator persentase online gratis.",
+];
+
+      <SEOContent content={seo} lang="id"/>
     <FAQSection faqs={faqs} lang="id"/>
     <RelatedTools tools={relatedTools} lang="id"/>
     <ShareButtons lang="id"/>

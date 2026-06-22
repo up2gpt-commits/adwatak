@@ -226,6 +226,14 @@ export default function Client() {
         </div>
       </div>
 
+      seoContent=[
+  "Estimate your Umrah trip costs accurately.",
+  "Include flights, hotels, visas, and more.",
+  "Plan your pilgrimage budget with ease.",
+  "Customize for family size and preferences.",
+  "Free Umrah cost calculator online.",
+];
+
       <SEOContent content={[
         "Umrah Calculator — Calculate total Umrah cost: visa, flight ticket, hotel in Makkah & Madinah, local transport, and daily expenses.",
         "Supports 8 currencies: USD, SAR, EUR, GBP, TRY, IDR, PKR, EGP.",

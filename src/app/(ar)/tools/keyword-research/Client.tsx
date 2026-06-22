@@ -57,6 +57,14 @@ function DifficultyBar({ score }: { score: number }) {
   );
 }
 
+seoContent=[
+  "Research keywords for your SEO strategy with our free AI-powered keyword research tool. Enter a seed keyword and get hundreds of related keyword suggestions with monthly search volume, competition level, and difficulty scores.",
+  "Perfect for content creators, bloggers, and SEO professionals. Find low-competition keywords (easy wins) to rank faster, discover long-tail keyword opportunities, and plan your content calendar based on real data.",
+  "Each keyword result shows: Monthly search volume (how many people search for this term), Competition level (low/medium/high), Difficulty score (0-100), and Recommended content type. Use the analysis dashboard to quickly identify the best opportunities.",
+  "Tip: Focus on keywords with low competition (green badge) and medium difficulty (30-60). These offer the best balance of search volume vs. ranking difficulty. Avoid keywords with 80+ difficulty unless you have a strong domain.",
+  "Start with seed keywords from your niche (e.g., 'mortgage calculator' for finance). Our tool generates hundreds of related terms you might have missed. Build content clusters around your best keywords for maximum SEO impact.",
+];
+
 export default function Client() {
   const [keyword, setKeyword] = useState("");
   const [loading, setLoading] = useState(false);

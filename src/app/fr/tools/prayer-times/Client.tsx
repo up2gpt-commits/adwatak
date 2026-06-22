@@ -352,6 +352,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Obtenez des horaires de prière précis pour votre ville.",
+  "Calendrier quotidien de salah avec rappels d'adhan.",
+  "Méthodes de calcul ajustables dans le monde entier.",
+  "Ne manquez jamais Fajr, Dhuhr, Asr, Maghrib, Isha.",
+  "Outil en ligne gratuit des horaires de prière islamiques.",
+];
+
       <SEOContent content={[
         "Heures de prière précises pour votre position — calcul mathématique sans API externe.",
         "8 méthodes de calcul : Umm al-Qura, Égyptienne, Ligue Islamique Mondiale, Karachi, ISNA, Koweït, Qatar, Singapour.",

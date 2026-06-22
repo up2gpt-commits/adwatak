@@ -57,7 +57,15 @@ export default function Client(){
         </div>
       </div>
     </div>
-    <SEOContent content={seo} lang="fr"/>
+    seoContent=[
+  "Convertissez Celsius en Fahrenheit et Kelvin.",
+  "Conversions instantanées d'unités de température.",
+  "Résultats précis pour la science et la cuisine.",
+  "Passez facilement de °C, °F, K.",
+  "Outil de conversion de température en ligne gratuit.",
+];
+
+      <SEOContent content={seo} lang="fr"/>
     <FAQSection faqs={faqs} lang="fr"/>
     <RelatedTools tools={relatedTools} lang="fr"/>
     <ShareButtons lang="fr"/>

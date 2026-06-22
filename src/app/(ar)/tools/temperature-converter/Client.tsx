@@ -59,7 +59,15 @@ export default function Client(){
         </div>
       </div>
     </div>
-    <SEOContent content={seo} lang="ar"/>
+    seoContent=[
+  "تحويل من سيلسيوس إلى فهرنهايت وكلفن.",
+  "تحويلات فورية لوحدات درجة الحرارة.",
+  "نتائج دقيقة للعلوم والطهي.",
+  "التبديل بين °C و °F و K بسهولة.",
+  "أداة مجانية لتحويل درجة الحرارة عبر الإنترنت.",
+];
+
+      <SEOContent content={seo} lang="ar"/>
     <FAQSection faqs={faqs} lang="ar"/>
     <RelatedTools tools={relatedTools} lang="ar"/>
     <ShareButtons lang="ar"/>

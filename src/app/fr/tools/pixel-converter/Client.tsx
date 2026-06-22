@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "Convertissez les pixels en cm, pouces et plus.",
+  "Ajustez avec précision pour le DPI d'écran ou d'impression.",
+  "Parfait pour les designers et développeurs.",
+  "Calculez les dimensions d'image en unités réelles.",
+  "Convertisseur gratuit de pixels en taille physique.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

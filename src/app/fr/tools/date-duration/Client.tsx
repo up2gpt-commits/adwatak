@@ -62,7 +62,15 @@ export default function ClientEn(){
         </div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="fr"/>
+    seoContent=[
+  "Calculez instantanément le nombre de jours entre deux dates.",
+  "Ajoutez ou soustrayez facilement des jours à n'importe quelle date.",
+  "Trouvez la durée exacte en jours, semaines, mois.",
+  "Planifiez des événements, des échéances ou calculez l'âge.",
+  "Outil gratuit de calcul de durée entre dates en ligne.",
+];
+
+      <SEOContent content={seo} lang="fr"/>
     <FAQSection faqs={faqs} lang="fr"/>
     <RelatedTools tools={relatedTools} lang="fr"/>
     <ShareButtons lang="fr"/>

@@ -91,7 +91,15 @@ export default function Client() {
         </div>}
       </div>
     </div>
-    <SEOContent content={seo} lang="en"/>
+    seoContent=[
+  "Calculate percentages instantly for any number.",
+  "Find percentage increase or decrease easily.",
+  "Compute discounts, tips, and markups.",
+  "What is X% of Y? Get answers fast.",
+  "Free online percentage calculator tool.",
+];
+
+      <SEOContent content={seo} lang="en"/>
     <FAQSection faqs={faqs} lang="en"/>
     <RelatedTools tools={relatedTools} lang="en"/>
     <ShareButtons lang="en"/>

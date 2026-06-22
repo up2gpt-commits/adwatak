@@ -662,6 +662,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Her yerden tam Kıble yönünü bulun.",
+  "Kabe'yi bulmak için harita veya pusula kullanın.",
+  "GPS'inize göre doğru kerteriz.",
+  "Günlük namazlar ve seyahat için gereklidir.",
+  "Ücretsiz çevrimiçi Kıble yönü bulucu.",
+];
+
       <SEOContent content={[
         "Kıble Yönü Bulucu — Dünyanın herhangi bir yerinden Mekke'deki Kabe'nin yönünü bulun. Konumunuzdan Kabe'ye coğrafi açıyı hesaplamak için hassas geometrik hesaplamalar (Haversine formülü) kullanır.",
         "3 konum belirleme yöntemi: otomatik GPS, 60+ şehir listeden seçim veya manuel koordinat girişi.",

@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "Convert time across any time zone instantly.",
+  "Find the exact time difference worldwide.",
+  "Schedule meetings across continents easily.",
+  "Supports all major cities and UTC offsets.",
+  "Free online time zone converter tool.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

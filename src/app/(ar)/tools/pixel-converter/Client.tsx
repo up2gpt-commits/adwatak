@@ -3,6 +3,14 @@ import StructuredData, { toolSchema } from "../../../components/StructuredData";
 import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
+seoContent=[
+  "تحويل البكسل إلى سنتيمتر وبوصة والمزيد.",
+  "ضبط دقة الشاشة أو الطباعة (DPI) بدقة.",
+  "مثالي للمصممين والمطورين.",
+  "حساب أبعاد الصورة بوحدات حقيقية.",
+  "محول مجاني لتحويل البكسل إلى الحجم الفعلي.",
+];
+
 export default function Client() {
   return (
     <div className="max-w-[760px] mx-auto">

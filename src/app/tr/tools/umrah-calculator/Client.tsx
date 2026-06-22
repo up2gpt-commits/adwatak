@@ -225,6 +225,14 @@ export default function Client() {
         </div>
       </div>
 
+      seoContent=[
+  "Umre seyahati maliyetlerinizi doğru bir şekilde tahmin edin.",
+  "Uçuşlar, oteller, vizeler ve daha fazlasını dahil edin.",
+  "Umre bütçenizi kolayca planlayın.",
+  "Aile büyüklüğü ve tercihlere göre özelleştirin.",
+  "Ücretsiz çevrimiçi Umre maliyet hesaplayıcı.",
+];
+
       <SEOContent content={[
         "Umre Hesaplama — Umre maliyetlerini tam hesaplayın: vize, uçak bileti, Mekke ve Medine oteli, yerel ulaşım ve günlük masraflar.",
         "8 para birimi desteği: TRY, USD, SAR, EUR, GBP, IDR, PKR, EGP.",

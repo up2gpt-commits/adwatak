@@ -205,6 +205,14 @@ export default function Client() {
         )}
       </div>
 
+      seoContent=[
+  "Hitung fidyah untuk puasa Ramadan yang terlewat.",
+  "Tentukan jumlah kaffarah dengan mudah.",
+  "Berdasarkan hukum Islam dan harga lokal.",
+  "Penuhi kewajiban agama Anda dengan akurat.",
+  "Kalkulator fidyah dan kaffarah online gratis.",
+];
+
       <SEOContent content={[
         "Kalkulator Fidyah & Kaffarah — Hitung Kaffarah sumpah, hubungan Ramadhan, Zhihar, dan Fidyah puasa.",
         "Termasuk penjelasan syariah terperinci dengan dalil Quran dan Sunnah untuk setiap jenis.",
