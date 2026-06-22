@@ -8,18 +8,18 @@ import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 
 const faqs = [
-  { question: "Qu'est-ce qu'un convertisseur d'unités ?", answer: "Converts values between different measurement units within the same category: length (meters/feet), weight (kg/lbs), temperature (C/F/K), volume (liters/gallons), area (sq m/acres), and more. Essential for science, travel, cooking, and international business." },
+  { question: "What is a unit converter?", answer: "Converts values between different measurement units within the same category: length (meters/feet), weight (kg/lbs), temperature (C/F/K), volume (liters/gallons), area (sq m/acres), and more. Essential for science, travel, cooking, and international business." },
   { question: "Pourquoi utiliser un convertisseur d'unités ?", answer: "International differences: US uses imperial (miles, pounds, Fahrenheit). Rest of world uses metric (km, kg, Celsius). Recipes, travel planning, online shopping, car specs (mph vs km/h), and scientific calculations all need accurate conversion." },
-  { question: "Comment convertir Celsius en Fahrenheit ?", answer: "Formula: F = (C × 9/5) + 32. 0°C = 32°F. 100°C = 212°F. 25°C = 77°F. For quick mental: double Celsius, add 30 (approximate). 25 × 2 = 50 + 30 = 80°F (exact: 77°F)." },
-  { question: "Comment convertir des kg en lbs ?", answer: "1 kg = 2.20462 lbs. 80 kg = 176.4 lbs. Quick: multiply by 2.2. 80 × 2.2 = 176 lbs. For lbs to kg: divide by 2.2. 176 ÷ 2.2 = 80 kg. Our converter gives exact decimal results." },
+  { question: "How to convert Celsius to Fahrenheit?", answer: "Formula: F = (C × 9/5) + 32. 0°C = 32°F. 100°C = 212°F. 25°C = 77°F. For quick mental: double Celsius, add 30 (approximate). 25 × 2 = 50 + 30 = 80°F (exact: 77°F)." },
+  { question: "How to convert kg to lbs?", answer: "1 kg = 2.20462 lbs. 80 kg = 176.4 lbs. Quick: multiply by 2.2. 80 × 2.2 = 176 lbs. For lbs to kg: divide by 2.2. 176 ÷ 2.2 = 80 kg. Our converter gives exact decimal results." },
   { question: "Miles to kilometers?", answer: "1 mile = 1.60934 km. 60 mph = 96.5 km/h. Quick: multiply by 1.6. 60 × 1.6 = 96 km/h. For km to miles: divide by 1.6. 100 km/h ÷ 1.6 = 62.5 mph." },
   { question: "Inches to centimeters?", answer: "1 inch = 2.54 cm. 5'9\" (69 inches) = 69 × 2.54 = 175.26 cm. Quick: multiply inches by 2.5. 69 × 2.5 = 172.5 cm (close enough for most purposes)." },
-  { question: "Comment convertir entre les unités de surface ?", answer: "1 sq meter = 10.764 sq feet. 1 acre = 4,047 sq meters. 1 hectare = 10,000 sq meters = 2.471 acres. 1 sq km = 0.386 sq miles. Use square of the length conversion factor." },
+  { question: "How to convert between units of area?", answer: "1 sq meter = 10.764 sq feet. 1 acre = 4,047 sq meters. 1 hectare = 10,000 sq meters = 2.471 acres. 1 sq km = 0.386 sq miles. Use square of the length conversion factor." },
   { question: "Volume conversions?", answer: "1 liter = 0.264 gallons (US). 1 gallon (US) = 3.785 liters. 1 cup = 237 ml. 1 fl oz = 29.57 ml. 1 cubic meter = 264 gallons. Our converter handles all common volume units." },
-  { question: "Qu'est-ce qu'une unité astronomique (UA) ?", answer: "Distance from Earth to Sun: ~149.6 million km (93 million miles). 1 light-year = 63,241 AU. 1 parsec = 206,265 AU. Used for measuring solar system distances. Our converter doesn't include AU but supports major metric/imperial categories." },
+  { question: "What is an astronomical unit (AU)?", answer: "Distance from Earth to Sun: ~149.6 million km (93 million miles). 1 light-year = 63,241 AU. 1 parsec = 206,265 AU. Used for measuring solar system distances. Our converter doesn't include AU but supports major metric/imperial categories." },
   { question: "Digital storage conversions?", answer: "1 KB = 1024 B. 1 MB = 1024 KB. 1 GB = 1024 MB. 1 TB = 1024 GB. 1 PB = 1024 TB. Note: hard drive manufacturers use decimal (1 GB = 1,000,000,000 B), not binary. 1 TB drive = 931 GB actual usable space." },
   { question: "Speed conversions?", answer: "1 mph = 1.609 km/h = 0.447 m/s. 1 knot = 1.852 km/h = 1.151 mph. Mach 1 = 1,235 km/h at sea level (varies with altitude). Our converter handles mph, km/h, and m/s." },
-  { question: "Quelles sont les unités de base du SI ?", answer: "Meter (length), Kilogram (mass), Second (time), Ampere (current), Kelvin (temperature), Mole (amount), Candela (luminance). All other SI units derive from these 7. Our converter covers the most common derived units." },
+  { question: "What are the base SI units?", answer: "Meter (length), Kilogram (mass), Second (time), Ampere (current), Kelvin (temperature), Mole (amount), Candela (luminance). All other SI units derive from these 7. Our converter covers the most common derived units." },
 ];
 
 const relatedTools = [
