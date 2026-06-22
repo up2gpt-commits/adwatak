@@ -9,10 +9,10 @@ import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
   {question:"Qu'est-ce que le calculateur de pourcentage ?",answer:"Un outil gratuit pour calculer des pourcentages de trois manières : pourcentage d'un nombre, quel pourcentage représente X par rapport à Y, et augmentation/diminution en pourcentage."},
-  {question:"Est-ce gratuit ?",answer:"Yes, 100% free. No registration."},
-  {question:"Comment calculer le pourcentage d'un nombre ?",answer:"Select first option, enter the percentage and number, click Calculate."},
-  {question:"Prend-il en charge les décimales ?",answer:"Yes, supports decimal numbers with high precision."},
-  {question:"Fonctionne-t-il hors ligne ?",answer:"Yes, everything runs in your browser."},
+  {question:"Est-ce gratuit ?",answer:"Oui, 100 % gratuit. Pas d'inscription."},
+  {question:"Comment calculer le pourcentage d'un nombre ?",answer:"Sélectionnez la première option, entrez le pourcentage et le nombre, cliquez sur Calculer."},
+  {question:"Prend-il en charge les décimales ?",answer:"Oui, prend en charge les nombres décimaux avec une haute précision."},
+  {question:"Fonctionne-t-il hors ligne ?",answer:"Oui, tout s'exécute dans votre navigateur."},
 ];
 
 const relatedTools = [{title:"Marge Bénéficiaire",icon:"📊",href:"/fr/tools/profit-margin"},{title:"VAT Calculator",icon:"🏛️",href:"/fr/tools/vat-calculator"},{title:"Intérêts Composés",icon:"📈",href:"/fr/tools/compound-interest"},{title:"Calculateur d'IMC",icon:"⚖️",href:"/fr/tools/bmi-calculator"}];
