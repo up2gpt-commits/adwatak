@@ -161,6 +161,8 @@ const COUNTRIES: Record<string, { ar: string; en: string; cities: string[] }> = 
 
 // ─── Haversine formula to calculate Qibla bearing ───
 function calcQiblaBearing(lat: number, lng: number): number {
+  if (!isFinite(lat) || !isFinite(lng) || Math.abs(lat) > 90 || Math.abs(lng) > 180) return 0;
+  if (Math.abs(lat - KAABA_LAT) < 0.0001 && Math.abs(lng - KAABA_LNG) < 0.0001) return 0;
   const latRad = (lat * Math.PI) / 180;
   const lngRad = (lng * Math.PI) / 180;
   const kaabaLatRad = (KAABA_LAT * Math.PI) / 180;
@@ -211,7 +213,39 @@ function bearingToRelativeDirection(bearing: number, deviceHeading: number): { a
 }
 
 // ─── SVG Compass ───
-function Compass({ bearing, deviceHeading, direction }: { bearing: number; deviceHeading: number; direction: { ar: string; en: string } }) {
+// ─── Magnetic Declination (WMM 2025) ───
+const DECLINATION_GRID: Record<string, number> = {
+  "-90,-180": 148.25, "-90,-150": 118.25, "-90,-120": 88.25, "-90,-90": 58.25,
+  "-90,-60": 28.25, "-90,-30": -1.75, "-90,0": -31.75, "-90,30": -61.75,
+  "-90,60": -91.75, "-90,90": -121.75, "-90,120": -151.75, "-90,150": 178.25, "-90,180": 148.25,
+  "-60,-180": 48.50, "-60,-150": 43.84, "-60,-120": 39.07, "-60,-90": 28.29,
+  "-60,-60": 9.57, "-60,-30": -5.65, "-60,0": -20.65, "-60,30": -43.41,
+  "-60,60": -63.73, "-60,90": -75.07, "-60,120": -59.59, "-60,150": 44.21, "-60,180": 48.50,
+  "-30,-180": 17.18, "-30,-150": 17.62, "-30,-120": 16.43, "-30,-90": 12.77,
+  "-30,-60": -11.68, "-30,-25": -25.25, "-30,0": -21.44, "-30,30": -26.66,
+  "-30,60": -31.04, "-30,90": -14.50, "-30,120": 0.19, "-30,150": 10.86, "-30,180": 17.18,
+  "0,-180": 9.99, "0,-150": 9.21, "0,-120": 8.14, "0,-90": 2.12,
+  "0,-60": -16.68, "0,-30": -16.92, "0,0": -4.03, "0,30": 2.33,
+  "0,60": -3.20, "0,90": -1.32, "0,120": -0.56, "0,150": 4.73, "0,180": 9.99,
+  "30,-180": 6.11, "30,-150": 10.77, "30,-120": 10.83, "30,-90": -1.86,
+  "30,-60": -14.93, "30,-30": -8.93, "30,0": 0.90, "30,30": 5.07,
+  "30,60": 3.06, "30,90": 0.62, "30,120": -6.06, "30,150": -3.64, "30,180": 6.11,
+  "60,-180": 1.19, "60,-150": 13.29, "60,-120": 16.01, "60,-90": -6.77,
+  "60,-60": -22.55, "60,-30": -13.74, "60,0": 0.10, "60,30": 11.97,
+  "60,60": 18.26, "60,90": 7.18, "60,120": -13.61, "60,150": -11.37, "60,180": 1.19,
+  "90,-180": -168.06, "90,-150": -138.06, "90,-120": -108.06, "90,-90": -78.06,
+  "90,-60": -48.06, "90,-30": -18.06, "90,0": 11.94, "90,30": 41.94,
+  "90,60": 71.94, "90,90": 101.94, "90,120": 131.94, "90,150": 161.94, "90,180": -168.06,
+};
+
+function magneticDeclination(lat: number, lng: number): number {
+  if (!isFinite(lat) || !isFinite(lng)) return 0;
+  const snap = (v: number, step: number) => Math.round(v / step) * step;
+  const k = `${snap(lat, 30)},${snap(lng, 30)}`;
+  return DECLINATION_GRID[k] ?? 0;
+}
+
+function Compass({ bearing, deviceHeading, direction, userLat, userLng }: { bearing: number; deviceHeading: number; direction: { ar: string; en: string }; userLat: number; userLng: number }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -268,7 +302,6 @@ function Compass({ bearing, deviceHeading, direction }: { bearing: number; devic
     }
 
     // Qibla direction arrow (red)
-    const qiblaAngle = ((bearing - 90) * Math.PI) / 180;
     ctx.save();
     ctx.translate(cx, cy);
 
@@ -361,13 +394,16 @@ export default function Client() {
   useEffect(() => {
     const handleOrientation = (e: DeviceOrientationEvent) => {
       if (e.alpha !== null) {
-        setDeviceHeading(360 - e.alpha);
+        const magHeading = 360 - e.alpha;
+        const decl = magneticDeclination(userLat, userLng);
+        const trueHeading = ((magHeading + decl) % 360 + 360) % 360;
+        setDeviceHeading(trueHeading);
         setHasCompass(true);
       }
     };
     window.addEventListener("deviceorientation", handleOrientation);
     return () => window.removeEventListener("deviceorientation", handleOrientation);
-  }, []);
+  }, [userLat, userLng]);
 
   const showResult = useCallback((lat: number, lng: number) => {
     const b = calcQiblaBearing(lat, lng);
@@ -466,7 +502,7 @@ export default function Client() {
         {/* ─── Result ─── */}
         {mode === "result" && (
           <div className="text-center">
-            <Compass bearing={bearing} deviceHeading={deviceHeading} direction={direction} />
+            <Compass bearing={bearing} deviceHeading={deviceHeading} direction={direction} userLat={userLat} userLng={userLng} />
 
             <div className="mt-6 grid grid-cols-2 gap-3 max-w-sm mx-auto">
               <div className="bg-green-50 border border-green-200 rounded-xl p-3">
@@ -486,6 +522,12 @@ export default function Client() {
                 <p className="text-sm font-bold text-amber-800">{userLat.toFixed(4)}°, {userLng.toFixed(4)}°</p>
               </div>
             </div>
+
+            {deviceHeading >= 0 && (
+              <div className="mt-3 text-xs text-gray-400">
+                {hasCompass && `بوصلة الجهاز: مصححة لـ true north ✓`}
+              </div>
+            )}
 
             {relDirection && (
               <div className="mt-4 bg-red-50 border border-red-200 rounded-xl p-4 max-w-sm mx-auto">

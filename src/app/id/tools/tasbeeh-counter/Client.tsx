@@ -39,7 +39,7 @@ const relatedTools = [
   { title: "Kalkulator Zakat", icon: "💰", href: "/id/tools/zakat-calculator" },
   { title: "Konversi Hijriah", icon: "📅", href: "/id/tools/hijri-converter" },
   { title: "Kalkulator Waris", icon: "⚖️", href: "/id/tools/inheritance-calculator" },
-  { title: "Stopwatch", icon: "⏱️", href: "/id/tools/stopwatch" },
+  { title: "Pengatur Waktu", icon: "⏱️", href: "/id/tools/stopwatch" },
 ];
 
 const seoContent = [

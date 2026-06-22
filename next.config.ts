@@ -6,7 +6,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Explicit /ar/* paths → root (Arabic is the default locale, no prefix)
+      // ── Singular /tool/* → plural /tools/* (catch SEO 404s from external links) ──
+      { source: "/tool/:slug*", destination: "/tools/:slug*", permanent: true },
+      { source: "/en/tool/:slug*", destination: "/en/tools/:slug*", permanent: true },
+      { source: "/tr/tool/:slug*", destination: "/tr/tools/:slug*", permanent: true },
+      { source: "/id/tool/:slug*", destination: "/id/tools/:slug*", permanent: true },
+      { source: "/fr/tool/:slug*", destination: "/fr/tools/:slug*", permanent: true },
+
+      // ── Explicit /ar/* paths → root (Arabic is the default locale, no prefix) ──
       { source: "/ar", destination: "/", permanent: true },
       { source: "/ar/", destination: "/", permanent: true },
       {
@@ -14,6 +21,31 @@ const nextConfig: NextConfig = {
         destination: "/:path*",
         permanent: true,
       },
+
+      // ── Old renamed tools → new URLs (SEO 404 fixes) ──
+      { source: "/tools/hijri-date", destination: "/tools/hijri-converter", permanent: true },
+      { source: "/en/tools/hijri-date", destination: "/en/tools/hijri-converter", permanent: true },
+      { source: "/tr/tools/hijri-date", destination: "/tr/tools/hijri-converter", permanent: true },
+      { source: "/id/tools/hijri-date", destination: "/id/tools/hijri-converter", permanent: true },
+      { source: "/fr/tools/hijri-date", destination: "/fr/tools/hijri-converter", permanent: true },
+
+      { source: "/tools/islamic-finance", destination: "/category/islamic", permanent: true },
+      { source: "/en/tools/islamic-finance", destination: "/en/category/islamic", permanent: true },
+      { source: "/tr/tools/islamic-finance", destination: "/tr/category/islamic", permanent: true },
+      { source: "/id/tools/islamic-finance", destination: "/id/category/islamic", permanent: true },
+      { source: "/fr/tools/islamic-finance", destination: "/fr/category/islamic", permanent: true },
+
+      { source: "/tools/investment-calcul", destination: "/tools/compound-interest", permanent: true },
+      { source: "/en/tools/investment-calcul", destination: "/en/tools/compound-interest", permanent: true },
+      { source: "/tr/tools/investment-calcul", destination: "/tr/tools/compound-interest", permanent: true },
+      { source: "/id/tools/investment-calcul", destination: "/id/tools/compound-interest", permanent: true },
+      { source: "/fr/tools/investment-calcul", destination: "/fr/tools/compound-interest", permanent: true },
+
+      { source: "/tools/timer", destination: "/", permanent: true },
+      { source: "/en/tools/timer", destination: "/en", permanent: true },
+      { source: "/tr/tools/timer", destination: "/tr", permanent: true },
+      { source: "/id/tools/timer", destination: "/id", permanent: true },
+      { source: "/fr/tools/timer", destination: "/fr", permanent: true },
     ];
   },
   async headers() {

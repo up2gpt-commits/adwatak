@@ -100,7 +100,6 @@ const relatedTools = [
     href: "/tools/bmi-calculator",
   },
   { title: "ساعة الإيقاف", icon: "⏱️", href: "/tools/stopwatch" },
-  { title: "المؤقت", icon: "⏰", href: "/tools/timer" },
 ];
 
 const seoContent = [

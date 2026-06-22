@@ -268,7 +268,6 @@ function Compass({ bearing, deviceHeading, direction }: { bearing: number; devic
     }
 
     // Qibla direction arrow (red)
-    const qiblaAngle = ((bearing - 90) * Math.PI) / 180;
     ctx.save();
     ctx.translate(cx, cy);
 

@@ -3,32 +3,32 @@ import StructuredData,{toolSchema,faqSchema,breadcrumbSchema, speakableSchema,ho
 import Breadcrumb from "../../../components/Breadcrumb";import ShareButtons from "../../../components/ShareButtons";
 import FAQSection from "../../../components/FAQSection";import RelatedTools from "../../../components/RelatedTools";import SEOContent from "../../../components/SEOContent";
 const faqs=[
-{question:"What is Image Resizer?",answer:"A free tool to change image dimensions (width & height). Supports JPG, PNG, WebP, GIF. Everything happens in your browser — no upload to any server."},
-{question:"Do I need to upload to your server?",answer:"No! Everything runs locally using HTML Canvas. Your image never leaves your device. Complete privacy."},
-{question:"What formats are supported?",answer:"JPG, PNG, WebP, GIF, BMP. Download as JPG, PNG, or WebP."},
-{question:"Is the quality preserved?",answer:"Mostly. Resizing uses advanced Canvas algorithms. Shrinking preserves quality well. Enlarging may reduce clarity as pixels are interpolated."},
-{question:"What is aspect ratio?",answer:"The proportional relationship between width and height. Enable 'Keep aspect ratio' to prevent image distortion when changing one dimension."},
-{question:"Is it completely free?",answer:"Yes, 100% free. No registration, no limits, no watermarks."},
-{question:"Maximum image size?",answer:"Up to 20 megapixels. Larger images may slow down the browser."},
-{question:"Does it work on mobile?",answer:"Yes, fully responsive and works on all devices."},
-{question:"How to use it?",answer:"Upload an image, set new width/height, toggle aspect ratio lock, and click resize. Preview and download the result."},
-{question:"Can I enlarge images?",answer:"Yes, but enlarging may reduce quality since the tool interpolates pixels rather than adding real detail."},
-{question:"What's the difference between resize and compress?",answer:"Resize changes dimensions. Compress reduces file size while keeping dimensions. Use both for best results."},
-{question:"What's the best format for web?",answer:"WebP: 25-35% smaller than JPG with same quality. All modern browsers support it. JPG is universally supported."},
+{question:"Görüntü Boyutlandırıcı nedir?",answer:"Görüntü boyutlarını (genişlik ve yükseklik) değiştirmek için ücretsiz bir araç. JPG, PNG, WebP, GIF destekler. Her şey tarayıcınızda gerçekleşir — hiçbir sunucuya yükleme yapılmaz."},
+{question:"Sunucunuza yükleme yapmam gerekiyor mu?",answer:"Hayır! Her şey HTML Canvas kullanarak yerel olarak çalışır. Görüntünüz cihazınızdan asla ayrılmaz. Tam gizlilik."},
+{question:"Hangi formatlar destekleniyor?",answer:"JPG, PNG, WebP, GIF, BMP. JPG, PNG veya WebP olarak indirin."},
+{question:"Kalite korunuyor mu?",answer:"Çoğunlukla. Boyutlandırma gelişmiş Canvas algoritmaları kullanır. Küçültme kaliteyi iyi korur. Büyütme, pikseller enterpolasyon yapıldığı için netliği azaltabilir."},
+{question:"En boy oranı nedir?",answer:"Genişlik ve yükseklik arasındaki orantılı ilişki. Bir boyutu değiştirirken görüntü bozulmasını önlemek için 'En boy oranını koru' seçeneğini etkinleştirin."},
+{question:"Tamamen ücretsiz mi?",answer:"Evet, %100 ücretsiz. Kayıt yok, sınır yok, filigran yok."},
+{question:"Maksimum görüntü boyutu?",answer:"20 megapiksele kadar. Daha büyük görüntüler tarayıcıyı yavaşlatabilir."},
+{question:"Mobilde çalışıyor mu?",answer:"Evet, tamamen duyarlı ve tüm cihazlarda çalışır."},
+{question:"Nasıl kullanılır?",answer:"Bir görüntü yükleyin, yeni genişlik/yükseklik ayarlayın, en boy oranı kilidini açıp kapatın ve boyutlandır'a tıklayın. Sonucu önizleyin ve indirin."},
+{question:"Görüntüleri büyütebilir miyim?",answer:"Evet, ancak büyütme, araç gerçek ayrıntı eklemek yerine pikselleri enterpolasyon yaptığı için kaliteyi düşürebilir."},
+{question:"Boyutlandırma ve sıkıştırma arasındaki fark nedir?",answer:"Boyutlandırma boyutları değiştirir. Sıkıştırma, boyutları korurken dosya boyutunu azaltır. En iyi sonuçlar için her ikisini de kullanın."},
+{question:"Web için en iyi format hangisidir?",answer:"WebP: Aynı kalitede JPG'den %25-35 daha küçük. Tüm modern tarayıcılar destekler. JPG evrensel olarak desteklenir."},
 ];
 const relatedTools=[
-{title:"Image Compressor",icon:"📦",href:"/en/tools/image-compressor"},
-{title:"YouTube Thumbnail Downloader",icon:"▶️",href:"/en/tools/youtube-thumbnail-downloader"},
-{title:"Image to PDF",icon:"📄",href:"/en/tools/image-to-pdf"},
-{title:"QR Generator",icon:"🔳",href:"/en/tools/qr-generator"},
-{title:"Color Converter",icon:"🎨",href:"/en/tools/color-converter"},
+{title:"Görüntü Sıkıştırıcı",icon:"📦",href:"/en/tools/image-compressor"},
+{title:"YouTube Küçük Resim İndirici",icon:"▶️",href:"/en/tools/youtube-thumbnail-downloader"},
+{title:"Görüntüden PDF'e",icon:"📄",href:"/en/tools/image-to-pdf"},
+{title:"QR Oluşturucu",icon:"🔳",href:"/en/tools/qr-generator"},
+{title:"Renk Dönüştürücü",icon:"🎨",href:"/en/tools/color-converter"},
 ];
 const seoContent=[
-"Free Image Resizer — change image dimensions online. Upload, set dimensions, and download. Everything in your browser — no server upload. Supports JPG, PNG, WebP.",
-"Ideal for designers, website owners, and marketers. Standardize image dimensions and improve site loading speed. Properly sized images enhance UX and SEO.",
-"Keep aspect ratio option prevents distortion. Canvas-powered processing ensures quality. Preview before downloading.",
-"All processing is local in your browser using HTML Canvas. Your data never leaves your device. Complete privacy and security.",
-"Tip: Keep a backup of the original. Use WebP for web for the best quality-to-size ratio.",
+"Ücretsiz Görüntü Boyutlandırıcı — görüntü boyutlarını çevrimiçi değiştirin. Yükleyin, boyutları ayarlayın ve indirin. Her şey tarayıcınızda — sunucuya yükleme yok. JPG, PNG, WebP destekler.",
+"Tasarımcılar, web sitesi sahipleri ve pazarlamacılar için idealdir. Görüntü boyutlarını standartlaştırın ve site yükleme hızını artırın. Uygun boyutlandırılmış görüntüler UX ve SEO'yu geliştirir.",
+"En boy oranını koru seçeneği bozulmayı önler. Canvas destekli işleme kaliteyi sağlar. İndirmeden önce önizleyin.",
+"Tüm işlemler HTML Canvas kullanarak tarayıcınızda yerel olarak yapılır. Verileriniz cihazınızdan asla ayrılmaz. Tam gizlilik ve güvenlik.",
+"İpucu: Orijinalin yedeğini saklayın. En iyi kalite-boyut oranı için web için WebP kullanın.",
 ];
 export default function Client(){
 const[image,setImage]=useState<{url:string;file:File;width:number;height:number}|null>(null);
@@ -45,14 +45,14 @@ return(<div className="max-w-[760px] mx-auto">
       <StructuredData data={howToSchema("Bu araci nasil kullanirim", "Tarayicinizda calisan ucretsiz arac. Kayit gerektirmez.", [{name:"Araci acin",text:"Adwatak sitesinde bu arac sayfasina gidin"},{name:"Verilerinizi girin",text:"Gerekli alanlari doldurun"},{name:"Sonuc alin",text:"Hesapla veya olustur butonuna tiklayin"},{name:"Kullanin veya paylasin",text:"Sonucu kopyalayin, indirin veya paylasin"}],"bir dakikadan az","tr")} />
       {/* GEO: Speakable — AI/ses motorlari */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
-<Breadcrumb lang="en" category="Other Tools" categorySlug="image" toolName="Image Resizer"/>
+<Breadcrumb lang="tr" category="Diğer Araçlar" categorySlug="image" toolName="Görüntü Boyutlandırıcı"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-<h1 className="text-2xl font-extrabold mb-1">🖼️ Image Resizer</h1><p className="text-sm text-gray-500 mb-6">Change image dimensions — in your browser, no server upload</p>
+<h1 className="text-2xl font-extrabold mb-1">🖼️ Görüntü Boyutlandırıcı</h1><p className="text-sm text-gray-500 mb-6">Görüntü boyutlarını değiştirin — tarayıcınızda, sunucuya yükleme yok</p>
 <input type="file" accept="image/*" onChange={handleImage} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 mb-4" />
-{image&&(<><div className="flex gap-4 mb-4"><div className="flex-1"><label className="text-xs text-gray-500 block mb-1">Width (px)</label><input type="number" value={w} onChange={(e)=>onW(Number(e.target.value))} className="w-full p-2 border-2 border-gray-200 rounded-xl text-sm outline-none" min={1}/></div><div className="flex-1"><label className="text-xs text-gray-500 block mb-1">Height (px)</label><input type="number" value={h} onChange={(e)=>onH(Number(e.target.value))} className="w-full p-2 border-2 border-gray-200 rounded-xl text-sm outline-none" min={1}/></div></div>
-<label className="flex items-center gap-2 text-sm text-gray-600 mb-4"><input type="checkbox" checked={keepRatio} onChange={(e)=>setKeepRatio(e.target.checked)}/>Keep aspect ratio</label>
-<div className="flex gap-3 mb-4"><select value={format} onChange={(e)=>setFormat(e.target.value)} className="p-2 border-2 border-gray-200 rounded-xl text-sm outline-none"><option value="png">PNG</option><option value="jpg">JPG</option><option value="webp">WebP</option></select><button onClick={resize} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-xl transition-all">Resize</button></div>
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-4"><div><p className="text-xs text-gray-500 mb-2">Original: {image.width}×{image.height}</p><img src={image.url} alt="Original" className="w-full rounded-xl border border-gray-200"/></div>
-{resultUrl&&(<div><p className="text-xs text-gray-500 mb-2">Result: {w}×{h}</p><img src={resultUrl} alt="Resized" className="w-full rounded-xl border border-green-200"/><a href={resultUrl} download={`resized.${format}`} className="mt-2 inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl text-sm transition-all">📥 Download</a></div>)}</div></>)}
+{image&&(<><div className="flex gap-4 mb-4"><div className="flex-1"><label className="text-xs text-gray-500 block mb-1">Genişlik (px)</label><input type="number" value={w} onChange={(e)=>onW(Number(e.target.value))} className="w-full p-2 border-2 border-gray-200 rounded-xl text-sm outline-none" min={1}/></div><div className="flex-1"><label className="text-xs text-gray-500 block mb-1">Yükseklik (px)</label><input type="number" value={h} onChange={(e)=>onH(Number(e.target.value))} className="w-full p-2 border-2 border-gray-200 rounded-xl text-sm outline-none" min={1}/></div></div>
+<label className="flex items-center gap-2 text-sm text-gray-600 mb-4"><input type="checkbox" checked={keepRatio} onChange={(e)=>setKeepRatio(e.target.checked)}/>En boy oranını koru</label>
+<div className="flex gap-3 mb-4"><select value={format} onChange={(e)=>setFormat(e.target.value)} className="p-2 border-2 border-gray-200 rounded-xl text-sm outline-none"><option value="png">PNG</option><option value="jpg">JPG</option><option value="webp">WebP</option></select><button onClick={resize} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-xl transition-all">Boyutlandır</button></div>
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4"><div><p className="text-xs text-gray-500 mb-2">Orijinal: {image.width}×{image.height}</p><img src={image.url} alt="Orijinal" className="w-full rounded-xl border border-gray-200"/></div>
+{resultUrl&&(<div><p className="text-xs text-gray-500 mb-2">Sonuç: {w}×{h}</p><img src={resultUrl} alt="Boyutlandırılmış" className="w-full rounded-xl border border-green-200"/><a href={resultUrl} download={`resized.${format}`} className="mt-2 inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl text-sm transition-all">📥 İndir</a></div>)}</div></>)}
 <canvas ref={canvasRef} className="hidden"/></div>
-<SEOContent content={seoContent} lang="en"/><FAQSection faqs={faqs} lang="en"/><RelatedTools tools={relatedTools} lang="en"/><ShareButtons lang="en"/></div>);}
+<SEOContent content={seoContent} lang="tr"/><FAQSection faqs={faqs} lang="tr"/><RelatedTools tools={relatedTools} lang="tr"/><ShareButtons lang="tr"/></div>);}

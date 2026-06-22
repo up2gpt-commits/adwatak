@@ -341,7 +341,7 @@ export default function Client() {
         )}
       </div>
 
-      <SEOContent content={seoContent} lang="en" />
+      <SEOContent content={seoContent} lang="tr" />
       <FAQSection faqs={faqs} lang="en" />
       <RelatedTools tools={relatedTools} lang="tr" />
       <ShareButtons lang="tr" />

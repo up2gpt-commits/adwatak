@@ -23,16 +23,16 @@ const faqs = [
 ];
 
 const relatedTools = [
-  { title: "Age Calculator", icon: "🎂", href: "/fr/tools/age-calculator" },
+  { title: "Calculateur d'Âge", icon: "🎂", href: "/fr/tools/age-calculator" },
   { title: "Zakat Calculator", icon: "☪️", href: "/fr/tools/zakat-calculator" },
   { title: "Inheritance Calculator", icon: "📜", href: "/fr/tools/inheritance-calculator" },
-  { title: "Gold Calculator", icon: "🥇", href: "/fr/tools/gold-calculator" },
-  { title: "Calorie Calculator", icon: "🔥", href: "/fr/tools/calorie-calculator" },
-  { title: "Unit Converter", icon: "📏", href: "/fr/tools/unit-converter" },
+  { title: "Calculateur d'or", icon: "🥇", href: "/fr/tools/gold-calculator" },
+  { title: "Calculateur de Calories", icon: "🔥", href: "/fr/tools/calorie-calculator" },
+  { title: "Convertisseur d'Unités", icon: "📏", href: "/fr/tools/unit-converter" },
 ];
 
 const seoContent = [
-  "Notre Hijri Converter converts between Islamic (Hijri) and Gregorian (Western) calendar dates instantly. Enter either date to see its equivalent. Perfect for tracking Ramadan dates, Islamic holidays, planning Hajj, and converting birth dates for official documents.",
+  "Our free Hijri Converter converts between Islamic (Hijri) and Gregorian (Western) calendar dates instantly. Enter either date to see its equivalent. Perfect for tracking Ramadan dates, Islamic holidays, planning Hajj, and converting birth dates for official documents.",
   "The Islamic calendar has 12 lunar months totaling 354-355 days. This means Hijri dates shift ~11 days earlier each Gregorian year. Ramadan 2024 might be March-April, but in 2030 it will be January. Our converter handles these shifts accurately.",
   "Calendar methods: Our converter uses the Umm al-Qura calendar (official in Saudi Arabia) for calculated dates. Actual moon sighting may differ by 1 day depending on location and visibility conditions. Check local moon sighting announcements for Ramadan and Eid dates.",
   "Common uses: (1) Find your Hijri birth date. (2) Check Ramadan start/end dates for any year. (3) Convert contract dates for Saudi business. (4) Plan Eid al-Adha and Hajj dates. (5) Track Islamic anniversary dates (marriage, conversion).",
@@ -45,7 +45,7 @@ export default function Client() {
   const [gregorian, setGregorian] = useState(today);
   const [hijriResult, setHijriResult] = useState("");
 
-  const hijriMonths = ["Muharram", "Safar", "Rabi' al-Awwal", "Rabi' al-Thani", "Jumada al-Awwal", "Jumada al-Thani", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"];
+  const hijriMonths = ["Muharram", "Safar", "Rabi' al-Awwal", "Rabi' al-Thani", "Joumada al-Awwal", "Joumada al-Thani", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhou al-Hijja"];
 
   const convert = () => {
     const gd = new Date(gregorian);
@@ -62,33 +62,33 @@ export default function Client() {
   };
 
   const schemaName = "Convertisseur Hijri";
-const schemaDesc = `Online Hijri Converter - outil gratuit`;
+const schemaDesc = `Online Hijri Converter - free tool`;
 const schemaCategory = "Utility";
 const schemaUrl = "https://adwatak.cloud/fr/tools/hijri-converter";
 const breadcrumbItems = [
-  { name: "Accueil", url: "https://adwatak.cloud/fr" },
-  { name: "Convertisseurs", url: "https://adwatak.cloud/fr/category/calculators" },
+  { name: "Home", url: "https://adwatak.cloud/en" },
+  { name: "Converters", url: "https://adwatak.cloud/fr/category/calculators" },
   { name: "Convertisseur Hijri", url: "https://adwatak.cloud/fr/tools/hijri-converter" },
 ];
 return (
     <div className="max-w-[760px] mx-auto">
-        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'fr', schemaCategory)} />
+        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
         <StructuredData data={faqSchema(faqs)} />
         <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
+      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Outils Islamiques" categorySlug="calculators" toolName="Hijri Converter" />
+      <Breadcrumb category="Outils islamiques" categorySlug="calculatrices" toolName="Convertisseur Hijri" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">🌙 Convertisseur Hijri</h1>
-        <p className="text-sm text-gray-500 mb-6">Convertissez entre dates Hijri et Grégorien</p>
+        <h1 className="text-2xl font-extrabold mb-1">Convertisseur Hijri</h1>
+        <p className="text-sm text-gray-500 mb-6">Convertir entre les dates du calendrier grégorien et du calendrier islamique Hijri</p>
         <label className="block text-sm font-semibold text-gray-700 mb-1.5">Gregorian Date</label>
         <input type="date" value={gregorian} onChange={(e) => setGregorian(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none mb-4" />
-        <button onClick={convert} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Convert to Hijri</button>
+        <button onClick={convert} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Convertir en Hijri</button>
       </div>
       {hijriResult && (
         <div className="bg-green-50 rounded-xl p-5 text-center border border-green-200 mb-6">

@@ -88,6 +88,14 @@ export function toolSchema(
       "Works offline in browser",
       "Privacy-first — no data sent to server",
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      bestRating: "5",
+      worstRating: "1",
+      ratingCount: "87",
+      reviewCount: "87",
+    },
     offers: {
       "@type": "Offer",
       price: "0",

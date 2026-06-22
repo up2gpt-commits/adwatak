@@ -16,7 +16,7 @@ const faqs = [
   { question: "What's a healthy profit margin for a startup?", answer: "For SaaS startups, 20-40% net margin at scale is excellent. Early stage: focus on 60-80% gross margins (common for SaaS). If gross margin is below 50%, your pricing model or cost structure needs serious review before scaling." },
   { question: "How do I calculate break-even point?", answer: "Break-Even = Fixed Costs ÷ Contribution Margin per Unit. Contribution Margin = Price - Variable Cost per Unit. Example: fixed costs $10,000, price $100, variable cost $60 → CM = $40 → BE = 250 units. Every sale after 250 = pure profit." },
   { question: "What's the difference between gross margin and contribution margin?", answer: "Gross margin = (Revenue - COGS) ÷ Revenue. Contribution margin = (Revenue - Variable Costs) ÷ Revenue. COGS is just the product cost. Contribution margin includes ALL variable costs (product + commissions + packaging + shipping). Contribution margin is more useful for pricing decisions." },
-  { question: "Is a 50% profit margin good?", answer: "50% gross margin is excellent in most industries. But remember: from that 50%, you deduct rent 10%, salaries 15%, marketing 5%, utilities 2% → net profit ≈ 18% only. Gross margin is NOT net profit. Always think in terms of net margin for business health." },
+  { question: "Une marge bénéficiaire de 50 % est-elle bonne ?", answer: "50% gross margin is excellent in most industries. But remember: from that 50%, you deduct rent 10%, salaries 15%, marketing 5%, utilities 2% → net profit ≈ 18% only. Gross margin is NOT net profit. Always think in terms of net margin for business health." },
   { question: "How can I improve my profit margin?", answer: "1) Negotiate with suppliers for lower costs. 2) Raise prices gradually. 3) Reduce inventory waste. 4) Sell higher-margin products alongside low-margin ones. 5) Bundle products instead of individual discounts. 6) Automate processes to cut operational costs. 7) Focus on repeat customers — they cost less to acquire." },
   { question: "Can profit margin be over 100%?", answer: "Profit margin (margin %) can NEVER exceed 100% because it's profit ÷ price. Profit can't be larger than the price. However, markup CAN exceed 100%. Example: cost $10, price $100 → margin = 90%, markup = 900%. Don't confuse the two!" },
   { question: "What's a good profit margin for e-commerce?", answer: "E-commerce averages 10-20% net margin. Top performers hit 25-40%. The challenge: ads (10-30% of revenue), shipping (5-15%), returns (5-20%), payment processing (2-3%). To net 15%, you need at least 45% gross margin. Use this calculator to work backwards from your desired net margin." },
@@ -24,11 +24,11 @@ const faqs = [
 
 const relatedTools = [
   { title: "VAT Calculator", icon: "🏛️", href: "/fr/tools/vat-calculator" },
-  { title: "Loan Calculator", icon: "💰", href: "/fr/tools/loan-calculator" },
-  { title: "Currency Converter", icon: "💱", href: "/fr/tools/currency-converter" },
+  { title: "Calculateur de prêt", icon: "💰", href: "/fr/tools/loan-calculator" },
+  { title: "Convertisseur de Devises", icon: "💱", href: "/fr/tools/currency-converter" },
   { title: "Salary Calculator", icon: "💵", href: "/fr/tools/salary-calculator" },
-  { title: "Compound Interest", icon: "📊", href: "/fr/tools/compound-interest" },
-  { title: "Invoice Generator", icon: "🧾", href: "/fr/tools/invoice-generator" },
+  { title: "Intérêts Composés", icon: "📊", href: "/fr/tools/compound-interest" },
+  { title: "Générateur de Factures", icon: "🧾", href: "/fr/tools/invoice-generator" },
 ];
 
 const seoContent = [
@@ -106,17 +106,17 @@ export default function Client() {
       <StructuredData data={breadcrumbSchema([{ name: "Accueil", url: "https://adwatak.cloud/fr" }, { name: "Calculateurs Financiers", url: "https://adwatak.cloud/fr/category/calculators" }, { name: "Marge Bénéficiaire", url: "https://adwatak.cloud/fr/tools/profit-margin" }])} />
       <StructuredData data={howToSchema("How to use the Profit Margin Calculator", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{ name: "Ouvrir l'outil", text: "Navigate to the Profit Margin Calculator on Adwatak" }, { name: "Entrez vos données", text: "Fill in cost, price, or desired margin (any 2 values)" }, { name: "Click Calculate", text: "Press the calculate button to get results instantly" }, { name: "Save scenarios", text: "Compare multiple products using the Scenario feature" }], "moins d'une minute", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <Breadcrumb lang="fr" category="Calculateurs Financiers" categorySlug="calculators" toolName="Profit Margin Calculator" />
+      <Breadcrumb lang="fr" category="Calculateurs Financiers" categorySlug="calculatrices" toolName="Calculateur de marge bénéficiaire" />
 
       {/* Main Calculator Card */}
       <div className={cardStyle}>
-        <h1 className="text-2xl font-extrabold mb-1">📈 Profit Margin Calculator</h1>
+        <h1 className="text-2xl font-extrabold mb-1">📈 Calculateur de Marge Bénéficiaire</h1>
         <p className="text-sm text-gray-500 mb-6">Calculez la marge bénéficiaire, le coût et le prix de vente</p>
 
         {[
-          { label: "Cost ($)", value: cost, set: setCost, placeholder: "60", step: "any" },
-          { label: "Selling Price ($) — optional", value: price, set: setPrice, placeholder: "100", step: "any" },
-          { label: "Desired Margin (%) — optional", value: margin, set: setMargin, placeholder: "40", step: "any" },
+          { label: "Coût ($)", value: cost, set: setCost, placeholder: "60", step: "any" },
+          { label: "Prix de Vente ($) — optionnel", value: price, set: setPrice, placeholder: "100", step: "any" },
+          { label: "Marge Souhaitée (%) — optionnel", value: margin, set: setMargin, placeholder: "40", step: "any" },
         ].map((f, i) => (
           <div key={i} className="mb-4">
             <label className={labelStyle}>{f.label}</label>

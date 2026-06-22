@@ -14,7 +14,7 @@ const CURRENCY_SYMBOLS: Record<Currency, string> = {
 };
 
 const CURRENCY_LABELS: Record<Currency, string> = {
-  USD: "US Dollar", SAR: "Saudi Riyal", EUR: "Euro", GBP: "British Pound", TRY: "Turkish Lira", IDR: "Indonesian Rupiah", PKR: "Pakistani Rupee", EGP: "Egyptian Pound",
+  USD: "US Dollar", SAR: "Saudi Riyal", EUR: "Euro", GBP: "Livre sterling", TRY: "Turkish Lira", IDR: "Indonesian Rupiah", PKR: "Pakistani Rupee", EGP: "Livre égyptienne",
 };
 
 interface CostItem {
@@ -32,20 +32,20 @@ interface UmrahCosts {
 
 const UMRAH_RITUALS = [
   { step: 1, title: "Ihram", description: "Enter the state of Ihram at the Miqat — pray two raka'at and say: Labbayk Allahumma Umrah (Here I am, O Allah, for Umrah)" },
-  { step: 2, title: "Tawaf", description: "Circumambulate the Kaaba seven times — start from the Black Stone and end at it" },
+  { step: 2, title: "Tawaf", description: "Faites sept tours autour de la Kaaba — commencez à la Pierre Noire et terminez-y" },
   { step: 3, title: "Pray 2 Raka'at behind Maqam Ibrahim", description: "After Tawaf, pray two raka'at behind Maqam Ibrahim if possible, otherwise anywhere in the Haram" },
-  { step: 4, title: "Sa'i between Safa and Marwah", description: "Walk seven times between the hills of Safa and Marwah — start at Safa and end at Marwah" },
-  { step: 5, title: "Halq or Taqsir", description: "Shave or trim your hair — this completes your Umrah and you exit the state of Ihram" },
+  { step: 4, title: "Sa'i between Safa and Marwah", description: "Marchez sept fois entre les collines de Safa et Marwah — commencez à Safa et terminez à Marwah" },
+  { step: 5, title: "Halq ou Taqsir", description: "Rasez-vous ou coupez-vous les cheveux — cela complète votre Omra et vous sortez de l'état d'Ihram" },
 ];
 
 export default function Client() {
   const [currency, setCurrency] = useState<Currency>("USD");
   const [costs, setCosts] = useState<UmrahCosts>({
-    visa: [{ label: "Umrah Visa", amount: 0 }],
-    flight: [{ label: "Flight Ticket", amount: 0 }],
-    accommodation: [{ label: "Hotel in Makkah", amount: 0 }, { label: "Hotel in Madinah", amount: 0 }],
-    transport: [{ label: "Local Transport", amount: 0 }],
-    expenses: [{ label: "Daily Expenses", amount: 0 }],
+    visa: [{ label: "Visa Omra", amount: 0 }],
+    flight: [{ label: "Billet d'Avion", amount: 0 }],
+    accommodation: [{ label: "Hôtel à La Mecque", amount: 0 }, { label: "Hôtel à Médine", amount: 0 }],
+    transport: [{ label: "Transport Local", amount: 0 }],
+    expenses: [{ label: "Dépenses Quotidiennes", amount: 0 }],
   });
   const [travelers, setTravelers] = useState(1);
   const [nights, setNights] = useState(10);
@@ -64,7 +64,7 @@ export default function Client() {
   const addCostItem = (category: keyof UmrahCosts) => {
     setCosts(prev => ({
       ...prev,
-      [category]: [...prev[category], { label: "New Item", amount: 0 }],
+      [category]: [...prev[category], { label: "Nouvel Élément", amount: 0 }],
     }));
   };
 
@@ -107,18 +107,18 @@ export default function Client() {
     <div className="max-w-[760px] mx-auto">
       <StructuredData data={toolSchema("Umrah Calculator", "Calculez les coûts de la Omra with step-by-step Umrah guide", "https://adwatak.cloud/fr/tools/umrah-calculator", "fr", "Islamic")} />
       <StructuredData data={faqSchema([
-        { question: "How much does Umrah cost in 2026?", answer: "Costs vary by country, duration, and hotel level. Rough estimates: from USA $2,500-$5,000, from UK £2,000-£4,000, from Turkey $1,500-$3,000, from Indonesia $1,500-$3,500. Use this calculator for a personalized estimate." },
-        { question: "Does the calculator include visa costs?", answer: "Yes, the Umrah calculator covers visas, flights, accommodation, transport, and daily expenses — every item is customizable." },
-        { question: "What are the rituals of Umrah?", answer: "Ihram → Tawaf around the Kaaba → Pray 2 raka'at behind Maqam Ibrahim → Sa'i between Safa and Marwah → Halq (shave) or Taqsir (trim)." },
-        { question: "How many days do I need for Umrah?", answer: "Minimum 1 day for rituals alone, but 7-14 days is recommended to also visit Madinah." },
-        { question: "Can I calculate costs for multiple travelers?", answer: "Yes! Enter the number of travelers and it will calculate total cost and per-person cost automatically." },
-        { question: "What's the difference between Umrah and Hajj?", answer: "Umrah can be performed any time and is not obligatory. Hajj is in specific months and is one of the five pillars of Islam." },
-        { question: "Is this calculator free?", answer: "Yes, the Umrah calculator is completely free and runs in your browser — no data is sent to any server." },
-        { question: "When is the best time for Umrah?", answer: "Ramadan is the best time (Umrah in Ramadan equals Hajj in reward). Avoid Hajj season if you want lower prices." },
-        { question: "Do I need a Mahram for Umrah?", answer: "According to most scholars, a woman needs a Mahram (husband or male guardian). Some countries allow women over 45 to travel without a Mahram." },
-        { question: "What documents are required?", answer: "Valid passport (6+ months), Umrah visa, round-trip flight ticket, required vaccinations (per health regulations)." },
-        { question: "Can I visit Madinah with Umrah?", answer: "Yes, it is recommended to visit Madinah and the Prophet's Mosque before or after performing Umrah." },
-        { question: "How do I know my Miqat?", answer: "There are five Miqat locations: Dhul-Hulayfah (for Madinah), Al-Juhfah (for Egypt/Sham), Yalamlam (for Yemen), Qarn al-Manazil (for Najd), and Dhat Irq (for Iraq). Ask your travel agent." },
+        { question: "Combien coûte la Omra en 2026 ?", answer: "Les coûts varient selon le pays, la durée et le niveau de l'hôtel. Estimations approximatives : depuis les États-Unis 2 500 $ - 5 000 $, depuis le Royaume-Uni 2 000 £ - 4 000 £, depuis la Turquie 1 500 $ - 3 000 $, depuis l'Indonésie 1 500 $ - 3 500 $. Utilisez ce calculateur pour une estimation personnalisée." },
+        { question: "Le calculateur inclut-il les frais de visa ?", answer: "Yes, the Umrah calculator covers visas, flights, accommodation, transport, and daily expenses — every item is customizable." },
+        { question: "Quels sont les rituels de la Omra ?", answer: "Ihram → Tawaf around the Kaaba → Pray 2 raka'at behind Maqam Ibrahim → Sa'i between Safa and Marwah → Halq (shave) or Taqsir (trim)." },
+        { question: "Combien de jours ai-je besoin pour la Omra ?", answer: "Minimum 1 jour pour les rituels seuls, mais 7 à 14 jours sont recommandés pour visiter également Médine." },
+        { question: "Puis-je calculer les coûts pour plusieurs voyageurs ?", answer: "Yes! Enter the number of travelers and it will calculate total cost and per-person cost automatically." },
+        { question: "What's the difference between Umrah and Hajj?", answer: "La Omra peut être accomplie à tout moment et n'est pas obligatoire. Le Hajj a lieu pendant des mois spécifiques et est l'un des cinq piliers de l'Islam." },
+        { question: "Ce calculateur est-il gratuit ?", answer: "Yes, the Umrah calculator is completely free and runs in your browser — no data is sent to any server." },
+        { question: "When is the best time for Umrah?", answer: "Le Ramadan est le meilleur moment (la Omra pendant le Ramadan équivaut au Hajj en récompense). Évitez la saison du Hajj si vous voulez des prix plus bas." },
+        { question: "Ai-je besoin d'un Mahram pour la Omra ?", answer: "Selon la plupart des savants, une femme a besoin d'un Mahram (mari ou tuteur masculin). Certains pays autorisent les femmes de plus de 45 ans à voyager sans Mahram." },
+        { question: "Quels documents sont requis ?", answer: "Passeport valide (6+ mois), visa Omra, billet d'avion aller-retour, vaccinations requises (selon les réglementations sanitaires)." },
+        { question: "Puis-je visiter Médine avec la Omra ?", answer: "Yes, it is recommended to visit Madinah and the Prophet's Mosque before or after performing Umrah." },
+        { question: "Comment connaître mon Miqat ?", answer: "Il y a cinq emplacements de Miqat : Dhul-Hulayfah (pour Médine), Al-Juhfah (pour l'Égypte/Sham), Yalamlam (pour le Yémen), Qarn al-Manazil (pour le Najd) et Dhat Irq (pour l'Irak). Demandez à votre agent de voyage." },
       ])} />
       <StructuredData data={breadcrumbSchema([
         { name: "Accueil", url: "https://adwatak.cloud/fr" },
@@ -126,10 +126,10 @@ export default function Client() {
         { name: "Calculateur Omra", url: "https://adwatak.cloud/fr/tools/umrah-calculator" },
       ])} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name: "Select currency", text: "Choose your preferred currency"}, {name: "Enter costs", text: "Fill in each cost category — visa, flight, hotel, transport, expenses"}, {name: "Set travelers", text: "Enter the number of travelers"}, {name: "Calculate", text: "Click the calculate button to see total and per-person costs"}], "less than 2 minutes", "fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name: "Select currency", text: "Choose your preferred currency"}, {name: "Enter costs", text: "Remplissez chaque catégorie de coût — visa, vol, hôtel, transport, dépenses"}, {name: "Set travelers", text: "Enter the number of travelers"}, {name: "Calculate", text: "Cliquez sur le bouton calculer pour voir les coûts totaux et par personne"}], "less than 2 minutes", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
 
-      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Umrah Calculator" />
+      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Calculateur d'Omra" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🕋 Calculateur Omra</h1>
@@ -227,29 +227,29 @@ export default function Client() {
       </div>
 
       <SEOContent content={[
-        "Umrah Calculator — Calculate total Umrah cost: visa, flight ticket, hotel in Makkah & Madinah, local transport, and daily expenses.",
-        "Supports 8 currencies: USD, SAR, EUR, GBP, TRY, IDR, PKR, EGP.",
-        "Calculate costs for multiple travelers with per-person and per-night breakdowns.",
+        "Calculateur de Omra — Calculez le coût total de la Omra : visa, billet d'avion, hôtel à La Mecque et Médine, transport local et dépenses quotidiennes.",
+        "Prend en charge 8 devises : USD, SAR, EUR, GBP, TRY, IDR, PKR, EGP.",
+        "Calculez les coûts pour plusieurs voyageurs avec des répartitions par personne et par nuit.",
         "Step-by-step Umrah rituals guide: Ihram, Tawaf, Prayer, Sa'i, Halq.",
         "100% free, runs in your browser — no data sent to any server.",
       ]} lang="fr" />
       <FAQSection faqs={[
-        { question: "How much does Umrah cost in 2026?", answer: "Costs vary by country, duration, and hotel level. Rough estimates: from USA $2,500-$5,000, from UK £2,000-£4,000, from Turkey $1,500-$3,000, from Indonesia $1,500-$3,500." },
-        { question: "What are the rituals of Umrah?", answer: "Ihram → Tawaf around the Kaaba → Pray 2 raka'at behind Maqam Ibrahim → Sa'i between Safa and Marwah → Halq (shave) or Taqsir (trim)." },
-        { question: "How many days do I need for Umrah?", answer: "Minimum 1 day for rituals alone, but 7-14 days is recommended to also visit Madinah." },
-        { question: "Can I calculate costs for multiple travelers?", answer: "Yes! Enter the number of travelers and it will calculate total cost and per-person cost automatically." },
-        { question: "What's the difference between Umrah and Hajj?", answer: "Umrah can be performed any time and is not obligatory. Hajj is in specific months and is one of the five pillars of Islam." },
-        { question: "Is this calculator free?", answer: "Yes, the Umrah calculator is completely free and runs in your browser." },
-        { question: "When is the best time for Umrah?", answer: "Ramadan is the best time (Umrah in Ramadan equals Hajj in reward). Avoid Hajj season for lower prices." },
-        { question: "Do I need a Mahram for Umrah?", answer: "According to most scholars, a woman needs a Mahram (husband or male guardian)." },
-        { question: "What documents are required?", answer: "Valid passport (6+ months), Umrah visa, round-trip flight ticket, required vaccinations." },
-        { question: "Can I visit Madinah with Umrah?", answer: "Yes, it is recommended to visit Madinah and the Prophet's Mosque before or after Umrah." },
+        { question: "Combien coûte la Omra en 2026 ?", answer: "Les coûts varient selon le pays, la durée et le niveau de l'hôtel. Estimations approximatives : depuis les États-Unis 2 500 $ - 5 000 $, depuis le Royaume-Uni 2 000 £ - 4 000 £, depuis la Turquie 1 500 $ - 3 000 $, depuis l'Indonésie 1 500 $ - 3 500 $." },
+        { question: "Quels sont les rituels de la Omra ?", answer: "Ihram → Tawaf around the Kaaba → Pray 2 raka'at behind Maqam Ibrahim → Sa'i between Safa and Marwah → Halq (shave) or Taqsir (trim)." },
+        { question: "Combien de jours ai-je besoin pour la Omra ?", answer: "Minimum 1 jour pour les rituels seuls, mais 7 à 14 jours sont recommandés pour visiter également Médine." },
+        { question: "Puis-je calculer les coûts pour plusieurs voyageurs ?", answer: "Yes! Enter the number of travelers and it will calculate total cost and per-person cost automatically." },
+        { question: "What's the difference between Umrah and Hajj?", answer: "La Omra peut être accomplie à tout moment et n'est pas obligatoire. Le Hajj a lieu pendant des mois spécifiques et est l'un des cinq piliers de l'Islam." },
+        { question: "Ce calculateur est-il gratuit ?", answer: "Yes, the Umrah calculator is completely free and runs in your browser." },
+        { question: "When is the best time for Umrah?", answer: "Le Ramadan est le meilleur moment (la Omra pendant le Ramadan équivaut au Hajj en récompense). Évitez la saison du Hajj pour des prix plus bas." },
+        { question: "Ai-je besoin d'un Mahram pour la Omra ?", answer: "Selon la plupart des savants, une femme a besoin d'un Mahram (mari ou tuteur masculin)." },
+        { question: "Quels documents sont requis ?", answer: "Passeport valide (6+ mois), visa Omra, billet d'avion aller-retour, vaccinations requises." },
+        { question: "Puis-je visiter Médine avec la Omra ?", answer: "Yes, it is recommended to visit Madinah and the Prophet's Mosque before or after Umrah." },
       ]} lang="fr" />
       <RelatedTools tools={[
         { title: "Zakat Calculator", icon: "🕌", href: "/fr/tools/zakat-calculator" },
-        { title: "Qibla Direction", icon: "🧭", href: "/fr/tools/qibla-direction" },
-        { title: "Prayer Times", icon: "🕐", href: "/fr/tools/prayer-times" },
-        { title: "Tasbeeh Counter", icon: "📿", href: "/fr/tools/tasbeeh-counter" },
+        { title: "Direction de la Qibla", icon: "🧭", href: "/fr/tools/qibla-direction" },
+        { title: "Heures de Prière", icon: "🕐", href: "/fr/tools/prayer-times" },
+        { title: "Compteur Tasbih", icon: "📿", href: "/fr/tools/tasbeeh-counter" },
       ]} lang="fr" />
       <ShareButtons lang="fr" />
     </div>

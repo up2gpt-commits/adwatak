@@ -1,0 +1,51 @@
+{
+  "seoContent": [
+    "Our Qibla Direction Camera overlays a bright green arrow directly onto your live camera feed, so you simply raise your phone and see the exact path toward the Kaaba in Makkah. Unlike static maps, this augmented reality tool updates in real time as you rotate, making it effortless to align your prayer direction even in unfamiliar surroundings. Whether you are in a park or a hotel room, the visual guidance removes all guesswork.",
+    "For best results, hold your device at eye level and sweep slowly across the horizon. The tool combines GPS coordinates with your phone’s magnetometer, calculating the great-circle path to 21.4225° N, 39.8262° E. If you stand in London, the arrow points roughly 118° southeast; from New York, it aims around 58° northeast. These dynamic adjustments ensure you do not rely on flat-map approximations that can drift by 10 degrees or more.",
+    "Calibration takes only 15 seconds: move your phone in a wide figure-eight pattern until the on-screen prompt disappears. Repeat this every time you change cities or notice the arrow wobbling more than 2 degrees. Avoid standing within 3 feet of metal railings, vehicles, or reinforced concrete, as these can distort the magnetic field and shift your Qibla bearing by up to 15 degrees. Regular recalibration keeps your prayer direction precise.",
+    "Battery usage averages 6 to 8 percent per 15 minutes because the camera, GPS, and compass run simultaneously. To extend life, lower screen brightness to 40 percent and close background apps before opening the finder. If you are traveling without a charger, use the tool for 30 seconds to memorize the direction, then switch to a standard compass app that consumes half the power for prolonged use.",
+    "The camera Qibla finder works on 98 percent of smartphones released after 2018, including iPhone 8 and newer, plus Android 8.0+ devices with a gyroscope. No separate compass hardware is required. If your model lacks a magnetometer, the tool falls back to GPS-based directional estimation, though accuracy drops from ±2 degrees to roughly ±10 degrees. Always update to the latest browser version for smoothest AR performance."
+  ],
+  "faqs": [
+    {
+      "question": "How accurate is the camera qibla finder?",
+      "answer": "It is typically accurate within ±2 degrees when your device is properly calibrated and has a clear GPS signal. The tool calculates the great-circle path to the Kaaba using your exact latitude and longitude, which is far more precise than flat-map methods that can deviate by over 10 degrees in distant locations like North America or East Asia."
+    },
+    {
+      "question": "Does it work offline / without internet?",
+      "answer": "Once the page loads, the camera and compass functions work entirely offline because they rely on your phone’s built-in sensors. However, the initial load requires an internet connection, and GPS coordinates may be less accurate if you have not downloaded offline maps or if your device cannot lock onto satellites without data assistance."
+    },
+    {
+      "question": "How to calibrate the compass for accurate reading?",
+      "answer": "Move your phone in a wide figure-eight pattern for about 15 seconds until the calibration alert disappears. Repeat this process every time you travel to a new city or if the arrow starts drifting more than 2 degrees. Avoid calibrating near cars, metal fences, or large electronics."
+    },
+    {
+      "question": "Works on both Android and iPhone?",
+      "answer": "Yes, the tool supports iPhone 8 and newer running iOS 13+, as well as Android devices running version 8.0 or higher that include a gyroscope and magnetometer. Older phones may still work but will show a simplified directional estimate instead of the live AR overlay."
+    },
+    {
+      "question": "Does GPS need to be on?",
+      "answer": "Yes, GPS must be enabled so the tool can calculate the correct Qibla angle from your current coordinates. Without location services, it defaults to a generic direction based on your IP address, which can be off by 50 miles or more and produce an unreliable bearing."
+    },
+    {
+      "question": "What if the arrow keeps spinning or is unstable?",
+      "answer": "A spinning arrow usually means the magnetometer is detecting interference or needs calibration. Step at least 3 feet away from metal objects, perform the figure-eight motion, and hold the phone steady at eye level. If instability persists, restart the tool and ensure no magnetic phone accessories are attached."
+    },
+    {
+      "question": "Difference from regular compass apps?",
+      "answer": "Standard compass apps show north, south, east, and west, forcing you to manually calculate the Qibla offset. Our camera tool overlays a green arrow directly on your live video feed, dynamically pointing toward Makkah using both GPS and compass data, so you see the exact direction without mental math."
+    },
+    {
+      "question": "Does magnetic declination affect accuracy?",
+      "answer": "The tool automatically accounts for magnetic declination based on your GPS coordinates, converting magnetic north to true north before calculating the Qibla. This correction is essential in locations like eastern Canada or northern Europe, where declination can exceed 15 degrees and cause significant error if ignored."
+    },
+    {
+      "question": "Battery consumption?",
+      "answer": "Expect roughly 6 to 8 percent battery drain per 15 minutes because the camera, GPS, and AR engine run together. Reduce brightness to 40 percent and close background apps to save power. For extended use, note the direction and switch to a basic compass app that uses half the energy."
+    },
+    {
+      "question": "Can I use it indoors near metal objects?",
+      "answer": "You can use it indoors near windows, but metal objects such as steel beams, elevators, or reinforced walls within 3 feet can distort the compass and shift the arrow by up to 15 degrees. For best results, stand near an open window or step outside to get a clear magnetic reading."
+    }
+  ]
+}

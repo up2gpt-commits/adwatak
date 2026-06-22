@@ -8,30 +8,30 @@ import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 
 const faqs = [
-  { question: "What is Image to Text OCR?", answer: "Image to Text OCR extracts text from any image — books, documents, signs, screenshots. Uses advanced AI (Gemma 4 Vision) for highly accurate text extraction supporting Arabic and English." },
-  { question: "Is it free?", answer: "Yes, 100% free. No registration, no usage limits, no ads." },
-  { question: "Do you upload my images to a server?", answer: "Yes, images are sent to our server for AI processing and deleted immediately. We do not store any images." },
-  { question: "How accurate is the AI OCR?", answer: "Very high! We use Google DeepMind's Gemma 4 Vision AI — much more accurate than traditional Tesseract OCR engines. Supports Arabic, English, and mixed languages." },
-  { question: "What image formats are supported?", answer: "All common formats: JPG, PNG, WEBP, BMP, GIF." },
-  { question: "Does it work on mobile?", answer: "Yes, fully responsive on all devices." },
-  { question: "Does it support Arabic and English together?", answer: "Yes, it handles Arabic, English, and mixed text in the same image perfectly." },
-  { question: "What if results aren't accurate?", answer: "Use a higher quality image with clearer text. The AI performs best with well-lit, high-resolution images." },
-  { question: "Can I use it commercially?", answer: "Yes, results are free for personal and commercial use." },
-  { question: "Is it updated?", answer: "Yes, powered by Google DeepMind's latest Gemma 4 Vision model." },
+  { question: "Qu'est-ce que l'OCR Image vers Texte ?", answer: "L'OCR Image vers Texte extrait du texte de n'importe quelle image — livres, documents, panneaux, captures d'écran. Utilise une IA avancée (Gemma 4 Vision) pour une extraction de texte très précise prenant en charge l'arabe et l'anglais." },
+  { question: "Est-ce gratuit ?", answer: "Oui, 100% gratuit. Pas d'inscription, pas de limites d'utilisation, pas de publicités." },
+  { question: "Téléchargez-vous mes images sur un serveur ?", answer: "Oui, les images sont envoyées à notre serveur pour le traitement IA et supprimées immédiatement. Nous ne stockons aucune image." },
+  { question: "Quelle est la précision de l'OCR IA ?", answer: "Very high! We use Google DeepMind's Gemma 4 Vision AI — much more accurate than traditional Tesseract OCR engines. Supports Arabic, English, and mixed languages." },
+  { question: "Quels formats d'image sont pris en charge ?", answer: "Tous les formats courants : JPG, PNG, WEBP, BMP, GIF." },
+  { question: "Fonctionne-t-il sur mobile ?", answer: "Oui, entièrement responsive sur tous les appareils." },
+  { question: "Prend-il en charge l'arabe et l'anglais ensemble ?", answer: "Oui, il gère parfaitement l'arabe, l'anglais et le texte mixte dans la même image." },
+  { question: "What if results aren't accurate?", answer: "Utilisez une image de meilleure qualité avec un texte plus clair. L'IA fonctionne mieux avec des images bien éclairées et haute résolution." },
+  { question: "Puis-je l'utiliser commercialement ?", answer: "Oui, les résultats sont gratuits pour un usage personnel et commercial." },
+  { question: "Est-il mis à jour ?", answer: "Yes, powered by Google DeepMind's latest Gemma 4 Vision model." },
 ];
 
 const relatedTools = [
-  { title: "Image to PDF", icon: "🖼️", href: "/fr/tools/image-to-pdf" },
-  { title: "Remove Background", icon: "🖼️", href: "/fr/tools/background-remover" },
-  { title: "Image Compressor", icon: "📦", href: "/fr/tools/image-compressor" },
-  { title: "QR Reader", icon: "📷", href: "/fr/tools/qr-reader" },
+  { title: "Image en PDF", icon: "🖼️", href: "/fr/tools/image-to-pdf" },
+  { title: "Suppresseur d'Arrière-plan", icon: "🖼️", href: "/fr/tools/background-remover" },
+  { title: "Compresseur d'Images", icon: "📦", href: "/fr/tools/image-compressor" },
+  { title: "Lecteur de QR Code", icon: "📷", href: "/fr/tools/qr-reader" },
 ];
 
 const seoContent = [
-  "Free AI-powered Image to Text OCR — extract text from any image with high accuracy using Google DeepMind Gemma 4 Vision. Supports Arabic and English.",
-  "Perfect for students, lawyers, accountants, and journalists. More accurate than traditional Tesseract OCR.",
+  "OCR Image vers Texte gratuit alimenté par l'IA — extraire du texte de n'importe quelle image avec une haute précision en utilisant Google DeepMind Gemma 4 Vision. Prend en charge l'arabe et l'anglais.",
+  "Parfait pour les étudiants, les avocats, les comptables et les journalistes. Plus précis que l'OCR Tesseract traditionnel.",
   "Powered by Google DeepMind's Gemma 4 Vision AI model for state-of-the-art text extraction.",
-  "Your images are processed securely and deleted immediately — no storage.",
+  "Vos images sont traitées en toute sécurité et supprimées immédiatement — aucun stockage.",
 ];
 
 export default function Client() {
@@ -148,13 +148,13 @@ export default function Client() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("Image to Text OCR", "Extract text from images using AI OCR — Free, fast, accurate", "https://adwatak.cloud/fr/tools/image-to-text", "fr", "Tools")} />
+      <StructuredData data={toolSchema("Image to Text OCR", "Extraire du texte à partir d'images en utilisant l'OCR IA — Gratuit, rapide, précis", "https://adwatak.cloud/fr/tools/image-to-text", "fr", "Tools")} />
       <StructuredData data={faqSchema(faqs)} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Accéder à la page de cet outil sur Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
-      <Breadcrumb lang="fr" category="Autres" categorySlug="tools" toolName="Image to Text OCR" />
+      <Breadcrumb lang="fr" category="Autres" categorySlug="tools" toolName="Image vers texte OCR" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">👁️ Image to Text OCR</h1>
         <p className="text-sm text-gray-500 mb-6">Extrayez le texte des images par OCR</p>

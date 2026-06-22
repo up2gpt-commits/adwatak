@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Blog — Adawatak",
   description:
     "Educational articles and guides about financial calculators, Islamic tools, and digital tools. Learn how to make the most of our free online tools.",
+  alternates: {
+    canonical: "https://adwatak.cloud/en/blog",
+  },
 };
 
 /** Content clusters for topical authority & AI engine recognition */

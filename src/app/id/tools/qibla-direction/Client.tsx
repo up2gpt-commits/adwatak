@@ -319,7 +319,7 @@ export default function Client() {
                 <p className="text-sm font-bold text-red-800">📍 Kiblat {relDir} — arahkan perangkat Anda ke depan dan ikuti panah merah</p>
               </div>
             )}
-            <button onClick={reset} className="mt-6 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl transition-colors">🔄 Cari lokasi lain</button>
+            <button onClick={reset} className="mt-6 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl transition-colors">Cari lokasi lain</button>
           </div>
         )}
 
@@ -388,7 +388,7 @@ export default function Client() {
         {mode === "error" && (
           <div className="text-center py-6">
             <p className="text-red-600 font-semibold mb-4">⚠️ {errorMsg}</p>
-            <button onClick={reset} className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl transition-colors">🔄 Coba Lagi</button>
+            <button onClick={reset} className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl transition-colors">Coba Lagi</button>
           </div>
         )}
       </div>

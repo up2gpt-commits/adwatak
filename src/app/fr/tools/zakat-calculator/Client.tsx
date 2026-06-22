@@ -25,12 +25,12 @@ const faqs = [
 ];
 
 const relatedTools = [
-  { title: "Gold Calculator", icon: "🥇", href: "/fr/tools/gold-calculator" },
+  { title: "Calculateur d'or", icon: "🥇", href: "/fr/tools/gold-calculator" },
   { title: "Inheritance Calculator", icon: "📜", href: "/fr/tools/inheritance-calculator" },
-  { title: "Hijri Converter", icon: "🌙", href: "/fr/tools/hijri-converter" },
-  { title: "Prayer Times", icon: "🕌", href: "/fr/tools/prayer-times" },
-  { title: "Compound Interest", icon: "📈", href: "/fr/tools/compound-interest" },
-  { title: "Profit Margin", icon: "📐", href: "/fr/tools/profit-margin" },
+  { title: "Convertisseur Hijri", icon: "🌙", href: "/fr/tools/hijri-converter" },
+  { title: "Heures de Prière", icon: "🕌", href: "/fr/tools/prayer-times" },
+  { title: "Intérêts Composés", icon: "📈", href: "/fr/tools/compound-interest" },
+  { title: "Marge Bénéficiaire", icon: "📐", href: "/fr/tools/profit-margin" },
 ];
 
 const seoContent = [
@@ -76,9 +76,9 @@ return (
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Outils Islamiques" categorySlug="calculators" toolName="Zakat Calculator" />
+      <Breadcrumb category="Outils Islamiques" categorySlug="calculatrices" toolName="Calculateur de Zakat" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">☪️ Zakat Calculator</h1>
+        <h1 className="text-2xl font-extrabold mb-1">☪️ Calculateur de Zakat</h1>
         <p className="text-sm text-gray-500 mb-6">Calculez votre Zakat annuelle facilement</p>
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div><label className="block text-sm font-semibold text-gray-700 mb-1.5">Cash & Savings ($)</label><input type="number" value={cash} onChange={(e) => setCash(e.target.value)} className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="15000" /></div>

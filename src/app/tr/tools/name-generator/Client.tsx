@@ -56,15 +56,15 @@ export default function Client() {
     setNames(result);
   };
 
-  const schemaName = "İsim Oluşturucu";const schemaDesc = "Online İsim Oluşturucu - free tool";const schemaCategory = "Utility";const schemaUrl = "https://adwatak.cloud/tr/tools/name-generator";const breadcrumbItems = [{name:"Ana Sayfa",url:"https://adwatak.cloud/tr"},{name:"Oluşturucular",url:"https://adwatak.cloud/tr/category/generators"},{name:"İsim Oluşturucu",url:"https://adwatak.cloud/tr/tools/name-generator"}];
+  const schemaName = "İsim Oluşturucu";const schemaDesc = "Online İsim Oluşturucu - ücretsiz araç";const schemaCategory = "Utility";const schemaUrl = "https://adwatak.cloud/tr/tools/name-generator";const breadcrumbItems = [{name:"Ana Sayfa",url:"https://adwatak.cloud/tr"},{name:"Oluşturucular",url:"https://adwatak.cloud/tr/category/generators"},{name:"İsim Oluşturucu",url:"https://adwatak.cloud/tr/tools/name-generator"}];
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
+      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'tr', schemaCategory)} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
-      <StructuredData data={howToSchema("İsim Oluşturucu Nasıl Kullanılır","Yaratıcı isimler oluşturun. Kayıt gerekmez.",[{name:"Kategori seçin",text:"7 kategoriden birini seçin"},{name:"Adet belirleyin",text:"1-20 arası isim sayısı seçin"},{name:"Oluşturun",text:"Butona tıklayın, isimler anında hazır"},{name:"Kopyalayın",text:"İsimleri kopyalayıp kullanın"}],"bir dakikadan az","en")} />
+      <StructuredData data={howToSchema("İsim Oluşturucu Nasıl Kullanılır","Yaratıcı isimler oluşturun. Kayıt gerekmez.",[{name:"Kategori seçin",text:"7 kategoriden birini seçin"},{name:"Adet belirleyin",text:"1-20 arası isim sayısı seçin"},{name:"Oluşturun",text:"Butona tıklayın, isimler anında hazır"},{name:"Kopyalayın",text:"İsimleri kopyalayıp kullanın"}],"bir dakikadan az","tr")} />
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
-      <Breadcrumb lang="en" category="Generators" categorySlug="generators" toolName="İsim Oluşturucu" />
+      <Breadcrumb lang="tr" category="Oluşturucular" categorySlug="generators" toolName="İsim Oluşturucu" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">👤 İsim Oluşturucu</h1>
         <p className="text-sm text-gray-500 mb-6">Yaratıcı isimler oluşturun — bebek, marka, kullanıcı adı & daha fazlası</p>
@@ -89,7 +89,7 @@ export default function Client() {
       <SEOContent content={seoContent} />
       <FAQSection faqs={faqs} />
       <RelatedTools tools={relatedTools} />
-      <ShareButtons lang="en" />
+      <ShareButtons lang="tr" />
     </div>
   );
 }

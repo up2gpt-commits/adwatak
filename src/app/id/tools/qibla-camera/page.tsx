@@ -1,16 +1,17 @@
-import Client from "@/app/(ar)/tools/qibla-camera/Client";
+import { generateToolMetadata, generateToolSchemas } from "@/app/lib/tool-metadata";
+import StructuredData from "@/app/components/StructuredData";
+import Client from "./Client";
 
-export const metadata = {
-  title: "Arah Kiblat dengan Kamera | Adwatak",
-  description:
-    "Arahkan kamera ponsel Anda untuk menemukan arah kiblat secara real-time — AR interaktif yang menampilkan Ka'bah saat sejajar dengan benar",
-  openGraph: {
-    title: "Arah Kiblat dengan Kamera — AR Langsung",
-    description:
-      "Gunakan kamera ponsel untuk menemukan arah kiblat. Kompas AR interaktif yang menampilkan Ka'bah saat sejajar dengan benar.",
-  },
-};
+export const metadata = generateToolMetadata("qibla-camera", "id")!;
 
 export default function Page() {
-  return <Client locale="id" />;
+  const schemas = generateToolSchemas("qibla-camera", "id");
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <StructuredData key={i} data={schema} />
+      ))}
+      <Client locale="id" />
+    </>
+  );
 }

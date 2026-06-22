@@ -163,13 +163,13 @@ export default function Client() {
                   <input type="text" value={item.label} onChange={e => updateCost(cat, idx, "label", e.target.value)} className="flex-1 border border-gray-300 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none" />
                   <input type="number" min={0} value={item.amount || ""} onChange={e => updateCost(cat, idx, "amount", parseFloat(e.target.value) || 0)} placeholder="0" className="w-32 border border-gray-300 rounded-xl px-3 py-2 text-sm text-right focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none" />
                   {costs[cat].length > 1 && (
-                    <button onClick={() => removeCostItem(cat, idx)} className="text-red-500 hover:text-red-700 text-lg px-2">✕</button>
+                    <button onClick={() =>removeCostItem(cat, idx)} className="text-red-500 hover:text-red-700 text-lg px-2">✕</button>
                   )}
                 </div>
               ))}
             </div>
             <div className="flex justify-between items-center mt-2">
-              <button onClick={() => addCostItem(cat)} className="text-xs text-green-600 hover:text-green-800 font-semibold">+ Tambah item</button>
+              <button onClick={() =>addCostItem(cat)} className="text-xs text-green-600 hover:text-green-800 font-semibold">+ Tambah item</button>
               <span className="text-sm font-bold text-gray-600">Subtotal: {formatAmount(categoryTotals[cat])}</span>
             </div>
           </div>

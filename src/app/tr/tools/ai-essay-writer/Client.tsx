@@ -8,24 +8,24 @@ import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  { question: "What is AI Essay Writer?", answer: "Yapay zeka destekli ücretsiz makale oluşturma aracı. Konunuzu, makale türünü ve uzunluğu seçin, araç sizin için giriş, gelişme ve sonuç bölümleriyle eksiksiz bir makale oluştursun." },
-  { question: "Is it free?", answer: "Evet, %100 ücretsiz. Kayıt gerektirmez, sınır yok, reklam yok." },
-  { question: "What essay types are available?", answer: "Mevcut türler: Tartışmacı, Betimleyici, Öyküleyici, Açıklayıcı ve İkna Edici. Her türün farklı bir yapısı vardır." },
-  { question: "Does it support Arabic?", answer: "Evet, hem Arapça hem de İngilizceyi akıcı bir şekilde destekler." },
-  { question: "What length options?", answer: "Kısa (~300 kelime), Orta (~600 kelime), Uzun (~1000 kelime)." },
-  { question: "Can I use it commercially?", answer: "Evet, sonuçlar kişisel ve ticari kullanım içindir." },
-  { question: "Does it work on mobile?", answer: "Evet, tüm cihazlarda tam uyumludur." },
-  { question: "How to start?", answer: "Konunuzu yazın, makale türünü ve uzunluğu seçin, ardından Oluştur'a tıklayın." },
-  { question: "Can I copy the essay?", answer: "Evet, kopyalama butonu ve .txt dosyası olarak indirme seçeneği mevcuttur." },
-  { question: "Is my data safe?", answer: "Her şey tarayıcınızda çalışır. Hiçbir veri sunucuya gönderilmez." },
+  { question: "AI Makale Yazarı nedir?", answer: "Yapay zeka destekli ücretsiz makale oluşturma aracı. Konunuzu, makale türünü ve uzunluğu seçin, araç sizin için giriş, gelişme ve sonuç bölümleriyle eksiksiz bir makale oluştursun." },
+  { question: "Ücretsiz mi?", answer: "Evet, %100 ücretsiz. Kayıt gerektirmez, sınır yok, reklam yok." },
+  { question: "Hangi makale türleri mevcut?", answer: "Mevcut türler: Tartışmacı, Betimleyici, Öyküleyici, Açıklayıcı ve İkna Edici. Her türün farklı bir yapısı vardır." },
+  { question: "Arapça destekliyor mu?", answer: "Evet, hem Arapça hem de İngilizceyi akıcı bir şekilde destekler." },
+  { question: "Hangi uzunluk seçenekleri var?", answer: "Kısa (~300 kelime), Orta (~600 kelime), Uzun (~1000 kelime)." },
+  { question: "Ticari olarak kullanabilir miyim?", answer: "Evet, sonuçlar kişisel ve ticari kullanım içindir." },
+  { question: "Mobilde çalışıyor mu?", answer: "Evet, tüm cihazlarda tam uyumludur." },
+  { question: "Nasıl başlanır?", answer: "Konunuzu yazın, makale türünü ve uzunluğu seçin, ardından Oluştur'a tıklayın." },
+  { question: "Makaleyi kopyalayabilir miyim?", answer: "Evet, kopyalama butonu ve .txt dosyası olarak indirme seçeneği mevcuttur." },
+  { question: "Verilerim güvende mi?", answer: "Her şey tarayıcınızda çalışır. Hiçbir veri sunucuya gönderilmez." },
 ];
 
 const relatedTools = [
-  { title: "Paraphrasing Tool", icon: "✏️", href: "/tr/tools/paraphrasing-tool" },
-  { title: "Grammar Checker", icon: "📝", href: "/tr/tools/grammar-checker" },
-  { title: "Word Counter", icon: "📊", href: "/tr/tools/word-counter" },
-  { title: "Bio Generator", icon: "👤", href: "/tr/tools/bio-generator" },
-  { title: "Text Case Converter", icon: "🔤", href: "/tr/tools/text-case" },
+  { title: "Paraphrasing Aracı", icon: "✏️", href: "/tr/tools/paraphrasing-tool" },
+  { title: "Dilbilgisi Denetleyicisi", icon: "📝", href: "/tr/tools/grammar-checker" },
+  { title: "Kelime Sayacı", icon: "📊", href: "/tr/tools/word-counter" },
+  { title: "Biyografi Oluşturucu", icon: "👤", href: "/tr/tools/bio-generator" },
+  { title: "Metin Harf Dönüştürücü", icon: "🔤", href: "/tr/tools/text-case" },
 ];
 
 const seoContent = [
@@ -194,12 +194,12 @@ export default function ClientTr() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("AI Essay Writer", "Write complete articles with AI", "https://adwatak.cloud/tr/tools/ai-essay-writer", "tr", "Text Tools")} />
+      <StructuredData data={toolSchema("AI Essay Writer", "AI ile komple makaleler yazın", "https://adwatak.cloud/tr/tools/ai-essay-writer", "tr", "Metin Araçları")} />
       <StructuredData data={faqSchema(faqs)} />
-      <Breadcrumb lang="tr" category="Text Tools" categorySlug="tools" toolName="AI Essay Writer" />
+      <Breadcrumb lang="tr" category="Metin Araçları" categorySlug="tools" toolName="AI Essay Writer" />
       
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">✍️ AI Essay Writer</h1>
+        <h1 className="text-2xl font-extrabold mb-1">✍️ AI Makale Yazarı</h1>
         <p className="text-sm text-gray-500 mb-6">Yapay zeka ile yapılandırılmış makaleler oluşturun</p>
 
         <div className="space-y-4 mb-6">

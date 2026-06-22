@@ -1,4 +1,4 @@
-export const metadata = { title: "أدوات النصوص — أدواتك", description: "عداد الكلمات، تحويل حالة النص، تحويل الأرقام لحروف، مولد النص العربي، تنظيف النص، مقارنة النصوص." };
+export const metadata = { title: "أدوات النصوص — أدواتك", description: "عداد الكلمات، تحويل حالة النص، تحويل الأرقام لحروف، مولد النص العربي، تنظيف النص، مقارنة النصوص.", alternates: { canonical: "https://adwatak.cloud/category/text" } };
 const tools = [
   { title: "عداد الكلمات والحروف", icon: "📝", href: "/tools/word-counter", desc: "عداد الكلمات والحروف والجمل" },
   { title: "تحويل حالة النص", icon: "🔤", href: "/tools/text-case", desc: "أحرف كبيرة أو صغيرة أو عنوان" },

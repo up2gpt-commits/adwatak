@@ -1,6 +1,7 @@
 export const metadata = {
   title: "الأدوات الإسلامية — أدواتك",
   description: "أدوات إسلامية: حاسبة الميراث، حاسبة الزكاة، تحويل هجري ميلادي، حاسبة العمر، اتجاه القبلة، مواقيت الصلاة. مبنية على أسس شرعية صحيحة.",
+  alternates: { canonical: "https://adwatak.cloud/category/islamic" },
 };
 
 const tools = [
@@ -9,6 +10,7 @@ const tools = [
   { title: "تحويل هجري ميلادي", icon: "📅", href: "/tools/hijri-converter", desc: "حوّل التاريخ بين الهجري والميلادي" },
   { title: "حاسبة العمر", icon: "🎂", href: "/tools/age-calculator", desc: "عمرك بالهجري والميلادي وأبراجك" },
   { title: "اتجاه القبلة", icon: "🧭", href: "/tools/qibla-direction", desc: "اعرف اتجاه القبلة من موقعك" },
+  { title: "اتجاه القبلة بالكاميرا", icon: "📸", href: "/tools/qibla-camera", desc: "شوف اتجاه القبلة بالكاميرا — AR مباشر" },
   { title: "مواقيت الصلاة", icon: "🕐", href: "/tools/prayer-times", desc: "مواقيت الصلاة حسب موقعك الجغرافي" },
   { title: "المسبحة الإلكترونية", icon: "📿", href: "/tools/tasbeeh-counter", desc: "مسبحة إلكترونية للتسبيح والذكر" },
   { title: "حاسبة العمرة", icon: "🕋", href: "/tools/umrah-calculator", desc: "احسب تكاليف العمرة مع جدول المناسك" },

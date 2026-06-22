@@ -8,36 +8,36 @@ import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 
 const faqs = [
-  { question: "What is a unit converter?", answer: "Converts values between different measurement units within the same category: length (meters/feet), weight (kg/lbs), temperature (C/F/K), volume (liters/gallons), area (sq m/acres), and more. Essential for science, travel, cooking, and international business." },
-  { question: "Why use a unit converter?", answer: "International differences: US uses imperial (miles, pounds, Fahrenheit). Rest of world uses metric (km, kg, Celsius). Recipes, travel planning, online shopping, car specs (mph vs km/h), and scientific calculations all need accurate conversion." },
-  { question: "How to convert Celsius to Fahrenheit?", answer: "Formula: F = (C × 9/5) + 32. 0°C = 32°F. 100°C = 212°F. 25°C = 77°F. For quick mental: double Celsius, add 30 (approximate). 25 × 2 = 50 + 30 = 80°F (exact: 77°F)." },
-  { question: "How to convert kg to lbs?", answer: "1 kg = 2.20462 lbs. 80 kg = 176.4 lbs. Quick: multiply by 2.2. 80 × 2.2 = 176 lbs. For lbs to kg: divide by 2.2. 176 ÷ 2.2 = 80 kg. Our converter gives exact decimal results." },
-  { question: "Miles to kilometers?", answer: "1 mile = 1.60934 km. 60 mph = 96.5 km/h. Quick: multiply by 1.6. 60 × 1.6 = 96 km/h. For km to miles: divide by 1.6. 100 km/h ÷ 1.6 = 62.5 mph." },
-  { question: "Inches to centimeters?", answer: "1 inch = 2.54 cm. 5'9\" (69 inches) = 69 × 2.54 = 175.26 cm. Quick: multiply inches by 2.5. 69 × 2.5 = 172.5 cm (close enough for most purposes)." },
-  { question: "How to convert between units of area?", answer: "1 sq meter = 10.764 sq feet. 1 acre = 4,047 sq meters. 1 hectare = 10,000 sq meters = 2.471 acres. 1 sq km = 0.386 sq miles. Use square of the length conversion factor." },
-  { question: "Volume conversions?", answer: "1 liter = 0.264 gallons (US). 1 gallon (US) = 3.785 liters. 1 cup = 237 ml. 1 fl oz = 29.57 ml. 1 cubic meter = 264 gallons. Our converter handles all common volume units." },
-  { question: "What is an astronomical unit (AU)?", answer: "Distance from Earth to Sun: ~149.6 million km (93 million miles). 1 light-year = 63,241 AU. 1 parsec = 206,265 AU. Used for measuring solar system distances. Our converter doesn't include AU but supports major metric/imperial categories." },
-  { question: "Digital storage conversions?", answer: "1 KB = 1024 B. 1 MB = 1024 KB. 1 GB = 1024 MB. 1 TB = 1024 GB. 1 PB = 1024 TB. Note: hard drive manufacturers use decimal (1 GB = 1,000,000,000 B), not binary. 1 TB drive = 931 GB actual usable space." },
-  { question: "Speed conversions?", answer: "1 mph = 1.609 km/h = 0.447 m/s. 1 knot = 1.852 km/h = 1.151 mph. Mach 1 = 1,235 km/h at sea level (varies with altitude). Our converter handles mph, km/h, and m/s." },
-  { question: "What are the base SI units?", answer: "Meter (length), Kilogram (mass), Second (time), Ampere (current), Kelvin (temperature), Mole (amount), Candela (luminance). All other SI units derive from these 7. Our converter covers the most common derived units." },
+  { question: "Apa itu pengonversi satuan?", answer: "Mengonversi nilai antara berbagai satuan ukuran dalam kategori yang sama: panjang (meter/kaki), berat (kg/lbs), suhu (C/F/K), volume (liter/galon), luas (m persegi/ekar), dan lainnya. Penting untuk sains, perjalanan, memasak, dan bisnis internasional." },
+  { question: "Mengapa menggunakan pengonversi satuan?", answer: "Perbedaan internasional: AS menggunakan imperial (mil, pon, Fahrenheit). Sebagian besar dunia menggunakan metrik (km, kg, Celsius). Resep, perencanaan perjalanan, belanja online, spesifikasi mobil (mph vs km/jam), dan perhitungan ilmiah semuanya memerlukan konversi yang akurat." },
+  { question: "Bagaimana cara mengonversi Celsius ke Fahrenheit?", answer: "Rumus: F = (C × 9/5) + 32. 0°C = 32°F. 100°C = 212°F. 25°C = 77°F. Untuk perhitungan cepat: gandakan Celsius, tambahkan 30 (perkiraan). 25 × 2 = 50 + 30 = 80°F (tepat: 77°F)." },
+  { question: "Bagaimana cara mengonversi kg ke lbs?", answer: "1 kg = 2.20462 lbs. 80 kg = 176.4 lbs. Cepat: kalikan dengan 2.2. 80 × 2.2 = 176 lbs. Untuk lbs ke kg: bagi dengan 2.2. 176 ÷ 2.2 = 80 kg. Pengonversi kami memberikan hasil desimal yang tepat." },
+  { question: "Mil ke kilometer?", answer: "1 mil = 1.60934 km. 60 mph = 96.5 km/jam. Cepat: kalikan dengan 1.6. 60 × 1.6 = 96 km/jam. Untuk km ke mil: bagi dengan 1.6. 100 km/jam ÷ 1.6 = 62.5 mph." },
+  { question: "Inci ke sentimeter?", answer: "1 inci = 2.54 cm. 5'9\" (69 inci) = 69 × 2.54 = 175.26 cm. Cepat: kalikan inci dengan 2.5. 69 × 2.5 = 172.5 cm (cukup dekat untuk kebanyakan keperluan)." },
+  { question: "Bagaimana cara mengonversi antar satuan luas?", answer: "1 meter persegi = 10.764 kaki persegi. 1 ekar = 4,047 meter persegi. 1 hektar = 10,000 meter persegi = 2.471 ekar. 1 km persegi = 0.386 mil persegi. Gunakan kuadrat dari faktor konversi panjang." },
+  { question: "Konversi volume?", answer: "1 liter = 0.264 galon (AS). 1 galon (AS) = 3.785 liter. 1 cangkir = 237 ml. 1 fl oz = 29.57 ml. 1 meter kubik = 264 galon. Pengonversi kami menangani semua satuan volume umum." },
+  { question: "Apa itu satuan astronomi (AU)?", answer: "Jarak dari Bumi ke Matahari: ~149.6 juta km (93 juta mil). 1 tahun cahaya = 63,241 AU. 1 parsec = 206,265 AU. Digunakan untuk mengukur jarak di tata surya. Pengonversi kami tidak menyertakan AU tetapi mendukung kategori metrik/imperial utama." },
+  { question: "Konversi penyimpanan digital?", answer: "1 KB = 1024 B. 1 MB = 1024 KB. 1 GB = 1024 MB. 1 TB = 1024 GB. 1 PB = 1024 TB. Catatan: produsen hard drive menggunakan desimal (1 GB = 1,000,000,000 B), bukan biner. Drive 1 TB = 931 GB ruang yang dapat digunakan sebenarnya." },
+  { question: "Konversi kecepatan?", answer: "1 mph = 1.609 km/jam = 0.447 m/s. 1 knot = 1.852 km/jam = 1.151 mph. Mach 1 = 1,235 km/jam di permukaan laut (bervariasi dengan ketinggian). Pengonversi kami menangani mph, km/jam, dan m/s." },
+  { question: "Apa saja satuan dasar SI?", answer: "Meter (panjang), Kilogram (massa), Detik (waktu), Ampere (arus), Kelvin (suhu), Mol (jumlah zat), Candela (intensitas cahaya). Semua satuan SI lainnya diturunkan dari 7 satuan ini. Pengonversi kami mencakup satuan turunan yang paling umum." }
 ];
 
 const relatedTools = [
-  { title: "BMI Calculator", icon: "⚖️", href: "/en/tools/bmi-calculator" },
-  { title: "Calorie Calculator", icon: "🔥", href: "/en/tools/calorie-calculator" },
-  { title: "Gold Calculator", icon: "🥇", href: "/en/tools/gold-calculator" },
-  { title: "Age Calculator", icon: "🎂", href: "/en/tools/age-calculator" },
-  { title: "Number to Words", icon: "🔢", href: "/en/tools/number-to-words" },
-  { title: "Compound Interest", icon: "📈", href: "/en/tools/compound-interest" },
+  { title: "Kalkulator BMI", icon: "⚖️", href: "/en/tools/bmi-calculator" },
+  { title: "Kalkulator Kalori", icon: "🔥", href: "/en/tools/calorie-calculator" },
+  { title: "Kalkulator Emas", icon: "🥇", href: "/en/tools/gold-calculator" },
+  { title: "Kalkulator Usia", icon: "🎂", href: "/en/tools/age-calculator" },
+  { title: "Angka ke Kata", icon: "🔢", href: "/en/tools/number-to-words" },
+  { title: "Bunga Majemuk", icon: "📈", href: "/en/tools/compound-interest" },
 ];
 
 const seoContent = [
   "Our free Unit Converter handles length, weight, temperature, volume, area, and speed conversions instantly. Switch between metric and imperial systems with a single click. Perfect for travel, cooking, science, international business, and everyday calculations.",
   "Categories: Length (meters, feet, inches, miles, km). Weight (kg, lbs, oz, stones). Temperature (°C, °F, K). Volume (L, gal, cups, fl oz). Area (sq m, sq ft, acres, hectares). Speed (km/h, mph, m/s). More categories coming soon.",
-  "Example conversions: 100 kg = 220.5 lbs. 1 mile = 1.609 km. 30°C = 86°F. 1 gallon = 3.785 liters. 1 acre = 4,047 sq m. 60 km/h = 37.3 mph. All conversions use exact conversion factors, not approximations.",
-  "Why it matters: The USA, Myanmar, and Liberia are the only countries using imperial measurement. The rest of the world uses metric. If you travel, shop online internationally, or work with global partners, a unit converter is essential.",
-  "Related: Use our BMI Calculator which uses metric units. The Calorie Calculator needs weight in kg. The Gold Calculator uses grams and ounces. The Age Calculator works with Gregorian dates. All tools work together seamlessly.",
-  "Our converter is entirely browser-based — no server calls, no tracking. Type any value, select units, get instant accurate results. Free for unlimited use."
+  "Contoh konversi: 100 kg = 220.5 lbs. 1 mile = 1.609 km. 30°C = 86°F. 1 gallon = 3.785 liters. 1 acre = 4,047 sq m. 60 km/h = 37.3 mph. Semua konversi menggunakan faktor konversi yang tepat, bukan perkiraan.",
+  "Mengapa ini penting: Amerika Serikat, Myanmar, dan Liberia adalah satu-satunya negara yang menggunakan sistem imperial. Negara lainnya menggunakan metrik. Jika Anda bepergian, berbelanja online internasional, atau bekerja dengan mitra global, konverter satuan sangat penting.",
+  "Terkait: Gunakan Kalkulator BMI kami yang menggunakan satuan metrik. Kalkulator Kalori membutuhkan berat dalam kg. Kalkulator Emas menggunakan gram dan ons. Kalkulator Usia bekerja dengan tanggal Gregorian. Semua alat bekerja bersama dengan mulus.",
+  "Konverter kami sepenuhnya berbasis browser — tanpa panggilan server, tanpa pelacakan. Ketik nilai apa pun, pilih satuan, dapatkan hasil akurat secara instan. Gratis untuk penggunaan tanpa batas."
 ];
 
 export default function Client() {
@@ -72,14 +72,14 @@ export default function Client() {
     }
   };
 
-  const schemaName = "Unit Converter";
+  const schemaName = "Konverter Satuan";
 const schemaDesc = `Online Unit Converter - free tool`;
 const schemaCategory = "Utility";
-const schemaUrl = "https://adwatak.cloud/en/tools/unit-converter";
+const schemaUrl = "https://adwatak.cloud/id/tools/unit-converter";
 const breadcrumbItems = [
-  { name: "Home", url: "https://adwatak.cloud/en" },
-  { name: "Converters", url: "https://adwatak.cloud/en/category/calculators" },
-  { name: "Unit Converter", url: "https://adwatak.cloud/en/tools/unit-converter" },
+  { name: "Home", url: "https://adwatak.cloud/id" },
+  { name: "Konverter", url: "https://adwatak.cloud/id/category/calculators" },
+  { name: "Konverter Satuan", url: "https://adwatak.cloud/id/tools/unit-converter" },
 ];
 return (
     <div className="max-w-[760px] mx-auto">
@@ -89,33 +89,33 @@ return (
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
+      <StructuredData data={howToSchema("Cara menggunakan alat ini", "Free online tool. Works directly in your browser. No registration required.", [{name:"Buka alat",text:"Arahkan ke halaman alat ini di Adawatak"},{name:"Masukkan data Anda",text:"Isi kolom yang diperlukan"},{name:"Dapatkan hasil",text:"Klik tombol hitung atau hasilkan"},{name:"Gunakan atau bagikan",text:"Salin, unduh, atau bagikan hasilnya"}],"kurang dari satu menit","id")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Other Tools" categorySlug="utility-tools" toolName="Unit Converter" />
+      <Breadcrumb category="Alat Lainnya" categorySlug="utility-tools" toolName="Konverter Satuan" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">📏 Unit Converter</h1>
-        <p className="text-sm text-gray-500 mb-6">Convert between metric and imperial units — length, weight, temperature, volume, area, speed</p>
+        <h1 className="text-2xl font-extrabold mb-1">📏 Konverter Satuan</h1>
+        <p className="text-sm text-gray-500 mb-6">Konversi antara satuan metrik dan imperial — panjang, berat, suhu, volume, luas, kecepatan</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {["length", "weight", "temperature", "volume", "area", "speed"].map((c) => (
-            <button key={c} onClick={() => { setCategory(c); setResult(""); }} className={`px-3 py-1.5 rounded-full text-sm font-semibold cursor-pointer border-none capitalize ${category === c ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"}`}>{c}</button>
+            <button key={c} onClick={() =>{ setCategory(c); setResult(""); }} className={`px-3 py-1.5 rounded-full text-sm font-semibold cursor-pointer border-none capitalize ${category === c ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"}`}>{c}</button>
           ))}
         </div>
         <div className="grid grid-cols-3 gap-3 mb-4">
-          <div><label className="block text-xs font-semibold text-gray-700 mb-1">Value</label><input type="number" value={value} onChange={(e) => setValue(e.target.value)} className="w-full p-2.5 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="100" /></div>
-          <div><label className="block text-xs font-semibold text-gray-700 mb-1">From</label>
+          <div><label className="block text-xs font-semibold text-gray-700 mb-1">Nilai</label><input type="number" value={value} onChange={(e) => setValue(e.target.value)} className="w-full p-2.5 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="100" /></div>
+          <div><label className="block text-xs font-semibold text-gray-700 mb-1">Dari</label>
             <select value={from} onChange={(e) => setFrom(e.target.value)} className="w-full p-2.5 border-2 border-gray-200 rounded-xl text-lg outline-none bg-white">
               {Object.keys(category === "temperature" ? { celsius: 0, fahrenheit: 0, kelvin: 0 } : conversions[category] || {}).map((u) => (<option key={u} value={u}>{u}</option>))}
             </select>
           </div>
-          <div><label className="block text-xs font-semibold text-gray-700 mb-1">To</label>
+          <div><label className="block text-xs font-semibold text-gray-700 mb-1">Ke</label>
             <select value={to} onChange={(e) => setTo(e.target.value)} className="w-full p-2.5 border-2 border-gray-200 rounded-xl text-lg outline-none bg-white">
               {Object.keys(category === "temperature" ? { celsius: 0, fahrenheit: 0, kelvin: 0 } : conversions[category] || {}).map((u) => (<option key={u} value={u}>{u}</option>))}
             </select>
           </div>
         </div>
-        <button onClick={convert} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Convert</button>
+        <button onClick={convert} className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">Konversi</button>
       </div>
       {result && (
         <div className="bg-green-50 rounded-xl p-5 text-center border border-green-200 mb-6">
@@ -126,7 +126,7 @@ return (
       <SEOContent content={seoContent} />
       <FAQSection faqs={faqs} />
       <RelatedTools tools={relatedTools} />
-    <ShareButtons lang="en" />
+    <ShareButtons lang="id" />
     </div>
   );
 }

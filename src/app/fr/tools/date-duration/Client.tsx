@@ -8,15 +8,15 @@ import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  {question:"What is Date Duration Calculator?",answer:"A free tool to calculate the duration between two dates in days, months, and years."},
-  {question:"How to use it?",answer:"Select start date and end date. The result updates instantly."},
-  {question:"Is it accurate?",answer:"Yes, it calculates the exact difference in days, months, and years, accounting for leap years."},
+  {question:"Qu'est-ce que le calculateur de durée entre dates ?",answer:"Un outil gratuit pour calculer la durée entre deux dates en jours, mois et années."},
+  {question:"Comment l'utiliser ?",answer:"Sélectionnez la date de début et la date de fin. Le résultat se met à jour instantanément."},
+  {question:"Est-ce précis ?",answer:"Oui, il calcule la différence exacte en jours, mois et années, en tenant compte des années bissextiles."},
 ];
 const relatedTools = [
-  {title:"Age Calculator",icon:"🎂",href:"/fr/tools/age-calculator"},
-  {title:"Time Zone Converter",icon:"🌍",href:"/fr/tools/timezone-converter"},
+  {title:"Calculateur d'Âge",icon:"🎂",href:"/fr/tools/age-calculator"},
+  {title:"Convertisseur de Fuseau Horaire",icon:"🌍",href:"/fr/tools/timezone-converter"},
 ];
-const seo = ["Free Date Duration Calculator — calculate the exact difference between two dates in days, months, and years.", "Perfect for calculating age, project timelines, and event planning."];
+const seo = ["Calculateur gratuit de durée entre dates — calculez la différence exacte entre deux dates en jours, mois et années.", "Parfait pour calculer l'âge, les délais de projet et la planification d'événements."];
 
 export default function ClientEn(){
   const today=new Date().toISOString().split("T")[0];
@@ -38,9 +38,9 @@ export default function ClientEn(){
   const r=calc();
 
   return (<div className="max-w-[760px] mx-auto">
-    <StructuredData data={toolSchema("Date Duration Calculator","Calculate duration between two dates","https://adwatak.cloud/fr/tools/date-duration","fr","Daily Tools")}/>
+    <StructuredData data={toolSchema("Date Duration Calculator","Calculer la durée entre deux dates","https://adwatak.cloud/fr/tools/date-duration","fr","Outils quotidiens")}/>
     <StructuredData data={faqSchema(faqs)}/>
-    <Breadcrumb lang="fr" category="Daily Tools" categorySlug="tools" toolName="Date Duration Calculator"/>
+    <Breadcrumb lang="fr" category="Outils quotidiens" categorySlug="tools" toolName="Calculateur de durée entre dates"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
       <h1 className="text-2xl font-extrabold mb-1">📅 Calculateur de Durée</h1>
       <p className="text-sm text-gray-500 mb-6">Calculez la durée entre deux dates</p>

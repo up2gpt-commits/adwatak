@@ -21,10 +21,10 @@ const KAFFARAH_DATA: Record<KaffarahType, KaffarahInfo> = {
     title: "🤲 Kaffarah for Breaking an Oath",
     description: "Whoever swears an oath and then breaks it must pay Kaffarah. Allah says: 'Its expiation is feeding ten needy people from the average of what you feed your families, or clothing them, or freeing a slave. Whoever cannot find must fast for three days.' (Quran 5:89)",
     options: [
-      { label: "Feed 10 needy people", detail: "Feed ten needy people from the average food you feed your family — approx 1.5kg rice/person = 15kg total" },
-      { label: "Clothe 10 needy people", detail: "Provide clothing for ten needy people" },
-      { label: "Free a slave", detail: "Free a believing slave — not applicable in modern times" },
-      { label: "Fast 3 days", detail: "Fast three consecutive or separate days — for those who cannot afford food or clothing" },
+      { label: "Nourrir 10 nécessiteux", detail: "Feed ten needy people from the average food you feed your family — approx 1.5kg rice/person = 15kg total" },
+      { label: "Habiller 10 nécessiteux", detail: "Provide clothing for ten needy people" },
+      { label: "Affranchir un esclave", detail: "Free a believing slave — not applicable in modern times" },
+      { label: "Jeûner 3 jours", detail: "Fast three consecutive or separate days — for those who cannot afford food or clothing" },
     ],
     defaultCount: 1,
   },
@@ -32,9 +32,9 @@ const KAFFARAH_DATA: Record<KaffarahType, KaffarahInfo> = {
     title: "🌙 Kaffarah for Intercourse in Ramadan",
     description: "Whoever intentionally has intercourse during the day in Ramadan must make up the day AND pay Kaffarah. The Kaffarah follows this order: free a slave, if not possible fast 60 consecutive days, if not possible feed 60 needy people.",
     options: [
-      { label: "Free a slave", detail: "Free a believing slave — not applicable today" },
-      { label: "Fast 60 consecutive days", detail: "Fast 60 consecutive days — cannot break the fast except for valid Sharia reasons" },
-      { label: "Feed 60 needy people", detail: "Feed sixty needy people — approx 1.5kg rice/person = 90kg total" },
+      { label: "Affranchir un esclave", detail: "Free a believing slave — not applicable today" },
+      { label: "Jeûner 60 jours consécutifs", detail: "Fast 60 consecutive days — cannot break the fast except for valid Sharia reasons" },
+      { label: "Nourrir 60 nécessiteux", detail: "Feed sixty needy people — approx 1.5kg rice/person = 90kg total" },
     ],
     defaultCount: 1,
   },
@@ -42,9 +42,9 @@ const KAFFARAH_DATA: Record<KaffarahType, KaffarahInfo> = {
     title: "💔 Kaffarah for Zhihar (Dhihar)",
     description: "Zhihar is when a husband says to his wife: 'You are to me like my mother's back.' Before any intimacy, he must pay Kaffarah. Allah says: 'Those who pronounce zhihar from their wives then wish to go back to them — then free a slave before they touch each other.' (Quran 58:3)",
     options: [
-      { label: "Free a slave", detail: "Free a believing slave — not applicable today" },
-      { label: "Fast 60 consecutive days", detail: "Fast 60 consecutive days — for those who cannot free a slave" },
-      { label: "Feed 60 needy people", detail: "Feed sixty needy people from average food — approx 90kg rice" },
+      { label: "Affranchir un esclave", detail: "Free a believing slave — not applicable today" },
+      { label: "Jeûner 60 jours consécutifs", detail: "Fast 60 consecutive days — for those who cannot free a slave" },
+      { label: "Nourrir 60 nécessiteux", detail: "Feed sixty needy people from average food — approx 90kg rice" },
     ],
     defaultCount: 1,
   },
@@ -52,18 +52,18 @@ const KAFFARAH_DATA: Record<KaffarahType, KaffarahInfo> = {
     title: "🍽️ Fidyah for Fasting",
     description: "Whoever is permanently unable to fast (elderly, chronic illness) must pay Fidyah for each day: feed one needy person. Allah says: 'And for those who can fast with difficulty, a ransom of feeding a poor person.' (Quran 2:184)",
     options: [
-      { label: "Feed 1 needy person per day", detail: "Feed one needy person for each missed day — approx 1.5kg rice/day" },
-      { label: "Feed 2 needy people per day", detail: "Feed two needy people per day — approx 3kg rice/day (some scholars permit this)" },
+      { label: "Nourrir 1 nécessiteux par jour", detail: "Feed one needy person for each missed day — approx 1.5kg rice/day" },
+      { label: "Nourrir 2 nécessiteux par jour", detail: "Feed two needy people per day — approx 3kg rice/day (some scholars permit this)" },
     ],
     defaultCount: 30,
   },
 };
 
 const FOOD_PRICES: Record<string, { unit: string; pricePerUnit: number; label: string }> = {
-  rice: { unit: "kg", pricePerUnit: 1.5, label: "Rice" },
-  bread: { unit: "loaf", pricePerUnit: 0.3, label: "Bread" },
+  rice: { unit: "kg", pricePerUnit: 1.5, label: "Riz" },
+  bread: { unit: "loaf", pricePerUnit: 0.3, label: "Pain" },
   dates: { unit: "kg", pricePerUnit: 5, label: "Dates" },
-  meat: { unit: "kg", pricePerUnit: 8, label: "Meat" },
+  meat: { unit: "kg", pricePerUnit: 8, label: "Viande" },
 };
 
 export default function Client() {
@@ -90,7 +90,7 @@ export default function Client() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("Fidyah & Kaffarah Calculator", "Calculate Fidyah & Kaffarah — oath breaking, Ramadan intimacy, Zhihar, fasting fidyah with Islamic rulings", "https://adwatak.cloud/fr/tools/fidyah-kaffarah", "fr", "Islamic")} />
+      <StructuredData data={toolSchema("Calculateur de Fidyah et Kaffarah", "Calculate Fidyah & Kaffarah — oath breaking, Ramadan intimacy, Zhihar, fasting fidyah with Islamic rulings", "https://adwatak.cloud/fr/tools/fidyah-kaffarah", "fr", "Islamic")} />
       <StructuredData data={faqSchema([
         { question: "What is Kaffarah for breaking an oath?", answer: "Kaffarah for breaking an oath is: feed 10 needy people, or clothe them, or free a slave. Whoever cannot afford it must fast for three days. (Quran 5:89)" },
         { question: "What is the Kaffarah for intercourse in Ramadan?", answer: "Whoever intentionally has intercourse during Ramadan day must make up the day AND pay Kaffarah: free a slave, or fast 60 consecutive days, or feed 60 needy people." },
@@ -114,7 +114,7 @@ export default function Client() {
       <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name: "Select type", text: "Choose the type of Kaffarah or Fidyah"}, {name: "Enter count", text: "Enter the number of times or days"}, {name: "Choose food type", text: "Select food type and amount per person"}, {name: "Calculate", text: "Click calculate to see the amount and estimated cost"}], "less than 2 minutes", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
 
-      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Fidyah & Kaffarah Calculator" />
+      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Calculateur de Fidyah & Kaffarah" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">⚖️ Calculateur Fidyah & Kaffarah</h1>
@@ -206,29 +206,29 @@ export default function Client() {
       </div>
 
       <SEOContent content={[
-        "Fidyah & Kaffarah Calculator — Calculate Kaffarah for oath, Ramadan intercourse, Zhihar, and Fidyah for fasting.",
-        "Includes detailed Islamic rulings with Quran and Sunnah evidence for each type.",
-        "Calculate required food amount (rice, bread, dates, meat) and estimated cost.",
-        "Supports 4 types: Oath Kaffarah (10 people), Ramadan Kaffarah (60 people), Zhihar Kaffarah (60 people), Fidyah (1 person/day).",
-        "100% free, runs in your browser — no data sent to any server.",
+        "Calculateur de Fidyah et Kaffarah — Calculez la Kaffarah pour serment, rapport intime en Ramadan, Zhihar, et la Fidyah pour le jeûne.",
+        "Inclut les règles islamiques détaillées avec les preuves du Coran et de la Sunnah pour chaque type.",
+        "Calculez la quantité de nourriture requise (riz, pain, dattes, viande) et le coût estimé.",
+        "Prend en charge 4 types : Kaffarah pour Serment (10 personnes), Kaffarah Ramadan (60 personnes), Kaffarah Zhihar (60 personnes), Fidyah (1 personne/jour).",
+        "100 % gratuit, fonctionne dans votre navigateur — aucune donnée envoyée à un serveur.",
       ]} lang="fr" />
       <FAQSection faqs={[
-        { question: "What is Kaffarah for breaking an oath?", answer: "Feed 10 needy people, or clothe them, or free a slave. Whoever cannot afford it must fast for three days." },
-        { question: "What is the Kaffarah for intercourse in Ramadan?", answer: "Make up the day + Kaffarah: free a slave, or fast 60 consecutive days, or feed 60 needy people." },
-        { question: "What is Kaffarah for Zhihar?", answer: "Free a slave, or fast 60 consecutive days, or feed 60 needy people." },
-        { question: "What is Fidyah for fasting?", answer: "Feed one needy person per missed day — approximately 1.5kg of rice per person." },
-        { question: "Can I feed instead of fasting for Kaffarah?", answer: "Yes, if genuinely unable to fast due to health reasons." },
-        { question: "How much food per person?", answer: "Approximately 1.5kg of rice or equivalent average food." },
-        { question: "Must the fasting be consecutive?", answer: "Yes, Kaffarah fasting must be consecutive according to most scholars." },
-        { question: "Does a woman pay Kaffarah for breaking an oath?", answer: "Yes, Kaffarah for oath applies to both men and women." },
-        { question: "Can I pay money instead of food?", answer: "Most scholars say money cannot replace food in Kaffarah." },
-        { question: "What's the difference between Fidyah and Kaffarah?", answer: "Kaffarah is for prohibited acts, Fidyah is for inability to perform obligations." },
+        { question: "Qu'est-ce que la Kaffarah pour avoir rompu un serment ?", answer: "Nourrir 10 personnes nécessiteuses, ou les vêtir, ou affranchir un esclave. Celui qui ne peut pas doit jeûner trois jours." },
+        { question: "Quelle est la Kaffarah pour rapport intime en Ramadan ?", answer: "Rattraper le jour + Kaffarah : affranchir un esclave, ou jeûner 60 jours consécutifs, ou nourrir 60 personnes nécessiteuses." },
+        { question: "Qu'est-ce que la Kaffarah pour Zhihar ?", answer: "Affranchir un esclave, ou jeûner 60 jours consécutifs, ou nourrir 60 personnes nécessiteuses." },
+        { question: "Qu'est-ce que la Fidyah pour le jeûne ?", answer: "Nourrir une personne nécessiteuse par jour manqué — environ 1,5 kg de riz par personne." },
+        { question: "Puis-je nourrir au lieu de jeûner pour la Kaffarah ?", answer: "Oui, si vous êtes véritablement incapable de jeûner pour des raisons de santé." },
+        { question: "Quelle quantité de nourriture par personne ?", answer: "Environ 1,5 kg de riz ou l'équivalent en nourriture moyenne." },
+        { question: "Le jeûne doit-il être consécutif ?", answer: "Oui, le jeûne de Kaffarah doit être consécutif selon la plupart des savants." },
+        { question: "Une femme paie-t-elle la Kaffarah pour avoir rompu un serment ?", answer: "Oui, la Kaffarah pour serment s'applique aux hommes et aux femmes." },
+        { question: "Puis-je payer de l'argent au lieu de nourriture ?", answer: "La plupart des savants disent que l'argent ne peut pas remplacer la nourriture dans la Kaffarah." },
+        { question: "Quelle est la différence entre Fidyah et Kaffarah ?", answer: "La Kaffarah est pour les actes interdits, la Fidyah est pour l'incapacité d'accomplir des obligations." },
       ]} lang="fr" />
       <RelatedTools tools={[
-        { title: "Zakat Calculator", icon: "🕌", href: "/fr/tools/zakat-calculator" },
-        { title: "Umrah Calculator", icon: "🕋", href: "/fr/tools/umrah-calculator" },
-        { title: "Qibla Direction", icon: "🧭", href: "/fr/tools/qibla-direction" },
-        { title: "Tasbeeh Counter", icon: "📿", href: "/fr/tools/tasbeeh-counter" },
+        { title: "Calculateur de Zakat", icon: "🕌", href: "/fr/tools/zakat-calculator" },
+        { title: "Calculateur de Omra", icon: "🕋", href: "/fr/tools/umrah-calculator" },
+        { title: "Direction de la Qibla", icon: "🧭", href: "/fr/tools/qibla-direction" },
+        { title: "Compteur Tasbih", icon: "📿", href: "/fr/tools/tasbeeh-counter" },
       ]} lang="fr" />
       <ShareButtons lang="fr" />
     </div>

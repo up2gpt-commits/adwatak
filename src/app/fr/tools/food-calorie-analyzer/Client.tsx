@@ -17,98 +17,98 @@ const MAX_IMAGE_SIZE = 10 * 1024 * 1024; // 10MB
 
 const faqs = [
   {
-    question: "How do I calculate calories from a food photo?",
+    question: "Comment calculer les calories à partir d'une photo de repas ?",
     answer:
-      "Simply take a photo of your meal with your phone camera or upload an image from your gallery. The AI analyzes the image to identify each dish and its ingredients, estimate portion sizes, then calculate the calories. Results appear in seconds — no manual logging required.",
+      "Prenez simplement une photo de votre repas avec l'appareil photo de votre téléphone ou téléchargez une image depuis votre galerie. L'IA analyse l'image pour identifier chaque plat et ses ingrédients, estimer la taille des portions, puis calculer les calories. Les résultats apparaissent en quelques secondes — aucune saisie manuelle nécessaire.",
   },
   {
-    question: "How accurate is the food calorie analyzer?",
+    question: "Quelle est la précision de l'analyseur de calories alimentaires ?",
     answer:
-      "Accuracy depends on image quality and clarity. Clear, well-lit photos achieve 80-90% accuracy. Blurry images or mixed dishes may be less accurate. Use the results as a helpful reference, not a substitute for professional dietary advice.",
+      "La précision dépend de la qualité et de la clarté de l'image. Des photos claires et bien éclairées atteignent une précision de 80 à 90 %. Les images floues ou les plats mélangés peuvent être moins précis. Utilisez les résultats comme une référence utile, pas comme un substitut à un avis diététique professionnel.",
   },
   {
-    question: "What kind of photos work best?",
+    question: "Quel type de photos fonctionne le mieux ?",
     answer:
-      "Top-down shots with good natural lighting and individual plates separated work best. Avoid distant, dark, or cluttered images. Best results: one dish per photo, taken 15-30cm away from a top-down angle.",
+      "Les prises de vue du dessus avec un bon éclairage naturel et des assiettes individuelles séparées fonctionnent le mieux. Évitez les images éloignées, sombres ou encombrées. Meilleurs résultats : un plat par photo, prise à 15-30 cm de distance depuis un angle du dessus.",
   },
   {
-    question: "Is the calorie analyzer free?",
+    question: "L'analyseur de calories est-il gratuit ?",
     answer:
-      "Yes, 100% free — no registration, subscription, or usage limits. All you need is your phone camera or a photo from your gallery.",
+      "Oui, 100 % gratuit — aucune inscription, abonnement ou limite d'utilisation. Tout ce dont vous avez besoin est l'appareil photo de votre téléphone ou une photo de votre galerie.",
   },
   {
-    question: "What if AI can't identify the food?",
+    question: "Que faire si l'IA ne peut pas identifier l'aliment ?",
     answer:
-      "Try retaking the photo from a better angle with better lighting. Make sure the food is clearly visible and not covered. You can also photograph ingredients separately for more accurate analysis.",
+      "Essayez de reprendre la photo sous un meilleur angle avec un meilleur éclairage. Assurez-vous que l'aliment est clairement visible et non couvert. Vous pouvez également photographier les ingrédients séparément pour une analyse plus précise.",
   },
   {
-    question: "Do I need internet?",
+    question: "Ai-je besoin d'internet ?",
     answer:
-      "Yes, analysis runs via AI in the cloud, so you need an internet connection. The image is sent for analysis only and is not stored on our servers.",
+      "Oui, l'analyse s'exécute via l'IA dans le cloud, vous avez donc besoin d'une connexion internet. L'image est envoyée uniquement pour analyse et n'est pas stockée sur nos serveurs.",
   },
   {
-    question: "Is my data private?",
+    question: "Mes données sont-elles privées ?",
     answer:
-      "Absolutely. Images are sent for analysis via OpenRouter API and are not stored anywhere. Your privacy is 100% guaranteed. We don't keep any images or analysis data.",
+      "Absolument. Les images sont envoyées pour analyse via l'API OpenRouter et ne sont stockées nulle part. Votre vie privée est garantie à 100 %. Nous ne conservons aucune image ni donnée d'analyse.",
   },
   {
-    question: "How many calories in an average meal?",
+    question: "Combien de calories dans un repas moyen ?",
     answer:
-      "Average breakfast: 300-500 calories. Lunch: 500-800 calories. Dinner: 400-700 calories. Fast food meals can reach 1000+ calories per meal. Use the tool to analyze your actual meal instead of guessing.",
+      "Petit-déjeuner moyen : 300-500 calories. Déjeuner : 500-800 calories. Dîner : 400-700 calories. Les repas de fast-food peuvent atteindre plus de 1000 calories par repas. Utilisez l'outil pour analyser votre repas réel au lieu de deviner.",
   },
   {
-    question: "Can I use this for weight loss?",
+    question: "Puis-je utiliser cela pour perdre du poids ?",
     answer:
-      "Yes! It's perfect for tracking calories. Snap your meals throughout the day to know exactly what you're consuming. Daily tracking helps you achieve weight loss or maintenance goals.",
+      "Oui ! C'est parfait pour suivre les calories. Photographiez vos repas tout au long de la journée pour savoir exactement ce que vous consommez. Le suivi quotidien vous aide à atteindre vos objectifs de perte ou de maintien de poids.",
   },
   {
-    question: "Does it analyze drinks too?",
+    question: "Analyse-t-il aussi les boissons ?",
     answer:
-      "Yes, it analyzes beverages — juices, coffee, tea, sodas, and more. Make sure to photograph the cup clearly with a size reference if possible.",
+      "Oui, il analyse les boissons — jus, café, thé, sodas, et plus encore. Assurez-vous de photographier la tasse clairement avec une référence de taille si possible.",
   },
   {
-    question: "What's the difference between calories and macros?",
+    question: "Quelle est la différence entre les calories et les macros ?",
     answer:
-      "Calories = total energy in the meal. Macros: protein (4 cal/g), carbs (4 cal/g), fat (9 cal/g). The tool calculates all three to give you a complete nutritional picture.",
+      "Calories = énergie totale du repas. Macros : protéines (4 cal/g), glucides (4 cal/g), lipides (9 cal/g). L'outil calcule les trois pour vous donner une image nutritionnelle complète.",
   },
   {
-    question: "Why do estimated calories vary between photos of the same food?",
+    question: "Pourquoi les calories estimées varient-elles entre les photos du même aliment ?",
     answer:
-      "Portion size varies — a serving of rice could be 1 cup or 2 cups. The AI estimates portion size visually. Clearer photos with size references (like a fork or plate edge) improve portion estimation.",
+      "La taille des portions varie — une portion de riz peut être 1 tasse ou 2 tasses. L'IA estime la taille des portions visuellement. Des photos plus claires avec des références de taille (comme une fourchette ou le bord de l'assiette) améliorent l'estimation des portions.",
   },
   {
-    question: "Can AI distinguish between different cooking methods?",
+    question: "L'IA peut-elle distinguer les différentes méthodes de cuisson ?",
     answer:
-      "Yes, the model can generally distinguish grilled, fried, boiled, or raw food (like salads). Cooking method affects calories — fried food has more calories per volume due to oil absorption.",
+      "Oui, le modèle peut généralement distinguer les aliments grillés, frits, bouillis ou crus (comme les salades). La méthode de cuisson affecte les calories — les aliments frits ont plus de calories par volume en raison de l'absorption d'huile.",
   },
   {
-    question: "Does it work with any cuisine?",
+    question: "Fonctionne-t-il avec toutes les cuisines ?",
     answer:
-      "Yes, it recognizes dishes from cuisines worldwide — Italian, Japanese, Middle Eastern, Indian, Mexican, American, Chinese, and more. Every cuisine has its typical ingredients and preparation methods built into the AI model's knowledge.",
+      "Oui, il reconnaît les plats de cuisines du monde entier — italienne, japonaise, moyen-orientale, indienne, mexicaine, américaine, chinoise, et plus encore. Chaque cuisine a ses ingrédients et méthodes de préparation typiques intégrés dans les connaissances du modèle d'IA.",
   },
 ];
 
 const relatedTools = [
   {
-    title: "Calorie Calculator (BMR)",
+    title: "Calculateur de calories (BMR)",
     icon: "🔥",
     href: "/fr/tools/calorie-calculator",
   },
   {
-    title: "BMI Calculator",
+    title: "Calculateur d'IMC",
     icon: "⚖️",
     href: "/fr/tools/bmi-calculator",
   },
-  { title: "Stopwatch", icon: "⏱️", href: "/fr/tools/stopwatch" },
-  { title: "Timer", icon: "⏰", href: "/fr/tools/timer" },
+  { title: "Chronomètre", icon: "⏱️", href: "/fr/tools/stopwatch" },
+  { title: "Minuteur", icon: "⏰", href: "/fr/tools/timer" },
 ];
 
 const seoContent = [
-  'Food Calorie Analyzer is a free AI-powered tool that analyzes photos of food to determine calorie content and nutritional information. Simply snap a picture of your meal — either with your camera or from your photo gallery — and get instant, accurate analysis.',
-  "How it works: Take a clear photo of your food from a top-down angle. The tool sends the image to a specialized AI model that identifies each food item, estimates portion sizes, and calculates calories, protein, carbs, and fat. Results appear within 5-10 seconds.",
-  "Perfect for anyone tracking their nutrition: snap your breakfast to know your morning calories, analyze lunch and dinner the same way. Track your daily meals effortlessly without manual logging or food weighing.",
-  "Bonus: The tool breaks down meals into individual components — see how much protein is in that chicken breast versus carbs in the rice. It helps you balance your meals for better nutrition. All from a single photo.",
-  "Photo quality matters: clear, well-lit images with natural lighting give the best results. Avoid dark or distant shots. Separate dishes into individual photos for better accuracy. Works with all types of cuisines worldwide.",
+  "L'analyseur de calories alimentaires est un outil gratuit propulsé par IA qui analyse les photos d'aliments pour déterminer le contenu calorique et les informations nutritionnelles. Prenez simplement une photo de votre repas — soit avec votre appareil photo, soit depuis votre galerie — et obtenez une analyse instantanée et précise.",
+  "Comment ça fonctionne : Prenez une photo claire de votre nourriture depuis un angle du dessus. L'outil envoie l'image à un modèle d'IA spécialisé qui identifie chaque aliment, estime la taille des portions et calcule les calories, les protéines, les glucides et les lipides. Les résultats apparaissent en 5 à 10 secondes.",
+  "Parfait pour toute personne suivant sa nutrition : photographiez votre petit-déjeuner pour connaître vos calories du matin, analysez le déjeuner et le dîner de la même manière. Suivez vos repas quotidiens sans effort, sans saisie manuelle ni pesée des aliments.",
+  "Bonus : L'outil décompose les repas en composants individuels — voyez combien de protéines se trouvent dans cette poitrine de poulet par rapport aux glucides dans le riz. Il vous aide à équilibrer vos repas pour une meilleure nutrition. Tout cela à partir d'une seule photo.",
+  "La qualité de la photo compte : des images claires et bien éclairées avec un éclairage naturel donnent les meilleurs résultats. Évitez les prises de vue sombres ou éloignées. Séparez les plats en photos individuelles pour une meilleure précision. Fonctionne avec tous les types de cuisines du monde entier.",
 ];
 
 export default function Client() {
@@ -150,10 +150,10 @@ export default function Client() {
           ctx.drawImage(img, 0, 0, w, h);
           resolve(canvas.toDataURL("image/jpeg", 0.7));
         };
-        img.onerror = () => reject(new Error("Failed to load image"));
+        img.onerror = () => reject(new Error("Échec du chargement de l'image"));
         img.src = reader.result as string;
       };
-      reader.onerror = () => reject(new Error("Failed to read file"));
+      reader.onerror = () => reject(new Error("Échec de la lecture du fichier"));
       reader.readAsDataURL(file);
     });
   };
@@ -163,12 +163,12 @@ export default function Client() {
     setResult(null);
 
     if (!file.type.startsWith("image/")) {
-      setError("Please select a valid image (JPEG, PNG, WebP)");
+      setError("Veuillez sélectionner une image valide (JPEG, PNG, WebP)");
       return;
     }
 
     if (file.size > MAX_IMAGE_SIZE) {
-      setError("Image is too large. Max size is 10MB.");
+      setError("L'image est trop volumineuse. Taille max : 10 Mo.");
       return;
     }
 
@@ -178,7 +178,7 @@ export default function Client() {
       const compressed = await compressImage(file);
       setImage(compressed);
     } catch {
-      setError("Failed to compress image. Try again.");
+      setError("Échec de la compression de l'image. Réessayez.");
     }
   };
 
@@ -210,11 +210,11 @@ export default function Client() {
         data = await res.json();
       } catch {
         const text = await res.text();
-        throw new Error(`Server returned unexpected response: ${text.slice(0, 100)}`);
+        throw new Error(`Le serveur a renvoyé une réponse inattendue : ${text.slice(0, 100)}`);
       }
 
       if (!res.ok) {
-        throw new Error(data.error || "Analysis failed");
+        throw new Error(data.error || "Échec de l'analyse");
       }
 
       if (data.error) {
@@ -225,7 +225,7 @@ export default function Client() {
       setResult(data);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (e: any) {
-      setError(e.message || "Something went wrong. Please try again.");
+      setError(e.message || "Une erreur s'est produite. Veuillez réessayer.");
     } finally {
       setLoading(false);
     }
@@ -256,15 +256,15 @@ export default function Client() {
   const getMealTypeText = (type?: string) => {
     switch (type) {
       case "breakfast":
-        return "🍳 Breakfast";
+        return "🍳 Petit-déjeuner";
       case "lunch":
-        return "🍲 Lunch";
+        return "🍲 Déjeuner";
       case "dinner":
-        return "🌙 Dinner";
+        return "🌙 Dîner";
       case "snack":
-        return "🍿 Snack";
+        return "🍿 Collation";
       default:
-        return "🍽️ Meal";
+        return "🍽️ Repas";
     }
   };
 
@@ -272,8 +272,8 @@ export default function Client() {
     <div className="max-w-[760px] mx-auto">
       <StructuredData
         data={toolSchema(
-          "Food Calorie Analyzer",
-          "Free AI-powered food calorie analyzer — take a photo and get instant calorie and nutrition details",
+          "Analyseur de calories alimentaires",
+          "Analyseur de calories alimentaire gratuit propulsé par IA — prenez une photo et obtenez instantanément les détails caloriques et nutritionnels",
           "https://adwatak.cloud/fr/tools/food-calorie-analyzer",
           "fr",
           "Health"
@@ -283,7 +283,7 @@ export default function Client() {
       <StructuredData
         data={breadcrumbSchema([
           {
-            name: "Home",
+            name: "Accueil",
             url: "https://adwatak.cloud/fr",
           },
           {
@@ -291,19 +291,19 @@ export default function Client() {
             url: "https://adwatak.cloud/fr/category/daily",
           },
           {
-            name: "Food Calorie Analyzer",
+            name: "Analyseur de calories alimentaires",
             url: "https://adwatak.cloud/fr/tools/food-calorie-analyzer",
           },
         ])}
       />
       <StructuredData
         data={howToSchema(
-          "Food Calorie Analyzer",
-          "How to analyze calories from a food photo",
+          "Analyseur de calories alimentaires",
+          "Comment analyser les calories à partir d'une photo de repas",
           [
-            { name: "Snap your meal", text: "Take a photo with your camera or upload one from your gallery. Top-down shots work best." },
-            { name: "Wait for analysis", text: "Click 'Analyze Image' and wait 5-10 seconds while AI analyzes your food." },
-            { name: "View results", text: "See calories and macros for each item plus the meal total." },
+            { name: "Prenez votre repas en photo", text: "Prenez une photo avec votre appareil photo ou téléchargez-en une depuis votre galerie. Les prises de vue du dessus fonctionnent le mieux." },
+            { name: "Attendez l'analyse", text: "Cliquez sur 'Analyser l'image' et attendez 5 à 10 secondes pendant que l'IA analyse votre repas." },
+            { name: "Consultez les résultats", text: "Voyez les calories et les macros pour chaque élément ainsi que le total du repas." },
           ],
           "PT30S",
           "fr"
@@ -314,12 +314,12 @@ export default function Client() {
       <Breadcrumb
         category="Autres"
         categorySlug="daily"
-        toolName="Food Calorie Analyzer"
+        toolName="Analyseur de calories alimentaires"
       />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 mb-6">
         <h1 className="text-2xl sm:text-3xl font-extrabold mb-2">
-          📸 Food Calorie Analyzer
+          📸 Analyseur de calories alimentaires
         </h1>
         <p className="text-sm text-gray-500 mb-6">Analyse calorique par photo</p>
 
@@ -331,14 +331,14 @@ export default function Client() {
           >
             <div className="text-5xl mb-4">📷</div>
             <p className="font-semibold text-gray-700 mb-1">
-              Choose a food photo
+              Choisissez une photo de repas
             </p>
             <p className="text-xs text-gray-400 mb-4">
-              JPEG, PNG or WebP — up to 10MB
+              JPEG, PNG ou WebP — jusqu'à 10 Mo
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <label className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl text-sm font-semibold cursor-pointer border-none hover:bg-blue-700 transition-colors">
-                📂 From Gallery
+                📂 Depuis la galerie
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -351,7 +351,7 @@ export default function Client() {
                 />
               </label>
               <label className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-xl text-sm font-semibold cursor-pointer border-none hover:bg-green-700 transition-colors">
-                📸 Take Photo
+                📸 Prendre une photo
                 <input
                   ref={cameraInputRef}
                   type="file"
@@ -374,7 +374,7 @@ export default function Client() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={image}
-                alt="Selected food"
+                alt="Repas sélectionné"
                 className="w-full h-auto max-h-80 object-contain bg-gray-50"
               />
             </div>
@@ -397,10 +397,10 @@ export default function Client() {
                 {loading ? (
                   <>
                     <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    Analyzing...
+                    Analyse en cours...
                   </>
                 ) : (
-                  <>🔍 Analyze Image</>
+                  <>🔍 Analyser l'image</>
                 )}
               </button>
               <button
@@ -408,7 +408,7 @@ export default function Client() {
                 disabled={loading}
                 className="px-6 py-3 bg-gray-100 text-gray-600 rounded-xl font-semibold border-none text-base cursor-pointer hover:bg-gray-200 transition-all"
               >
-                Cancel
+                Annuler
               </button>
             </div>
           </div>
@@ -418,10 +418,10 @@ export default function Client() {
           <div className="text-center py-12">
             <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4" />
             <p className="text-gray-500 font-semibold">
-              Analyzing your food with AI...
+              Analyse de votre repas par IA...
             </p>
             <p className="text-xs text-gray-400 mt-1">
-              May take 5-10 seconds
+              Peut prendre 5 à 10 secondes
             </p>
           </div>
         )}
@@ -432,7 +432,7 @@ export default function Client() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={image || ""}
-                alt="Analyzed food"
+                alt="Repas analysé"
                 className="w-full h-auto max-h-60 object-contain bg-gray-50"
               />
             </div>
@@ -445,7 +445,7 @@ export default function Client() {
 
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100 text-center">
               <p className="text-xs text-blue-500 mb-1 font-semibold">
-                Total Calories
+                Calories totales
               </p>
               <p className="text-4xl font-extrabold text-blue-900">
                 {result.totalCalories ?? "—"}
@@ -456,37 +456,37 @@ export default function Client() {
             <div className="grid grid-cols-3 gap-3">
               <div className="bg-red-50 rounded-xl p-4 text-center border border-red-100">
                 <p className="text-xs text-red-500 mb-1 font-semibold">
-                  Protein
+                  Protéines
                 </p>
                 <p className="text-xl font-extrabold text-red-700">
                   {result.totalProtein?.toFixed(1) ?? "—"}
                 </p>
-                <p className="text-[10px] text-red-400">grams</p>
+                <p className="text-[10px] text-red-400">grammes</p>
               </div>
               <div className="bg-yellow-50 rounded-xl p-4 text-center border border-yellow-100">
                 <p className="text-xs text-yellow-600 mb-1 font-semibold">
-                  Carbs
+                  Glucides
                 </p>
                 <p className="text-xl font-extrabold text-yellow-800">
                   {result.totalCarbs?.toFixed(1) ?? "—"}
                 </p>
-                <p className="text-[10px] text-yellow-500">grams</p>
+                <p className="text-[10px] text-yellow-500">grammes</p>
               </div>
               <div className="bg-orange-50 rounded-xl p-4 text-center border border-orange-100">
                 <p className="text-xs text-orange-500 mb-1 font-semibold">
-                  Fat
+                  Lipides
                 </p>
                 <p className="text-xl font-extrabold text-orange-700">
                   {result.totalFat?.toFixed(1) ?? "—"}
                 </p>
-                <p className="text-[10px] text-orange-400">grams</p>
+                <p className="text-[10px] text-orange-400">grammes</p>
               </div>
             </div>
 
             {result.items && result.items.length > 0 && (
               <div>
                 <h3 className="font-bold text-gray-800 mb-3 text-base">
-                  Item Details
+                  Détails des éléments
                 </h3>
                 <div className="space-y-2">
                   {result.items.map((item, i) => (
@@ -515,9 +515,9 @@ export default function Client() {
                       </div>
                       <div className="flex gap-4 text-xs text-gray-500 flex-wrap">
                         <span>🔥 {item.calories} cal</span>
-                        <span>💪 {item.protein?.toFixed(1)}g protein</span>
-                        <span>🍚 {item.carbs?.toFixed(1)}g carbs</span>
-                        <span>🫒 {item.fat?.toFixed(1)}g fat</span>
+                        <span>💪 {item.protein?.toFixed(1)}g protéines</span>
+                        <span>🍚 {item.carbs?.toFixed(1)}g glucides</span>
+                        <span>🫒 {item.fat?.toFixed(1)}g lipides</span>
                       </div>
                     </div>
                   ))}
@@ -528,7 +528,7 @@ export default function Client() {
             {result.summary && (
               <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
                 <p className="text-xs text-gray-400 mb-1 font-semibold">
-                  Assessment
+                  Évaluation
                 </p>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   {result.summary}
@@ -540,7 +540,7 @@ export default function Client() {
               onClick={resetTool}
               className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold border-none text-sm cursor-pointer hover:bg-blue-700 transition-colors"
             >
-              🔄 Analyze Another Meal
+              🔄 Analyser un autre repas
             </button>
           </div>
         )}

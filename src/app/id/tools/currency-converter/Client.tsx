@@ -25,32 +25,32 @@ const currencies = [
 ];
 
 const faqs = [
-  { question: "What currencies are supported?", answer: "14+ currencies: Saudi Riyal (SAR), UAE Dirham (AED), Egyptian Pound (EGP), Kuwaiti Dinar (KWD), Qatari Riyal (QAR), Omani Rial (OMR), Bahraini Dinar (BHD), US Dollar (USD), Euro (EUR), British Pound (GBP), Turkish Lira (TRY), Jordanian Dinar (JOD), Chinese Yuan (CNY), Indian Rupee (INR)." },
-  { question: "Where do exchange rates come from?", answer: "Rates shown are mid-market rates from an open-source currency API updated daily. Banks and exchange offices add 1-5% margin. Use our tool as an estimate, then check with your bank for exact rates." },
-  { question: "Are GCC currencies pegged to USD?", answer: "Yes, most GCC currencies are pegged: SAR = 3.75, AED = 3.67, QAR = 3.64, BHD = 0.376, OMR = 0.384 per USD. KWD is the most valuable currency globally and not fully pegged. EGP and TRY float freely." },
-  { question: "How to get the best exchange rate?", answer: "Avoid airport exchange offices (worst rates). Use Wise, Revolut, or STC Pay. Transfer larger amounts for better rates. Monitor rates for a few days before converting large sums." },
-  { question: "Can I convert SAR to USD?", answer: "1 SAR = 0.267 USD (fixed peg). 1,000 SAR = 267 USD. The SAR-USD rate is stable due to the currency peg. Bank margin is typically 0.5-1% on this pair." },
-  { question: "What's the buy/sell spread?", answer: "Buy price = what the bank sells you currency at. Sell price = what the bank pays when you sell currency. The difference is the bank's profit margin (spread). Our tool shows mid-rate." },
-  { question: "Do you support crypto?", answer: "No, we only support traditional fiat currencies. For crypto conversions, use specialized platforms like Binance or Coinbase." },
-  { question: "How to use this for travel?", answer: "Enter your home currency amount, select your destination currency. Add 2-3% for bank margins to get a realistic budget. Check rates a week before traveling." },
-  { question: "Why is KWD the most valuable currency?", answer: "Kuwait has a strong economy, large oil reserves, and a sovereign wealth fund. KWD is pegged to a basket of currencies (not just USD). 1 KWD ≈ 3.25 USD." },
-  { question: "Best time to convert currency?", answer: "Weekdays during London market hours (Sunday-Thursday 8am-10pm). Avoid weekends (markets closed, wider spreads). Avoid major economic news days." },
+  { question: "Mata uang apa saja yang didukung?", answer: "14+ mata uang: Saudi Riyal (SAR), UAE Dirham (AED), Egyptian Pound (EGP), Kuwaiti Dinar (KWD), Qatari Riyal (QAR), Omani Rial (OMR), Bahraini Dinar (BHD), US Dollar (USD), Euro (EUR), British Pound (GBP), Turkish Lira (TRY), Jordanian Dinar (JOD), Chinese Yuan (CNY), Indian Rupee (INR)." },
+  { question: "Dari mana nilai tukar berasal?", answer: "Nilai tukar yang ditampilkan adalah mid-market rates dari API mata uang open-source yang diperbarui setiap hari. Bank dan kantor penukaran menambahkan margin 1-5%. Gunakan alat kami sebagai perkiraan, lalu periksa dengan bank Anda untuk nilai tukar yang tepat." },
+  { question: "Apakah mata uang GCC dipatok ke USD?", answer: "Ya, sebagian besar mata uang GCC dipatok: SAR = 3.75, AED = 3.67, QAR = 3.64, BHD = 0.376, OMR = 0.384 per USD. KWD adalah mata uang paling bernilai di dunia dan tidak sepenuhnya dipatok. EGP dan TRY mengambang bebas." },
+  { question: "Bagaimana cara mendapatkan nilai tukar terbaik?", answer: "Hindari kantor penukaran di bandara (nilai tukar terburuk). Gunakan Wise, Revolut, atau STC Pay. Transfer jumlah besar untuk nilai tukar yang lebih baik. Pantau nilai tukar selama beberapa hari sebelum menukar jumlah besar." },
+  { question: "Bisakah saya mengonversi SAR ke USD?", answer: "1 SAR = 0.267 USD (patokan tetap). 1,000 SAR = 267 USD. Nilai tukar SAR-USD stabil karena patokan mata uang. Margin bank biasanya 0.5-1% untuk pasangan ini." },
+  { question: "Apa itu spread beli/jual?", answer: "Harga beli = harga saat bank menjual mata uang kepada Anda. Harga jual = harga yang dibayar bank saat Anda menjual mata uang. Selisihnya adalah margin keuntungan bank (spread). Alat kami menampilkan mid-rate." },
+  { question: "Apakah Anda mendukung kripto?", answer: "Tidak, kami hanya mendukung mata uang fiat tradisional. Untuk konversi kripto, gunakan platform khusus seperti Binance atau Coinbase." },
+  { question: "Bagaimana cara menggunakan ini untuk perjalanan?", answer: "Masukkan jumlah mata uang asal Anda, pilih mata uang tujuan. Tambahkan 2-3% untuk margin bank agar mendapatkan anggaran yang realistis. Periksa nilai tukar seminggu sebelum bepergian." },
+  { question: "Mengapa KWD adalah mata uang paling bernilai?", answer: "Kuwait memiliki ekonomi yang kuat, cadangan minyak yang besar, dan dana kekayaan negara. KWD dipatok ke sekeranjang mata uang (bukan hanya USD). 1 KWD ≈ 3.25 USD." },
+  { question: "Waktu terbaik untuk menukar mata uang?", answer: "Hari kerja selama jam pasar London (Minggu-Kamis pukul 8 pagi-10 malam). Hindari akhir pekan (pasar tutup, spread lebih lebar). Hindari hari-hari berita ekonomi besar." },
 ];
 
 const relatedTools = [
-  { title: "VAT Calculator", icon: "🏛️", href: "/en/tools/vat-calculator" },
-  { title: "Profit Margin", icon: "📈", href: "/en/tools/profit-margin" },
-  { title: "Gold Calculator", icon: "🥇", href: "/en/tools/gold-calculator" },
-  { title: "Loan Calculator", icon: "💰", href: "/en/tools/loan-calculator" },
-  { title: "Unit Converter", icon: "📏", href: "/en/tools/unit-converter" },
-  { title: "Salary Calculator", icon: "💵", href: "/en/tools/salary-calculator" },
+  { title: "Kalkulator PPN", icon: "🏛️", href: "/id/tools/vat-calculator" },
+  { title: "Margin Keuntungan", icon: "📈", href: "/id/tools/profit-margin" },
+  { title: "Kalkulator Emas", icon: "🥇", href: "/id/tools/gold-calculator" },
+  { title: "Kalkulator Pinjaman", icon: "💰", href: "/id/tools/loan-calculator" },
+  { title: "Konverter Satuan", icon: "📏", href: "/id/tools/unit-converter" },
+  { title: "Kalkulator Gaji", icon: "💵", href: "/id/tools/salary-calculator" },
 ];
 
 const seoContent = [
-  "Convert between 14+ world currencies instantly — SAR, AED, EGP, KWD, USD, EUR, GBP, and more. Enter the amount, select currencies, and get the result with live mid-market rates.",
-  "GCC currencies are pegged to USD (except KWD). SAR = 3.75, AED = 3.67, QAR = 3.64. EGP and TRY float freely. Use the converter for travel planning, online shopping, and business.",
-  "Tip for travelers: Airport rates are the worst. Exchange only for the first day there, use Wise or STC Pay for the rest. Check rates before traveling to budget accurately.",
-  "For businesses: Rates shown are indicative. For large transfers, contact your bank for competitive quotes. Banks offer better rates for amounts over 10,000 USD.",
+  "Konversi antara 14+ mata uang dunia secara instan — SAR, AED, EGP, KWD, USD, EUR, GBP, dan lainnya. Masukkan jumlah, pilih mata uang, dan dapatkan hasilnya dengan mid-market rates langsung.",
+  "Mata uang GCC dipatok ke USD (kecuali KWD). SAR = 3.75, AED = 3.67, QAR = 3.64. EGP dan TRY mengambang bebas. Gunakan konverter untuk perencanaan perjalanan, belanja online, dan bisnis.",
+  "Tips untuk pelancong: Nilai tukar di bandara adalah yang terburuk. Tukar hanya untuk hari pertama di sana, gunakan Wise atau STC Pay untuk sisanya. Periksa nilai tukar sebelum bepergian untuk menganggarkan dengan akurat.",
+  "Untuk bisnis: Nilai tukar yang ditampilkan bersifat indikatif. Untuk transfer besar, hubungi bank Anda untuk penawaran yang kompetitif. Bank menawarkan nilai tukar yang lebih baik untuk jumlah di atas 10,000 USD.",
 ];
 
 export default function Client() {
@@ -105,14 +105,14 @@ export default function Client() {
     setTo(from);
   };
 
-  const schemaName = "Currency Converter";
+  const schemaName = "Konverter Mata Uang";
   const schemaDesc = "Online Currency Converter — live mid-market rates";
   const schemaCategory = "Utility";
-  const schemaUrl = "https://adwatak.cloud/en/tools/currency-converter";
+  const schemaUrl = "https://adwatak.cloud/id/tools/currency-converter";
   const breadcrumbItems = [
-    { name: "Home", url: "https://adwatak.cloud/en" },
-    { name: "Converters", url: "https://adwatak.cloud/en/category/converters" },
-    { name: "Currency Converter", url: "https://adwatak.cloud/en/tools/currency-converter" },
+    { name: "Home", url: "https://adwatak.cloud/id" },
+    { name: "Konverter", url: "https://adwatak.cloud/id/category/converters" },
+    { name: "Konverter Mata Uang", url: "https://adwatak.cloud/id/tools/currency-converter" },
   ];
 
   return (
@@ -123,25 +123,25 @@ export default function Client() {
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
+      <StructuredData data={howToSchema("Cara menggunakan alat ini", "Free online tool. Works directly in your browser. No registration required.", [{name:"Buka alat",text:"Arahkan ke halaman alat ini di Adawatak"},{name:"Masukkan data Anda",text:"Isi kolom yang diperlukan"},{name:"Dapatkan hasil",text:"Klik tombol hitung atau hasilkan"},{name:"Gunakan atau bagikan",text:"Salin, unduh, atau bagikan hasilnya"}],"kurang dari satu menit","id")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Converters" categorySlug="converters" toolName="Currency Converter" />
+      <Breadcrumb category="Konverter" categorySlug="converters" toolName="Konverter Mata Uang" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">💱 Currency Converter</h1>
+        <h1 className="text-2xl font-extrabold mb-1">💱 Konverter Mata Uang</h1>
         <p className="text-sm text-gray-500 mb-6">Live exchange rates — updated daily</p>
 
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1.5">Amount</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1.5">Jumlah</label>
             <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
               className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="1,000" />
           </div>
 
           <div className="grid grid-cols-[1fr,auto,1fr] gap-3 items-end">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">From</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Dari</label>
               <select value={from} onChange={(e) => setFrom(e.target.value)}
                 className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white">
                 {currencies.map((c) => <option key={c.code} value={c.code}>{c.flag} {c.code} — {c.name}</option>)}
@@ -152,7 +152,7 @@ export default function Client() {
               🔄
             </button>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">To</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Ke</label>
               <select value={to} onChange={(e) => setTo(e.target.value)}
                 className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white">
                 {currencies.map((c) => <option key={c.code} value={c.code}>{c.flag} {c.code} — {c.name}</option>)}
@@ -177,10 +177,10 @@ export default function Client() {
           )}
         </div>
       </div>
-      <SEOContent content={seoContent} lang="en" />
+      <SEOContent content={seoContent} lang="id" />
       <FAQSection faqs={faqs} lang="en" />
-      <RelatedTools tools={relatedTools} lang="en" />
-      <ShareButtons lang="en" />
+      <RelatedTools tools={relatedTools} lang="id" />
+      <ShareButtons lang="id" />
     </div>
   );
 }

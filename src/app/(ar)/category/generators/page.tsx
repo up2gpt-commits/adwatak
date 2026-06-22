@@ -1,4 +1,4 @@
-export const metadata = { title: "المولدات — أدواتك", description: "مولد QR Code، رابط واتساب، مولد كلمات سر، مولد فواتير، مولد أرقام عشوائية، مولد أسماء." };
+export const metadata = { title: "المولدات — أدواتك", description: "مولد QR Code، رابط واتساب، مولد كلمات سر، مولد فواتير، مولد أرقام عشوائية، مولد أسماء.", alternates: { canonical: "https://adwatak.cloud/category/generators" } };
 const tools = [
   { title: "مولد QR Code", icon: "🔳", href: "/tools/qr-generator", desc: "إنشاء QR Code لرابط أو نص" },
   { title: "رابط واتساب مباشر", icon: "💬", href: "/tools/whatsapp-link", desc: "رابط يفتح واتساب مباشرة" },

@@ -16,9 +16,10 @@ export const metadata: Metadata = {
 };
 
 const tools = [
-  { title: "BMI Calculator", icon: "⚖️", href: "/fr/tools/bmi-calculator", desc: "Body Mass Index — check your ideal weight" },
-  { title: "Stopwatch + Timer", icon: "⏱️", href: "/fr/tools/stopwatch", desc: "Stopwatch with laps and countdown timer" },
-  { title: "Social Character Counter", icon: "📱", href: "/fr/tools/social-character-counter", desc: "Twitter, Instagram, TikTok & more" },
+  { title: "Calculateur IMC", icon: "⚖️", href: "/fr/tools/bmi-calculator", desc: "Indice de Masse Corporelle" },
+  { title: "Chronomètre", icon: "⏱️", href: "/fr/tools/stopwatch", desc: "Chronomètre avec tours" },
+  { title: "Répulsif Moustique", icon: "🦟", href: "/fr/tools/mosquito-repellent", desc: "Haute fréquence 15 kHz" },
+  { title: "Compteur Caractères", icon: "📱", href: "/fr/tools/social-character-counter", desc: "Twitter, Instagram, TikTok" },
 ];
 
 export default function DailyCategory() {

@@ -9,6 +9,7 @@ const tools = [
   { title: "VKİ Hesaplama", icon: "⚖️", href: "/tr/tools/bmi-calculator", desc: "Vücut Kitle İndeksi" },
   { title: "Kalori Hesaplama", icon: "🔥", href: "/tr/tools/calorie-calculator", desc: "Günlük kalori ihtiyacı" },
   { title: "Kronometre", icon: "⏱️", href: "/tr/tools/stopwatch", desc: "Tur takipli kronometre" },
+  { title: "Sivrisinek Kovucu Ses", icon: "🦟", href: "/tr/tools/mosquito-repellent", desc: "15.000 Hz sivrisinek kovucu" },
 ];
 
 export default function DailyCategory() {

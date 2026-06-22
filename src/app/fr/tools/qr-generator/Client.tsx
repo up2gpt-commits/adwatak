@@ -20,16 +20,16 @@ const faqs = [
   { question: "Are QR codes secure?", answer: "QR codes themselves are just data containers. The risk is in what you scan — 'QRishing' attacks replace legitimate QR stickers with malicious ones. Always preview the URL before opening. Our tool generates clean, standard QR codes for your safe use." },
   { question: "Can QR codes expire?", answer: "The QR image never expires — it's a static encoding of your data. But if the URL it points to changes or the link breaks, the QR becomes useless. For dynamic QR codes that can be updated, use a URL shortener as intermediary." },
   { question: "What is the minimum QR size for print?", answer: "At least 2×2 cm (0.8 inches) for print. Larger = easier scanning. For screens, 1×1 cm is sufficient. Always test-scan from the expected viewing distance before mass printing. Low contrast or glossy surfaces may need larger sizes." },
-  { question: "How to track QR scans?", answer: "Use a short URL (bit.ly, or a tracking link) instead of the direct URL. The QR encodes the short URL, which redirects with analytics. This way you know scan count, location, device type, and time. Without tracking, you won't know how many people scanned." },
+  { question: "Comment suivre les scans QR ?", answer: "Use a short URL (bit.ly, or a tracking link) instead of the direct URL. The QR encodes the short URL, which redirects with analytics. This way you know scan count, location, device type, and time. Without tracking, you won't know how many people scanned." },
 ];
 
 const relatedTools = [
-  { title: "WhatsApp Link", icon: "💬", href: "/fr/tools/whatsapp-link" },
-  { title: "Password Generator", icon: "🔐", href: "/fr/tools/password-generator" },
-  { title: "Invoice Generator", icon: "🧾", href: "/fr/tools/invoice-generator" },
-  { title: "Base64 Encoder", icon: "🔄", href: "/fr/tools/base64-encoder" },
-  { title: "Name Generator", icon: "👤", href: "/fr/tools/name-generator" },
-  { title: "Random Number", icon: "🎲", href: "/fr/tools/random-number" },
+  { title: "Lien WhatsApp", icon: "💬", href: "/fr/tools/whatsapp-link" },
+  { title: "Générateur de Mots de Passe", icon: "🔐", href: "/fr/tools/password-generator" },
+  { title: "Générateur de Factures", icon: "🧾", href: "/fr/tools/invoice-generator" },
+  { title: "Encodeur Base64", icon: "🔄", href: "/fr/tools/base64-encoder" },
+  { title: "Générateur de Noms", icon: "👤", href: "/fr/tools/name-generator" },
+  { title: "Nombre Aléatoire", icon: "🎲", href: "/fr/tools/random-number" },
 ];
 
 const seoContent = [
@@ -75,7 +75,7 @@ export default function Client() {
       <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{ name: "Ouvrir l'outil", text: "Navigate to this tool page on Adawatak" }, { name: "Entrez vos données", text: "Remplissez les champs requis" }, { name: "Obtenez les résultats", text: "Cliquez sur le bouton Calculer ou Générer" }, { name: "Utilisez ou partagez", text: "Copiez, téléchargez ou partagez les résultats" }], "moins d'une minute", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
 
-      <Breadcrumb category="Développement" categorySlug="developer-tools" toolName="QR Code Generator" />
+      <Breadcrumb category="Développement" categorySlug="developer-tools" toolName="Générateur de code QR" />
       
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6 dark:bg-gray-800 dark:border-gray-700">
         <h1 className="text-2xl font-extrabold mb-1 dark:text-white">📱 QR Code Generator</h1>

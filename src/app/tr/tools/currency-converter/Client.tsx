@@ -25,32 +25,32 @@ const currencies = [
 ];
 
 const faqs = [
-  { question: "What currencies are supported?", answer: "14+ currencies: Saudi Riyal (SAR), UAE Dirham (AED), Egyptian Pound (EGP), Kuwaiti Dinar (KWD), Qatari Riyal (QAR), Omani Rial (OMR), Bahraini Dinar (BHD), US Dollar (USD), Euro (EUR), British Pound (GBP), Turkish Lira (TRY), Jordanian Dinar (JOD), Chinese Yuan (CNY), Indian Rupee (INR)." },
-  { question: "Where do exchange rates come from?", answer: "Rates shown are mid-market rates from an open-source currency API updated daily. Banks and exchange offices add 1-5% margin. Use our tool as an estimate, then check with your bank for exact rates." },
-  { question: "Are GCC currencies pegged to USD?", answer: "Yes, most GCC currencies are pegged: SAR = 3.75, AED = 3.67, QAR = 3.64, BHD = 0.376, OMR = 0.384 per USD. KWD is the most valuable currency globally and not fully pegged. EGP and TRY float freely." },
-  { question: "How to get the best exchange rate?", answer: "Avoid airport exchange offices (worst rates). Use Wise, Revolut, or STC Pay. Transfer larger amounts for better rates. Monitor rates for a few days before converting large sums." },
-  { question: "Can I convert SAR to USD?", answer: "1 SAR = 0.267 USD (fixed peg). 1,000 SAR = 267 USD. The SAR-USD rate is stable due to the currency peg. Bank margin is typically 0.5-1% on this pair." },
-  { question: "What's the buy/sell spread?", answer: "Buy price = what the bank sells you currency at. Sell price = what the bank pays when you sell currency. The difference is the bank's profit margin (spread). Our tool shows mid-rate." },
-  { question: "Do you support crypto?", answer: "No, we only support traditional fiat currencies. For crypto conversions, use specialized platforms like Binance or Coinbase." },
-  { question: "How to use this for travel?", answer: "Enter your home currency amount, select your destination currency. Add 2-3% for bank margins to get a realistic budget. Check rates a week before traveling." },
-  { question: "Why is KWD the most valuable currency?", answer: "Kuwait has a strong economy, large oil reserves, and a sovereign wealth fund. KWD is pegged to a basket of currencies (not just USD). 1 KWD ≈ 3.25 USD." },
-  { question: "Best time to convert currency?", answer: "Weekdays during London market hours (Sunday-Thursday 8am-10pm). Avoid weekends (markets closed, wider spreads). Avoid major economic news days." },
+  { question: "Hangi para birimleri destekleniyor?", answer: "14'ten fazla para birimi: Suudi Riyali (SAR), BAE Dirhemi (AED), Mısır Lirası (EGP), Kuveyt Dinarı (KWD), Katar Riyali (QAR), Umman Riyali (OMR), Bahreyn Dinarı (BHD), ABD Doları (USD), Euro (EUR), İngiliz Sterlini (GBP), Türk Lirası (TRY), Ürdün Dinarı (JOD), Çin Yuanı (CNY), Hindistan Rupisi (INR)." },
+  { question: "Döviz kurları nereden geliyor?", answer: "Gösterilen kurlar, günlük olarak güncellenen açık kaynaklı bir döviz API'sinden alınan orta piyasa kurlarıdır. Bankalar ve döviz büroları %1-5 marj ekler. Aracımızı bir tahmin olarak kullanın, ardından kesin kurlar için bankanızla kontrol edin." },
+  { question: "KİK para birimleri ABD dolarına sabitlenmiş mi?", answer: "Evet, çoğu KİK para birimi sabitlenmiştir: SAR = 3.75, AED = 3.67, QAR = 3.64, BHD = 0.376, OMR = 0.384 (1 USD karşılığı). KWD küresel olarak en değerli para birimidir ve tamamen sabitlenmemiştir. EGP ve TRY serbest dalgalanır." },
+  { question: "En iyi döviz kuru nasıl alınır?", answer: "Havaalanı döviz bürolarından kaçının (en kötü kurlar). Wise, Revolut veya STC Pay kullanın. Daha iyi kurlar için daha büyük tutarlar transfer edin. Büyük meblağları çevirmeden önce kurları birkaç gün izleyin." },
+  { question: "SAR'ı USD'ye çevirebilir miyim?", answer: "1 SAR = 0.267 USD (sabit kur). 1,000 SAR = 267 USD. SAR-USD kuru, para birimi sabitlemesi nedeniyle istikrarlıdır. Bu paritede banka marjı genellikle 0.5-1%'dir." },
+  { question: "Alış/satış farkı nedir?", answer: "Alış fiyatı = bankanın size döviz sattığı fiyat. Satış fiyatı = siz döviz sattığınızda bankanın ödediği fiyat. Aradaki fark bankanın kar marjıdır (spread). Aracımız orta kuru gösterir." },
+  { question: "Kripto para birimlerini destekliyor musunuz?", answer: "Hayır, yalnızca geleneksel itibari para birimlerini destekliyoruz. Kripto dönüşümleri için Binance veya Coinbase gibi özel platformları kullanın." },
+  { question: "Bunu seyahat için nasıl kullanırım?", answer: "Kendi para biriminizdeki tutarı girin, hedef para biriminizi seçin. Gerçekçi bir bütçe için banka marjları için %2-3 ekleyin. Seyahatten bir hafta önce kurları kontrol edin." },
+  { question: "KWD neden en değerli para birimi?", answer: "Kuveyt güçlü bir ekonomiye, büyük petrol rezervlerine ve bir varlık fonuna sahiptir. KWD bir para sepetine sabitlenmiştir (sadece USD değil). 1 KWD ≈ 3.25 USD." },
+  { question: "Döviz çevirmek için en iyi zaman?", answer: "Londra piyasası saatlerinde hafta içi (Pazar-Perşembe 08:00-22:00). Hafta sonlarından kaçının (piyasalar kapalı, spreadler daha geniş). Büyük ekonomik haber günlerinden kaçının." },
 ];
 
 const relatedTools = [
-  { title: "VAT Calculator", icon: "🏛️", href: "/en/tools/vat-calculator" },
-  { title: "Profit Margin", icon: "📈", href: "/en/tools/profit-margin" },
-  { title: "Gold Calculator", icon: "🥇", href: "/en/tools/gold-calculator" },
-  { title: "Loan Calculator", icon: "💰", href: "/en/tools/loan-calculator" },
-  { title: "Unit Converter", icon: "📏", href: "/en/tools/unit-converter" },
-  { title: "Salary Calculator", icon: "💵", href: "/en/tools/salary-calculator" },
+  { title: "KDV Hesaplayıcı", icon: "🏛️", href: "/en/tools/vat-calculator" },
+  { title: "Kar Marjı", icon: "📈", href: "/en/tools/profit-margin" },
+  { title: "Altın Hesaplayıcı", icon: "🥇", href: "/en/tools/gold-calculator" },
+  { title: "Kredi Hesaplayıcı", icon: "💰", href: "/en/tools/loan-calculator" },
+  { title: "Birim Çevirici", icon: "📏", href: "/en/tools/unit-converter" },
+  { title: "Maaş Hesaplayıcı", icon: "💵", href: "/en/tools/salary-calculator" },
 ];
 
 const seoContent = [
-  "Convert between 14+ world currencies instantly — SAR, AED, EGP, KWD, USD, EUR, GBP, and more. Enter the amount, select currencies, and get the result with live mid-market rates.",
-  "GCC currencies are pegged to USD (except KWD). SAR = 3.75, AED = 3.67, QAR = 3.64. EGP and TRY float freely. Use the converter for travel planning, online shopping, and business.",
-  "Tip for travelers: Airport rates are the worst. Exchange only for the first day there, use Wise or STC Pay for the rest. Check rates before traveling to budget accurately.",
-  "For businesses: Rates shown are indicative. For large transfers, contact your bank for competitive quotes. Banks offer better rates for amounts over 10,000 USD.",
+  "14'ten fazla dünya para birimi arasında anında dönüşüm yapın — SAR, AED, EGP, KWD, USD, EUR, GBP ve daha fazlası. Tutarı girin, para birimlerini seçin ve canlı orta piyasa kurlarıyla sonucu alın.",
+  "KİK para birimleri USD'ye sabitlenmiştir (KWD hariç). SAR = 3.75, AED = 3.67, QAR = 3.64. EGP ve TRY serbest dalgalanır. Seyahat planlaması, online alışveriş ve iş için dönüştürücüyü kullanın.",
+  "Seyahat edenler için ipucu: Havaalanı kurları en kötüsüdür. Sadece ilk gün için orada bozdurun, geri kalanı için Wise veya STC Pay kullanın. Doğru bütçe yapmak için seyahatten önce kurları kontrol edin.",
+  "İşletmeler için: Gösterilen kurlar gösterge niteliğindedir. Büyük transferler için rekabetçi teklifler almak üzere bankanızla iletişime geçin. Bankalar 10,000 USD üzerindeki tutarlar için daha iyi kurlar sunar.",
 ];
 
 export default function Client() {
@@ -105,19 +105,19 @@ export default function Client() {
     setTo(from);
   };
 
-  const schemaName = "Currency Converter";
+  const schemaName = "Döviz Çevirici";
   const schemaDesc = "Online Currency Converter — live mid-market rates";
   const schemaCategory = "Utility";
-  const schemaUrl = "https://adwatak.cloud/en/tools/currency-converter";
+  const schemaUrl = "https://adwatak.cloud/tr/tools/currency-converter";
   const breadcrumbItems = [
-    { name: "Home", url: "https://adwatak.cloud/en" },
-    { name: "Converters", url: "https://adwatak.cloud/en/category/converters" },
-    { name: "Currency Converter", url: "https://adwatak.cloud/en/tools/currency-converter" },
+    { name: "Ana Sayfa", url: "https://adwatak.cloud/tr" },
+    { name: "Çeviriciler", url: "https://adwatak.cloud/tr/category/converters" },
+    { name: "Döviz Çevirici", url: "https://adwatak.cloud/tr/tools/currency-converter" },
   ];
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
+      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'tr', schemaCategory)} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
       {/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
@@ -127,21 +127,21 @@ export default function Client() {
       {/* GEO: Speakable — AI/ses motorlari */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Converters" categorySlug="converters" toolName="Currency Converter" />
+      <Breadcrumb category="Çeviriciler" categorySlug="converters" toolName="Döviz Çevirici" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">💱 Currency Converter</h1>
-        <p className="text-sm text-gray-500 mb-6">Live exchange rates — updated daily</p>
+        <h1 className="text-2xl font-extrabold mb-1">💱 Döviz Çevirici</h1>
+        <p className="text-sm text-gray-500 mb-6">Canlı döviz kurları — günlük güncellenir</p>
 
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1.5">Amount</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1.5">Tutar</label>
             <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)}
               className="w-full p-3 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="1,000" />
           </div>
 
           <div className="grid grid-cols-[1fr,auto,1fr] gap-3 items-end">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">From</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Kaynak</label>
               <select value={from} onChange={(e) => setFrom(e.target.value)}
                 className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white">
                 {currencies.map((c) => <option key={c.code} value={c.code}>{c.flag} {c.code} — {c.name}</option>)}
@@ -152,7 +152,7 @@ export default function Client() {
               🔄
             </button>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">To</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Hedef</label>
               <select value={to} onChange={(e) => setTo(e.target.value)}
                 className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white">
                 {currencies.map((c) => <option key={c.code} value={c.code}>{c.flag} {c.code} — {c.name}</option>)}
@@ -177,10 +177,10 @@ export default function Client() {
           )}
         </div>
       </div>
-      <SEOContent content={seoContent} lang="en" />
-      <FAQSection faqs={faqs} lang="en" />
-      <RelatedTools tools={relatedTools} lang="en" />
-      <ShareButtons lang="en" />
+      <SEOContent content={seoContent} lang="tr" />
+      <FAQSection faqs={faqs} lang="tr" />
+      <RelatedTools tools={relatedTools} lang="tr" />
+      <ShareButtons lang="tr" />
     </div>
   );
 }

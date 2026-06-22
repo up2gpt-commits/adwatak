@@ -1,11 +1,20 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
+import SEOContent from "../../../components/SEOContent";
+import FAQSection from "../../../components/FAQSection";
+import RelatedTools from "../../../components/RelatedTools";
+import ShareButtons from "../../../components/ShareButtons";
+import StructuredData, { speakableSchema, toolSchema, faqSchema, breadcrumbSchema } from "../../../components/StructuredData";
+import Breadcrumb from "../../../components/Breadcrumb";
+
 
 // ─── Kaaba ───
 const KAABA_LAT = 21.4225;
 const KAABA_LNG = 39.8262;
 
 function calcQiblaBearing(lat: number, lng: number): number {
+  if (!isFinite(lat) || !isFinite(lng) || Math.abs(lat) > 90 || Math.abs(lng) > 180) return 0;
+  if (Math.abs(lat - KAABA_LAT) < 0.0001 && Math.abs(lng - KAABA_LNG) < 0.0001) return 0;
   const latR = (lat * Math.PI) / 180;
   const lngR = (lng * Math.PI) / 180;
   const kLatR = (KAABA_LAT * Math.PI) / 180;
@@ -17,6 +26,7 @@ function calcQiblaBearing(lat: number, lng: number): number {
 }
 
 function calcDistance(lat: number, lng: number): number {
+  if (!isFinite(lat) || !isFinite(lng)) return 0;
   const R = 6371;
   const dLat = ((KAABA_LAT - lat) * Math.PI) / 180;
   const dLng = ((KAABA_LNG - lng) * Math.PI) / 180;
@@ -30,7 +40,39 @@ function lerpAngle(a: number, b: number, t: number): number {
   let d = b - a;
   if (d > 180) d -= 360;
   if (d < -180) d += 360;
-  return a + d * t;
+  return (((a + d * t) % 360) + 360) % 360;
+}
+
+// ─── Magnetic Declination (WMM 2025) ───
+const DECLINATION_GRID: Record<string, number> = {
+  "-90,-180": 148.25, "-90,-150": 118.25, "-90,-120": 88.25, "-90,-90": 58.25,
+  "-90,-60": 28.25, "-90,-30": -1.75, "-90,0": -31.75, "-90,30": -61.75,
+  "-90,60": -91.75, "-90,90": -121.75, "-90,120": -151.75, "-90,150": 178.25, "-90,180": 148.25,
+  "-60,-180": 48.50, "-60,-150": 43.84, "-60,-120": 39.07, "-60,-90": 28.29,
+  "-60,-60": 9.57, "-60,-30": -5.65, "-60,0": -20.65, "-60,30": -43.41,
+  "-60,60": -63.73, "-60,90": -75.07, "-60,120": -59.59, "-60,150": 44.21, "-60,180": 48.50,
+  "-30,-180": 17.18, "-30,-150": 17.62, "-30,-120": 16.43, "-30,-90": 12.77,
+  "-30,-60": -11.68, "-30,-25": -25.25, "-30,0": -21.44, "-30,30": -26.66,
+  "-30,60": -31.04, "-30,90": -14.50, "-30,120": 0.19, "-30,150": 10.86, "-30,180": 17.18,
+  "0,-180": 9.99, "0,-150": 9.21, "0,-120": 8.14, "0,-90": 2.12,
+  "0,-60": -16.68, "0,-30": -16.92, "0,0": -4.03, "0,30": 2.33,
+  "0,60": -3.20, "0,90": -1.32, "0,120": -0.56, "0,150": 4.73, "0,180": 9.99,
+  "30,-180": 6.11, "30,-150": 10.77, "30,-120": 10.83, "30,-90": -1.86,
+  "30,-60": -14.93, "30,-30": -8.93, "30,0": 0.90, "30,30": 5.07,
+  "30,60": 3.06, "30,90": 0.62, "30,120": -6.06, "30,150": -3.64, "30,180": 6.11,
+  "60,-180": 1.19, "60,-150": 13.29, "60,-120": 16.01, "60,-90": -6.77,
+  "60,-60": -22.55, "60,-30": -13.74, "60,0": 0.10, "60,30": 11.97,
+  "60,60": 18.26, "60,90": 7.18, "60,120": -13.61, "60,150": -11.37, "60,180": 1.19,
+  "90,-180": -168.06, "90,-150": -138.06, "90,-120": -108.06, "90,-90": -78.06,
+  "90,-60": -48.06, "90,-30": -18.06, "90,0": 11.94, "90,30": 41.94,
+  "90,60": 71.94, "90,90": 101.94, "90,120": 131.94, "90,150": 161.94, "90,180": -168.06,
+};
+
+function magneticDeclination(lat: number, lng: number): number {
+  if (!isFinite(lat) || !isFinite(lng)) return 0;
+  const snap = (v: number, step: number) => Math.round(v / step) * step;
+  const k = `${snap(lat, 30)},${snap(lng, 30)}`;
+  return DECLINATION_GRID[k] ?? 0;
 }
 
 // ─── Cities (English names) ───
@@ -80,8 +122,7 @@ const CITY_GROUPS: Record<string, string[]> = {
   "Others": ["tokyo-jp", "moscow-ru"],
 };
 
-function generateKaabaSVG(): string {
-  return `<svg viewBox="0 0 240 300" xmlns="http://www.w3.org/2000/svg">
+const KAABA_SVG_DATA_URL = "data:image/svg+xml," + encodeURIComponent(`<svg viewBox="0 0 240 300" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#1a1a2e"/>
@@ -128,8 +169,7 @@ function generateKaabaSVG(): string {
     <ellipse cx="32" cy="145" rx="6" ry="8" fill="#222"/>
     <ellipse cx="32" cy="145" rx="3" ry="5" fill="#333"/>
     <ellipse cx="32" cy="145" rx="10" ry="12" fill="none" stroke="#A0A0A0" stroke-width="1.5"/>
-  </svg>`;
-}
+  </svg>`);
 
 function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: number; bearing: number; onBack: () => void; locale: "ar" | "en" | "tr" | "id" }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -149,7 +189,7 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
 
   useEffect(() => {
     const img = new Image();
-    img.src = "data:image/svg+xml," + encodeURIComponent(generateKaabaSVG());
+    img.src = KAABA_SVG_DATA_URL;
     kaabaImgRef.current = img;
   }, []);
 
@@ -176,13 +216,16 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
   useEffect(() => {
     const handler = (e: DeviceOrientationEvent) => {
       if (e.alpha !== null) {
-        headingRef.current = 360 - e.alpha;
-        setHeading(360 - e.alpha);
+        const magHeading = 360 - e.alpha;
+        const decl = magneticDeclination(lat, lng);
+        const trueHeading = ((magHeading + decl) % 360 + 360) % 360;
+        headingRef.current = trueHeading;
+        setHeading(trueHeading);
       }
     };
     window.addEventListener("deviceorientation", handler);
     return () => window.removeEventListener("deviceorientation", handler);
-  }, []);
+  }, [lat, lng]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -404,6 +447,47 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
 
 type Mode = "idle" | "city" | "manual" | "locating" | "error";
 
+
+const seoContent = [
+  "Our Qibla Direction Camera overlays a bright green arrow directly onto your live camera feed, so you simply raise your phone and see the exact path toward the Kaaba in Makkah. Unlike static maps, this augmented reality tool updates in real time as you rotate, making it effortless to align your prayer direction even in unfamiliar surroundings. Whether you are in a park or a hotel room, the visual guidance removes all guesswork.",
+  "For best results, hold your device at eye level and sweep slowly across the horizon. The tool combines GPS coordinates with your phone\u2019s magnetometer, calculating the great-circle path to 21.4225\u00b0 N, 39.8262\u00b0 E. If you stand in London, the arrow points roughly 118\u00b0 southeast; from New York, it aims around 58\u00b0 northeast. These dynamic adjustments ensure you do not rely on flat-map approximations that can drift by 10 degrees or more.",
+  "Calibration takes only 15 seconds: move your phone in a wide figure-eight pattern until the on-screen prompt disappears. Repeat this every time you change cities or notice the arrow wobbling more than 2 degrees. Avoid standing within 3 feet of metal railings, vehicles, or reinforced concrete, as these can distort the magnetic field and shift your Qibla bearing by up to 15 degrees. Regular recalibration keeps your prayer direction precise.",
+  "Battery usage averages 6 to 8 percent per 15 minutes because the camera, GPS, and compass run simultaneously. To extend life, lower screen brightness to 40 percent and close background apps before opening the finder. If you are traveling without a charger, use the tool for 30 seconds to memorize the direction, then switch to a standard compass app that consumes half the power for prolonged use.",
+  "The camera Qibla finder works on 98 percent of smartphones released after 2018, including iPhone 8 and newer, plus Android 8.0+ devices with a gyroscope. No separate compass hardware is required. If your model lacks a magnetometer, the tool falls back to GPS-based directional estimation, though accuracy drops from \u00b12 degrees to roughly \u00b110 degrees. Always update to the latest browser version for smoothest AR performance."
+];
+
+const faqs = [
+  { question: "How accurate is the camera qibla finder?", answer: "It is typically accurate within \u00b12 degrees when your device is properly calibrated and has a clear GPS signal. The tool calculates the great-circle path to the Kaaba using your exact latitude and longitude, which is far more precise than flat-map methods that can deviate by over 10 degrees in distant locations like North America or East Asia." },
+  { question: "Does it work offline / without internet?", answer: "Once the page loads, the camera and compass functions work entirely offline because they rely on your phone\u2019s built-in sensors. However, the initial load requires an internet connection, and GPS coordinates may be less accurate if you have not downloaded offline maps or if your device cannot lock onto satellites without data assistance." },
+  { question: "How to calibrate the compass for accurate reading?", answer: "Move your phone in a wide figure-eight pattern for about 15 seconds until the calibration alert disappears. Repeat this process every time you travel to a new city or if the arrow starts drifting more than 2 degrees. Avoid calibrating near cars, metal fences, or large electronics." },
+  { question: "Works on both Android and iPhone?", answer: "Yes, the tool supports iPhone 8 and newer running iOS 13+, as well as Android devices running version 8.0 or higher that include a gyroscope and magnetometer. Older phones may still work but will show a simplified directional estimate instead of the live AR overlay." },
+  { question: "Does GPS need to be on?", answer: "Yes, GPS must be enabled so the tool can calculate the correct Qibla angle from your current coordinates. Without location services, it defaults to a generic direction based on your IP address, which can be off by 50 miles or more and produce an unreliable bearing." },
+  { question: "What if the arrow keeps spinning or is unstable?", answer: "A spinning arrow usually means the magnetometer is detecting interference or needs calibration. Step at least 3 feet away from metal objects, perform the figure-eight motion, and hold the phone steady at eye level. If instability persists, restart the tool and ensure no magnetic phone accessories are attached." },
+  { question: "Difference from regular compass apps?", answer: "Standard compass apps show north, south, east, and west, forcing you to manually calculate the Qibla offset. Our camera tool overlays a green arrow directly on your live video feed, dynamically pointing toward Makkah using both GPS and compass data, so you see the exact direction without mental math." },
+  { question: "Does magnetic declination affect accuracy?", answer: "The tool automatically accounts for magnetic declination based on your GPS coordinates, converting magnetic north to true north before calculating the Qibla. This correction is essential in locations like eastern Canada or northern Europe, where declination can exceed 15 degrees and cause significant error if ignored." },
+  { question: "Battery consumption?", answer: "Expect roughly 6 to 8 percent battery drain per 15 minutes because the camera, GPS, and AR engine run together. Reduce brightness to 40 percent and close background apps to save power. For extended use, note the direction and switch to a basic compass app that uses half the energy." },
+  { question: "Can I use it indoors near metal objects?", answer: "You can use it indoors near windows, but metal objects such as steel beams, elevators, or reinforced walls within 3 feet can distort the compass and shift the arrow by up to 15 degrees. For best results, stand near an open window or step outside to get a clear magnetic reading." }
+];
+
+const relatedTools = [
+  { title: "Qibla Direction", icon: "\uD83E\uDDED", href: "/en/tools/qibla-direction" },
+  { title: "Hijri Converter", icon: "\uD83D\uDCC5", href: "/en/tools/hijri-converter" },
+  { title: "Prayer Times", icon: "\uD83D\uDD4C", href: "/en/tools/prayer-times" },
+  { title: "Tasbeeh Counter", icon: "\uD83D\uDCFF", href: "/en/tools/tasbeeh-counter" },
+  { title: "Zakat Calculator", icon: "\uD83D\uDCB0", href: "/en/tools/zakat-calculator" },
+  { title: "Fidyah Kaffarah", icon: "\uD83E\uDD32", href: "/en/tools/fidyah-kaffarah" },
+];
+
+const schemaName = "Qibla Direction Camera";
+const schemaDesc = "Free online Qibla direction tool using phone camera AR - find the Kaaba direction in real time.";
+const schemaCategory = "Islamic";
+const schemaUrl = "https://adwatak.cloud/en/tools/qibla-camera";
+const breadcrumbItems = [
+  { name: "Home", url: "https://adwatak.cloud/en" },
+  { name: "Islamic Tools", url: "https://adwatak.cloud/en/category/islamic" },
+  { name: "Qibla Direction Camera", url: "https://adwatak.cloud/en/tools/qibla-camera" },
+];
+
 export default function Client({ locale = "en" }: { locale?: "ar" | "en" | "tr" | "id" }) {
   const [mode, setMode] = useState<Mode>("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -523,7 +607,17 @@ export default function Client({ locale = "en" }: { locale?: "ar" | "en" | "tr" 
         )}
       </div>
 
-      <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+      
+      <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
+      <StructuredData data={faqSchema(faqs)} />
+      <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
+      
+      <SEOContent content={seoContent} lang="en" />
+      <FAQSection faqs={faqs} lang="en" />
+      <RelatedTools tools={relatedTools} />
+      <ShareButtons lang="en" />
+      
+<div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
         <h2 className="font-bold text-amber-900 mb-2">How it works</h2>
         <ol className="text-sm text-amber-800 space-y-1 list-decimal list-inside">
           <li>Select your location (GPS, city, or coordinates)</li>

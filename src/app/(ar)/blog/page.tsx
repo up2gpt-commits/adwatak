@@ -5,6 +5,16 @@ import { getAllPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "المدونة | أدواتك",
   description: "مقالات وشروحات حول الأدوات المالية والحاسبات والمواضيع التقنية والإسلامية",
+  alternates: {
+    canonical: "https://adwatak.cloud/blog",
+    languages: {
+      "ar": "https://adwatak.cloud/blog",
+      "en": "https://adwatak.cloud/en/blog",
+      "tr": "https://adwatak.cloud/tr/blog",
+      "id": "https://adwatak.cloud/id/blog",
+      "fr": "https://adwatak.cloud/fr/blog",
+    },
+  },
 };
 
 /** Content clusters for topical authority */

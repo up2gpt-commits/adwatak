@@ -8,32 +8,32 @@ import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  { question: "What is encoding?", answer: "Converting data from one format to another for safe transport or storage. Common types: Base64 (binary data), URL Encoding (web links), and HTML Entities (safe text)." },
-  { question: "What's the difference between Base64 and URL Encoding?", answer: "Base64 converts any data (images, files) to readable ASCII text — used in APIs and Data URLs. URL Encoding converts disallowed characters in URLs (%20 for space, %3F for question mark)." },
-  { question: "What is HTML Entities encoding?", answer: "Converting special characters to HTML Entities — e.g., < → &lt;, > → &gt;, & → &amp;. Prevents XSS attacks and ensures proper rendering in browsers." },
-  { question: "Is encoding secure encryption?", answer: "No! Encoding is not encryption. It can be easily reversed. Don't use it to protect sensitive data. Use AES or RSA for real encryption." },
-  { question: "When should I use URL Encoding?", answer: "When building URLs with spaces or special characters — e.g., 'search tools' → 'search+tools'. Browsers require URL Encoding for proper link handling." },
-  { question: "When should I use Base64 Encoding?", answer: "Embedding images in HTML (Data URL: <img src='data:...'>), transmitting data in JSON APIs, sending attachments in email (MIME)." },
-  { question: "What's the difference between encodeURI and encodeURIComponent?", answer: "encodeURI: encodes a full URL (preserves / : ?). encodeURIComponent: encodes a URL segment (encodes ALL special chars). Use encodeURIComponent for query parameters." },
-  { question: "Does encoding affect data size?", answer: "Yes — Base64 increases size by ~33%. URL Encoding varies based on how many special characters are encoded. HTML Entities adds minimal overhead." },
-  { question: "How do I decode text in JavaScript?", answer: "Base64: atob(str) to decode, btoa(str) to encode. URL: decodeURIComponent(str) to decode, encodeURIComponent(str) to encode. HTML: use DOMParser or a library." },
-  { question: "What are common encoding mistakes?", answer: "Forgetting to encode Arabic/text before sending in URLs (causes garbled text). Using Base64 for encryption (insecure). Forgetting to decode before displaying text to users." },
+  { question: "Qu'est-ce que l'encodage ?", answer: "Converting data from one format to another for safe transport or storage. Common types: Base64 (binary data), URL Encoding (web links), and HTML Entities (safe text)." },
+  { question: "What's the difference between Base64 and URL Encoding?", answer: "Base64 convertit toutes les données (images, fichiers) en texte ASCII lisible — utilisé dans les API et les URL de données. L'encodage d'URL convertit les caractères non autorisés dans les URL (%20 pour l'espace, %3F pour le point d'interrogation)." },
+  { question: "Qu'est-ce que l'encodage des entités HTML ?", answer: "Conversion des caractères spéciaux en entités HTML — par exemple, < → &lt;, > → &gt;, & → &amp;. Empêche les attaques XSS et assure un rendu correct dans les navigateurs." },
+  { question: "L'encodage est-il un chiffrement sécurisé ?", answer: "No! Encoding is not encryption. It can be easily reversed. Don't use it to protect sensitive data. Use AES or RSA for real encryption." },
+  { question: "Quand dois-je utiliser l'encodage d'URL ?", answer: "When building URLs with spaces or special characters — e.g., 'search tools' → 'search+tools'. Browsers require URL Encoding for proper link handling." },
+  { question: "Quand dois-je utiliser l'encodage Base64 ?", answer: "Embedding images in HTML (Data URL: <img src='data:...'>), transmitting data in JSON APIs, sending attachments in email (MIME)." },
+  { question: "What's the difference between encodeURI and encodeURIComponent?", answer: "encodeURI : encode une URL complète (préserve / : ?). encodeURIComponent : encode un segment d'URL (encode TOUS les caractères spéciaux). Utilisez encodeURIComponent pour les paramètres de requête." },
+  { question: "L'encodage affecte-t-il la taille des données ?", answer: "Oui — Base64 augmente la taille d'environ 33 %. L'encodage d'URL varie en fonction du nombre de caractères spéciaux encodés. Les entités HTML ajoutent une surcharge minimale." },
+  { question: "Comment décoder du texte en JavaScript ?", answer: "Base64 : atob(str) pour décoder, btoa(str) pour encoder. URL : decodeURIComponent(str) pour décoder, encodeURIComponent(str) pour encoder. HTML : utilisez DOMParser ou une bibliothèque." },
+  { question: "Quelles sont les erreurs d'encodage courantes ?", answer: "Oublier d'encoder le texte arabe/autre avant de l'envoyer dans les URL (provoque du texte illisible). Utiliser Base64 pour le chiffrement (non sécurisé). Oublier de décoder avant d'afficher le texte aux utilisateurs." },
 ];
 
 const relatedTools = [
-  { title: "Base64 Encoder", icon: "🔄", href: "/fr/tools/base64-encoder" },
-  { title: "JSON Formatter", icon: "📋", href: "/fr/tools/json-formatter" },
-  { title: "Hash Generator", icon: "#️⃣", href: "/fr/tools/hash-generator" },
-  { title: "Text Compare", icon: "⚖️", href: "/fr/tools/text-compare" },
-  { title: "Text Cleaner", icon: "🧹", href: "/fr/tools/text-cleaner" },
-  { title: "Text Case Converter", icon: "🔤", href: "/fr/tools/text-case" },
+  { title: "Encodeur Base64", icon: "🔄", href: "/fr/tools/base64-encoder" },
+  { title: "Formateur JSON", icon: "📋", href: "/fr/tools/json-formatter" },
+  { title: "Générateur de Hachage", icon: "#️⃣", href: "/fr/tools/hash-generator" },
+  { title: "Comparateur de Texte", icon: "⚖️", href: "/fr/tools/text-compare" },
+  { title: "Nettoyeur de Texte", icon: "🧹", href: "/fr/tools/text-cleaner" },
+  { title: "Convertisseur de Casse", icon: "🔤", href: "/fr/tools/text-case" },
 ];
 
 const seoContent = [
   "En ligne gratuit encoder and decoder tool supporting three methods: Base64 encoding/decoding for binary data transmission, URL encoding/decoding for safe web links, and HTML entity encoding for XSS-safe text. Everything runs in your browser — no data is sent to any server.",
   "Every web developer needs to understand encoding: Base64 for image data and API payloads, URL Encoding for query parameters and links, and HTML Entities for preventing XSS attacks in web applications.",
-  "Encoding is NOT encryption — any encoded data can be trivially reversed. Use encoding for representation and transport, not for security. For protection, use bcrypt (passwords) or TLS (transport).",
-  "This tool works 100% client-side — your text never leaves your browser. Full privacy guaranteed."
+  "L'encodage n'est PAS du chiffrement — toute donnée encodée peut être inversée trivialement. Utilisez l'encodage pour la représentation et le transport, pas pour la sécurité. Pour la protection, utilisez bcrypt (mots de passe) ou TLS (transport).",
+  "Cet outil fonctionne entièrement côté client — votre texte ne quitte jamais votre navigateur. Confidentialité totale garantie."
 ];
 
 export default function Client() {
@@ -49,7 +49,7 @@ export default function Client() {
         case "url-encode": setResult(encodeURIComponent(input)); break;
         case "url-decode": setResult(decodeURIComponent(input)); break;
       }
-    } catch { setResult("Encoding/decoding error — check your input"); }
+    } catch { setResult("Erreur d'encodage/décodage — vérifiez votre entrée"); }
   };
 
   const schemaName = "Encodeur/Décodeur URL";
@@ -67,13 +67,13 @@ return (
         <StructuredData data={faqSchema(faqs)} />
         <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
         <StructuredData data={howToSchema("How to use this encoder", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [
-          {name:"Choose encoding type", text:"Select Base64, URL, or HTML encoding from the dropdown"},
-          {name:"Enter your text", text:"Paste or type the text you want to encode or decode"},
-          {name:"Click the button", text:"Press execute to process your text"},
-          {name:"Copy the result", text:"Use the copy button or select the encoded/decoded output"}
+          {name:"Choose encoding type", text:"Sélectionnez l'encodage Base64, URL ou HTML dans le menu déroulant"},
+          {name:"Enter your text", text:"Collez ou tapez le texte que vous souhaitez encoder ou décoder"},
+          {name:"Click the button", text:"Appuyez sur exécuter pour traiter votre texte"},
+          {name:"Copy the result", text:"Utilisez le bouton copier ou sélectionnez la sortie encodée/décodée"}
         ], "moins d'une minute", "fr")} />
         <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
-      <Breadcrumb lang="fr" category="Développement" categorySlug="dev" toolName="URL Encoder/Decoder" />
+      <Breadcrumb lang="fr" category="Développement" categorySlug="dev" toolName="Encodeur/Décodeur d'URL" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🔧 Encodeur/Décodeur URL</h1>
         <p className="text-sm text-gray-500 mb-6">Encodez et décodez du texte en plusieurs formats</p>

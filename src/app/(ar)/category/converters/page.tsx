@@ -1,4 +1,4 @@
-export const metadata = { title: "محولات الملفات والوحدات — أدواتك", description: "دمج PDF، صورة إلى PDF، تحويل الوحدات، تحويل الألوان. كل المحولات تعمل في المتصفح." };
+export const metadata = { title: "محولات الملفات والوحدات — أدواتك", description: "دمج PDF، صورة إلى PDF، تحويل الوحدات، تحويل الألوان. كل المحولات تعمل في المتصفح.", alternates: { canonical: "https://adwatak.cloud/category/converters" } };
 const tools = [
   { title: "دمج ملفات PDF", icon: "📎", href: "/tools/pdf-merger", desc: "ادمج عدة PDF في ملف واحد" },
   { title: "صورة إلى PDF", icon: "🖼️", href: "/tools/image-to-pdf", desc: "حوّل الصور إلى ملف PDF" },

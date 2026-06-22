@@ -100,6 +100,7 @@ const tools = [
   { title: "حاسبة الميراث الإسلامي", desc: "احسب أنصبة الميراث حسب الشريعة", icon: "📜", href: "/tools/inheritance-calculator", cat: "islamic", keywords: ["ميراث", "الميراث", "inheritance", "فرائض"] },
   { title: "حاسبة الزكاة", desc: "زكاة المال والذهب والأسهم", icon: "🕌", href: "/tools/zakat-calculator", cat: "islamic", keywords: ["زكاة", "zakat", "زكاه"] },
   { title: "اتجاه القبلة", desc: "اعرف اتجاه القبلة من موقعك", icon: "🧭", href: "/tools/qibla-direction", cat: "islamic", keywords: ["قبلة", "qibla", "قبله"] },
+  { title: "اتجاه القبلة بالكاميرا", desc: "شوف اتجاه القبلة بالكاميرا مباشر — AR", icon: "📸", href: "/tools/qibla-camera", cat: "islamic", keywords: ["قبلة", "كاميرا", "camera", "AR", "اتجاه", "الكعبة"] },
   { title: "مواقيت الصلاة", desc: "مواقيت الصلاة حسب موقعك الجغرافي", icon: "🕐", href: "/tools/prayer-times", cat: "islamic", keywords: ["صلاة", "prayer", "pray", "اذان", "مواقيت"] },
   { title: "المسبحة الإلكترونية", desc: "مسبحة إلكترونية للتسبيح والذكر", icon: "📿", href: "/tools/tasbeeh-counter", cat: "islamic", keywords: ["تسبيح", "سبح", "مسبحة", "tasbeeh", "ذكر"] },
   { title: "حاسبة العمرة", desc: "احسب تكاليف العمرة مع جدول المناسك", icon: "🕋", href: "/tools/umrah-calculator", cat: "islamic", keywords: ["عمرة", "umrah", "مناسك", "العمرة"] },
@@ -112,6 +113,7 @@ const tools = [
   { title: "حاسبة السعرات الحرارية", desc: "احسب احتياجك اليومي من السعرات", icon: "🔥", href: "/tools/calorie-calculator", cat: "daily", keywords: ["سعرات", "calorie", "حرق"] },
   { title: "حاسبة الوزن المثالي", desc: "احسب وزنك المثالي بناءً على الطول والعمر", icon: "⚖️", href: "/tools/ideal-weight", cat: "daily", keywords: ["وزن", "ideal", "weight"] },
   { title: "ساعة إيقاف + مؤقت", desc: "ساعة إيقاف مع لفات ومؤقت", icon: "⏱️", href: "/tools/stopwatch", cat: "daily", keywords: ["stopwatch", "ساعة", "stop", "مؤقت"] },
+  { title: "طارد الناموس بالترددات", desc: "طرد الناموس والبعوض بتردد 15000 هرتز", icon: "🦟", href: "/tools/mosquito-repellent", cat: "daily", keywords: ["ناموس", "بعوض", "طارد", "mosquito", "ذباب", "حشرات"] },
 ];
 
 // Normalize text for fuzzy matching

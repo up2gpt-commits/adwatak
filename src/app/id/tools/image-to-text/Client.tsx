@@ -8,30 +8,30 @@ import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 
 const faqs = [
-  { question: "What is Image to Text OCR?", answer: "Image to Text OCR extracts text from any image — books, documents, signs, screenshots. Uses advanced AI (Gemma 4 Vision) for highly accurate text extraction supporting Arabic and English." },
-  { question: "Is it free?", answer: "Yes, 100% free. No registration, no usage limits, no ads." },
-  { question: "Do you upload my images to a server?", answer: "Yes, images are sent to our server for AI processing and deleted immediately. We do not store any images." },
-  { question: "How accurate is the AI OCR?", answer: "Very high! We use Google DeepMind's Gemma 4 Vision AI — much more accurate than traditional Tesseract OCR engines. Supports Arabic, English, and mixed languages." },
-  { question: "What image formats are supported?", answer: "All common formats: JPG, PNG, WEBP, BMP, GIF." },
-  { question: "Does it work on mobile?", answer: "Yes, fully responsive on all devices." },
-  { question: "Does it support Arabic and English together?", answer: "Yes, it handles Arabic, English, and mixed text in the same image perfectly." },
-  { question: "What if results aren't accurate?", answer: "Use a higher quality image with clearer text. The AI performs best with well-lit, high-resolution images." },
-  { question: "Can I use it commercially?", answer: "Yes, results are free for personal and commercial use." },
-  { question: "Is it updated?", answer: "Yes, powered by Google DeepMind's latest Gemma 4 Vision model." },
+  { question: "Apa itu OCR Gambar ke Teks?", answer: "OCR Gambar ke Teks mengekstrak teks dari gambar apa pun — buku, dokumen, rambu, tangkapan layar. Menggunakan AI canggih (Gemma 4 Vision) untuk ekstraksi teks yang sangat akurat mendukung bahasa Arab dan Inggris." },
+  { question: "Apakah ini gratis?", answer: "Ya, 100% gratis. Tanpa registrasi, tanpa batasan penggunaan, tanpa iklan." },
+  { question: "Apakah Anda mengunggah gambar saya ke server?", answer: "Ya, gambar dikirim ke server kami untuk pemrosesan AI dan segera dihapus. Kami tidak menyimpan gambar apa pun." },
+  { question: "Seberapa akurat OCR AI ini?", answer: "Sangat tinggi! Kami menggunakan AI Gemma 4 Vision dari Google DeepMind — jauh lebih akurat daripada mesin OCR Tesseract tradisional. Mendukung bahasa Arab, Inggris, dan campuran." },
+  { question: "Format gambar apa yang didukung?", answer: "Semua format umum: JPG, PNG, WEBP, BMP, GIF." },
+  { question: "Apakah ini berfungsi di ponsel?", answer: "Ya, sepenuhnya responsif di semua perangkat." },
+  { question: "Apakah ini mendukung bahasa Arab dan Inggris secara bersamaan?", answer: "Ya, ini menangani teks Arab, Inggris, dan campuran dalam gambar yang sama dengan sempurna." },
+  { question: "Bagaimana jika hasilnya tidak akurat?", answer: "Gunakan gambar berkualitas lebih tinggi dengan teks yang lebih jelas. AI bekerja paling baik dengan gambar yang cukup terang dan beresolusi tinggi." },
+  { question: "Bisakah saya menggunakannya secara komersial?", answer: "Ya, hasilnya gratis untuk penggunaan pribadi dan komersial." },
+  { question: "Apakah ini diperbarui?", answer: "Ya, didukung oleh model Gemma 4 Vision terbaru dari Google DeepMind." }
 ];
 
 const relatedTools = [
-  { title: "Image to PDF", icon: "🖼️", href: "/en/tools/image-to-pdf" },
-  { title: "Remove Background", icon: "🖼️", href: "/en/tools/background-remover" },
-  { title: "Image Compressor", icon: "📦", href: "/en/tools/image-compressor" },
-  { title: "QR Reader", icon: "📷", href: "/en/tools/qr-reader" },
+  { title: "Gambar ke PDF", icon: "🖼️", href: "/id/tools/image-to-pdf" },
+  { title: "Hapus Latar Belakang", icon: "🖼️", href: "/id/tools/background-remover" },
+  { title: "Kompresor Gambar", icon: "📦", href: "/id/tools/image-compressor" },
+  { title: "Pembaca QR", icon: "📷", href: "/id/tools/qr-reader" },
 ];
 
 const seoContent = [
-  "Free AI-powered Image to Text OCR — extract text from any image with high accuracy using Google DeepMind Gemma 4 Vision. Supports Arabic and English.",
-  "Perfect for students, lawyers, accountants, and journalists. More accurate than traditional Tesseract OCR.",
-  "Powered by Google DeepMind's Gemma 4 Vision AI model for state-of-the-art text extraction.",
-  "Your images are processed securely and deleted immediately — no storage.",
+  "OCR Gambar ke Teks gratis bertenaga AI — ekstrak teks dari gambar apa pun dengan akurasi tinggi menggunakan Google DeepMind Gemma 4 Vision. Mendukung bahasa Arab dan Inggris.",
+  "Cocok untuk pelajar, pengacara, akuntan, dan jurnalis. Lebih akurat daripada OCR Tesseract tradisional.",
+  "Didukung oleh model AI Gemma 4 Vision dari Google DeepMind untuk ekstraksi teks tercanggih.",
+  "Gambar Anda diproses dengan aman dan segera dihapus — tanpa penyimpanan.",
 ];
 
 export default function Client() {
@@ -148,15 +148,15 @@ export default function Client() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("Image to Text OCR", "Extract text from images using AI OCR — Free, fast, accurate", "https://adwatak.cloud/en/tools/image-to-text", "en", "Tools")} />
+      <StructuredData data={toolSchema("Image to Text OCR", "Extract text from images using AI OCR — Free, fast, accurate", "https://adwatak.cloud/id/tools/image-to-text", "en", "Alat")} />
       <StructuredData data={faqSchema(faqs)} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
+      <StructuredData data={howToSchema("Cara menggunakan alat ini", "Free online tool. Works directly in your browser. No registration required.", [{name:"Buka alat",text:"Arahkan ke halaman alat ini di Adawatak"},{name:"Masukkan data Anda",text:"Isi kolom yang diperlukan"},{name:"Dapatkan hasil",text:"Klik tombol hitung atau buat"},{name:"Gunakan atau bagikan",text:"Salin, unduh, atau bagikan hasilnya"}],"kurang dari satu menit","id")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
-      <Breadcrumb lang="en" category="Other Tools" categorySlug="tools" toolName="Image to Text OCR" />
+      <Breadcrumb lang="id" category="Alat Lainnya" categorySlug="tools" toolName="Gambar ke Teks OCR" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">👁️ Image to Text OCR</h1>
+        <h1 className="text-2xl font-extrabold mb-1">👁️ OCR Gambar ke Teks</h1>
         <p className="text-sm text-gray-500 mb-6">Extract text from images using AI — faster and more accurate than traditional OCR</p>
 
         {/* AI Badge */}
@@ -174,7 +174,7 @@ export default function Client() {
         >
           {image ? (
             <div className="flex flex-col items-center gap-3">
-              <img src={image} alt="Preview" className="max-h-48 rounded-lg shadow-sm object-contain" />
+              <img src={image} alt="Pratinjau" className="max-h-48 rounded-lg shadow-sm object-contain" />
               <span className="text-sm text-gray-600">{fileName}</span>
             </div>
           ) : (
@@ -191,7 +191,7 @@ export default function Client() {
         {image && (
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <div className="flex-1 min-w-[200px]">
-              <label className="text-xs text-gray-500 block mb-1">Language</label>
+              <label className="text-xs text-gray-500 block mb-1">Bahasa</label>
               <select value={lang} onChange={(e) => setLang(e.target.value)}
                 className="w-full p-2 border border-gray-300 rounded-lg text-sm bg-white">
                 <option value="ara+eng">Arabic + English</option>
@@ -258,10 +258,10 @@ export default function Client() {
           </div>
         )}
       </div>
-      <SEOContent content={seoContent} lang="en" />
-      <FAQSection faqs={faqs} lang="en" />
-      <RelatedTools tools={relatedTools} lang="en" />
-      <ShareButtons lang="en" />
+      <SEOContent content={seoContent} lang="id" />
+      <FAQSection faqs={faqs} lang="id" />
+      <RelatedTools tools={relatedTools} lang="id" />
+      <ShareButtons lang="id" />
     </div>
   );
 }

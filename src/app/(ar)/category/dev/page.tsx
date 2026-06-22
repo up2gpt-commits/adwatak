@@ -1,4 +1,4 @@
-export const metadata = { title: "أدوات تطوير الويب — أدواتك", description: "JSON Formatter، Base64 Encoder، Hash Generator. أدوات ضرورية للمطورين." };
+export const metadata = { title: "أدوات تطوير الويب — أدواتك", description: "JSON Formatter، Base64 Encoder، Hash Generator. أدوات ضرورية للمطورين.", alternates: { canonical: "https://adwatak.cloud/category/dev" } };
 const tools = [
   { title: "JSON Formatter", icon: "📋", href: "/tools/json-formatter", desc: "تنسيق وتجميل ملفات JSON" },
   { title: "Base64 Encoder", icon: "🔄", href: "/tools/base64-encoder", desc: "تشفير وفك تشفير Base64" },

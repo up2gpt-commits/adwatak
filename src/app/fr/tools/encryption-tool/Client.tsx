@@ -14,9 +14,9 @@ const faqs = [
   {question:"Is my data safe?",answer:"Everything runs in your browser. No data leaves your device."},
 ];
 const relatedTools = [
-  {title:"Password Generator",icon:"🔑",href:"/fr/tools/password-generator"},
-  {title:"Hash Generator",icon:"#️⃣",href:"/fr/tools/hash-generator"},
-  {title:"Base64 Encoder",icon:"🔣",href:"/fr/tools/base64-encoder"},
+  {title:"Générateur de Mots de Passe",icon:"🔑",href:"/fr/tools/password-generator"},
+  {title:"Générateur de Hachage",icon:"#️⃣",href:"/fr/tools/hash-generator"},
+  {title:"Encodeur Base64",icon:"🔣",href:"/fr/tools/base64-encoder"},
 ];
 const seo = ["Free Encryption Tool — Caesar Cipher, Base64, Reverse text. Encrypt and decrypt instantly.", "Perfect for basic encryption and educational purposes."];
 
@@ -44,9 +44,9 @@ export default function ClientEn(){
   };
 
   return (<div className="max-w-[760px] mx-auto">
-    <StructuredData data={toolSchema("Encryption Tool","Encrypt and decrypt text","https://adwatak.cloud/fr/tools/encryption-tool","fr","Outils Développement")}/>
+    <StructuredData data={toolSchema("Outil de Chiffrement","Encrypt and decrypt text","https://adwatak.cloud/fr/tools/encryption-tool","fr","Outils Développement")}/>
     <StructuredData data={faqSchema(faqs)}/>
-    <Breadcrumb lang="fr" category="Outils Développement" categorySlug="tools" toolName="Encryption Tool"/>
+    <Breadcrumb lang="fr" category="Outils Développement" categorySlug="tools" toolName="Outil de chiffrement"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
       <h1 className="text-2xl font-extrabold mb-1">🔐 Outil de Chiffrement</h1>
       <p className="text-sm text-gray-500 mb-6">Chiffrez et déchiffrez du texte en toute sécurité</p>

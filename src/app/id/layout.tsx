@@ -27,6 +27,7 @@ export const metadata: Metadata = {
       "en": `${baseUrl}/en`,
       "tr": `${baseUrl}/tr`,
       "id": `${baseUrl}/id`,
+      "fr": `${baseUrl}/fr`,
       "x-default": baseUrl,
     },
   },
@@ -66,28 +67,6 @@ export default async function IdLayout({ children }: { children: React.ReactNode
 
   return (
     <div className={`${inter.variable}`} dir="ltr">
-      {/* Trust Bar */}
-      <div className="trust-bar scroll-fade-in">
-        <div className="container trust-bar-inner">
-          <div className="trust-item">
-            <span className="t-icon">🔒</span>
-            <span>100% Privat — Tidak ada unggah file</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">🆓</span>
-            <span>Gratis — Tidak perlu daftar</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">⚡</span>
-            <span>Hasil instan</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">🔧</span>
-            <span>80+ alat</span>
-          </div>
-        </div>
-      </div>
-
       {/* Header */}
       <Header lang="id" />
 
@@ -164,7 +143,7 @@ export default async function IdLayout({ children }: { children: React.ReactNode
               <a href="/id/about">ℹ️ Tentang Kami</a>
               <a href="/id/privacy">🔒 Kebijakan Privasi</a>
               <a href="/id/terms">📜 Ketentuan Layanan</a>
-              <a href="mailto:contact@adwatak.cloud">📧 Hubungi Kami</a>
+              <a href="/id/contact">📧 Hubungi Kami</a>
             </div>
 
             {/* Newsletter */}

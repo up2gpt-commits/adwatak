@@ -1,28 +1,34 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import "./globals.css";
-import { Noto_Sans_Arabic } from "next/font/google";
+import { Cairo } from "next/font/google";
 import StructuredData, { orgSchema, websiteSchema } from "./components/StructuredData";
 import DynamicHtmlLang from "./components/DynamicHtmlLang";
 
-const arabic = Noto_Sans_Arabic({
+const arabic = Cairo({
   subsets: ["arabic"],
   variable: "--font-arabic",
 });
 
 const baseUrl = "https://adwatak.cloud";
 
-// Detect locale from cookie — the most reliable signal since proxy.ts
-// sets the lang cookie on every request before the layout renders.
-// This gives us the correct lang in the very first HTML byte.
-function extractLang(pathname: string, cookieValue: string | undefined): string {
-  // Cookie has the highest priority (set by proxy.ts on every visit)
-  if (cookieValue && ["ar", "en", "tr", "id", "fr"].includes(cookieValue)) {
-    return cookieValue;
-  }
-  // Fallback: detect from URL path
-  const match = pathname.match(/^\/(en|tr|id|fr)(\/|$)/);
-  return match ? match[1] : "ar";
+const VALID_LOCALES = new Set(["ar", "en", "tr", "id", "fr"]);
+
+/**
+ * Resolve the current locale from proxy.ts's x-locale header.
+ *
+ * Priority:
+ *  1️⃣ x-locale header (set by proxy.ts on every request — works even for crawlers)
+ *  2️⃣ lang cookie (set by proxy.ts for human visitors)
+ *  3️⃣ "ar" (safe default)
+ */
+function resolveLocale(
+  xLocale: string | undefined,
+  cookieValue: string | undefined,
+): string {
+  if (xLocale && VALID_LOCALES.has(xLocale)) return xLocale;
+  if (cookieValue && VALID_LOCALES.has(cookieValue)) return cookieValue;
+  return "ar";
 }
 
 // Root metadata — only applies to pages that don't override it
@@ -71,11 +77,15 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // Server-side lang detection: read lang cookie set by proxy.ts
+  // Server-side lang detection:
+  //   1. x-locale header (set by proxy.ts on every request — works for crawlers too)
+  //   2. lang cookie (set by proxy.ts for human visitors)
+  //   3. "ar" (safe default for Arabic-root domain)
+  const headersList = await headers();
+  const xLocale = headersList.get("x-locale") ?? undefined;
   const cookieStore = await cookies();
   const langCookie = cookieStore.get("lang")?.value;
-  // Also read pathname from x-invoke-path as fallback
-  const lang = extractLang("/", langCookie);
+  const lang = resolveLocale(xLocale, langCookie);
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
@@ -88,7 +98,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="apple-touch-icon" href="/favicon.svg" />
         {/* PWA */}
         <link rel="manifest" href="/manifest.webmanifest" />
-        <meta name="theme-color" content="#2563eb" />
+        <meta name="theme-color" content="#002FA7" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -109,8 +119,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           gtag('js', new Date());
           gtag('config', 'G-X3SRR9PMGN');
         `}} />
-        {/* Google AdSense */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0124489588683535" crossOrigin="anonymous" />
+        {/* Google AdSense — temporarily removed pending approval */}
       </head>
       <body>
         <DynamicHtmlLang />

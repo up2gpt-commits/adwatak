@@ -6,27 +6,27 @@ import ShareButtons from "../../../components/ShareButtons";
 
 const LANG = "fr";
 const T: Record<string, string> = {
-  title: "Keyword Research Tool",
-  subtitle: "Get accurate keyword suggestions to boost your SEO",
+  title: "Outil de Recherche de Mots-Clés",
+  subtitle: "Obtenez des suggestions de mots-clés précises pour booster votre SEO",
   inputLabel: "Seed keyword or topic",
   inputPlaceholder: "e.g. real estate marketing, mortgage calculator...",
   searchBtn: "🔍 Search",
   searching: "⏳ Analyzing...",
   results: "Keyword Results",
-  noResults: "Could not generate keywords. Try a different term.",
-  error: "Something went wrong. Please try again.",
+  noResults: "Impossible de générer des mots-clés. Essayez un autre terme.",
+  error: "Une erreur est survenue. Veuillez réessayer.",
   keyword: "Keyword",
   volume: "Monthly Volume",
   competition: "Competition",
-  difficulty: "Difficulty",
+  difficulty: "Difficulté",
   contentType: "Content Type",
   low: "Low",
   medium: "Medium",
   high: "High",
   analysis: "Quick Analysis",
   totalKeywords: "Total Keywords",
-  avgDifficulty: "Avg Difficulty",
-  easyWins: "Easy Wins",
+  avgDifficulty: "Difficulté moyenne",
+  easyWins: "Victoires faciles",
   topRec: "Top Recommendation",
   summary: "Summary",
   share: "Share",
@@ -86,8 +86,8 @@ export default function Client() {
 
   return (
     <div className="max-w-[820px] mx-auto">
-      <StructuredData data={toolSchema("keyword-research", "Keyword Research Tool", "https://adwatak.cloud/fr/tools/keyword-research", "fr")} />
-      <Breadcrumb lang="fr" category="SEO Tools" categorySlug="seo" toolName="Keyword Research" />
+      <StructuredData data={toolSchema("keyword-research", "Outil de Recherche de Mots-Clés", "https://adwatak.cloud/fr/tools/keyword-research", "fr")} />
+      <Breadcrumb lang="fr" category="SEO Tools" categorySlug="seo" toolName="Recherche de mots-clés" />
       <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 mb-6">
         <div className="text-center mb-6">
           <span className="text-5xl">🔍</span>

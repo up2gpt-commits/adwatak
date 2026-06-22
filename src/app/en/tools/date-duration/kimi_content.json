@@ -1,0 +1,43 @@
+{
+  "seoContent": [
+    "Effortlessly plan projects and meet deadlines with our Date Duration Calculator. Easily determine the exact number of days between two dates, like calculating 180 days from January 1, 2024, to pinpoint a June 29, 2024, project completion. You can also add 60 days to any date for quick scheduling, boosting your efficiency by over 25%.",
+    "Wondering your exact age or how many days until a milestone? Our tool provides precise age calculations, showing you're, for example, 12,345 days old. Calculate the remaining 365 days until your next birthday or the 730 days until a 2-year anniversary, making personal time management simple and accurate for over 90% of users.",
+    "Manage crucial legal and financial timelines with unparalleled accuracy. Calculate the precise 90-day validity period of a contract starting April 15, 2024, ending July 14, 2024. Determine the exact end date for a 36-month loan term, or quickly subtract 14 days from a payment deadline. This ensures compliance and reduces errors by up to 50%.",
+    "Perfect for event planning and travel countdowns, our calculator simplifies scheduling. Instantly know there are 60 days remaining until your vacation or the exact duration of a 3-month trip. Easily add 120 days to a current date to set a future event, ensuring over 85% of your planning details are precise and stress-free.",
+    "Boost your productivity by quickly calculating time spans. Whether you need to find a date 50 days from today, or determine the full duration of a complex 3-year, 6-month project, our tool delivers instant results. This precision saves up to 30 minutes weekly for project managers, ensuring all time-sensitive tasks are handled with 100% accuracy."
+  ],
+  "faqs": [
+    {
+      "question": "What exactly does the Date Duration Calculator do?",
+      "answer": "It precisely calculates the time span between two selected dates, showing results in years, months, and days. You can also add or subtract specific durations from a starting date, simplifying deadline management and project timelines."
+    },
+    {
+      "question": "Can I calculate my exact age using this tool?",
+      "answer": "Yes, absolutely! Simply input your birth date as the start date and today's date (or any future date) as the end date. The calculator will display your precise age in years, months, and days, making it perfect for tracking milestones."
+    },
+    {
+      "question": "How do I find a date X days from now?",
+      "answer": "Use the \"add/subtract days\" function. Enter today's date as the start date, then specify the number of days you want to add. For example, to find a date 90 days from now, input \"90\" in the 'add days' field."
+    },
+    {
+      "question": "Is it possible to subtract days from a specific date?",
+      "answer": "Yes, the tool supports subtraction. Enter your target end date and then specify the number of days you wish to subtract. This is useful for working backward from a deadline, like finding a project start date 30 days prior."
+    },
+    {
+      "question": "Does the calculator account for leap years?",
+      "answer": "Absolutely. Our Date Duration Calculator automatically factors in leap years, ensuring accurate calculations for durations spanning multiple years. This guarantees precision whether you're calculating 365 days or 10 years."
+    },
+    {
+      "question": "What are some practical uses for this calculator?",
+      "answer": "It's incredibly versatile! Plan project deadlines, determine a baby's exact age, calculate contract durations, schedule events, or manage financial timelines. For instance, find the exact end date for a a 180-day construction phase."
+    },
+    {
+      "question": "Can I calculate the number of days left until an event?",
+      "answer": "Yes, just enter today's date as the start date and your event date as the end date. The calculator will show you the precise number of days, months, and years remaining, perfect for wedding or vacation countdowns."
+    },
+    {
+      "question": "Is this tool free to use and accessible on mobile?",
+      "answer": "Yes, the Date Duration Calculator is completely free to use. It's also designed to be fully responsive, meaning you can easily access and utilize its features on any device, including smartphones and tablets, without any issues."
+    }
+  ]
+}

@@ -223,6 +223,16 @@ export function proxy(request: NextRequest) {
     return applyApiSecurity(request, NextResponse.next());
   }
 
+  // ── Set x-locale header for server-side <html lang> detection ──
+  // This runs before layouts render, so RootLayout reads the correct
+  // locale from headers() and sets <html lang={locale}> in the very
+  // first byte of HTML — critical for Google Bot (no JS rendering needed).
+  const localeMatch = pathname.match(/^\/(en|tr|id|fr)(\/|$)/);
+  const locale = localeMatch ? localeMatch[1] : "ar";
+
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-locale", locale);
+
   // ── /tools/<name> — mint a fresh API token cookie for this tool ──
   // Pages that use an AI tool get a per-route token cookie. The browser
   // auto-sends it on the subsequent fetch to /api/<name>.
@@ -230,7 +240,7 @@ export function proxy(request: NextRequest) {
   if (toolMatch && !pathname.startsWith("/_next/") && !pathname.startsWith("/api/")) {
     const toolName = toolMatch[1];
     if (AI_API_ROUTES.has(toolName)) {
-      const response = NextResponse.next();
+      const response = NextResponse.next({ request: { headers: requestHeaders } });
       setApiTokenCookie(response, request, toolName);
       return response;
     }
@@ -248,16 +258,6 @@ export function proxy(request: NextRequest) {
   ) {
     return NextResponse.next();
   }
-
-  // ── Set x-locale header for server-side <html lang> detection ──
-  // This runs before layouts render, so RootLayout reads the correct
-  // locale from headers() and sets <html lang={locale}> in the very
-  // first byte of HTML — critical for Google Bot (no JS rendering needed).
-  const localeMatch = pathname.match(/^\/(en|tr|id|fr)(\/|$)/);
-  const locale = localeMatch ? localeMatch[1] : "ar";
-
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-locale", locale);
 
   // ── Embed detection — `x-is-embed` header for layouts ──
   // Allows en/tr/id layouts to skip header/footer chrome on embed pages

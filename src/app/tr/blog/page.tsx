@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Blog — Adwatak",
   description:
     "Finansal hesaplayıcılar, İslami araçlar ve dijital araçlar hakkında eğitici makaleler ve rehberler.",
+  alternates: {
+    canonical: "https://adwatak.cloud/tr/blog",
+  },
 };
 
 const TR_CONTENT_CLUSTERS: { label: string; categories: string[]; description: string }[] = [

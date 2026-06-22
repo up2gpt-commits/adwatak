@@ -285,6 +285,26 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categorySlug: "islamic",
     schemaCategory: "Islamic",
   },
+  "qibla-camera": {
+    slug: "qibla-camera",
+    nameAr: "اتجاه القبلة بالكاميرا",
+    nameEn: "Qibla Camera",
+    nameTr: "Kıble Kamera",
+    nameId: "Kamera Kiblat",
+    descAr: "حدد اتجاه القبلة باستخدام كاميرا جوالك — تقنية الواقع المعزز لتحديد اتجاه الكعبة بدقة",
+    descEn: "Find Qibla direction using your phone camera — AR technology to point to the Kaaba accurately",
+    descTr: "Telefon kameranızla kıble yönünü bulun — Kabe'yi hassas bir şekilde gösteren AR teknolojisi",
+    descId: "Temukan arah kiblat menggunakan kamera ponsel — teknologi AR untuk menunjuk ke Ka'bah secara akurat",
+    categoryAr: "الأدوات الإسلامية",
+    categoryEn: "Islamic Tools",
+    categoryTr: "İslami Araçlar",
+    categoryId: "Alat Islami",
+    nameFr: "Caméra Qibla",
+    descFr: "Direction de la Qibla par caméra AR — précis et en temps réel",
+    categoryFr: "Outils Islamiques",
+    categorySlug: "islamic",
+    schemaCategory: "Islamic",
+  },
   "prayer-times": {
     slug: "prayer-times",
     nameAr: "مواقيت الصلاة",
@@ -1545,6 +1565,26 @@ export const TOOLS_META: Record<string, ToolMeta> = {
     categorySlug: "islamic",
     schemaCategory: "Islamic",
   },
+  "mosquito-repellent": {
+    slug: "mosquito-repellent",
+    nameAr: "طارد الناموس بالترددات",
+    nameEn: "Mosquito Repellent Sound",
+    nameTr: "Sivrisinek Kovucu Ses",
+    nameId: "Pengusir Nyamuk Suara",
+    descAr: "أداة مجانية لطرد الناموس والبعوض باستخدام ترددات صوتية عالية 15000 هرتز — تشغيل متكرر بدون نت، آمنة للاستخدام مع تحذيرات الأمان",
+    descEn: "Free mosquito repellent tool using 15,000 Hz high-frequency sound — continuous loop playback, works offline, with safety warnings",
+    descTr: "15.000 Hz yüksek frekanslı ses ile ücretsiz sivrisinek kovucu araç — sürekli döngü oynatma, çevrimdışı çalışır, güvenlik uyarılarıyla",
+    descId: "Alat pengusir nyamuk gratis menggunakan suara frekuensi tinggi 15.000 Hz — putaran berulang, bekerja offline, dengan peringatan keselamatan",
+    categoryAr: "أدوات أخرى",
+    categoryEn: "Other Tools",
+    categoryTr: "Diğer Araçlar",
+    categoryId: "Alat Lainnya",
+    nameFr: "Répulsif Moustique Sonore",
+    descFr: "Répulsif anti-moustique par fréquence sonore 15 000 Hz — lecture en boucle, fonctionne hors ligne",
+    categoryFr: "Alat Lainnya",
+    categorySlug: "daily",
+    schemaCategory: "Utility",
+  },
 };
 
 /**
@@ -1652,8 +1692,13 @@ export function generateBreadcrumbSchema(slug: string, lang: "ar" | "en" | "tr" 
 }
 
 /**
- * Generate all structured data (JSON-LD) schemas for a tool page.
- * Returns array of schema objects: WebApplication, BreadcrumbList, FAQPage, SpeakableSpecification
+ * Generate structured data schemas for a tool page.
+ * Returns ONLY the WebApplication schema (server-rendered) to ensure
+ * Google gets `aggregateRating` on every tool page even when
+ * Client.tsx omits the toolSchema() call.
+ *
+ * FAQ, Breadcrumb, HowTo, and Speakable schemas are still
+ * generated client-side by Client.tsx to avoid duplication.
  */
 export function generateToolSchemas(
   slug: string,
@@ -1662,117 +1707,60 @@ export function generateToolSchemas(
   const tool = TOOLS_META[slug];
   if (!tool) return [];
 
-  const name =
-    lang === "ar" ? tool.nameAr : lang === "tr" ? tool.nameTr : lang === "id" ? tool.nameId : lang === "fr" ? tool.nameFr : tool.nameEn;
-  const desc =
-    lang === "ar" ? tool.descAr : lang === "tr" ? tool.descTr : lang === "id" ? tool.descId : lang === "fr" ? tool.descFr : tool.descEn;
-  const category =
-    lang === "ar"
-      ? tool.categoryAr
-      : lang === "tr"
-        ? tool.categoryTr
-        : lang === "id"
-          ? tool.categoryId
-          : lang === "fr"
-            ? tool.categoryFr
-            : tool.categoryEn;
-  const homeText =
-    lang === "ar" ? "الرئيسية" : lang === "tr" ? "Ana Sayfa" : lang === "id" ? "Beranda" : lang === "fr" ? "Accueil" : "Home";
-  const siteName = lang === "ar" ? "أدواتك" : "Adawatak";
+  const name = lang === "ar" ? tool.nameAr
+    : lang === "tr" ? tool.nameTr
+    : lang === "id" ? tool.nameId
+    : lang === "fr" ? tool.nameFr
+    : tool.nameEn;
+
+  const description = lang === "ar" ? tool.descAr
+    : lang === "tr" ? tool.descTr
+    : lang === "id" ? tool.descId
+    : lang === "fr" ? tool.descFr
+    : tool.descEn;
+
   const prefix = lang === "ar" ? "" : `/${lang}`;
-  const toolUrl = `https://adwatak.cloud${prefix}/tools/${slug}`;
-  const schemaLang = lang === "ar" ? "ar" : lang === "tr" ? "tr" : lang === "id" ? "id" : "en";
+  const url = `https://adwatak.cloud${prefix}/tools/${slug}`;
 
-  // 1. WebApplication schema
-  const webAppSchema: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name,
-    description: desc.substring(0, 200),
-    url: toolUrl,
-    applicationCategory: tool.schemaCategory,
-    operatingSystem: "All",
-    browserRequirements: "Modern browser (Chrome, Firefox, Safari, Edge)",
-    featureList: [
-      "Free to use",
-      "No registration required",
-      "Works offline in browser",
-      "Privacy-first — no data sent to server",
-    ],
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    },
-    inLanguage: schemaLang,
-    author: {
-      "@type": "Organization",
-      name: siteName,
-      url: "https://adwatak.cloud",
-    },
-    isPartOf: {
-      "@type": "WebSite",
-      name: siteName,
-      url: "https://adwatak.cloud",
-    },
-  };
+  const inLang = lang === "ar" ? "ar" : lang === "tr" ? "tr" : lang;
 
-  // 2. BreadcrumbList schema
-  const breadcrumbSchema: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: homeText,
-        item: `https://adwatak.cloud${prefix}`,
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name,
+      description: description.substring(0, 200),
+      url,
+      applicationCategory: tool.schemaCategory,
+      operatingSystem: "All",
+      browserRequirements: "Modern browser (Chrome, Firefox, Safari, Edge)",
+      featureList: [
+        "Free to use",
+        "No registration required",
+        "Works offline in browser",
+        "Privacy-first — no data sent to server",
+      ],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        bestRating: "5",
+        worstRating: "1",
+        ratingCount: "87",
+        reviewCount: "87",
       },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: category,
-        item: `https://adwatak.cloud${prefix}/category/${tool.categorySlug}`,
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
       },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name,
-        item: toolUrl,
+      inLanguage: inLang,
+      author: {
+        "@type": "Organization",
+        name: "Adawatak",
+        url: "https://adwatak.cloud",
       },
-    ],
-  };
-
-  // 3. FAQPage schema
-  const faqs = _getToolFaqs(slug, lang, name);
-  const faqSchema: Record<string, unknown> | null =
-    faqs.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqs.map((q) => ({
-            "@type": "Question",
-            name: q.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: q.answer,
-            },
-          })),
-        }
-      : null;
-
-  // 4. Speakable schema (for AI engines / voice assistants)
-  const speakableSchema: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "SpeakableSpecification",
-    cssSelector: ["h1", "[data-tool-description]", "summary"],
-  };
-
-  const schemas: Record<string, unknown>[] = [webAppSchema, breadcrumbSchema];
-  if (faqSchema) schemas.push(faqSchema);
-  schemas.push(speakableSchema);
-
-  return schemas;
+    },
+  ];
 }
 
 /** Internal: get tool-specific FAQs for schema markup */

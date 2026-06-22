@@ -15,7 +15,7 @@ const faqs = [
   {question:"Does it work offline?",answer:"Yes, everything runs in your browser."},
 ];
 
-const relatedTools = [{title:"Profit Margin",icon:"📊",href:"/fr/tools/profit-margin"},{title:"VAT Calculator",icon:"🏛️",href:"/fr/tools/vat-calculator"},{title:"Compound Interest",icon:"📈",href:"/fr/tools/compound-interest"},{title:"BMI Calculator",icon:"⚖️",href:"/fr/tools/bmi-calculator"}];
+const relatedTools = [{title:"Marge Bénéficiaire",icon:"📊",href:"/fr/tools/profit-margin"},{title:"VAT Calculator",icon:"🏛️",href:"/fr/tools/vat-calculator"},{title:"Intérêts Composés",icon:"📈",href:"/fr/tools/compound-interest"},{title:"Calculateur d'IMC",icon:"⚖️",href:"/fr/tools/bmi-calculator"}];
 const seo = ["Free Percentage Calculator — calculate percentage of a number, what percent X is of Y, and percentage increase/decrease. Simple and fast.", "Perfect for students, accountants, and merchants."];
 
 export default function Client() {
@@ -35,7 +35,7 @@ export default function Client() {
   return (<div className="max-w-[760px] mx-auto">
     <StructuredData data={toolSchema("Percentage Calculator","Calculate percentages quickly","https://adwatak.cloud/fr/tools/percentage-calculator","fr","Calculateurs")}/>
     <StructuredData data={faqSchema(faqs)}/>
-    <Breadcrumb lang="fr" category="Calculateurs" categorySlug="tools" toolName="Percentage Calculator"/>
+    <Breadcrumb lang="fr" category="Calculateurs" categorySlug="tools" toolName="Calculateur de pourcentage"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
       <h1 className="text-2xl font-extrabold mb-1">📊 Calculateur de Pourcentage</h1>
       <p className="text-sm text-gray-500 mb-6">Calculez des pourcentages facilement</p>

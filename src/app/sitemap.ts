@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["", "en", "tr", "id", "fr"] as const;
 
   const staticPaths = [
-    "", "/about", "/privacy", "/blog",
+    "", "/about", "/privacy", "/terms", "/contact", "/blog",
   ];
 
   const categoryPaths = [
@@ -25,17 +25,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "bio-generator", "bmi-calculator", "calorie-calculator", "car-installment",
     "color-converter", "compound-interest", "currency-converter", "emi-calculator",
     "encoder", "gold-calculator", "hash-generator", "hijri-converter",
-    "image-to-pdf", "inheritance-calculator", "installment-calculator",
-    "invoice-generator", "json-formatter", "loan-calculator", "mortgage-calculator",
+    "inheritance-calculator", "installment-calculator",
+    "json-formatter", "loan-calculator", "mortgage-calculator",
     "name-generator", "number-to-words", "password-generator", "pdf-compressor",
     "pdf-merger", "pdf-splitter", "pdf-to-word", "prayer-times", "profit-margin",
-    "qibla-direction", "qr-generator", "qr-reader", "random-number",
+    "qibla-direction", "qibla-camera", "qr-generator", "qr-reader", "random-number",
     "salary-calculator", "seo-audit", "social-character-counter", "stopwatch",
-    "typing-test", "text-case", "text-cleaner", "text-compare", "unit-converter",
+    "typing-test", "text-case", "text-cleaner", "text-compare",
     "vat-calculator", "whatsapp-link", "word-counter", "zakat-calculator",
     "plagiarism-checker", "grammar-checker", "paraphrasing-tool", "image-resizer",
     "image-compressor", "youtube-thumbnail-downloader", "css-minifier",
     "markdown-editor", "ip-lookup", "seo-content-generator",
+    "ai-essay-writer", "date-duration", "image-to-text",
+    "food-calorie-analyzer", "umrah-calculator", "fidyah-kaffarah",
+    "encryption-tool", "percentage-calculator",
+    "temperature-converter", "mosquito-repellent",
   ];
 
   const enTools = arTools.filter(t => t !== "seo-content-generator" || true);
@@ -49,12 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "emi-calculator-guide-2026",
     "inheritance-guide-2026", "vat-calculator-guide-2026",
     "zakat-money-calculator-2026", "barcode-qr-guide-business",
-    "image-to-pdf-guide",
   ];
   const enBlogSlugs = [
     "how-to-calculate-zakat", "how-to-calculate-mortgage",
     "simple-vs-compound-interest", "best-free-arabic-tools-2026",
-    "emi-calculator-guide-2026",
+    "smart-money-moves-2026-personal-finance-guide",
+    "boost-productivity-free-online-tools-2026",
   ];
   const trBlogSlugs = ["adwatak-nedir-2026"];
   const idBlogSlugs = ["apa-itu-adwatak"];
@@ -75,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
       entries.push({
         url,
-        lastModified: "2026-06-03",
+        lastModified: "2026-06-12",
         changeFrequency: path === "" ? "daily" as const : "weekly" as const,
         priority: path === "" ? 1.0 : path === "/en" || path === "/tr" || path === "/id" || path === "/fr" ? 0.9 : 0.8,
         alternates: { languages: alternates },
@@ -87,7 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       for (const catPath of categoryPaths) {
         entries.push({
           url: `${baseUrl}${catPath}`,
-          lastModified: "2026-06-03",
+          lastModified: "2026-06-12",
           changeFrequency: "weekly" as const,
           priority: 0.7,
         });
@@ -114,7 +118,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
       entries.push({
         url,
-        lastModified: "2026-06-03",
+        lastModified: "2026-06-12",
         changeFrequency: "weekly" as const,
         priority: toolLocale === "" ? 0.9 : 0.8,
         alternates: { languages: alternates },
@@ -143,7 +147,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
       entries.push({
         url,
-        lastModified: "2026-06-03",
+        lastModified: "2026-06-12",
         changeFrequency: "monthly" as const,
         priority: blogLocale === "" ? 0.7 : 0.6,
         ...(Object.keys(alternates).length > 0 ? { alternates: { languages: alternates } } : {}),

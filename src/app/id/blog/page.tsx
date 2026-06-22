@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Blog — Adwatak",
   description:
     "Artikel dan panduan edukatif tentang kalkulator keuangan, alat Islami, dan alat digital.",
+  alternates: {
+    canonical: "https://adwatak.cloud/id/blog",
+  },
 };
 
 const ID_CONTENT_CLUSTERS: { label: string; categories: string[]; description: string }[] = [

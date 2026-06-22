@@ -27,6 +27,7 @@ export const metadata: Metadata = {
       "en": `${baseUrl}/en`,
       "tr": `${baseUrl}/tr`,
       "id": `${baseUrl}/id`,
+      "fr": `${baseUrl}/fr`,
       "x-default": baseUrl,
     },
   },
@@ -66,28 +67,6 @@ export default async function TrLayout({ children }: { children: React.ReactNode
 
   return (
     <div className={`${inter.variable}`} dir="ltr">
-      {/* Trust Bar */}
-      <div className="trust-bar scroll-fade-in">
-        <div className="container trust-bar-inner">
-          <div className="trust-item">
-            <span className="t-icon">🔒</span>
-            <span>%100 Gizli — Dosya yükleme yok</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">🆓</span>
-            <span>Ücretsiz — Kayıt gerekmez</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">⚡</span>
-            <span>Anında sonuçlar</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">🔧</span>
-            <span>80+ araç</span>
-          </div>
-        </div>
-      </div>
-
       {/* Header */}
       <Header lang="tr" />
 
@@ -164,7 +143,7 @@ export default async function TrLayout({ children }: { children: React.ReactNode
               <a href="/tr/about">ℹ️ Hakkımızda</a>
               <a href="/tr/privacy">🔒 Gizlilik Politikası</a>
               <a href="/tr/terms">📜 Hizmet Şartları</a>
-              <a href="mailto:contact@adwatak.cloud">📧 İletişim</a>
+              <a href="/tr/contact">📧 İletişim</a>
             </div>
 
             {/* Newsletter */}

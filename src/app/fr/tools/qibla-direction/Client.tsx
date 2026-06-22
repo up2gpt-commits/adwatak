@@ -16,9 +16,9 @@ const CITIES: Record<string, { lat: number; lng: number; ar: string; en: string 
   // Saudi Arabia
   "mecca-sa": { lat: 21.4225, lng: 39.8262, ar: "مكة المكرمة", en: "Mecca" },
   "medina-sa": { lat: 24.5247, lng: 39.5692, ar: "المدينة المنورة", en: "Medina" },
-  "riyadh-sa": { lat: 24.7136, lng: 46.6753, ar: "الرياض", en: "Riyadh" },
+  "riyad-sa": { lat: 24.7136, lng: 46.6753, ar: "الرياض", en: "Riyadh" },
   "jeddah-sa": { lat: 21.5433, lng: 39.1728, ar: "جدة", en: "Jeddah" },
-  "dammam-sa": { lat: 26.4207, lng: 50.0888, ar: "الدمام", en: "Dammam" },
+  "Dammam-sa": { lat: 26.4207, lng: 50.0888, ar: "الدمام", en: "Dammam" },
   "abha-sa": { lat: 18.2164, lng: 42.5053, ar: "أبها", en: "Abha" },
   "tabuk-sa": { lat: 28.3998, lng: 36.5715, ar: "تبوك", en: "Tabuk" },
   // Egypt
@@ -29,16 +29,16 @@ const CITIES: Record<string, { lat: number; lng: number; ar: string; en: string 
   "aswan-eg": { lat: 24.0889, lng: 32.8998, ar: "أسوان", en: "Aswan" },
   // UAE
   "dubai-ae": { lat: 25.2048, lng: 55.2708, ar: "دبي", en: "Dubai" },
-  "abudhabi-ae": { lat: 24.4539, lng: 54.3773, ar: "أبوظبي", en: "Abu Dhabi" },
+  "abudhabi-ae": { lat: 24.4539, lng: 54.3773, ar: "أبوظبي", en: "Abou Dabi" },
   "sharjah-ae": { lat: 25.3573, lng: 55.4033, ar: "الشارقة", en: "Sharjah" },
   // Qatar
   "doha-qa": { lat: 25.2854, lng: 51.5310, ar: "الدوحة", en: "Doha" },
   // Kuwait
-  "kuwait-kw": { lat: 29.3759, lng: 47.9774, ar: "الكويت", en: "Kuwait City" },
+  "koweït-kw": { lat: 29.3759, lng: 47.9774, ar: "الكويت", en: "Koweït City" },
   // Bahrain
-  "manama-bh": { lat: 26.2285, lng: 50.5860, ar: "المنامة", en: "Manama" },
+  "Manama-bh": { lat: 26.2285, lng: 50.5860, ar: "المنامة", en: "Manama" },
   // Oman
-  "muscat-om": { lat: 23.5880, lng: 58.3829, ar: "مسقط", en: "Muscat" },
+  "mascate-om": { lat: 23.5880, lng: 58.3829, ar: "مسقط", en: "Muscat" },
   // Iraq
   "baghdad-iq": { lat: 33.3152, lng: 44.3661, ar: "بغداد", en: "Baghdad" },
   "basra-iq": { lat: 30.5085, lng: 47.7804, ar: "البصرة", en: "Basra" },
@@ -47,12 +47,12 @@ const CITIES: Record<string, { lat: number; lng: number; ar: string; en: string 
   // Lebanon
   "beirut-lb": { lat: 33.8938, lng: 35.5018, ar: "بيروت", en: "Beirut" },
   // Syria
-  "damascus-sy": { lat: 33.5138, lng: 36.2765, ar: "دمشق", en: "Damascus" },
+  "damas-sy": { lat: 33.5138, lng: 36.2765, ar: "دمشق", en: "Damascus" },
   // Palestine
   "jerusalem-ps": { lat: 31.7683, lng: 35.2137, ar: "القدس", en: "Jerusalem" },
   "gaza-ps": { lat: 31.5017, lng: 34.4668, ar: "غزة", en: "Gaza" },
   // Morocco
-  "casablanca-ma": { lat: 33.5731, lng: -7.5898, ar: "الدار البيضاء", en: "Casablanca" },
+  "Casablanca-ma": { lat: 33.5731, lng: -7.5898, ar: "الدار البيضاء", en: "Casablanca" },
   "rabat-ma": { lat: 34.0209, lng: -6.8416, ar: "الرباط", en: "Rabat" },
   "marrakech-ma": { lat: 31.6295, lng: -7.9811, ar: "مراكش", en: "Marrakech" },
   "fez-ma": { lat: 34.0181, lng: -5.0078, ar: "فاس", en: "Fez" },
@@ -61,51 +61,51 @@ const CITIES: Record<string, { lat: number; lng: number; ar: string; en: string 
   // Tunisia
   "tunis-tn": { lat: 36.8065, lng: 10.1815, ar: "تونس", en: "Tunis" },
   // Libya
-  "tripoli-ly": { lat: 32.8872, lng: 13.1913, ar: "طرابلس", en: "Tripoli" },
+  "Tripoli-ly": { lat: 32.8872, lng: 13.1913, ar: "طرابلس", en: "Tripoli" },
   // Sudan
-  "khartoum-sd": { lat: 15.5007, lng: 32.5599, ar: "الخرطوم", en: "Khartoum" },
+  "Khartoum-sd": { lat: 15.5007, lng: 32.5599, ar: "الخرطوم", en: "Khartoum" },
   // Yemen
   "sanaa-ye": { lat: 15.3694, lng: 44.1910, ar: "صنعاء", en: "Sanaa" },
   // Turkey
-  "istanbul-tr": { lat: 41.0082, lng: 28.9784, ar: "إسطنبول", en: "Istanbul" },
+  "Istanbul-tr": { lat: 41.0082, lng: 28.9784, ar: "إسطنبول", en: "Istanbul" },
   "ankara-tr": { lat: 39.9334, lng: 32.8597, ar: "أنقرة", en: "Ankara" },
   // Pakistan
-  "karachi-pk": { lat: 24.8607, lng: 67.0011, ar: "كراتشي", en: "Karachi" },
+  "Karachi-pk": { lat: 24.8607, lng: 67.0011, ar: "كراتشي", en: "Karachi" },
   "lahore-pk": { lat: 31.5204, lng: 74.3587, ar: "لاهور", en: "Lahore" },
-  "islamabad-pk": { lat: 33.6844, lng: 73.0479, ar: "إسلام آباد", en: "Islamabad" },
+  "Islamabad-pk": { lat: 33.6844, lng: 73.0479, ar: "إسلام آباد", en: "Islamabad" },
   // India
   "delhi-in": { lat: 28.7041, lng: 77.1025, ar: "دلهي", en: "Delhi" },
-  "mumbai-in": { lat: 19.0760, lng: 72.8777, ar: "مومباي", en: "Mumbai" },
+  "Mumbai-in": { lat: 19.0760, lng: 72.8777, ar: "مومباي", en: "Mumbai" },
   "hyderabad-in": { lat: 17.3850, lng: 78.4867, ar: "حيدر آباد", en: "Hyderabad" },
   // Bangladesh
   "dhaka-bd": { lat: 23.8103, lng: 90.4125, ar: "دكا", en: "Dhaka" },
   // Indonesia
-  "jakarta-id": { lat: -6.2088, lng: 106.8456, ar: "جاكرتا", en: "Jakarta" },
+  "Jakarta-id": { lat: -6.2088, lng: 106.8456, ar: "جاكرتا", en: "Jakarta" },
   // Malaysia
-  "kualalumpur-my": { lat: 3.1390, lng: 101.6869, ar: "كوالالمبور", en: "Kuala Lumpur" },
+  "Kuala Lumpur-my": { lat: 3.1390, lng: 101.6869, ar: "كوالالمبور", en: "Kuala Lumpur" },
   // UK
-  "london-gb": { lat: 51.5074, lng: -0.1278, ar: "لندن", en: "London" },
-  "birmingham-gb": { lat: 52.4862, lng: -1.8904, ar: "برمنغهام", en: "Birmingham" },
+  "Londres-gb": { lat: 51.5074, lng: -0.1278, ar: "لندن", en: "London" },
+  "Birmingham-gb": { lat: 52.4862, lng: -1.8904, ar: "برمنغهام", en: "Birmingham" },
   "manchester-gb": { lat: 53.4808, lng: -2.2426, ar: "مانشستر", en: "Manchester" },
   // France
   "paris-fr": { lat: 48.8566, lng: 2.3522, ar: "باريس", en: "Paris" },
   "lyon-fr": { lat: 45.7640, lng: 4.8357, ar: "ليون", en: "Lyon" },
   // Germany
   "berlin-de": { lat: 52.5200, lng: 13.4050, ar: "برلين", en: "Berlin" },
-  "frankfurt-de": { lat: 50.1109, lng: 8.6821, ar: "فرانكفورت", en: "Frankfurt" },
+  "frankfurt-de": { lat: 50.1109, lng: 8.6821, ar: "فرانكفورت", en: "Francfort" },
   // USA
   "newyork-us": { lat: 40.7128, lng: -74.0060, ar: "نيويورك", en: "New York" },
   "losangeles-us": { lat: 34.0522, lng: -118.2437, ar: "لوس أنجلوس", en: "Los Angeles" },
-  "chicago-us": { lat: 41.8781, lng: -87.6298, ar: "شيكاغو", en: "Chicago" },
-  "houston-us": { lat: 29.7604, lng: -95.3698, ar: "هيوستن", en: "Houston" },
+  "Chicago-us": { lat: 41.8781, lng: -87.6298, ar: "شيكاغو", en: "Chicago" },
+  "Houston-us": { lat: 29.7604, lng: -95.3698, ar: "هيوستن", en: "Houston" },
   // Canada
-  "toronto-ca": { lat: 43.6532, lng: -79.3832, ar: "تورنتو", en: "Toronto" },
+  "Toronto-ca": { lat: 43.6532, lng: -79.3832, ar: "تورنتو", en: "Toronto" },
   "montreal-ca": { lat: 45.5017, lng: -73.5673, ar: "مونتريال", en: "Montreal" },
   // Australia
   "sydney-au": { lat: -33.8688, lng: 151.2093, ar: "سيدني", en: "Sydney" },
   "melbourne-au": { lat: -37.8136, lng: 144.9631, ar: "ملبورن", en: "Melbourne" },
   // Russia
-  "moscow-ru": { lat: 55.7558, lng: 37.6173, ar: "موسكو", en: "Moscow" },
+  "Moscou-ru": { lat: 55.7558, lng: 37.6173, ar: "موسكو", en: "Moscow" },
   // China
   "beijing-cn": { lat: 39.9042, lng: 116.4074, ar: "بكين", en: "Beijing" },
   // Japan
@@ -121,37 +121,37 @@ const CITIES: Record<string, { lat: number; lng: number; ar: string; en: string 
 
 // Group cities by country for the dropdown
 const COUNTRIES: Record<string, { ar: string; en: string; cities: string[] }> = {
-  sa: { ar: "السعودية", en: "Saudi Arabia", cities: ["mecca-sa", "medina-sa", "riyadh-sa", "jeddah-sa", "dammam-sa", "abha-sa", "tabuk-sa"] },
+  sa: { ar: "السعودية", en: "Saudi Arabia", cities: ["mecca-sa", "medina-sa", "riyad-sa", "jeddah-sa", "Dammam-sa", "abha-sa", "tabuk-sa"] },
   eg: { ar: "مصر", en: "Egypt", cities: ["cairo-eg", "alexandria-eg", "giza-eg", "luxor-eg", "aswan-eg"] },
   ae: { ar: "الإمارات", en: "UAE", cities: ["dubai-ae", "abudhabi-ae", "sharjah-ae"] },
   qa: { ar: "قطر", en: "Qatar", cities: ["doha-qa"] },
-  kw: { ar: "الكويت", en: "Kuwait", cities: ["kuwait-kw"] },
-  bh: { ar: "البحرين", en: "Bahrain", cities: ["manama-bh"] },
-  om: { ar: "عُمان", en: "Oman", cities: ["muscat-om"] },
+  kw: { ar: "الكويت", en: "Kuwait", cities: ["koweït-kw"] },
+  bh: { ar: "البحرين", en: "Bahrain", cities: ["Manama-bh"] },
+  om: { ar: "عُمان", en: "Oman", cities: ["mascate-om"] },
   iq: { ar: "العراق", en: "Iraq", cities: ["baghdad-iq", "basra-iq"] },
   jo: { ar: "الأردن", en: "Jordan", cities: ["amman-jo"] },
   lb: { ar: "لبنان", en: "Lebanon", cities: ["beirut-lb"] },
-  sy: { ar: "سوريا", en: "Syria", cities: ["damascus-sy"] },
+  sy: { ar: "سوريا", en: "Syria", cities: ["damas-sy"] },
   ps: { ar: "فلسطين", en: "Palestine", cities: ["jerusalem-ps", "gaza-ps"] },
-  ma: { ar: "المغرب", en: "Morocco", cities: ["casablanca-ma", "rabat-ma", "marrakech-ma", "fez-ma"] },
+  ma: { ar: "المغرب", en: "Morocco", cities: ["Casablanca-ma", "rabat-ma", "marrakech-ma", "fez-ma"] },
   dz: { ar: "الجزائر", en: "Algeria", cities: ["algiers-dz"] },
   tn: { ar: "تونس", en: "Tunisia", cities: ["tunis-tn"] },
-  ly: { ar: "ليبيا", en: "Libya", cities: ["tripoli-ly"] },
-  sd: { ar: "السودان", en: "Sudan", cities: ["khartoum-sd"] },
+  ly: { ar: "ليبيا", en: "Libya", cities: ["Tripoli-ly"] },
+  sd: { ar: "السودان", en: "Sudan", cities: ["Khartoum-sd"] },
   ye: { ar: "اليمن", en: "Yemen", cities: ["sanaa-ye"] },
-  tr: { ar: "تركيا", en: "Turkey", cities: ["istanbul-tr", "ankara-tr"] },
-  pk: { ar: "باكستان", en: "Pakistan", cities: ["karachi-pk", "lahore-pk", "islamabad-pk"] },
-  in: { ar: "الهند", en: "India", cities: ["delhi-in", "mumbai-in", "hyderabad-in"] },
+  tr: { ar: "تركيا", en: "Turkey", cities: ["Istanbul-tr", "ankara-tr"] },
+  pk: { ar: "باكستان", en: "Pakistan", cities: ["Karachi-pk", "lahore-pk", "Islamabad-pk"] },
+  in: { ar: "الهند", en: "India", cities: ["delhi-in", "Mumbai-in", "hyderabad-in"] },
   bd: { ar: "بنغلاديش", en: "Bangladesh", cities: ["dhaka-bd"] },
-  id: { ar: "إندونيسيا", en: "Indonesia", cities: ["jakarta-id"] },
-  my: { ar: "ماليزيا", en: "Malaysia", cities: ["kualalumpur-my"] },
-  gb: { ar: "بريطانيا", en: "United Kingdom", cities: ["london-gb", "birmingham-gb", "manchester-gb"] },
+  id: { ar: "إندونيسيا", en: "Indonesia", cities: ["Jakarta-id"] },
+  my: { ar: "ماليزيا", en: "Malaysia", cities: ["Kuala Lumpur-my"] },
+  gb: { ar: "بريطانيا", en: "United Kingdom", cities: ["Londres-gb", "Birmingham-gb", "manchester-gb"] },
   fr: { ar: "فرنسا", en: "France", cities: ["paris-fr", "lyon-fr"] },
   de: { ar: "ألمانيا", en: "Germany", cities: ["berlin-de", "frankfurt-de"] },
-  us: { ar: "أمريكا", en: "United States", cities: ["newyork-us", "losangeles-us", "chicago-us", "houston-us"] },
-  ca: { ar: "كندا", en: "Canada", cities: ["toronto-ca", "montreal-ca"] },
-  au: { ar: "أستراليا", en: "Australia", cities: ["sydney-au", "melbourne-au"] },
-  ru: { ar: "روسيا", en: "Russia", cities: ["moscow-ru"] },
+  us: { ar: "أمريكا", en: "United States", cities: ["newyork-us", "losangeles-us", "Chicago-us", "Houston-us"] },
+  ca: { ar: "كندا", en: "Canada", cities: ["Toronto-ca", "montreal-ca"] },
+  au: { ar: "أستراليا", en: "Australie", cities: ["sydney-au", "melbourne-au"] },
+  ru: { ar: "روسيا", en: "Russia", cities: ["Moscou-ru"] },
   cn: { ar: "الصين", en: "China", cities: ["beijing-cn"] },
   jp: { ar: "اليابان", en: "Japan", cities: ["tokyo-jp"] },
   za: { ar: "جنوب أفريقيا", en: "South Africa", cities: ["capetown-za", "johannesburg-za"] },
@@ -268,7 +268,6 @@ function Compass({ bearing, deviceHeading, direction }: { bearing: number; devic
     }
 
     // Qibla direction arrow (red)
-    const qiblaAngle = ((bearing - 90) * Math.PI) / 180;
     ctx.save();
     ctx.translate(cx, cy);
 
@@ -403,11 +402,11 @@ export default function Client() {
       },
       (err) => {
         if (err.code === 1) {
-          setErrorMsg("Location permission denied. Please allow access and try again.");
+          setErrorMsg("Permission de localisation refusée. Veuillez autoriser l'accès et réessayer.");
         } else if (err.code === 2) {
-          setErrorMsg("Could not determine your location. Make sure GPS is enabled and try again.");
+          setErrorMsg("Impossible de déterminer votre position. Assurez-vous que le GPS est activé et réessayez.");
         } else {
-          setErrorMsg("Location request timed out. Please try again.");
+          setErrorMsg("La demande de localisation a expiré. Veuillez réessayer.");
         }
         setMode("error");
       },
@@ -427,7 +426,7 @@ export default function Client() {
     const lat = parseFloat(manualLat);
     const lng = parseFloat(manualLng);
     if (isNaN(lat) || isNaN(lng) || lat < -90 || lat > 90 || lng < -180 || lng > 180) {
-      setErrorMsg("Invalid coordinates. Latitude: -90 to 90, Longitude: -180 to 180");
+      setErrorMsg("Coordonnées invalides. Latitude : -90 à 90, Longitude : -180 à 180");
       setMode("error");
       return;
     }
@@ -447,18 +446,18 @@ export default function Client() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("Qibla Direction", "Find the Qibla direction from anywhere in the world — interactive compass with precise Haversine calculation", "https://adwatak.cloud/fr/tools/qibla-direction", "fr", "Islamic")} />
+      <StructuredData data={toolSchema("Direction de la Qibla", "Trouvez la direction de la Qibla depuis n'importe où dans le monde — boussole interactive avec calcul précis par la formule de Haversine", "https://adwatak.cloud/fr/tools/qibla-direction", "fr", "Islamic")} />
       <StructuredData data={faqSchema([
-        { question: "What is the Qibla?", answer: "The Qibla is the direction of the Kaaba in Mecca, Saudi Arabia (21.4225°N, 39.8262°E). Muslims face this direction during prayer." },
-        { question: "Is the Qibla always towards Mecca?", answer: "The exact direction varies depending on your location. In Egypt the Qibla is roughly east, in the US it's northeast, in Europe it's southeast." },
-        { question: "How is the Qibla direction calculated?", answer: "Using the Haversine formula to calculate the angle between your location and the Kaaba on the Earth's surface." },
-        { question: "Do I need to be perfectly accurate?", answer: "The Islamic requirement is the general direction, not the exact degree. The Prophet ﷺ said: 'Between the east and west is a Qibla.'" },
-        { question: "Is the phone compass accurate for Qibla?", answer: "The phone compass gives the magnetic north direction. Our tool calculates the precise direction from your coordinates." },
-        { question: "What if I'm in space?", answer: "Face towards the Kaaba as best you can. The general direction is sufficient." },
-        { question: "Can I use the tool without GPS?", answer: "Yes! You can select your city from the list or enter coordinates manually." },
-        { question: "What cities are available?", answer: "Over 60 cities in 35+ Arab and international countries." },
-        { question: "Is the tool free?", answer: "Yes, completely free and works in the browser without any server." },
-        { question: "How do I find the Qibla in a hotel or new place?", answer: "Open the tool and click 'Detect My Location' or select your city from the list." },
+        { question: "Qu'est-ce que la Qibla ?", answer: "La Qibla est la direction de la Kaaba à La Mecque, en Arabie saoudite (21,4225°N, 39,8262°E). Les musulmans se tournent vers cette direction pendant la prière." },
+        { question: "La Qibla est-elle toujours en direction de La Mecque ?", answer: "The exact direction varies depending on your location. In Egypt the Qibla is roughly east, in the US it's northeast, in Europe it's southeast." },
+        { question: "Comment la direction de la Qibla est-elle calculée ?", answer: "Using the Haversine formula to calculate the angle between your location and the Kaaba on the Earth's surface." },
+        { question: "Dois-je être parfaitement précis ?", answer: "The Islamic requirement is the general direction, not the exact degree. The Prophet ﷺ said: 'Between the east and west is a Qibla.'" },
+        { question: "La boussole du téléphone est-elle précise pour la Qibla ?", answer: "La boussole du téléphone donne la direction du nord magnétique. Notre outil calcule la direction précise à partir de vos coordonnées." },
+        { question: "What if I'm in space?", answer: "Tournez-vous vers la Kaaba du mieux que vous pouvez. La direction générale est suffisante." },
+        { question: "Puis-je utiliser l'outil sans GPS ?", answer: "Oui ! Vous pouvez sélectionner votre ville dans la liste ou saisir les coordonnées manuellement." },
+        { question: "Quelles villes sont disponibles ?", answer: "Plus de 60 villes dans plus de 35 pays arabes et internationaux." },
+        { question: "L'outil est-il gratuit ?", answer: "Yes, completely free and works in the browser without any server." },
+        { question: "Comment trouver la Qibla dans un hôtel ou un nouvel endroit ?", answer: "Open the tool and click 'Detect My Location' or select your city from the list." },
       ])} />
       <StructuredData data={breadcrumbSchema([
         { name: "Accueil", url: "https://adwatak.cloud/fr" },
@@ -468,7 +467,7 @@ export default function Client() {
       {/* GEO: Speakable — marks key content for AI/voice engines */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])}
       />
-      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Qibla Direction" />
+      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Direction de la Qibla" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🧭 Direction de la Qibla</h1>
@@ -662,25 +661,25 @@ export default function Client() {
       </div>
 
       <SEOContent content={[
-        "Qibla Direction Finder — Find the direction of the Kaaba in Mecca from anywhere in the world. Uses precise geometric calculations (Haversine formula) to calculate the geographic bearing from your location to the Kaaba.",
+        "Chercheur de direction de la Qibla — Trouvez la direction de la Kaaba à La Mecque depuis n'importe où dans le monde. Utilise des calculs géométriques précis (formule de Haversine) pour calculer le relèvement géographique de votre position vers la Kaaba.",
         "3 location methods: automatic GPS, city selection from 60+ cities, or manual coordinate entry.",
-        "Interactive compass showing Qibla direction in degrees with a red arrow pointing to the Qibla. Supports phone magnetic compass for relative direction.",
-        "Allah says: 'So turn your face toward al-Masjid al-Haram' (Al-Baqarah: 144). The Islamic requirement is the general direction, not the exact degree.",
-        "The tool is completely free and works in the browser — no data is uploaded to any server.",
+        "Boussole interactive indiquant la direction de la Qibla en degrés avec une flèche rouge pointant vers la Qibla. Prend en charge la boussole magnétique du téléphone pour la direction relative.",
+        "Allah says: 'Tournez donc votre visage vers la Mosquée sacrée' (Al-Baqarah: 144). The Islamic requirement is the general direction, not the exact degree.",
+        "L'outil est entièrement gratuit et fonctionne dans le navigateur — aucune donnée n'est téléchargée sur un serveur.",
       ]} lang="fr" />
       <FAQSection faqs={[
-        { question: "What is the Qibla?", answer: "The Qibla is the direction of the Kaaba in Mecca, Saudi Arabia (21.4225°N, 39.8262°E). Muslims face this direction in their prayers from anywhere in the world." },
-        { question: "Is the Qibla always towards Mecca?", answer: "The exact direction varies depending on your location. In Egypt the Qibla is roughly east, in the US it's northeast, in Europe it's southeast." },
-        { question: "How is the Qibla direction calculated?", answer: "Using the Haversine formula to calculate the angle between your location and the Kaaba on the Earth's surface." },
-        { question: "Do I need to be perfectly accurate?", answer: "The Islamic requirement is the general direction, not the exact degree. The Prophet ﷺ said: 'Between the east and west is a Qibla.'" },
-        { question: "Can I use the tool without GPS?", answer: "Yes! You can select your city from the list or enter coordinates manually." },
-        { question: "What cities are available?", answer: "Over 60 cities in 35+ Arab and international countries including Saudi Arabia, Egypt, UAE, Turkey, Pakistan, USA, UK, and more." },
-        { question: "Is the tool free?", answer: "Yes, completely free and works in the browser without any server." },
-        { question: "How do I find the Qibla in a hotel or new place?", answer: "Open the tool and click 'Detect My Location' or select your city from the list." },
+        { question: "Qu'est-ce que la Qibla ?", answer: "La Qibla est la direction de la Kaaba à La Mecque, en Arabie saoudite (21,4225°N, 39,8262°E). Les musulmans se tournent vers cette direction dans leurs prières depuis n'importe où dans le monde." },
+        { question: "La Qibla est-elle toujours en direction de La Mecque ?", answer: "The exact direction varies depending on your location. In Egypt the Qibla is roughly east, in the US it's northeast, in Europe it's southeast." },
+        { question: "Comment la direction de la Qibla est-elle calculée ?", answer: "Using the Haversine formula to calculate the angle between your location and the Kaaba on the Earth's surface." },
+        { question: "Dois-je être parfaitement précis ?", answer: "The Islamic requirement is the general direction, not the exact degree. The Prophet ﷺ said: 'Between the east and west is a Qibla.'" },
+        { question: "Puis-je utiliser l'outil sans GPS ?", answer: "Oui ! Vous pouvez sélectionner votre ville dans la liste ou saisir les coordonnées manuellement." },
+        { question: "Quelles villes sont disponibles ?", answer: "Plus de 60 villes dans plus de 35 pays arabes et internationaux, dont l'Arabie saoudite, l'Égypte, les Émirats arabes unis, la Turquie, le Pakistan, les États-Unis, le Royaume-Uni et bien d'autres." },
+        { question: "L'outil est-il gratuit ?", answer: "Yes, completely free and works in the browser without any server." },
+        { question: "Comment trouver la Qibla dans un hôtel ou un nouvel endroit ?", answer: "Open the tool and click 'Detect My Location' or select your city from the list." },
       ]} lang="fr" />
       <RelatedTools tools={[
-        { title: "Prayer Times", icon: "🕐", href: "/fr/tools/prayer-times" },
-        { title: "Hijri Converter", icon: "📅", href: "/fr/tools/hijri-converter" },
+        { title: "Heures de Prière", icon: "🕐", href: "/fr/tools/prayer-times" },
+        { title: "Convertisseur Hijri", icon: "📅", href: "/fr/tools/hijri-converter" },
         { title: "Zakat Calculator", icon: "🕌", href: "/fr/tools/zakat-calculator" },
         { title: "Inheritance Calculator", icon: "📜", href: "/fr/tools/inheritance-calculator" },
       ]} lang="fr" />

@@ -19,7 +19,7 @@ export default function DynamicHtmlLang() {
     // (before first paint for Google's rendering engine)
     const id = requestAnimationFrame(() => {
       const pathname = window.location.pathname;
-      const match = pathname.match(/^\/(en|tr|id)(\/|$)/);
+      const match = pathname.match(/^\/(en|tr|id|fr)(\/|$)/);
       const lang = match ? match[1] : "ar";
       const dir = lang === "ar" ? "rtl" : "ltr";
 

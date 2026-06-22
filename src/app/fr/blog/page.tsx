@@ -5,7 +5,10 @@ import { getAllEnPosts } from "@/lib/blog-en";
 export const metadata: Metadata = {
   title: "Blog — Adawatak",
   description:
-    "Educational articles and guides about financial calculators, Islamic tools, and digital tools. Learn how to make the most of our free online tools.",
+    "Articles et guides éducatifs sur les calculateurs financiers, les outils islamiques et les outils numériques.",
+  alternates: {
+    canonical: "https://adwatak.cloud/fr/blog",
+  },
 };
 
 /** Content clusters for topical authority & AI engine recognition */

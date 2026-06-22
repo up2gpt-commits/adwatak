@@ -8,30 +8,30 @@ import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  { question: "What is AI Essay Writer?", answer: "A free tool to generate structured essays. Choose your topic, essay type, and length to get a complete essay with introduction, body paragraphs, and conclusion." },
-  { question: "Is it free?", answer: "Yes, 100% free. No registration, no limits, no ads." },
-  { question: "What essay types are available?", answer: "Available: Argumentative, Descriptive, Narrative, Expository, and Persuasive. Each type has a different structure." },
-  { question: "Does it support Arabic?", answer: "Yes, supports both Arabic and English fluently." },
-  { question: "What length options?", answer: "Short (~300 words), Medium (~600 words), Long (~1000 words)." },
-  { question: "Can I use it commercially?", answer: "Yes, results are for personal and commercial use." },
-  { question: "Does it work on mobile?", answer: "Yes, fully responsive on all devices." },
-  { question: "How to start?", answer: "Type your topic, choose essay type and length, then click Generate." },
-  { question: "Can I copy the essay?", answer: "Yes, copy button and download as .txt file are available." },
-  { question: "Is my data safe?", answer: "Everything runs in your browser. No data is sent to any server." },
+  { question: "Qu'est-ce que AI Essay Writer ?", answer: "Un outil gratuit pour générer des dissertations structurées. Choisissez votre sujet, le type de dissertation et la longueur pour obtenir une dissertation complète avec introduction, paragraphes de développement et conclusion." },
+  { question: "Est-ce gratuit ?", answer: "Oui, 100% gratuit. Pas d'inscription, pas de limites, pas de publicité." },
+  { question: "Quels types de dissertations sont disponibles ?", answer: "Disponibles : Argumentatif, Descriptif, Narratif, Explicatif et Persuasif. Chaque type a une structure différente." },
+  { question: "Prend-il en charge l'arabe ?", answer: "Oui, prend en charge l'arabe et l'anglais couramment." },
+  { question: "Quelles options de longueur ?", answer: "Court (~300 mots), Moyen (~600 mots), Long (~1000 mots)." },
+  { question: "Puis-je l'utiliser commercialement ?", answer: "Oui, les résultats sont pour un usage personnel et commercial." },
+  { question: "Fonctionne-t-il sur mobile ?", answer: "Oui, entièrement responsive sur tous les appareils." },
+  { question: "Comment commencer ?", answer: "Saisissez votre sujet, choisissez le type et la longueur de la dissertation, puis cliquez sur Générer." },
+  { question: "Puis-je copier la dissertation ?", answer: "Oui, un bouton de copie et le téléchargement en fichier .txt sont disponibles." },
+  { question: "Mes données sont-elles en sécurité ?", answer: "Tout fonctionne dans votre navigateur. Aucune donnée n'est envoyée à un serveur." },
 ];
 
 const relatedTools = [
-  { title: "Paraphrasing Tool", icon: "✏️", href: "/fr/tools/paraphrasing-tool" },
-  { title: "Grammar Checker", icon: "📝", href: "/fr/tools/grammar-checker" },
-  { title: "Word Counter", icon: "📊", href: "/fr/tools/word-counter" },
-  { title: "Bio Generator", icon: "👤", href: "/fr/tools/bio-generator" },
-  { title: "Text Case Converter", icon: "🔤", href: "/fr/tools/text-case" },
+  { title: "Outil de Paraphrase", icon: "✏️", href: "/fr/tools/paraphrasing-tool" },
+  { title: "Correcteur Grammatical", icon: "📝", href: "/fr/tools/grammar-checker" },
+  { title: "Compteur de Mots", icon: "📊", href: "/fr/tools/word-counter" },
+  { title: "Générateur de Bio", icon: "👤", href: "/fr/tools/bio-generator" },
+  { title: "Convertisseur de Casse", icon: "🔤", href: "/fr/tools/text-case" },
 ];
 
 const seoContent = [
-  "Free AI Essay Writer - generate structured essays with introduction, body, and conclusion. Choose from argumentative, descriptive, narrative, expository, and persuasive types.",
-  "Perfect for students, writers, bloggers, and content creators.",
-  "AI-powered essay generation with professional structure and formatting.",
+  "Rédacteur de dissertations IA gratuit - générez des dissertations structurées avec introduction, développement et conclusion. Choisissez parmi les types argumentatif, descriptif, narratif, explicatif et persuasif.",
+  "Parfait pour les étudiants, les écrivains, les blogueurs et les créateurs de contenu.",
+  "Génération de dissertations assistée par IA avec une structure et une mise en forme professionnelles.",
   "100% free, works in your browser, no registration needed.",
 ];
 
@@ -166,7 +166,7 @@ export default function ClientEn() {
       if (!r.ok) throw new Error(data.error || "Failed to generate essay");
       setResult(data);
     } catch (e: any) {
-      setError(e.message || "Something went wrong. Please try again.");
+      setError(e.message || "Quelque chose s'est mal passé. Veuillez réessayer.");
     } finally {
       setLoading(false);
     }
@@ -194,9 +194,9 @@ export default function ClientEn() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("AI Essay Writer", "Write complete articles with AI", "https://adwatak.cloud/fr/tools/ai-essay-writer", "fr", "Text Tools")} />
+      <StructuredData data={toolSchema("AI Essay Writer", "Rédigez des articles complets avec l'IA", "https://adwatak.cloud/fr/tools/ai-essay-writer", "fr", "Text Tools")} />
       <StructuredData data={faqSchema(faqs)} />
-      <Breadcrumb lang="fr" category="Text Tools" categorySlug="tools" toolName="AI Essay Writer" />
+      <Breadcrumb lang="fr" category="Text Tools" categorySlug="tools" toolName="Rédacteur d'essai IA" />
       
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">✍️ Rédacteur IA</h1>
@@ -209,7 +209,7 @@ export default function ClientEn() {
               type="text"
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
-              placeholder="Enter your essay topic..."
+              placeholder="Entrez le sujet de votre dissertation..."
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm"
             />
           </div>

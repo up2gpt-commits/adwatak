@@ -17,11 +17,11 @@ const faqs=[
 {question:"What's the best format for web?",answer:"WebP: 25-35% smaller than JPG with same quality. All modern browsers support it. JPG is universally supported."},
 ];
 const relatedTools=[
-{title:"Image Compressor",icon:"📦",href:"/fr/tools/image-compressor"},
-{title:"YouTube Thumbnail Downloader",icon:"▶️",href:"/fr/tools/youtube-thumbnail-downloader"},
-{title:"Image to PDF",icon:"📄",href:"/fr/tools/image-to-pdf"},
-{title:"QR Generator",icon:"🔳",href:"/fr/tools/qr-generator"},
-{title:"Color Converter",icon:"🎨",href:"/fr/tools/color-converter"},
+{title:"Compresseur d'Images",icon:"📦",href:"/fr/tools/image-compressor"},
+{title:"Téléchargeur de Miniatures YouTube",icon:"▶️",href:"/fr/tools/youtube-thumbnail-downloader"},
+{title:"Image en PDF",icon:"📄",href:"/fr/tools/image-to-pdf"},
+{title:"Générateur de QR Code",icon:"🔳",href:"/fr/tools/qr-generator"},
+{title:"Convertisseur de Couleurs",icon:"🎨",href:"/fr/tools/color-converter"},
 ];
 const seoContent=[
 "Free Image Resizer — change image dimensions online. Upload, set dimensions, and download. Everything in your browser — no server upload. Supports JPG, PNG, WebP.",
@@ -45,7 +45,7 @@ return(<div className="max-w-[760px] mx-auto">
       <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
-<Breadcrumb lang="fr" category="Autres" categorySlug="image" toolName="Image Resizer"/>
+<Breadcrumb lang="fr" category="Autres" categorySlug="image" toolName="Redimensionneur d'image"/>
 <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
 <h1 className="text-2xl font-extrabold mb-1">🖼️ Redimensionneur Image</h1><p className="text-sm text-gray-500 mb-6">Redimensionnez vos images en ligne</p>
 <input type="file" accept="image/*" onChange={handleImage} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 mb-4" />

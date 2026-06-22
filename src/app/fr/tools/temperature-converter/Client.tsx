@@ -15,9 +15,9 @@ const faqs = [
 ];
 
 const relatedTools = [
-  {title:"Unit Converter",icon:"🔄",href:"/fr/tools/unit-converter"},
-  {title:"Color Converter",icon:"🎨",href:"/fr/tools/color-converter"},
-  {title:"Currency Converter",icon:"💱",href:"/fr/tools/currency-converter"},
+  {title:"Convertisseur d'Unités",icon:"🔄",href:"/fr/tools/unit-converter"},
+  {title:"Convertisseur de Couleurs",icon:"🎨",href:"/fr/tools/color-converter"},
+  {title:"Convertisseur de Devises",icon:"💱",href:"/fr/tools/currency-converter"},
 ];
 const seo = ["Free Temperature Converter — convert between Celsius, Fahrenheit, and Kelvin instantly. Simple and accurate.", "Perfect for students, scientists, and travelers."];
 
@@ -39,9 +39,9 @@ export default function Client(){
   return (<div className="max-w-[760px] mx-auto">
     <StructuredData data={toolSchema("Temperature Converter","Convert Celsius, Fahrenheit, Kelvin","https://adwatak.cloud/fr/tools/temperature-converter","fr","Convertisseurs")}/>
     <StructuredData data={faqSchema(faqs)}/>
-    <Breadcrumb lang="fr" category="Convertisseurs" categorySlug="tools" toolName="Temperature Converter"/>
+    <Breadcrumb lang="fr" category="Convertisseurs" categorySlug="tools" toolName="Convertisseur de Température"/>
     <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-      <h1 className="text-2xl font-extrabold mb-1">🌡️ Convertisseur de Température</h1>
+      <h1 className="text-2xl font-extrabold mb-1">Convertisseur de Température</h1>
       <p className="text-sm text-gray-500 mb-6">Convertissez entre Celsius, Fahrenheit, Kelvin</p>
       <div className="space-y-4">
         {[{key:"C",label:"Celsius (°C)"},{key:"F",label:"Fahrenheit (°F)"},{key:"K",label:"Kelvin (K)"}].map(({key,label})=>(

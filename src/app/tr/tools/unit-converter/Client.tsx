@@ -8,8 +8,8 @@ import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 
 const faqs = [
-  { question: "What is a unit converter?", answer: "Converts values between different measurement units within the same category: length (meters/feet), weight (kg/lbs), temperature (C/F/K), volume (liters/gallons), area (sq m/acres), and more. Essential for science, travel, cooking, and international business." },
-  { question: "Why use a unit converter?", answer: "International differences: US uses imperial (miles, pounds, Fahrenheit). Rest of world uses metric (km, kg, Celsius). Recipes, travel planning, online shopping, car specs (mph vs km/h), and scientific calculations all need accurate conversion." },
+  { question: "Birim dönüştürücü nedir?", answer: "Dönüştürs values between different measurement units within the same category: length (meters/feet), weight (kg/lbs), temperature (C/F/K), volume (liters/gallons), area (sq m/acres), and more. Essential for science, travel, cooking, and international business." },
+  { question: "Neden birim dönüştürücü kullanmalı?", answer: "International differences: US uses imperial (miles, pounds, Fahrenheit). Rest of world uses metric (km, kg, Celsius). Recipes, travel planning, online shopping, car specs (mph vs km/h), and scientific calculations all need accurate conversion." },
   { question: "How to convert Celsius to Fahrenheit?", answer: "Formula: F = (C × 9/5) + 32. 0°C = 32°F. 100°C = 212°F. 25°C = 77°F. For quick mental: double Celsius, add 30 (approximate). 25 × 2 = 50 + 30 = 80°F (exact: 77°F)." },
   { question: "How to convert kg to lbs?", answer: "1 kg = 2.20462 lbs. 80 kg = 176.4 lbs. Quick: multiply by 2.2. 80 × 2.2 = 176 lbs. For lbs to kg: divide by 2.2. 176 ÷ 2.2 = 80 kg. Our converter gives exact decimal results." },
   { question: "Miles to kilometers?", answer: "1 mile = 1.60934 km. 60 mph = 96.5 km/h. Quick: multiply by 1.6. 60 × 1.6 = 96 km/h. For km to miles: divide by 1.6. 100 km/h ÷ 1.6 = 62.5 mph." },
@@ -23,16 +23,16 @@ const faqs = [
 ];
 
 const relatedTools = [
-  { title: "BMI Calculator", icon: "⚖️", href: "/en/tools/bmi-calculator" },
-  { title: "Calorie Calculator", icon: "🔥", href: "/en/tools/calorie-calculator" },
-  { title: "Gold Calculator", icon: "🥇", href: "/en/tools/gold-calculator" },
-  { title: "Age Calculator", icon: "🎂", href: "/en/tools/age-calculator" },
-  { title: "Number to Words", icon: "🔢", href: "/en/tools/number-to-words" },
-  { title: "Compound Interest", icon: "📈", href: "/en/tools/compound-interest" },
+  { title: "BMI Hesaplama", icon: "⚖️", href: "/en/tools/bmi-calculator" },
+  { title: "Kalori Hesaplama", icon: "🔥", href: "/en/tools/calorie-calculator" },
+  { title: "Altın Hesaplama", icon: "🥇", href: "/en/tools/gold-calculator" },
+  { title: "Yaş Hesaplama", icon: "🎂", href: "/en/tools/age-calculator" },
+  { title: "Sayıyı Yazıya Çevir", icon: "🔢", href: "/en/tools/number-to-words" },
+  { title: "Bileşik Faiz", icon: "📈", href: "/en/tools/compound-interest" },
 ];
 
 const seoContent = [
-  "Our free Unit Converter handles length, weight, temperature, volume, area, and speed conversions instantly. Switch between metric and imperial systems with a single click. Perfect for travel, cooking, science, international business, and everyday calculations.",
+  "Our free Unit Dönüştürer handles length, weight, temperature, volume, area, and speed conversions instantly. Switch between metric and imperial systems with a single click. Perfect for travel, cooking, science, international business, and everyday calculations.",
   "Categories: Length (meters, feet, inches, miles, km). Weight (kg, lbs, oz, stones). Temperature (°C, °F, K). Volume (L, gal, cups, fl oz). Area (sq m, sq ft, acres, hectares). Speed (km/h, mph, m/s). More categories coming soon.",
   "Example conversions: 100 kg = 220.5 lbs. 1 mile = 1.609 km. 30°C = 86°F. 1 gallon = 3.785 liters. 1 acre = 4,047 sq m. 60 km/h = 37.3 mph. All conversions use exact conversion factors, not approximations.",
   "Why it matters: The USA, Myanmar, and Liberia are the only countries using imperial measurement. The rest of the world uses metric. If you travel, shop online internationally, or work with global partners, a unit converter is essential.",
@@ -72,18 +72,18 @@ export default function Client() {
     }
   };
 
-  const schemaName = "Unit Converter";
+  const schemaName = "Birim Dönüştürücü";
 const schemaDesc = `Online Unit Converter - free tool`;
 const schemaCategory = "Utility";
-const schemaUrl = "https://adwatak.cloud/en/tools/unit-converter";
+const schemaUrl = "https://adwatak.cloud/tr/tools/unit-converter";
 const breadcrumbItems = [
-  { name: "Home", url: "https://adwatak.cloud/en" },
-  { name: "Converters", url: "https://adwatak.cloud/en/category/calculators" },
-  { name: "Unit Converter", url: "https://adwatak.cloud/en/tools/unit-converter" },
+  { name: "Home", url: "https://adwatak.cloud/tr" },
+  { name: "Dönüştürücüler", url: "https://adwatak.cloud/tr/category/calculators" },
+  { name: "Birim Dönüştürücü", url: "https://adwatak.cloud/tr/tools/unit-converter" },
 ];
 return (
     <div className="max-w-[760px] mx-auto">
-        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
+        <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'tr', schemaCategory)} />
         <StructuredData data={faqSchema(faqs)} />
         <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
       {/* GEO: Speakable — yapay zeka/ses motorları için işaretli içerik */}
@@ -93,23 +93,23 @@ return (
       {/* GEO: Speakable — AI/ses motorlari */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Other Tools" categorySlug="utility-tools" toolName="Unit Converter" />
+      <Breadcrumb category="Diğer Araçlar" categorySlug="utility-tools" toolName="Birim Dönüştürücü" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">📏 Unit Converter</h1>
-        <p className="text-sm text-gray-500 mb-6">Convert between metric and imperial units — length, weight, temperature, volume, area, speed</p>
+        <h1 className="text-2xl font-extrabold mb-1">📏 Birim Dönüştürücü</h1>
+        <p className="text-sm text-gray-500 mb-6">Metrik ve emperyal birimler arasında dönüşüm — uzunluk, ağırlıktemperature, volume, area, speed</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {["length", "weight", "temperature", "volume", "area", "speed"].map((c) => (
             <button key={c} onClick={() => { setCategory(c); setResult(""); }} className={`px-3 py-1.5 rounded-full text-sm font-semibold cursor-pointer border-none capitalize ${category === c ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"}`}>{c}</button>
           ))}
         </div>
         <div className="grid grid-cols-3 gap-3 mb-4">
-          <div><label className="block text-xs font-semibold text-gray-700 mb-1">Value</label><input type="number" value={value} onChange={(e) => setValue(e.target.value)} className="w-full p-2.5 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="100" /></div>
-          <div><label className="block text-xs font-semibold text-gray-700 mb-1">From</label>
+          <div><label className="block text-xs font-semibold text-gray-700 mb-1">Değer</label><input type="number" value={value} onChange={(e) => setValue(e.target.value)} className="w-full p-2.5 border-2 border-gray-200 rounded-xl text-lg outline-none" placeholder="100" /></div>
+          <div><label className="block text-xs font-semibold text-gray-700 mb-1">Kaynak</label>
             <select value={from} onChange={(e) => setFrom(e.target.value)} className="w-full p-2.5 border-2 border-gray-200 rounded-xl text-lg outline-none bg-white">
               {Object.keys(category === "temperature" ? { celsius: 0, fahrenheit: 0, kelvin: 0 } : conversions[category] || {}).map((u) => (<option key={u} value={u}>{u}</option>))}
             </select>
           </div>
-          <div><label className="block text-xs font-semibold text-gray-700 mb-1">To</label>
+          <div><label className="block text-xs font-semibold text-gray-700 mb-1">Hedef</label>
             <select value={to} onChange={(e) => setTo(e.target.value)} className="w-full p-2.5 border-2 border-gray-200 rounded-xl text-lg outline-none bg-white">
               {Object.keys(category === "temperature" ? { celsius: 0, fahrenheit: 0, kelvin: 0 } : conversions[category] || {}).map((u) => (<option key={u} value={u}>{u}</option>))}
             </select>
@@ -126,7 +126,7 @@ return (
       <SEOContent content={seoContent} />
       <FAQSection faqs={faqs} />
       <RelatedTools tools={relatedTools} />
-    <ShareButtons lang="en" />
+    <ShareButtons lang="tr" />
     </div>
   );
 }

@@ -9,7 +9,7 @@ import SEOContent from "../../../components/SEOContent";
 
 const faqs = [
   { question: "What is a unit converter?", answer: "Converts values between different measurement units within the same category: length (meters/feet), weight (kg/lbs), temperature (C/F/K), volume (liters/gallons), area (sq m/acres), and more. Essential for science, travel, cooking, and international business." },
-  { question: "Why use a unit converter?", answer: "International differences: US uses imperial (miles, pounds, Fahrenheit). Rest of world uses metric (km, kg, Celsius). Recipes, travel planning, online shopping, car specs (mph vs km/h), and scientific calculations all need accurate conversion." },
+  { question: "Pourquoi utiliser un convertisseur d'unités ?", answer: "International differences: US uses imperial (miles, pounds, Fahrenheit). Rest of world uses metric (km, kg, Celsius). Recipes, travel planning, online shopping, car specs (mph vs km/h), and scientific calculations all need accurate conversion." },
   { question: "How to convert Celsius to Fahrenheit?", answer: "Formula: F = (C × 9/5) + 32. 0°C = 32°F. 100°C = 212°F. 25°C = 77°F. For quick mental: double Celsius, add 30 (approximate). 25 × 2 = 50 + 30 = 80°F (exact: 77°F)." },
   { question: "How to convert kg to lbs?", answer: "1 kg = 2.20462 lbs. 80 kg = 176.4 lbs. Quick: multiply by 2.2. 80 × 2.2 = 176 lbs. For lbs to kg: divide by 2.2. 176 ÷ 2.2 = 80 kg. Our converter gives exact decimal results." },
   { question: "Miles to kilometers?", answer: "1 mile = 1.60934 km. 60 mph = 96.5 km/h. Quick: multiply by 1.6. 60 × 1.6 = 96 km/h. For km to miles: divide by 1.6. 100 km/h ÷ 1.6 = 62.5 mph." },
@@ -23,12 +23,12 @@ const faqs = [
 ];
 
 const relatedTools = [
-  { title: "BMI Calculator", icon: "⚖️", href: "/fr/tools/bmi-calculator" },
-  { title: "Calorie Calculator", icon: "🔥", href: "/fr/tools/calorie-calculator" },
-  { title: "Gold Calculator", icon: "🥇", href: "/fr/tools/gold-calculator" },
-  { title: "Age Calculator", icon: "🎂", href: "/fr/tools/age-calculator" },
-  { title: "Number to Words", icon: "🔢", href: "/fr/tools/number-to-words" },
-  { title: "Compound Interest", icon: "📈", href: "/fr/tools/compound-interest" },
+  { title: "Calculateur d'IMC", icon: "⚖️", href: "/fr/tools/bmi-calculator" },
+  { title: "Calculateur de Calories", icon: "🔥", href: "/fr/tools/calorie-calculator" },
+  { title: "Calculateur d'or", icon: "🥇", href: "/fr/tools/gold-calculator" },
+  { title: "Calculateur d'Âge", icon: "🎂", href: "/fr/tools/age-calculator" },
+  { title: "Nombre en Toutes Lettres", icon: "🔢", href: "/fr/tools/number-to-words" },
+  { title: "Intérêts Composés", icon: "📈", href: "/fr/tools/compound-interest" },
 ];
 
 const seoContent = [
@@ -93,9 +93,9 @@ return (
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Autres" categorySlug="utility-tools" toolName="Unit Converter" />
+      <Breadcrumb category="Autres" categorySlug="outils-utilitaires" toolName="Convertisseur d'unités" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">📏 Convertisseur d'Unités</h1>
+        <h1 className="text-2xl font-extrabold mb-1">Convertisseur d'Unités</h1>
         <p className="text-sm text-gray-500 mb-6">Convertissez entre unités de mesure</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {["length", "weight", "temperature", "volume", "area", "speed"].map((c) => (

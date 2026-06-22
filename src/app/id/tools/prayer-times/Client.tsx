@@ -197,7 +197,7 @@ export default function Client() {
     setMode("locating");
     navigator.geolocation.getCurrentPosition(
       (pos) => calcAndShow(pos.coords.latitude, pos.coords.longitude, Math.round(pos.coords.longitude / 15), "Current Location"),
-      () => { setErrorMsg("Could not detect your location. Make sure GPS is enabled."); setMode("error"); },
+      () => { setErrorMsg("Tidak dapat mendeteksi lokasi Anda. Pastikan GPS aktif."); setMode("error"); },
       { enableHighAccuracy: true, timeout: 15000 }
     );
   };
@@ -214,7 +214,7 @@ export default function Client() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("Prayer Times", "Accurate prayer times for your location — local calculation with countdown", "https://adwatak.cloud/en/tools/prayer-times", "en", "Islamic")} />
+      <StructuredData data={toolSchema("Waktu Shalat", "Accurate prayer times for your location — local calculation with countdown", "https://adwatak.cloud/id/tools/prayer-times", "en", "Islamic")} />
       <StructuredData data={faqSchema([
         { question: "What calculation methods are available?", answer: "Umm al-Qura (Saudi), Egyptian Authority, Muslim World League, Karachi University, ISNA (North America), Kuwait, Qatar, Singapore." },
         { question: "Is the calculation accurate?", answer: "Yes, we use the same mathematical formulas used in major prayer apps. May differ by 1-2 minutes from official calendars." },
@@ -224,25 +224,25 @@ export default function Client() {
         { question: "How many cities are available?", answer: "Over 60 cities across 35+ countries." },
       ])} />
       <StructuredData data={breadcrumbSchema([
-        { name: "Home", url: "https://adwatak.cloud/en" },
-        { name: "Islamic Tools", url: "https://adwatak.cloud/en/category/islamic" },
-        { name: "Prayer Times", url: "https://adwatak.cloud/en/tools/prayer-times" },
+        { name: "Home", url: "https://adwatak.cloud/id" },
+        { name: "Alat Islami", url: "https://adwatak.cloud/id/category/islamic" },
+        { name: "Waktu Shalat", url: "https://adwatak.cloud/id/tools/prayer-times" },
       ])} />
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("How to use this tool", "Free online tool. Works directly in your browser. No registration required.", [{name:"Open the tool",text:"Navigate to this tool page on Adawatak"},{name:"Enter your data",text:"Fill in the required fields"},{name:"Get results",text:"Click the calculate or generate button"},{name:"Use or share",text:"Copy, download, or share the results"}],"less than a minute","en")} />
+      <StructuredData data={howToSchema("Cara menggunakan alat ini", "Free online tool. Works directly in your browser. No registration required.", [{name:"Buka alat",text:"Arahkan ke halaman alat ini di Adawatak"},{name:"Masukkan data Anda",text:"Isi kolom yang diperlukan"},{name:"Dapatkan hasil",text:"Klik tombol hitung atau buat"},{name:"Gunakan atau bagikan",text:"Salin, unduh, atau bagikan hasilnya"}],"kurang dari satu menit","id")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb lang="en" category="Islamic Tools" categorySlug="islamic" toolName="Prayer Times" />
+      <Breadcrumb lang="id" category="Alat Islami" categorySlug="islamic" toolName="Waktu Sholat" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">🕐 Prayer Times</h1>
-        <p className="text-sm text-gray-500 mb-6">Accurate prayer times for your location — local calculation with countdown to next prayer</p>
+        <h1 className="text-2xl font-extrabold mb-1">🕐 Waktu Sholat</h1>
+        <p className="text-sm text-gray-500 mb-6">Waktu sholat akurat untuk lokasi Anda — perhitungan lokal dengan hitung mundur ke sholat berikutnya</p>
 
         <div className="mb-4">
-          <label className="block text-sm font-semibold text-gray-700 mb-2">Calculation Method:</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">Metode Perhitungan:</label>
           <select value={method} onChange={(e) => setMethod(e.target.value)} className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm bg-white focus:ring-2 focus:ring-blue-500 outline-none">
             {Object.entries(METHODS).map(([k, v]) => <option key={k} value={k}>{v.en}</option>)}
           </select>
@@ -285,7 +285,7 @@ export default function Client() {
                 );
               })}
             </div>
-            <button onClick={reset} className="mt-6 w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl transition-colors">🔄 Change Location</button>
+            <button onClick={reset} className="mt-6 w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl transition-colors">Ubah Lokasi</button>
           </div>
         )}
 
@@ -309,7 +309,7 @@ export default function Client() {
 
         {mode === "city" && (
           <div className="space-y-4">
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Select a city:</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">Pilih kota:</label>
             <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none">
               <option value="">Choose a city...</option>
               {Object.entries(CITY_GROUPS).map(([group, cities]) => (
@@ -319,20 +319,20 @@ export default function Client() {
               ))}
             </select>
             <div className="flex gap-3">
-              <button onClick={handleCity} disabled={!selectedCity} className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Show Prayer Times</button>
-              <button onClick={reset} className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl transition-colors">Back</button>
+              <button onClick={handleCity} disabled={!selectedCity} className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Tampilkan Waktu Sholat</button>
+              <button onClick={reset} className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl transition-colors">Kembali</button>
             </div>
           </div>
         )}
 
         {mode === "manual" && (
           <div className="space-y-4">
-            <div><label className="block text-sm font-semibold text-gray-700 mb-2">Latitude:</label><input type="number" step="any" value={manualLat} onChange={(e) => setManualLat(e.target.value)} placeholder="e.g. 30.0444" className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 outline-none" /></div>
-            <div><label className="block text-sm font-semibold text-gray-700 mb-2">Longitude:</label><input type="number" step="any" value={manualLng} onChange={(e) => setManualLng(e.target.value)} placeholder="e.g. 31.2357" className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 outline-none" /></div>
-            <div><label className="block text-sm font-semibold text-gray-700 mb-2">Timezone (UTC):</label><input type="number" step="any" value={manualTz} onChange={(e) => setManualTz(e.target.value)} placeholder="e.g. 3 (Saudi), 2 (Egypt)" className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 outline-none" /></div>
+            <div><label className="block text-sm font-semibold text-gray-700 mb-2">Lintang:</label><input type="number" step="any" value={manualLat} onChange={(e) => setManualLat(e.target.value)} placeholder="mis. 30.0444" className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 outline-none" /></div>
+            <div><label className="block text-sm font-semibold text-gray-700 mb-2">Bujur:</label><input type="number" step="any" value={manualLng} onChange={(e) => setManualLng(e.target.value)} placeholder="mis. 31.2357" className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 outline-none" /></div>
+            <div><label className="block text-sm font-semibold text-gray-700 mb-2">Zona Waktu (UTC):</label><input type="number" step="any" value={manualTz} onChange={(e) => setManualTz(e.target.value)} placeholder="mis. 3 (Arab Saudi), 2 (Mesir)" className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 outline-none" /></div>
             <div className="flex gap-3">
-              <button onClick={handleManual} disabled={!manualLat || !manualLng || !manualTz} className="flex-1 bg-amber-600 hover:bg-amber-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Calculate</button>
-              <button onClick={reset} className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl transition-colors">Back</button>
+              <button onClick={handleManual} disabled={!manualLat || !manualLng || !manualTz} className="flex-1 bg-amber-600 hover:bg-amber-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Hitung</button>
+              <button onClick={reset} className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl transition-colors">Kembali</button>
             </div>
           </div>
         )}
@@ -347,31 +347,31 @@ export default function Client() {
         {mode === "error" && (
           <div className="text-center py-6">
             <p className="text-red-600 font-semibold mb-4">⚠️ {errorMsg}</p>
-            <button onClick={reset} className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl transition-colors">🔄 Try Again</button>
+            <button onClick={reset} className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl transition-colors">Coba Lagi</button>
           </div>
         )}
       </div>
 
       <SEOContent content={[
-        "Accurate prayer times for your location — mathematical calculation without external API.",
-        "8 calculation methods: Umm al-Qura, Egyptian, Muslim World League, Karachi, ISNA, Kuwait, Qatar, Singapore.",
-        "Countdown to next prayer + Hijri & Gregorian dates + 60+ cities.",
-        "GPS auto-detect, city selection, or manual coordinates.",
-        "Works entirely in your browser — no internet needed after loading.",
-      ]} lang="en" />
+        "Waktu sholat akurat untuk lokasi Anda perhitungan matematis tanpa API eksternal.",
+        "8 metode perhitungan: Umm al-Qura, Mesir, Muslim World League, Karachi, ISNA, Kuwait, Qatar, Singapura.",
+        "Hitung mundur ke sholat berikutnya + tanggal Hijriah & Masehi + 60+ kota.",
+        "Deteksi GPS otomatis, pemilihan kota, atau koordinat manual.",
+        "Bekerja sepenuhnya di browser Anda tanpa internet setelah dimuat.",
+      ]} lang="id" />
       <FAQSection faqs={[
-        { question: "What calculation methods are available?", answer: "Umm al-Qura (Saudi), Egyptian Authority, Muslim World League, Karachi University, ISNA (North America), Kuwait, Qatar, Singapore." },
-        { question: "Is the calculation accurate?", answer: "Yes, we use the same mathematical formulas used in major prayer apps." },
-        { question: "Does it work offline?", answer: "Yes! All calculations happen locally in your browser." },
-        { question: "How many cities are available?", answer: "Over 60 cities across 35+ countries." },
-      ]} lang="en" />
+        { question: "Metode perhitungan apa saja yang tersedia?", answer: "Umm al-Qura (Arab Saudi), Otoritas Mesir, Muslim World League, Universitas Karachi, ISNA (Amerika Utara), Kuwait, Qatar, Singapura." },
+        { question: "Apakah perhitungannya akurat?", answer: "Ya, kami menggunakan rumus matematika yang sama dengan aplikasi sholat utama." },
+        { question: "Apakah berfungsi offline?", answer: "Ya! Semua perhitungan dilakukan secara lokal di browser Anda." },
+        { question: "Berapa banyak kota yang tersedia?", answer: "Lebih dari 60 kota di 35+ negara." },
+      ]} lang="id" />
       <RelatedTools tools={[
-        { title: "Qibla Direction", icon: "🧭", href: "/en/tools/qibla-direction" },
-        { title: "Hijri Converter", icon: "📅", href: "/en/tools/hijri-converter" },
-        { title: "Zakat Calculator", icon: "🕌", href: "/en/tools/zakat-calculator" },
-        { title: "Inheritance Calculator", icon: "📜", href: "/en/tools/inheritance-calculator" },
-      ]} lang="en" />
-      <ShareButtons lang="en" />
+        { title: "Arah Kiblat", icon: "🧭", href: "/id/tools/qibla-direction" },
+        { title: "Konversi Hijriah", icon: "📅", href: "/id/tools/hijri-converter" },
+        { title: "Kalkulator Zakat", icon: "🕌", href: "/id/tools/zakat-calculator" },
+        { title: "Kalkulator Warisan", icon: "📜", href: "/id/tools/inheritance-calculator" },
+      ]} lang="id" />
+      <ShareButtons lang="id" />
     </div>
   );
 }

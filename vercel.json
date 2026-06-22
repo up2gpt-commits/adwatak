@@ -1,0 +1,40 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://adwatak.cloud/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.adwatak.cloud"
+        }
+      ]
+    },
+    {
+      "source": "/tools/hijri-date(.*)",
+      "destination": "/tools/hijri-converter$1",
+      "permanent": true
+    },
+    {
+      "source": "/tools/islamic-finance(.*)",
+      "destination": "/category/islamic$1",
+      "permanent": true
+    },
+    {
+      "source": "/tools/investment-calcul(.*)",
+      "destination": "/tools/compound-interest",
+      "permanent": true
+    },
+    {
+      "source": "/tools/investment-calculator(.*)",
+      "destination": "/tools/compound-interest",
+      "permanent": true
+    },
+    {
+      "source": "/tools/timer(.*)",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

@@ -21,19 +21,19 @@ const faqs = [
 ];
 
 const relatedTools = [
-  { title: "Base64 Encoder", icon: "🔄", href: "/id/tools/base64-encoder" },
-  { title: "JSON Formatter", icon: "📋", href: "/id/tools/json-formatter" },
-  { title: "Hash Generator", icon: "#️⃣", href: "/id/tools/hash-generator" },
-  { title: "مقارنة النصوص", icon: "⚖️", href: "/id/tools/text-compare" },
-  { title: "تنظيف النص", icon: "🧹", href: "/id/tools/text-cleaner" },
-  { title: "تحويل حالة النص", icon: "🔤", href: "/id/tools/text-case" },
+  { title: "Encoder Base64", icon: "🔄", href: "/id/tools/base64-encoder" },
+  { title: "Formatter JSON", icon: "📋", href: "/id/tools/json-formatter" },
+  { title: "Generator Hash", icon: "#️⃣", href: "/id/tools/hash-generator" },
+  { title: "Perbandingan Teks", icon: "⚖️", href: "/id/tools/text-compare" },
+  { title: "Pembersihan Teks", icon: "🧹", href: "/id/tools/text-cleaner" },
+  { title: "Konversi Huruf Teks", icon: "🔤", href: "/id/tools/text-case" },
 ];
 
 const seoContent = [
-  "أداة ترميز وفك ترميز النصوص باستخدام طرق متعددة: Base64 (للبيانات الثنائية)، URL Encoding (للروابط)، و HTML Entities (للنصوص الآمنة). أدخل النص واختر نوع الترميز.",
-  "كل مطور ويب يحتاج فهم الترميز: Base64 للصور والنصوص في APIs، URL Encoding للروابط والـ Query Parameters، HTML Entities لحماية المواقع من XSS.",
-  "الترميز ليس تشفيراً — يمكن عكس أي ترميز بسهولة. استخدمه للتمثيل والنقل، وليس للحماية الأمنية. للحماية، استخدم bcrypt (لكلمات المرور) أو TLS (للنقل).",
-  "الأداة تعمل بالكامل في المتصفح — النصوص لا تُرسل لأي خادم. خصوصية تامة."
+  "Alat encoding dan decoding teks menggunakan berbagai metode: Base64 (untuk data biner), URL Encoding (untuk tautan), dan HTML Entities (untuk teks yang aman). Masukkan teks dan pilih jenis encoding.",
+  "Setiap pengembang web perlu memahami encoding: Base64 untuk gambar dan teks di API, URL Encoding untuk tautan dan parameter kueri, HTML Entities untuk melindungi situs dari XSS.",
+  "Encoding bukanlah enkripsi — encoding apa pun dapat dengan mudah dibalik. Gunakan untuk representasi dan transmisi, bukan untuk keamanan. Untuk keamanan, gunakan bcrypt (untuk kata sandi) atau TLS (untuk transmisi).",
+  "Alat ini sepenuhnya berjalan di browser — teks tidak dikirim ke server mana pun. Privasi penuh."
 ];
 
 export default function Client() {
@@ -69,10 +69,10 @@ return (
       {/* GEO: Speakable — marks key content for AI/voice engines */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])}
       />
-      <Breadcrumb lang="id" category="تطوير ويب" categorySlug="dev" toolName="أداة الترميز" />
+      <Breadcrumb lang="id" category="تطوير ويب" categorySlug="dev" toolName="Alat Encoding" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">🔧 أداة الترميز</h1>
-        <p className="text-sm text-gray-500 mb-6">ترميز وفك ترميز النصوص</p>
+        <h1 className="text-2xl font-extrabold mb-1">🔧 Alat Encoding</h1>
+        <p className="text-sm text-gray-500 mb-6">Encoding dan Decoding Teks</p>
         <select value={mode} onChange={(e) => setMode(e.target.value)}
           className="w-full p-3 border-2 border-gray-200 rounded-xl text-base outline-none font-inherit bg-white mb-4">
           <option value="base64-encode">Base64 تشفير</option>
@@ -82,7 +82,7 @@ return (
         </select>
         <textarea value={input} onChange={(e) => setInput(e.target.value)}
           className="w-full h-[120px] p-4 border-2 border-gray-200 rounded-xl text-sm outline-none font-inherit resize-y mb-4"
-          placeholder="أدخل النص..." />
+          placeholder="Masukkan teks..." />
         <button onClick={process}
           className="bg-blue-600 text-white font-bold p-3 rounded-xl border-none text-lg w-full cursor-pointer">
           تنفيذ

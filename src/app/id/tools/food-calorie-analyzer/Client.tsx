@@ -77,7 +77,7 @@ const relatedTools = [
     icon: "⚖️",
     href: "/id/tools/bmi-calculator",
   },
-  { title: "Stopwatch", icon: "⏱️", href: "/id/tools/stopwatch" },
+  { title: "Pengatur Waktu", icon: "⏱️", href: "/id/tools/stopwatch" },
   { title: "Timer", icon: "⏰", href: "/id/tools/timer" },
 ];
 
@@ -337,12 +337,12 @@ export default function Client() {
                 <p className="text-sm text-gray-700 leading-relaxed">{result.summary}</p>
               </div>
             )}
-            <button onClick={resetTool} className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold border-none text-sm cursor-pointer hover:bg-blue-700 transition-colors">🔄 Analisis Makanan Lain</button>
+            <button onClick={resetTool} className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold border-none text-sm cursor-pointer hover:bg-blue-700 transition-colors">Analisis Makanan Lain</button>
           </div>
         )}
       </div>
 
-      <SEOContent content={seoContent} lang="en" />
+      <SEOContent content={seoContent} lang="id" />
       <FAQSection faqs={faqs} lang="en" />
       <RelatedTools tools={relatedTools} lang="id" />
       <ShareButtons lang="id" />

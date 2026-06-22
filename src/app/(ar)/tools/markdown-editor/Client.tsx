@@ -77,7 +77,7 @@ function renderMarkdown(md: string): string {
 }
 
 export default function Client() {
-  const [input, setInput] = useState("# مرحباً!\nاكتب **Markdown** هنا...");
+  const [input, setInput] = useState("## مرحباً!\nاكتب **Markdown** هنا...");
   const [copied, setCopied] = useState(false);
 
   const copyHTML = () => {

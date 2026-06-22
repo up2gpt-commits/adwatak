@@ -104,7 +104,7 @@ export default function Client() {
       <StructuredData data={toolSchema("Kalkulator Margin Laba", "Online Kalkulator Margin Laba - alat gratis", "https://adwatak.cloud/id/tools/profit-margin", "id", "Utility")} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema([{ name: "Beranda", url: "https://adwatak.cloud/id" }, { name: "Kalkulator Keuangan", url: "https://adwatak.cloud/id/category/calculators" }, { name: "Kalkulator Margin Laba", url: "https://adwatak.cloud/id/tools/profit-margin" }])} />
-      <StructuredData data={howToSchema("Cara menggunakan Kalkulator Margin Laba", "Alat online gratis. Bekerja langsung di browser. Tidak perlu registrasi.", [{ name: "Buka alat", text: "Buka Kalkulator Margin Laba di Adwatak" }, { name: "Masukkan data", text: "Isi biaya, harga, atau margin yang diinginkan (2 nilai)" }, { name: "Klik Hitung", text: "Tekan tombol hitung untuk hasil instan" }, { name: "Simpan skenario", text: "Bandingkan beberapa produk menggunakan fitur Skenario" }], "kurang dari satu menit", "en")} />
+      <StructuredData data={howToSchema("Cara menggunakan Kalkulator Margin Laba", "Alat online gratis. Bekerja langsung di browser. Tidak perlu registrasi.", [{ name: "Buka alat", text: "Buka Kalkulator Margin Laba di Adwatak" }, { name: "Masukkan data", text: "Isi biaya, harga, atau margin yang diinginkan (2 nilai)" }, { name: "Klik Hitung", text: "Tekan tombol hitung untuk hasil instan" }, { name: "Simpan skenario", text: "Bandingkan beberapa produk menggunakan fitur Skenario" }], "kurang dari satu menit", "id")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       <Breadcrumb lang="id" category="Kalkulator Keuangan" categorySlug="calculators" toolName="Kalkulator Margin Laba" />
 
@@ -256,7 +256,7 @@ export default function Client() {
                         </td>
                         <td className="p-2.5">Rp{s.profit.toLocaleString("id-ID", {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
                         <td className="p-2.5">
-                          <button onClick={() => removeScenario(i)} className="text-red-400 hover:text-red-600 transition-colors text-xs">✕</button>
+                          <button onClick={() =>removeScenario(i)} className="text-red-400 hover:text-red-600 transition-colors text-xs">✕</button>
                         </td>
                       </tr>
                     ))}

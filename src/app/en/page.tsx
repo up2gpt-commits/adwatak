@@ -239,6 +239,22 @@ function EnHomeInner() {
         </div>
       </section>
 
+      {/* Why Adawatak — content for AdSense / value signal */}
+      <section className="max-w-3xl mx-auto px-4 mb-8 scroll-fade-in">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8">
+          <h2 className="text-lg font-bold text-gray-900 mb-3">Why Adawatak?</h2>
+          <p className="text-sm text-gray-600 leading-7 mb-3">
+            Adawatak (أدواتك) is a free online tools platform built for everyday use — from financial planning and Islamic calculations to text processing, PDF manipulation, and developer utilities. Every tool runs entirely in your browser, so your data stays private. No signup, no uploads, no tracking.
+          </p>
+          <p className="text-sm text-gray-600 leading-7 mb-3">
+            We serve a global audience across five languages: English, Arabic, Turkish, Indonesian, and French. Whether you need a mortgage calculator for a home purchase, a QR code for your business card, or a keyword research tool for SEO, Adawatak has you covered with 80+ free utilities.
+          </p>
+          <p className="text-sm text-gray-600 leading-7">
+            All tools are developed with privacy-first architecture — client-side processing means your sensitive financial data, personal documents, and private text never reach a server. We believe useful tools should be accessible to everyone, everywhere, without barriers.
+          </p>
+        </div>
+      </section>
+
       {/* Smart Search */}
       <div className="mt-8 mb-4" data-scroll-target>
         <SearchBar lang="en" />

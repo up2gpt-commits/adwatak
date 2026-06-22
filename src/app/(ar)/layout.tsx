@@ -15,6 +15,7 @@ export const metadata: Metadata = {
       "en": "https://adwatak.cloud/en",
       "tr": "https://adwatak.cloud/tr",
       "id": "https://adwatak.cloud/id",
+      "fr": "https://adwatak.cloud/fr",
       "x-default": "https://adwatak.cloud",
     },
   },
@@ -23,28 +24,6 @@ export const metadata: Metadata = {
 export default function ArabicLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="ar-content" dir="rtl">
-      {/* Trust Bar */}
-      <div className="trust-bar scroll-fade-in">
-        <div className="container trust-bar-inner">
-          <div className="trust-item">
-            <span className="t-icon">🔒</span>
-            <span>خصوصية تامة — بدون رفع ملفات</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">🆓</span>
-            <span>مجاني بدون تسجيل</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">⚡</span>
-            <span>نتائج فورية</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">🔧</span>
-            <span>80+ أداة بالعربي</span>
-          </div>
-        </div>
-      </div>
-
       {/* Header (Client Component — hamburger + nav) */}
       <Header lang="ar" />
 
@@ -121,7 +100,7 @@ export default function ArabicLayout({ children }: { children: React.ReactNode }
               <a href="/about">ℹ️ عن الموقع</a>
               <a href="/privacy">🔒 سياسة الخصوصية</a>
               <a href="/terms">📜 شروط الخدمة</a>
-              <a href="mailto:contact@adwatak.cloud">📧 تواصل معنا</a>
+              <a href="/contact">📧 تواصل معنا</a>
             </div>
 
             {/* Newsletter */}

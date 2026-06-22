@@ -8,34 +8,28 @@ import Breadcrumb from "../../../components/Breadcrumb";
 import ShareButtons from "../../../components/ShareButtons";
 
 const faqs = [
-  { question: "What is AI Essay Writer?", answer: "Alat gratis untuk membuat esai terstruktur dengan AI. Pilih topik, jenis esai, dan panjangnya, alat ini akan menghasilkan esai lengkap dengan pendahuluan, isi, dan kesimpulan." },
-  { question: "Is it free?", answer: "Ya, 100% gratis. Tanpa registrasi, tanpa batas, tanpa iklan." },
-  { question: "What essay types are available?", answer: "Tersedia: Argumentatif, Deskriptif, Naratif, Ekspositori, dan Persuasif. Setiap jenis memiliki struktur yang berbeda." },
-  { question: "Does it support Arabic?", answer: "Ya, mendukung bahasa Arab dan Inggris dengan lancar." },
-  { question: "What length options?", answer: "Pendek (~300 kata), Sedang (~600 kata), Panjang (~1000 kata)." },
-  { question: "Can I use it commercially?", answer: "Ya, hasilnya dapat digunakan untuk keperluan pribadi dan komersial." },
-  { question: "Does it work on mobile?", answer: "Ya, responsif penuh di semua perangkat." },
-  { question: "How to start?", answer: "Ketik topik Anda, pilih jenis dan panjang esai, lalu klik Hasilkan." },
-  { question: "Can I copy the essay?", answer: "Ya, tombol salin dan unduh sebagai file .txt tersedia." },
-  { question: "Is my data safe?", answer: "Semuanya berjalan di browser Anda. Tidak ada data yang dikirim ke server." },
-];
-
-const relatedTools = [
-  { title: "Paraphrasing Tool", icon: "✏️", href: "/id/tools/paraphrasing-tool" },
-  { title: "Grammar Checker", icon: "📝", href: "/id/tools/grammar-checker" },
-  { title: "Word Counter", icon: "📊", href: "/id/tools/word-counter" },
-  { title: "Bio Generator", icon: "👤", href: "/id/tools/bio-generator" },
-  { title: "Text Case Converter", icon: "🔤", href: "/id/tools/text-case" },
-];
-
-const seoContent = [
+  { question: "Apa itu AI Essay Writer?", answer: "Alat gratis untuk menghasilkan esai terstruktur. Pilih topik, jenis esai, dan panjangnya untuk mendapatkan esai lengkap dengan pendahuluan, paragraf isi, dan kesimpulan." },
+  { question: "Apakah ini gratis?", answer: "Ya, 100% gratis. Tanpa registrasi, tanpa batasan, tanpa iklan." },
+  { question: "Jenis esai apa saja yang tersedia?", answer: "Tersedia: Argumentatif, Deskriptif, Naratif, Ekspositori, dan Persuasif. Setiap jenis memiliki struktur yang berbeda." },
+  { question: "Apakah mendukung bahasa Arab?", answer: "Ya, mendukung bahasa Arab dan Inggris dengan lancar." },
+  { question: "Pilihan panjang apa saja?", answer: "Pendek (~300 kata), Sedang (~600 kata), Panjang (~1000 kata)." },
+  { question: "Bisakah saya menggunakannya untuk komersial?", answer: "Ya, hasilnya dapat digunakan untuk keperluan pribadi dan komersial." },
+  { question: "Apakah berfungsi di ponsel?", answer: "Ya, sepenuhnya responsif di semua perangkat." },
+  { question: "Bagaimana cara memulai?", answer: "Ketik topik Anda, pilih jenis esai dan panjangnya, lalu klik Hasilkan." },
+  { question: "Bisakah saya menyalin esainya?", answer: "Ya, tombol salin dan unduh sebagai file .txt tersedia." },
+  { question: "Apakah data saya aman?", answer: "Semuanya berjalan di browser Anda. Tidak ada data yang dikirim ke server mana pun." }
+];const relatedTools = [
+  { title: "Alat Parafrase", icon: "✏️", href: "/id/tools/paraphrasing-tool" },
+  { title: "Pemeriksa Tata Bahasa", icon: "📝", href: "/id/tools/grammar-checker" },
+  { title: "Penghitung Kata", icon: "📊", href: "/id/tools/word-counter" },
+  { title: "Pembuat Bio", icon: "👤", href: "/id/tools/bio-generator" },
+  { title: "Pengubah Huruf Teks", icon: "🔤", href: "/id/tools/text-case" }
+];const seoContent = [
   "Penulis Esai AI Gratis - hasilkan esai terstruktur dengan pendahuluan, isi, dan kesimpulan. Pilih dari jenis argumentatif, deskriptif, naratif, ekspositori, dan persuasif.",
-  "Sempurna untuk siswa, penulis, blogger, dan pembuat konten.",
-  "Pembuatan esai berbasis AI dengan struktur dan format profesional.",
-  "100% gratis, bekerja di browser Anda, tanpa registrasi.",
-];
-
-const INTROS: Record<string, Record<string, ((t: string) => string)[]>> = {
+  "Sempurna untuk pelajar, penulis, blogger, dan pembuat konten.",
+  "Pembuatan esai bertenaga AI dengan struktur dan format profesional.",
+  "100% gratis, berfungsi di peramban Anda, tanpa perlu registrasi."
+];const INTROS: Record<string, Record<string, ((t: string) => string)[]>> = {
   argumentative: {
     id: [
       (t: string) => `Topik "${t}" telah menjadi salah satu subjek yang paling diperdebatkan akhir-akhir ini. Pendapat terbagi antara pendukung dan penentang. Dalam esai ini, kita akan mengeksplorasi berbagai aspek dari topik ini.`,
@@ -194,12 +188,12 @@ export default function ClientId() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("AI Essay Writer", "Write complete articles with AI", "https://adwatak.cloud/id/tools/ai-essay-writer", "id", "Text Tools")} />
+      <StructuredData data={toolSchema("AI Essay Writer", "Tulis artikel lengkap dengan AI", "https://adwatak.cloud/id/tools/ai-essay-writer", "id", "Alat Teks")} />
       <StructuredData data={faqSchema(faqs)} />
-      <Breadcrumb lang="id" category="Text Tools" categorySlug="tools" toolName="AI Essay Writer" />
+      <Breadcrumb lang="id" category="Alat Teks" categorySlug="tools" toolName="Penulis Esai AI" />
       
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">✍️ AI Essay Writer</h1>
+        <h1 className="text-2xl font-extrabold mb-1">✍️ Penulis Esai AI</h1>
         <p className="text-sm text-gray-500 mb-6">Hasilkan esai terstruktur dengan AI</p>
 
         <div className="space-y-4 mb-6">

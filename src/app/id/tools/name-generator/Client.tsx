@@ -61,9 +61,9 @@ export default function Client() {
       <StructuredData data={toolSchema(schemaName, schemaDesc, schemaUrl, 'en', schemaCategory)} />
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
-      <StructuredData data={howToSchema("Cara Menggunakan Generator Nama","Hasilkan nama kreatif langsung di browser.",[{name:"Pilih kategori",text:"7 kategori tersedia"},{name:"Atur jumlah",text:"1-20 nama"},{name:"Hasilkan",text:"Klik Buat untuk nama instan"},{name:"Gunakan",text:"Salin nama untuk proyek Anda"}],"kurang dari semenit","en")} />
+      <StructuredData data={howToSchema("Cara Menggunakan Generator Nama","Hasilkan nama kreatif langsung di browser.",[{name:"Pilih kategori",text:"7 kategori tersedia"},{name:"Atur jumlah",text:"1-20 nama"},{name:"Hasilkan",text:"Klik Buat untuk nama instan"},{name:"Gunakan",text:"Salin nama untuk proyek Anda"}],"kurang dari semenit","id")} />
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
-      <Breadcrumb lang="en" category="Generators" categorySlug="generators" toolName="Generator Nama" />
+      <Breadcrumb lang="en" category="Pembuat" categorySlug="generators" toolName="Generator Nama" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">👤 Generator Nama</h1>
         <p className="text-sm text-gray-500 mb-6">Hasilkan nama kreatif — bayi, merek, username, bisnis & lainnya</p>
@@ -88,7 +88,7 @@ export default function Client() {
       <SEOContent content={seoContent} />
       <FAQSection faqs={faqs} />
       <RelatedTools tools={relatedTools} />
-      <ShareButtons lang="en" />
+      <ShareButtons lang="id" />
     </div>
   );
 }

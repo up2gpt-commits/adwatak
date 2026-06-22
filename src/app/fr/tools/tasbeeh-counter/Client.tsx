@@ -13,41 +13,41 @@ const dhikrList = [
   { text: "اللهُ أَكْبَرُ", transliteration: "Allahu Akbar", meaning: "Allah is the Greatest", target: 34 },
   { text: "لَا إِلَٰهَ إِلَّا اللهُ", transliteration: "La ilaha illallah", meaning: "There is no god but Allah", target: 33 },
   { text: "أَسْتَغْفِرُ اللهَ", transliteration: "Astaghfirullah", meaning: "I seek forgiveness from Allah", target: 33 },
-  { text: "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ", transliteration: "La hawla wa la quwwata illa billah", meaning: "No power except with Allah", target: 33 },
-  { text: "سُبْحَانَ اللهِ وَبِحَمْدِهِ", transliteration: "Subhan Allahi wa bihamdihi", meaning: "Glory be to Allah and His praise", target: 33 },
-  { text: "سُبْحَانَ اللهِ الْعَظِيمِ", transliteration: "Subhan Allahil Azeem", meaning: "Glory be to Allah the Magnificent", target: 33 },
+  { text: "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ", transliteration: "Il n'y a de force ni de puissance qu'en Allah", meaning: "No power except with Allah", target: 33 },
+  { text: "سُبْحَانَ اللهِ وَبِحَمْدِهِ", transliteration: "Subhan Allahi wa bihamdihi", meaning: "Gloire à Allah et à Sa louange", target: 33 },
+  { text: "سُبْحَانَ اللهِ الْعَظِيمِ", transliteration: "Subhan Allahil Azeem", meaning: "Gloire à Allah le Magnifique", target: 33 },
 ];
 
 const faqs = [
-  { question: "What is a Tasbeeh Counter?", answer: "A Tasbeeh Counter is a digital tool that helps you count your dhikr (remembrance of Allah) during worship. It works directly in your browser, saves your progress automatically, and can be used as a replacement or supplement to a traditional prayer bead string (misbaha/sibha)." },
-  { question: "Why 33 counts per tasbeeh?", answer: "The number 33 comes from the Sunnah of Prophet Muhammad ﷺ. After each obligatory prayer, he would say 'Subhan Allah' 33 times, 'Alhamdulillah' 33 times, and 'Allahu Akbar' 34 times — totaling 100. This practice is recorded in Sahih Muslim." },
-  { question: "Is my count saved if I close the page?", answer: "Yes! Your count is automatically saved to your browser's localStorage. When you return to the page, you'll see your last count. However, clearing browser data or using a different browser will reset the counter." },
-  { question: "Can I use it offline?", answer: "Yes — after the first page load, the Tasbeeh Counter works completely offline. Everything runs in your browser with no data sent to any server." },
-  { question: "Does using a digital counter count as dhikr?", answer: "Yes, the intention is what matters. The digital counter is simply a tool to help you keep track of your dhikr. Scholars have permitted using digital counters as a means to assist in remembrance, though some prefer using fingers as it was the Prophet's practice." },
-  { question: "What is the best dhikr to say?", answer: "The best dhikr is 'La ilaha illallah' (There is no god but Allah), as narrated by Jabir (may Allah be pleased with him). Other highly recommended dhikr includes 'Subhan Allah', 'Alhamdulillah', 'Allahu Akbar', and 'La hawla wa la quwwata illa billah'." },
-  { question: "How do I know when I've completed a set?", answer: "When you reach the target count (33 or 34), the counter circle turns green briefly and a completion message appears. You can then move to the next dhikr or reset and start again." },
-  { question: "Can I change the target count?", answer: "The target counts are set according to the Sunnah: 33 for most dhikr and 34 for Takbir (Allahu Akbar). These cannot be changed individually, but the counter will continue counting beyond the target if you wish." },
-  { question: "What are morning and evening adhkar?", answer: "Morning adhkar (Adhkar al-Sabah) and evening adhkar (Adhkar al-Masa) are recommended supplications to recite after Fajr and Asr/Maghrib. They include various dhikr from the Quran and Sunnah. This counter helps you track your recitations." },
-  { question: "Is this tool free?", answer: "Yes — completely free, no signup required, no ads, no data collection. Works on all devices: mobile, tablet, and desktop." },
-  { question: "Can I use it during prayer?", answer: "It's recommended to put away your phone during prayer to maintain focus (khushu'). Use the Tasbeeh Counter before or after prayer instead." },
-  { question: "What dhikr should I say after prayer?", answer: "After every obligatory prayer, the Sunnah is to say: 'Subhan Allah' 33 times, 'Alhamdulillah' 33 times, 'Allahu Akbar' 34 times (total 100). The Prophet ﷺ said: 'Whoever does this, his sins will be forgiven even if they are like the foam of the sea.' (Sahih Muslim)" },
+  { question: "Qu'est-ce qu'un compteur de Tasbeeh ?", answer: "Un compteur de Tasbeeh est un outil numérique qui vous aide à compter votre dhikr (souvenir d'Allah) pendant l'adoration. Il fonctionne directement dans votre navigateur, sauvegarde votre progression automatiquement et peut être utilisé comme remplacement ou complément d'un chapelet de prière traditionnel (misbaha/sibha)." },
+  { question: "Pourquoi 33 comptages par tasbeeh ?", answer: "Le nombre 33 vient de la Sunnah du Prophète Muhammad ﷺ. Après chaque prière obligatoire, il disait 'Subhan Allah' 33 fois, 'Alhamdulillah' 33 fois et 'Allahu Akbar' 34 fois, pour un total de 100. Cette pratique est rapportée dans Sahih Muslim." },
+  { question: "Mon comptage est-il sauvegardé si je ferme la page ?", answer: "Oui ! Votre comptage est automatiquement sauvegardé dans le localStorage de votre navigateur. Lorsque vous revenez sur la page, vous verrez votre dernier comptage. Cependant, effacer les données du navigateur ou utiliser un navigateur différent réinitialisera le compteur." },
+  { question: "Puis-je l'utiliser hors ligne ?", answer: "Oui, après le premier chargement de la page, le compteur de Tasbeeh fonctionne complètement hors ligne. Tout s'exécute dans votre navigateur sans aucune donnée envoyée à un serveur." },
+  { question: "Utiliser un compteur numérique compte-t-il comme dhikr ?", answer: "Oui, c'est l'intention qui compte. Le compteur numérique est simplement un outil pour vous aider à suivre votre dhikr. Les savants ont permis l'utilisation de compteurs numériques comme moyen d'aider au souvenir d'Allah." },
+  { question: "Quel est le meilleur dhikr à dire ?", answer: "Le meilleur dhikr est 'La ilaha illallah' (Il n'y a de dieu qu'Allah). Parmi les autres dhikr fortement recommandés figurent 'Subhan Allah', 'Alhamdulillah', 'Allahu Akbar' et 'Il n'y a de force ni de puissance qu'en Allah'." },
+  { question: "Comment savoir quand j'ai terminé une série ?", answer: "Lorsque vous atteignez le comptage cible (33 ou 34), le cercle du compteur devient brièvement vert et un message de complétion apparaît. Vous pouvez alors passer au dhikr suivant ou réinitialiser et recommencer." },
+  { question: "Puis-je modifier le comptage cible ?", answer: "Les comptages cibles sont définis selon la Sunnah : 33 pour la plupart des dhikr et 34 pour le Takbir (Allahu Akbar). Ceux-ci ne peuvent pas être modifiés individuellement, mais le compteur continuera à compter au-delà de la cible si vous le souhaitez." },
+  { question: "Que sont les adhkar du matin et du soir ?", answer: "Les adhkar du matin (Adhkar al-Sabah) et les adhkar du soir (Adhkar al-Masa) sont des supplications recommandées à réciter après le Fajr et l'Asr/Maghrib. Ils comprennent divers dhikr du Coran et de la Sunnah. Ce compteur vous aide à suivre vos récitations." },
+  { question: "Cet outil est-il gratuit ?", answer: "Oui, complètement gratuit, aucune inscription requise, aucune publicité, aucune collecte de données. Fonctionne sur tous les appareils : mobile, tablette et ordinateur." },
+  { question: "Puis-je l'utiliser pendant la prière ?", answer: "Il est recommandé de ranger votre téléphone pendant la prière pour maintenir la concentration (khushu'). Utilisez plutôt le compteur de Tasbeeh avant ou après la prière." },
+  { question: "Quel dhikr dois-je dire après la prière ?", answer: "Après chaque prière obligatoire, la Sunnah est de dire : 'Subhan Allah' 33 fois, 'Alhamdulillah' 33 fois, 'Allahu Akbar' 34 fois (total 100). Le Prophète ﷺ a dit : 'Quiconque fait cela, ses péchés lui seront pardonnés même s'ils sont comme l'écume de la mer.' (Sahih Muslim)" },
 ];
 
 const relatedTools = [
-  { title: "Prayer Times", icon: "🕌", href: "/fr/tools/prayer-times" },
-  { title: "Qibla Direction", icon: "🧭", href: "/fr/tools/qibla-direction" },
-  { title: "Zakat Calculator", icon: "💰", href: "/fr/tools/zakat-calculator" },
-  { title: "Hijri Converter", icon: "📅", href: "/fr/tools/hijri-converter" },
-  { title: "Inheritance Calculator", icon: "⚖️", href: "/fr/tools/inheritance-calculator" },
-  { title: "Stopwatch", icon: "⏱️", href: "/fr/tools/stopwatch" },
+  { title: "Horaires de Prière", icon: "🕌", href: "/fr/tools/prayer-times" },
+  { title: "Direction de la Qibla", icon: "🧭", href: "/fr/tools/qibla-direction" },
+  { title: "Calculateur de Zakat", icon: "💰", href: "/fr/tools/zakat-calculator" },
+  { title: "Convertisseur Hijri", icon: "📅", href: "/fr/tools/hijri-converter" },
+  { title: "Calculateur d'Héritage", icon: "⚖️", href: "/fr/tools/inheritance-calculator" },
+  { title: "Chronomètre", icon: "⏱️", href: "/fr/tools/stopwatch" },
 ];
 
 const seoContent = [
-  "Free Digital Tasbeeh Counter — count your dhikr online with a beautiful, easy-to-use interface. Track Subhan Allah, Alhamdulillah, Allahu Akbar, and more with automatic save.",
-  "Supports 8 essential adhkar: Subhan Allah (33), Alhamdulillah (33), Allahu Akbar (34), La ilaha illallah (33), Astaghfirullah (33), La hawla wa la quwwata illa billah (33), Subhan Allahi wa bihamdihi (33), Subhan Allahil Azeem (33).",
-  "Features: Automatic save to browser localStorage, circular progress indicator with animated ring, completion notifications, works offline after first load, fully responsive design.",
-  "Target counts based on the Sunnah of Prophet Muhammad ﷺ: 33 counts per dhikr, 34 for Takbir. Total of 100 after each obligatory prayer — as narrated in Sahih Muslim.",
-  "100% free, no signup required, works on all devices, privacy-first — no data collected or sent to any server.",
+  "Compteur de Tasbeeh numérique gratuit : comptez votre dhikr en ligne avec une interface belle et facile à utiliser. Suivez Subhan Allah, Alhamdulillah, Allahu Akbar, et plus encore avec sauvegarde automatique.",
+  "Prend en charge 8 adhkar essentiels : Subhan Allah (33), Alhamdulillah (33), Allahu Akbar (34), La ilaha illallah (33), Astaghfirullah (33), La hawla wa la quwwata illa billah (33), Subhan Allahi wa bihamdihi (33), Subhan Allahil Azeem (33).",
+  "Fonctionnalités : sauvegarde automatique dans le localStorage du navigateur, indicateur de progression circulaire avec anneau animé, notifications de complétion, fonctionnement hors ligne après le premier chargement, design entièrement responsive.",
+  "Comptages cibles basés sur la Sunnah du Prophète Muhammad ﷺ : 33 comptages par dhikr, 34 pour le Takbir. Total de 100 après chaque prière obligatoire comme rapporté dans Sahih Muslim.",
+  "100 % gratuit, aucune inscription requise, fonctionne sur tous les appareils, confidentialité avant tout : aucune donnée collectée ou envoyée à aucun serveur.",
 ];
 
 export default function Client() {
@@ -123,17 +123,17 @@ export default function Client() {
       <StructuredData data={faqSchema(faqs)} />
       <StructuredData data={breadcrumbSchema(breadcrumbItems)} />
       <StructuredData data={howToSchema("How to use the Tasbeeh Counter", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [
-        { name: "Choose a Dhikr", text: "Select a dhikr from the list — Subhan Allah, Alhamdulillah, Allahu Akbar, etc." },
-        { name: "Tap to Count", text: "Tap the large button or anywhere on the circle to increment the counter" },
-        { name: "Complete the Set", text: "Continue until you reach the target count (33 or 34) — a completion message will appear" },
-        { name: "Move to Next", text: "After completing, move to the next dhikr or reset the counter" },
+        { name: "Choose a Dhikr", text: "Sélectionnez un dhikr dans la liste — Subhan Allah, Alhamdulillah, Allahu Akbar, etc." },
+        { name: "Tap to Count", text: "Appuyez sur le grand bouton ou n'importe où sur le cercle pour incrémenter le compteur" },
+        { name: "Complete the Set", text: "Continuez jusqu'à atteindre le nombre cible (33 ou 34) — un message de fin apparaîtra" },
+        { name: "Move to Next", text: "Après avoir terminé, passez au dhikr suivant ou réinitialisez le compteur" },
       ], "moins d'une minute", "fr")} />
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
 
-      <Breadcrumb category="Outils Islamiques" categorySlug="islamic" toolName="Tasbeeh Counter" />
+      <Breadcrumb category="Outils Islamiques" categorySlug="islamic" toolName="Compteur de Tasbeeh" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1 text-center">📿 Tasbeeh Counter</h1>
+        <h1 className="text-2xl font-extrabold mb-1 text-center">Compteur de Tasbeeh</h1>
         <p className="text-sm text-gray-500 mb-6 text-center">Compteur Tasbih numérique pour le dhikr quotidien</p>
 
         {/* Dhikr selector */}

@@ -9,7 +9,7 @@ import ShareButtons from "../../../components/ShareButtons";
 
 const METHODS: Record<string, { en: string; fajrAngle: number; ishaAngle: number; ishaOffset?: number }> = {
   "1": { en: "Umm al-Qura (Saudi)", fajrAngle: 18.5, ishaAngle: 0, ishaOffset: 90 },
-  "2": { en: "Egyptian Authority", fajrAngle: 19.5, ishaAngle: 17.5 },
+  "2": { en: "Autorité égyptienne", fajrAngle: 19.5, ishaAngle: 17.5 },
   "3": { en: "Muslim World League", fajrAngle: 18, ishaAngle: 17 },
   "4": { en: "University of Karachi", fajrAngle: 18, ishaAngle: 18 },
   "5": { en: "ISNA (North America)", fajrAngle: 15, ishaAngle: 15 },
@@ -27,9 +27,9 @@ const CITIES: Record<string, { lat: number; lng: number; en: string; tz: number 
   "cairo": { lat: 30.0444, lng: 31.2357, en: "Cairo", tz: 2 },
   "alexandria": { lat: 31.2001, lng: 29.9187, en: "Alexandria", tz: 2 },
   "dubai": { lat: 25.2048, lng: 55.2708, en: "Dubai", tz: 4 },
-  "abudhabi": { lat: 24.4539, lng: 54.3773, en: "Abu Dhabi", tz: 4 },
+  "abudhabi": { lat: 24.4539, lng: 54.3773, en: "Abou Dabi", tz: 4 },
   "doha": { lat: 25.2854, lng: 51.5310, en: "Doha", tz: 3 },
-  "kuwait": { lat: 29.3759, lng: 47.9774, en: "Kuwait City", tz: 3 },
+  "kuwait": { lat: 29.3759, lng: 47.9774, en: "Koweït City", tz: 3 },
   "manama": { lat: 26.2285, lng: 50.5860, en: "Manama", tz: 3 },
   "muscat": { lat: 23.5880, lng: 58.3829, en: "Muscat", tz: 4 },
   "baghdad": { lat: 33.3152, lng: 44.3661, en: "Baghdad", tz: 3 },
@@ -37,7 +37,7 @@ const CITIES: Record<string, { lat: number; lng: number; en: string; tz: number 
   "beirut": { lat: 33.8938, lng: 35.5018, en: "Beirut", tz: 3 },
   "damascus": { lat: 33.5138, lng: 36.2765, en: "Damascus", tz: 3 },
   "jerusalem": { lat: 31.7683, lng: 35.2137, en: "Jerusalem", tz: 3 },
-  "casablanca": { lat: 33.5731, lng: -7.5898, en: "Casablanca", tz: 1 },
+  "Casablanca": { lat: 33.5731, lng: -7.5898, en: "Casablanca", tz: 1 },
   "rabat": { lat: 34.0209, lng: -6.8416, en: "Rabat", tz: 1 },
   "algiers": { lat: 36.7538, lng: 3.0588, en: "Algiers", tz: 1 },
   "tunis": { lat: 36.8065, lng: 10.1815, en: "Tunis", tz: 1 },
@@ -45,14 +45,14 @@ const CITIES: Record<string, { lat: number; lng: number; en: string; tz: number 
   "ankara": { lat: 39.9334, lng: 32.8597, en: "Ankara", tz: 3 },
   "karachi": { lat: 24.8607, lng: 67.0011, en: "Karachi", tz: 5 },
   "lahore": { lat: 31.5204, lng: 74.3587, en: "Lahore", tz: 5 },
-  "islamabad": { lat: 33.6844, lng: 73.0479, en: "Islamabad", tz: 5 },
+  "Islamabad": { lat: 33.6844, lng: 73.0479, en: "Islamabad", tz: 5 },
   "delhi": { lat: 28.7041, lng: 77.1025, en: "Delhi", tz: 5.5 },
   "mumbai": { lat: 19.0760, lng: 72.8777, en: "Mumbai", tz: 5.5 },
   "dhaka": { lat: 23.8103, lng: 90.4125, en: "Dhaka", tz: 6 },
   "jakarta": { lat: -6.2088, lng: 106.8456, en: "Jakarta", tz: 7 },
-  "kualalumpur": { lat: 3.1390, lng: 101.6869, en: "Kuala Lumpur", tz: 8 },
+  "Kuala Lumpur": { lat: 3.1390, lng: 101.6869, en: "Kuala Lumpur", tz: 8 },
   "london": { lat: 51.5074, lng: -0.1278, en: "London", tz: 0 },
-  "birmingham": { lat: 52.4862, lng: -1.8904, en: "Birmingham", tz: 0 },
+  "Birmingham": { lat: 52.4862, lng: -1.8904, en: "Birmingham", tz: 0 },
   "paris": { lat: 48.8566, lng: 2.3522, en: "Paris", tz: 1 },
   "berlin": { lat: 52.5200, lng: 13.4050, en: "Berlin", tz: 1 },
   "newyork": { lat: 40.7128, lng: -74.0060, en: "New York", tz: -5 },
@@ -73,11 +73,11 @@ const CITY_GROUPS: Record<string, string[]> = {
   "Egypt": ["cairo", "alexandria"],
   "Gulf": ["dubai", "abudhabi", "doha", "kuwait", "manama", "muscat"],
   "Levant & Iraq": ["baghdad", "amman", "beirut", "damascus", "jerusalem"],
-  "North Africa": ["casablanca", "rabat", "algiers", "tunis"],
+  "North Africa": ["Casablanca", "rabat", "algiers", "tunis"],
   "Turkey": ["istanbul", "ankara"],
-  "South Asia": ["karachi", "lahore", "islamabad", "delhi", "mumbai"],
-  "Southeast Asia": ["dhaka", "jakarta", "kualalumpur"],
-  "Europe": ["london", "birmingham", "paris", "berlin"],
+  "South Asia": ["karachi", "lahore", "Islamabad", "delhi", "mumbai"],
+  "Southeast Asia": ["dhaka", "jakarta", "Kuala Lumpur"],
+  "Europe": ["london", "Birmingham", "paris", "berlin"],
   "Americas": ["newyork", "losangeles", "chicago", "toronto"],
   "Oceania": ["sydney", "melbourne"],
   "Others": ["moscow", "tokyo", "capetown", "lagos", "nairobi"],
@@ -130,7 +130,7 @@ function getHijriDateEN(date: Date): string {
   const m = Math.floor((24 * l3) / 709);
   const d = l3 - Math.floor((709 * m) / 24);
   const y = 30 * n + j - 30;
-  const months = ["Muharram", "Safar", "Rabi al-Awwal", "Rabi al-Thani", "Jumada al-Awwal", "Jumada al-Thani", "Rajab", "Shaban", "Ramadan", "Shawwal", "Dhul Qadah", "Dhul Hijjah"];
+  const months = ["Muharram", "Safar", "Rabi al-Awwal", "Rabi al-Thani", "Joumada al-Awwal", "Joumada al-Thani", "Rajab", "Shaban", "Ramadan", "Shawwal", "Dhul Qadah", "Dhul Hijjah"];
   return `${d} ${months[m - 1] || ""} ${y} AH`;
 }
 
@@ -197,7 +197,7 @@ export default function Client() {
     setMode("locating");
     navigator.geolocation.getCurrentPosition(
       (pos) => calcAndShow(pos.coords.latitude, pos.coords.longitude, Math.round(pos.coords.longitude / 15), "Current Location"),
-      () => { setErrorMsg("Could not detect your location. Make sure GPS is enabled."); setMode("error"); },
+      () => { setErrorMsg("Impossible de détecter votre emplacement. Assurez-vous que le GPS est activé."); setMode("error"); },
       { enableHighAccuracy: true, timeout: 15000 }
     );
   };
@@ -214,14 +214,14 @@ export default function Client() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("Prayer Times", "Accurate prayer times for your location — local calculation with countdown", "https://adwatak.cloud/fr/tools/prayer-times", "fr", "Islamic")} />
+      <StructuredData data={toolSchema("Heures de Prière", "Horaires de prière précis pour votre emplacement — calcul local avec compte à rebours", "https://adwatak.cloud/fr/tools/prayer-times", "fr", "Islamic")} />
       <StructuredData data={faqSchema([
-        { question: "What calculation methods are available?", answer: "Umm al-Qura (Saudi), Egyptian Authority, Muslim World League, Karachi University, ISNA (North America), Kuwait, Qatar, Singapore." },
-        { question: "Is the calculation accurate?", answer: "Yes, we use the same mathematical formulas used in major prayer apps. May differ by 1-2 minutes from official calendars." },
-        { question: "Does it work offline?", answer: "Yes! All calculations happen locally in your browser. Only GPS needs location permission." },
-        { question: "What is the countdown?", answer: "Shows remaining time until the next prayer in hours and minutes." },
-        { question: "Does it show Hijri date?", answer: "Yes, both Gregorian and Hijri dates are displayed." },
-        { question: "How many cities are available?", answer: "Over 60 cities across 35+ countries." },
+        { question: "Quelles méthodes de calcul sont disponibles ?", answer: "Umm al-Qura (Arabie saoudite), Autorité égyptienne, Ligue islamique mondiale, Université de Karachi, ISNA (Amérique du Nord), Koweït, Qatar, Singapour." },
+        { question: "Le calcul est-il précis ?", answer: "Oui, nous utilisons les mêmes formules mathématiques que celles utilisées dans les principales applications de prière. Peut différer de 1 à 2 minutes par rapport aux calendriers officiels." },
+        { question: "Fonctionne-t-il hors ligne ?", answer: "Oui ! Tous les calculs sont effectués localement dans votre navigateur. Seul le GPS nécessite l'autorisation de localisation." },
+        { question: "Qu'est-ce que le compte à rebours ?", answer: "Affiche le temps restant jusqu'à la prochaine prière en heures et minutes." },
+        { question: "Affiche-t-il la date hégirienne ?", answer: "Oui, les dates grégorienne et hégirienne sont affichées." },
+        { question: "Combien de villes sont disponibles ?", answer: "Plus de 60 villes dans plus de 35 pays." },
       ])} />
       <StructuredData data={breadcrumbSchema([
         { name: "Accueil", url: "https://adwatak.cloud/fr" },
@@ -231,11 +231,11 @@ export default function Client() {
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Accédez à la page de cet outil sur Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Prayer Times" />
+      <Breadcrumb lang="fr" category="Outils Islamiques" categorySlug="islamic" toolName="Horaires de prière" />
 
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
         <h1 className="text-2xl font-extrabold mb-1">🕐 Heures de Prière</h1>
@@ -353,23 +353,23 @@ export default function Client() {
       </div>
 
       <SEOContent content={[
-        "Accurate prayer times for your location — mathematical calculation without external API.",
-        "8 calculation methods: Umm al-Qura, Egyptian, Muslim World League, Karachi, ISNA, Kuwait, Qatar, Singapore.",
-        "Countdown to next prayer + Hijri & Gregorian dates + 60+ cities.",
-        "GPS auto-detect, city selection, or manual coordinates.",
-        "Works entirely in your browser — no internet needed after loading.",
+        "Heures de prière précises pour votre position — calcul mathématique sans API externe.",
+        "8 méthodes de calcul : Umm al-Qura, Égyptienne, Ligue Islamique Mondiale, Karachi, ISNA, Koweït, Qatar, Singapour.",
+        "Compte à rebours pour la prière suivante + dates Hijri et Grégorien + 60+ villes.",
+        "Détection GPS automatique, sélection de ville, ou coordonnées manuelles.",
+        "Fonctionne entièrement dans votre navigateur — sans Internet après le chargement.",
       ]} lang="fr" />
       <FAQSection faqs={[
-        { question: "What calculation methods are available?", answer: "Umm al-Qura (Saudi), Egyptian Authority, Muslim World League, Karachi University, ISNA (North America), Kuwait, Qatar, Singapore." },
-        { question: "Is the calculation accurate?", answer: "Yes, we use the same mathematical formulas used in major prayer apps." },
-        { question: "Does it work offline?", answer: "Yes! All calculations happen locally in your browser." },
-        { question: "How many cities are available?", answer: "Over 60 cities across 35+ countries." },
+        { question: "Quelles méthodes de calcul sont disponibles ?", answer: "Umm al-Qura (Arabie Saoudite), Autorité Égyptienne, Ligue Islamique Mondiale, Université de Karachi, ISNA (Amérique du Nord), Koweït, Qatar, Singapour." },
+        { question: "Le calcul est-il précis ?", answer: "Oui, nous utilisons les mêmes formules mathématiques utilisées dans les principales applications de prière." },
+        { question: "Fonctionne-t-il hors ligne ?", answer: "Oui ! Tous les calculs se font localement dans votre navigateur." },
+        { question: "Combien de villes sont disponibles ?", answer: "Plus de 60 villes dans plus de 35 pays." },
       ]} lang="fr" />
       <RelatedTools tools={[
-        { title: "Qibla Direction", icon: "🧭", href: "/fr/tools/qibla-direction" },
-        { title: "Hijri Converter", icon: "📅", href: "/fr/tools/hijri-converter" },
-        { title: "Zakat Calculator", icon: "🕌", href: "/fr/tools/zakat-calculator" },
-        { title: "Inheritance Calculator", icon: "📜", href: "/fr/tools/inheritance-calculator" },
+        { title: "Direction de la Qibla", icon: "🧭", href: "/fr/tools/qibla-direction" },
+        { title: "Convertisseur Hijri", icon: "📅", href: "/fr/tools/hijri-converter" },
+        { title: "Calculateur de Zakat", icon: "🕌", href: "/fr/tools/zakat-calculator" },
+        { title: "Calculateur d'Héritage", icon: "📜", href: "/fr/tools/inheritance-calculator" },
       ]} lang="fr" />
       <ShareButtons lang="fr" />
     </div>

@@ -27,6 +27,7 @@ export const metadata: Metadata = {
       "en": `${baseUrl}/en`,
       "tr": `${baseUrl}/tr`,
       "id": `${baseUrl}/id`,
+      "fr": `${baseUrl}/fr`,
       "x-default": baseUrl,
     },
   },
@@ -66,28 +67,6 @@ export default async function EnLayout({ children }: { children: React.ReactNode
 
   return (
     <div className={`${inter.variable}`} dir="ltr">
-      {/* Trust Bar */}
-          <div className="trust-bar scroll-fade-in">
-            <div className="container trust-bar-inner">
-              <div className="trust-item">
-                <span className="t-icon">🔒</span>
-                <span>100% Private — No file uploads</span>
-              </div>
-          <div className="trust-item">
-            <span className="t-icon">🆓</span>
-            <span>Free — No signup</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">⚡</span>
-            <span>Instant results</span>
-          </div>
-          <div className="trust-item">
-            <span className="t-icon">🔧</span>
-            <span>80+ tools</span>
-          </div>
-        </div>
-      </div>
-
       {/* Header */}
       <Header lang="en" />
 
@@ -164,7 +143,7 @@ export default async function EnLayout({ children }: { children: React.ReactNode
               <a href="/en/about">ℹ️ About</a>
               <a href="/en/privacy">🔒 Privacy Policy</a>
               <a href="/en/terms">📜 Terms of Service</a>
-              <a href="mailto:contact@adwatak.cloud">📧 Contact</a>
+              <a href="/en/contact">📧 Contact</a>
             </div>
 
             {/* Newsletter */}

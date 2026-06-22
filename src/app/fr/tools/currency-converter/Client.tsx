@@ -10,47 +10,47 @@ import SEOContent from "../../../components/SEOContent";
 const currencies = [
   { code: "SAR", name: "Saudi Riyal", flag: "🇸🇦" },
   { code: "AED", name: "UAE Dirham", flag: "🇦🇪" },
-  { code: "EGP", name: "Egyptian Pound", flag: "🇪🇬" },
-  { code: "KWD", name: "Kuwaiti Dinar", flag: "🇰🇼" },
+  { code: "EGP", name: "Livre égyptienne", flag: "🇪🇬" },
+  { code: "KWD", name: "Dinar koweïtien", flag: "🇰🇼" },
   { code: "QAR", name: "Qatari Riyal", flag: "🇶🇦" },
   { code: "OMR", name: "Omani Rial", flag: "🇴🇲" },
-  { code: "BHD", name: "Bahraini Dinar", flag: "🇧🇭" },
-  { code: "JOD", name: "Jordanian Dinar", flag: "🇯🇴" },
+  { code: "BHD", name: "Dinar bahreïni", flag: "🇧🇭" },
+  { code: "JOD", name: "Dinar jordanien", flag: "🇯🇴" },
   { code: "TRY", name: "Turkish Lira", flag: "🇹🇷" },
   { code: "USD", name: "US Dollar", flag: "🇺🇸" },
   { code: "EUR", name: "Euro", flag: "🇪🇺" },
-  { code: "GBP", name: "British Pound", flag: "🇬🇧" },
+  { code: "GBP", name: "Livre sterling", flag: "🇬🇧" },
   { code: "CNY", name: "Chinese Yuan", flag: "🇨🇳" },
   { code: "INR", name: "Indian Rupee", flag: "🇮🇳" },
 ];
 
 const faqs = [
-  { question: "What currencies are supported?", answer: "14+ currencies: Saudi Riyal (SAR), UAE Dirham (AED), Egyptian Pound (EGP), Kuwaiti Dinar (KWD), Qatari Riyal (QAR), Omani Rial (OMR), Bahraini Dinar (BHD), US Dollar (USD), Euro (EUR), British Pound (GBP), Turkish Lira (TRY), Jordanian Dinar (JOD), Chinese Yuan (CNY), Indian Rupee (INR)." },
-  { question: "Where do exchange rates come from?", answer: "Rates shown are mid-market rates from an open-source currency API updated daily. Banks and exchange offices add 1-5% margin. Use our tool as an estimate, then check with your bank for exact rates." },
-  { question: "Are GCC currencies pegged to USD?", answer: "Yes, most GCC currencies are pegged: SAR = 3.75, AED = 3.67, QAR = 3.64, BHD = 0.376, OMR = 0.384 per USD. KWD is the most valuable currency globally and not fully pegged. EGP and TRY float freely." },
-  { question: "How to get the best exchange rate?", answer: "Avoid airport exchange offices (worst rates). Use Wise, Revolut, or STC Pay. Transfer larger amounts for better rates. Monitor rates for a few days before converting large sums." },
-  { question: "Can I convert SAR to USD?", answer: "1 SAR = 0.267 USD (fixed peg). 1,000 SAR = 267 USD. The SAR-USD rate is stable due to the currency peg. Bank margin is typically 0.5-1% on this pair." },
+  { question: "Quelles devises sont prises en charge ?", answer: "Plus de 14 devises : Riyal saoudien (SAR), Dirham des Émirats arabes unis (AED), Livre égyptienne (EGP), Dinar koweïtien (KWD), Riyal qatari (QAR), Rial omanais (OMR), Dinar bahreïni (BHD), Dollar américain (USD), Euro (EUR), Livre sterling (GBP), Lire turque (TRY), Dinar jordanien (JOD), Yuan chinois (CNY), Roupie indienne (INR)." },
+  { question: "D'où viennent les taux de change ?", answer: "Les taux affichés sont les taux moyens du marché provenant d'une API de devises open source mise à jour quotidiennement. Les banques et les bureaux de change ajoutent une marge de 1 à 5 %. Utilisez notre outil comme estimation, puis vérifiez auprès de votre banque pour les taux exacts." },
+  { question: "Les devises du CCG sont-elles indexées sur le dollar américain ?", answer: "Oui, la plupart des devises du CCG sont indexées : SAR = 3,75, AED = 3,67, QAR = 3,64, BHD = 0,376, OMR = 0,384 pour 1 USD. Le KWD est la devise la plus forte au monde et n'est pas entièrement indexé. L'EGP et la TRY flottent librement." },
+  { question: "Comment obtenir le meilleur taux de change ?", answer: "Évitez les bureaux de change des aéroports (les pires taux). Utilisez Wise, Revolut ou STC Pay. Transférez des montants plus importants pour obtenir de meilleurs taux. Surveillez les taux pendant quelques jours avant de convertir de grosses sommes." },
+  { question: "Puis-je convertir des SAR en USD ?", answer: "1 SAR = 0,267 USD (parité fixe). 1 000 SAR = 267 USD. Le taux SAR-USD est stable en raison de l'ancrage monétaire. La marge bancaire est généralement de 0,5 à 1 % sur cette paire." },
   { question: "What's the buy/sell spread?", answer: "Buy price = what the bank sells you currency at. Sell price = what the bank pays when you sell currency. The difference is the bank's profit margin (spread). Our tool shows mid-rate." },
-  { question: "Do you support crypto?", answer: "No, we only support traditional fiat currencies. For crypto conversions, use specialized platforms like Binance or Coinbase." },
-  { question: "How to use this for travel?", answer: "Enter your home currency amount, select your destination currency. Add 2-3% for bank margins to get a realistic budget. Check rates a week before traveling." },
-  { question: "Why is KWD the most valuable currency?", answer: "Kuwait has a strong economy, large oil reserves, and a sovereign wealth fund. KWD is pegged to a basket of currencies (not just USD). 1 KWD ≈ 3.25 USD." },
-  { question: "Best time to convert currency?", answer: "Weekdays during London market hours (Sunday-Thursday 8am-10pm). Avoid weekends (markets closed, wider spreads). Avoid major economic news days." },
+  { question: "Prenez-vous en charge les cryptomonnaies ?", answer: "Non, nous ne prenons en charge que les devises fiduciaires traditionnelles. Pour les conversions de cryptomonnaies, utilisez des plateformes spécialisées comme Binance ou Coinbase." },
+  { question: "Comment utiliser cet outil pour les voyages ?", answer: "Saisissez le montant dans votre devise d'origine, sélectionnez votre devise de destination. Ajoutez 2 à 3 % pour les marges bancaires afin d'obtenir un budget réaliste. Vérifiez les taux une semaine avant de voyager." },
+  { question: "Pourquoi le KWD est-il la devise la plus forte ?", answer: "Le Koweït a une économie forte, d'importantes réserves de pétrole et un fonds souverain. Le KWD est indexé sur un panier de devises (pas seulement le dollar américain). 1 KWD ≈ 3,25 USD." },
+  { question: "Quel est le meilleur moment pour convertir des devises ?", answer: "En semaine pendant les heures du marché de Londres (du dimanche au jeudi de 8h à 22h). Évitez les week-ends (marchés fermés, spreads plus larges). Évitez les jours de grandes nouvelles économiques." },
 ];
 
 const relatedTools = [
   { title: "VAT Calculator", icon: "🏛️", href: "/fr/tools/vat-calculator" },
-  { title: "Profit Margin", icon: "📈", href: "/fr/tools/profit-margin" },
-  { title: "Gold Calculator", icon: "🥇", href: "/fr/tools/gold-calculator" },
-  { title: "Loan Calculator", icon: "💰", href: "/fr/tools/loan-calculator" },
-  { title: "Unit Converter", icon: "📏", href: "/fr/tools/unit-converter" },
+  { title: "Marge Bénéficiaire", icon: "📈", href: "/fr/tools/profit-margin" },
+  { title: "Calculateur d'or", icon: "🥇", href: "/fr/tools/gold-calculator" },
+  { title: "Calculateur de prêt", icon: "💰", href: "/fr/tools/loan-calculator" },
+  { title: "Convertisseur d'Unités", icon: "📏", href: "/fr/tools/unit-converter" },
   { title: "Salary Calculator", icon: "💵", href: "/fr/tools/salary-calculator" },
 ];
 
 const seoContent = [
-  "Convert between 14+ world currencies instantly — SAR, AED, EGP, KWD, USD, EUR, GBP, and more. Enter the amount, select currencies, and get the result with live mid-market rates.",
-  "GCC currencies are pegged to USD (except KWD). SAR = 3.75, AED = 3.67, QAR = 3.64. EGP and TRY float freely. Use the converter for travel planning, online shopping, and business.",
-  "Tip for travelers: Airport rates are the worst. Exchange only for the first day there, use Wise or STC Pay for the rest. Check rates before traveling to budget accurately.",
-  "For businesses: Rates shown are indicative. For large transfers, contact your bank for competitive quotes. Banks offer better rates for amounts over 10,000 USD.",
+  "Convertissez instantanément entre plus de 14 devises mondiales — SAR, AED, EGP, KWD, USD, EUR, GBP et plus encore. Saisissez le montant, sélectionnez les devises et obtenez le résultat avec les taux moyens du marché en direct.",
+  "Les devises du CCG sont indexées sur le dollar américain (sauf le KWD). SAR = 3,75, AED = 3,67, QAR = 3,64. L'EGP et la TRY flottent librement. Utilisez le convertisseur pour la planification de voyages, les achats en ligne et les affaires.",
+  "Conseil aux voyageurs : Les taux des aéroports sont les pires. Changez seulement pour le premier jour sur place, utilisez Wise ou STC Pay pour le reste. Vérifiez les taux avant de voyager pour budgétiser avec précision.",
+  "Pour les entreprises : Les taux affichés sont indicatifs. Pour les transferts importants, contactez votre banque pour obtenir des devis compétitifs. Les banques proposent de meilleurs taux pour les montants supérieurs à 10 000 USD.",
 ];
 
 export default function Client() {
@@ -81,7 +81,7 @@ export default function Client() {
         setError("Unable to get exchange rate");
       }
     } catch {
-      setError("Failed to connect to rates service");
+      setError("Échec de la connexion au service de taux");
     } finally {
       setLoading(false);
     }
@@ -106,7 +106,7 @@ export default function Client() {
   };
 
   const schemaName = "Convertisseur de Devises";
-  const schemaDesc = "En ligne Currency Converter — live mid-market rates";
+  const schemaDesc = "Convertisseur de devises en ligne — taux moyens du marché en direct";
   const schemaCategory = "Utility";
   const schemaUrl = "https://adwatak.cloud/fr/tools/currency-converter";
   const breadcrumbItems = [
@@ -123,13 +123,13 @@ export default function Client() {
       {/* GEO: Speakable — marks key content for AI/voice engines (ChatGPT, Perplexity, Google Assistant) */}
       <StructuredData data={speakableSchema(["h1", "h2", "main"])} />
       {/* GEO: HowTo — step by step for AI engines */}
-      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Navigate to this tool page on Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
+      <StructuredData data={howToSchema("Comment utiliser cet outil", "Outil gratuit en ligne. Fonctionne dans votre navigateur. Aucune inscription requise.", [{name:"Ouvrir l'outil",text:"Accédez à la page de cet outil sur Adawatak"},{name:"Entrez vos données",text:"Remplissez les champs requis"},{name:"Obtenez les résultats",text:"Cliquez sur le bouton Calculer ou Générer"},{name:"Utilisez ou partagez",text:"Copiez, téléchargez ou partagez les résultats"}],"moins d'une minute","fr")} />
       {/* GEO: Speakable — AI/voice engines */}
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
 
-      <Breadcrumb category="Convertisseurs" categorySlug="converters" toolName="Currency Converter" />
+      <Breadcrumb category="Convertisseurs" categorySlug="converters" toolName="Convertisseur de Devises" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">💱 Convertisseur de Devises</h1>
+        <h1 className="text-2xl font-extrabold mb-1">Convertisseur de Devises</h1>
         <p className="text-sm text-gray-500 mb-6">Convertissez des devises en temps réel</p>
 
         <div className="space-y-4">

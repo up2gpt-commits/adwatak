@@ -18,7 +18,10 @@ export const metadata: Metadata = {
 const tools = [
   { title: "BMI Calculator", icon: "⚖️", href: "/en/tools/bmi-calculator", desc: "Body Mass Index — check your ideal weight" },
   { title: "Stopwatch + Timer", icon: "⏱️", href: "/en/tools/stopwatch", desc: "Stopwatch with laps and countdown timer" },
+  { title: "Mosquito Repellent Sound", icon: "🦟", href: "/en/tools/mosquito-repellent", desc: "15,000 Hz high-frequency mosquito deterrent" },
   { title: "Social Character Counter", icon: "📱", href: "/en/tools/social-character-counter", desc: "Twitter, Instagram, TikTok & more" },
+  { title: "Calorie Calculator", icon: "🔥", href: "/en/tools/calorie-calculator", desc: "Daily calorie needs calculator" },
+  { title: "Food Calorie Analyzer", icon: "📸", href: "/en/tools/food-calorie-analyzer", desc: "Calorie analysis from food photo" },
 ];
 
 export default function DailyCategory() {

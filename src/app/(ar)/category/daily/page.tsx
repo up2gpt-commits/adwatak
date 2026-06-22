@@ -1,8 +1,11 @@
-export const metadata = { title: "أدوات يومية — أدواتك", description: "حاسبة BMI، ساعة إيقاف ومؤقت، عداد حروف السوشيال. أدوات مفيدة لكل يوم." };
+export const metadata = { title: "أدوات يومية — أدواتك", description: "حاسبة BMI، ساعة إيقاف ومؤقت، عداد حروف السوشيال. أدوات مفيدة لكل يوم.", alternates: { canonical: "https://adwatak.cloud/category/daily" } };
 const tools = [
   { title: "حاسبة BMI", icon: "⚖️", href: "/tools/bmi-calculator", desc: "مؤشر كتلة الجسم — وزنك المثالي" },
   { title: "ساعة إيقاف + مؤقت", icon: "⏱️", href: "/tools/stopwatch", desc: "ساعة إيقاف مع لفات ومؤقت تنازلي" },
+  { title: "طارد الناموس بالترددات", icon: "🦟", href: "/tools/mosquito-repellent", desc: "تردد 15,000 هرتز لطرد البعوض" },
   { title: "عداد حروف السوشيال", icon: "📱", href: "/tools/social-character-counter", desc: "Twitter, Instagram, TikTok والمزيد" },
+  { title: "حاسبة السعرات", icon: "🔥", href: "/tools/calorie-calculator", desc: "السعرات الحرارية اليومية" },
+  { title: "محلل السعرات بالصور", icon: "📸", href: "/tools/food-calorie-analyzer", desc: "تحليل السعرات من صورة الطعام" },
 ];
 export default function DailyCategory() {
   return (

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 const tools = [
   { title: "Kalkulator BMI", icon: "⚖️", href: "/id/tools/bmi-calculator", desc: "Indeks Massa Tubuh" },
   { title: "Kalkulator Kalori", icon: "🔥", href: "/id/tools/calorie-calculator", desc: "Kebutuhan kalori harian" },
+  { title: "Pengusir Nyamuk Suara", icon: "🦟", href: "/id/tools/mosquito-repellent", desc: "Frekuensi 15.000 Hz" },
   { title: "Stopwatch", icon: "⏱️", href: "/id/tools/stopwatch", desc: "Stopwatch dengan penghitung putaran" },
   { title: "Kalkulator Usia", icon: "🎂", href: "/id/tools/age-calculator", desc: "Hitung usia dan zodiak" },
   { title: "Penghapus Latar Belakang", icon: "🖼️", href: "/id/tools/background-remover", desc: "Hapus latar belakang dengan AI" },

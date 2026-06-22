@@ -8,30 +8,30 @@ import RelatedTools from "../../../components/RelatedTools";
 import SEOContent from "../../../components/SEOContent";
 
 const faqs = [
-  { question: "What is Image to Text OCR?", answer: "Image to Text OCR extracts text from any image — books, documents, signs, screenshots. Uses advanced AI (Gemma 4 Vision) for highly accurate text extraction supporting Arabic and English." },
-  { question: "Is it free?", answer: "Yes, 100% free. No registration, no usage limits, no ads." },
-  { question: "Do you upload my images to a server?", answer: "Yes, images are sent to our server for AI processing and deleted immediately. We do not store any images." },
-  { question: "How accurate is the AI OCR?", answer: "Very high! We use Google DeepMind's Gemma 4 Vision AI — much more accurate than traditional Tesseract OCR engines. Supports Arabic, English, and mixed languages." },
-  { question: "What image formats are supported?", answer: "All common formats: JPG, PNG, WEBP, BMP, GIF." },
-  { question: "Does it work on mobile?", answer: "Yes, fully responsive on all devices." },
-  { question: "Does it support Arabic and English together?", answer: "Yes, it handles Arabic, English, and mixed text in the same image perfectly." },
-  { question: "What if results aren't accurate?", answer: "Use a higher quality image with clearer text. The AI performs best with well-lit, high-resolution images." },
-  { question: "Can I use it commercially?", answer: "Yes, results are free for personal and commercial use." },
-  { question: "Is it updated?", answer: "Yes, powered by Google DeepMind's latest Gemma 4 Vision model." },
+  { question: "Görüntüden Metin OCR nedir?", answer: "Görüntüden Metin OCR, herhangi bir görüntüden metin çıkarır — kitaplar, belgeler, tabelalar, ekran görüntüleri. Arapça ve İngilizce'yi destekleyen yüksek doğruluklu metin çıkarma için gelişmiş yapay zeka (Gemma 4 Vision) kullanır." },
+  { question: "Ücretsiz mi?", answer: "Evet, %100 ücretsiz. Kayıt yok, kullanım sınırı yok, reklam yok." },
+  { question: "Görüntülerimi bir sunucuya yüklüyor musunuz?", answer: "Evet, görüntüler yapay zeka işleme için sunucumuza gönderilir ve hemen silinir. Hiçbir görüntüyü saklamayız." },
+  { question: "Yapay zeka OCR ne kadar doğru?", answer: "Çok yüksek! Google DeepMind'ın Gemma 4 Vision yapay zekasını kullanıyoruz — geleneksel Tesseract OCR motorlarından çok daha doğru. Arapça, İngilizce ve karışık dilleri destekler." },
+  { question: "Hangi görüntü formatları destekleniyor?", answer: "Tüm yaygın formatlar: JPG, PNG, WEBP, BMP, GIF." },
+  { question: "Mobil cihazlarda çalışır mı?", answer: "Evet, tüm cihazlarda tamamen duyarlı." },
+  { question: "Arapça ve İngilizce'yi birlikte destekliyor mu?", answer: "Evet, aynı görüntüdeki Arapça, İngilizce ve karışık metni mükemmel şekilde işler." },
+  { question: "Sonuçlar doğru değilse ne olur?", answer: "Daha net metin içeren daha yüksek kaliteli bir görüntü kullanın. Yapay zeka, iyi aydınlatılmış, yüksek çözünürlüklü görüntülerle en iyi performansı gösterir." },
+  { question: "Ticari olarak kullanabilir miyim?", answer: "Evet, sonuçlar kişisel ve ticari kullanım için ücretsizdir." },
+  { question: "Güncelleniyor mu?", answer: "Evet, Google DeepMind'ın en son Gemma 4 Vision modeliyle desteklenmektedir." },
 ];
 
 const relatedTools = [
-  { title: "Image to PDF", icon: "🖼️", href: "/en/tools/image-to-pdf" },
-  { title: "Remove Background", icon: "🖼️", href: "/en/tools/background-remover" },
-  { title: "Image Compressor", icon: "📦", href: "/en/tools/image-compressor" },
-  { title: "QR Reader", icon: "📷", href: "/en/tools/qr-reader" },
+  { title: "Görüntüden PDF", icon: "🖼️", href: "/tr/tools/image-to-pdf" },
+  { title: "Arka Planı Kaldır", icon: "🖼️", href: "/tr/tools/background-remover" },
+  { title: "Görüntü Sıkıştırıcı", icon: "📦", href: "/tr/tools/image-compressor" },
+  { title: "QR Okuyucu", icon: "📷", href: "/tr/tools/qr-reader" },
 ];
 
 const seoContent = [
-  "Free AI-powered Image to Text OCR — extract text from any image with high accuracy using Google DeepMind Gemma 4 Vision. Supports Arabic and English.",
-  "Perfect for students, lawyers, accountants, and journalists. More accurate than traditional Tesseract OCR.",
-  "Powered by Google DeepMind's Gemma 4 Vision AI model for state-of-the-art text extraction.",
-  "Your images are processed securely and deleted immediately — no storage.",
+  "Ücretsiz yapay zeka destekli Görüntüden Metin OCR — Google DeepMind Gemma 4 Vision kullanarak herhangi bir görüntüden yüksek doğrulukla metin çıkarın. Arapça ve İngilizce'yi destekler.",
+  "Öğrenciler, avukatlar, muhasebeciler ve gazeteciler için mükemmel. Geleneksel Tesseract OCR'dan daha doğru.",
+  "En son teknoloji metin çıkarma için Google DeepMind'ın Gemma 4 Vision yapay zeka modeliyle desteklenmektedir.",
+  "Görüntüleriniz güvenli bir şekilde işlenir ve hemen silinir — depolama yok.",
 ];
 
 export default function Client() {
@@ -82,16 +82,16 @@ export default function Client() {
 
   const extract = useCallback(async () => {
     if (!image) return;
-    setLoading(true); setProgressText("Preparing image..."); setText(""); setError(null);
+    setLoading(true); setProgressText("Görüntü hazırlanıyor..."); setText(""); setError(null);
 
     try {
       let processedImage = image;
       if (image.length > 3_000_000) {
-        setProgressText("Compressing image...");
+        setProgressText("Görüntü sıkıştırılıyor...");
         processedImage = await compressImage(image);
       }
 
-      setProgressText("Extracting text with AI...");
+      setProgressText("Yapay zeka ile metin çıkarılıyor...");
       const res = await fetch("/api/ocr-vision", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -105,7 +105,7 @@ export default function Client() {
 
       const data = await res.json();
       if (!data.text || data.text.trim().length === 0) {
-        setText("(No text found — try a clearer image)");
+        setText("(Metin bulunamadı — daha net bir görüntü deneyin)");
       } else {
         setText(data.text);
       }
@@ -148,7 +148,7 @@ export default function Client() {
 
   return (
     <div className="max-w-[760px] mx-auto">
-      <StructuredData data={toolSchema("Image to Text OCR", "Extract text from images using AI OCR — Free, fast, accurate", "https://adwatak.cloud/en/tools/image-to-text", "en", "Tools")} />
+      <StructuredData data={toolSchema("Görüntüden Metin OCR", "Yapay zeka OCR ile görüntülerden metin çıkarın — Ücretsiz, hızlı, doğru", "https://adwatak.cloud/tr/tools/image-to-text", "tr", "Araçlar")} />
       <StructuredData data={faqSchema(faqs)} />
       {/* GEO: HowTo — adım adım kullanım */}
       <StructuredData data={howToSchema("Bu araci nasil kullanirim", "Tarayicinizda calisan ucretsiz arac. Kayit gerektirmez.", [{name:"Araci acin",text:"Adwatak sitesinde bu arac sayfasina gidin"},{name:"Verilerinizi girin",text:"Gerekli alanlari doldurun"},{name:"Sonuc alin",text:"Hesapla veya olustur butonuna tiklayin"},{name:"Kullanin veya paylasin",text:"Sonucu kopyalayin, indirin veya paylasin"}],"bir dakikadan az","tr")} />
@@ -156,13 +156,13 @@ export default function Client() {
       <StructuredData data={speakableSchema(["h1","h2","main"])} />
       <Breadcrumb lang="tr" category="Diger Araclar" categorySlug="tools" toolName="Goruntuden Metin" />
       <div className="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
-        <h1 className="text-2xl font-extrabold mb-1">👁️ Image to Text OCR</h1>
-        <p className="text-sm text-gray-500 mb-6">Extract text from images using AI — faster and more accurate than traditional OCR</p>
+        <h1 className="text-2xl font-extrabold mb-1">👁️ Görüntüden Metin OCR</h1>
+        <p className="text-sm text-gray-500 mb-6">Yapay zeka ile görüntülerden metin çıkarın — geleneksel OCR'dan daha hızlı ve daha doğru</p>
 
         {/* AI Badge */}
         <div className="mb-4 p-3 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl border border-purple-200 flex items-center gap-2">
           <span className="text-lg">🤖</span>
-          <span className="text-sm text-purple-700">Powered by <strong>Gemma 4 Vision AI</strong> from Google DeepMind — higher accuracy, supports Arabic & English</span>
+          <span className="text-sm text-purple-700">Google DeepMind tarafından <strong>Gemma 4 Vision AI</strong> ile desteklenmektedir — daha yüksek doğruluk, Arapça ve İngilizce'yi destekler</span>
         </div>
 
         {/* Upload */}
@@ -180,8 +180,8 @@ export default function Client() {
           ) : (
             <div className="flex flex-col items-center gap-2">
               <span className="text-5xl">📸</span>
-              <p className="text-gray-600 font-medium">Click to choose an image</p>
-              <p className="text-xs text-gray-400">JPG, PNG, WEBP — AI OCR supports Arabic & English</p>
+              <p className="text-gray-600 font-medium">Bir görüntü seçmek için tıklayın</p>
+              <p className="text-xs text-gray-400">JPG, PNG, WEBP — AI OCR Arapça ve İngilizce'yi destekler</p>
             </div>
           )}
           <input ref={fileRef} type="file" accept="image/*" onChange={handleUpload} className="hidden" />
@@ -191,21 +191,21 @@ export default function Client() {
         {image && (
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <div className="flex-1 min-w-[200px]">
-              <label className="text-xs text-gray-500 block mb-1">Language</label>
+              <label className="text-xs text-gray-500 block mb-1">Dil</label>
               <select value={lang} onChange={(e) => setLang(e.target.value)}
                 className="w-full p-2 border border-gray-300 rounded-lg text-sm bg-white">
-                <option value="ara+eng">Arabic + English</option>
-                <option value="ara">Arabic</option>
-                <option value="eng">English</option>
+                <option value="ara+eng">Arapça + İngilizce</option>
+                <option value="ara">Arapça</option>
+                <option value="eng">İngilizce</option>
               </select>
             </div>
             <button onClick={extract} disabled={loading}
               className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-              {loading ? "Processing..." : "🤖 Extract Text with AI"}
+              {loading ? "İşleniyor..." : "🤖 Yapay Zeka ile Metin Çıkar"}
             </button>
             <button onClick={reset} disabled={loading}
               className="px-4 py-2.5 bg-gray-100 text-gray-600 rounded-xl font-medium hover:bg-gray-200 transition-colors disabled:opacity-50">
-              🔄 Reset
+              🔄 Sıfırla
             </button>
           </div>
         )}
@@ -226,7 +226,7 @@ export default function Client() {
             <p className="text-sm text-red-700">⚠️ {error}</p>
             <button onClick={extract}
               className="mt-2 text-sm px-4 py-1.5 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
-              🔄 Retry
+              🔄 Tekrar Dene
             </button>
           </div>
         )}
@@ -235,15 +235,15 @@ export default function Client() {
         {text && !loading && (
           <div ref={resRef} className="mt-6 bg-gray-50 rounded-xl border border-gray-200 p-5">
             <div className="flex items-center justify-between mb-3">
-              <h2 className="font-bold text-gray-900">📝 Extracted Text</h2>
+              <h2 className="font-bold text-gray-900">📝 Çıkarılan Metin</h2>
               <div className="flex gap-2">
                 <button onClick={copy}
                   className="text-sm px-3 py-1.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">
-                  {copied ? "✅ Copied!" : "📋 Copy"}
+                  {copied ? "✅ Kopyalandı!" : "📋 Kopyala"}
                 </button>
                 <button onClick={download}
                   className="text-sm px-3 py-1.5 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">
-                  ⬇️ Download
+                  ⬇️ İndir
                 </button>
               </div>
             </div>
@@ -252,16 +252,16 @@ export default function Client() {
               dir="auto" />
             {!text.startsWith("(") && !error && (
               <p className="text-xs text-gray-400 mt-2">
-                ✨ {text.split(/\s+/).filter((w: string) => w.length > 0).length} words
+                ✨ {text.split(/\s+/).filter((w: string) => w.length > 0).length} kelime
               </p>
             )}
           </div>
         )}
       </div>
-      <SEOContent content={seoContent} lang="en" />
-      <FAQSection faqs={faqs} lang="en" />
-      <RelatedTools tools={relatedTools} lang="en" />
-      <ShareButtons lang="en" />
+      <SEOContent content={seoContent} lang="tr" />
+      <FAQSection faqs={faqs} lang="tr" />
+      <RelatedTools tools={relatedTools} lang="tr" />
+      <ShareButtons lang="tr" />
     </div>
   );
 }

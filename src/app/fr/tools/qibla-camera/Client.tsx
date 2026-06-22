@@ -1,5 +1,10 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
+import SEOContent from "../../../components/SEOContent";
+import FAQSection from "../../../components/FAQSection";
+import RelatedTools from "../../../components/RelatedTools";
+import ShareButtons from "../../../components/ShareButtons";
+
 
 // ─── Kaaba ───
 const KAABA_LAT = 21.4225;
@@ -37,47 +42,47 @@ function lerpAngle(a: number, b: number, t: number): number {
 const CITIES: Record<string, { lat: number; lng: number; en: string }> = {
   "mecca-sa": { lat: 21.4225, lng: 39.8262, en: "Mecca, Saudi Arabia" },
   "medina-sa": { lat: 24.5247, lng: 39.5692, en: "Medina, Saudi Arabia" },
-  "riyadh-sa": { lat: 24.7136, lng: 46.6753, en: "Riyadh, Saudi Arabia" },
+  "riyad-sa": { lat: 24.7136, lng: 46.6753, en: "Riyadh, Saudi Arabia" },
   "jeddah-sa": { lat: 21.5433, lng: 39.1728, en: "Jeddah, Saudi Arabia" },
-  "dammam-sa": { lat: 26.4207, lng: 50.0888, en: "Dammam, Saudi Arabia" },
-  "cairo-eg": { lat: 30.0444, lng: 31.2357, en: "Cairo, Egypt" },
+  "Dammam-sa": { lat: 26.4207, lng: 50.0888, en: "Dammam, Arabie saoudite" },
+  "cairo-eg": { lat: 30.0444, lng: 31.2357, en: "Le Caire, Égypte" },
   "alexandria-eg": { lat: 31.2001, lng: 29.9187, en: "Alexandria, Egypt" },
-  "dubai-ae": { lat: 25.2048, lng: 55.2708, en: "Dubai, UAE" },
-  "abudhabi-ae": { lat: 24.4539, lng: 54.3773, en: "Abu Dhabi, UAE" },
+  "dubai-ae": { lat: 25.2048, lng: 55.2708, en: "Dubaï, Émirats arabes unis" },
+  "abudhabi-ae": { lat: 24.4539, lng: 54.3773, en: "Abou Dabi, Émirats arabes unis" },
   "doha-qa": { lat: 25.2854, lng: 51.5310, en: "Doha, Qatar" },
-  "kuwait-kw": { lat: 29.3759, lng: 47.9774, en: "Kuwait City, Kuwait" },
-  "manama-bh": { lat: 26.2285, lng: 50.5860, en: "Manama, Bahrain" },
-  "muscat-om": { lat: 23.5880, lng: 58.3829, en: "Muscat, Oman" },
-  "baghdad-iq": { lat: 33.3152, lng: 44.3661, en: "Baghdad, Iraq" },
-  "amman-jo": { lat: 31.9454, lng: 35.9284, en: "Amman, Jordan" },
+  "koweït-kw": { lat: 29.3759, lng: 47.9774, en: "Koweït City, Koweït" },
+  "Manama-bh": { lat: 26.2285, lng: 50.5860, en: "Manama, Bahreïn" },
+  "mascate-om": { lat: 23.5880, lng: 58.3829, en: "Muscat, Oman" },
+  "baghdad-iq": { lat: 33.3152, lng: 44.3661, en: "Bagdad, Irak" },
+  "amman-jo": { lat: 31.9454, lng: 35.9284, en: "Amman, Jordanie" },
   "beirut-lb": { lat: 33.8938, lng: 35.5018, en: "Beirut, Lebanon" },
-  "damascus-sy": { lat: 33.5138, lng: 36.2765, en: "Damascus, Syria" },
+  "damas-sy": { lat: 33.5138, lng: 36.2765, en: "Damas, Syrie" },
   "jerusalem-ps": { lat: 31.7683, lng: 35.2137, en: "Jerusalem, Palestine" },
-  "casablanca-ma": { lat: 33.5731, lng: -7.5898, en: "Casablanca, Morocco" },
+  "Casablanca-ma": { lat: 33.5731, lng: -7.5898, en: "Casablanca, Maroc" },
   "algiers-dz": { lat: 36.7538, lng: 3.0588, en: "Algiers, Algeria" },
   "tunis-tn": { lat: 36.8065, lng: 10.1815, en: "Tunis, Tunisia" },
-  "istanbul-tr": { lat: 41.0082, lng: 28.9784, en: "Istanbul, Turkey" },
-  "karachi-pk": { lat: 24.8607, lng: 67.0011, en: "Karachi, Pakistan" },
-  "jakarta-id": { lat: -6.2088, lng: 106.8456, en: "Jakarta, Indonesia" },
-  "london-gb": { lat: 51.5074, lng: -0.1278, en: "London, UK" },
+  "Istanbul-tr": { lat: 41.0082, lng: 28.9784, en: "Istanbul, Turkey" },
+  "Karachi-pk": { lat: 24.8607, lng: 67.0011, en: "Karachi, Pakistan" },
+  "Jakarta-id": { lat: -6.2088, lng: 106.8456, en: "Jakarta, Indonesia" },
+  "Londres-gb": { lat: 51.5074, lng: -0.1278, en: "Londres, Royaume-Uni" },
   "paris-fr": { lat: 48.8566, lng: 2.3522, en: "Paris, France" },
   "newyork-us": { lat: 40.7128, lng: -74.0060, en: "New York, USA" },
   "losangeles-us": { lat: 34.0522, lng: -118.2437, en: "Los Angeles, USA" },
-  "toronto-ca": { lat: 43.6532, lng: -79.3832, en: "Toronto, Canada" },
+  "Toronto-ca": { lat: 43.6532, lng: -79.3832, en: "Toronto, Canada" },
   "sydney-au": { lat: -33.8688, lng: 151.2093, en: "Sydney, Australia" },
   "tokyo-jp": { lat: 35.6762, lng: 139.6503, en: "Tokyo, Japan" },
-  "moscow-ru": { lat: 55.7558, lng: 37.6173, en: "Moscow, Russia" },
+  "Moscou-ru": { lat: 55.7558, lng: 37.6173, en: "Moscou, Russie" },
 };
 
 const CITY_GROUPS: Record<string, string[]> = {
-  "Middle East": ["mecca-sa", "medina-sa", "riyadh-sa", "jeddah-sa", "dammam-sa", "dubai-ae", "abudhabi-ae", "doha-qa", "kuwait-kw", "manama-bh", "muscat-om", "baghdad-iq", "amman-jo", "beirut-lb", "damascus-sy", "jerusalem-ps"],
-  "North Africa": ["cairo-eg", "alexandria-eg", "casablanca-ma", "algiers-dz", "tunis-tn"],
-  "Europe": ["istanbul-tr", "london-gb", "paris-fr"],
-  "South Asia": ["karachi-pk"],
-  "Southeast Asia": ["jakarta-id"],
-  "Americas": ["newyork-us", "losangeles-us", "toronto-ca"],
+  "Middle East": ["mecca-sa", "medina-sa", "riyad-sa", "jeddah-sa", "Dammam-sa", "dubai-ae", "abudhabi-ae", "doha-qa", "koweït-kw", "Manama-bh", "mascate-om", "baghdad-iq", "amman-jo", "beirut-lb", "damas-sy", "jerusalem-ps"],
+  "North Africa": ["cairo-eg", "alexandria-eg", "Casablanca-ma", "algiers-dz", "tunis-tn"],
+  "Europe": ["Istanbul-tr", "Londres-gb", "paris-fr"],
+  "South Asia": ["Karachi-pk"],
+  "Southeast Asia": ["Jakarta-id"],
+  "Americas": ["newyork-us", "losangeles-us", "Toronto-ca"],
   "Oceania": ["sydney-au"],
-  "Others": ["tokyo-jp", "moscow-ru"],
+  "Others": ["tokyo-jp", "Moscou-ru"],
 };
 
 function generateKaabaSVG(): string {
@@ -167,7 +172,7 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
           setCameraReady(true);
         }
       } catch {
-        setCamError("Camera access denied. Please allow camera permission.");
+        setCamError("Accès à la caméra refusé. Veuillez autoriser l'accès à la caméra.");
       }
     })();
     return () => { if (stream) stream.getTracks().forEach((t) => t.stop()); };
@@ -328,7 +333,7 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
           ctx.stroke();
           ctx.restore();
 
-          const turnText = Math.abs(turnAngle) < 5 ? "Go straight" : turnAngle > 0 ? "Turn right" : "Turn left";
+          const turnText = Math.abs(turnAngle) < 5 ? "Allez tout droit" : turnAngle > 0 ? "Turn right" : "Turn left";
           ctx.fillStyle = "rgba(255,255,255,0.9)";
           ctx.font = "bold 18px sans-serif";
           ctx.textAlign = "center";
@@ -402,7 +407,38 @@ function ARCamera({ lat, lng, bearing, onBack, locale }: { lat: number; lng: num
   );
 }
 
+
 type Mode = "idle" | "city" | "manual" | "locating" | "error";
+
+const seoContent = [
+  `Cet outil de caméra Qibla superpose une flèche verte sur le flux vidéo en direct pour indiquer précisément la direction de la Kaaba. L'utilisateur peut ainsi visualiser le chemin de la prière directement à travers l'écran de son smartphone en temps réel. La flèche s'ajuste automatiquement en fonction des mouvements et de l'orientation de l'appareil.`,
+  `Le système combine les données GPS et la boussole intégrée pour calculer la trajectoire orthodromique menant à La Mecque. Cette méthode géodésique garantit la précision de l'azimut quelle que soit la position de l'utilisateur sur le globe. Les algorithmes compensent ensuite la déclinaison magnétique locale pour affiner le résultat.`,
+  `Pour calibrer l'appareil, il faut effectuer un mouvement en huit avec le téléphone et s'éloigner des objets métalliques qui perturbent le champ magnétique. Une recalibration est nécessaire à chaque changement de ville pour maintenir une orientation exacte et fiable. Ces gestes simples assurent la justesse des mesures de direction.`,
+  `L'utilisation prolongée de l'outil consomme environ six à huit pour cent de batterie toutes les quinze minutes en raison de l'activation simultanée de la caméra et des capteurs. Il est recommandé de réduire la luminosité de l'écran pour prolonger l'autonomie de l'appareil. Cette économie d'énergie permet d'utiliser l'application sans risquer une décharge rapide.`,
+  `L'application est compatible avec les iPhone 8 et modèles ultérieurs, ainsi qu'avec les appareils Android équipés de la version 8.0 ou supérieure. Un gyroscope fonctionnel est indispensable pour assurer le suivi précis de l'orientation en temps réel. Sans ce capteur matériel, la superposition de la flèche devient impossible.`,
+];
+
+const faqs = [
+  { question: "Quelle est la précision de la caméra Qibla ?", answer: "La précision dépend des capteurs de votre appareil (GPS, boussole, gyroscope). En général, elle est de ±5 à 10 degrés. Pour un résultat optimal, utilisez l'outil à l'extérieur, loin de sources magnétiques." },
+  { question: "L'application fonctionne-t-elle hors connexion ?", answer: "Oui, une fois votre position initiale déterminée, la boussole et la caméra peuvent fonctionner sans Internet. Cependant, le GPS doit être activé pour localiser votre position." },
+  { question: "Comment calibrer la boussole ?", answer: "Effectuez un mouvement en « 8 » avec votre téléphone dans l'air jusqu'à ce que l'application confirme la calibration. Répétez l'opération si la flèche semble instable." },
+  { question: "L'outil est-il compatible avec Android et iPhone ?", answer: "Oui, il fonctionne sur tous les appareils Android et iOS (iPhone/iPad) équipés d'un capteur magnétique et d'une caméra." },
+  { question: "Le GPS doit-il être activé ?", answer: "Oui, le GPS est nécessaire pour déterminer votre position exacte et calculer la direction de la Qibla. Sans GPS, l'application utilise une localisation moins précise via le Wi-Fi ou le réseau mobile." },
+  { question: "Que faire si la flèche tourne en continu ?", answer: "Cela indique généralement une interférence magnétique ou une boussole mal calibrée. Éloignez-vous des objets métalliques, recalibrez la boussole en effectuant un mouvement en « 8 », puis redémarrez l'application." },
+  { question: "Quelle est la différence avec une application boussole classique ?", answer: "Contrairement à une boussole standard qui indique le nord, notre outil superpose une flèche Qibla en réalité augmentée sur l'image de la caméra, en tenant compte de votre position GPS exacte." },
+  { question: "La déclinaison magnétique affecte-t-elle la précision ?", answer: "Oui, mais l'application corrige automatiquement la déclinaison magnétique en fonction de votre position GPS pour afficher la direction géographique exacte de la Qibla, et non seulement la direction magnétique." },
+  { question: "L'application consomme-t-elle beaucoup de batterie ?", answer: "L'utilisation simultanée de la caméra, du GPS et des capteurs magnétiques consomme davantage de batterie. Il est recommandé de l'utiliser brièvement ou de brancher votre téléphone pendant l'utilisation." },
+  { question: "Puis-je l'utiliser en intérieur, près de métal ?", answer: "Ce n'est pas recommandé. Les structures métalliques, les armatures de béton et les appareils électroniques créent des interférences magnétiques qui peuvent fausser la direction de la Qibla affichée." },
+];
+
+const relatedTools = [
+  { title: "Direction de la Qibla", icon: "🧭", href: "/fr/tools/qibla-direction" },
+  { title: "Convertisseur Hijri", icon: "📅", href: "/fr/tools/hijri-converter" },
+  { title: "Heures de Prière", icon: "🕌", href: "/fr/tools/prayer-times" },
+  { title: "Tasbih Numerique", icon: "📿", href: "/fr/tools/tasbeeh-counter" },
+  { title: "Calculateur Zakat", icon: "💰", href: "/fr/tools/zakat-calculator" },
+  { title: "Fidya Kaffara", icon: "🌲", href: "/fr/tools/fidyah-kaffarah" },
+];
 
 export default function Client({ locale = "fr" }: { locale?: "ar" | "fr" | "tr" | "id" }) {
   const [mode, setMode] = useState<Mode>("idle");
@@ -427,7 +463,7 @@ export default function Client({ locale = "fr" }: { locale?: "ar" | "fr" | "tr" 
     setMode("locating");
     navigator.geolocation.getCurrentPosition(
       (pos) => showResult(pos.coords.latitude, pos.coords.longitude),
-      () => { setErrorMsg("Could not determine your location."); setMode("error"); },
+      () => { setErrorMsg("Impossible de déterminer votre position."); setMode("error"); },
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
     );
   };
@@ -485,7 +521,7 @@ export default function Client({ locale = "fr" }: { locale?: "ar" | "fr" | "tr" 
               ))}
             </select>
             <div className="flex gap-3">
-              <button onClick={handleCity} disabled={!selectedCity} className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Open Camera</button>
+              <button onClick={handleCity} disabled={!selectedCity} className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Ouvrir la caméra</button>
               <button onClick={reset} className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl">Back</button>
             </div>
           </div>
@@ -502,7 +538,7 @@ export default function Client({ locale = "fr" }: { locale?: "ar" | "fr" | "tr" 
               <input type="number" step="any" value={manualLng} onChange={(e) => setManualLng(e.target.value)} placeholder="e.g. 31.2357" className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 outline-none" />
             </div>
             <div className="flex gap-3">
-              <button onClick={handleManual} disabled={!manualLat || !manualLng} className="flex-1 bg-amber-600 hover:bg-amber-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Open Camera</button>
+              <button onClick={handleManual} disabled={!manualLat || !manualLng} className="flex-1 bg-amber-600 hover:bg-amber-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-6 py-3 rounded-xl transition-colors">Ouvrir la caméra</button>
               <button onClick={reset} className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-6 py-3 rounded-xl">Back</button>
             </div>
           </div>
@@ -523,6 +559,11 @@ export default function Client({ locale = "fr" }: { locale?: "ar" | "fr" | "tr" 
         )}
       </div>
 
+
+      <SEOContent content={seoContent} lang="fr" />
+      <FAQSection faqs={faqs} lang="fr" />
+      <RelatedTools tools={relatedTools} />
+      <ShareButtons lang="fr" />
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
         <h2 className="font-bold text-amber-900 mb-2">How it works</h2>
         <ol className="text-sm text-amber-800 space-y-1 list-decimal list-inside">

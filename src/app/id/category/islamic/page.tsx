@@ -9,6 +9,7 @@ const tools = [
   { title: "Kalkulator Waris Islam", icon: "📜", href: "/id/tools/inheritance-calculator", desc: "Pembagian waris menurut Faraid" },
   { title: "Kalkulator Zakat", icon: "🕌", href: "/id/tools/zakat-calculator", desc: "Kewajiban zakat tahunan" },
   { title: "Arah Kiblat", icon: "🧭", href: "/id/tools/qibla-direction", desc: "Cari arah kiblat" },
+  { title: "Arah Kiblat Kamera", icon: "📸", href: "/id/tools/qibla-camera", desc: "Lihat arah kiblat via kamera" },
   { title: "Waktu Sholat", icon: "🕐", href: "/id/tools/prayer-times", desc: "Waktu sholat" },
   { title: "Penghitung Tasbih", icon: "📿", href: "/id/tools/tasbeeh-counter", desc: "Tasbih digital" },
   { title: "Kalkulator Umrah", icon: "🕋", href: "/id/tools/umrah-calculator", desc: "Biaya Umrah" },

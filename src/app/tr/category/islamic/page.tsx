@@ -9,6 +9,7 @@ const tools = [
   { title: "İslami Miras Hesaplama", icon: "📜", href: "/tr/tools/inheritance-calculator", desc: "Feraiz dağılımı" },
   { title: "Zekat Hesaplama", icon: "🕌", href: "/tr/tools/zakat-calculator", desc: "Yıllık zekat" },
   { title: "Kıble Yönü", icon: "🧭", href: "/tr/tools/qibla-direction", desc: "Kıble yönü bulma" },
+  { title: "Kıble Kamera AR", icon: "📸", href: "/tr/tools/qibla-camera", desc: "Kamerayla kıble yönü" },
   { title: "Namaz Vakitleri", icon: "🕐", href: "/tr/tools/prayer-times", desc: "Namaz vakitleri" },
   { title: "Tasbih Sayacı", icon: "📿", href: "/tr/tools/tasbeeh-counter", desc: "Dijital tesbih" },
   { title: "Umre Hesaplama", icon: "🕋", href: "/tr/tools/umrah-calculator", desc: "Umre maliyeti" },
